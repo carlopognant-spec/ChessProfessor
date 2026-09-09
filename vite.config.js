@@ -7,5 +7,5 @@ import react from '@vitejs/plugin-react'
 // lascia base: '/'.
 export default defineConfig({
   plugins: [react()],
-  base: '/chess-study-app/',
+  base: '/ChessProfessor/',
 })
