@@ -1,0 +1,206 @@
+:root {
+  --ink: #1B1712;
+  --panel: #2A241D;
+  --panel-raised: #33291F;
+  --bone: #EDE6D6;
+  --bone-dim: #C9C0AD;
+  --walnut: #7C6A53;
+  --brass: #C9A24B;
+  --brass-dim: #9C7F3C;
+  --danger: #B5544B;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0 0 0.4em 0;
+  color: var(--bone);
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(320px, 560px) minmax(280px, 420px);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(201, 162, 75, 0.15);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.eco-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--brass);
+  letter-spacing: 0.02em;
+}
+
+.opening-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+.stat-row {
+  display: flex;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--bone-dim);
+}
+
+.move-list {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--bone-dim);
+  margin-top: 1rem;
+  line-height: 1.7;
+  word-spacing: 0.3em;
+}
+
+.controls-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+button {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--brass-dim);
+  background: transparent;
+  color: var(--brass);
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--brass);
+  color: var(--ink);
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 480px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-right: 0.25rem;
+}
+
+.chat-message {
+  padding: 0.65rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.chat-message.user {
+  background: var(--panel-raised);
+  align-self: flex-end;
+  max-width: 85%;
+}
+
+.chat-message.assistant {
+  background: transparent;
+  border-left: 2px solid var(--brass-dim);
+  padding-left: 0.75rem;
+}
+
+.chat-message.error {
+  border-left: 2px solid var(--danger);
+  color: var(--bone-dim);
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.chat-input-row input {
+  flex: 1;
+  background: var(--ink);
+  border: 1px solid rgba(201, 162, 75, 0.25);
+  border-radius: 4px;
+  color: var(--bone);
+  padding: 0.6rem 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.chat-input-row input:focus,
+button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+.engine-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--panel-raised);
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.engine-bar-fill {
+  height: 100%;
+  background: var(--brass);
+  transition: width 0.3s ease;
+}
+
+.engine-eval-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--bone-dim);
+}
+
+.notice {
+  font-size: 0.82rem;
+  color: var(--bone-dim);
+  font-style: italic;
+}
