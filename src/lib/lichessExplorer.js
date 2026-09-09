@@ -1,47 +1,35 @@
-// Client per la Opening Explorer API di Lichess.
-// Endpoint pubblico, nessuna chiave richiesta.
-// Docs: https://lichess.org/api#tag/Opening-Explorer
-
+const LICHESS_TOKEN = import.meta.env.VITE_LICHESS_TOKEN
 const BASE_URL = 'https://explorer.lichess.ovh/lichess'
 
-/**
- * Recupera nome apertura (ECO), statistiche e mosse più giocate per una posizione FEN.
- * @param {string} fen
- * @returns {Promise<{eco: string|null, name: string|null, moves: Array, white: number, draws: number, black: number} | null>}
- *          null se la posizione non ha dati (fuori teoria / troppo rara).
- */
-export async function fetchOpeningData(fen) {
+const DEFAULT_SPEEDS = ['blitz', 'rapid', 'classical']
+const DEFAULT_RATINGS = [1600, 1800, 2000, 2200, 2500]
+
+export async function fetchOpeningExplorer(fen, { speeds = DEFAULT_SPEEDS, ratings = DEFAULT_RATINGS } = {}) {
+  if (!LICHESS_TOKEN) {
+    throw new Error('VITE_LICHESS_TOKEN non impostato: crea il token su lichess.org/account/oauth/token e aggiungilo al file .env')
+  }
+
   const params = new URLSearchParams({
     variant: 'standard',
     fen,
+    speeds: speeds.join(','),
+    ratings: ratings.join(','),
     topGames: '0',
     recentGames: '0',
   })
 
-  const res = await fetch(`${BASE_URL}?${params.toString()}`)
-  if (!res.ok) {
-    throw new Error(`Lichess Opening Explorer ha risposto ${res.status}`)
+  const response = await fetch(`${BASE_URL}?${params.toString()}`, {
+    headers: {
+      Authorization: `Bearer ${LICHESS_TOKEN}`,
+    },
+  })
+
+  if (!response.ok) {
+    if (response.status === 401) {
+      throw new Error('Token Lichess non valido o mancante (401 Unauthorized).')
+    }
+    throw new Error(`Errore Opening Explorer: ${response.status}`)
   }
 
-  const data = await res.json()
-
-  const totalGames = (data.white ?? 0) + (data.draws ?? 0) + (data.black ?? 0)
-  if (totalGames === 0) {
-    // Posizione fuori dal database: nessuna statistica disponibile.
-    return null
-  }
-
-  return {
-    eco: data.opening?.eco ?? null,
-    name: data.opening?.name ?? null,
-    white: data.white ?? 0,
-    draws: data.draws ?? 0,
-    black: data.black ?? 0,
-    moves: (data.moves ?? []).slice(0, 5).map((m) => ({
-      san: m.san,
-      white: m.white,
-      draws: m.draws,
-      black: m.black,
-    })),
-  }
+  return response.json()
 }

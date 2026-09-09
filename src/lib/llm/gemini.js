@@ -2,7 +2,9 @@ import { SYSTEM_PROMPT, buildUserMessage } from './systemPrompt.js'
 
 export async function explainMoveWithGemini(context) {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY
-  const model = import.meta.env.VITE_GEMINI_MODEL || 'gemini-2.0-flash'
+  // gemini-2.0-flash è stato spento il 01/06/2026.
+  // gemini-flash-latest è l'alias Google sul Flash corrente.
+  const model = import.meta.env.VITE_GEMINI_MODEL || 'gemini-flash-latest'
 
   if (!apiKey) {
     throw new Error('VITE_GEMINI_API_KEY non impostata (vedi .env.example)')

@@ -26,12 +26,14 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+      - name: Build
+        run: npm run build
         env:
           VITE_GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          VITE_GROQ_MODEL: llama-3.3-70b-versatile
+          VITE_GROQ_MODEL: openai/gpt-oss-120b
           VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          VITE_GEMINI_MODEL: gemini-2.0-flash
+          VITE_GEMINI_MODEL: gemini-flash-latest
+          VITE_LICHESS_TOKEN: ${{ secrets.VITE_LICHESS_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

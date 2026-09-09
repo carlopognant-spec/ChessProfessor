@@ -4,7 +4,9 @@ const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions'
 
 export async function explainMoveWithGroq(context) {
   const apiKey = import.meta.env.VITE_GROQ_API_KEY
-  const model = import.meta.env.VITE_GROQ_MODEL || 'llama-3.3-70b-versatile'
+  // llama-3.3-70b-versatile è stato spento il 16/08/2026 (tier free/developer).
+  // Sostituto ufficiale Groq: https://console.groq.com/docs/deprecations
+  const model = import.meta.env.VITE_GROQ_MODEL || 'openai/gpt-oss-120b'
 
   if (!apiKey) {
     throw new Error('VITE_GROQ_API_KEY non impostata (vedi .env.example)')
