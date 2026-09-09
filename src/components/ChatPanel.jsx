@@ -7,6 +7,7 @@ export default function ChatPanel({ opening, engineData }) {
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [sending, setSending] = useState(false)
+  const [provider, setProvider] = useState(import.meta.env.VITE_LLM_PROVIDER || 'groq')
 
   async function handleSend(e) {
     e.preventDefault()
@@ -24,7 +25,7 @@ export default function ChatPanel({ opening, engineData }) {
         engineData,
         question,
         moveHistorySan,
-      })
+      }, provider)
 
       setMessages((m) => [...m, { role: 'assistant', text: result.explanation }])
 
@@ -46,7 +47,26 @@ export default function ChatPanel({ opening, engineData }) {
 
   return (
     <div className="panel chat-panel">
-      <h2>Chiedi al maestro</h2>
+      <div className="controls-row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+        <h2 style={{ margin: 0 }}>Chiedi al maestro</h2>
+        <select
+          value={provider}
+          onChange={(e) => setProvider(e.target.value)}
+          disabled={sending}
+          style={{
+            background: 'var(--ink)',
+            color: 'var(--bone)',
+            border: '1px solid rgba(201, 162, 75, 0.25)',
+            borderRadius: '4px',
+            padding: '0.35rem 0.5rem',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.8rem',
+          }}
+        >
+          <option value="groq">Groq</option>
+          <option value="gemini">Gemini</option>
+        </select>
+      </div>
       <div className="chat-messages">
         {messages.length === 0 && (
           <p className="notice">
