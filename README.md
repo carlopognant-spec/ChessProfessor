@@ -8,7 +8,8 @@ scacchiera interattiva, motore Stockfish lato client e database Lichess.
 ```bash
 npm install
 cp .env.example .env
-# apri .env e inserisci la tua chiave Groq o Gemini, e imposta VITE_LLM_PROVIDER
+# apri .env e inserisci le chiavi LLM, il token Lichess e VITE_LLM_PROVIDER
+npm test
 npm run dev
 ```
 
@@ -16,7 +17,8 @@ npm run dev
 
 - **Scacchiera**: react-chessboard + chess.js. Trascina i pezzi per giocare una mossa.
 - **Aperture**: ad ogni posizione, l'app interroga la Opening Explorer API di Lichess
-  (gratuita, nessuna chiave) per nome ECO e statistiche.
+  per nome ECO e statistiche. Il codice attuale richiede `VITE_LICHESS_TOKEN`; senza
+  token l'endpoint risponde `401 Unauthorized`.
 - **Motore**: Stockfish gira in un Web Worker nel browser (caricato da CDN via
   `importScripts`, nessun binario da gestire nel repo). Calcola SOLO eval e mosse
   candidate — non genera testo.
@@ -32,6 +34,16 @@ npm run dev
 Modifica `VITE_LLM_PROVIDER` in `.env` con `groq` o `gemini`. Nessun'altra modifica
 al codice è necessaria: il dispatcher in `src/lib/llm/index.js` sceglie il provider
 corretto a runtime.
+
+## Test
+
+Vitest è configurato con ambiente Node. Esegui `npm test` per lanciare i test
+automatici; il test iniziale verifica che l'infrastruttura carichi `chess.js` e
+validi una sequenza di apertura nota.
+
+Per usare l'Opening Explorer, crea un token OAuth su
+`lichess.org/account/oauth/token` e valorizza `VITE_LICHESS_TOKEN` nel file `.env`.
+Il token non deve essere committato.
 
 ## Deploy su GitHub Pages
 
