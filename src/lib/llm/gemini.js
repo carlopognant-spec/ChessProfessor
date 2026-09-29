@@ -1,4 +1,4 @@
-import { SYSTEM_PROMPT, buildUserMessage } from './systemPrompt.js'
+import { CRITICAL_SYSTEM_PROMPT, SYSTEM_PROMPT, buildUserMessage } from './systemPrompt.js'
 
 export async function explainMoveWithGemini(context) {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY
@@ -16,7 +16,7 @@ export async function explainMoveWithGemini(context) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+      systemInstruction: { parts: [{ text: context.criticalContext ? CRITICAL_SYSTEM_PROMPT : SYSTEM_PROMPT }] },
       contents: [{ role: 'user', parts: [{ text: buildUserMessage(context) }] }],
       generationConfig: {
         temperature: 0.3,

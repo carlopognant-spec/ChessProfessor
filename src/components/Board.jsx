@@ -6,13 +6,19 @@ import { useGame } from '../context/GameContext.jsx'
 const LIGHT_SQUARE = '#EDE6D6'
 const DARK_SQUARE = '#7C6A53'
 
-export default function Board() {
+export default function Board({ editorPiece = null, displayFen, onEditorSquare }) {
   const { fen, applyMove } = useGame()
   const [moveFrom, setMoveFrom] = useState(null)
   const [optionSquares, setOptionSquares] = useState({})
   const [arrows, setArrows] = useState([])
 
-  const game = useMemo(() => new Chess(fen), [fen])
+  const game = useMemo(() => {
+    try {
+      return new Chess(fen)
+    } catch {
+      return new Chess()
+    }
+  }, [fen])
 
   const getMoveOptions = useCallback((square) => {
     const moves = game.moves({ square, verbose: true })
@@ -43,6 +49,10 @@ export default function Board() {
   }, [])
 
   const onSquareClick = useCallback(({ square }) => {
+    if (editorPiece !== null) {
+      onEditorSquare?.(square, editorPiece || null)
+      return
+    }
     if (!moveFrom) {
       const hasMoves = getMoveOptions(square)
       if (hasMoves) setMoveFrom(square)
@@ -58,21 +68,25 @@ export default function Board() {
     }
 
     clearSelection()
-  }, [moveFrom, getMoveOptions, applyMove, clearSelection])
+  }, [editorPiece, onEditorSquare, moveFrom, getMoveOptions, applyMove, clearSelection])
 
   const onPieceDrop = useCallback(({ sourceSquare, targetSquare }) => {
     if (!targetSquare) return false
+    if (editorPiece !== null) {
+      onEditorSquare?.(targetSquare, editorPiece || null)
+      return true
+    }
     const result = applyMove({ from: sourceSquare, to: targetSquare, promotion: 'q' })
     if (result) clearSelection()
     return !!result
-  }, [applyMove, clearSelection])
+  }, [editorPiece, onEditorSquare, applyMove, clearSelection])
 
   const onArrowsChange = useCallback(({ arrows: nextArrows }) => {
     setArrows(nextArrows)
   }, [])
 
   const chessboardOptions = {
-    position: fen,
+    position: displayFen ?? fen,
     onPieceDrop,
     onSquareClick,
     squareStyles: optionSquares,

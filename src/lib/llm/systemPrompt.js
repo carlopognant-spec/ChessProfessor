@@ -23,11 +23,18 @@ Rispondi SEMPRE con un oggetto JSON valido, senza testo prima o dopo, con questa
   "moveToPlay": "mossa in notazione SAN se la domanda dell'utente implica di giocarla sulla scacchiera, altrimenti null"
 }`
 
+export const CRITICAL_SYSTEM_PROMPT = `${SYSTEM_PROMPT}
+
+CONTESTO CRITICO:
+- Spiega solo la categoria e i fatti verificati ricevuti.
+- Non inventare struttura pedonale, sicurezza del re, sviluppo o varianti.
+- Se un fatto non è presente, dichiaralo invece di dedurlo.`
+
 /**
  * Costruisce il messaggio utente con tutto il contesto oggettivo su cui
  * il modello deve basare la spiegazione.
  */
-export function buildUserMessage({ fen, opening, engineData, question, moveHistorySan }) {
+export function buildUserMessage({ fen, opening, engineData, question, moveHistorySan, criticalContext }) {
   const openingBlock = opening
     ? `Apertura: ${opening.eco ?? '—'} ${opening.name ?? '(nome non disponibile)'}
 Statistiche Lichess: Bianco ${opening.white} - Patta ${opening.draws} - Nero ${opening.black}
@@ -39,12 +46,28 @@ Mosse più giocate da qui: ${opening.moves.map((m) => m.san).join(', ') || 'ness
 Linea principale (PV, notazione UCI): ${engineData.pv.slice(0, 6).join(' ')}`
     : 'Nessuna valutazione motore disponibile al momento.'
 
+  const criticalBlock = criticalContext
+    ? `Contesto critico verificato: categoria ${criticalContext.classification ?? 'non disponibile'}
+Mossa giocata: ${criticalContext.playedMove ?? 'non disponibile'}
+Eval migliore: ${criticalContext.bestEval ?? 'non disponibile'}
+Eval mossa giocata: ${criticalContext.playedEval ?? 'non disponibile'}
+Perdita: ${criticalContext.evalDelta ?? 'non disponibile'}`
+    : 'Nessun contesto critico aggiuntivo disponibile.'
+
+  const factsBlock = criticalContext?.facts
+    ? `Fatti locali verificati: ${JSON.stringify(criticalContext.facts)}`
+    : 'Nessun fatto locale verificato disponibile.'
+
   return `Posizione attuale (FEN): ${fen}
 Mosse giocate finora: ${moveHistorySan.join(' ') || '(partita appena iniziata)'}
 
 ${openingBlock}
 
 ${engineBlock}
+
+${criticalBlock}
+
+${factsBlock}
 
 Domanda dell'utente: "${question}"`
 }
