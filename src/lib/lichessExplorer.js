@@ -4,11 +4,15 @@ const BASE_URL = 'https://explorer.lichess.ovh/lichess'
 const DEFAULT_SPEEDS = ['blitz', 'rapid', 'classical']
 const DEFAULT_RATINGS = [1600, 1800, 2000, 2200, 2500]
 
-export async function fetchOpeningExplorer(fen, { speeds = DEFAULT_SPEEDS, ratings = DEFAULT_RATINGS } = {}) {
-  if (!LICHESS_TOKEN) {
-    throw new Error('VITE_LICHESS_TOKEN non impostato: crea il token su lichess.org/account/oauth/token e aggiungilo al file .env')
-  }
-
+export async function fetchOpeningExplorer(
+  fen,
+  {
+    speeds = DEFAULT_SPEEDS,
+    ratings = DEFAULT_RATINGS,
+    token = LICHESS_TOKEN,
+    fetchImpl = fetch,
+  } = {},
+) {
   const params = new URLSearchParams({
     variant: 'standard',
     fen,
@@ -18,10 +22,13 @@ export async function fetchOpeningExplorer(fen, { speeds = DEFAULT_SPEEDS, ratin
     recentGames: '0',
   })
 
-  const response = await fetch(`${BASE_URL}?${params.toString()}`, {
-    headers: {
-      Authorization: `Bearer ${LICHESS_TOKEN}`,
-    },
+  const headers = {}
+  if (token) {
+    headers.Authorization = `Bearer ${token}`
+  }
+
+  const response = await fetchImpl(`${BASE_URL}?${params.toString()}`, {
+    headers,
   })
 
   if (!response.ok) {

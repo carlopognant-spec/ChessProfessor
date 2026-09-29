@@ -1,14 +1,15 @@
 # Chess Study App — MVP Aperture
 
-App web di studio delle aperture scacchistiche con chatbot esplicativo,
-scacchiera interattiva, motore Stockfish lato client e database Lichess.
+App web di studio delle aperture e delle partite con chatbot esplicativo,
+scacchiera interattiva, motore Stockfish lato client, database Lichess,
+analisi automatica e classificazione delle semimosse.
 
 ## Setup locale
 
 ```bash
 npm install
 cp .env.example .env
-# apri .env e inserisci le chiavi LLM, il token Lichess e VITE_LLM_PROVIDER
+# apri .env e inserisci le chiavi LLM e VITE_LLM_PROVIDER
 npm test
 npm run dev
 ```
@@ -17,15 +18,30 @@ npm run dev
 
 - **Scacchiera**: react-chessboard + chess.js. Trascina i pezzi per giocare una mossa.
 - **Aperture**: ad ogni posizione, l'app interroga la Opening Explorer API di Lichess
-  per nome ECO e statistiche. Il codice attuale richiede `VITE_LICHESS_TOKEN`; senza
-  token l'endpoint risponde `401 Unauthorized`.
+  per nome ECO e statistiche. La richiesta funziona senza token quando l'endpoint
+  consente accesso anonimo; `VITE_LICHESS_TOKEN` è opzionale e viene inviato come
+  Bearer token se presente. Errori 401, rate limit e posizioni senza partite vengono
+  mostrati senza alterare la posizione corrente.
 - **Motore**: Stockfish gira in un Web Worker nel browser (caricato da CDN via
-  `importScripts`, nessun binario da gestire nel repo). Calcola SOLO eval e mosse
-  candidate — non genera testo.
+  `importScripts`, nessun binario da gestire nel repo). Analizza a profondità 12,
+  MultiPV 2 e restituisce le linee principali; la profondità di fallback configurata
+  è 8. Calcola SOLO eval e mosse candidate — non genera testo.
+- **Analisi partita**: dopo le mosse giocate o l'importazione PGN, analizza le
+  semimosse, riusa la cache per FEN, mostra il progresso e interrompe l'Explorer alla
+  prima posizione sotto soglia (`15` partite complessive per default).
+- **Classificazione**: ogni semimossa può essere classificata come Libro, Geniale,
+  Grande, Migliore, Ottima, Buona, Imprecisione, Errore, Errore grave o Mossa mancata.
+  Le soglie sono centralizzate in `src/lib/engineConfig.js`.
+- **Resoconto**: la tabella separa i conteggi Bianco/Nero e le righe selezionabili
+  riportano alla posizione precedente alla semimossa.
+- **Editor posizione**: la palette modifica le case, mentre lato al tratto, arrocco,
+  en passant e FEN possono essere importati o esportati. Le posizioni non valide
+  vengono rifiutate prima di alimentare motore e chatbot.
 - **Chatbot**: fai una domanda nel pannello a destra. La domanda viene inviata,
-  insieme a FEN corrente, dati apertura e valutazione Stockfish, al provider LLM
-  scelto (Groq o Gemini, vedi `.env`). Il modello risponde con una spiegazione e,
-  se la domanda implica una mossa, la scacchiera si aggiorna automaticamente.
+  insieme a FEN corrente e dati verificati, al provider LLM scelto (Groq o Gemini,
+  vedi `.env`). Le chiamate vengono effettuate solo per errori, mosse mancate e
+  prima deviazione dal libro. Il modello risponde con una spiegazione e, se la
+  domanda implica una mossa, la scacchiera la valida con `chess.js` prima di applicarla.
 - **Torna indietro**: ogni mossa applicata dalla chat salva uno snapshot prima di
   eseguirla; il pulsante "Torna indietro" ripristina l'ultimo snapshot.
 
@@ -41,9 +57,10 @@ Vitest è configurato con ambiente Node. Esegui `npm test` per lanciare i test
 automatici; il test iniziale verifica che l'infrastruttura carichi `chess.js` e
 validi una sequenza di apertura nota.
 
-Per usare l'Opening Explorer, crea un token OAuth su
-`lichess.org/account/oauth/token` e valorizza `VITE_LICHESS_TOKEN` nel file `.env`.
-Il token non deve essere committato.
+Per aumentare i limiti dell'Opening Explorer, puoi creare un token OAuth su
+`lichess.org/account/oauth/token` e valorizzare `VITE_LICHESS_TOKEN` nel file `.env`.
+Il token non deve essere committato. Il runtime gestisce anche l'accesso anonimo
+quando accettato dall'endpoint.
 
 ## Deploy su GitHub Pages
 
@@ -59,8 +76,11 @@ per sviluppo locale o uso strettamente personale. Per un deploy pubblico, servir
 piccolo proxy serverless (es. Cloudflare Workers, gratuito) che tenga la chiave lato
 server e nasconda la chiamata diretta al provider LLM.
 
-## Fuori scope in questo MVP
+## Limiti attuali
 
 - Moduli finali di partita (alfiere, torre, pedone passato) — fase successiva.
-- Analisi delle partite dell'avversario / import PGN — fase successiva.
+- La calibrazione quantitativa contro 3–5 tabelle chess.com richiede che l'utente
+  fornisca le partite e le annotazioni di riferimento.
 - Autenticazione utente e persistenza su database.
+- Proxy serverless per nascondere le chiavi: escluso dal percorso principale; richiesto
+  solo per una pubblicazione online con segreti non esposti nel bundle.

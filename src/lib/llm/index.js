@@ -11,7 +11,7 @@ import { explainMoveWithGemini } from './gemini.js'
  * Se non viene passato nulla, si usa comunque VITE_LLM_PROVIDER come default
  * (utile in sviluppo locale).
  *
- * @param {{fen: string, opening: object|null, engineData: object|null, question: string, moveHistorySan: string[]}} context
+ * @param {{fen: string, opening: object|null, engineData: object|null, question: string, moveHistorySan: string[], criticalContext?: object|null}} context
  * @param {'groq'|'gemini'} [providerOverride]
  * @returns {Promise<{explanation: string, moveToPlay: string|null}>}
  */

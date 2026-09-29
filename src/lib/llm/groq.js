@@ -1,4 +1,4 @@
-import { SYSTEM_PROMPT, buildUserMessage } from './systemPrompt.js'
+import { CRITICAL_SYSTEM_PROMPT, SYSTEM_PROMPT, buildUserMessage } from './systemPrompt.js'
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions'
 
@@ -21,7 +21,7 @@ export async function explainMoveWithGroq(context) {
     body: JSON.stringify({
       model,
       messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
+        { role: 'system', content: context.criticalContext ? CRITICAL_SYSTEM_PROMPT : SYSTEM_PROMPT },
         { role: 'user', content: buildUserMessage(context) },
       ],
       temperature: 0.3,

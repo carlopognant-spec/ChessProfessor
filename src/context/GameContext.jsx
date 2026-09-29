@@ -1,7 +1,14 @@
 import { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Chess } from 'chess.js'
+import { parsePgnMoves } from '../lib/pgn.js'
+import { parseAndValidateFen } from '../lib/positionEditor.js'
 
 const GameContext = createContext(null)
+
+function syncGameState(game, setFen, setMoveHistorySan) {
+  setFen(game.fen())
+  setMoveHistorySan(game.history())
+}
 
 export function GameProvider({ children }) {
   const gameRef = useRef(new Chess())
@@ -20,7 +27,7 @@ export function GameProvider({ children }) {
       const move = gameRef.current.move(sanOrMoveObj)
       if (!move) return false
       setFen(gameRef.current.fen())
-      setMoveHistorySan((h) => [...h, move.san])
+      setMoveHistorySan(gameRef.current.history())
       return true
     } catch {
       return false
@@ -37,6 +44,47 @@ export function GameProvider({ children }) {
     }
     return ok
   }, [applyMove, snapshotBeforeChange])
+
+  const resetGame = useCallback(() => {
+    const fresh = new Chess()
+    gameRef.current = fresh
+    syncGameState(fresh, setFen, setMoveHistorySan)
+    setUndoStack([])
+  }, [])
+
+  const loadFen = useCallback((nextFen) => {
+    const validated = parseAndValidateFen(nextFen)
+    const next = new Chess(validated.fen)
+    gameRef.current = next
+    syncGameState(next, setFen, setMoveHistorySan)
+    setUndoStack([])
+  }, [])
+
+  const loadMoveSequence = useCallback((moves = []) => {
+    const next = new Chess()
+    for (const san of moves) next.move(san)
+    gameRef.current = next
+    syncGameState(next, setFen, setMoveHistorySan)
+    setUndoStack([])
+  }, [])
+
+  const importPgn = useCallback((pgn) => {
+    const moves = parsePgnMoves(pgn)
+    if (moves.length === 0) return false
+
+    const next = new Chess()
+    for (const [index, san] of moves.entries()) {
+      const move = next.move(san)
+      if (!move) {
+        throw new Error(`Mossa PGN illegale al passo ${index + 1}: ${san}`)
+      }
+    }
+
+    gameRef.current = next
+    syncGameState(next, setFen, setMoveHistorySan)
+    setUndoStack([])
+    return true
+  }, [])
 
   const undo = useCallback(() => {
     setUndoStack((stack) => {
@@ -55,9 +103,13 @@ export function GameProvider({ children }) {
     applyMove,
     applyMoveFromChat,
     undo,
+    resetGame,
+    importPgn,
+    loadFen,
+    loadMoveSequence,
     canUndo: undoStack.length > 0,
     isGameOver: gameRef.current.isGameOver(),
-  }), [fen, moveHistorySan, applyMove, applyMoveFromChat, undo, undoStack])
+  }), [fen, moveHistorySan, applyMove, applyMoveFromChat, undo, undoStack, resetGame, importPgn, loadFen, loadMoveSequence])
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>
 }

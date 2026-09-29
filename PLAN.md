@@ -5,7 +5,11 @@
 As a studente di scacchi, voglio analizzare aperture e partite con valutazioni verificabili, classificazioni coerenti e spiegazioni contestuali, così da capire sia la teoria sia gli errori commessi quando la partita esce dal libro.
 
 **Release target:** nessuna.
-**Status:** approvato per implementazione fase per fase.
+**Status:** in progress — in corso implementazione del livello di valutazione e hardening del motore.
+
+## Changelog
+
+- 2026-09-29: completata la base di test per valutazione + probabilità di vittoria; introdotto hardening del servizio Stockfish per scartare risultati obsoleti e mantenere la logica di valutazione coerente con il punto di vista del Bianco.
 
 ## 1. Stato attuale del repository
 

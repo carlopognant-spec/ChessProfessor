@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useGame } from '../context/GameContext.jsx'
 import { explainMove } from '../lib/llm/index.js'
+import { buildCriticalContext, shouldUseCriticalLlm } from '../lib/llm/criticalContext.js'
 
-export default function ChatPanel({ opening, engineData }) {
+export default function ChatPanel({ opening, engineData, analysisEntry }) {
   const { fen, moveHistorySan, applyMoveFromChat } = useGame()
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
@@ -19,12 +20,27 @@ export default function ChatPanel({ opening, engineData }) {
     setSending(true)
 
     try {
+      if (!shouldUseCriticalLlm(analysisEntry ?? {})) {
+        setMessages((m) => [...m, {
+          role: 'assistant',
+          text: 'Questa posizione non è stata classificata come critica: il contesto LLM viene richiesto solo per errori, mosse mancate o prima deviazione dal libro.',
+        }])
+        return
+      }
+
       const result = await explainMove({
         fen,
         opening,
         engineData,
         question,
         moveHistorySan,
+        criticalContext: buildCriticalContext({
+          fen,
+          opening,
+          question,
+          moveHistorySan,
+          analysisEntry,
+        }),
       }, provider)
 
       setMessages((m) => [...m, { role: 'assistant', text: result.explanation }])
