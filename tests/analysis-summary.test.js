@@ -27,4 +27,12 @@ describe('analysis summary', () => {
       expect.objectContaining({ ply: 1, label: '1. e4', classification: 'good' }),
     ])
   })
+
+  it('keeps numeric evaluations on each semimove row', () => {
+    const rows = buildAnalysisSummary([
+      { ply: 1, moveNumber: 1, side: 'w', playedMove: 'e4', playedEval: 32, bestEval: 48 },
+    ]).rows
+
+    expect(rows[0]).toMatchObject({ playedEval: 32, bestEval: 48 })
+  })
 })

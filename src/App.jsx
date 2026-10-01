@@ -59,6 +59,8 @@ function AppContent() {
           editorPiece={editorPiece}
           displayFen={positionDraft}
           onEditorSquare={handleEditorSquare}
+          analysisEntries={analysisEntries}
+          engineData={engineData}
         />
         <PositionEditor
           draft={positionDraft}

@@ -48,6 +48,10 @@ export default function AnalysisSummary({ entries = [] }) {
           >
             <span>{row.label}</span>
             <span>{CATEGORY_LABELS[row.classification] ?? 'Non classificata'}</span>
+            <span>
+              {row.playedEval != null ? `Eval ${(row.playedEval / 100).toFixed(2)}` : 'Eval n/d'}
+              {row.bestEval != null ? ` / Best ${(row.bestEval / 100).toFixed(2)}` : ''}
+            </span>
           </button>
         ))}
       </div>

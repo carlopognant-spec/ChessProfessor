@@ -20,7 +20,10 @@ export function createGameAnalysisSession({ cache = createAnalysisCache(), maxEn
   const write = (key, value) => {
     if (entries.size >= maxEntries) {
       const oldestKey = entries.keys().next().value
-      if (oldestKey) entries.delete(oldestKey)
+      if (oldestKey) {
+        entries.delete(oldestKey)
+        cache.delete?.(oldestKey)
+      }
     }
 
     entries.set(key, value)
@@ -117,6 +120,7 @@ export async function analyzeGame({
         explorer,
       }
       game.move(san)
+      entry.fenAfter = game.fen()
 
       if (typeof analyzePlayedPosition === 'function') {
         const playedEngine = await analyzePlayedPosition(game.fen())

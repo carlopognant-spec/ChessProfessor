@@ -12,7 +12,7 @@ Status: Active
 - Scope addressed: automatic analysis flow, Explorer threshold persistence, and classification foundation
 
 ## Date
-- 2026-09-29
+- 2026-10-01
 
 ## Changelog
 | Date | Handoff/Request | Summary |
@@ -25,6 +25,7 @@ Status: Active
 | 2026-09-29 | Continua | Added critical-only LLM routing, verified context construction, and first book-deviation detection. |
 | 2026-09-29 | Completa tutto il residuo del piano | Added verified board facts, FEN position editor, piece palette, FEN validation, and README alignment. |
 | 2026-09-29 | Correggilo allora | Fixed FEN editor draft flow so temporary incomplete positions are edited without mutating the validated game until Apply Position. |
+| 2026-10-01 | QA Failed: correzioni 2a-2e | Collegate frecce MultiPV, navigazione per semimossa, eval numeriche, parser PGN nativo e copertura TDD aggiuntiva; corretto URL CDN Stockfish pubblicato. |
 
 ## Implementation Summary
 This milestone advances the plan by connecting automatic analysis to the current move sequence. The analyzer reconstructs each pre-move FEN, reuses cached entries, reports progress, stops Explorer permanently after the first below-threshold position, and aborts cleanly. Classification thresholds are centralized and the complete ten-category ladder is covered by tests, including contextual missed opportunities.
@@ -182,3 +183,35 @@ Implementation delivers:
 1. Run QA/UAT against supplied reference games and calibration fixtures.
 2. Measure Stockfish runtime on target devices if a deployment decision between CDN and bundled WASM is required.
 3. Implement optional arrow explanation or serverless proxy only when explicitly requested.
+
+## Correction Milestone 2a-2e
+
+### Implementation Summary
+- `Board.jsx` now derives up to three colored arrows from the current entry's MultiPV lines and removes generated arrows when the FEN changes.
+- `MoveList.jsx` now exposes one button per half-move and reconstructs the corresponding position through `loadMoveSequence`.
+- Analysis rows now show numeric `playedEval` and `bestEval` values when available.
+- `parsePgnMoves()` delegates to `new Chess().loadPgn(pgn)`, covering comments, NAGs and nested variations.
+- Session eviction now removes the evicted key from both the in-memory session and TTL cache.
+
+### TDD Compliance
+
+| Function/Class | Test File | Test Written First? | Failure Verified? | Failure Reason | Pass After Impl? |
+|----------------|-----------|---------------------|-------------------|----------------|------------------|
+| `buildEngineArrows()` | [tests/analysis-presentation.test.js](tests/analysis-presentation.test.js) | Yes | Yes | ModuleNotFoundError | Yes |
+| `buildMoveNavigation()` | [tests/analysis-presentation.test.js](tests/analysis-presentation.test.js) | Yes | Yes | ModuleNotFoundError | Yes |
+| `parsePgnMoves()` nested variations | [tests/pgn-classification.test.js](tests/pgn-classification.test.js) | Yes | Yes | AssertionError | Yes |
+| `createGameAnalysisSession()` eviction/clear | [tests/game-analysis-flow.test.js](tests/game-analysis-flow.test.js) | Yes | Yes | AssertionError | Yes |
+| `shouldStopExplorerAtThreshold()` missing data | [tests/game-analysis-flow.test.js](tests/game-analysis-flow.test.js) | Yes | Yes | AssertionError | Yes |
+| `buildAnalysisProgress()` bounds | [tests/game-analysis-flow.test.js](tests/game-analysis-flow.test.js) | Yes | Yes | AssertionError | Yes |
+| `summarizeAnalysis()` incomplete entries | [tests/game-analysis-flow.test.js](tests/game-analysis-flow.test.js) | Yes | Yes | AssertionError | Yes |
+
+### Validation
+- `npm test -- --run`: 13 test files passed, 35 tests passed.
+- `npm run build`: passed.
+- PGN fixture includes `{main}`/`{end}` comments and nested `( ... ( ... ) )` variations; only the main line is returned.
+- Manual browser check: import a PGN, confirm 2-3 colored engine arrows update after selecting another move, then click each SAN button and verify the board reaches that half-move.
+
+### Benchmark and Outstanding Items
+- CDN URL corrected from the 404 path to `stockfish-nnue-16.js`.
+- The CDN asset was downloaded and initialized, but no reliable depth-12 elapsed time could be obtained in this environment: Node 24 lacks the release wrapper's UCI `ccall` path and the published `stockfish@16.0.0` adapter has a broken `main` path. No timing is fabricated.
+- Passo 7 remains untouched and is explicitly deferred pending reference games. This implementation stops here and awaits explicit user authorization before any further plan step.
