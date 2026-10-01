@@ -153,11 +153,3 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
     </div>
   )
 }
-
-export function isLegalMoveFromFen(fen, move) {
-  try {
-    return Boolean(new Chess(fen).move(move))
-  } catch {
-    return false
-  }
-}

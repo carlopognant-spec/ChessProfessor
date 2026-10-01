@@ -50,6 +50,12 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
     return () => engineRef.current?.destroy()
   }, [])
 
+  const analyzeCurrentPosition = useCallback((positionFen) => engineRef.current.analyze(
+    positionFen,
+    ENGINE_CONFIG.defaultDepth,
+    ENGINE_CONFIG.multiPv,
+  ), [])
+
   useEffect(() => {
     if (!engineRef.current) return
 
@@ -68,16 +74,8 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
 
     analyzeGame({
       moves: moveHistorySan,
-      analyzePosition: (positionFen) => engineRef.current.analyze(
-        positionFen,
-        ENGINE_CONFIG.defaultDepth,
-        ENGINE_CONFIG.multiPv,
-      ),
-      analyzePlayedPosition: (positionFen) => engineRef.current.analyze(
-        positionFen,
-        ENGINE_CONFIG.defaultDepth,
-        ENGINE_CONFIG.multiPv,
-      ),
+      analyzePosition: analyzeCurrentPosition,
+      analyzePlayedPosition: analyzeCurrentPosition,
       fetchExplorer: fetchExplorerSafely,
       session: analysisSessionRef.current,
       signal: controller.signal,

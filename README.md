@@ -22,10 +22,10 @@ npm run dev
   Unauthorized` sia senza token sia con un token invalido: `VITE_LICHESS_TOKEN` è
   quindi richiesto e viene inviato come Bearer token. Errori 401, rate limit e
   posizioni senza partite vengono mostrati senza alterare la posizione corrente.
-- **Motore**: Stockfish gira in un Web Worker nel browser (caricato da CDN via
-  `importScripts`, nessun binario da gestire nel repo). Analizza a profondità 12,
-  MultiPV 2 e restituisce le linee principali; la profondità di fallback configurata
-  è 8. Calcola SOLO eval e mosse candidate — non genera testo.
+- **Motore**: Stockfish 19 lite single-thread gira in un Web Worker locale,
+  servito da `public/stockfish-19-lite-single.js` e `public/stockfish-19-lite-single.wasm`.
+  Analizza a profondità 12, MultiPV 2 e restituisce le linee principali; la profondità
+  di fallback configurata è 8. Calcola SOLO eval e mosse candidate — non genera testo.
 - **Analisi partita**: dopo le mosse giocate o l'importazione PGN, analizza le
   semimosse, riusa la cache per FEN, mostra il progresso e interrompe l'Explorer alla
   prima posizione sotto soglia (`15` partite complessive per default).

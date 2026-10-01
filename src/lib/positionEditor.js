@@ -59,10 +59,6 @@ export function parseAndValidateFen(fen) {
   }
 }
 
-export function exportFen(fen) {
-  return parseAndValidateFen(fen).fen
-}
-
 export function setPieceAtFen(fen, square, piece = null) {
   if (!/^[a-h][1-8]$/.test(square)) throw new Error('Casa non valida.')
   if (piece !== null && !/^[prnbqkPRNBQK]$/.test(piece)) throw new Error('Pezzo non valido.')

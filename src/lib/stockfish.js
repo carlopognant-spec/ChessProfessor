@@ -1,17 +1,5 @@
-// Il worker deve essere same-origin. Il Blob importa lo script CDN e il suo
-// hash comunica a Stockfish il percorso WASM assoluto da usare.
-const STOCKFISH_CDN_URL = 'https://cdn.jsdelivr.net/npm/stockfish@16.0.0/src/stockfish-nnue-16-no-Worker.js'
-const STOCKFISH_WASM_URL = 'https://cdn.jsdelivr.net/npm/stockfish@16.0.0/src/stockfish-nnue-16-no-Worker.wasm'
-
-export function getStockfishWorkerSource() {
-  return `importScripts('${STOCKFISH_CDN_URL}');`
-}
-
 function createWorker() {
-  const blob = new Blob([getStockfishWorkerSource()], { type: 'application/javascript' })
-  const blobUrl = URL.createObjectURL(blob)
-  const workerUrl = `${blobUrl}#${encodeURIComponent(STOCKFISH_WASM_URL)},worker`
-  return new Worker(workerUrl)
+  return new Worker(`${import.meta.env.BASE_URL}stockfish-19-lite-single.js`)
 }
 
 export class StockfishEngine {
@@ -24,6 +12,7 @@ export class StockfishEngine {
       this._resolveReady = resolve
       this._rejectReady = reject
     })
+    this._readyTimeout = null
     this._currentRequest = null
     this._latestRequestId = 0
     this._onLine = null
@@ -31,7 +20,8 @@ export class StockfishEngine {
 
     this.worker.onmessage = (e) => this._handleMessage(e.data)
     this.worker.onerror = (error) => {
-      this._workerError = new Error('Stockfish worker non riuscito a caricare lo script o il WASM CDN.')
+      if (this._readyTimeout) clearTimeout(this._readyTimeout)
+      this._workerError = new Error('Stockfish worker non è riuscito a caricare il motore.')
       this._rejectReady(this._workerError)
       this._currentRequest?.reject(this._workerError)
       this._currentRequest = null
@@ -46,6 +36,7 @@ export class StockfishEngine {
       this.worker.postMessage('isready')
     }
     if (line === 'readyok' && !this.ready) {
+      if (this._readyTimeout) clearTimeout(this._readyTimeout)
       this.ready = true
       this._resolveReady()
     }
@@ -53,7 +44,30 @@ export class StockfishEngine {
   }
 
   async waitUntilReady() {
-    return this._readyPromise
+    if (this.ready) return
+
+    return new Promise((resolve, reject) => {
+      const timeoutId = setTimeout(() => {
+        if (this.ready) {
+          clearTimeout(timeoutId)
+          resolve()
+          return
+        }
+
+        const timeoutError = new Error('Stockfish non si è inizializzato')
+        this._rejectReady?.(timeoutError)
+        reject(timeoutError)
+      }, 15000)
+
+      this._readyTimeout = timeoutId
+      this._readyPromise.then(() => {
+        clearTimeout(timeoutId)
+        resolve()
+      }).catch((error) => {
+        clearTimeout(timeoutId)
+        reject(error)
+      })
+    })
   }
 
   /**

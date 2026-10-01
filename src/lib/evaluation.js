@@ -7,10 +7,6 @@ export function normalizeEvalToWhite(evalCp, side = 'white') {
   return normalizeScore(evalCp, side)
 }
 
-export function normalizeMateScore(mate, side = 'white') {
-  return normalizeScore(mate, side)
-}
-
 export function calculateWinProbability(evalCp, side = 'white') {
   const value = normalizeEvalToWhite(evalCp, side)
 

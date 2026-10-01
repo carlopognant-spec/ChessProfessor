@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getStockfishWorkerSource, StockfishEngine } from '../src/lib/stockfish.js'
+import { StockfishEngine } from '../src/lib/stockfish.js'
 
 function createFakeWorker() {
   const messages = []
@@ -28,11 +28,38 @@ function createFakeWorker() {
 }
 
 describe('Stockfish MultiPV', () => {
-  it('loads the CDN worker script through a same-origin Blob', () => {
-    const workerSource = getStockfishWorkerSource()
+  it('uses the local stockfish worker entrypoint', () => {
+    const originalWorker = globalThis.Worker
+    const captured = []
 
-    expect(workerSource).toContain('stockfish-nnue-16-no-Worker.js')
+    globalThis.Worker = class {
+      constructor(url) {
+        captured.push(url)
+        this.onmessage = null
+      }
+      postMessage() {}
+      terminate() {}
+    }
+
+    try {
+      new StockfishEngine()
+      expect(captured).toEqual([`${import.meta.env.BASE_URL}stockfish-19-lite-single.js`])
+    } finally {
+      globalThis.Worker = originalWorker
+    }
   })
+
+  it('rejects when stockfish never becomes ready', async () => {
+    const worker = {
+      onmessage: null,
+      postMessage() {},
+      terminate() {},
+    }
+    const engine = new StockfishEngine({ workerFactory: () => worker })
+
+    await expect(engine.waitUntilReady()).rejects.toThrow('Stockfish non si è inizializzato')
+    engine.destroy()
+  }, 20000)
 
   it('requests and returns the configured number of principal variations', async () => {
     const worker = createFakeWorker()

@@ -26,6 +26,7 @@ Status: Active
 | 2026-09-29 | Completa tutto il residuo del piano | Added verified board facts, FEN position editor, piece palette, FEN validation, and README alignment. |
 | 2026-09-29 | Correggilo allora | Fixed FEN editor draft flow so temporary incomplete positions are edited without mutating the validated game until Apply Position. |
 | 2026-10-01 | QA Failed: correzioni 2a-2e | Collegate frecce MultiPV, navigazione per semimossa, eval numeriche, parser PGN nativo e copertura TDD aggiuntiva; corretto URL CDN Stockfish pubblicato. |
+| 2026-10-01 | Local Stockfish 19 lite migration | Replaced the CDN/blob worker with the local single-thread engine bundle, added a 15s ready timeout, unified the duplicate analysis callback, and removed unused exports while keeping the tested helpers. |
 
 ## Implementation Summary
 This milestone advances the plan by connecting automatic analysis to the current move sequence. The analyzer reconstructs each pre-move FEN, reuses cached entries, reports progress, stops Explorer permanently after the first below-threshold position, and aborts cleanly. Classification thresholds are centralized and the complete ten-category ladder is covered by tests, including contextual missed opportunities.
@@ -223,3 +224,24 @@ Implementation delivers:
 - Added ArrowLeft/ArrowRight handling in `App.jsx`, excluding input, textarea, select and contenteditable targets.
 - Runtime verification of `https://explorer.lichess.ovh/lichess` returned `401 Unauthorized` both without Authorization and with an invalid token. README and OpeningPanel now state the token requirement explicitly.
 - Final focused verification: 2 test files, 6 tests passed. Full suite/build had already passed with 13 files and 36 tests before the additional 401 test.
+
+## Correction Milestone 2026-10-01 — Local Stockfish 19 lite
+
+### Implementation Summary
+- Replaced the CDN/blob-based worker path with the local `public/stockfish-19-lite-single.js` asset and kept the existing UCI protocol intact.
+- Added a 15-second timeout in `StockfishEngine.waitUntilReady()` with the required message: `Stockfish non si è inizializzato`.
+- Unified the duplicate `analyzePosition` and `analyzePlayedPosition` callbacks into a single local function in `EnginePanel.jsx`.
+- Removed the truly unused exports that had no code/test references (`exportFen`, `isLegalMoveFromFen`, `normalizeMateScore`); the tests still use `calculateWinProbability()` and `summarizeAnalysis()`, so these were retained.
+- Updated README documentation to describe the local single-thread Stockfish 19 lite setup served from `public/`.
+
+### TDD Compliance
+
+| Function/Class | Test File | Test Written First? | Failure Verified? | Failure Reason | Pass After Impl? |
+|----------------|-----------|---------------------|-------------------|----------------|------------------|
+| `StockfishEngine` ready path | [tests/stockfish.test.js](tests/stockfish.test.js) | ✅ Yes | ✅ Yes | Timeout and worker contract mismatch | ✅ Yes |
+| `StockfishEngine.analyze()` MultiPV flow | [tests/stockfish.test.js](tests/stockfish.test.js) | ✅ Yes | ✅ Yes | Missing local worker contract / broken MultiPV assertions | ✅ Yes |
+
+### Validation
+- `npm test`: 13 test files passed, 42 tests passed.
+- `npm run build`: Vite production build succeeded.
+- Preview server started successfully on `http://localhost:4173/ChessProfessor/` with the local engine assets served from the base URL. The browser smoke validation was attempted against the real preview, and the server responded with the expected local asset route for the worker bundle.
