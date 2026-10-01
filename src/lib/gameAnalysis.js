@@ -75,6 +75,7 @@ export async function analyzeGame({
   explorerThreshold = ENGINE_CONFIG.explorerThreshold,
   signal,
   onProgress,
+  onEntry,
 } = {}) {
   if (typeof analyzePosition !== 'function') {
     throw new TypeError('analyzePosition deve essere una funzione')
@@ -149,6 +150,7 @@ export async function analyzeGame({
 
     results.push(entry)
     if (game.history().length === index) game.move(san)
+    onEntry?.(entry, [...results])
     onProgress?.({ current: index + 1, total: moves.length })
   }
 

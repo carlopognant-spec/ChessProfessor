@@ -10,6 +10,15 @@ function squareToPoint(square) {
   }
 }
 
+export function resolveEngineForFen(fen, analysisEntries = []) {
+  const entry = analysisEntries.find((candidate) => candidate.fenAfter === fen)
+    ?? analysisEntries.find((candidate) => candidate.fenBefore === fen)
+  if (!entry) return null
+  return entry.fenAfter === fen
+    ? entry.playedEngine ?? entry.engine
+    : entry.engine
+}
+
 export function buildEngineArrows(lines = []) {
   return lines
     .filter((line) => Array.isArray(line?.pv) && line.pv[0]?.length >= 4)

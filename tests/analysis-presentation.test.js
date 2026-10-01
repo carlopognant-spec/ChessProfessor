@@ -1,7 +1,26 @@
 import { describe, expect, it } from 'vitest'
-import { buildEngineArrowSegments, buildEngineArrows, buildMoveNavigation, getKeyboardNavigationTarget } from '../src/lib/analysisPresentation.js'
+import { buildEngineArrowSegments, buildEngineArrows, buildMoveNavigation, getKeyboardNavigationTarget, resolveEngineForFen } from '../src/lib/analysisPresentation.js'
 
 describe('analysis presentation', () => {
+  it('resolves engine data for the current fen from analysis entries', () => {
+    const startFen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1'
+    const beforeEngine = { evalCp: 30, lines: [{ multipv: 1, pv: ['e7e5'] }] }
+    const afterEngine = { evalCp: 10, lines: [{ multipv: 1, pv: ['g8f6'] }] }
+
+    expect(resolveEngineForFen(startFen, [{
+      fenBefore: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
+      fenAfter: startFen,
+      engine: beforeEngine,
+      playedEngine: afterEngine,
+    }])).toEqual(afterEngine)
+
+    expect(resolveEngineForFen('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1', [{
+      fenBefore: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
+      fenAfter: startFen,
+      engine: beforeEngine,
+    }])).toEqual(beforeEngine)
+  })
+
   it('builds distinct arrows for the best MultiPV lines', () => {
     expect(buildEngineArrows([
       { multipv: 1, pv: ['e2e4', 'e7e5'] },
