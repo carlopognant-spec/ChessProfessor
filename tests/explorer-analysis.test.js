@@ -19,6 +19,15 @@ describe('lichess explorer contract', () => {
     expect(fetchMock.mock.calls[0][0]).toContain('https://explorer.lichess.ovh/lichess')
     expect(response.opening.name).toBe('French Defense')
   })
+
+  it('explains that a valid token is required after a 401 response', async () => {
+    const fetchMock = vi.fn().mockResolvedValue({ ok: false, status: 401 })
+
+    await expect(fetchOpeningExplorer('startpos', {
+      token: null,
+      fetchImpl: fetchMock,
+    })).rejects.toThrow('VITE_LICHESS_TOKEN')
+  })
 })
 
 describe('game analysis session', () => {

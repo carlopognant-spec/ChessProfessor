@@ -33,7 +33,7 @@ export async function fetchOpeningExplorer(
 
   if (!response.ok) {
     if (response.status === 401) {
-      throw new Error('Token Lichess non valido o mancante (401 Unauthorized).')
+      throw new Error('Lichess Explorer richiede un token valido. Configura VITE_LICHESS_TOKEN nel file .env.')
     }
     throw new Error(`Errore Opening Explorer: ${response.status}`)
   }

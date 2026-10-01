@@ -5,7 +5,11 @@ export function buildEngineArrows(lines = []) {
     .filter((line) => Array.isArray(line?.pv) && line.pv[0]?.length >= 4)
     .sort((left, right) => (left.multipv ?? 1) - (right.multipv ?? 1))
     .slice(0, 3)
-    .map((line, index) => [line.pv[0].slice(0, 2), line.pv[0].slice(2, 4), ARROW_COLORS[index]])
+    .map((line, index) => ({
+      startSquare: line.pv[0].slice(0, 2),
+      endSquare: line.pv[0].slice(2, 4),
+      color: ARROW_COLORS[index],
+    }))
 }
 
 export function buildMoveNavigation(moveHistorySan = []) {
@@ -16,4 +20,11 @@ export function buildMoveNavigation(moveHistorySan = []) {
     san,
     moves: moveHistorySan.slice(0, index + 1),
   }))
+}
+
+export function getKeyboardNavigationTarget(key, currentPly, moveHistorySan = []) {
+  if (key !== 'ArrowLeft' && key !== 'ArrowRight') return null
+  const nextPly = key === 'ArrowLeft' ? currentPly - 1 : currentPly + 1
+  const boundedPly = Math.min(moveHistorySan.length, Math.max(0, nextPly))
+  return moveHistorySan.slice(0, boundedPly)
 }

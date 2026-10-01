@@ -18,10 +18,10 @@ npm run dev
 
 - **Scacchiera**: react-chessboard + chess.js. Trascina i pezzi per giocare una mossa.
 - **Aperture**: ad ogni posizione, l'app interroga la Opening Explorer API di Lichess
-  per nome ECO e statistiche. La richiesta funziona senza token quando l'endpoint
-  consente accesso anonimo; `VITE_LICHESS_TOKEN` è opzionale e viene inviato come
-  Bearer token se presente. Errori 401, rate limit e posizioni senza partite vengono
-  mostrati senza alterare la posizione corrente.
+  per nome ECO e statistiche. La verifica runtime del 2026-10-01 ha restituito `401
+  Unauthorized` sia senza token sia con un token invalido: `VITE_LICHESS_TOKEN` è
+  quindi richiesto e viene inviato come Bearer token. Errori 401, rate limit e
+  posizioni senza partite vengono mostrati senza alterare la posizione corrente.
 - **Motore**: Stockfish gira in un Web Worker nel browser (caricato da CDN via
   `importScripts`, nessun binario da gestire nel repo). Analizza a profondità 12,
   MultiPV 2 e restituisce le linee principali; la profondità di fallback configurata
@@ -57,10 +57,9 @@ Vitest è configurato con ambiente Node. Esegui `npm test` per lanciare i test
 automatici; il test iniziale verifica che l'infrastruttura carichi `chess.js` e
 validi una sequenza di apertura nota.
 
-Per aumentare i limiti dell'Opening Explorer, puoi creare un token OAuth su
-`lichess.org/account/oauth/token` e valorizzare `VITE_LICHESS_TOKEN` nel file `.env`.
-Il token non deve essere committato. Il runtime gestisce anche l'accesso anonimo
-quando accettato dall'endpoint.
+Per usare l'Opening Explorer, crea un token OAuth su
+`lichess.org/account/oauth/token` e valorizza `VITE_LICHESS_TOKEN` nel file `.env`.
+Il token non deve essere committato. Senza token l'endpoint risponde `401 Unauthorized`.
 
 ## Deploy su GitHub Pages
 
