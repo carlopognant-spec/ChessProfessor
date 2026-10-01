@@ -1,0 +1,311 @@
+{
+  "label": "Chigorin vs Steinitz, 1892 (World Championship Rematch, Game 1)",
+  "pgn": "[Event \"Steinitz - Chigorin World Championship Rematch\"]\n[Site \"Havana CUB\"]\n[Date \"1892.01.01\"]\n[Round \"1\"]\n[White \"Mikhail Chigorin\"]\n[Black \"Wilhelm Steinitz\"]\n[Result \"1-0\"]\n[WhiteElo \"?\"]\n[BlackElo \"?\"]\n[ECO \"C52\"]\n[Link \"https://www.chess.com/analysis/collection/the-best-chess-games-of-all-time-annotated-KWuSgD8A/4EuNGvtJLW/games?move=60\"]\n\n1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 {Hopefully, we will one day see more Evan's\nGambits in the World Championship.} 4... Bxb4 {Whether or not, players in the\n1800s felt honor-bound to accept the sacrifice, Steinitz was a man of principal\nand was determined to accept and refute such gambits.} 5. c3 Ba5 6. O-O d6 7. d4\nBg4 8. Bb5 exd4 9. cxd4 Bd7 $2 {Steinitz makes a clear concession. Obviously,\nretreating the bishop that just advanced to g4 cannot be correct.} (9... Ne7\n{Simply developing and readying to castle is right. d5 can be met by a6.}) 10.\nBb2 Nce7 11. Bxd7+ Qxd7 12. Na3 {The knight goes to the side of the board with\nthe purpose of returning to a central location on c4, hitting the a5-knight and\nsupporting e5.} 12... Nh6 (12... Nf6 13. Nc4 Bb6 14. a4 $16 {creates strong\npressure and a nice advantage for White, but it definitely better to have the\nknight on f6 than h6.}) 13. Nc4 Bb6 14. a4 c6 15. e5 d5 $2 {A fatal decision. The\nknight on d6 and the loss of the right to castle cannot be survived.} (15...\ndxe5 {Black must exchange the pawn and try to hold.} 16. dxe5 Qxd1 17. Raxd1 O-O\n18. Ba3 c5 19. Rd7 Nc6 20. Rxb7 {White has a better structure and better pieces\nand a good advantage, but Black is not lost.}) 16. Nd6+ Kf8 17. Ba3 {directing\nthe bishop at the king.} 17... Kg8 18. Rb1 Nhf5 19. Nxf7 $3 {The tactical\nSteinitz finds a delightful winning path. One knight is surrendered, but the\nother will be a monster on e5.} 19... Kxf7 20. e6+ $1 Kxe6 (20... Qxe6 21. Ng5+ $18\n{is a nice royal fork.}) 21. Ne5 Qc8 22. Re1 {Black's king is in the line of the\nfire, and there's no good way to evacuate it.} 22... Kf6 23. Qh5 {Threatening\nNg4# and Qf7+.} 23... g6 (23... Rf8 24. Ng4#) (23... Ng6 24. Bc1 Nxe5 25. Bg5+\nKe6 26. Rxe5+ Kd6 27. Bf4 {Arranges the threat of another discovered check (and\nthreatens f5), and forces checkmate in 9 at most according to the engine.}) 24.\nBxe7+ Kxe7 (24... Nxe7 {This loses, often spectacularly, but possibly, it would\nhave been more effective to resist this way as Chigorin would need to find some\nnice moves.} 25. Qh4+ g5 26. Ng4+ Kf7 27. Rxe7+ $3 {Prettiest and most\neffective.} 27... Kxe7 28. Qxg5+ Kd7 29. Nf6+ Kd6 30. Qe5#) 25. Nxg6+ Kf6 26.\nNxh8 Bxd4 {A clever try. Picking off d4, and hoping to win the trapped knight on\nthe next move.} (26... Qxh8 {Immediately capturing the knight keeps Black ahead\non material, but White's heavy pieces overwhelm Black in all lines.} 27. Re5 Nd6\n(27... Nxd4 28. Qg5+ Kf7 29. Qe7+ Kg6 30. Rg5+ Kh6 31. Rg4 $18) 28. Rb3 $18) 27.\nRb3 Qd7 28. Rf3 Rxh8 {Black has the material advantage, but...} 29. g4 {The\nknight now falls.} 29... Rg8 30. Qh6+ Rg6 (30... Kf7 31. Rxf5+ $4 {It's always\npossible to go wrong.} (31. Qxh7+ $1 Rg7 32. Rxf5+ Qxf5 33. Qxf5+ $18) 31... Qxf5\n$19) 31. Rxf5+ $1 {Chigorin forces resignation with yet another little tactic.}\n(31. Rxf5+ Qxf5 32. Qf8+ {wins the queen due to the skewer and mates soon\nafter.}) 1-0",
+  "annotations": [
+    {
+      "ply": 1,
+      "san": "e4",
+      "category": "Libro"
+    },
+    {
+      "ply": 2,
+      "san": "e5",
+      "category": "Libro"
+    },
+    {
+      "ply": 3,
+      "san": "Nf3",
+      "category": "Libro"
+    },
+    {
+      "ply": 4,
+      "san": "Nc6",
+      "category": "Libro"
+    },
+    {
+      "ply": 5,
+      "san": "Bc4",
+      "category": "Libro"
+    },
+    {
+      "ply": 6,
+      "san": "Bc5",
+      "category": "Libro"
+    },
+    {
+      "ply": 7,
+      "san": "b4",
+      "category": "Libro"
+    },
+    {
+      "ply": 8,
+      "san": "Bxb4",
+      "category": "Libro"
+    },
+    {
+      "ply": 9,
+      "san": "c3",
+      "category": "Libro"
+    },
+    {
+      "ply": 10,
+      "san": "Ba5",
+      "category": "Libro"
+    },
+    {
+      "ply": 11,
+      "san": "O-O",
+      "category": "Libro"
+    },
+    {
+      "ply": 12,
+      "san": "d6",
+      "category": "Libro"
+    },
+    {
+      "ply": 13,
+      "san": "d4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 14,
+      "san": "Bg4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 15,
+      "san": "Bb5",
+      "category": "Ottima"
+    },
+    {
+      "ply": 16,
+      "san": "exd4",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 17,
+      "san": "cxd4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 18,
+      "san": "Bd7",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 19,
+      "san": "Bb2",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 20,
+      "san": "Nce7",
+      "category": "Errore"
+    },
+    {
+      "ply": 21,
+      "san": "Bxd7+",
+      "category": "Migliore"
+    },
+    {
+      "ply": 22,
+      "san": "Qxd7",
+      "category": "Migliore"
+    },
+    {
+      "ply": 23,
+      "san": "Na3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 24,
+      "san": "Nh6",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 25,
+      "san": "Nc4",
+      "category": "Grande"
+    },
+    {
+      "ply": 26,
+      "san": "Bb6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 27,
+      "san": "a4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 28,
+      "san": "c6",
+      "category": "Grande"
+    },
+    {
+      "ply": 29,
+      "san": "e5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 30,
+      "san": "d5",
+      "category": "Errore"
+    },
+    {
+      "ply": 31,
+      "san": "Nd6+",
+      "category": "Grande"
+    },
+    {
+      "ply": 32,
+      "san": "Kf8",
+      "category": "Migliore"
+    },
+    {
+      "ply": 33,
+      "san": "Ba3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 34,
+      "san": "Kg8",
+      "category": "Ottima"
+    },
+    {
+      "ply": 35,
+      "san": "Rb1",
+      "category": "Migliore"
+    },
+    {
+      "ply": 36,
+      "san": "Nhf5",
+      "category": "Errore"
+    },
+    {
+      "ply": 37,
+      "san": "Nxf7",
+      "category": "Errore"
+    },
+    {
+      "ply": 38,
+      "san": "Kxf7",
+      "category": "Migliore"
+    },
+    {
+      "ply": 39,
+      "san": "e6+",
+      "category": "Grande"
+    },
+    {
+      "ply": 40,
+      "san": "Kxe6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 41,
+      "san": "Ne5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 42,
+      "san": "Qc8",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 43,
+      "san": "Re1",
+      "category": "Grande"
+    },
+    {
+      "ply": 44,
+      "san": "Kf6",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 45,
+      "san": "Qh5",
+      "category": "Grande"
+    },
+    {
+      "ply": 46,
+      "san": "g6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 47,
+      "san": "Bxe7+",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 48,
+      "san": "Kxe7",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 49,
+      "san": "Nxg6+",
+      "category": "Migliore"
+    },
+    {
+      "ply": 50,
+      "san": "Kf6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 51,
+      "san": "Nxh8",
+      "category": "Ottima"
+    },
+    {
+      "ply": 52,
+      "san": "Bxd4",
+      "category": "Buona"
+    },
+    {
+      "ply": 53,
+      "san": "Rb3",
+      "category": "Geniale"
+    },
+    {
+      "ply": 54,
+      "san": "Qd7",
+      "category": "Ottima"
+    },
+    {
+      "ply": 55,
+      "san": "Rf3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 56,
+      "san": "Rxh8",
+      "category": "Migliore"
+    },
+    {
+      "ply": 57,
+      "san": "g4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 58,
+      "san": "Rg8",
+      "category": "Errore"
+    },
+    {
+      "ply": 59,
+      "san": "Qh6+",
+      "category": "Ottima"
+    },
+    {
+      "ply": 60,
+      "san": "Rg6",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 61,
+      "san": "Rxf5+",
+      "category": "Geniale"
+    }
+  ]
+}

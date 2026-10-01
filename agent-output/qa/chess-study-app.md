@@ -170,6 +170,29 @@ Vitest in ambiente Node non verifica il comportamento reale di react-chessboard,
 
 Il piano richiede tempi a profondità 12 e confronto CDN/WASM; la suite non dimostra prestazioni browser reali.
 
+## Validazione dei fixture QA in tests/fixtures/qa
+
+**Scope**: [tests/fixtures/qa/README.md](../../tests/fixtures/qa/README.md), [tests/fixtures/qa/game-1-chigorin-steinitz-1892.json](../../tests/fixtures/qa/game-1-chigorin-steinitz-1892.json), [tests/fixtures/qa/game-2-saintamant-staunton-1843.json](../../tests/fixtures/qa/game-2-saintamant-staunton-1843.json).
+
+### Verifica strutturale
+- I due file JSON sono ben formati e contengono campi coerenti: `label`, `pgn` e `annotations`.
+- La lista `annotations` presenta una voce per ogni semimossa annotata; il file 1 contiene 61 annotazioni e il file 2 contiene 132 annotazioni, coerenti con partite storiche complete di questa lunghezza.
+- La documentazione in [tests/fixtures/qa/README.md](../../tests/fixtures/qa/README.md) descrive chiaramente lo scopo: fixture di riferimento per la calibrazione della classificazione delle mosse.
+
+### Risultato di validazione
+- **Validi come artefatti di riferimento**: sì, da un punto di vista di integrità del dato e leggibilità del formato.
+- **Validi come input diretto per il codice attuale**: no, per un motivo tecnico: il sistema implementato usa la scala in inglese definita in [src/lib/classification.js](../../src/lib/classification.js), mentre i fixture usano categorie in italiano (`Libro`, `Migliore`, `Ottima`, `Buona`, `Imprecisione`, `Errore`, `Grande`, `Geniale`).
+- **Allineamento con la configurazione del motore**: la scala numerica in [src/lib/engineConfig.js](../../src/lib/engineConfig.js) definisce solo `brilliant`, `great`, `best`, `excellent`, `good`, `inaccuracy`, `mistake`, `blunder` e `book`, quindi non è direttamente mappabile 1:1 con i nomi italiani dei fixture.
+- **Uso nel repository**: nessun test attuale fa riferimento ai fixture di QA, quindi non sono ancora validati dal flusso di test del progetto.
+
+### Finding specifico
+
+**QA-005 — Fixture di classificazione non allineati al modello attuale**
+
+**Severity**: High.
+
+I file di [tests/fixtures/qa](../../tests/fixtures/qa) sono coerenti come dataset storico, ma non sono compatibili come fixture macchina con la classificazione attuale del codice. Prima di usarli in test automatici o in confronto con l’output del sistema, è necessario definire una mappatura esplicita tra categorie italiane e categorie codificate in inglese oppure convertire i fixture nel formato atteso dal sistema.
+
 ## Final Assessment
 
 La suite automatica e la build sono verdi: 12 file e 29 test passano, senza diagnostici IDE. QA resta **QA Failed** per gate TDD incompleto, calibrazione esterna mancante, benchmark non eseguiti e assenza di copertura browser sui flussi principali.
