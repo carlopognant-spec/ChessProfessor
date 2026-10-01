@@ -21,20 +21,32 @@ describe('analysis presentation', () => {
     }])).toEqual(beforeEngine)
   })
 
-  it('builds distinct arrows for the best MultiPV lines', () => {
-    expect(buildEngineArrows([
-      { multipv: 1, pv: ['e2e4', 'e7e5'] },
-      { multipv: 2, pv: ['d2d4', 'd7d5'] },
-      { multipv: 3, pv: ['c2c4', 'e7e5'] },
-      { multipv: 4, pv: ['g1f3', 'g8f6'] },
-      { multipv: 5, pv: ['b1c3', 'b8c6'] },
-    ])).toEqual([
-      { startSquare: 'e2', endSquare: 'e4', color: '#C96B4B' },
-      { startSquare: 'd2', endSquare: 'd4', color: '#D8A24A' },
-      { startSquare: 'c2', endSquare: 'c4', color: '#6B9E78' },
-      { startSquare: 'g1', endSquare: 'f3', color: '#5D8AA8' },
-      { startSquare: 'b1', endSquare: 'c3', color: '#9B6B9E' },
+  it('builds distinct arrows for the best MultiPV lines with a blue primary move and fading secondary lines', () => {
+    const arrows = buildEngineArrows([
+      { multipv: 1, evalCp: 180, pv: ['e2e4', 'e7e5'] },
+      { multipv: 2, evalCp: 120, pv: ['d2d4', 'd7d5'] },
+      { multipv: 3, evalCp: 70, pv: ['c2c4', 'e7e5'] },
+      { multipv: 4, evalCp: 25, pv: ['g1f3', 'g8f6'] },
+      { multipv: 5, evalCp: 10, pv: ['b1c3', 'b8c6'] },
     ])
+
+    expect(arrows[0]).toMatchObject({
+      startSquare: 'e2',
+      endSquare: 'e4',
+      color: '#5A8CFF',
+      opacity: expect.any(Number),
+      strokeWidth: expect.any(Number),
+    })
+    expect(arrows[0].color).toBe('#5A8CFF')
+    expect(arrows[0].strokeWidth).toBeGreaterThan(arrows[1].strokeWidth)
+    expect(arrows[1].strokeWidth).toBeGreaterThan(arrows[2].strokeWidth)
+    expect(arrows[2].strokeWidth).toBeGreaterThan(arrows[3].strokeWidth)
+    expect(arrows[3].strokeWidth).toBeGreaterThan(arrows[4].strokeWidth)
+    expect(arrows[0].opacity).toBeGreaterThan(arrows[1].opacity)
+    expect(arrows[1].opacity).toBeGreaterThan(arrows[2].opacity)
+    expect(arrows[2].opacity).toBeGreaterThan(arrows[3].opacity)
+    expect(arrows[3].opacity).toBeGreaterThan(arrows[4].opacity)
+    expect(arrows[4].strokeWidth).toBeLessThan(2)
   })
 
   it('creates one clickable target for every analyzed half-move', () => {

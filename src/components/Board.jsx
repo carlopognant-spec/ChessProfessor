@@ -128,7 +128,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
                 orient="auto"
                 markerUnits="strokeWidth"
               >
-                <path d="M0,0 L4,2 L0,4 Z" fill={arrow.color} />
+                <path d="M0,0 L4,2 L0,4 Z" fill={arrow.color} fillOpacity={arrow.opacity ?? 1} />
               </marker>
             ))}
           </defs>
@@ -140,6 +140,9 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
               x2={arrow.x2}
               y2={arrow.y2}
               stroke={arrow.color}
+              strokeWidth={arrow.strokeWidth ?? 2.5}
+              strokeOpacity={arrow.opacity ?? 1}
+              strokeLinecap="round"
               markerEnd={`url(#${arrow.markerId})`}
             />
           ))}

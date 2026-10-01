@@ -1,4 +1,13 @@
-const ARROW_COLORS = ['#C96B4B', '#D8A24A', '#6B9E78', '#5D8AA8', '#9B6B9E']
+const ARROW_COLORS = ['#5A8CFF', '#7BA6FF', '#8AB1FF', '#A0C0FF', '#B9D0FF']
+const ARROW_WIDTHS = [4.5, 3.6, 2.9, 2.3, 1.6]
+const ARROW_OPACITIES = [1, 0.74, 0.62, 0.49, 0.33]
+
+function scoreStrength(line = {}) {
+  if (line.mate != null) {
+    return Math.abs(line.mate) * 40
+  }
+  return Math.abs(Number(line.evalCp ?? 0)) * 0.6
+}
 
 function squareToPoint(square) {
   if (!/^[a-h][1-8]$/.test(square ?? '')) return null
@@ -24,11 +33,20 @@ export function buildEngineArrows(lines = []) {
     .filter((line) => Array.isArray(line?.pv) && line.pv[0]?.length >= 4)
     .sort((left, right) => (left.multipv ?? 1) - (right.multipv ?? 1))
     .slice(0, 5)
-    .map((line, index) => ({
-      startSquare: line.pv[0].slice(0, 2),
-      endSquare: line.pv[0].slice(2, 4),
-      color: ARROW_COLORS[index],
-    }))
+    .map((line, index) => {
+      const strength = scoreStrength(line)
+      const scoreFactor = Math.max(0.35, Math.min(1, 0.75 + strength / 500))
+      const strokeWidth = ARROW_WIDTHS[index] * scoreFactor
+      const opacity = ARROW_OPACITIES[index] * scoreFactor
+
+      return {
+        startSquare: line.pv[0].slice(0, 2),
+        endSquare: line.pv[0].slice(2, 4),
+        color: ARROW_COLORS[index],
+        opacity: Number(opacity.toFixed(2)),
+        strokeWidth: Number(strokeWidth.toFixed(2)),
+      }
+    })
 }
 
 export function buildMoveNavigation(moveHistorySan = []) {
