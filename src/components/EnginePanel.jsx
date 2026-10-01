@@ -13,9 +13,24 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
   const [evalData, setEvalData] = useState(null)
   const [analyzing, setAnalyzing] = useState(false)
   const [progress, setProgress] = useState(0)
+  const [engineError, setEngineError] = useState('')
+
+  const fetchExplorerSafely = async (positionFen) => {
+    try {
+      return await fetchOpeningExplorer(positionFen)
+    } catch {
+      return null
+    }
+  }
 
   useEffect(() => {
-    engineRef.current = new StockfishEngine()
+    try {
+      engineRef.current = new StockfishEngine()
+      setEngineError('')
+    } catch (error) {
+      engineRef.current = null
+      setEngineError(error.message)
+    }
     return () => engineRef.current?.destroy()
   }, [])
 
@@ -50,17 +65,20 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
           ENGINE_CONFIG.defaultDepth,
           ENGINE_CONFIG.multiPv,
         ),
-        fetchExplorer: fetchOpeningExplorer,
+        fetchExplorer: fetchExplorerSafely,
         session: analysisSessionRef.current,
         signal: controller.signal,
         onProgress: ({ current, total }) => setProgress(buildAnalysisProgress({ current, total })),
       })
         .then((entries) => {
           onAnalysisData?.(entries)
-          finish(entries.at(-1)?.engine)
+          finish(entries.at(-1)?.playedEngine ?? entries.at(-1)?.engine)
         })
-        .catch(() => {
-          if (!cancelled) setAnalyzing(false)
+        .catch((error) => {
+          if (!cancelled) {
+            setEngineError(error.message)
+            setAnalyzing(false)
+          }
         })
 
       return () => {
@@ -71,8 +89,11 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
 
     engineRef.current.analyze(fen, ENGINE_CONFIG.defaultDepth, ENGINE_CONFIG.multiPv)
       .then(finish)
-      .catch(() => {
-        if (!cancelled) setAnalyzing(false)
+      .catch((error) => {
+        if (!cancelled) {
+          setEngineError(error.message)
+          setAnalyzing(false)
+        }
       })
 
     return () => {
@@ -92,6 +113,9 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
         <div className="engine-bar-fill" style={{ width: `${barPercent}%` }} />
       </div>
       <p className="engine-eval-label">
+        {engineError && `Stockfish: ${engineError}`}
+        {!engineError && !analyzing && evalData?.lines?.length > 0 &&
+          `${evalData.lines.length} linee MultiPV disponibili. `}
         {analyzing && (moveHistorySan.length > 0
           ? `Analisi partita: ${Math.round(progress)}%`
           : 'Stockfish sta analizzando…')}

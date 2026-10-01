@@ -50,7 +50,7 @@ export default function PositionEditor({ draft, onDraftChange, selectedPiece, on
       </div>
       <textarea
         value={draft}
-        onChange={(event) => setDraft(event.target.value)}
+        onChange={(event) => onDraftChange(event.target.value)}
         rows={2}
         aria-label="FEN"
       />

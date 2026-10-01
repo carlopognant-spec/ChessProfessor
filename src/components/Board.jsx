@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { Chessboard } from 'react-chessboard'
 import { Chess } from 'chess.js'
 import { useGame } from '../context/GameContext.jsx'
-import { buildEngineArrows } from '../lib/analysisPresentation.js'
+import { buildEngineArrowSegments, buildEngineArrows } from '../lib/analysisPresentation.js'
 
 const LIGHT_SQUARE = '#EDE6D6'
 const DARK_SQUARE = '#7C6A53'
@@ -11,13 +11,17 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
   const { fen, applyMove } = useGame()
   const [moveFrom, setMoveFrom] = useState(null)
   const [optionSquares, setOptionSquares] = useState({})
-  const [arrows, setArrows] = useState([])
+  const [userArrows, setUserArrows] = useState([])
 
   const analysisEngine = useMemo(() => {
-    const entry = analysisEntries.find((candidate) => candidate.fenBefore === fen || candidate.fenAfter === fen)
-    return entry?.fenBefore === fen ? entry.engine : entry?.playedEngine ?? engineData
+    const entry = analysisEntries.find((candidate) => candidate.fenAfter === fen)
+      ?? analysisEntries.find((candidate) => candidate.fenBefore === fen)
+    return entry?.fenAfter === fen
+      ? entry.playedEngine ?? engineData
+      : entry?.engine ?? engineData
   }, [analysisEntries, engineData, fen])
   const engineArrows = useMemo(() => buildEngineArrows(analysisEngine?.lines ?? []), [analysisEngine])
+  const engineArrowSegments = useMemo(() => buildEngineArrowSegments(engineArrows), [engineArrows])
 
   const game = useMemo(() => {
     try {
@@ -89,7 +93,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
   }, [editorPiece, onEditorSquare, applyMove, clearSelection])
 
   const onArrowsChange = useCallback(({ arrows: nextArrows }) => {
-    setArrows(nextArrows)
+    setUserArrows(nextArrows)
   }, [])
 
   const chessboardOptions = {
@@ -97,9 +101,10 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
     onPieceDrop,
     onSquareClick,
     squareStyles: optionSquares,
-    arrows: [...arrows, ...engineArrows],
+    arrows: [...userArrows, ...engineArrows],
     onArrowsChange,
     allowDrawingArrows: true,
+    clearArrowsOnPositionChange: false,
     boardOrientation: 'white',
     id: 'study-board',
     lightSquareStyle: { backgroundColor: LIGHT_SQUARE },
@@ -108,8 +113,44 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
   }
 
   return (
-    <div>
+    <div className="board-stage">
       <Chessboard options={chessboardOptions} />
+      {engineArrowSegments.length > 0 && (
+        <svg className="engine-arrow-overlay" viewBox="0 0 100 100" aria-label="Linee migliori di Stockfish">
+          <defs>
+            {engineArrowSegments.map((arrow) => (
+              <marker
+                key={arrow.markerId}
+                id={arrow.markerId}
+                markerWidth="4"
+                markerHeight="4"
+                refX="3.2"
+                refY="2"
+                orient="auto"
+                markerUnits="strokeWidth"
+              >
+                <path d="M0,0 L4,2 L0,4 Z" fill={arrow.color} />
+              </marker>
+            ))}
+          </defs>
+          {engineArrowSegments.map((arrow) => (
+            <line
+              key={`${arrow.startSquare}-${arrow.endSquare}`}
+              x1={arrow.x1}
+              y1={arrow.y1}
+              x2={arrow.x2}
+              y2={arrow.y2}
+              stroke={arrow.color}
+              markerEnd={`url(#${arrow.markerId})`}
+            />
+          ))}
+        </svg>
+      )}
+      {engineArrowSegments.length > 0 && (
+        <span className="engine-arrow-status" aria-live="polite">
+          {engineArrowSegments.length} frecce Stockfish
+        </span>
+      )}
     </div>
   )
 }
