@@ -1,23 +1,25 @@
 import { useGame } from '../context/GameContext.jsx'
+import { buildMoveNavigation } from '../lib/analysisPresentation.js'
 
 export default function MoveList() {
-  const { moveHistorySan } = useGame()
+  const { moveHistorySan, loadMoveSequence } = useGame()
 
   if (moveHistorySan.length === 0) {
     return <p className="move-list">Nessuna mossa ancora giocata.</p>
   }
 
-  const pairs = []
-  for (let i = 0; i < moveHistorySan.length; i += 2) {
-    pairs.push([moveHistorySan[i], moveHistorySan[i + 1]])
-  }
-
   return (
     <div className="move-list">
-      {pairs.map(([white, black], i) => (
-        <span key={i}>
-          {i + 1}. {white}{black ? ` ${black}` : ''}{' '}
-        </span>
+      {buildMoveNavigation(moveHistorySan).map((move) => (
+        <button
+          type="button"
+          key={move.ply}
+          className="move-button"
+          onClick={() => loadMoveSequence(move.moves)}
+          title={`Vai alla posizione dopo ${move.san}`}
+        >
+          {move.side === 'w' ? `${move.moveNumber}.` : `${move.moveNumber}...`} {move.san}
+        </button>
       ))}
     </div>
   )

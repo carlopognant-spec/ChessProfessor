@@ -2,15 +2,22 @@ import { useCallback, useMemo, useState } from 'react'
 import { Chessboard } from 'react-chessboard'
 import { Chess } from 'chess.js'
 import { useGame } from '../context/GameContext.jsx'
+import { buildEngineArrows } from '../lib/analysisPresentation.js'
 
 const LIGHT_SQUARE = '#EDE6D6'
 const DARK_SQUARE = '#7C6A53'
 
-export default function Board({ editorPiece = null, displayFen, onEditorSquare }) {
+export default function Board({ editorPiece = null, displayFen, onEditorSquare, analysisEntries = [], engineData = null }) {
   const { fen, applyMove } = useGame()
   const [moveFrom, setMoveFrom] = useState(null)
   const [optionSquares, setOptionSquares] = useState({})
   const [arrows, setArrows] = useState([])
+
+  const analysisEngine = useMemo(() => {
+    const entry = analysisEntries.find((candidate) => candidate.fenBefore === fen || candidate.fenAfter === fen)
+    return entry?.fenBefore === fen ? entry.engine : entry?.playedEngine ?? engineData
+  }, [analysisEntries, engineData, fen])
+  const engineArrows = useMemo(() => buildEngineArrows(analysisEngine?.lines ?? []), [analysisEngine])
 
   const game = useMemo(() => {
     try {
@@ -90,7 +97,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare }
     onPieceDrop,
     onSquareClick,
     squareStyles: optionSquares,
-    arrows,
+    arrows: [...arrows, ...engineArrows],
     onArrowsChange,
     allowDrawingArrows: true,
     boardOrientation: 'white',

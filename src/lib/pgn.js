@@ -1,16 +1,13 @@
+import { Chess } from 'chess.js'
+
 export function parsePgnMoves(pgn = '') {
-  if (typeof pgn !== 'string') return []
+  if (typeof pgn !== 'string' || !pgn.trim()) return []
 
-  let cleaned = pgn
-    .replace(/\{[^}]*\}/g, ' ')
-    .replace(/;.*$/gm, ' ')
-    .replace(/\d+\s*\.(?:\.)?/g, ' ')
-    .replace(/\$\d+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-
-  if (!cleaned) return []
-
-  const tokens = cleaned.match(/[A-Za-z0-9+#!=?:\-]+/g) ?? []
-  return tokens.filter((token) => !/^\d+$/.test(token))
+  try {
+    const game = new Chess()
+    game.loadPgn(pgn)
+    return game.history()
+  } catch {
+    return []
+  }
 }

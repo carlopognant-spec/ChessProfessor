@@ -5,7 +5,7 @@
 // dentro un Worker). Il motore serve SOLO per calcolo (eval + PV), mai per
 // generare spiegazioni testuali: quello è compito del layer LLM.
 
-const STOCKFISH_CDN_URL = 'https://cdn.jsdelivr.net/npm/stockfish@16.0.0/src/stockfish.js'
+const STOCKFISH_CDN_URL = 'https://cdn.jsdelivr.net/npm/stockfish@16.0.0/src/stockfish-nnue-16.js'
 
 function createWorker() {
   const workerSource = `importScripts('${STOCKFISH_CDN_URL}');`
