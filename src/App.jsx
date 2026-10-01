@@ -9,9 +9,10 @@ import ChatPanel from './components/ChatPanel.jsx'
 import AnalysisSummary from './components/AnalysisSummary.jsx'
 import PositionEditor from './components/PositionEditor.jsx'
 import { setPieceAtFen } from './lib/positionEditor.js'
+import { getKeyboardNavigationTarget } from './lib/analysisPresentation.js'
 
 function AppContent() {
-  const { fen, importPgn, resetGame, loadFen } = useGame()
+  const { fen, moveHistorySan, navigationHistorySan, importPgn, resetGame, loadFen, loadMoveSequence } = useGame()
   const [opening, setOpening] = useState(null)
   const [engineData, setEngineData] = useState(null)
   const [pgnInput, setPgnInput] = useState('')
@@ -23,6 +24,23 @@ function AppContent() {
   useEffect(() => {
     setPositionDraft(fen)
   }, [fen])
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      const target = event.target
+      if (target instanceof HTMLElement && (
+        target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)
+      )) return
+
+      const nextMoves = getKeyboardNavigationTarget(event.key, moveHistorySan.length, navigationHistorySan)
+      if (!nextMoves) return
+      event.preventDefault()
+      loadMoveSequence(nextMoves)
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [loadMoveSequence, moveHistorySan.length, navigationHistorySan])
 
   const handleEditorSquare = (square, piece = editorPiece) => {
     try {

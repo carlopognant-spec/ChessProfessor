@@ -1,16 +1,17 @@
-// Esegue Stockfish in un Web Worker caricando lo script da CDN con importScripts.
-// Questa tecnica evita di dover copiare/bundlare i file .wasm nel progetto:
-// il Worker stesso è creato da un Blob (quindi same-origin), ma il suo codice
-// importa Stockfish da un CDN esterno via importScripts (permesso cross-origin
-// dentro un Worker). Il motore serve SOLO per calcolo (eval + PV), mai per
-// generare spiegazioni testuali: quello è compito del layer LLM.
+// Il worker deve essere same-origin. Il Blob importa lo script CDN e il suo
+// hash comunica a Stockfish il percorso WASM assoluto da usare.
+const STOCKFISH_CDN_URL = 'https://cdn.jsdelivr.net/npm/stockfish@16.0.0/src/stockfish-nnue-16-no-Worker.js'
+const STOCKFISH_WASM_URL = 'https://cdn.jsdelivr.net/npm/stockfish@16.0.0/src/stockfish-nnue-16-no-Worker.wasm'
 
-const STOCKFISH_CDN_URL = 'https://cdn.jsdelivr.net/npm/stockfish@16.0.0/src/stockfish-nnue-16.js'
+export function getStockfishWorkerSource() {
+  return `importScripts('${STOCKFISH_CDN_URL}');`
+}
 
 function createWorker() {
-  const workerSource = `importScripts('${STOCKFISH_CDN_URL}');`
-  const blob = new Blob([workerSource], { type: 'application/javascript' })
-  return new Worker(URL.createObjectURL(blob))
+  const blob = new Blob([getStockfishWorkerSource()], { type: 'application/javascript' })
+  const blobUrl = URL.createObjectURL(blob)
+  const workerUrl = `${blobUrl}#${encodeURIComponent(STOCKFISH_WASM_URL)},worker`
+  return new Worker(workerUrl)
 }
 
 export class StockfishEngine {
@@ -19,14 +20,22 @@ export class StockfishEngine {
 
     this.worker = workerFactory()
     this.ready = false
-    this._readyPromise = new Promise((resolve) => {
+    this._readyPromise = new Promise((resolve, reject) => {
       this._resolveReady = resolve
+      this._rejectReady = reject
     })
     this._currentRequest = null
     this._latestRequestId = 0
     this._onLine = null
+    this._workerError = null
 
     this.worker.onmessage = (e) => this._handleMessage(e.data)
+    this.worker.onerror = (error) => {
+      this._workerError = new Error('Stockfish worker non riuscito a caricare lo script o il WASM CDN.')
+      this._rejectReady(this._workerError)
+      this._currentRequest?.reject(this._workerError)
+      this._currentRequest = null
+    }
     this.worker.postMessage('uci')
   }
 

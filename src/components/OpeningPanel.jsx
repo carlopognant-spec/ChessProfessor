@@ -50,7 +50,7 @@ export default function OpeningPanel({ onOpeningData }) {
   }, [fen]) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading) return <p className="notice">Consulto il database Lichess…</p>
-  if (error) return <p className="notice">Dati Lichess non disponibili al momento.</p>
+  if (error) return <p className="notice">{error}</p>
   if (!opening) return <p className="notice">Posizione fuori teoria: nessun dato Lichess per questa posizione.</p>
 
   return (

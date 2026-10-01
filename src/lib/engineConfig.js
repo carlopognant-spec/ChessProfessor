@@ -1,7 +1,7 @@
 export const ENGINE_CONFIG = {
   defaultDepth: 12,
   fallbackDepth: 8,
-  multiPv: 2,
+  multiPv: 5,
   explorerMinGames: 20,
   explorerThreshold: 15,
   maxAnalysisEntries: 250,

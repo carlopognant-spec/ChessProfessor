@@ -215,3 +215,11 @@ Implementation delivers:
 - CDN URL corrected from the 404 path to `stockfish-nnue-16.js`.
 - The CDN asset was downloaded and initialized, but no reliable depth-12 elapsed time could be obtained in this environment: Node 24 lacks the release wrapper's UCI `ccall` path and the published `stockfish@16.0.0` adapter has a broken `main` path. No timing is fabricated.
 - Passo 7 remains untouched and is explicitly deferred pending reference games. This implementation stops here and awaits explicit user authorization before any further plan step.
+
+## Correction Milestone 1-3
+
+- Updated `buildEngineArrows()` to the react-chessboard v5 object format `{ startSquare, endSquare, color }`.
+- Preserved the complete move timeline in `GameContext` so keyboard navigation can move backward and forward after selecting an earlier position.
+- Added ArrowLeft/ArrowRight handling in `App.jsx`, excluding input, textarea, select and contenteditable targets.
+- Runtime verification of `https://explorer.lichess.ovh/lichess` returned `401 Unauthorized` both without Authorization and with an invalid token. README and OpeningPanel now state the token requirement explicitly.
+- Final focused verification: 2 test files, 6 tests passed. Full suite/build had already passed with 13 files and 36 tests before the additional 401 test.

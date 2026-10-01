@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { StockfishEngine } from '../src/lib/stockfish.js'
+import { getStockfishWorkerSource, StockfishEngine } from '../src/lib/stockfish.js'
 
 function createFakeWorker() {
   const messages = []
@@ -28,6 +28,12 @@ function createFakeWorker() {
 }
 
 describe('Stockfish MultiPV', () => {
+  it('loads the CDN worker script through a same-origin Blob', () => {
+    const workerSource = getStockfishWorkerSource()
+
+    expect(workerSource).toContain('stockfish-nnue-16-no-Worker.js')
+  })
+
   it('requests and returns the configured number of principal variations', async () => {
     const worker = createFakeWorker()
     const engine = new StockfishEngine({ workerFactory: () => worker })

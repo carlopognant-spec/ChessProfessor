@@ -72,6 +72,18 @@ describe('automatic game analysis', () => {
     expect(fetchExplorer).toHaveBeenCalledTimes(1)
   })
 
+  it('keeps Stockfish analysis when Explorer is unavailable', async () => {
+    const entries = await analyzeGame({
+      moves: ['e4'],
+      analyzePosition: async () => ({ evalCp: 20, mate: null, pv: ['e2e4'], lines: [] }),
+      fetchExplorer: async () => { throw new Error('401 Unauthorized') },
+    })
+
+    expect(entries).toHaveLength(1)
+    expect(entries[0].engine.evalCp).toBe(20)
+    expect(entries[0].explorer).toBeNull()
+  })
+
   it('evaluates the played position and attaches its classification', async () => {
     const analyzePosition = vi.fn(async (fen) => (
       fen === START_FEN

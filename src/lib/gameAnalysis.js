@@ -97,10 +97,15 @@ export async function analyzeGame({
 
       let explorer = null
       if (!explorerStopped && typeof fetchExplorer === 'function') {
-        explorer = await fetchExplorer(fenBefore)
-        throwIfAborted(signal)
-        explorerStopped = shouldStopExplorerAtThreshold(explorer, explorerThreshold)
-        if (explorerStopped) session.stopExplorer?.()
+        try {
+          explorer = await fetchExplorer(fenBefore)
+          throwIfAborted(signal)
+          explorerStopped = shouldStopExplorerAtThreshold(explorer, explorerThreshold)
+          if (explorerStopped) session.stopExplorer?.()
+        } catch (error) {
+          if (error?.name === 'AbortError') throw error
+          explorer = null
+        }
       }
 
       const isBookMove = Boolean(explorer?.moves?.some((move) => move.san === san))
