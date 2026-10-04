@@ -136,7 +136,7 @@ export async function analyzeGame({
           : null
         const playedMate = playedEngine.mate == null
           ? (game.isCheckmate() ? 0 : null)
-          : -playedEngine.mate
+          : (-playedEngine.mate + 0)
         entry = classifyAnalysisEntries([{
           ...entry,
           playedEngine,
