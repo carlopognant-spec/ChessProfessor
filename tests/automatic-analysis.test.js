@@ -101,6 +101,24 @@ describe('automatic game analysis', () => {
     expect(entry.bestEval).toBe(40)
     expect(entry.playedEval).toBe(20)
     expect(entry.evalDelta).toBe(-20)
-    expect(entry.classification).toBe('inaccuracy')
+    expect(entry.classification).toBe('excellent')
+    expect(entry.dropPct).toBeGreaterThan(0)
+  })
+
+  it('inverts played mate with the same mover perspective used for played eval', async () => {
+    const analyzePosition = vi.fn(async (fen) => (
+      fen === START_FEN
+        ? { evalCp: null, mate: 3, pv: ['mate-in-3'] }
+        : { evalCp: null, mate: -5, pv: ['mate-in-5'] }
+    ))
+
+    const [entry] = await analyzeGame({
+      moves: ['e4'],
+      analyzePosition,
+      analyzePlayedPosition: analyzePosition,
+    })
+
+    expect(entry.bestMate).toBe(3)
+    expect(entry.playedMate).toBe(5)
   })
 })

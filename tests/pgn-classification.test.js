@@ -21,27 +21,19 @@ describe('PGN parser', () => {
 })
 
 describe('move classification', () => {
-  it('follows the complete ordered classification ladder', () => {
-    expect(classifyMove({ evalDelta: 0, isBookMove: true })).toBe('book')
-    expect(classifyMove({ evalDelta: 500 })).toBe('brilliant')
-    expect(classifyMove({ evalDelta: 300 })).toBe('great')
-    expect(classifyMove({ evalDelta: 180 })).toBe('best')
-    expect(classifyMove({ evalDelta: 90 })).toBe('excellent')
-    expect(classifyMove({ evalDelta: 30 })).toBe('good')
-    expect(classifyMove({ evalDelta: -10 })).toBe('inaccuracy')
-    expect(classifyMove({ evalDelta: -80 })).toBe('inaccuracy')
-    expect(classifyMove({ evalDelta: -200 })).toBe('mistake')
-    expect(classifyMove({ evalDelta: -400 })).toBe('blunder')
+  it('follows the ordered dropPct ladder', () => {
+    expect(classifyMove({ dropPct: 0, isBookMove: true })).toBe('book')
+    expect(classifyMove({ dropPct: 0.2 })).toBe('best')
+    expect(classifyMove({ dropPct: 2 })).toBe('excellent')
+    expect(classifyMove({ dropPct: 4 })).toBe('good')
+    expect(classifyMove({ dropPct: 8 })).toBe('inaccuracy')
+    expect(classifyMove({ dropPct: 15 })).toBe('mistake')
+    expect(classifyMove({ dropPct: 40 })).toBe('blunder')
   })
 
-  it('marks a missed opportunity only after an opponent error', () => {
-    expect(classifyMove({ evalDelta: -500 })).toBe('blunder')
-    expect(classifyMove({
-      evalDelta: 0,
-      previousOpponentError: true,
-      missedOpportunity: true,
-    })).toBe('missed')
-  })
+  it.todo('marks a missed opportunity only after an opponent error (Point 3)')
+
+  it.todo('re-introduces brilliant and great when Point 4 rules are implemented')
 })
 
 describe('analysis cache', () => {

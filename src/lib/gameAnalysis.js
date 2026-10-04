@@ -134,11 +134,16 @@ export async function analyzeGame({
         const playedEval = playedEngine.mate == null && playedEngine.evalCp != null
           ? -playedEngine.evalCp
           : null
+        const playedMate = playedEngine.mate == null
+          ? null
+          : -playedEngine.mate
         entry = classifyAnalysisEntries([{
           ...entry,
           playedEngine,
           bestEval: engine.evalCp,
+          bestMate: engine.mate ?? null,
           playedEval,
+          playedMate,
         }])[0]
       }
 
