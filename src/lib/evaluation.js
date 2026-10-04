@@ -3,6 +3,14 @@ function normalizeScore(score, side = 'white') {
   return side === 'black' ? -score : score
 }
 
+export function cpToProbability(cp) {
+  const clamped = Math.max(-1000, Math.min(1000, cp))
+  const x = clamped / 400
+  const probability = 1 / (1 + Math.exp(-x))
+
+  return Math.min(0.99, Math.max(0.01, probability))
+}
+
 export function normalizeEvalToWhite(evalCp, side = 'white') {
   return normalizeScore(evalCp, side)
 }
@@ -12,11 +20,7 @@ export function calculateWinProbability(evalCp, side = 'white') {
 
   if (value == null) return 0.5
 
-  const clamped = Math.max(-1000, Math.min(1000, value))
-  const x = clamped / 400
-  const probability = 1 / (1 + Math.exp(-x))
-
-  return Math.min(0.99, Math.max(0.01, probability))
+  return cpToProbability(value)
 }
 
 export function moverWinProb({
@@ -24,17 +28,14 @@ export function moverWinProb({
   mate = null,
 } = {}) {
   if (mate != null && !Number.isNaN(mate)) {
+    // mate === 0 means the side to move has just given mate; use it only for playedMate.
     if (mate === 0) return 0.99
     return mate > 0 ? 0.99 : 0.01
   }
 
-  if (evalCp == null || Number.isNaN(evalCp)) return 0.5
+  if (evalCp == null || Number.isNaN(evalCp)) return null
 
-  const clamped = Math.max(-1000, Math.min(1000, evalCp))
-  const x = clamped / 400
-  const probability = 1 / (1 + Math.exp(-x))
-
-  return Math.min(0.99, Math.max(0.01, probability))
+  return cpToProbability(evalCp)
 }
 
 export function formatMateLabel(mate) {

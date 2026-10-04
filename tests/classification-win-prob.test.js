@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { Chess } from 'chess.js'
 import { classifyMove, MOVE_CLASSIFICATION } from '../src/lib/classification.js'
 import { classifyAnalysisEntries } from '../src/lib/classification.js'
-import { calculateWinProbability, moverWinProb } from '../src/lib/evaluation.js'
+import { calculateWinProbability, cpToProbability, moverWinProb } from '../src/lib/evaluation.js'
 
-function buildRealEntries(moves, evaluations, startingFen) {
+function buildRealEntries(moves, evaluations, startingFen = undefined) {
   const game = new Chess(startingFen)
 
   return moves.map((san, index) => {
@@ -32,7 +32,7 @@ describe('win probability classification', () => {
     expect(moverWinProb({ mate: -3 })).toBeCloseTo(0.01, 2)
     expect(moverWinProb({ mate: 0 })).toBeCloseTo(0.99, 2)
     expect(moverWinProb({ evalCp: 0 })).toBeCloseTo(0.5, 5)
-    expect(moverWinProb({ evalCp: 500 })).toBeCloseTo(0.77729986, 5)
+    expect(moverWinProb({ evalCp: 500 })).toBeCloseTo(cpToProbability(500), 5)
   })
 
   it('measures the loss in win probability from the mover perspective and never produces negative drops', () => {
@@ -96,6 +96,12 @@ describe('win probability classification', () => {
   })
 
   it('throws when the drop is not finite', () => {
+    expect(() => classifyMove({})).toThrow('dropPct must be a finite number')
+    expect(() => classifyMove({ evalDelta: 500 })).toThrow('dropPct must be a finite number')
     expect(() => classifyMove({ dropPct: Number.NaN })).toThrow('dropPct must be a finite number')
+  })
+
+  it('treats missing evaluations as zero drop instead of inventing a probability', () => {
+    expect(moverWinProb({ evalCp: null, mate: null })).toBeNull()
   })
 })

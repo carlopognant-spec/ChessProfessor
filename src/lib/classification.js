@@ -15,7 +15,7 @@ export const MOVE_CLASSIFICATION = {
 }
 
 export function classifyMove({
-  dropPct = 0,
+  dropPct,
   isBookMove = false,
   previousOpponentError = false,
   missedOpportunity = false,
@@ -44,13 +44,15 @@ export function classifyAnalysisEntries(entries = [], thresholds = ENGINE_CONFIG
   return entries.map((entry) => {
     const bestProbability = moverWinProb({
       evalCp: entry.bestEval,
-      mate: entry.bestMate ?? entry.engine?.mate ?? null,
+      mate: entry.bestMate,
     })
     const playedProbability = moverWinProb({
       evalCp: entry.playedEval,
-      mate: entry.playedMate ?? entry.playedEngine?.mate ?? null,
+      mate: entry.playedMate,
     })
-    const dropPct = Math.max(0, (bestProbability - playedProbability) * 100)
+    const dropPct = bestProbability == null || playedProbability == null
+      ? 0
+      : Math.max(0, (bestProbability - playedProbability) * 100)
     const evalDelta = entry.playedEval == null || entry.bestEval == null
       ? 0
       : entry.playedEval - entry.bestEval

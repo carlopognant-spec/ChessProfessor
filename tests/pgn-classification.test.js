@@ -31,6 +31,10 @@ describe('move classification', () => {
     expect(classifyMove({ dropPct: 40 })).toBe('blunder')
   })
 
+  it('rejects legacy cp inputs without an explicit dropPct', () => {
+    expect(() => classifyMove({ evalDelta: 500 })).toThrow('dropPct must be a finite number')
+  })
+
   it.todo('marks a missed opportunity only after an opponent error (Point 3)')
 
   it.todo('re-introduces brilliant and great when Point 4 rules are implemented')

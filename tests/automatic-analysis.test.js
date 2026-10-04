@@ -121,4 +121,26 @@ describe('automatic game analysis', () => {
     expect(entry.bestMate).toBe(3)
     expect(entry.playedMate).toBe(5)
   })
+
+  it('treats the final mating move as mate given even when the engine returns no score', async () => {
+    const analyzePosition = vi.fn(async (fen) => {
+      if (fen === START_FEN) return { evalCp: 0, mate: null, pv: [] }
+      if (fen.includes(' b KQkq - 0 1')) return { evalCp: 0, mate: null, pv: [] }
+      if (fen.includes(' b KQkq - 0 2')) return { evalCp: 0, mate: null, pv: [] }
+      if (fen.includes(' w KQkq - 0 2')) return { evalCp: 0, mate: null, pv: [] }
+      return { evalCp: null, mate: null, pv: [] }
+    })
+
+    const entries = await analyzeGame({
+      moves: ['f3', 'e5', 'g4', 'Qh4#'],
+      analyzePosition,
+      analyzePlayedPosition: analyzePosition,
+    })
+
+    const lastEntry = entries[3]
+
+    expect(lastEntry.playedMate).toBe(0)
+    expect(lastEntry.classification).not.toBe('mistake')
+    expect(lastEntry.classification).not.toBe('blunder')
+  })
 })

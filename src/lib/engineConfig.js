@@ -11,6 +11,6 @@ export const ENGINE_CONFIG = {
     good: 6,
     inaccuracy: 10,
     mistake: 20,
-    blunder: 100,
+    blunder: 100, // oltre mistake
   },
 }

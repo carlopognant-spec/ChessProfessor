@@ -13,5 +13,14 @@ describe('analysis classification', () => {
     expect(entries[0].dropPct).toBeGreaterThan(0)
   })
 
+  it('keeps dropPct at zero when both evaluations are missing', () => {
+    const [entry] = classifyAnalysisEntries([
+      { bestEval: null, bestMate: null, playedEval: null, playedMate: null, isBookMove: false },
+    ])
+
+    expect(entry.dropPct).toBe(0)
+    expect(entry.classification).toBe('best')
+  })
+
   it.todo('carries opponent error context into the next move for missed opportunities (Point 3)')
 })
