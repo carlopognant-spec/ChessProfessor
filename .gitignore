@@ -32,3 +32,6 @@ test-results/
 .cache/
 .parcel-cache/
 .eslintcache
+
+# Keep extracted Stockfish distribution; ignore duplicate download archive
+/tools/stockfish-16/*.zip

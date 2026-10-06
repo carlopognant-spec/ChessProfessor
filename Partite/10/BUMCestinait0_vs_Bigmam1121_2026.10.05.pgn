@@ -1,0 +1,33 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2026.10.05"]
+[Round "-"]
+[White "BUMCestinait0"]
+[Black "Bigmam1121"]
+[Result "1-0"]
+[CurrentPosition "2r3kB/pb1p1pQp/1p1Pp1p1/8/4N3/5B2/5PPP/2r2RK1 b - - 18 31"]
+[Timezone "UTC"]
+[ECO "B30"]
+[ECOUrl "https://www.chess.com/openings/Sicilian-Defense-Old-Sicilian-Variation-3.Bc4-e6"]
+[UTCDate "2026.10.05"]
+[UTCTime "09:10:52"]
+[WhiteElo "760"]
+[BlackElo "749"]
+[TimeControl "600"]
+[Termination "BUMCestinait0 won by checkmate"]
+[StartTime "09:10:52"]
+[EndDate "2026.10.05"]
+[EndTime "09:23:57"]
+[Link "https://www.chess.com/analysis/game/live/184843322306/review?move=35"]
+[WhiteUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[WhiteCountry "76"]
+[WhiteTitle ""]
+[BlackUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[BlackCountry "73"]
+[BlackTitle ""]
+
+1. e4 c5 2. Nf3 Nc6 3. Bc4 e6 4. c3 g6 5. d4 Nge7 6. Bg5 Bg7 7. d5 Ne5 8. Nxe5
+Bxe5 9. Bh4 O-O 10. O-O Qb6 11. Bxe7 Re8 12. d6 Qxb2 13. Nd2 Qxc3 14. Rc1 Qa5
+15. Be2 Qxa2 16. Rxc5 Qa3 17. Rxe5 b6 18. Nc4 Qc3 19. Ne3 $3 Qxe5 20. Ng4 $1 Qxe4 $2
+21. Nf6+ Kg7 22. Nxe4 Bb7 $6 23. Bf3 Rac8 $2 24. Bf6+ $1 Kf8 25. Be7+ Kg7 $6 26. Bf6+
+Kf8 $2 27. Qd4 Rc6 28. Bg7+ Kg8 29. Qf6 Rec8 30. Bh8 Rc1 31. Qg7# 1-0

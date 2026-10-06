@@ -1,7 +1,7 @@
 import { createAnalysisCache } from './analysisCache.js'
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { Chess } from 'chess.js'
-import { classifyAnalysisEntries, MOVE_CLASSIFICATION } from './classification.js'
+import { classifyAnalysisEntries, evaluationFields, MOVE_CLASSIFICATION } from './classification.js'
 
 const CLASSIFICATION_ORDER = Object.values(MOVE_CLASSIFICATION)
 
@@ -131,19 +131,10 @@ export async function analyzeGame({
       if (typeof analyzePlayedPosition === 'function') {
         const playedEngine = await analyzePlayedPosition(game.fen())
         throwIfAborted(signal)
-        const playedEval = playedEngine.mate == null && playedEngine.evalCp != null
-          ? -playedEngine.evalCp
-          : null
-        const playedMate = playedEngine.mate == null
-          ? (game.isCheckmate() ? 0 : null)
-          : (-playedEngine.mate + 0)
         entry = classifyAnalysisEntries([{
           ...entry,
           playedEngine,
-          bestEval: engine.evalCp,
-          bestMate: engine.mate ?? null,
-          playedEval,
-          playedMate,
+          ...evaluationFields(engine, playedEngine, { isCheckmate: game.isCheckmate() }),
         }])[0]
       }
 

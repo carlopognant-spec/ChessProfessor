@@ -1,0 +1,33 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2026.10.05"]
+[Round "-"]
+[White "akshay_patil_005"]
+[Black "BUMCestinait0"]
+[Result "0-1"]
+[CurrentPosition "4k3/pp6/4p3/8/4P3/4nR1P/6q1/6K1 w - - 0 33"]
+[Timezone "UTC"]
+[ECO "B10"]
+[ECOUrl "https://www.chess.com/openings/Caro-Kann-Defense-Hillbilly-Attack-2...d5"]
+[UTCDate "2026.10.05"]
+[UTCTime "08:58:22"]
+[WhiteElo "723"]
+[BlackElo "749"]
+[TimeControl "600"]
+[Termination "BUMCestinait0 won by checkmate"]
+[StartTime "08:58:22"]
+[EndDate "2026.10.05"]
+[EndTime "09:07:06"]
+[Link "https://www.chess.com/analysis/game/live/184842914212/review?move=0"]
+[WhiteUrl "https://images.chesscomfiles.com/uploads/v1/user/370839519.6d651ae9.50x50o.41607ba11059.png"]
+[WhiteCountry "69"]
+[WhiteTitle ""]
+[BlackUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[BlackCountry "76"]
+[BlackTitle ""]
+
+1. e4 c6 2. Bc4 d5 3. exd5 cxd5 4. Bb3 Nc6 5. Qh5 Nf6 6. Qf3 e5 7. Nc3 e4 8. Qf4
+Bd6 9. Qg5 h6 10. Qxg7 Rh7 11. Qxh7 Nxh7 12. Nxd5 Be6 13. d3 Bxd5 14. Bxd5 Qa5+
+15. c3 Qxd5 16. Bxh6 Qxd3 17. Rd1 Qb5 18. Rxd6 Qxb2 19. Nh3 Qxc3+ 20. Bd2 Qa1+
+21. Bc1 Qxc1+ 22. Rd1 Qc5 23. O-O Rd8 24. Rxd8+ Nxd8 25. Nf4 Nf6 26. Re1 Qc2 27.
+f3 Ne6 28. Nxe6 fxe6 29. fxe4 Ng4 30. Rf1 Qxa2 31. h3 Ne3 32. Rf3 Qxg2# 0-1

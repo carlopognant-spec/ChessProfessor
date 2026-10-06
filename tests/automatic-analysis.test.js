@@ -102,7 +102,8 @@ describe('automatic game analysis', () => {
     expect(entry.playedEval).toBe(20)
     expect(entry.evalDelta).toBe(-20)
     expect(entry.classification).toBe('excellent')
-    expect(entry.dropPct).toBeGreaterThan(0)
+    expect(entry.dropPct).toBeGreaterThan(1)
+    expect(entry.dropPct).toBeLessThan(3)
   })
 
   it('inverts played mate with the same mover perspective used for played eval', async () => {
@@ -140,6 +141,8 @@ describe('automatic game analysis', () => {
     const lastEntry = entries[3]
 
     expect(lastEntry.playedMate).toBe(0)
+    expect(lastEntry.dropPct).toBe(0)
+    expect(lastEntry.classification).toBe('best')
     expect(lastEntry.classification).not.toBe('mistake')
     expect(lastEntry.classification).not.toBe('blunder')
   })

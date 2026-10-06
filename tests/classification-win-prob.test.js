@@ -85,13 +85,13 @@ describe('win probability classification', () => {
     expect(() => classifyMove({ dropPct: Number.NaN })).toThrow('dropPct must be a finite number')
   })
 
-  it('keeps dropPct at zero when both evaluations are missing', () => {
+  it('reports unknown drop and category when both evaluations are missing', () => {
     const [entry] = classifyAnalysisEntries([
       { bestEval: null, bestMate: null, playedEval: null, playedMate: null, isBookMove: false },
     ])
 
-    expect(entry.dropPct).toBe(0)
-    expect(entry.classification).toBe('best')
+    expect(entry.dropPct).toBeNull()
+    expect(entry.classification).toBe('unclassified')
   })
 
   it.skip('keeps white/black symmetry on a mirrored move pair analyzed with the shared Stockfish helper', async () => {

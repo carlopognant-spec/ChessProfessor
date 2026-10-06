@@ -8,9 +8,11 @@ describe('analysis summary', () => {
       { side: 'w', classification: MOVE_CLASSIFICATION.book },
       { side: 'w', classification: MOVE_CLASSIFICATION.blunder },
       { side: 'b', classification: MOVE_CLASSIFICATION.good },
+      { side: 'b', classification: MOVE_CLASSIFICATION.unclassified },
     ])
 
-    expect(summary.categories).toHaveLength(10)
+    expect(summary.categories).toHaveLength(11)
+    expect(summary.bySide.black.unclassified).toBe(1)
     expect(summary.bySide.white.book).toBe(1)
     expect(summary.bySide.white.blunder).toBe(1)
     expect(summary.bySide.black.good).toBe(1)

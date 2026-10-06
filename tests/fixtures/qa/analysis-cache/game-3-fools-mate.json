@@ -1,0 +1,736 @@
+{
+  "schemaVersion": 1,
+  "pgn": "1. f3 e5 2. g4 Qh4# *",
+  "engineVersion": "Stockfish 16",
+  "depth": 12,
+  "multiPv": 5,
+  "scorePerspective": "side-to-move at each FEN",
+  "threads": 1,
+  "hashMb": 16,
+  "generatedAt": "2026-10-06T08:54:01.774Z",
+  "entries": [
+    {
+      "ply": 1,
+      "san": "f3",
+      "uci": "f2f3",
+      "fenBefore": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "fenAfter": "rnbqkbnr/pppppppp/8/8/8/5P2/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+      "engine": {
+        "evalCp": 35,
+        "mate": null,
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 35,
+            "mate": null,
+            "pv": [
+              "e2e4",
+              "e7e5",
+              "b1c3",
+              "b8c6",
+              "g1f3",
+              "g8f6",
+              "d2d4",
+              "e5d4",
+              "f3d4",
+              "f8b4",
+              "d4c6",
+              "d7c6",
+              "d1d8",
+              "e8d8",
+              "c1d2"
+            ]
+          },
+          {
+            "multipv": 2,
+            "depth": 12,
+            "evalCp": 11,
+            "mate": null,
+            "pv": [
+              "g1f3",
+              "d7d5",
+              "e2e3",
+              "e7e6",
+              "c2c4",
+              "g8f6",
+              "d2d4",
+              "c7c5",
+              "c4d5",
+              "e6d5",
+              "b1c3",
+              "c5c4"
+            ]
+          },
+          {
+            "multipv": 3,
+            "depth": 12,
+            "evalCp": 11,
+            "mate": null,
+            "pv": [
+              "d2d4",
+              "d7d5",
+              "c2c4",
+              "e7e6",
+              "g1f3",
+              "d5c4",
+              "b1c3",
+              "f8e7",
+              "c1f4"
+            ]
+          },
+          {
+            "multipv": 4,
+            "depth": 12,
+            "evalCp": 3,
+            "mate": null,
+            "pv": [
+              "e2e3",
+              "g8f6",
+              "d2d4",
+              "g7g6",
+              "g1f3",
+              "f8g7",
+              "h2h3",
+              "e8g8",
+              "f1e2",
+              "f8e8"
+            ]
+          },
+          {
+            "multipv": 5,
+            "depth": 12,
+            "evalCp": 0,
+            "mate": null,
+            "pv": [
+              "c2c3",
+              "d7d6",
+              "g2g3",
+              "e7e5",
+              "d2d4",
+              "g8f6",
+              "d4e5"
+            ]
+          }
+        ]
+      },
+      "playedEngine": {
+        "evalCp": 80,
+        "mate": null,
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 80,
+            "mate": null,
+            "pv": [
+              "e7e5",
+              "e2e3",
+              "d7d5",
+              "d2d4",
+              "e5d4",
+              "e3d4",
+              "g8f6",
+              "f1b5",
+              "c7c6",
+              "b5d3",
+              "c6c5"
+            ]
+          },
+          {
+            "multipv": 2,
+            "depth": 12,
+            "evalCp": 57,
+            "mate": null,
+            "pv": [
+              "g8f6",
+              "e2e3",
+              "d7d5",
+              "d2d4",
+              "c7c5",
+              "f1b5",
+              "b8c6"
+            ]
+          },
+          {
+            "multipv": 3,
+            "depth": 12,
+            "evalCp": 56,
+            "mate": null,
+            "pv": [
+              "d7d5",
+              "f3f4",
+              "c7c5",
+              "g1f3",
+              "g7g6",
+              "e2e3",
+              "f8g7",
+              "f1b5",
+              "c8d7",
+              "b5d7",
+              "d8d7"
+            ]
+          },
+          {
+            "multipv": 4,
+            "depth": 12,
+            "evalCp": 55,
+            "mate": null,
+            "pv": [
+              "c7c5",
+              "e2e4",
+              "b8c6",
+              "f3f4",
+              "e7e5",
+              "b1c3",
+              "e5f4",
+              "g1f3",
+              "g8f6"
+            ]
+          },
+          {
+            "multipv": 5,
+            "depth": 12,
+            "evalCp": 39,
+            "mate": null,
+            "pv": [
+              "b8c6",
+              "d2d4",
+              "d7d5",
+              "f3f4",
+              "c8f5",
+              "a2a3",
+              "g8f6",
+              "e2e3",
+              "e7e6",
+              "g1f3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ply": 2,
+      "san": "e5",
+      "uci": "e7e5",
+      "fenBefore": "rnbqkbnr/pppppppp/8/8/8/5P2/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+      "fenAfter": "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+      "engine": {
+        "evalCp": 76,
+        "mate": null,
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 76,
+            "mate": null,
+            "pv": [
+              "e7e5",
+              "e2e3",
+              "d7d5",
+              "d2d4",
+              "f8d6",
+              "e3e4",
+              "d5e4",
+              "d4e5",
+              "d6e5",
+              "d1d8",
+              "e8d8",
+              "f3e4"
+            ]
+          },
+          {
+            "multipv": 2,
+            "depth": 12,
+            "evalCp": 54,
+            "mate": null,
+            "pv": [
+              "c7c5",
+              "e2e4",
+              "b8c6",
+              "b1c3",
+              "e7e6",
+              "f3f4",
+              "d7d5",
+              "g1f3",
+              "a7a6",
+              "d2d3"
+            ]
+          },
+          {
+            "multipv": 3,
+            "depth": 12,
+            "evalCp": 49,
+            "mate": null,
+            "pv": [
+              "d7d5",
+              "d2d4",
+              "g8f6",
+              "b1c3",
+              "c7c5",
+              "e2e4",
+              "c5d4",
+              "d1d4",
+              "b8c6",
+              "f1b5",
+              "c8d7",
+              "b5c6",
+              "d7c6",
+              "e4d5",
+              "f6d5",
+              "g1e2",
+              "d5c3",
+              "d4c3"
+            ]
+          },
+          {
+            "multipv": 4,
+            "depth": 12,
+            "evalCp": 47,
+            "mate": null,
+            "pv": [
+              "b8c6",
+              "d2d4",
+              "d7d5",
+              "e2e4",
+              "e7e6",
+              "e4d5",
+              "e6d5",
+              "g1e2",
+              "f8b4",
+              "c1d2",
+              "b4d6",
+              "b1c3",
+              "g8e7",
+              "d2f4"
+            ]
+          },
+          {
+            "multipv": 5,
+            "depth": 12,
+            "evalCp": 46,
+            "mate": null,
+            "pv": [
+              "g8f6",
+              "d2d4",
+              "d7d5",
+              "b1c3",
+              "c7c5",
+              "e2e4",
+              "c5d4",
+              "d1d4",
+              "b8c6",
+              "f1b5",
+              "c8d7",
+              "b5c6",
+              "d7c6",
+              "e4d5",
+              "f6d5",
+              "g1e2",
+              "e7e6",
+              "c3d5",
+              "d8d5",
+              "d4d5"
+            ]
+          }
+        ]
+      },
+      "playedEngine": {
+        "evalCp": -68,
+        "mate": null,
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -68,
+            "mate": null,
+            "pv": [
+              "b1c3",
+              "b8c6",
+              "e2e4",
+              "f8c5",
+              "g1e2",
+              "a7a6",
+              "c3d5",
+              "g8f6",
+              "c2c3",
+              "f6d5",
+              "e4d5"
+            ]
+          },
+          {
+            "multipv": 2,
+            "depth": 12,
+            "evalCp": -73,
+            "mate": null,
+            "pv": [
+              "e2e4",
+              "b8c6",
+              "f1c4",
+              "f8c5",
+              "d2d3",
+              "d7d6",
+              "b1c3",
+              "c8d7",
+              "d1d2"
+            ]
+          },
+          {
+            "multipv": 3,
+            "depth": 12,
+            "evalCp": -75,
+            "mate": null,
+            "pv": [
+              "e2e3",
+              "d7d5",
+              "d2d4",
+              "f8d6",
+              "d4e5",
+              "d6e5",
+              "f3f4",
+              "e5d6",
+              "g1f3",
+              "g8f6",
+              "f1d3",
+              "c7c5",
+              "c2c4"
+            ]
+          },
+          {
+            "multipv": 4,
+            "depth": 12,
+            "evalCp": -98,
+            "mate": null,
+            "pv": [
+              "g1h3",
+              "d7d5",
+              "h3f2",
+              "f8d6",
+              "e2e4",
+              "g8e7",
+              "e4d5",
+              "e7d5",
+              "f1c4",
+              "c7c6",
+              "e1g1",
+              "e8g8"
+            ]
+          },
+          {
+            "multipv": 5,
+            "depth": 12,
+            "evalCp": -109,
+            "mate": null,
+            "pv": [
+              "c2c3",
+              "d7d5",
+              "d2d4",
+              "b8c6",
+              "e2e4",
+              "e5d4",
+              "c3d4",
+              "d5e4",
+              "d4d5",
+              "c6e5",
+              "b1c3",
+              "g8f6",
+              "f3e4",
+              "f8c5"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ply": 3,
+      "san": "g4",
+      "uci": "g2g4",
+      "fenBefore": "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+      "fenAfter": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+      "engine": {
+        "evalCp": -66,
+        "mate": null,
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -66,
+            "mate": null,
+            "pv": [
+              "e2e3",
+              "d7d5",
+              "d2d4",
+              "b8d7",
+              "b1c3",
+              "g8f6",
+              "f1d3",
+              "f8d6"
+            ]
+          },
+          {
+            "multipv": 2,
+            "depth": 12,
+            "evalCp": -67,
+            "mate": null,
+            "pv": [
+              "e2e4",
+              "f8c5",
+              "b1c3",
+              "b8c6",
+              "f1c4",
+              "d7d6",
+              "d2d3",
+              "c5g1",
+              "h1g1",
+              "d8h4",
+              "e1f1",
+              "h4h2",
+              "c4b3",
+              "c8e6",
+              "c1e3",
+              "c6d4"
+            ]
+          },
+          {
+            "multipv": 3,
+            "depth": 12,
+            "evalCp": -70,
+            "mate": null,
+            "pv": [
+              "b1c3",
+              "b8c6",
+              "e2e4",
+              "f8c5",
+              "f1c4",
+              "d7d6",
+              "d2d3",
+              "c8e6",
+              "c4e6",
+              "f7e6"
+            ]
+          },
+          {
+            "multipv": 4,
+            "depth": 12,
+            "evalCp": -91,
+            "mate": null,
+            "pv": [
+              "g1h3",
+              "d7d5",
+              "h3f2",
+              "g8f6",
+              "c2c3",
+              "f8d6",
+              "e2e4",
+              "e8g8",
+              "d2d4",
+              "f8e8",
+              "d4e5",
+              "d6e5",
+              "f3f4",
+              "f6e4",
+              "f4e5",
+              "e8e5"
+            ]
+          },
+          {
+            "multipv": 5,
+            "depth": 12,
+            "evalCp": -94,
+            "mate": null,
+            "pv": [
+              "c2c3",
+              "d7d5",
+              "d2d4",
+              "b8c6",
+              "g2g3",
+              "f8d6",
+              "g1h3",
+              "c8d7"
+            ]
+          }
+        ]
+      },
+      "playedEngine": {
+        "evalCp": null,
+        "mate": 1,
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": null,
+            "mate": 1,
+            "pv": [
+              "d8h4"
+            ]
+          },
+          {
+            "multipv": 2,
+            "depth": 12,
+            "evalCp": 279,
+            "mate": null,
+            "pv": [
+              "h7h5",
+              "g1h3",
+              "h5g4",
+              "h3f2",
+              "g4f3",
+              "e2e3"
+            ]
+          },
+          {
+            "multipv": 3,
+            "depth": 12,
+            "evalCp": 234,
+            "mate": null,
+            "pv": [
+              "f8c5",
+              "e2e3",
+              "h7h5",
+              "g4g5",
+              "d8g5",
+              "b1c3",
+              "g5h4",
+              "e1e2",
+              "d7d5"
+            ]
+          },
+          {
+            "multipv": 4,
+            "depth": 12,
+            "evalCp": 213,
+            "mate": null,
+            "pv": [
+              "b8c6",
+              "h2h4",
+              "d7d5",
+              "e2e3",
+              "h7h5",
+              "g4g5",
+              "f7f6",
+              "d2d4",
+              "f6g5",
+              "b1c3"
+            ]
+          },
+          {
+            "multipv": 5,
+            "depth": 12,
+            "evalCp": 200,
+            "mate": null,
+            "pv": [
+              "d7d5",
+              "h2h4",
+              "b8c6",
+              "g4g5",
+              "g8e7",
+              "e2e3"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ply": 4,
+      "san": "Qh4#",
+      "uci": "d8h4",
+      "fenBefore": "rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+      "fenAfter": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+      "engine": {
+        "evalCp": null,
+        "mate": 1,
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": null,
+            "mate": 1,
+            "pv": [
+              "d8h4"
+            ]
+          },
+          {
+            "multipv": 2,
+            "depth": 12,
+            "evalCp": 282,
+            "mate": null,
+            "pv": [
+              "h7h5",
+              "g4g5",
+              "d8g5",
+              "d2d3",
+              "g5h4",
+              "e1d2",
+              "b8c6",
+              "c2c3",
+              "d7d5",
+              "d1e1",
+              "h4e1",
+              "d2e1"
+            ]
+          },
+          {
+            "multipv": 3,
+            "depth": 12,
+            "evalCp": 265,
+            "mate": null,
+            "pv": [
+              "b8c6",
+              "g1h3",
+              "d8h4",
+              "h3f2",
+              "d7d5",
+              "h2h3",
+              "c8e6"
+            ]
+          },
+          {
+            "multipv": 4,
+            "depth": 12,
+            "evalCp": 261,
+            "mate": null,
+            "pv": [
+              "d7d5",
+              "g1h3",
+              "h7h5",
+              "g4g5",
+              "c8h3",
+              "f1h3",
+              "d8g5",
+              "e1f1",
+              "b8c6"
+            ]
+          },
+          {
+            "multipv": 5,
+            "depth": 12,
+            "evalCp": 224,
+            "mate": null,
+            "pv": [
+              "f8c5",
+              "e2e3",
+              "h7h5",
+              "d1e2",
+              "h5g4",
+              "f3g4",
+              "d7d6"
+            ]
+          }
+        ]
+      },
+      "playedEngine": {
+        "evalCp": null,
+        "mate": 0,
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 0,
+            "evalCp": null,
+            "mate": 0,
+            "pv": []
+          }
+        ]
+      }
+    }
+  ]
+}

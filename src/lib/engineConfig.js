@@ -6,11 +6,11 @@ export const ENGINE_CONFIG = {
   explorerThreshold: 15,
   maxAnalysisEntries: 250,
   classification: {
+    // Maximum loss in percentage points; initial policy, not fitted to fixtures.
     best: 1,
     excellent: 3,
-    good: 6,
+    good: 5,
     inaccuracy: 10,
     mistake: 20,
-    blunder: 100, // oltre mistake
   },
 }

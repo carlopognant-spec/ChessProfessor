@@ -21,22 +21,32 @@ describe('PGN parser', () => {
 })
 
 describe('move classification', () => {
-  it('follows the ordered dropPct ladder', () => {
-    expect(classifyMove({ dropPct: 0, isBookMove: true })).toBe('book')
-    expect(classifyMove({ dropPct: 0.2 })).toBe('best')
-    expect(classifyMove({ dropPct: 2 })).toBe('excellent')
-    expect(classifyMove({ dropPct: 4 })).toBe('good')
-    expect(classifyMove({ dropPct: 8 })).toBe('inaccuracy')
-    expect(classifyMove({ dropPct: 15 })).toBe('mistake')
-    expect(classifyMove({ dropPct: 40 })).toBe('blunder')
+  it('follows the complete ordered classification ladder', () => {
+    expect(classifyMove({ isBookMove: true })).toBe('book')
+    for (const [limit, category, next] of [[1, 'best', 'excellent'], [3, 'excellent', 'good'], [5, 'good', 'inaccuracy'], [10, 'inaccuracy', 'mistake'], [20, 'mistake', 'blunder']]) {
+      expect(classifyMove({ dropPct: limit })).toBe(category)
+      expect(classifyMove({ dropPct: limit + 0.001 })).toBe(next)
+    }
+    expect(classifyMove({ dropPct: 0 })).toBe('best')
+    expect(classifyMove({ dropPct: -2 })).toBe('best')
+    expect(classifyMove({ dropPct: 100 })).toBe('blunder')
+    for (const dropPct of [null, undefined, NaN, Infinity]) expect(() => classifyMove({ dropPct })).toThrow('dropPct must be a finite number')
   })
 
   it('rejects legacy cp inputs without an explicit dropPct', () => {
     expect(() => classifyMove({ evalDelta: 500 })).toThrow('dropPct must be a finite number')
   })
 
-  it.todo('marks a missed opportunity only after an opponent error (Point 3)')
+  it('does not manufacture special labels from loss or opponent context', () => {
+    expect(classifyMove({ dropPct: 100 })).toBe('blunder')
+    expect(classifyMove({
+      dropPct: 0,
+      previousOpponentError: true,
+      missedOpportunity: true,
+    })).toBe('best')
+  })
 
+  it.todo('marks a missed opportunity only after an opponent error (Point 3)')
   it.todo('re-introduces brilliant and great when Point 4 rules are implemented')
 })
 

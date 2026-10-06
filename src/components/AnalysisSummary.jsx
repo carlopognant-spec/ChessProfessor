@@ -12,6 +12,7 @@ const CATEGORY_LABELS = {
   mistake: 'Errore',
   blunder: 'Errore grave',
   missed: 'Mossa mancata',
+  unclassified: 'Non valutabile',
 }
 
 export default function AnalysisSummary({ entries = [] }) {

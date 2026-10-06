@@ -1,0 +1,264 @@
+{
+  "id": "personal-01",
+  "label": "BUMCestinait0 vs boyjonbum, 2026.10.01",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.10.01\"]\n[Round \"-\"]\n[White \"BUMCestinait0\"]\n[Black \"boyjonbum\"]\n[Result \"1-0\"]\n[CurrentPosition \"q3r1k1/p2n2Q1/1p2p2p/6pb/P1P5/2B4P/1P3P2/R3R1K1 b - - 2 26\"]\n[Timezone \"UTC\"]\n[ECO \"B01\"]\n[ECOUrl \"https://www.chess.com/openings/Scandinavian-Defense-Mieses-Kotrc-Variation-3.Nc3-Qd8-4.d4\"]\n[UTCDate \"2026.10.01\"]\n[UTCTime \"17:22:55\"]\n[WhiteElo \"729\"]\n[BlackElo \"707\"]\n[TimeControl \"600\"]\n[Termination \"BUMCestinait0 won by checkmate\"]\n[StartTime \"17:22:55\"]\n[EndDate \"2026.10.01\"]\n[EndTime \"17:33:40\"]\n[Link \"https://www.chess.com/analysis/game/live/184665328712/review?move=0\"]\n[WhiteUrl \"https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif\"]\n[WhiteCountry \"76\"]\n[WhiteTitle \"\"]\n[BlackUrl \"https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif\"]\n[BlackCountry \"70\"]\n[BlackTitle \"\"]\n\n1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8 4. d4 e6 5. Nf3 Bb4 6. Bd2 Bxc3 7. Bxc3 Nf6 8.\nh3 O-O 9. Bd3 h6 10. O-O b6 11. Re1 Bb7 12. a4 Qd5 13. Bb4 Re8 14. c4 Qd8 15.\nQd2 Nh5 16. g4 Bxf3 17. gxh5 Qxd4 18. Bc3 Qd8 19. Qe3 Bxh5 20. Be4 Nd7 21. Bxa8\nQxa8 22. Qg3 g5 23. Qxc7 Nf8 24. Qe5 f6 25. Qxf6 Nd7 26. Qg7# 1-0",
+  "annotations": [
+    {
+      "ply": 1,
+      "san": "e4",
+      "category": "Libro"
+    },
+    {
+      "ply": 2,
+      "san": "d5",
+      "category": "Libro"
+    },
+    {
+      "ply": 3,
+      "san": "exd5",
+      "category": "Libro"
+    },
+    {
+      "ply": 4,
+      "san": "Qxd5",
+      "category": "Libro"
+    },
+    {
+      "ply": 5,
+      "san": "Nc3",
+      "category": "Libro"
+    },
+    {
+      "ply": 6,
+      "san": "Qd8",
+      "category": "Libro"
+    },
+    {
+      "ply": 7,
+      "san": "d4",
+      "category": "Libro"
+    },
+    {
+      "ply": 8,
+      "san": "e6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 9,
+      "san": "Nf3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 10,
+      "san": "Bb4",
+      "category": "Buona"
+    },
+    {
+      "ply": 11,
+      "san": "Bd2",
+      "category": "Ottima"
+    },
+    {
+      "ply": 12,
+      "san": "Bxc3",
+      "category": "Buona"
+    },
+    {
+      "ply": 13,
+      "san": "Bxc3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 14,
+      "san": "Nf6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 15,
+      "san": "h3",
+      "category": "Buona"
+    },
+    {
+      "ply": 16,
+      "san": "O-O",
+      "category": "Ottima"
+    },
+    {
+      "ply": 17,
+      "san": "Bd3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 18,
+      "san": "h6",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 19,
+      "san": "O-O",
+      "category": "Buona"
+    },
+    {
+      "ply": 20,
+      "san": "b6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 21,
+      "san": "Re1",
+      "category": "Ottima"
+    },
+    {
+      "ply": 22,
+      "san": "Bb7",
+      "category": "Migliore"
+    },
+    {
+      "ply": 23,
+      "san": "a4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 24,
+      "san": "Qd5",
+      "category": "Buona"
+    },
+    {
+      "ply": 25,
+      "san": "Bb4",
+      "category": "Buona"
+    },
+    {
+      "ply": 26,
+      "san": "Re8",
+      "category": "Migliore"
+    },
+    {
+      "ply": 27,
+      "san": "c4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 28,
+      "san": "Qd8",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 29,
+      "san": "Qd2",
+      "category": "Errore"
+    },
+    {
+      "ply": 30,
+      "san": "Nh5",
+      "category": "Mossa mancata"
+    },
+    {
+      "ply": 31,
+      "san": "g4",
+      "category": "Errore"
+    },
+    {
+      "ply": 32,
+      "san": "Bxf3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 33,
+      "san": "gxh5",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 34,
+      "san": "Qxd4",
+      "category": "Errore grave"
+    },
+    {
+      "ply": 35,
+      "san": "Bc3",
+      "category": "Mossa mancata"
+    },
+    {
+      "ply": 36,
+      "san": "Qd8",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 37,
+      "san": "Qe3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 38,
+      "san": "Bxh5",
+      "category": "Buona"
+    },
+    {
+      "ply": 39,
+      "san": "Be4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 40,
+      "san": "Nd7",
+      "category": "Ottima"
+    },
+    {
+      "ply": 41,
+      "san": "Bxa8",
+      "category": "Migliore"
+    },
+    {
+      "ply": 42,
+      "san": "Qxa8",
+      "category": "Migliore"
+    },
+    {
+      "ply": 43,
+      "san": "Qg3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 44,
+      "san": "g5",
+      "category": "Errore"
+    },
+    {
+      "ply": 45,
+      "san": "Qxc7",
+      "category": "Grande"
+    },
+    {
+      "ply": 46,
+      "san": "Nf8",
+      "category": "Errore"
+    },
+    {
+      "ply": 47,
+      "san": "Qe5",
+      "category": "Grande"
+    },
+    {
+      "ply": 48,
+      "san": "f6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 49,
+      "san": "Qxf6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 50,
+      "san": "Nd7",
+      "category": "Errore"
+    },
+    {
+      "ply": 51,
+      "san": "Qg7#",
+      "category": "Migliore"
+    }
+  ],
+  "source": "Annotazioni chess.com trascritte da Carlo",
+  "role": "development"
+}

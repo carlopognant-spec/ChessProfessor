@@ -1,0 +1,129 @@
+[
+  {
+    "number": "1",
+    "pgnSource": "Partite/1/BUMCestinait0_vs_boyjonbum_2026.10.01.pgn",
+    "annotationSource": "Partite/1/analisi.txt",
+    "corrections": [],
+    "plies": 51,
+    "annotated": true,
+    "id": "personal-01",
+    "label": "BUMCestinait0 vs boyjonbum, 2026.10.01",
+    "role": "development"
+  },
+  {
+    "number": "2",
+    "pgnSource": "Partite/2/BUMCestinait0_vs_skui1_2026.10.03.pgn",
+    "annotationSource": "Partite/2/analisi.txt",
+    "corrections": [],
+    "plies": 75,
+    "annotated": true,
+    "id": "personal-02",
+    "label": "BUMCestinait0 vs skui1, 2026.10.03",
+    "role": "development"
+  },
+  {
+    "number": "3",
+    "pgnSource": "Partite/3/BUMCestinait0_vs_ProprioI0_2026.10.04.pgn",
+    "annotationSource": "Partite/3/analisi.txt",
+    "corrections": [
+      {
+        "ply": 125,
+        "original": "migliroe",
+        "normalized": "Migliore"
+      }
+    ],
+    "plies": 136,
+    "annotated": true,
+    "id": "personal-03",
+    "label": "BUMCestinait0 vs ProprioI0, 2026.10.04",
+    "role": "development"
+  },
+  {
+    "number": "4",
+    "pgnSource": "Partite/4/ProprioI0_vs_BUMCestinait0_2026.10.04.pgn",
+    "annotationSource": "Partite/4/analisi.txt",
+    "corrections": [
+      {
+        "ply": 21,
+        "original": "erroe",
+        "normalized": "Errore"
+      },
+      {
+        "ply": 31,
+        "original": "migliroe",
+        "normalized": "Migliore"
+      }
+    ],
+    "plies": 55,
+    "annotated": true,
+    "id": "personal-04",
+    "label": "ProprioI0 vs BUMCestinait0, 2026.10.04",
+    "role": "development"
+  },
+  {
+    "number": "5",
+    "pgnSource": "Partite/5/BUMCestinait0_vs_ProprioI0_2026.10.04.pgn",
+    "annotationSource": "Partite/5/analisi.txt",
+    "corrections": [],
+    "plies": 37,
+    "annotated": true,
+    "id": "personal-05",
+    "label": "BUMCestinait0 vs ProprioI0, 2026.10.04",
+    "role": "development"
+  },
+  {
+    "number": "6",
+    "pgnSource": "Partite/6/BUMCestinait0_vs_ProprioI0_2026.10.04.pgn",
+    "annotationSource": "Partite/6/analisi.txt",
+    "corrections": [],
+    "plies": 45,
+    "annotated": true,
+    "id": "personal-06",
+    "label": "BUMCestinait0 vs ProprioI0, 2026.10.04",
+    "role": "development"
+  },
+  {
+    "number": "7",
+    "pgnSource": "Partite/7/drsbharath_vs_BUMCestinait0_2026.10.05.pgn",
+    "annotationSource": "Partite/7/analisi.txt",
+    "corrections": [],
+    "plies": 29,
+    "annotated": false,
+    "id": "personal-07",
+    "label": "drsbharath vs BUMCestinait0, 2026.10.05",
+    "role": "holdout-unannotated"
+  },
+  {
+    "number": "8",
+    "pgnSource": "Partite/8/BUMCestinait0_vs_YoannGaudiello_2026.10.05.pgn",
+    "annotationSource": "Partite/8/analisi.txt",
+    "corrections": [],
+    "plies": 49,
+    "annotated": false,
+    "id": "personal-08",
+    "label": "BUMCestinait0 vs YoannGaudiello, 2026.10.05",
+    "role": "holdout-unannotated"
+  },
+  {
+    "number": "9",
+    "pgnSource": "Partite/9/akshay_patil_005_vs_BUMCestinait0_2026.10.05.pgn",
+    "annotationSource": "Partite/9/analisi.txt",
+    "corrections": [],
+    "plies": 64,
+    "annotated": false,
+    "id": "personal-09",
+    "label": "akshay_patil_005 vs BUMCestinait0, 2026.10.05",
+    "role": "holdout-unannotated"
+  },
+  {
+    "number": "10",
+    "pgnSource": "Partite/10/BUMCestinait0_vs_Bigmam1121_2026.10.05.pgn",
+    "annotationSource": "Partite/10/analisi.txt",
+    "corrections": [],
+    "plies": 61,
+    "annotated": false,
+    "id": "personal-10",
+    "label": "BUMCestinait0 vs Bigmam1121, 2026.10.05",
+    "role": "holdout-unannotated"
+  }
+]

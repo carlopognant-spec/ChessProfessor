@@ -1,0 +1,12 @@
+{
+  "id": "game-3-fools-mate",
+  "label": "Fool's Mate",
+  "sanity": true,
+  "pgn": "1. f3 e5 2. g4 Qh4# *",
+  "annotations": [
+    { "ply": 1, "san": "f3", "category": "Errore" },
+    { "ply": 2, "san": "e5", "category": "Migliore" },
+    { "ply": 3, "san": "g4", "category": "Errore grave" },
+    { "ply": 4, "san": "Qh4#", "category": "Migliore" }
+  ]
+}
