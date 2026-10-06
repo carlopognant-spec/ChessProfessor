@@ -2,6 +2,7 @@ import { createAnalysisCache } from './analysisCache.js'
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { Chess } from 'chess.js'
 import { classifyAnalysisEntries, evaluationFields, MOVE_CLASSIFICATION } from './classification.js'
+import { loadOpeningBook } from './openingBook.js'
 
 const CLASSIFICATION_ORDER = Object.values(MOVE_CLASSIFICATION)
 
@@ -73,6 +74,7 @@ export async function analyzeGame({
   fetchExplorer,
   session = createGameAnalysisSession(),
   explorerThreshold = ENGINE_CONFIG.explorerThreshold,
+  openingBook,
   signal,
   onProgress,
   onEntry,
@@ -82,6 +84,9 @@ export async function analyzeGame({
   }
 
   const game = new Chess()
+  throwIfAborted(signal)
+  const book = openingBook ?? await loadOpeningBook()
+  throwIfAborted(signal)
   const results = []
   let explorerStopped = session.isExplorerStopped?.() ?? false
   let bookPathActive = true
@@ -89,6 +94,8 @@ export async function analyzeGame({
   for (const [index, san] of moves.entries()) {
     throwIfAborted(signal)
     const fenBefore = game.fen()
+    const moveHistorySan = game.history()
+    const side = game.turn()
     const cacheKey = `analysis:${fenBefore}:${san}`
     let entry = session.get(cacheKey)
 
@@ -109,19 +116,10 @@ export async function analyzeGame({
         }
       }
 
-      const isBookMove = Boolean(explorer?.moves?.some((move) => move.san === san))
-      const isFirstBookDeviation = bookPathActive && !isBookMove
-      if (!isBookMove) bookPathActive = false
-
+      // Cache position/move data only; book flags and history belong to this game.
       entry = {
-        ply: index + 1,
-        moveNumber: Math.floor(index / 2) + 1,
-        side: game.turn(),
-        moveHistorySan: game.history(),
         fenBefore,
         playedMove: san,
-        isBookMove,
-        isFirstBookDeviation,
         engine,
         explorer,
       }
@@ -131,11 +129,11 @@ export async function analyzeGame({
       if (typeof analyzePlayedPosition === 'function') {
         const playedEngine = await analyzePlayedPosition(game.fen())
         throwIfAborted(signal)
-        entry = classifyAnalysisEntries([{
+        entry = {
           ...entry,
           playedEngine,
           ...evaluationFields(engine, playedEngine, { isCheckmate: game.isCheckmate() }),
-        }])[0]
+        }
       }
 
       session.set(cacheKey, entry)
@@ -144,8 +142,23 @@ export async function analyzeGame({
       session.stopExplorer?.()
     }
 
-    results.push(entry)
     if (game.history().length === index) game.move(san)
+    // Preserve the existing final-mate classification even for named mating traps.
+    const isBookMove = bookPathActive && !game.isCheckmate() && book.hasPosition(entry.fenAfter)
+    const isFirstBookDeviation = bookPathActive && !isBookMove
+    if (!isBookMove) bookPathActive = false
+    entry = {
+      ...entry,
+      ply: index + 1,
+      moveNumber: Math.floor(index / 2) + 1,
+      side,
+      moveHistorySan,
+      isBookMove,
+      isFirstBookDeviation,
+    }
+    if (entry.playedEngine) entry = classifyAnalysisEntries([entry])[0]
+
+    results.push(entry)
     onEntry?.(entry, [...results])
     onProgress?.({ current: index + 1, total: moves.length })
   }

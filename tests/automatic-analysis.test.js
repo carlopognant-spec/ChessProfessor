@@ -1,9 +1,105 @@
 import { describe, expect, it, vi } from 'vitest'
 import { analyzeGame, createGameAnalysisSession } from '../src/lib/gameAnalysis.js'
+import { Chess } from 'chess.js'
+import { createOpeningBook } from '../src/lib/openingBook.js'
 
 const START_FEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 
+const BOOK_PATH = ['e4', 'e5', 'Nf3', 'Nc6', 'Nc3', 'Nf6']
+const DEVIATING_PATH = ['e4', 'e5', 'Nc3', 'Nc6', 'Nf3', 'Nf6']
+const NO_BOOK = createOpeningBook()
+
+function transpositionBook() {
+  const game = new Chess()
+  return createOpeningBook(BOOK_PATH.map(san => {
+    game.move(san)
+    return game.fen()
+  }))
+}
+
+function transpositionExplorer() {
+  const positions = new Map()
+  for (const moves of [BOOK_PATH, DEVIATING_PATH]) {
+    const game = new Chess()
+    for (const [index, san] of moves.entries()) {
+      const fen = game.fen()
+      const data = positions.get(fen) ?? { white: 1000, draws: 0, black: 0, moves: [] }
+      if (!(index === 2 && san === 'Nc3') && !data.moves.some(move => move.san === san)) {
+        data.moves.push({ san, white: 20, draws: 0, black: 0 })
+      }
+      positions.set(fen, data)
+      game.move(san)
+    }
+  }
+  return vi.fn(async (fen) => positions.get(fen))
+}
+
 describe('automatic game analysis', () => {
+  it('uses known theory independently of Explorer move counts', async () => {
+    const analyzePosition = async () => ({ evalCp: 0, mate: null, pv: [] })
+    const analyze = (san, white) => analyzeGame({
+      moves: [san],
+      openingBook: transpositionBook(),
+      analyzePosition,
+      analyzePlayedPosition: analyzePosition,
+      fetchExplorer: async () => ({
+        white: 100000, draws: 0, black: 0,
+        moves: [{ san, white, draws: 0, black: 0 }],
+      }),
+    })
+    const [rare] = await analyze('e4', 1)
+    const [frequentUnknown] = await analyze('d4', 100000)
+    expect(rare.isBookMove).toBe(true)
+    expect(rare.isFirstBookDeviation).toBe(false)
+    expect(rare.classification).toBe('book')
+    expect(frequentUnknown.isBookMove).toBe(false)
+    expect(frequentUnknown.isFirstBookDeviation).toBe(true)
+    expect(frequentUnknown.classification).toBe('best')
+  })
+
+  it('never returns to book after a deviation even through a known transposition', async () => {
+    const entries = await analyzeGame({
+      moves: DEVIATING_PATH,
+      openingBook: transpositionBook(),
+      analyzePosition: async () => ({ evalCp: 0, mate: null, pv: [] }),
+      fetchExplorer: transpositionExplorer(),
+    })
+    expect(entries.map(entry => entry.isBookMove)).toEqual([true, true, false, false, false, false])
+    expect(entries.map(entry => entry.isFirstBookDeviation)).toEqual([false, false, true, false, false, false])
+    expect(entries[5].explorer.moves.some(move => move.san === 'Nf6')).toBe(true)
+  })
+
+  it('recalculates book flags and classification on cache hits for either game path', async () => {
+    for (const paths of [[BOOK_PATH, DEVIATING_PATH], [DEVIATING_PATH, BOOK_PATH]]) {
+      const session = createGameAnalysisSession()
+      const analyzePosition = vi.fn(async () => ({ evalCp: 0, mate: null, pv: [] }))
+      const analyzePlayedPosition = vi.fn(async () => ({ evalCp: 0, mate: null, pv: [] }))
+      const fetchExplorer = transpositionExplorer()
+      const openingBook = transpositionBook()
+      const analyze = (moves) => analyzeGame({ moves, openingBook, session, analyzePosition, analyzePlayedPosition, fetchExplorer })
+      const first = await analyze(paths[0])
+      const second = await analyze(paths[1])
+      const repeatedFirst = await analyze(paths[0])
+      const book = paths[0] === BOOK_PATH ? first : second
+      const deviating = paths[0] === DEVIATING_PATH ? first : second
+
+      expect(book[5].fenBefore).toBe(deviating[5].fenBefore)
+      expect(book[5].engine).toBe(deviating[5].engine)
+      expect(book[5].playedEngine).toBe(deviating[5].playedEngine)
+      expect(book[5].isBookMove).toBe(true)
+      expect(book[5].classification).toBe('book')
+      expect(deviating[5].isBookMove).toBe(false)
+      expect(deviating[5].isFirstBookDeviation).toBe(false)
+      expect(deviating[5].classification).toBe('best')
+      expect(deviating[5].moveHistorySan).toEqual(DEVIATING_PATH.slice(0, 5))
+      expect(book[5].moveHistorySan).toEqual(BOOK_PATH.slice(0, 5))
+      expect(repeatedFirst).toEqual(first)
+      expect(analyzePosition).toHaveBeenCalledTimes(9)
+      expect(analyzePlayedPosition).toHaveBeenCalledTimes(9)
+      expect(fetchExplorer).toHaveBeenCalledTimes(9)
+    }
+  })
+
   it('caches distinct played moves from the same FEN with their own evaluations', async () => {
     const session = createGameAnalysisSession()
     const analyzePosition = vi.fn(async () => ({ evalCp: 40, mate: null, pv: ['e2e4'] }))
@@ -12,7 +108,7 @@ describe('automatic game analysis', () => {
       mate: null,
       pv: [],
     }))
-    const analyze = (san) => analyzeGame({ moves: [san], analyzePosition, analyzePlayedPosition, session })
+    const analyze = (san) => analyzeGame({ moves: [san], openingBook: NO_BOOK, analyzePosition, analyzePlayedPosition, session })
 
     const [e4] = await analyze('e4')
     const [d4] = await analyze('d4')
@@ -126,6 +222,7 @@ describe('automatic game analysis', () => {
 
     const [entry] = await analyzeGame({
       moves: ['e4'],
+      openingBook: NO_BOOK,
       analyzePosition,
       analyzePlayedPosition: analyzePosition,
     })
@@ -157,6 +254,7 @@ describe('automatic game analysis', () => {
   })
 
   it('treats the final mating move as mate given even when the engine returns no score', async () => {
+    const session = createGameAnalysisSession()
     const analyzePosition = vi.fn(async (fen) => {
       if (fen === START_FEN) return { evalCp: 0, mate: null, pv: [] }
       if (fen.includes(' b KQkq - 0 1')) return { evalCp: 0, mate: null, pv: [] }
@@ -167,6 +265,7 @@ describe('automatic game analysis', () => {
 
     const entries = await analyzeGame({
       moves: ['f3', 'e5', 'g4', 'Qh4#'],
+      session,
       analyzePosition,
       analyzePlayedPosition: analyzePosition,
     })
@@ -178,5 +277,14 @@ describe('automatic game analysis', () => {
     expect(lastEntry.classification).toBe('best')
     expect(lastEntry.classification).not.toBe('mistake')
     expect(lastEntry.classification).not.toBe('blunder')
+
+    const cachedEntries = await analyzeGame({
+      moves: ['f3', 'e5', 'g4', 'Qh4#'],
+      session,
+      analyzePosition,
+      analyzePlayedPosition: analyzePosition,
+    })
+    expect(cachedEntries.at(-1)).toEqual(lastEntry)
+    expect(cachedEntries.at(-1).isBookMove).toBe(false)
   })
 })

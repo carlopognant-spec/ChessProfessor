@@ -2,6 +2,7 @@ export const ENGINE_CONFIG = {
   defaultDepth: 12,
   fallbackDepth: 8,
   multiPv: 5,
+  // Retained Explorer setting; Libro now uses the local opening repertoire.
   explorerMinGames: 20,
   explorerThreshold: 15,
   maxAnalysisEntries: 250,

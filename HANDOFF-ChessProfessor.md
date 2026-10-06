@@ -2,6 +2,20 @@
 
 Aggiornato: 6 ottobre 2026. Leggere questo file prima di proseguire su un altro PC.
 
+## Aggiornamento: fix Libro locale del 6 ottobre
+
+Autorizzato da Carlo dopo la ricerca dei repertori. `analyzeGame` ora riconosce Libro dalle posizioni di un repertorio locale, non dalle frequenze Explorer né dall'header ECOUrl. Il valore `explorerMinGames: 20` è conservato ma non decide più Libro. Soglie di classificazione, modello cp/probabilità, helper dei matti e categorie speciali non sono stati modificati. La mossa finale di matto conserva la classificazione Migliore anche se compare in una trappola nominata nel repertorio.
+
+Repertorio: 12.377 sequenze validate di JeffML/eco.json, revisione `36cfd9227f553dec1d39ee20fa0775eea8f8e165`, più due integrazioni documentate (Berlin `4.d4 Nxe4` da chess.com e linea completa Bowdler ritardata da Wikibooks). Risultato: 15.522 posizioni. Fonte, revisione e SHA-256 dei file sono nei metadati; licenza MIT upstream e provenienza sono in `src/data/`. Generazione ripetibile: `node scripts/build-opening-book.js`, che scarica soltanto le fonti fissate e valida ogni sequenza prima di scrivere i dati. Non richiede `.env` o Explorer.
+
+Il browser carica il repertorio locale al bisogno; nessuna richiesta alle fonti esterne durante il riconoscimento Libro. La chiave delle posizioni mantiene turno, diritti di arrocco ed en passant legale, ignorando i contatori. Le trasposizioni sono riconosciute. Dopo il primo scarto, la partita non rientra nel libro. I flag e la cronologia sono ricalcolati anche sui cache hit; i dati motore rimangono nella cache FEN+mossa.
+
+Verifiche: tutte le etichette Libro delle fixture 1–6 coincidono; partita 5: 4 bianche + 4 nere; partita 10: 3 bianche + 3 nere, con primo scarto `4.c3`. Il test della 10 passa anche eliminando gli header e senza Explorer. Le integrazioni sono state selezionate dopo aver osservato le partite di sviluppo: questo risultato è una regressione sul campione, non una validazione indipendente. Le etichette 7–9 non sono state lette né usate; le previsioni ECOUrl registrate al punto 5 restano conservate come ipotesi separata.
+
+Suite: 17 file passati, 79 test passati, 1 skipped e 3 todo (83 totali). Build riuscita: 64 moduli; repertorio in chunk separato da circa 982 kB (110 kB gzip), con avviso Vite sul superamento di 500 kB non compressi. Nessuna soglia della build alzata. Collaudo browser NON ESEGUITO; il problema delle frecce dopo import resta al punto 7. Nessun commit/push eseguito dall'agente.
+
+Limite: assenza dal repertorio significa continuazione non documentata da questa raccolta, non prova di assenza dalla teoria. Per ampliare la copertura, aggiungere sequenze con fonte e verifica, evitando di derivare Libro dal numero di partite osservate.
+
 ## Aggiornamento: integrazione con GitHub del 6 ottobre
 
 Il commit locale `339adac` è stato creato da Carlo, ma il primo push è stato rifiutato perché `origin/main` conteneva ulteriori commit. Carlo ha avviato `git pull --rebase origin main`, con conflitti. La risoluzione è stata preparata e verificata dall'agente; completamento del rebase e push spettano a Carlo. Non usare il vecchio hash per presumere che il push sia riuscito: il rebase assegnerà un hash nuovo.
@@ -120,9 +134,9 @@ File: `src/lib/classification.js`, `engineConfig.js`, `gameAnalysis.js`; etichet
 2. Distinguere l'identificazione della migliore mossa tramite UCI/PV dal semplice confronto di due analisi indipendenti, soggetto a rumore. Valutare un confronto coerente della mossa giocata.
 3. Allineare le categorie comuni alle definizioni pubblicate, distinguendo regole documentate e nostre approssimazioni. Rating WhiteElo/BlackElo è già nei PGN, ma non inventare coefficienti senza una base verificabile. Il modello matematico va scelto prima della taratura.
 4. Implementare il piano solo dopo conferma, con test su segni, confini, matto, dati mancanti e prospettiva di entrambi i giocatori. Ricalcolare i report dalle stesse cache per confronti controllati; conservare baseline.
-5. Far annotare le quattro partite 7–10 e usarle come validazione separata dopo aver fissato le regole. Adeguare prima importer/CLI perché non entrino automaticamente nel gruppo di sviluppo.
+5. Far annotare le quattro partite 7–10 e usarle come validazione separata dopo aver fissato le regole. Adeguare prima importer/CLI perché non entrino automaticamente nel gruppo di sviluppo. Fase 2: valutare l'ipotesi "Libro fino all'ultima mossa nominata nell'ECOUrl"; previsioni registrate prima di vedere le etichette delle partite 7–9: partita 7 Libro fino al ply 2, partita 9 fino al ply 4, partita 8 non prevedibile (URL senza mosse). Punto 2 e verifica Libro chiusi: non modificare ora le regole Libro né il minimo provvisorio di 20 partite per mossa.
 6. Progettare Mossa mancata, Grande e Geniale con contesto della partita e varianti reali. Le sei partite contengono 10/14/1 esempi rispettivamente; sono pochi per una validazione robusta, soprattutto Geniale.
-7. Verificare nel browser l'analisi completa/import PGN, frecce, progressi, navigazione e spiegazioni legate alle PV. Non confondere utility CLI con funzionalità UI completate. Il codice del worker Stockfish browser 19 è arrivato dall'integrazione remota, ma non è stato collaudato nel browser in questa sessione. I moduli finali restano lavoro separato; non iniziarli senza concordare il punto.
+7. Verificare nel browser l'analisi completa/import PGN, frecce, progressi, navigazione e spiegazioni legate alle PV. Segnalazione di Carlo da verificare nel collaudo browser: dopo l'import di un PGN, le frecce e le 5 mosse migliori restano ferme a quelle calcolate prima dell'import. Problema annotato, non ancora corretto. Non confondere utility CLI con funzionalità UI completate. Il codice del worker Stockfish browser 19 è arrivato dall'integrazione remota, ma non è stato collaudato nel browser in questa sessione. I moduli finali restano lavoro separato; non iniziarli senza concordare il punto.
 
 ## Trasferimento su altro PC
 

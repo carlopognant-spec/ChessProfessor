@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Ruy Lopez: Berlin Defense, 4.d4 Nxe4",
+    "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d4 Nxe4",
+    "source": "https://www.chess.com/openings/Ruy-Lopez-Opening-Berlin-Defense-4.d4-Nxe4"
+  },
+  {
+    "name": "Sicilian: Delayed Bowdler Attack",
+    "pgn": "1. e4 c5 2. Nf3 Nc6 3. Bc4 e6 4. O-O a6 5. Re1 b5 6. Bf1 Bb7 7. c3 Nf6 8. d4 cxd4",
+    "source": "https://en.wikibooks.org/w/index.php?title=Chess_Opening_Theory/1._e4/1...c5/2._Nf3/2...Nc6&oldid=4607814"
+  }
+]
