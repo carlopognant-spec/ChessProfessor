@@ -89,7 +89,7 @@ export async function analyzeGame({
   for (const [index, san] of moves.entries()) {
     throwIfAborted(signal)
     const fenBefore = game.fen()
-    const cacheKey = `analysis:${fenBefore}`
+    const cacheKey = `analysis:${fenBefore}:${san}`
     let entry = session.get(cacheKey)
 
     if (!entry) {

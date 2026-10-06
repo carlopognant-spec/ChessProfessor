@@ -4,6 +4,39 @@ import { analyzeGame, createGameAnalysisSession } from '../src/lib/gameAnalysis.
 const START_FEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 
 describe('automatic game analysis', () => {
+  it('caches distinct played moves from the same FEN with their own evaluations', async () => {
+    const session = createGameAnalysisSession()
+    const analyzePosition = vi.fn(async () => ({ evalCp: 40, mate: null, pv: ['e2e4'] }))
+    const analyzePlayedPosition = vi.fn(async (fen) => ({
+      evalCp: fen.includes('4P3') ? -40 : 400,
+      mate: null,
+      pv: [],
+    }))
+    const analyze = (san) => analyzeGame({ moves: [san], analyzePosition, analyzePlayedPosition, session })
+
+    const [e4] = await analyze('e4')
+    const [d4] = await analyze('d4')
+    const [cachedE4] = await analyze('e4')
+    const [cachedD4] = await analyze('d4')
+
+    expect(e4.fenBefore).toBe(START_FEN)
+    expect(d4.fenBefore).toBe(START_FEN)
+    expect(e4.playedMove).toBe('e4')
+    expect(d4.playedMove).toBe('d4')
+    expect(e4.fenAfter).not.toBe(d4.fenAfter)
+    expect(e4.playedEngine.evalCp).toBe(-40)
+    expect(d4.playedEngine.evalCp).toBe(400)
+    expect(e4.playedEval).toBe(40)
+    expect(d4.playedEval).toBe(-400)
+    expect(e4.classification).toBe('best')
+    expect(d4.classification).toBe('blunder')
+    expect(cachedE4).toEqual(e4)
+    expect(cachedD4).toEqual(d4)
+    expect(session.size()).toBe(2)
+    expect(analyzePosition).toHaveBeenCalledTimes(2)
+    expect(analyzePlayedPosition).toHaveBeenCalledTimes(2)
+  })
+
   it('analyzes each position, reuses cached results, and stops Explorer below threshold', async () => {
     const analyzePosition = vi.fn(async (fen) => ({ evalCp: fen === START_FEN ? 12 : 24, mate: null, pv: [] }))
     const fetchExplorer = vi.fn(async (fen) => (
