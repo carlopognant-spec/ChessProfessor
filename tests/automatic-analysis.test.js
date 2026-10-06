@@ -229,11 +229,12 @@ describe('automatic game analysis', () => {
 
     expect(analyzePosition).toHaveBeenCalledTimes(2)
     expect(entry.bestEval).toBe(40)
-    expect(entry.playedEval).toBe(20)
-    expect(entry.evalDelta).toBe(-20)
-    expect(entry.classification).toBe('excellent')
-    expect(entry.dropPct).toBeGreaterThan(1)
-    expect(entry.dropPct).toBeLessThan(3)
+    expect(entry.playedEval).toBe(40)
+    expect(entry.playedEngine.evalCp).toBe(-20)
+    expect(entry.evalDelta).toBe(0)
+    expect(entry.classification).toBe('best')
+    expect(entry.dropPct).toBe(0)
+    expect(entry.evaluationSource).toBe('root-pv')
   })
 
   it('inverts played mate with the same mover perspective used for played eval', async () => {

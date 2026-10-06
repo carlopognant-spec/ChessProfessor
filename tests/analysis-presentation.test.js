@@ -2,6 +2,12 @@ import { describe, expect, it } from 'vitest'
 import { buildEngineArrowSegments, buildEngineArrows, buildMoveNavigation, getKeyboardNavigationTarget, resolveEngineForFen } from '../src/lib/analysisPresentation.js'
 
 describe('analysis presentation', () => {
+  it('rejects stale live data and never uses a pre-move engine for a post-move FEN', () => {
+    const live = { fen: 'before', lines: [{ pv: ['e2e4'] }] }
+    expect(resolveEngineForFen('after', [], live)).toBeNull()
+    expect(resolveEngineForFen('before', [], live)).toBe(live)
+    expect(resolveEngineForFen('after', [{ fenBefore: 'before', fenAfter: 'after', engine: live }], live)).toBeNull()
+  })
   it('resolves engine data for the current fen from analysis entries', () => {
     const startFen = 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1'
     const beforeEngine = { evalCp: 30, lines: [{ multipv: 1, pv: ['e7e5'] }] }

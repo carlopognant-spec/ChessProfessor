@@ -4,12 +4,10 @@ Classificazione per calo di probabilità (punti percentuali). Soglie iniziali no
 
 Mossa giocata valutata dalla stessa ricerca MultiPV quando presente a pari profondità; altrimenti analisi indipendente della posizione successiva. Una mossa diversa dalla PV principale riceve al massimo Ottima, salvo matto dato. Senza identità UCI/PV si conserva il criterio precedente.
 
-Mossa mancata inclusa nel confronto esatto, senza posizione nella scala ordinale. Entro una classe usa soltanto le categorie comuni attese. Regola locale provvisoria: {"winningProbability":0.75,"nonWinningProbability":0.6}; errore avversario adiacente, nuova occasione confermata e PV alternativa legale.
-
 ## Totale del gruppo (sanity esclusa)
 
-Ply: 399; inclusi: 342; esclusi: 57.
-Corrispondenza esatta: 50.87719298245614%; entro una classe: 90.36144578313252%.
+Ply: 399; inclusi: 332; esclusi: 67.
+Corrispondenza esatta: 52.10843373493976%; entro una classe: 90.36144578313252%.
 
 | Categoria attesa | Totale | Inclusi | Esatti |
 |---|---|---|---|
@@ -22,22 +20,13 @@ Corrispondenza esatta: 50.87719298245614%; entro una classe: 90.36144578313252%.
 | Libro | 39 | 0 | 0 |
 | Geniale | 1 | 0 | 0 |
 | Grande | 14 | 0 | 0 |
-| Mossa mancata | 10 | 10 | 1 |
+| Mossa mancata | 10 | 0 | 0 |
 | Non valutabile | 0 | 0 | 0 |
 | Forzata | 3 | 0 | 0 |
-
-Categorie comuni: 173/332 esatte (52.10843373493976%); entro una classe: 300/332.
 
 Motore: Stockfish 16; depth 12; MultiPV 5.
 
 Fonti delle valutazioni: {"root-pv":34,"independent-position":16,"checkmate":1}
-
-Confronto Mossa mancata:
-
-| ply | SAN | Attesa | Ottenuta | Verifica | Variante |
-|---|---|---|---|---|---|
-| 30 | Nh5 | Mossa mancata | Errore | no-confirmed-winning-opportunity |  |
-| 35 | Bc3 | Mossa mancata | Mossa mancata | confirmed | Dopo Qxd4, l'occasione era Bh7+ Kxh7 Qxd4 Kg8 Bc3 e5 Rxe5 Rxe5. |
 
 Confronto distanza matto (dalla posizione prima della mossa; non modifica le categorie):
 
@@ -47,8 +36,8 @@ Confronto distanza matto (dalla posizione prima della mossa; non modifica le cat
 
 ## personal-01: BUMCestinait0 vs boyjonbum, 2026.10.01
 
-Ply: 51; inclusi: 42; esclusi unici: 9.
-Corrispondenza esatta: 54.76190476190476%; entro una classe: 100%.
+Ply: 51; inclusi: 40; esclusi unici: 11.
+Corrispondenza esatta: 55%; entro una classe: 100%.
 
 Conteggi attesi:
 - Migliore: 13
@@ -64,7 +53,7 @@ Conteggi attesi:
 - Non valutabile: 0
 - Forzata: 0
 
-Esclusioni: {"book":7,"unsupported":2,"suspect":0,"missing":0,"forced":0}
+Esclusioni: {"book":7,"unsupported":4,"suspect":0,"missing":0,"forced":0}
 
 | ply | SAN | Attesa | Ottenuta | dropPct | deltaCp | bestEval | bestMate | playedEval | playedMate | Esclusioni |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -97,12 +86,12 @@ Esclusioni: {"book":7,"unsupported":2,"suspect":0,"missing":0,"forced":0}
 | 27 | c4 | Ottima | Ottima | 1.178528375758392 | -19 | 79 | N/D | 60 | N/D |  |
 | 28 | Qd8 | Imprecisione | Buona | 4.554560885744996 | -74 | -60 | N/D | -134 | N/D |  |
 | 29 | Qd2 | Errore | Errore | 12.945661233898193 | -209 | 151 | N/D | -58 | N/D |  |
-| 30 | Nh5 | Mossa mancata | Errore | 11.03837566084051 | -178 | 40 | N/D | -138 | N/D |  |
+| 30 | Nh5 | Mossa mancata | Errore | 11.03837566084051 | -178 | 40 | N/D | -138 | N/D | unsupported |
 | 31 | g4 | Errore | Imprecisione | 9.870420261571578 | -159 | 127 | N/D | -32 | N/D |  |
 | 32 | Bxf3 | Migliore | Migliore | 0 | 0 | -2 | N/D | -2 | N/D |  |
 | 33 | gxh5 | Imprecisione | Buona | 4.542655058228551 | -73 | -12 | N/D | -85 | N/D |  |
 | 34 | Qxd4 | Errore grave | Errore grave | 38.606608478201984 | -685 | 157 | N/D | -528 | N/D |  |
-| 35 | Bc3 | Mossa mancata | Mossa mancata | 27.833198182292552 | -513 | 535 | N/D | 22 | N/D |  |
+| 35 | Bc3 | Mossa mancata | Errore grave | 27.833198182292552 | -513 | 535 | N/D | 22 | N/D | unsupported |
 | 36 | Qd8 | Imprecisione | Buona | 3.120937337375623 | -50 | 0 | N/D | -50 | N/D |  |
 | 37 | Qe3 | Ottima | Migliore | 0 | 0 | 55 | N/D | 55 | N/D |  |
 | 38 | Bxh5 | Buona | Buona | 3.175225231042705 | -51 | -22 | N/D | -73 | N/D |  |
@@ -129,19 +118,11 @@ Matrice di confusione (attesa × ottenuta):
 | Migliore | 11 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Imprecisione | 0 | 0 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Errore | 0 | 0 | 0 | 3 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
-| Mossa mancata | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 |
 | Errore grave | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
 
 Motore: Stockfish 16; depth 12; MultiPV 5.
 
 Fonti delle valutazioni: {"root-pv":55,"independent-position":19,"checkmate":1}
-
-Confronto Mossa mancata:
-
-| ply | SAN | Attesa | Ottenuta | Verifica | Variante |
-|---|---|---|---|---|---|
-| 51 | Qxf7+ | Mossa mancata | Errore | no-opponent-error |  |
-| 69 | Ra6+ | Mossa mancata | Errore | no-opponent-error |  |
 
 Confronto distanza matto (dalla posizione prima della mossa; non modifica le categorie):
 
@@ -156,8 +137,8 @@ Confronto distanza matto (dalla posizione prima della mossa; non modifica le cat
 
 ## personal-02: BUMCestinait0 vs skui1, 2026.10.03
 
-Ply: 75; inclusi: 66; esclusi unici: 9.
-Corrispondenza esatta: 45.45454545454545%; entro una classe: 89.0625%.
+Ply: 75; inclusi: 64; esclusi unici: 11.
+Corrispondenza esatta: 46.875%; entro una classe: 89.0625%.
 
 Conteggi attesi:
 - Migliore: 21
@@ -173,7 +154,7 @@ Conteggi attesi:
 - Non valutabile: 0
 - Forzata: 1
 
-Esclusioni: {"book":5,"unsupported":3,"suspect":0,"missing":0,"forced":1}
+Esclusioni: {"book":5,"unsupported":5,"suspect":0,"missing":0,"forced":1}
 
 | ply | SAN | Attesa | Ottenuta | dropPct | deltaCp | bestEval | bestMate | playedEval | playedMate | Esclusioni |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -227,7 +208,7 @@ Esclusioni: {"book":5,"unsupported":3,"suspect":0,"missing":0,"forced":1}
 | 48 | Kf8 | Imprecisione | Buona | 4.899295765916836 | -265 | -847 | N/D | -1112 | N/D |  |
 | 49 | Qf2+ | Migliore | Migliore | 0 | N/D | N/D | 10 | N/D | 10 |  |
 | 50 | Qf7 | Migliore | Migliore | 0 | N/D | N/D | -9 | N/D | -9 |  |
-| 51 | Qxf7+ | Mossa mancata | Errore | 14.246080221548796 | N/D | N/D | 8 | 718 | N/D |  |
+| 51 | Qxf7+ | Mossa mancata | Errore | 14.246080221548796 | N/D | N/D | 8 | 718 | N/D | unsupported |
 | 52 | Kxf7 | Forzata | Migliore | 0 | 0 | -697 | N/D | -697 | N/D | forced |
 | 53 | Rf1+ | Ottima | Migliore | 0 | 0 | 870 | N/D | 870 | N/D |  |
 | 54 | Ke7 | Errore | Ottima | 0.2725076027140713 | -14 | -943 | N/D | -957 | N/D |  |
@@ -245,7 +226,7 @@ Esclusioni: {"book":5,"unsupported":3,"suspect":0,"missing":0,"forced":1}
 | 66 | Kg6 | Errore | Buona | 3.9286559641770302 | -166 | -772 | N/D | -938 | N/D |  |
 | 67 | Bh4 | Migliore | Migliore | 0 | 0 | 1373 | N/D | 1373 | N/D |  |
 | 68 | Rc3 | Imprecisione | Ottima | 0 | N/D | N/D | -9 | N/D | -1 |  |
-| 69 | Ra6+ | Mossa mancata | Errore | 11.634569909472336 | N/D | N/D | 1 | 811 | N/D |  |
+| 69 | Ra6+ | Mossa mancata | Errore | 11.634569909472336 | N/D | N/D | 1 | 811 | N/D | unsupported |
 | 70 | Kg7 | Buona | Ottima | 2.3655251572450813 | -108 | -839 | N/D | -947 | N/D |  |
 | 71 | Rd4 | Imprecisione | Errore | 13.95229605086069 | -720 | 1346 | N/D | 626 | N/D |  |
 | 72 | Rxh3 | Errore | Errore | 16.903245511688773 | N/D | -637 | N/D | N/D | -2 |  |
@@ -263,20 +244,10 @@ Matrice di confusione (attesa × ottenuta):
 | Migliore | 16 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Errore grave | 0 | 0 | 0 | 0 | 2 | 1 | 0 | 0 | 0 | 0 | 0 |
 | Errore | 0 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Mossa mancata | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 Motore: Stockfish 16; depth 12; MultiPV 5.
 
 Fonti delle valutazioni: {"root-pv":102,"independent-position":33,"checkmate":1}
-
-Confronto Mossa mancata:
-
-| ply | SAN | Attesa | Ottenuta | Verifica | Variante |
-|---|---|---|---|---|---|
-| 27 | Nxe5 | Mossa mancata | Errore | no-confirmed-winning-opportunity |  |
-| 28 | Nxe5 | Mossa mancata | Errore | no-confirmed-winning-opportunity |  |
-| 44 | Kxe6 | Mossa mancata | Errore grave | no-opponent-error |  |
-| 94 | Qg1+ | Mossa mancata | Ottima | no-opponent-error |  |
 
 Confronto distanza matto (dalla posizione prima della mossa; non modifica le categorie):
 
@@ -311,8 +282,8 @@ Confronto distanza matto (dalla posizione prima della mossa; non modifica le cat
 
 ## personal-03: BUMCestinait0 vs ProprioI0, 2026.10.04
 
-Ply: 136; inclusi: 129; esclusi unici: 7.
-Corrispondenza esatta: 48.06201550387597%; entro una classe: 91.2%.
+Ply: 136; inclusi: 125; esclusi unici: 11.
+Corrispondenza esatta: 49.6%; entro una classe: 91.2%.
 
 Conteggi attesi:
 - Migliore: 50
@@ -328,7 +299,7 @@ Conteggi attesi:
 - Non valutabile: 0
 - Forzata: 1
 
-Esclusioni: {"book":4,"unsupported":2,"suspect":0,"missing":0,"forced":1}
+Esclusioni: {"book":4,"unsupported":6,"suspect":0,"missing":0,"forced":1}
 
 | ply | SAN | Attesa | Ottenuta | dropPct | deltaCp | bestEval | bestMate | playedEval | playedMate | Esclusioni |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -358,8 +329,8 @@ Esclusioni: {"book":4,"unsupported":2,"suspect":0,"missing":0,"forced":1}
 | 24 | g5 | Buona | Ottima | 2.450296800734497 | -40 | -93 | N/D | -133 | N/D |  |
 | 25 | Qe2 | Buona | Ottima | 2.0146201543388975 | -33 | 139 | N/D | 106 | N/D |  |
 | 26 | Qc5 | Errore | Errore | 10.183540517326872 | -174 | -114 | N/D | -288 | N/D |  |
-| 27 | Nxe5 | Mossa mancata | Errore | 12.421185838324067 | -211 | 294 | N/D | 83 | N/D |  |
-| 28 | Nxe5 | Mossa mancata | Errore | 13.572976612035593 | -233 | -88 | N/D | -321 | N/D |  |
+| 27 | Nxe5 | Mossa mancata | Errore | 12.421185838324067 | -211 | 294 | N/D | 83 | N/D | unsupported |
+| 28 | Nxe5 | Mossa mancata | Errore | 13.572976612035593 | -233 | -88 | N/D | -321 | N/D | unsupported |
 | 29 | Qxe5+ | Migliore | Migliore | 0 | 0 | 321 | N/D | 321 | N/D |  |
 | 30 | Qe7 | Buona | Buona | 3.3786339601818316 | -65 | -316 | N/D | -381 | N/D |  |
 | 31 | Qxe7+ | Buona | Ottima | 1.8667941922026365 | -36 | 369 | N/D | 333 | N/D |  |
@@ -375,7 +346,7 @@ Esclusioni: {"book":4,"unsupported":2,"suspect":0,"missing":0,"forced":1}
 | 41 | Re6+ | Errore grave | Errore grave | 48.73088108571745 | -856 | 371 | N/D | -485 | N/D |  |
 | 42 | Bxe6 | Grande | Migliore | 0 | 0 | 488 | N/D | 488 | N/D | unsupported |
 | 43 | dxe6 | Errore | Imprecisione | 9.05913456367762 | -254 | -502 | N/D | -756 | N/D |  |
-| 44 | Kxe6 | Mossa mancata | Errore grave | 20.112227344436107 | -477 | 756 | N/D | 279 | N/D |  |
+| 44 | Kxe6 | Mossa mancata | Errore grave | 20.112227344436107 | -477 | 756 | N/D | 279 | N/D | unsupported |
 | 45 | Rxg8 | Imprecisione | Imprecisione | 6.291633681624742 | -121 | -287 | N/D | -408 | N/D |  |
 | 46 | Rxg8 | Migliore | Migliore | 0 | 0 | 410 | N/D | 410 | N/D |  |
 | 47 | Be2 | Ottima | Ottima | 2.7131703964045792 | -58 | -412 | N/D | -470 | N/D |  |
@@ -425,7 +396,7 @@ Esclusioni: {"book":4,"unsupported":2,"suspect":0,"missing":0,"forced":1}
 | 91 | Kg5 | Migliore | Migliore | 0 | 0 | -3737 | N/D | -3737 | N/D |  |
 | 92 | Qxc5+ | Migliore | Ottima | 0 | 0 | 3737 | N/D | 3737 | N/D |  |
 | 93 | f5 | Ottima | Ottima | 0 | 0 | -3777 | N/D | -3777 | N/D |  |
-| 94 | Qg1+ | Mossa mancata | Ottima | 0.0030167027752159292 | -129 | 3777 | N/D | 3648 | N/D |  |
+| 94 | Qg1+ | Mossa mancata | Ottima | 0.0030167027752159292 | -129 | 3777 | N/D | 3648 | N/D | unsupported |
 | 95 | Kf6 | Imprecisione | Ottima | 0.002006053276894335 | -81 | -3648 | N/D | -3729 | N/D |  |
 | 96 | Qf2 | Ottima | Ottima | 0.0020060532768817474 | -81 | 3729 | N/D | 3648 | N/D |  |
 | 97 | Ke5 | Imprecisione | Ottima | 0.0014225137638985517 | -56 | -3650 | N/D | -3706 | N/D |  |
@@ -478,7 +449,6 @@ Matrice di confusione (attesa × ottenuta):
 | Imprecisione | 0 | 3 | 5 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Ottima | 6 | 26 | 2 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Migliore | 25 | 24 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Mossa mancata | 0 | 1 | 0 | 0 | 2 | 1 | 0 | 0 | 0 | 0 | 0 |
 | Errore grave | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
 
 Motore: Stockfish 16; depth 12; MultiPV 5.
@@ -588,13 +558,6 @@ Motore: Stockfish 16; depth 12; MultiPV 5.
 
 Fonti delle valutazioni: {"root-pv":27,"independent-position":10}
 
-Confronto Mossa mancata:
-
-| ply | SAN | Attesa | Ottenuta | Verifica | Variante |
-|---|---|---|---|---|---|
-| 12 | Nxf2 | Mossa mancata | Imprecisione | no-confirmed-winning-opportunity |  |
-| 14 | Qxd7 | Mossa mancata | Imprecisione | no-confirmed-winning-opportunity |  |
-
 Confronto distanza matto (dalla posizione prima della mossa; non modifica le categorie):
 
 | ply | SAN | Osservazione |
@@ -603,8 +566,8 @@ Confronto distanza matto (dalla posizione prima della mossa; non modifica le cat
 
 ## personal-05: BUMCestinait0 vs ProprioI0, 2026.10.04
 
-Ply: 37; inclusi: 26; esclusi unici: 11.
-Corrispondenza esatta: 42.30769230769231%; entro una classe: 95.83333333333333%.
+Ply: 37; inclusi: 24; esclusi unici: 13.
+Corrispondenza esatta: 45.833333333333336%; entro una classe: 95.83333333333333%.
 
 Conteggi attesi:
 - Migliore: 5
@@ -620,7 +583,7 @@ Conteggi attesi:
 - Non valutabile: 0
 - Forzata: 0
 
-Esclusioni: {"book":8,"unsupported":3,"suspect":0,"missing":0,"forced":0}
+Esclusioni: {"book":8,"unsupported":5,"suspect":0,"missing":0,"forced":0}
 
 | ply | SAN | Attesa | Ottenuta | dropPct | deltaCp | bestEval | bestMate | playedEval | playedMate | Esclusioni |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -635,9 +598,9 @@ Esclusioni: {"book":8,"unsupported":3,"suspect":0,"missing":0,"forced":0}
 | 9 | dxe5 | Migliore | Ottima | 0.49919671254103903 | -8 | 36 | N/D | 28 | N/D |  |
 | 10 | Bc5 | Buona | Ottima | 2.2394067581779975 | -36 | -36 | N/D | -72 | N/D |  |
 | 11 | Bxc6 | Errore | Errore | 11.862974701569968 | -191 | 64 | N/D | -127 | N/D |  |
-| 12 | Nxf2 | Mossa mancata | Imprecisione | 7.871486246013404 | -127 | 127 | N/D | 0 | N/D |  |
+| 12 | Nxf2 | Mossa mancata | Imprecisione | 7.871486246013404 | -127 | 127 | N/D | 0 | N/D | unsupported |
 | 13 | Bxd7+ | Errore | Errore grave | 20.346044220913633 | -335 | 70 | N/D | -265 | N/D |  |
-| 14 | Qxd7 | Mossa mancata | Imprecisione | 8.530234742125586 | -144 | 254 | N/D | 110 | N/D |  |
+| 14 | Qxd7 | Mossa mancata | Imprecisione | 8.530234742125586 | -144 | 254 | N/D | 110 | N/D | unsupported |
 | 15 | Qe2 | Errore grave | Errore | 15.480182164614176 | -274 | -110 | N/D | -384 | N/D |  |
 | 16 | Nxh1 | Grande | Migliore | 0 | 0 | 393 | N/D | 393 | N/D | unsupported |
 | 17 | Qc4 | Imprecisione | Imprecisione | 8.972664082082996 | -208 | -398 | N/D | -606 | N/D |  |
@@ -669,7 +632,6 @@ Matrice di confusione (attesa × ottenuta):
 | Migliore | 2 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Buona | 0 | 3 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Errore | 0 | 0 | 1 | 0 | 2 | 1 | 0 | 0 | 0 | 0 | 0 |
-| Mossa mancata | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Errore grave | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
 | Imprecisione | 0 | 0 | 1 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Ottima | 1 | 4 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |

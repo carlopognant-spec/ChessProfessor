@@ -1,5 +1,6 @@
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { calculateWinProbability } from './evaluation.js'
+import { compareMateDistance } from './mateComparison.js'
 
 export const MOVE_CLASSIFICATION = {
   book: 'book',
@@ -46,14 +47,38 @@ export function classifyAnalysisEntries(entries = [], thresholds = ENGINE_CONFIG
     const evalDelta = entry.bestMate != null || entry.playedMate != null || !Number.isFinite(entry.playedEval) || !Number.isFinite(entry.bestEval)
       ? null
       : entry.playedEval - entry.bestEval
-    const classification = dropPct == null && !entry.isBookMove ? MOVE_CLASSIFICATION.unclassified : classifyMove({
+    let classification = dropPct == null && !entry.isBookMove ? MOVE_CLASSIFICATION.unclassified : classifyMove({
       dropPct,
       isBookMove: entry.isBookMove,
       thresholds,
     })
+    if (classification === MOVE_CLASSIFICATION.best && entry.isEngineBest === false && entry.playedMate !== 0) {
+      classification = MOVE_CLASSIFICATION.excellent
+    }
 
-    return { ...entry, evalDelta, bestProbability, playedProbability, dropPct, classification }
+    return { ...entry, evalDelta, bestProbability, playedProbability, dropPct, classification, mateComparison: compareMateDistance(entry) }
   })
+}
+
+// MultiPV scores are already from the mover's perspective. Prefer the
+// played root move from the same search over an independent child search.
+export function moveEvaluationFields(engine, playedEngine, playedUci, options = {}) {
+  const fields = evaluationFields(engine, playedEngine, options)
+  const primary = engine.lines?.find(line => line.multipv === 1) ?? engine
+  const bestUci = primary.pv?.[0] ?? null
+  const isEngineBest = bestUci && playedUci ? bestUci === playedUci : null
+  const line = isEngineBest ? primary : playedUci ? engine.lines?.find(line => line.pv?.[0] === playedUci) : null
+  const sameDepth = line && (primary.depth == null && line.depth == null || primary.depth === line.depth)
+  const hasScore = line && (Number.isFinite(line.mate) || Number.isFinite(line.evalCp))
+  const useRoot = !options.isCheckmate && sameDepth && hasScore
+  return {
+    ...fields,
+    ...(useRoot ? { playedEval: line.mate == null ? line.evalCp : null, playedMate: line.mate ?? null } : {}),
+    playedUci,
+    bestUci,
+    isEngineBest,
+    evaluationSource: options.isCheckmate ? 'checkmate' : useRoot ? 'root-pv' : 'independent-position',
+  }
 }
 
 // Stockfish reports scores from side-to-move at each FEN.

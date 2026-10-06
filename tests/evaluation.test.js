@@ -26,4 +26,14 @@ describe('evaluation helpers', () => {
     expect(formatMateLabel(-3)).toBe('M3')
     expect(formatMateLabel(1)).toBe('M1')
   })
+
+  it('distinguishes large advantages and preserves symmetry for both players', () => {
+    const values = [1000, 2000, 4000].map(cp => calculateWinProbability(cp))
+    expect(values[0]).toBeLessThan(values[1])
+    expect(values[1]).toBeLessThan(values[2])
+    for (const cp of [1000, 2000, 4000]) {
+      expect(calculateWinProbability(-cp)).toBeCloseTo(1 - calculateWinProbability(cp), 12)
+      expect(calculateWinProbability(cp, 'black')).toBe(calculateWinProbability(-cp))
+    }
+  })
 })

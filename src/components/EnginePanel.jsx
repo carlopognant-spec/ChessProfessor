@@ -21,11 +21,13 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
 
   fenRef.current = fen
 
-  const applyEngineData = useCallback((data) => {
-    if (!data) return
+  const applyEngineData = useCallback((data, positionFen) => {
+    if (!data || positionFen !== fenRef.current) return
     const normalized = {
       ...data,
-      evalCp: normalizeEvalToWhite(data?.evalCp),
+      fen: positionFen,
+      evalCp: normalizeEvalToWhite(data?.evalCp, positionFen.split(' ')[1] === 'b' ? 'black' : 'white'),
+      mate: normalizeEvalToWhite(data?.mate, positionFen.split(' ')[1] === 'b' ? 'black' : 'white'),
     }
     setEvalData(normalized)
     onEngineData?.(normalized)
@@ -59,6 +61,10 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
   useEffect(() => {
     if (!engineRef.current) return
 
+    analysisEntriesRef.current = []
+    onAnalysisData?.([])
+    setEngineError('')
+
     if (moveHistorySan.length === 0) {
       analysisSessionRef.current.clear()
       analysisEntriesRef.current = []
@@ -85,7 +91,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
         analysisEntriesRef.current = results
         onAnalysisData?.(results)
         const cached = resolveEngineForFen(fenRef.current, results)
-        if (cached) applyEngineData(cached)
+        if (cached) applyEngineData(cached, fenRef.current)
       },
     })
       .then((entries) => {
@@ -93,7 +99,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
         analysisEntriesRef.current = entries
         onAnalysisData?.(entries)
         const cached = resolveEngineForFen(fenRef.current, entries)
-        if (cached) applyEngineData(cached)
+        if (cached) applyEngineData(cached, fenRef.current)
       })
       .catch((error) => {
         if (!cancelled && error?.name !== 'AbortError') {
@@ -117,10 +123,14 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
   useEffect(() => {
     if (!engineRef.current) return
 
+    setEvalData(null)
+    onEngineData?.(null)
+    setEngineError('')
+
     if (moveHistorySan.length > 0) {
       const cached = resolveEngineForFen(fen, analysisEntriesRef.current)
       if (cached?.lines?.length) {
-        applyEngineData(cached)
+        applyEngineData(cached, fen)
         return
       }
       if (gameAnalyzingRef.current) return
@@ -131,7 +141,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
 
     engineRef.current.analyze(fen, ENGINE_CONFIG.defaultDepth, ENGINE_CONFIG.multiPv)
       .then((data) => {
-        if (!cancelled) applyEngineData(data)
+        if (!cancelled) applyEngineData(data, fen)
       })
       .catch((error) => {
         if (!cancelled && error?.name !== 'AbortError' && error?.message !== 'analysis superseded') {
@@ -145,7 +155,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
     return () => {
       cancelled = true
     }
-  }, [fen, moveHistorySan, applyEngineData])
+  }, [fen, moveHistorySan, applyEngineData, onEngineData])
 
   const barPercent = evalData?.mate != null
     ? (evalData.mate > 0 ? 100 : 0)
@@ -163,7 +173,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
         {analyzing && (moveHistorySan.length > 0
           ? `Analisi partita: ${Math.round(progress)}%`
           : 'Stockfish sta analizzando…')}
-        {!analyzing && evalData?.mate != null && `Matto in ${Math.abs(evalData.mate)}`}
+        {!analyzing && evalData?.mate != null && (evalData.mate === 0 ? 'Scacco matto' : `Matto in ${Math.abs(evalData.mate)}`)}
         {!analyzing && evalData?.mate == null && evalData?.evalCp != null &&
           `Valutazione: ${(evalData.evalCp / 100).toFixed(2)}`}
         {!analyzing && evalData?.mate == null && evalData?.evalCp == null && 'Nessuna valutazione disponibile.'}

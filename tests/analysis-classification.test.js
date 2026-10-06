@@ -1,7 +1,53 @@
 import { describe, expect, it } from 'vitest'
-import { classifyAnalysisEntries, evaluationFields } from '../src/lib/classification.js'
+import { classifyAnalysisEntries, evaluationFields, moveEvaluationFields } from '../src/lib/classification.js'
 
 describe('analysis classification', () => {
+  it('compares root variations without inverting scores for either mover', () => {
+    const engine = { evalCp: 80, mate: null, lines: [
+      { multipv: 1, depth: 12, evalCp: 80, mate: null, pv: ['e2e4'] },
+      { multipv: 2, depth: 12, evalCp: 40, mate: null, pv: ['d2d4'] },
+    ] }
+    const fields = moveEvaluationFields(engine, { evalCp: 500, mate: null }, 'd2d4')
+    expect(fields.playedEval).toBe(40)
+    expect(fields.evaluationSource).toBe('root-pv')
+    expect(fields.isEngineBest).toBe(false)
+    expect(classifyAnalysisEntries([fields])[0].classification).toBe('excellent')
+    engine.lines[0].pv = ['e7e5']
+    engine.lines[1].pv = ['d7d5']
+    expect(moveEvaluationFields(engine, { evalCp: 500 }, 'd7d5').playedEval).toBe(40)
+  })
+
+  it('does not call a different move best because of independent-search noise', () => {
+    const fields = moveEvaluationFields({ evalCp: 20, mate: null, pv: ['e2e4'] }, { evalCp: -40, mate: null }, 'd2d4')
+    const [entry] = classifyAnalysisEntries([fields])
+    expect(entry.dropPct).toBe(0)
+    expect(entry.classification).toBe('excellent')
+    expect(entry.evaluationSource).toBe('independent-position')
+  })
+
+  it('falls back for a stale root depth and preserves missing scores and checkmate', () => {
+    const engine = { evalCp: 20, mate: null, lines: [
+      { multipv: 1, depth: 12, evalCp: 20, mate: null, pv: ['a7a8q'] },
+      { multipv: 2, depth: 11, evalCp: 10, mate: null, pv: ['a7a8n'] },
+    ] }
+    expect(moveEvaluationFields(engine, { evalCp: -5, mate: null }, 'a7a8n')).toMatchObject({ playedEval: 5, isEngineBest: false, evaluationSource: 'independent-position' })
+    expect(moveEvaluationFields(engine, { evalCp: -5, mate: null }, 'a7a8q')).toMatchObject({ playedEval: 20, isEngineBest: true })
+    const missing = moveEvaluationFields({ evalCp: null, mate: null, pv: ['e2e4'] }, { evalCp: null, mate: null }, 'e2e4')
+    expect(classifyAnalysisEntries([missing])[0].classification).toBe('unclassified')
+    const mate = moveEvaluationFields(engine, { evalCp: null, mate: null }, 'a7a8n', { isCheckmate: true })
+    expect(classifyAnalysisEntries([mate])[0].classification).toBe('best')
+  })
+  it('retains a measurable loss beyond the former centipawn clamp', () => {
+    const entries = classifyAnalysisEntries([
+      { bestEval: 4000, playedEval: 1000 },
+      { bestEval: -1000, playedEval: -4000 },
+    ])
+    for (const entry of entries) {
+      expect(entry.dropPct).toBeGreaterThan(7)
+      expect(entry.classification).toBe('inaccuracy')
+    }
+    expect(entries[0].dropPct).toBeCloseTo(entries[1].dropPct, 12)
+  })
   it('adds classification from played and best win-probability drops', () => {
     const [entry] = classifyAnalysisEntries([{ bestEval: 80, playedEval: 40 }])
     expect(entry.classification).toBe('excellent')
@@ -73,5 +119,5 @@ describe('analysis classification', () => {
     expect(evaluationFields({ evalCp: null, mate: -2 }, { evalCp: null, mate: 1 }).playedMate).toBe(-1)
   })
 
-  it.todo('carries opponent error context into the next move for missed opportunities (Point 3)')
+  // Contextual opponent-error and cache regressions: missed-opportunity.test.js.
 })

@@ -20,7 +20,10 @@ export function calculateWinProbability(evalCp, side = 'white') {
 
   if (value == null) return 0.5
 
-  return cpToProbability(value)
+  // Classification uses a continuous approximation: do not collapse all
+  // advantages beyond ten pawns to the same value. Keep cpToProbability's
+  // bounded contract for its existing callers.
+  return 1 / (1 + Math.exp(-value / 400))
 }
 
 export function moverWinProb({

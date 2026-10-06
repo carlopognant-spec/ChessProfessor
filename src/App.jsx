@@ -59,6 +59,7 @@ function AppContent() {
       }
       setPgnError('')
       setAnalysisEntries([])
+      setEngineData(null)
     } catch (error) {
       setPgnError(error.message)
     }
@@ -67,6 +68,7 @@ function AppContent() {
   const handleResetGame = () => {
     resetGame()
     setAnalysisEntries([])
+    setEngineData(null)
   }
 
   return (

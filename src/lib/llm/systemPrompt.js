@@ -27,6 +27,11 @@ export const CRITICAL_SYSTEM_PROMPT = `${SYSTEM_PROMPT}
 
 CONTESTO CRITICO:
 - Spiega solo la categoria e i fatti verificati ricevuti.
+- Per Mossa mancata usa la mossa avversaria e la variante alternativa verificata;
+  le probabilità e i limiti sono del modello locale, non di chess.com.
+- Il confronto della distanza del matto parte dalla posizione prima della mossa;
+  con source independent-position le distanze sono stime da analisi separate.
+  Non trasformare una variazione della distanza in una perdita percentuale o in una nuova categoria.
 - Non inventare struttura pedonale, sicurezza del re, sviluppo o varianti.
 - Se un fatto non è presente, dichiaralo invece di dedurlo.`
 
@@ -51,6 +56,10 @@ Linea principale (PV, notazione UCI): ${engineData.pv.slice(0, 6).join(' ')}`
 Mossa giocata: ${criticalContext.playedMove ?? 'non disponibile'}
 Eval migliore: ${criticalContext.bestEval ?? 'non disponibile'}
 Eval mossa giocata: ${criticalContext.playedEval ?? 'non disponibile'}
+Matto migliore (prospettiva di chi muove): ${criticalContext.bestMate ?? 'non disponibile'}
+Matto mossa giocata (prospettiva di chi muove): ${criticalContext.playedMate ?? 'non disponibile'}
+Confronto distanza matto: ${JSON.stringify(criticalContext.mateComparison ?? null)}
+Occasione mancata verificata: ${JSON.stringify(criticalContext.missedOpportunity ?? null)}
 Perdita: ${criticalContext.evalDelta ?? 'non disponibile'}`
     : 'Nessun contesto critico aggiuntivo disponibile.'
 

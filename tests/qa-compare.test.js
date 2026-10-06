@@ -17,6 +17,40 @@ function sample(categories = ['Migliore', 'Ottima', 'Imprecisione', 'Errore grav
 }
 
 describe('QA comparison', () => {
+  it('shares opponent-error context with the app and gives missed labels no ordinal distance', () => {
+    const game = new Chess()
+    const fixture = { pgn: '1. f3 e5 *', annotations: [
+      { ply: 1, san: 'f3', category: 'Errore grave' },
+      { ply: 2, san: 'e5', category: 'Mossa mancata' },
+    ] }
+    const scores = [{ evalCp: 0, mate: null, pv: ['e2e4', 'e7e5'], lines: [] }, { evalCp: 600, mate: null, pv: ['b8c6', 'e2e4'], lines: [] }, { evalCp: 0, mate: null, pv: [], lines: [] }]
+    const entries = ['f3', 'e5'].map((san, index) => {
+      const fenBefore = game.fen()
+      const move = game.move(san)
+      return { san, uci: move.from + move.to, fenBefore, fenAfter: game.fen(), engine: scores[index], playedEngine: scores[index + 1] }
+    })
+    const report = compare(fixture, { entries })
+    expect(report.exactPct).toBe(100)
+    expect(report.ordinalIncluded).toBe(1)
+    expect(report.withinOnePct).toBe(100)
+    expect(report.rows[1]).toMatchObject({ actual: 'Mossa mancata', baseClassification: 'blunder' })
+    fixture.annotations = [fixture.annotations[1], fixture.annotations[0]]
+    expect(compare(fixture, { entries }).rows[0].actual).toBe('Mossa mancata')
+  })
+  it('reports shortened losing mate separately from the unchanged outcome loss', () => {
+    const { fixture, cache } = sample()
+    cache.entries[0].engine = { evalCp: null, mate: -6, lines: [] }
+    cache.entries[0].playedEngine = { evalCp: null, mate: 3, lines: [] }
+    const report = compare(fixture, cache)
+    expect(report.rows[0]).toMatchObject({ dropPct: 0, mateComparison: { outcome: 'losing', bestMoves: 6, playedMoves: 3, change: 'accelerated' } })
+    expect(renderReport([report])).toContain('Matto subito: 6 → 3 mosse (anticipato). Stime da analisi separate.')
+  })
+  it('uses cached root PV identity and score instead of the independent child score', () => {
+    const { fixture, cache } = sample()
+    cache.entries[0].engine.lines = [{ multipv: 1, depth: 12, evalCp: 0, mate: null, pv: [cache.entries[0].uci] }]
+    cache.entries[0].playedEngine.evalCp = 500
+    expect(compare(fixture, cache).rows[0]).toMatchObject({ actual: 'Migliore', dropPct: 0, evaluationSource: 'root-pv', isEngineBest: true })
+  })
   it('computes percentages and confusion counts with actual local classification', () => {
     const { fixture, cache } = sample()
     const report = compare(fixture, cache)
@@ -34,9 +68,11 @@ describe('QA comparison', () => {
     const { fixture, cache } = sample(['Libro', 'Geniale', 'Grande', 'Mossa mancata'])
     cache.entries[0].engine.evalCp = null
     const report = compare(fixture, cache, [{ game: 'sample', ply: 1 }])
-    expect(report.excluded).toBe(4)
-    expect(report.exclusions).toEqual({ book: 1, unsupported: 3, suspect: 1, missing: 1, forced: 0 })
-    expect(report.exactPct).toBeNull()
+    expect(report.excluded).toBe(3)
+    expect(report.included).toBe(1)
+    expect(report.exclusions).toEqual({ book: 1, unsupported: 2, suspect: 1, missing: 1, forced: 0 })
+    expect(report.exactPct).toBe(0)
+    expect(report.withinOnePct).toBeNull()
     expect(report.expectedCounts.Geniale).toBe(1)
     expect(report.rows[0].actual).toBe('Non valutabile')
   })

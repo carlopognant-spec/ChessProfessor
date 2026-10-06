@@ -46,7 +46,7 @@ describe('move classification', () => {
     })).toBe('best')
   })
 
-  it.todo('marks a missed opportunity only after an opponent error (Point 3)')
+  // Missed opportunities after opponent errors: missed-opportunity.test.js.
   it.todo('re-introduces brilliant and great when Point 4 rules are implemented')
 })
 

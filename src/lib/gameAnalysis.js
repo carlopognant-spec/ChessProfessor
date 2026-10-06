@@ -1,8 +1,9 @@
 import { createAnalysisCache } from './analysisCache.js'
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { Chess } from 'chess.js'
-import { classifyAnalysisEntries, evaluationFields, MOVE_CLASSIFICATION } from './classification.js'
+import { classifyAnalysisEntries, moveEvaluationFields, MOVE_CLASSIFICATION } from './classification.js'
 import { loadOpeningBook } from './openingBook.js'
+import { classifyMissedOpportunity } from './missedOpportunity.js'
 
 const CLASSIFICATION_ORDER = Object.values(MOVE_CLASSIFICATION)
 
@@ -132,7 +133,6 @@ export async function analyzeGame({
         entry = {
           ...entry,
           playedEngine,
-          ...evaluationFields(engine, playedEngine, { isCheckmate: game.isCheckmate() }),
         }
       }
 
@@ -156,7 +156,14 @@ export async function analyzeGame({
       isBookMove,
       isFirstBookDeviation,
     }
-    if (entry.playedEngine) entry = classifyAnalysisEntries([entry])[0]
+    if (entry.playedEngine) {
+      const move = game.history({ verbose: true }).at(-1)
+      entry = classifyAnalysisEntries([{
+        ...entry,
+        ...moveEvaluationFields(entry.engine, entry.playedEngine, `${move.from}${move.to}${move.promotion ?? ''}`, { isCheckmate: game.isCheckmate() }),
+      }])[0]
+      entry = classifyMissedOpportunity(entry, results.at(-1))
+    }
 
     results.push(entry)
     onEntry?.(entry, [...results])

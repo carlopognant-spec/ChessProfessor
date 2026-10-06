@@ -5,6 +5,7 @@ import { Chess } from 'chess.js'
 import { ENGINE_CONFIG } from '../src/lib/engineConfig.js'
 import { fixtureMoves, validateCache, compare, renderReport } from './qa/compare.js'
 import { NativeEngine } from './qa/native-engine.js'
+import { createOpeningBook } from '../src/lib/openingBook.js'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
 const directory = path.join(root, 'tests/fixtures/qa')
@@ -22,6 +23,7 @@ try {
     if (!ids.length) throw new Error('Nessuna fixture personale: eseguire node scripts/qa-import-personal.js')
   }
   const suspects = await json(path.join(directory, 'suspect-labels.json'))
+  const openingBook = createOpeningBook((await json(path.join(root, 'src/data/openingPositions.json'))).positions)
   for (const id of ids) {
     let fixture
     try { fixture = await json(path.join(directory, `${id}.json`)) }
@@ -61,7 +63,7 @@ try {
       catch (error) { if (error.code !== 'ENOENT') throw error; pending.push(`Cache assente: ${id}`); continue }
     }
     validateCache(cache, fixture, ENGINE_CONFIG)
-    reports.push(compare(fixture, cache, suspects))
+    reports.push(compare(fixture, cache, suspects, { openingBook }))
   }
   const report = renderReport(reports, pending)
   await writeFile(path.join(root, personal ? 'agent-output/qa-compare-personal.md' : 'agent-output/qa-compare.md'), report)

@@ -4,8 +4,6 @@ Classificazione per calo di probabilità (punti percentuali). Soglie iniziali no
 
 Mossa giocata valutata dalla stessa ricerca MultiPV quando presente a pari profondità; altrimenti analisi indipendente della posizione successiva. Una mossa diversa dalla PV principale riceve al massimo Ottima, salvo matto dato. Senza identità UCI/PV si conserva il criterio precedente.
 
-Mossa mancata inclusa nel confronto esatto, senza posizione nella scala ordinale. Entro una classe usa soltanto le categorie comuni attese. Regola locale provvisoria: {"winningProbability":0.75,"nonWinningProbability":0.6}; errore avversario adiacente, nuova occasione confermata e PV alternativa legale.
-
 ## Totale del gruppo (sanity esclusa)
 
 Ply: 193; inclusi: 161; esclusi: 32.
@@ -25,8 +23,6 @@ Corrispondenza esatta: 50.93167701863354%; entro una classe: 86.33540372670808%.
 | Mossa mancata | 0 | 0 | 0 |
 | Non valutabile | 0 | 0 | 0 |
 | Forzata | 0 | 0 | 0 |
-
-Categorie comuni: 82/161 esatte (50.93167701863354%); entro una classe: 139/161.
 
 Motore: Stockfish 16; depth 12; MultiPV 5.
 

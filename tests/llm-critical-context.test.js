@@ -3,8 +3,21 @@ import {
   buildCriticalContext,
   shouldUseCriticalLlm,
 } from '../src/lib/llm/criticalContext.js'
+import { buildUserMessage } from '../src/lib/llm/systemPrompt.js'
 
 describe('critical LLM context', () => {
+  it('includes mate data and comparison in the message actually sent to the model', () => {
+    const message = buildUserMessage({
+      fen: '4k3/8/8/8/8/8/8/4K3 w - - 0 1',
+      question: 'Perché?', moveHistorySan: [],
+      criticalContext: { bestMate: -6, playedMate: -3, mateComparison: { outcome: 'losing', change: 'accelerated', source: 'independent-position' }, missedOpportunity: { previousMove: 'f3', alternative: { san: ['Nc6', 'e4'] } } },
+    })
+    expect(message).toContain('Matto migliore (prospettiva di chi muove): -6')
+    expect(message).toContain('Matto mossa giocata (prospettiva di chi muove): -3')
+    expect(message).toContain('"source":"independent-position"')
+    expect(message).toContain('"previousMove":"f3"')
+    expect(message).toContain('"san":["Nc6","e4"]')
+  })
   it('allows only critical categories or the first book deviation', () => {
     expect(shouldUseCriticalLlm({ classification: 'good' })).toBe(false)
     expect(shouldUseCriticalLlm({ classification: 'mistake' })).toBe(true)
@@ -22,6 +35,9 @@ describe('critical LLM context', () => {
         classification: 'mistake',
         bestEval: 80,
         playedEval: -120,
+        bestMate: -6,
+        playedMate: -3,
+        mateComparison: { outcome: 'losing', change: 'accelerated' },
         evalDelta: -200,
         playedMove: 'e5',
         pv: ['e7e5'],
@@ -36,6 +52,9 @@ describe('critical LLM context', () => {
       evalDelta: -200,
       bestEval: 80,
       playedEval: -120,
+      bestMate: -6,
+      playedMate: -3,
+      mateComparison: { outcome: 'losing', change: 'accelerated' },
     }))
   })
 })

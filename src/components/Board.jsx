@@ -16,7 +16,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
   const boardFen = displayFen ?? fen
 
   const analysisEngine = useMemo(
-    () => resolveEngineForFen(boardFen, analysisEntries) ?? engineData,
+    () => resolveEngineForFen(boardFen, analysisEntries, engineData),
     [analysisEntries, engineData, boardFen],
   )
   const engineArrows = useMemo(() => buildEngineArrows(analysisEngine?.lines ?? []), [analysisEngine])
@@ -112,7 +112,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
   }
 
   return (
-    <div className="board-stage">
+    <div className="board-stage" data-fen={boardFen}>
       <Chessboard options={chessboardOptions} />
       {engineArrowSegments.length > 0 && (
         <svg className="engine-arrow-overlay" viewBox="0 0 100 100" aria-label="Linee migliori di Stockfish">

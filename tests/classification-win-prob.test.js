@@ -158,7 +158,7 @@ describe('win probability classification', () => {
     }
   }, 60000)
 
-  it('classifies by the maximum drop threshold and keeps brilliant/great/missed disabled', () => {
+  it('classifies common labels by loss alone; context labels use a separate pass', () => {
     const thresholds = {
       best: 1,
       excellent: 3,

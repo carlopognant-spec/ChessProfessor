@@ -289,6 +289,13 @@ button:focus-visible {
   color: var(--bone-dim);
 }
 
+.mate-distance-note {
+  display: block;
+  margin-top: 0.2rem;
+  max-width: 32rem;
+  text-align: left;
+}
+
 .position-editor {
   margin-top: 1rem;
   padding-top: 1rem;

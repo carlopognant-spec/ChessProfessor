@@ -19,12 +19,12 @@ function squareToPoint(square) {
   }
 }
 
-export function resolveEngineForFen(fen, analysisEntries = []) {
+export function resolveEngineForFen(fen, analysisEntries = [], engineData = null) {
   const entry = analysisEntries.find((candidate) => candidate.fenAfter === fen)
     ?? analysisEntries.find((candidate) => candidate.fenBefore === fen)
-  if (!entry) return null
+  if (!entry) return engineData?.fen === fen ? engineData : null
   return entry.fenAfter === fen
-    ? entry.playedEngine ?? entry.engine
+    ? entry.playedEngine ?? null
     : entry.engine
 }
 
