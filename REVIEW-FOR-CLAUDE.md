@@ -4,11 +4,11 @@ Aggiornato: 7 ottobre 2026.
 
 ## Compito richiesto
 
-Revisiona le modifiche implementate dopo il commit `d25e710` (Libro locale). Al momento della preparazione sono nel working tree del branch `main`, senza commit/push dell'agente. Dopo un eventuale commit, usa `git diff d25e710..HEAD`; prima del commit considera anche i file nuovi non tracciati, che `git diff` da solo non mostra.
+Revisiona le modifiche implementate nell'intervallo `d25e710..4105966` (baseline: Libro locale). Il commit `4105966` contiene le modifiche da revisionare; considera separatamente gli interventi successivi nel working tree, con `git diff` e `git status --short`. Nessun commit/push viene eseguito dall'agente.
 
 Prima presenta i problemi trovati, con gravità, file/riga, scenario riproducibile e correzione suggerita. Distingui bug, scelte di prodotto e limiti statistici. Non modificare codice o soglie prima del riscontro di Carlo. Non fare commit o push.
 
-Leggi questo riepilogo, gli aggiornamenti finali di `HANDOFF-ChessProfessor.md` e `agent-output/missed-opportunity-policy.md`. Non leggere `.env` o credenziali. Non leggere le annotazioni di Partite/7–10 né usarle per tarare: sono riservate alla validazione. Non rigenerare le cache motore per una revisione del classificatore.
+Leggi questo riepilogo, gli aggiornamenti finali di `HANDOFF-ChessProfessor.md` e `agent-output/missed-opportunity-policy.md`. Non leggere né creare `.env` o credenziali. Non leggere le annotazioni di Partite/7–10 né usarle per tarare. Le partite 7–9 restano riservate alla validazione indipendente; la 10 non è più cieca perché è stata usata per l'ipotesi sul Libro. Non rigenerare le cache motore per una revisione del classificatore.
 
 ## Obiettivo e stato reale
 
@@ -56,7 +56,7 @@ La regola riconosce **solo 1/10 esempi attesi**: personal-01 ply 35 Bc3 dopo Qxd
 
 - `scripts/qa/compare.js`, `scripts/qa-compare.js`: contesto elaborato in ordine dei ply, indipendentemente dall'ordine delle annotazioni. Repertorio locale usato per proteggere il contesto Libro; etichette attese Libro ancora escluse dal confronto.
 - Mossa mancata ora inclusa nel confronto esatto. Grande e Geniale ancora escluse. Entro una classe usa soltanto categorie comuni attese: Mossa mancata non ha distanza ordinale.
-- Personali: nuovo totale **174/342 = 50.8772%**; non confrontarlo direttamente con il vecchio **173/332**. Sole categorie comuni invariate: **173/332 = 52.1084%**, entro una classe **300/332 = 90.3614%**. Storiche invariate: 82/161 e 139/161.
+- Personali: totale corrente **174/342 = 50.8772%**, inclusa Mossa mancata. Per confrontare l'intero intervallo revisionato usa le sole categorie comuni: **prima 174/332 esatte e 291/332 entro una classe; ora 173/332 e 300/332**. Non sono invariate; erano rimaste invariate soltanto rispetto alla fase immediatamente precedente all'introduzione di Mossa mancata. Storiche correnti: 82/161 esatte e 139/161 entro una classe.
 - Baseline nei report `agent-output/*before-*`; report correnti e console preservati. Controlla denominatori, esclusioni sovrapposte, falsi positivi e separazione fra dati grezzi e contesto.
 - `src/lib/llm/criticalContext.js` e `systemPrompt.js`: includono matti e occasione nel messaggio effettivamente serializzato. Nessuna API LLM chiamata durante queste fasi; qualità delle spiegazioni ancora da collaudare.
 
@@ -80,3 +80,12 @@ git diff --check
 ## Risultato atteso della revisione
 
 Elenco ordinato per gravità dei bug e delle lacune, con prove e riferimenti precisi. Indica anche eventuali disaccordi sulle scelte matematiche e di categoria, senza presentarli come difetti dimostrati. Proponi il prossimo intervento verificabile. Grande/Geniale, modello dipendente dal rating e validazione indipendente restano lavoro successivo.
+
+## Prossimi passi dopo la revisione
+
+- Procedere un punto alla volta con STOP e riepilogo. B1 completato: documentati fallbackDepth ed explorerMinGames come inutilizzati; explorerThreshold è attivo e non decide Libro. B2 aggiorna soltanto documentazione; B3 affronterà gli errori terminali del motore con un worker finto. Nessun cambio a modello, soglie, Libro, Mossa mancata o categorie autorizzato.
+- Grande/Geniale e modello dipendente dal rating: progettazione separata, distinguendo documentazione chess.com e approssimazioni locali, senza inventare coefficienti.
+- Validazione indipendente sulle partite 7–9 dopo aver fissato le regole; tenere la 10 fuori dal gruppo cieco e adattare importer/CLI prima dell'importazione.
+- Collaudare le spiegazioni LLM: la serializzazione è testata, la qualità delle risposte dei provider non è stata verificata.
+- Valutare le 7 vulnerabilità npm segnalate dall'installazione precedente; audit aggiornato NON ESEGUITO in B2. Le credenziali VITE_* usate nel client entrano nel bundle pubblico: serve un proxy lato server per conservare le chiavi. Non leggere .env né pubblicare credenziali.
+- Esiti e agenda delle Fasi A/B/C, inclusi B4 searchmoves, C7 esperimento separato e C8 ipotesi sui matti mancati, sono registrati nell'handoff. B4 è solo progettazione; nessuna implementazione o nuova cache autorizzata.

@@ -1,6 +1,6 @@
 # ChessProfessor — stato e prosecuzione
 
-Aggiornato: 6 ottobre 2026. Leggere questo file prima di proseguire su un altro PC.
+Aggiornato: 7 ottobre 2026. Leggere questo file prima di proseguire su un altro PC. Le sezioni finali Esiti Fase A e Agenda Fase 1ter prevalgono sui riferimenti storici ai prossimi passi.
 
 ## Aggiornamento: fix Libro locale del 6 ottobre
 
@@ -107,7 +107,7 @@ File: `src/lib/classification.js`, `engineConfig.js`, `gameAnalysis.js`; etichet
 
 - Originali in `Partite/1` … `Partite/10`: PGN e `analisi.txt`. Non modificati.
 - Partite 1–6 completamente annotate: 399 ply. Importate in `tests/fixtures/qa/personal-01.json` … `personal-06.json`. Cache reali generate per tutte.
-- Partite 7–10: 203 ply, ancora senza categorie, riservate alla validazione futura. Non analizzate per il confronto e non convertite in fixture annotate. Alcuni PGN contengono NAG: non sono stati scambiati per etichette complete Game Review.
+- Partite 7–10: 203 ply, non convertite in fixture annotate per il confronto. Le annotazioni 7–10 non vanno lette. Solo 7–9 restano riservate alla validazione indipendente: la 10 non è più cieca, essendo stata usata per l'ipotesi sul Libro. Alcuni PGN contengono NAG: non sono stati scambiati per etichette complete Game Review.
 - `scripts/qa-import-personal.js` e `scripts/qa/personal-import.js`: validazione/importazione ripetibile. Rifiutano SAN discordanti, categorie sconosciute o annotazioni parziali.
 - Manifest e provenienza in `tests/fixtures/qa/personal-manifest.json`.
 - Refusi normalizzati prima dell'uso: personal-03 ply 125 migliroe → Migliore; personal-04 ply 21 erroe → Errore; personal-04 ply 31 migliroe → Migliore. Gli originali sono preservati e le correzioni registrate nel manifest.
@@ -134,9 +134,12 @@ File: `src/lib/classification.js`, `engineConfig.js`, `gameAnalysis.js`; etichet
 2. Distinguere l'identificazione della migliore mossa tramite UCI/PV dal semplice confronto di due analisi indipendenti, soggetto a rumore. Valutare un confronto coerente della mossa giocata.
 3. Allineare le categorie comuni alle definizioni pubblicate, distinguendo regole documentate e nostre approssimazioni. Rating WhiteElo/BlackElo è già nei PGN, ma non inventare coefficienti senza una base verificabile. Il modello matematico va scelto prima della taratura.
 4. Implementare il piano solo dopo conferma, con test su segni, confini, matto, dati mancanti e prospettiva di entrambi i giocatori. Ricalcolare i report dalle stesse cache per confronti controllati; conservare baseline.
-5. Far annotare le quattro partite 7–10 e usarle come validazione separata dopo aver fissato le regole. Adeguare prima importer/CLI perché non entrino automaticamente nel gruppo di sviluppo. Fase 2: valutare l'ipotesi "Libro fino all'ultima mossa nominata nell'ECOUrl"; previsioni registrate prima di vedere le etichette delle partite 7–9: partita 7 Libro fino al ply 2, partita 9 fino al ply 4, partita 8 non prevedibile (URL senza mosse). Punto 2 e verifica Libro chiusi: non modificare ora le regole Libro né il minimo provvisorio di 20 partite per mossa.
-6. Progettare Mossa mancata, Grande e Geniale con contesto della partita e varianti reali. Le sei partite contengono 10/14/1 esempi rispettivamente; sono pochi per una validazione robusta, soprattutto Geniale.
+5. Validare sulle partite 7–9 dopo aver fissato le regole; la 10 non è più cieca perché usata per l'ipotesi sul Libro. Adeguare prima importer/CLI perché il gruppo di validazione non entri automaticamente nello sviluppo. Previsioni ECOUrl conservate: partita 7 fino al ply 2, partita 9 fino al ply 4, partita 8 non prevedibile. Non leggere ora le annotazioni 7–10 e non modificare Libro. explorerMinGames non è utilizzato; explorerThreshold interrompe le richieste Explorer e non classifica Libro.
+6. Progettare Grande e Geniale e il modello dipendente dal rating, senza inventare coefficienti. Mossa mancata è già implementata, ma copre solo 1/10 casi attesi. Le personali contengono 10/14/1 esempi di Mossa mancata/Grande/Geniale: campione di sviluppo, non validazione indipendente.
 7. Verificare nel browser l'analisi completa/import PGN, frecce, progressi, navigazione e spiegazioni legate alle PV. Segnalazione di Carlo da verificare nel collaudo browser: dopo l'import di un PGN, le frecce e le 5 mosse migliori restano ferme a quelle calcolate prima dell'import. Problema annotato, non ancora corretto. Non confondere utility CLI con funzionalità UI completate. Il codice del worker Stockfish browser 19 è arrivato dall'integrazione remota, ma non è stato collaudato nel browser in questa sessione. I moduli finali restano lavoro separato; non iniziarli senza concordare il punto.
+
+8. Collaudare le spiegazioni LLM con i provider: i test della serializzazione non dimostrano la qualità delle risposte. Nessuna API chiamata in questa fase.
+9. Valutare le 7 vulnerabilità npm segnalate in precedenza (audit aggiornato NON ESEGUITO in B2). Le chiavi VITE_* usate dai provider e da Explorer nel client sono incluse nel bundle pubblico quando configurate: serve un proxy lato server per conservarle. Non leggere né creare .env.
 
 ## Trasferimento su altro PC
 
@@ -273,10 +276,47 @@ I limiti 0.75/0.60 sono provvisori sulla sigmoid locale. Scelti dopo lettura dei
 
 QA: cache motore intatte, nessuna nuova analisi nativa. CLI legge anche il repertorio locale per proteggere il contesto Libro come nell'app, senza Explorer e senza derivare flag dalle etichette attese. Le etichette attese Libro restano escluse: non è stato cambiato il confronto per validare Libro. Rimosso Mossa mancata dalle categorie non implementate; rimangono Geniale e Grande. La metrica entro una classe usa soltanto le categorie comuni attese: nessuna distanza ordinale assegnata a Mossa mancata. I report mostrano categoria comune e denominatore separato.
 
-Risultati personali: 1/10 Mossa mancata riconosciute, personal-01 ply 35 Bc3 dopo Qxd4. Cinque esempi senza conferma dell'occasione vincente e quattro senza errore avversario riconosciuto; ogni caso e primo motivo di rifiuto nei report. Non sono state cambiate ulteriormente le regole per recuperare i nove discordanti. Totale nuovo: 174/342 esatte = 50.87719298245614%, 57 esclusioni; non confrontare direttamente col vecchio 173/332. Categorie comuni invariate: 173/332 = 52.10843373493976%, entro una classe 300/332 = 90.36144578313252%. Storiche invariate: 82/161 = 50.93167701863354% e 139/161 = 86.33540372670808%. Baseline preservate in agent-output/qa-compare-before-missed-opportunity.md e qa-compare-personal-before-missed-opportunity.md. Partite 7–10 non lette e non usate.
+Risultati personali: 1/10 Mossa mancata riconosciute, personal-01 ply 35 Bc3 dopo Qxd4. Cinque esempi senza conferma dell'occasione vincente e quattro senza errore avversario riconosciuto; ogni caso e primo motivo di rifiuto nei report. Non sono state cambiate ulteriormente le regole per recuperare i nove discordanti. Totale nuovo: 174/342 esatte = 50.87719298245614%, 57 esclusioni; non confrontare direttamente col vecchio 173/332. Categorie comuni rispetto alla fase immediatamente precedente: 173/332 = 52.10843373493976%, entro una classe 300/332 = 90.36144578313252%. Rispetto a d25e710 sono cambiate: prima 174/332 esatte e 291/332 entro una classe, ora 173/332 e 300/332. Storiche invariate: 82/161 = 50.93167701863354% e 139/161 = 86.33540372670808%. Baseline preservate in agent-output/qa-compare-before-missed-opportunity.md e qa-compare-personal-before-missed-opportunity.md. Partite 7–10 non lette e non usate.
 
 Verifiche finali: npm test riuscito, 19 file, 115 passati, 1 skipped e 1 todo (117 totali). Otto test contestuali nuovi, regressione QA sul denominatore e serializzazione LLM aggiornata. Due vecchi placeholder todo Mossa mancata rimossi perché coperti dai nuovi test eseguiti; nessun test reale rimosso o nuovo skip. Resta todo Grande/Geniale e skip mirrored già esistente. Build riuscita: 66 moduli, avviso chunk Libro invariato. git diff --check senza errori.
 
 Browser finale: 5 passati in 27.3 s, console in agent-output/browser-missed-console.txt. Restano i test reali Stockfish 19 e concorrenza; il quinto, con worker simulato, verifica etichetta e alternativa SAN dopo un errore fuori Libro. Il primo input sintetico 1.f3 e5 ha fallito l'aspettativa perché quelle posizioni sono nel repertorio locale (Book protegge la classificazione): corretto il PGN del test a 1.e4 e5 2.a3 a6 3.f3 d6, dopo il primo scarto; protezione Libro mantenuta. Nuovo test browser non dimostra accuratezza del riconoscimento con il motore reale, verificata qui sulle cache Stockfish 16. Artefatti test-results tracciati ripristinati.
 
 Fase completata come prima regola esplicita, non equivalenza con Game Review: copertura ancora 1/10, rating assente e probabilità/ricerche approssimate. Prossimo punto suggerito: affrontare il modello di punti attesi e la sensibilità delle nove discrepanze prima di aggiungere Grande/Geniale o tarare soglie. Nessun commit/push dell'agente.
+
+## Esiti Fase A
+
+Fase A accettata da Carlo. Misurazione offline dalle cache esistenti di P1–P6 e delle due storiche, senza modifiche al codice, rigenerazioni motore o lettura delle annotazioni 7–10. Baseline revisionata: d25e710..4105966. Nessun cambio di modello deciso.
+
+- Il clamp ±1000 applicato soltanto nel classificatore cambia 10/342 ply inclusi delle personali, con effetto misto: esatte 174/342 → 175/342 (50,88% → 51,17%); entro una classe 300/332 → 303/332 (90,36% → 91,27%). Sulle sole categorie comuni: 173/332 → 174/332 esatte. Nessun cambio nelle storiche: 82/161 esatte e 139/161 entro una classe. Questo confronto mantiene tutte le altre regole attuali, quindi non ricostruisce integralmente d25e710.
+- Correzione della dicitura «categorie comuni invariate»: nell'intero intervallo revisionato erano 174/332 esatte e 291/332 entro una classe; ora sono 173/332 e 300/332. L'invarianza citata nell'aggiornamento Mossa mancata riguarda soltanto la fase immediatamente precedente, non l'intera revisione.
+- Personali per evaluationSource: root-pv 124/241 esatte = 51,45%, 215/235 entro una classe = 91,49%; independent-position 47/98 = 47,96%, 82/94 = 87,23%; checkmate 3/3 per entrambe. Denominatori distinti perché Mossa mancata non ha distanza ordinale.
+- Condizione isEngineBest=false con dropPct<=1: 92 mosse personali, 83 incluse nelle metriche; comprende un matto dato, per cui prevale la gestione del matto sul cap a Ottima. Storiche: 30 mosse, 25 incluse.
+- Mossa mancata: 1/10 attese riconosciuta, 0 falsi positivi, 9 falsi negativi. Cinque senza conferma dell'occasione; quattro senza errore precedente riconosciuto. Precisazione: NON sono quattro posizioni già circa al 100%. P2 ply 51 e 69 erano al 100%; P3 ply 94 al 99,99207243%; P3 ply 44 era al 77,81641849% prima e 86,87555306% dopo. La mossa giocata in quest'ultimo caso conserva 66,76332571%.
+- Due matti mancati con etichetta attesa Mossa mancata: P2 ply 51 Qxf7+, bestMate +8 e playedEval +718 cp (85,75391978%); P2 ply 69 Ra6+, bestMate +1 e playedEval +811 cp (88,36543009%). Entrambi sono classificati Errore, senza errore avversario precedente riconosciuto. Nessuna nuova soglia dedotta.
+- A4: dieci casi matto/cp nelle personali e uno nel controllo del matto del principiante, nessuno nelle due storiche.
+- A5: 798 richieste di analisi memorizzate nelle sei personali; 393 FEN analizzate due volte. Differenza assoluta media fra playedEngine(n) ed engine(n+1) della stessa FEN: 32,74 cp su 349 coppie cp/cp; massimo 2440 cp (P3, ply 88 → 89). Altre coppie: 39 matto/matto e 5 matto/cp. Baseline e cache intatte.
+
+Verifiche Fase A eseguite: npm test, 19 file passati, 115 test passati, 1 skipped e 1 todo (117 totali), 16,29 s; npm run build, 66 moduli, 2,72 s, warning chunk >500 kB; git diff --check exit 0. Nessun file modificato, commit o push. Browser NON ESEGUITO nella Fase A.
+
+## Agenda Fase 1ter
+
+Regole correnti: un punto alla volta con STOP e riepilogo; npm test, npm run build e git diff --check reali dopo ciascun punto B. Nessun commit/push dell'agente: fornire i comandi a Carlo. Non indebolire i test, toccare solo i file necessari, non leggere né creare .env, non leggere annotazioni Partite/7–10, non rigenerare cache. Modello, soglie, Libro, Mossa mancata e categorie non vanno modificati senza autorizzazione esplicita.
+
+### Fase B — correzioni sicure
+
+- B1 completato: ricerca rg in src/scripts/tests; fallbackDepth ed explorerMinGames compaiono solo nella dichiarazione e sono documentati come inutilizzati. explorerThreshold è attivo in gameAnalysis.js per interrompere Explorer, non per Libro. Modificati solo commenti in engineConfig.js. Verifiche: npm test 19 file, 115 passati, 1 skipped, 1 todo, 16,33 s; build 66 moduli, 2,91 s; git diff --check exit 0, avviso LF/CRLF.
+- B2: correggere HANDOFF e REVIEW-FOR-CLAUDE, registrare Esiti Fase A e i prossimi passi. Solo documentazione. B1, B2 e B3 autorizzati da Carlo, con STOP dopo ciascuno.
+- B3: gestire _fail terminale (stop non onorato entro 15 s o errore worker) ricreando il motore oppure mostrando un messaggio chiaro in EnginePanel; aggiungere un test con worker finto. Ancora da eseguire.
+- B4, solo progettazione: descrivere go depth N searchmoves <mossa giocata> dalla FEN iniziale per le mosse fuori dalla MultiPV, eliminando l'analisi della posizione dopo la mossa (analyzePlayedPosition). Coprire frecce e resolveEngineForFen per fenAfter, ultima posizione, matto/stallo, cache FEN+mossa, scripts/qa/native-engine.js con Stockfish 16 e worker Stockfish 19. Stimare numero di ricerche prima/dopo e rischi. Nessuna implementazione o generazione cache autorizzata; non confondere lo score root della mossa giocata con un'analisi completa del fenAfter.
+
+### Fase C — solo proposte, previa conferma della fase
+
+- C1: posizioni già vinte; confronto numerico con ±1000 usando A1, senza modificare il modello.
+- C2: passaggi matto → cp alto, usando i casi A4.
+- C3: definizione alternativa o soglie di Mossa mancata usando A3, dichiarando la taratura sullo sviluppo e l'assenza di validazione indipendente. Rispettare prima la tabella richiesta da C8.
+- C4: riconoscimento delle alternative equivalenti alla PV principale senza promuovere mosse rumorose a Migliore.
+- C5: confronto offline repertorio locale/ECOUrl e ply Libro attesi/prodotti sulle sole P1–P6; non modificare Libro.
+- C6: piano Grande/Geniale e modello dipendente dal rating; distinguere quanto documentato da chess.com dalle nostre approssimazioni, senza inventare coefficienti.
+- C7: sviluppare l'idea B4 con piano di esperimento su P1–P6 e storiche. Eventuali nuove cache devono essere salvate in una cartella separata, con baseline intatte. Definire confronti di score, categorie, fonti, latenza e numero di ricerche, separando Stockfish 16 nativo e worker 19. L'esperimento non è autorizzato: nessuna nuova cache senza il via libera di Carlo.
+- C8: verifica offline soltanto dalle cache esistenti dell'ipotesi che Mossa mancata chess.com riguardi matti forzati mancati con punteggio giocato sotto circa +9 pedoni. Elencare TUTTI i casi personali matto favorevole → cp, con partita, ply, mossa, matto disponibile, punteggio giocato e categoria attesa, inclusi i controesempi. Ipotesi da verificare, non definizione documentata: non proporre soglie prima che Carlo abbia visto la tabella. Nessuna lettura delle annotazioni 7–10.
