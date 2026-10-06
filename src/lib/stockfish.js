@@ -19,6 +19,7 @@ export class StockfishEngine {
     this._stopTimeoutMs = options.stopTimeoutMs ?? 15000
     this._onLine = null
     this._workerError = null
+    this._onFailure = options.onFailure
     // A component may unmount before anyone awaits readiness.
     this._readyPromise.catch(() => {})
 
@@ -30,6 +31,7 @@ export class StockfishEngine {
   }
 
   _handleMessage(line) {
+    if (this._workerError) return
     if (typeof line !== 'string') return
 
     if (line === 'uciok') {
@@ -158,6 +160,12 @@ export class StockfishEngine {
     this._currentRequest = null
     this._pendingRequest = null
     this._onLine = null
+    // Terminal failures also need to reach the UI when no request is awaiting a result.
+    if (error.name !== 'AbortError') this._onFailure?.(error)
+  }
+
+  get failure() {
+    return this._workerError
   }
 
   destroy() {

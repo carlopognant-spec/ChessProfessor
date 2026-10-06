@@ -18,8 +18,12 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
   const [analyzing, setAnalyzing] = useState(false)
   const [progress, setProgress] = useState(0)
   const [engineError, setEngineError] = useState('')
+  const [engineFailed, setEngineFailed] = useState(false)
+  const [engineGeneration, setEngineGeneration] = useState(0)
+  const onEngineDataRef = useRef(onEngineData)
 
   fenRef.current = fen
+  onEngineDataRef.current = onEngineData
 
   const applyEngineData = useCallback((data, positionFen) => {
     if (!data || positionFen !== fenRef.current) return
@@ -42,15 +46,31 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
   }
 
   useEffect(() => {
+    let engine = null
+    let disposed = false
+    const reportFailure = (error) => {
+      if (disposed) return
+      setEngineFailed(true)
+      setEngineError(error.message)
+      setAnalyzing(false)
+      setEvalData(null)
+      onEngineDataRef.current?.(null)
+    }
     try {
-      engineRef.current = new StockfishEngine()
+      engine = new StockfishEngine({ onFailure: reportFailure })
+      engineRef.current = engine
+      setEngineFailed(false)
       setEngineError('')
     } catch (error) {
       engineRef.current = null
-      setEngineError(error.message)
+      reportFailure(error)
     }
-    return () => engineRef.current?.destroy()
-  }, [])
+    return () => {
+      disposed = true
+      engine?.destroy()
+      if (engineRef.current === engine) engineRef.current = null
+    }
+  }, [engineGeneration])
 
   const analyzeCurrentPosition = useCallback((positionFen) => engineRef.current.analyze(
     positionFen,
@@ -59,7 +79,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
   ), [])
 
   useEffect(() => {
-    if (!engineRef.current) return
+    if (!engineRef.current || engineRef.current.failure) return
 
     analysisEntriesRef.current = []
     onAnalysisData?.([])
@@ -85,7 +105,9 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
       fetchExplorer: fetchExplorerSafely,
       session: analysisSessionRef.current,
       signal: controller.signal,
-      onProgress: ({ current, total }) => setProgress(buildAnalysisProgress({ current, total })),
+      onProgress: ({ current, total }) => {
+        if (!cancelled) setProgress(buildAnalysisProgress({ current, total }))
+      },
       onEntry: (_entry, results) => {
         if (cancelled) return
         analysisEntriesRef.current = results
@@ -118,10 +140,10 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
       gameAnalyzingRef.current = false
       controller.abort()
     }
-  }, [moveHistorySan, applyEngineData, onAnalysisData])
+  }, [moveHistorySan, applyEngineData, onAnalysisData, engineGeneration])
 
   useEffect(() => {
-    if (!engineRef.current) return
+    if (!engineRef.current || engineRef.current.failure) return
 
     setEvalData(null)
     onEngineData?.(null)
@@ -155,7 +177,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
     return () => {
       cancelled = true
     }
-  }, [fen, moveHistorySan, applyEngineData, onEngineData])
+  }, [fen, moveHistorySan, applyEngineData, onEngineData, engineGeneration])
 
   const barPercent = evalData?.mate != null
     ? (evalData.mate > 0 ? 100 : 0)
@@ -168,6 +190,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
       </div>
       <p className="engine-eval-label">
         {engineError && `Stockfish: ${engineError}`}
+        {engineFailed && ' Il motore è fermo. Puoi riavviarlo senza perdere la partita.'}
         {!engineError && !analyzing && evalData?.lines?.length > 0 &&
           `${evalData.lines.length} linee MultiPV disponibili. `}
         {analyzing && (moveHistorySan.length > 0
@@ -179,6 +202,11 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
         {!analyzing && evalData?.mate == null && evalData?.evalCp == null && 'Nessuna valutazione disponibile.'}
         {!analyzing && evalData?.mate != null && evalData?.mate && <span> ({formatMateLabel(evalData.mate)})</span>}
       </p>
+      {engineFailed && (
+        <button type="button" onClick={() => setEngineGeneration(generation => generation + 1)}>
+          Riavvia motore
+        </button>
+      )}
     </div>
   )
 }

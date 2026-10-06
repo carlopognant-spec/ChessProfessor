@@ -13,6 +13,111 @@ function controlledWorker() {
 }
 
 describe('Stockfish MultiPV', () => {
+  it('reports a terminal stop failure after the unchanged 15 seconds and rejects all queued work', async () => {
+    vi.useFakeTimers()
+    const worker = controlledWorker()
+    const onFailure = vi.fn()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure })
+    try {
+      worker.emit('uciok')
+      worker.emit('readyok')
+      const first = engine.analyze('first-fen', 12, 5)
+      const firstRejected = expect(first).rejects.toThrow('analysis superseded')
+      await vi.advanceTimersByTimeAsync(0)
+      const middle = engine.analyze('middle-fen', 12, 5)
+      const middleRejected = expect(middle).rejects.toThrow('analysis superseded')
+      const latest = engine.analyze('latest-fen', 12, 5)
+      const latestRejected = expect(latest).rejects.toThrow('ricerca interrotta')
+      await firstRejected
+      await middleRejected
+      await vi.advanceTimersByTimeAsync(14999)
+      expect(onFailure).not.toHaveBeenCalled()
+      await vi.advanceTimersByTimeAsync(1)
+      await latestRejected
+      expect(onFailure.mock.calls).toEqual([[engine.failure]])
+      expect(worker.messages.filter(message => message === 'stop')).toHaveLength(1)
+      expect(worker.messages.filter(message => message.startsWith('go '))).toEqual(['go depth 12'])
+      await expect(engine.analyze('future-fen')).rejects.toBe(engine.failure)
+      const messages = [...worker.messages]
+      worker.emit('uciok')
+      worker.emit('readyok')
+      worker.emit('bestmove e2e4')
+      expect(worker.messages).toEqual(messages)
+    } finally {
+      engine.destroy()
+      vi.useRealTimers()
+    }
+  })
+
+  it('reports a worker error during a search and rejects its pending replacement', async () => {
+    const worker = controlledWorker()
+    const onFailure = vi.fn()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure })
+    try {
+      worker.emit('readyok')
+      const first = engine.analyze('first-fen')
+      const firstRejected = expect(first).rejects.toThrow('analysis superseded')
+      await vi.waitFor(() => expect(worker.messages).toContain('position fen first-fen'))
+      const pending = engine.analyze('pending-fen')
+      const pendingRejected = expect(pending).rejects.toThrow('worker')
+      worker.onerror(new Error('worker failed'))
+      await firstRejected
+      await pendingRejected
+      expect(onFailure.mock.calls).toEqual([[engine.failure]])
+      await expect(engine.analyze('future-fen')).rejects.toBe(engine.failure)
+      worker.onerror(new Error('second error'))
+      expect(onFailure).toHaveBeenCalledTimes(1)
+    } finally {
+      engine.destroy()
+    }
+  })
+
+  it('reports an idle worker failure without relying on an outstanding analysis promise', () => {
+    const worker = controlledWorker()
+    const onFailure = vi.fn()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure })
+    worker.onerror(new Error('worker failed'))
+    expect(onFailure.mock.calls).toEqual([[engine.failure]])
+    engine.destroy()
+  })
+
+  it('rejects an active search on destroy without reporting teardown as a recoverable failure', async () => {
+    const worker = controlledWorker()
+    const onFailure = vi.fn()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure })
+    worker.emit('readyok')
+    const active = engine.analyze('active-fen')
+    const rejected = expect(active).rejects.toMatchObject({ name: 'AbortError' })
+    await vi.waitFor(() => expect(worker.messages).toContain('position fen active-fen'))
+    engine.destroy()
+    await rejected
+    expect(onFailure).not.toHaveBeenCalled()
+    expect(worker.terminate).toHaveBeenCalledTimes(1)
+    worker.emit('bestmove e2e4')
+    await expect(engine.analyze('future-fen')).rejects.toMatchObject({ name: 'AbortError' })
+  })
+
+  it('rejects pending initialization on destroy and leaves a fresh mount independent of late old messages', async () => {
+    const oldWorker = controlledWorker()
+    const onFailure = vi.fn()
+    const oldEngine = new StockfishEngine({ workerFactory: () => oldWorker, onFailure })
+    const pending = oldEngine.analyze('old-fen')
+    const rejected = expect(pending).rejects.toMatchObject({ name: 'AbortError' })
+    oldEngine.destroy()
+    await rejected
+    const worker = createStockfishTestWorker()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure })
+    try {
+      oldWorker.emit('uciok')
+      oldWorker.emit('readyok')
+      expect(oldWorker.messages).toEqual(['uci'])
+      expect(await engine.analyze('new-fen', 12, 5)).toMatchObject({ evalCp: 35 })
+      expect(onFailure).not.toHaveBeenCalled()
+    } finally {
+      engine.destroy()
+    }
+  })
+
   it('keeps only the latest request while the worker is initializing', async () => {
     const worker = controlledWorker()
     const engine = new StockfishEngine({ workerFactory: () => worker })
