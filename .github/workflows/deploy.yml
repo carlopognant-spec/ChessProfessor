@@ -26,6 +26,8 @@ jobs:
           cache: npm
 
       - run: npm ci
+      - name: Unit tests
+        run: npm test -- --config scripts/qa-no-env-test.config.js --cache false
       - name: Build
         run: npm run build
         env:

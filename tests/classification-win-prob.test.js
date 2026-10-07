@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { Chess } from 'chess.js'
 import { classifyAnalysisEntries, classifyMove, MOVE_CLASSIFICATION } from '../src/lib/classification.js'
-import { calculateWinProbability, cpToProbability, moverWinProb } from '../src/lib/evaluation.js'
+import { cpToProbability, moverWinProb } from '../src/lib/evaluation.js'
 import { analyzeGame } from '../src/lib/gameAnalysis.js'
 import { createStockfishTestEngine } from './helpers/engine.js'
 

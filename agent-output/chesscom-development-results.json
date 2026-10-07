@@ -1,0 +1,18 @@
+{
+  "source": "Screenshot forniti da Carlo, 7 ottobre 2026; primi sei identificati tramite giocatori e conteggi delle fixture",
+  "reviewEngine": { "name": "Stockfish", "version": null, "versionNote": "La versione della Revisione partita non è indicata nello screenshot." },
+  "reviewSettings": { "strength": "Normale", "approximateSeconds": 5, "displayedEngineRating": 3430, "source": "Screenshot impostazioni fornito da Carlo; configurazione dichiarata per le sei revisioni." },
+  "analysisSettings": { "engine": "Stockfish 19 Lite", "maximumSeconds": 5, "lines": 5, "threads": 1 },
+  "cloudSettings": { "engine": "Stockfish 18" },
+  "seventhScreenshotUsed": false,
+  "games": [
+    { "id": "personal-01", "white": { "accuracy": 77.1, "gameRating": 1250, "elo": 729 }, "black": { "accuracy": 64.2, "gameRating": 700, "elo": 707 } },
+    { "id": "personal-02", "white": { "accuracy": 78.9, "gameRating": 1250, "elo": 738 }, "black": { "accuracy": 68.1, "gameRating": 750, "elo": 580 } },
+    { "id": "personal-03", "white": { "accuracy": 78.4, "gameRating": 700, "elo": 738 }, "black": { "accuracy": 79.2, "gameRating": 1350, "elo": 791 } },
+    { "id": "personal-04", "white": { "accuracy": 79.4, "gameRating": 1350, "elo": 791 }, "black": { "accuracy": 72.1, "gameRating": 1300, "elo": 738 } },
+    { "id": "personal-05", "white": { "accuracy": 72.0, "gameRating": 1100, "elo": 738 }, "black": { "accuracy": 51.5, "gameRating": 250, "elo": 791 } },
+    { "id": "personal-06", "white": { "accuracy": 94.8, "gameRating": 1550, "elo": 738 }, "black": { "accuracy": 77.9, "gameRating": 1300, "elo": 791 } }
+  ],
+  "accuracyComparisonLarge200k": { "count": 12, "meanSignedError": -3.7649330949723283, "meanAbsoluteError": 9.439531615000194, "maxAbsoluteError": 21.45843417680411, "pearson": 0.8059024749260703 },
+  "levelModel": { "adopted": false, "reason": "Dati completi: dodici punteggi partita da sei partite dipendenti, range Elo reale 580–791. Non permettono validazione attendibile di una stima del livello; la versione del motore di Revisione non è indicata." }
+}

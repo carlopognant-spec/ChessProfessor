@@ -2,7 +2,7 @@ import { useGame } from '../context/GameContext.jsx'
 import { buildMoveNavigation } from '../lib/analysisPresentation.js'
 
 export default function MoveList() {
-  const { moveHistorySan, loadMoveSequence } = useGame()
+  const { moveHistorySan, loadMoveSequence, baseFen } = useGame()
 
   if (moveHistorySan.length === 0) {
     return <p className="move-list">Nessuna mossa ancora giocata.</p>
@@ -10,7 +10,7 @@ export default function MoveList() {
 
   return (
     <div className="move-list">
-      {buildMoveNavigation(moveHistorySan).map((move) => (
+      {buildMoveNavigation(moveHistorySan, baseFen).map((move) => (
         <button
           type="button"
           key={move.ply}

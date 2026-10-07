@@ -1,0 +1,1099 @@
+{
+  "scannedFiles": 86,
+  "files": [
+    "scripts/audit-code.cjs",
+    "scripts/qa-roadmap-report.js",
+    "src/components/AccuracySummary.jsx",
+    "src/lib/accuracy.js",
+    "tests/accuracy.test.js",
+    "playwright-check.spec.js",
+    "playwright.config.js",
+    "public/engine-cache-sw.js",
+    "scripts/build-opening-book.js",
+    "scripts/qa-compare.js",
+    "scripts/qa-diagnose-errors.js",
+    "scripts/qa-import-personal.js",
+    "scripts/qa-no-env-build.config.js",
+    "scripts/qa-no-env-test.config.js",
+    "scripts/qa-nodes-experiment.js",
+    "scripts/qa-nodes-report.js",
+    "scripts/qa-searchmoves-experiment.js",
+    "scripts/qa-searchmoves-report.js",
+    "scripts/qa/compare.js",
+    "scripts/qa/native-engine.js",
+    "scripts/qa/personal-import.js",
+    "scripts/qa/wasm-engine.cjs",
+    "scripts/stockfish-assets.js",
+    "src/App.jsx",
+    "src/components/AnalysisSummary.jsx",
+    "src/components/Board.jsx",
+    "src/components/ChatPanel.jsx",
+    "src/components/EnginePanel.jsx",
+    "src/components/GameArchive.jsx",
+    "src/components/MoveList.jsx",
+    "src/components/MoveNavigation.jsx",
+    "src/components/OpeningPanel.jsx",
+    "src/components/PositionEditor.jsx",
+    "src/components/UndoButton.jsx",
+    "src/context/GameContext.jsx",
+    "src/lib/analysisCache.js",
+    "src/lib/analysisMetadata.js",
+    "src/lib/analysisPresentation.js",
+    "src/lib/classification.js",
+    "src/lib/engineAssets.js",
+    "src/lib/engineConfig.js",
+    "src/lib/evaluation.js",
+    "src/lib/gameAnalysis.js",
+    "src/lib/gameArchive.js",
+    "src/lib/gameNavigation.js",
+    "src/lib/lichessExplorer.js",
+    "src/lib/llm/criticalContext.js",
+    "src/lib/llm/gemini.js",
+    "src/lib/llm/groq.js",
+    "src/lib/llm/index.js",
+    "src/lib/llm/systemPrompt.js",
+    "src/lib/mateComparison.js",
+    "src/lib/missedOpportunity.js",
+    "src/lib/openingBook.js",
+    "src/lib/pgn.js",
+    "src/lib/positionEditor.js",
+    "src/lib/positionFacts.js",
+    "src/lib/stockfish.js",
+    "src/main.jsx",
+    "tests/analysis-classification.test.js",
+    "tests/analysis-metadata.test.js",
+    "tests/analysis-presentation.test.js",
+    "tests/analysis-summary.test.js",
+    "tests/automatic-analysis.test.js",
+    "tests/chess-smoke.test.js",
+    "tests/classification-win-prob.test.js",
+    "tests/engine-assets.test.js",
+    "tests/evaluation.test.js",
+    "tests/explorer-analysis.test.js",
+    "tests/fen-editor.test.js",
+    "tests/game-analysis-flow.test.js",
+    "tests/game-archive.test.js",
+    "tests/game-navigation.test.js",
+    "tests/helpers/engine.js",
+    "tests/llm-critical-context.test.js",
+    "tests/mate-comparison.test.js",
+    "tests/missed-opportunity.test.js",
+    "tests/opening-book.test.js",
+    "tests/pgn-classification.test.js",
+    "tests/position-facts.test.js",
+    "tests/qa-compare.test.js",
+    "tests/qa-native-engine.test.js",
+    "tests/qa-personal-import.test.js",
+    "tests/stockfish.test.js",
+    "vite.config.js",
+    "vitest.config.js"
+  ],
+  "runtimeModules": [
+    "src/main.jsx",
+    "src/App.jsx",
+    "src/context/GameContext.jsx",
+    "src/lib/positionEditor.js",
+    "src/lib/gameNavigation.js",
+    "src/components/Board.jsx",
+    "src/lib/analysisPresentation.js",
+    "src/components/OpeningPanel.jsx",
+    "src/lib/lichessExplorer.js",
+    "src/components/EnginePanel.jsx",
+    "src/lib/evaluation.js",
+    "src/lib/gameAnalysis.js",
+    "src/lib/analysisCache.js",
+    "src/lib/engineConfig.js",
+    "src/lib/classification.js",
+    "src/lib/mateComparison.js",
+    "src/lib/openingBook.js",
+    "src/lib/missedOpportunity.js",
+    "src/lib/engineAssets.js",
+    "src/lib/analysisMetadata.js",
+    "src/lib/stockfish.js",
+    "src/components/MoveList.jsx",
+    "src/components/UndoButton.jsx",
+    "src/components/MoveNavigation.jsx",
+    "src/components/ChatPanel.jsx",
+    "src/lib/llm/index.js",
+    "src/lib/llm/groq.js",
+    "src/lib/llm/systemPrompt.js",
+    "src/lib/llm/gemini.js",
+    "src/lib/llm/criticalContext.js",
+    "src/lib/positionFacts.js",
+    "src/components/AnalysisSummary.jsx",
+    "src/components/AccuracySummary.jsx",
+    "src/lib/accuracy.js",
+    "src/components/PositionEditor.jsx",
+    "src/components/GameArchive.jsx",
+    "src/lib/gameArchive.js"
+  ],
+  "orphanSourceModules": [
+    "src/lib/pgn.js"
+  ],
+  "unusedBindings": [
+    {
+      "file": "scripts/qa-roadmap-report.js",
+      "line": 18,
+      "name": "_",
+      "kind": "param",
+      "intentionalDiscard": true
+    },
+    {
+      "file": "src/lib/accuracy.js",
+      "line": 31,
+      "name": "_",
+      "kind": "param",
+      "intentionalDiscard": true
+    },
+    {
+      "file": "tests/accuracy.test.js",
+      "line": 34,
+      "name": "_",
+      "kind": "param",
+      "intentionalDiscard": true
+    },
+    {
+      "file": "scripts/qa-nodes-experiment.js",
+      "line": 15,
+      "name": "_",
+      "kind": "param",
+      "intentionalDiscard": true
+    },
+    {
+      "file": "scripts/qa-searchmoves-experiment.js",
+      "line": 5,
+      "name": "labels",
+      "kind": "module",
+      "intentionalDiscard": false
+    },
+    {
+      "file": "scripts/qa-searchmoves-experiment.js",
+      "line": 61,
+      "name": "score",
+      "kind": "const",
+      "intentionalDiscard": false
+    },
+    {
+      "file": "scripts/qa-searchmoves-experiment.js",
+      "line": 11,
+      "name": "_",
+      "kind": "param",
+      "intentionalDiscard": true
+    },
+    {
+      "file": "src/components/EnginePanel.jsx",
+      "line": 150,
+      "name": "_entry",
+      "kind": "param",
+      "intentionalDiscard": true
+    },
+    {
+      "file": "src/lib/analysisMetadata.js",
+      "line": 13,
+      "name": "_actualEngineId",
+      "kind": "const",
+      "intentionalDiscard": true
+    },
+    {
+      "file": "src/lib/stockfish.js",
+      "line": 32,
+      "name": "error",
+      "kind": "param",
+      "intentionalDiscard": false
+    },
+    {
+      "file": "tests/classification-win-prob.test.js",
+      "line": 4,
+      "name": "calculateWinProbability",
+      "kind": "module",
+      "intentionalDiscard": false
+    },
+    {
+      "file": "tests/classification-win-prob.test.js",
+      "line": 58,
+      "name": "startingFen",
+      "kind": "param",
+      "intentionalDiscard": false
+    }
+  ],
+  "exportUsage": [
+    {
+      "file": "src/lib/accuracy.js",
+      "line": 5,
+      "name": "ACCURACY_SCHEMA_VERSION",
+      "consumers": [],
+      "runtimeImported": false,
+      "onlyTests": false,
+      "noImports": true
+    },
+    {
+      "file": "src/lib/accuracy.js",
+      "line": 8,
+      "name": "accuracyWinPercent",
+      "consumers": [
+        "tests/accuracy.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/accuracy.js",
+      "line": 13,
+      "name": "moveAccuracy",
+      "consumers": [
+        "tests/accuracy.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/accuracy.js",
+      "line": 19,
+      "name": "aggregateAccuracy",
+      "consumers": [
+        "tests/accuracy.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/accuracy.js",
+      "line": 62,
+      "name": "gameAccuracy",
+      "consumers": [
+        "scripts/qa-roadmap-report.js",
+        "src/components/AccuracySummary.jsx",
+        "tests/accuracy.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/context/GameContext.jsx",
+      "line": 13,
+      "name": "GameProvider",
+      "consumers": [
+        "src/App.jsx"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/context/GameContext.jsx",
+      "line": 138,
+      "name": "useGame",
+      "consumers": [
+        "src/App.jsx",
+        "src/components/AnalysisSummary.jsx",
+        "src/components/Board.jsx",
+        "src/components/ChatPanel.jsx",
+        "src/components/EnginePanel.jsx",
+        "src/components/MoveList.jsx",
+        "src/components/MoveNavigation.jsx",
+        "src/components/OpeningPanel.jsx",
+        "src/components/PositionEditor.jsx",
+        "src/components/UndoButton.jsx"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisCache.js",
+      "line": 1,
+      "name": "createAnalysisCache",
+      "consumers": [
+        "src/lib/gameAnalysis.js",
+        "tests/analysis-metadata.test.js",
+        "tests/pgn-classification.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisCache.js",
+      "line": 35,
+      "name": "analysisCache",
+      "consumers": [],
+      "runtimeImported": false,
+      "onlyTests": false,
+      "noImports": true
+    },
+    {
+      "file": "src/lib/analysisMetadata.js",
+      "line": 3,
+      "name": "createAnalysisMetadata",
+      "consumers": [
+        "src/lib/stockfish.js",
+        "tests/analysis-metadata.test.js",
+        "tests/game-archive.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisMetadata.js",
+      "line": 11,
+      "name": "analysisMetadataKey",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/analysis-metadata.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisMetadata.js",
+      "line": 16,
+      "name": "isAnalysisCurrent",
+      "consumers": [
+        "src/lib/gameArchive.js",
+        "tests/analysis-metadata.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisPresentation.js",
+      "line": 22,
+      "name": "resolveEngineForFen",
+      "consumers": [
+        "src/components/Board.jsx",
+        "src/components/EnginePanel.jsx",
+        "tests/analysis-presentation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisPresentation.js",
+      "line": 31,
+      "name": "buildEngineArrows",
+      "consumers": [
+        "src/components/Board.jsx",
+        "tests/analysis-presentation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisPresentation.js",
+      "line": 52,
+      "name": "buildMoveNavigation",
+      "consumers": [
+        "src/components/MoveList.jsx",
+        "tests/analysis-presentation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisPresentation.js",
+      "line": 62,
+      "name": "getKeyboardNavigationTarget",
+      "consumers": [
+        "src/App.jsx",
+        "tests/analysis-presentation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisPresentation.js",
+      "line": 69,
+      "name": "buildEngineArrowSegments",
+      "consumers": [
+        "src/components/Board.jsx",
+        "tests/analysis-presentation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/analysisPresentation.js",
+      "line": 85,
+      "name": "getButtonNavigationTarget",
+      "consumers": [
+        "src/components/MoveNavigation.jsx",
+        "tests/analysis-presentation.test.js",
+        "tests/game-navigation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/classification.js",
+      "line": 5,
+      "name": "MOVE_CLASSIFICATION",
+      "consumers": [
+        "src/lib/gameAnalysis.js",
+        "tests/analysis-summary.test.js",
+        "tests/classification-win-prob.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/classification.js",
+      "line": 19,
+      "name": "classifyMove",
+      "consumers": [
+        "tests/classification-win-prob.test.js",
+        "tests/pgn-classification.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/classification.js",
+      "line": 39,
+      "name": "classifyAnalysisEntries",
+      "consumers": [
+        "scripts/qa-roadmap-report.js",
+        "tests/accuracy.test.js",
+        "scripts/qa-diagnose-errors.js",
+        "scripts/qa/compare.js",
+        "src/lib/gameAnalysis.js",
+        "tests/analysis-classification.test.js",
+        "tests/classification-win-prob.test.js",
+        "tests/mate-comparison.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/classification.js",
+      "line": 65,
+      "name": "moveEvaluationFields",
+      "consumers": [
+        "scripts/qa-roadmap-report.js",
+        "scripts/qa/compare.js",
+        "src/lib/gameAnalysis.js",
+        "tests/analysis-classification.test.js",
+        "tests/mate-comparison.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/classification.js",
+      "line": 85,
+      "name": "evaluationFields",
+      "consumers": [
+        "scripts/qa-diagnose-errors.js",
+        "tests/analysis-classification.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/engineAssets.js",
+      "line": 3,
+      "name": "ENGINE_CACHE_NAME",
+      "consumers": [
+        "tests/engine-assets.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/engineAssets.js",
+      "line": 4,
+      "name": "engineAssetUrls",
+      "consumers": [
+        "tests/engine-assets.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/engineAssets.js",
+      "line": 7,
+      "name": "engineAssetsCached",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/engine-assets.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/engineAssets.js",
+      "line": 14,
+      "name": "prepareEngineCache",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/engine-assets.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/engineConfig.js",
+      "line": 1,
+      "name": "ENGINE_CONFIG",
+      "consumers": [
+        "playwright-check.spec.js",
+        "scripts/qa-compare.js",
+        "scripts/qa-diagnose-errors.js",
+        "scripts/qa-nodes-experiment.js",
+        "scripts/qa-searchmoves-experiment.js",
+        "scripts/qa/compare.js",
+        "scripts/stockfish-assets.js",
+        "src/components/EnginePanel.jsx",
+        "src/lib/analysisMetadata.js",
+        "src/lib/classification.js",
+        "src/lib/engineAssets.js",
+        "src/lib/gameAnalysis.js",
+        "src/lib/missedOpportunity.js",
+        "src/lib/stockfish.js",
+        "tests/explorer-analysis.test.js",
+        "tests/qa-compare.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/evaluation.js",
+      "line": 6,
+      "name": "cpToProbability",
+      "consumers": [
+        "tests/classification-win-prob.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/evaluation.js",
+      "line": 14,
+      "name": "normalizeEvalToWhite",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/evaluation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/evaluation.js",
+      "line": 18,
+      "name": "calculateWinProbability",
+      "consumers": [
+        "src/lib/classification.js",
+        "tests/classification-win-prob.test.js",
+        "tests/evaluation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/evaluation.js",
+      "line": 29,
+      "name": "moverWinProb",
+      "consumers": [
+        "tests/classification-win-prob.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/evaluation.js",
+      "line": 44,
+      "name": "formatMateLabel",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/evaluation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameAnalysis.js",
+      "line": 18,
+      "name": "createGameAnalysisSession",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/analysis-metadata.test.js",
+        "tests/automatic-analysis.test.js",
+        "tests/explorer-analysis.test.js",
+        "tests/game-analysis-flow.test.js",
+        "tests/missed-opportunity.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameAnalysis.js",
+      "line": 66,
+      "name": "shouldStopExplorerAtThreshold",
+      "consumers": [
+        "tests/game-analysis-flow.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameAnalysis.js",
+      "line": 71,
+      "name": "analyzeGame",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/analysis-metadata.test.js",
+        "tests/automatic-analysis.test.js",
+        "tests/classification-win-prob.test.js",
+        "tests/missed-opportunity.test.js",
+        "tests/opening-book.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameAnalysis.js",
+      "line": 179,
+      "name": "buildAnalysisProgress",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/game-analysis-flow.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameAnalysis.js",
+      "line": 184,
+      "name": "summarizeAnalysis",
+      "consumers": [
+        "tests/game-analysis-flow.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameAnalysis.js",
+      "line": 193,
+      "name": "buildAnalysisSummary",
+      "consumers": [
+        "src/components/AnalysisSummary.jsx",
+        "tests/analysis-summary.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameArchive.js",
+      "line": 4,
+      "name": "ARCHIVE_SCHEMA_VERSION",
+      "consumers": [],
+      "runtimeImported": false,
+      "onlyTests": false,
+      "noImports": true
+    },
+    {
+      "file": "src/lib/gameArchive.js",
+      "line": 5,
+      "name": "ANALYSIS_SCHEMA_VERSION",
+      "consumers": [],
+      "runtimeImported": false,
+      "onlyTests": false,
+      "noImports": true
+    },
+    {
+      "file": "src/lib/gameArchive.js",
+      "line": 7,
+      "name": "describePgn",
+      "consumers": [
+        "src/App.jsx",
+        "tests/game-archive.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameArchive.js",
+      "line": 16,
+      "name": "validatedAnalysis",
+      "consumers": [],
+      "runtimeImported": false,
+      "onlyTests": false,
+      "noImports": true
+    },
+    {
+      "file": "src/lib/gameArchive.js",
+      "line": 29,
+      "name": "archiveAnalysisStatus",
+      "consumers": [
+        "src/App.jsx",
+        "src/components/GameArchive.jsx",
+        "tests/game-archive.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameArchive.js",
+      "line": 46,
+      "name": "createGameArchive",
+      "consumers": [
+        "src/components/GameArchive.jsx",
+        "tests/game-archive.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameNavigation.js",
+      "line": 3,
+      "name": "replayGame",
+      "consumers": [
+        "src/context/GameContext.jsx",
+        "tests/game-navigation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameNavigation.js",
+      "line": 9,
+      "name": "captureGameSnapshot",
+      "consumers": [
+        "src/context/GameContext.jsx",
+        "tests/game-navigation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/gameNavigation.js",
+      "line": 18,
+      "name": "restoreGameSnapshot",
+      "consumers": [
+        "src/context/GameContext.jsx",
+        "tests/game-navigation.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/lichessExplorer.js",
+      "line": 7,
+      "name": "fetchOpeningExplorer",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "src/components/OpeningPanel.jsx",
+        "tests/explorer-analysis.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/llm/criticalContext.js",
+      "line": 5,
+      "name": "shouldUseCriticalLlm",
+      "consumers": [
+        "src/components/ChatPanel.jsx",
+        "tests/llm-critical-context.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/llm/criticalContext.js",
+      "line": 9,
+      "name": "buildCriticalContext",
+      "consumers": [
+        "src/components/ChatPanel.jsx",
+        "tests/llm-critical-context.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/llm/gemini.js",
+      "line": 3,
+      "name": "explainMoveWithGemini",
+      "consumers": [
+        "src/lib/llm/index.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/llm/groq.js",
+      "line": 5,
+      "name": "explainMoveWithGroq",
+      "consumers": [
+        "src/lib/llm/index.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/llm/index.js",
+      "line": 18,
+      "name": "explainMove",
+      "consumers": [
+        "src/components/ChatPanel.jsx"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/llm/systemPrompt.js",
+      "line": 6,
+      "name": "SYSTEM_PROMPT",
+      "consumers": [
+        "src/lib/llm/gemini.js",
+        "src/lib/llm/groq.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/llm/systemPrompt.js",
+      "line": 26,
+      "name": "CRITICAL_SYSTEM_PROMPT",
+      "consumers": [
+        "src/lib/llm/gemini.js",
+        "src/lib/llm/groq.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/llm/systemPrompt.js",
+      "line": 42,
+      "name": "buildUserMessage",
+      "consumers": [
+        "src/lib/llm/gemini.js",
+        "src/lib/llm/groq.js",
+        "tests/llm-critical-context.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/mateComparison.js",
+      "line": 4,
+      "name": "compareMateDistance",
+      "consumers": [
+        "src/lib/classification.js",
+        "tests/mate-comparison.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/mateComparison.js",
+      "line": 15,
+      "name": "formatMateComparison",
+      "consumers": [
+        "scripts/qa/compare.js",
+        "src/components/AnalysisSummary.jsx",
+        "tests/mate-comparison.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/mateComparison.js",
+      "line": 24,
+      "name": "formatAnalysisScore",
+      "consumers": [
+        "src/components/AnalysisSummary.jsx",
+        "tests/mate-comparison.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/missedOpportunity.js",
+      "line": 23,
+      "name": "classifyMissedOpportunity",
+      "consumers": [
+        "scripts/qa-roadmap-report.js",
+        "scripts/qa/compare.js",
+        "src/lib/gameAnalysis.js",
+        "tests/missed-opportunity.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/missedOpportunity.js",
+      "line": 58,
+      "name": "formatMissedOpportunity",
+      "consumers": [
+        "scripts/qa/compare.js",
+        "src/components/AnalysisSummary.jsx"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/openingBook.js",
+      "line": 2,
+      "name": "openingPositionKey",
+      "consumers": [
+        "scripts/build-opening-book.js",
+        "tests/opening-book.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/openingBook.js",
+      "line": 6,
+      "name": "createOpeningBook",
+      "consumers": [
+        "scripts/qa-roadmap-report.js",
+        "scripts/qa-compare.js",
+        "scripts/qa-nodes-experiment.js",
+        "scripts/qa-nodes-report.js",
+        "scripts/qa-searchmoves-experiment.js",
+        "tests/analysis-metadata.test.js",
+        "tests/automatic-analysis.test.js",
+        "tests/missed-opportunity.test.js",
+        "tests/opening-book.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/openingBook.js",
+      "line": 13,
+      "name": "loadOpeningBook",
+      "consumers": [
+        "src/lib/gameAnalysis.js",
+        "tests/opening-book.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/pgn.js",
+      "line": 3,
+      "name": "parsePgnMoves",
+      "consumers": [
+        "tests/pgn-classification.test.js"
+      ],
+      "runtimeImported": false,
+      "onlyTests": true,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/positionEditor.js",
+      "line": 34,
+      "name": "parseAndValidateFen",
+      "consumers": [
+        "src/components/PositionEditor.jsx",
+        "src/context/GameContext.jsx",
+        "tests/fen-editor.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/positionEditor.js",
+      "line": 62,
+      "name": "setPieceAtFen",
+      "consumers": [
+        "src/App.jsx",
+        "tests/fen-editor.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/positionFacts.js",
+      "line": 7,
+      "name": "getPositionFacts",
+      "consumers": [
+        "src/lib/llm/criticalContext.js",
+        "tests/position-facts.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    },
+    {
+      "file": "src/lib/stockfish.js",
+      "line": 8,
+      "name": "StockfishEngine",
+      "consumers": [
+        "src/components/EnginePanel.jsx",
+        "tests/helpers/engine.js",
+        "tests/stockfish.test.js"
+      ],
+      "runtimeImported": true,
+      "onlyTests": false,
+      "noImports": false
+    }
+  ],
+  "exactFunctionClones": [],
+  "limitations": [
+    "Static references only; intentional exports, CLI entrypoints and test doubles require review.",
+    "Normalized AST detects exact substantial function bodies, not all semantic duplication.",
+    "Vendor binaries, data JSON and forbidden env/Partite are excluded. CSS/HTML/workflow reviewed separately."
+  ]
+}

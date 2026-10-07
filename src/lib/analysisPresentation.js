@@ -49,11 +49,22 @@ export function buildEngineArrows(lines = []) {
     })
 }
 
-export function buildMoveNavigation(moveHistorySan = []) {
+export function resolveAnalysisEntryForPosition(fen, moves = [], entries = []) {
+  if (!moves.length) return null
+  return entries.find(entry => entry.ply === moves.length && entry.fenAfter === fen &&
+    entry.playedMove === moves.at(-1) &&
+    entry.moveHistorySan?.length === moves.length - 1 &&
+    entry.moveHistorySan.every((san, index) => san === moves[index])) ?? null
+}
+
+export function buildMoveNavigation(moveHistorySan = [], baseFen = '') {
+  const fields = baseFen.split(' ')
+  const startsBlack = fields[1] === 'b'
+  const firstNumber = Number(fields[5]) || 1
   return moveHistorySan.map((san, index) => ({
     ply: index + 1,
-    moveNumber: Math.floor(index / 2) + 1,
-    side: index % 2 === 0 ? 'w' : 'b',
+    moveNumber: firstNumber + Math.floor((index + Number(startsBlack)) / 2),
+    side: (index + Number(startsBlack)) % 2 === 0 ? 'w' : 'b',
     san,
     moves: moveHistorySan.slice(0, index + 1),
   }))

@@ -141,6 +141,7 @@ test('local archive preserves the full PGN across navigation and reload, imports
 })
 
 test('saved analysis opens offline without a worker and obsolete analysis is preserved but hidden', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 844 })
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
   await page.addInitScript(() => {
@@ -167,6 +168,13 @@ test('saved analysis opens offline without a worker and obsolete analysis is pre
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(2)
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  const precision = page.locator('.accuracy-summary')
+  await expect(precision).toContainText('Precisione 0–100')
+  await expect(precision).toContainText('Bianco:')
+  await expect(precision).toContainText('Nero:')
+  await expect(precision).not.toContainText('Non disponibile')
+  const savedPrecision = await precision.textContent()
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   await page.locator('.game-archive summary').click()
   const archive = page.locator('.game-archive')
   await archive.getByRole('button', { name: 'Salva partita e analisi' }).click()
@@ -179,6 +187,7 @@ test('saved analysis opens offline without a worker and obsolete analysis is pre
   await archive.getByRole('button', { name: 'Apri', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(2)
   await expect(page.locator('.engine-eval-label')).toContainText('Analisi salvata.')
+  await expect(precision).toHaveText(savedPrecision)
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
   await assertLegalArrows(page)
   await page.getByRole('button', { name: 'Primo', exact: true }).click()

@@ -380,3 +380,38 @@ I componenti non vengono smontati chiudendo le sezioni: preservate bozza PGN, me
 Mobile: contenitore fluido, controlli a capo e campi limitati alla larghezza disponibile; navigazione e pulsanti/menu almeno 44 px. Verifica browser a 360 px: larghezza documento 360, scacchiera 326, nessun overflow orizzontale; verifica anche con tutte le sezioni aperte e desktop 1280 px. Screenshot controllato visivamente: playwright-report/layout-360.png, ignorato da Git.
 
 Output finali reali: npm test -- --config scripts/qa-no-env-test.config.js --cache false, suite completa senza esclusioni, 24 file/137 passati, 1 skipped, 1 todo (139), 5,73 s; build no-env 71 moduli/2,31 s, warning chunk oltre 500 kB; npm run test:browser, 15 passati/1,3 min. Due nuove prove mobile/desktop controllano home chiusa, larghezza, chat e PGN conservati, editor inattivo se nascosto; prova Stockfish reale estesa per verificare resoconto/frecce e numero di go invariati dopo chiusura/riapertura. I test preesistenti aprono ora le sezioni necessarie, mantenendo tutte le precedenti verifiche. Primo giro mirato: due timeout dovuti a selettore del test che confondeva titolo e nome accessibile del pulsante; corretto, giro finale completo superato. git diff --check exit 0, soli avvisi LF/CRLF. QA: 44 hash protetti invariati, nessuna cache generata o sovrascritta; nessuna lettura .env o Partite/7-10. Artefatti test-results giÃ  tracciati ripristinati. Nessun commit/push. Telefono e deploy NON ESEGUITI. Report/file/comandi: agent-output/roadmap-1-2.md. STOP. Prossima fase, solo dopo via libera: 3.1 piano documentato delle categorie speciali, prima di qualsiasi implementazione.
+
+
+## Roadmap 3.1 ? piano categorie speciali, da approvare (2026-10-07)
+
+Fonte ufficiale Chess.com letta; piano in agent-output/roadmap-3-1-plan.md, con DOCUMENTATO e NOSTRA APPROSSIMAZIONE distinti. Sola progettazione: nessun codice, soglia, modello, Libro, cap o Mossa mancata modificato; nessuna nuova cache/ricerca. Grande e Geniale restano non implementate. Mossa mancata esistente mantenuta, senza taratura o riapertura di C9.
+
+Conteggi verificati nelle sole fixture P1-P6: 10 Mossa mancata, 14 Grande, 1 Geniale su 399 ply, development. Campione insufficiente a validare; nessuna equivalenza promessa con il modello privato dipendente dal rating. MultiPV 5 non dimostra unicit?, una sola PV non verifica sacrificio/miglior difesa/controfattuale. Proposti filtri prudenziali PV1+categoria comune Migliore, astensione senza prove, Grande limitata inizialmente a unicit? verificata; Geniale successivamente con verifica materiale e controfattuale. Nessuna nuova soglia in cp o probabilit? proposta come sostituto dei criteri privati. Protocollo/costi di eventuali ricerche extra da approvare prima del calcolo; implementazione una categoria alla volta solo dopo risultati e via libera.
+
+Prossimo passo proposto, dopo approvazione: diagnosi Mossa mancata sulle cache large esistenti, regola attuale invariata, poi piano sperimentale Grande. Preservare categorie protette, categoria comune e perdita; eventuale nuova regola richieder? incremento schema analisi archivio. QA con precisione/richiamo per categoria, negativi ed esclusioni espliciti, denominatori comparabili; zero assegnati non significa precisione 100%. Partite 7-10 rimangono fuori sviluppo: lettura solo dopo regole bloccate e autorizzazione specifica.
+
+Verifiche reali: npm test no-env, suite intera senza esclusioni, 24 file/137 passati, 1 skipped e 1 todo (139), 6,57 s; build no-env, 71 moduli/4,29 s, warning chunk >500 kB; git diff --check exit 0. Browser, nuove ricerche, implementazione e validazione 7-10 NON ESEGUITI. Creato solo il piano, modificato questo handoff; dist rigenerato e ignorato. Nessuna lettura .env o Partite/7-10, nessuna cache/baseline sovrascritta, nessun commit/push. STOP per approvazione.
+
+## Roadmap 3: diagnosi, Precisione e audit (7 ottobre 2026)
+
+3.1: diagnosi dalle cache, nessuna nuova ricerca. Mossa mancata 1 TP/0 FP/9 FN su P1–P6 con entrambi i motori; Grande/Geniale non attivate perché mancano prove complete. Dettagli: agent-output/roadmap-3-1-3-2/report.md.
+
+3.2: Precisione per lato aggiunta al resoconto, derivata dai risultati salvati; formula pubblica arrotondata Lichess senza bonus +1, aggregazione ponderata/armonica, punteggi mancanti e analisi parziali espliciti. Non coincide con il modello privato chess.com. Confronto chess.com e 3.3 NON ESEGUITI: mancano Precisione/Punteggio partita/Elo per lato delle P1–P6; dati richiesti a Carlo. Nessun modello Elo inventato.
+
+Audit: agent-output/code-audit.md e code-audit-static.json (86 file). Priorità: entry chat non risolta per FEN corrente durante navigazione; numerazione da FEN personalizzata; test nel workflow di deploy. Candidati legacy/duplicazioni riportati, nessuna rimozione eseguita. Nessuna lettura .env o Partite/7–10, nessuna riscrittura di cache/baseline, nessun commit/push. Stato e limiti: agent-output/roadmap-3-results.md.
+
+## Chiusura correzioni audit (7 ottobre 2026)
+
+Corretto contesto chat per ply/FEN/cronologia corrente e guardia nel criticalContext; corretta numerazione da FEN personalizzata anche partendo col Nero. Rimossi parser PGN legacy, summarizeAnalysis, singleton cache, parametri e binding inutilizzati; test spostati sui percorsi produttivi. Workflow Pages ora esegue test unit prima della build. Duplicazioni con contratti differenti mantenute, documentate. Secondo audit: 85 file, zero moduli src orfani.
+
+Dati screenshot chess.com registrati in agent-output/chesscom-development-results.json: confronto 12 valori MAE 9,44, r=0,806. 3.3 NON implementato: dieci Punteggi partita disponibili, P6 mancanti e impostazione ignota; dati insufficienti per modello affidabile, nessun Elo inventato. Grande/Geniale sospese per prove insufficienti. Serve inoltre un progetto separato per eventuale backend dei provider: variabili VITE sono client-side.
+
+Verifica finale: 148 passed / 1 skipped / 1 todo, 25 file; browser 15 passed; build 73 moduli, 2,32s; diff --check exit 0. Dettagli, limiti e file: agent-output/roadmap-3-cleanup.md. Nessun commit/push, cache/baseline intatti, nessuna lettura .env o Partite/7–10.
+
+## Dati completati da Carlo — 7 ottobre 2026
+
+P6: Punteggio partita Bianco BUMCestinait0 1550, Nero ProprioI0 1300. Screenshot impostazioni: Revisione partita Stockfish, forza Normale (~5 s, punteggio motore 3430), versione non indicata. La sezione Analisi è distinta: Stockfish 19 Lite, 5 s massimi, cinque linee, un thread; Cloud Stockfish 18. Non attribuire automaticamente versione 19 Lite al motore della Revisione. Aggiornato agent-output/chesscom-development-results.json.
+
+I dati necessari sono ora presenti (12 osservazioni, sei partite). Restano limiti statistici, non una richiesta di altri valori mancanti: Elo reale 580–791, giocatori ripetuti, nessuna validazione indipendente. 3.3 non adottato nell'app: progettazione/calibrazione offline ancora da completare, senza promettere una conversione Precisione?Elo affidabile. Il 3430 mostrato nella forza è il punteggio del motore, non il livello del giocatore.
+
+Questo aggiornamento modifica soltanto dati di report e documentazione: nessuna modifica app, cache o baseline. Test/build non rieseguiti perché non è cambiato codice; risultati dell'ultimo passaggio restano 148 passed/1 skipped/1 todo, browser 15 passed e build riuscita.

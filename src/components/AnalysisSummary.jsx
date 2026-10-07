@@ -2,6 +2,7 @@ import { buildAnalysisSummary } from '../lib/gameAnalysis.js'
 import { useGame } from '../context/GameContext.jsx'
 import { formatAnalysisScore, formatMateComparison } from '../lib/mateComparison.js'
 import { formatMissedOpportunity } from '../lib/missedOpportunity.js'
+import AccuracySummary from './AccuracySummary.jsx'
 
 const CATEGORY_LABELS = {
   book: 'Libro',
@@ -18,7 +19,7 @@ const CATEGORY_LABELS = {
 }
 
 export default function AnalysisSummary({ entries = [] }) {
-  const { loadMoveSequence } = useGame()
+  const { loadMoveSequence, navigationHistorySan } = useGame()
   if (entries.length === 0) return null
 
   const summary = buildAnalysisSummary(entries)
@@ -26,6 +27,7 @@ export default function AnalysisSummary({ entries = [] }) {
   return (
     <section className="analysis-summary" aria-label="Resoconto analisi">
       <h2>Resoconto partita</h2>
+      <AccuracySummary entries={entries} totalPlies={navigationHistorySan.length} />
       <div className="summary-table" role="table" aria-label="Conteggi classificazioni">
         <div className="summary-row summary-header" role="row">
           <span>Categoria</span>

@@ -6,6 +6,14 @@ import {
 import { buildUserMessage } from '../src/lib/llm/systemPrompt.js'
 
 describe('critical LLM context', () => {
+  it('drops scores, PV and category from an entry for a different displayed FEN', () => {
+    const context = buildCriticalContext({ fen: '4k3/8/8/8/8/8/8/4K3 w - - 0 1', analysisEntry: {
+      fenAfter: '4k3/8/8/8/8/8/8/4K3 b - - 0 1', classification: 'blunder', bestEval: 900, pv: ['e8e7'],
+    } })
+    expect(context.classification).toBeNull()
+    expect(context.bestEval).toBeNull()
+    expect(context.pv).toEqual([])
+  })
   it('includes mate data and comparison in the message actually sent to the model', () => {
     const message = buildUserMessage({
       fen: '4k3/8/8/8/8/8/8/4K3 w - - 0 1',
@@ -32,6 +40,7 @@ describe('critical LLM context', () => {
       question: 'Perché?',
       moveHistorySan: ['e4'],
       analysisEntry: {
+        fenAfter: '4k3/8/8/8/8/8/8/4K3 w - - 0 1',
         classification: 'mistake',
         bestEval: 80,
         playedEval: -120,

@@ -3,7 +3,7 @@ import {
   buildAnalysisProgress,
   createGameAnalysisSession,
   shouldStopExplorerAtThreshold,
-  summarizeAnalysis,
+  buildAnalysisSummary,
 } from '../src/lib/gameAnalysis.js'
 
 describe('game analysis flow', () => {
@@ -35,11 +35,10 @@ describe('game analysis flow', () => {
     expect(session.isExplorerStopped()).toBe(false)
   })
 
-  it('summarizes incomplete entries without inventing evaluations', () => {
-    expect(summarizeAnalysis([
-      { evalCp: 30, mate: null },
-      { evalCp: null, mate: 3 },
-      {},
-    ])).toEqual({ total: 3, evalSum: 30, mateCount: 1 })
+  it('keeps unknown entries out of category counts without inventing evaluations', () => {
+    const summary = buildAnalysisSummary([{ side: 'b', classification: 'mistake' }, {}])
+    expect(summary.bySide.black.mistake).toBe(1)
+    expect(Object.values(summary.bySide.white).reduce((a, b) => a + b, 0)).toBe(0)
+    expect(summary.rows[1].evalCp).toBeUndefined()
   })
 })

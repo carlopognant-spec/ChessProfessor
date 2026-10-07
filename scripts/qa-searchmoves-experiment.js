@@ -2,7 +2,7 @@ import { readFile, writeFile, mkdir, access } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
 import { performance } from 'node:perf_hooks'
 import { NativeEngine } from './qa/native-engine.js'
-import { compare, validateCache, labels, summarizeReports } from './qa/compare.js'
+import { compare, validateCache, summarizeReports } from './qa/compare.js'
 import { ENGINE_CONFIG } from '../src/lib/engineConfig.js'
 import { createOpeningBook } from '../src/lib/openingBook.js'
 
@@ -58,7 +58,6 @@ function replacement(entry, record, pairMode) {
   const lines = [{ ...(primary.pv[0] === entry.uci ? played : primary), multipv: 1 }, ...(primary.pv[0] === entry.uci ? [] : [{ ...played, multipv: 2 }])]
   return { ...entry, engine: { ...lines[0], lines } }
 }
-const score = row => row.playedMate != null ? `mate ${row.playedMate}` : row.playedEval
 let seed = 20261007
 function random() { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296 }
 try {

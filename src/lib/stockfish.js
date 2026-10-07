@@ -29,7 +29,7 @@ export class StockfishEngine {
     this._readyPromise.catch(() => {})
 
     this.worker.onmessage = (e) => this._handleMessage(e.data)
-    this.worker.onerror = (error) => {
+    this.worker.onerror = () => {
       this._fail(new Error('Stockfish worker non è riuscito a caricare il motore.'))
     }
     this.worker.onmessageerror = () => this._fail(new Error('Stockfish worker ha restituito un messaggio non valido.'))

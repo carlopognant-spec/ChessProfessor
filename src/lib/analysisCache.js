@@ -31,5 +31,3 @@ export function createAnalysisCache(ttlMs = 60000) {
     },
   }
 }
-
-export const analysisCache = createAnalysisCache()

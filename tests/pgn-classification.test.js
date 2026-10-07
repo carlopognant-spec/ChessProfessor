@@ -1,21 +1,21 @@
 import { describe, expect, it } from 'vitest'
 import { createAnalysisCache } from '../src/lib/analysisCache.js'
-import { parsePgnMoves } from '../src/lib/pgn.js'
+import { describePgn } from '../src/lib/gameArchive.js'
 import { classifyMove } from '../src/lib/classification.js'
 
 describe('PGN parser', () => {
   it('parses a standard move list into SAN moves', () => {
-    const moves = parsePgnMoves('1. e4 e5 2. Nf3 Nc6')
+    const { moves } = describePgn('1. e4 e5 2. Nf3 Nc6')
     expect(moves).toEqual(['e4', 'e5', 'Nf3', 'Nc6'])
   })
 
   it('ignores comments and whitespace noise', () => {
-    const moves = parsePgnMoves('1. e4 {opening} e5 2. Nf3  Nc6')
+    const { moves } = describePgn('1. e4 {opening} e5 2. Nf3  Nc6')
     expect(moves).toEqual(['e4', 'e5', 'Nf3', 'Nc6'])
   })
 
   it('ignores nested variations while preserving the main line', () => {
-    const moves = parsePgnMoves('1. e4 {main} e5 (1... c5 (2. Nf3 d6)) 2. Nf3 Nc6 {end}')
+    const { moves } = describePgn('1. e4 {main} e5 (1... c5 (2. Nf3 d6)) 2. Nf3 Nc6 {end}')
     expect(moves).toEqual(['e4', 'e5', 'Nf3', 'Nc6'])
   })
 })

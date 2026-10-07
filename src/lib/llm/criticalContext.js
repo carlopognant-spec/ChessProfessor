@@ -13,6 +13,7 @@ export function buildCriticalContext({
   moveHistorySan = [],
   analysisEntry = null,
 } = {}) {
+  if (analysisEntry?.fenAfter !== fen) analysisEntry = null
   return {
     fen,
     question,

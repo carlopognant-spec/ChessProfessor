@@ -1,0 +1,1741 @@
+{
+  "summary": [
+    {
+      "group": "development",
+      "scheme": "native16Depth12",
+      "tp": 1,
+      "fp": 0,
+      "fn": 9,
+      "precision": 1,
+      "recall": 0.1
+    },
+    {
+      "group": "development",
+      "scheme": "large19Nodes200k",
+      "tp": 1,
+      "fp": 0,
+      "fn": 9,
+      "precision": 1,
+      "recall": 0.1
+    },
+    {
+      "group": "historical",
+      "scheme": "native16Depth12",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null
+    },
+    {
+      "group": "historical",
+      "scheme": "large19Nodes200k",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null
+    }
+  ],
+  "reports": [
+    {
+      "id": "personal-01",
+      "group": "development",
+      "labels": "BUMCestinait0 vs boyjonbum, 2026.10.01",
+      "elo": {
+        "white": "729",
+        "black": "707"
+      },
+      "schemes": {
+        "native16Depth12": {
+          "missed": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1,
+            "recall": 0.5
+          },
+          "missedCases": [
+            {
+              "ply": 30,
+              "san": "Nh5",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": 40,
+              "bestMate": null,
+              "playedEval": -138,
+              "playedMate": null,
+              "bestProbability": 0.52497918747894,
+              "playedProbability": 0.4145954308705349,
+              "dropPct": 11.03837566084051,
+              "alternative": null
+            },
+            {
+              "ply": 35,
+              "san": "Bc3",
+              "expected": "Mossa mancata",
+              "actual": "missed",
+              "base": "blunder",
+              "reason": "confirmed",
+              "bestEval": 535,
+              "bestMate": null,
+              "playedEval": 22,
+              "playedMate": null,
+              "bestProbability": 0.7920785167252805,
+              "playedProbability": 0.513746534902355,
+              "dropPct": 27.833198182292552,
+              "alternative": {
+                "uci": [
+                  "d3h7",
+                  "g8h7",
+                  "d2d4",
+                  "h7g8",
+                  "b4c3",
+                  "e6e5",
+                  "e1e5",
+                  "e8e5"
+                ],
+                "san": [
+                  "Bh7+",
+                  "Kxh7",
+                  "Qxd4",
+                  "Kg8",
+                  "Bc3",
+                  "e5",
+                  "Rxe5",
+                  "Rxe5"
+                ]
+              }
+            }
+          ],
+          "specialCandidates": [
+            {
+              "ply": 45,
+              "san": "Qxc7",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 43,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 47,
+              "san": "Qe5",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 47,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 74.92891261875775,
+              "used": 26,
+              "total": 26,
+              "weighted": 76.13348830716299,
+              "harmonic": 73.72433693035252
+            },
+            "black": {
+              "value": 63.29443086768014,
+              "used": 25,
+              "total": 25,
+              "weighted": 68.42466627254097,
+              "harmonic": 58.16419546281931
+            },
+            "windowSize": 5,
+            "partial": false
+          }
+        },
+        "large19Nodes200k": {
+          "missed": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1,
+            "recall": 0.5
+          },
+          "missedCases": [
+            {
+              "ply": 30,
+              "san": "Nh5",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": 49,
+              "bestMate": null,
+              "playedEval": -191,
+              "playedMate": null,
+              "bestProbability": 0.530586760182081,
+              "playedProbability": 0.38284263734702784,
+              "dropPct": 14.774412283505312,
+              "alternative": null
+            },
+            {
+              "ply": 35,
+              "san": "Bc3",
+              "expected": "Mossa mancata",
+              "actual": "missed",
+              "base": "blunder",
+              "reason": "confirmed",
+              "bestEval": 705,
+              "bestMate": null,
+              "playedEval": -122,
+              "playedMate": null,
+              "bestProbability": 0.8535224911382661,
+              "playedProbability": 0.42433564895745063,
+              "dropPct": 42.918684218081545,
+              "alternative": {
+                "uci": [
+                  "d3h7",
+                  "g8h7",
+                  "d2d4",
+                  "e6e5",
+                  "d4e3",
+                  "f3b7",
+                  "g1h2",
+                  "b8c6"
+                ],
+                "san": [
+                  "Bh7+",
+                  "Kxh7",
+                  "Qxd4",
+                  "e5",
+                  "Qe3",
+                  "Bb7",
+                  "Kh2",
+                  "Nc6"
+                ]
+              }
+            }
+          ],
+          "specialCandidates": [
+            {
+              "ply": 45,
+              "san": "Qxc7",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 43,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 47,
+              "san": "Qe5",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 47,
+              "cachedRootCount": 4,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 67.66772468237755,
+              "used": 26,
+              "total": 26,
+              "weighted": 77.16721159941115,
+              "harmonic": 58.168237765343974
+            },
+            "black": {
+              "value": 59.517956909085555,
+              "used": 25,
+              "total": 25,
+              "weighted": 67.27685012330203,
+              "harmonic": 51.75906369486908
+            },
+            "windowSize": 5,
+            "partial": false
+          }
+        }
+      }
+    },
+    {
+      "id": "personal-02",
+      "group": "development",
+      "labels": "BUMCestinait0 vs skui1, 2026.10.03",
+      "elo": {
+        "white": "738",
+        "black": "580"
+      },
+      "schemes": {
+        "native16Depth12": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0
+          },
+          "missedCases": [
+            {
+              "ply": 51,
+              "san": "Qxf7+",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-opponent-error",
+              "bestEval": null,
+              "bestMate": 8,
+              "playedEval": 718,
+              "playedMate": null,
+              "bestProbability": 1,
+              "playedProbability": 0.857539197784512,
+              "dropPct": 14.246080221548796,
+              "alternative": null
+            },
+            {
+              "ply": 69,
+              "san": "Ra6+",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-opponent-error",
+              "bestEval": null,
+              "bestMate": 1,
+              "playedEval": 811,
+              "playedMate": null,
+              "bestProbability": 1,
+              "playedProbability": 0.8836543009052766,
+              "dropPct": 11.634569909472336,
+              "alternative": null
+            }
+          ],
+          "specialCandidates": [
+            {
+              "ply": 21,
+              "san": "Bxf7",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 42,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 31,
+              "san": "Rxf2",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 4,
+              "cachedRootCount": 4,
+              "allLegalRootsCovered": true,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 73,
+              "san": "Rd7+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 33,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 87.03514745517586,
+              "used": 38,
+              "total": 38,
+              "weighted": 89.34516783717837,
+              "harmonic": 84.72512707317335
+            },
+            "black": {
+              "value": 78.72057498010105,
+              "used": 37,
+              "total": 37,
+              "weighted": 80.58599823667882,
+              "harmonic": 76.85515172352329
+            },
+            "windowSize": 7,
+            "partial": false
+          }
+        },
+        "large19Nodes200k": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0
+          },
+          "missedCases": [
+            {
+              "ply": 51,
+              "san": "Qxf7+",
+              "expected": "Mossa mancata",
+              "actual": "inaccuracy",
+              "base": "inaccuracy",
+              "reason": "no-opponent-error",
+              "bestEval": null,
+              "bestMate": 13,
+              "playedEval": 925,
+              "playedMate": null,
+              "bestProbability": 1,
+              "playedProbability": 0.9099070060380482,
+              "dropPct": 9.00929939619518,
+              "alternative": null
+            },
+            {
+              "ply": 69,
+              "san": "Ra6+",
+              "expected": "Mossa mancata",
+              "actual": "inaccuracy",
+              "base": "inaccuracy",
+              "reason": "no-opponent-error",
+              "bestEval": null,
+              "bestMate": 1,
+              "playedEval": 1149,
+              "playedMate": null,
+              "bestProbability": 1,
+              "playedProbability": 0.9464701504724333,
+              "dropPct": 5.3529849527566675,
+              "alternative": null
+            }
+          ],
+          "specialCandidates": [
+            {
+              "ply": 21,
+              "san": "Bxf7",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 42,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 31,
+              "san": "Rxf2",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 4,
+              "cachedRootCount": 4,
+              "allLegalRootsCovered": true,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 73,
+              "san": "Rd7+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 33,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 87.66484969743344,
+              "used": 38,
+              "total": 38,
+              "weighted": 88.85883278359084,
+              "harmonic": 86.47086661127604
+            },
+            "black": {
+              "value": 76.11046618997482,
+              "used": 37,
+              "total": 37,
+              "weighted": 79.05841684072844,
+              "harmonic": 73.16251553922119
+            },
+            "windowSize": 7,
+            "partial": false
+          }
+        }
+      }
+    },
+    {
+      "id": "personal-03",
+      "group": "development",
+      "labels": "BUMCestinait0 vs ProprioI0, 2026.10.04",
+      "elo": {
+        "white": "738",
+        "black": "791"
+      },
+      "schemes": {
+        "native16Depth12": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "precision": null,
+            "recall": 0
+          },
+          "missedCases": [
+            {
+              "ply": 27,
+              "san": "Nxe5",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": 294,
+              "bestMate": null,
+              "playedEval": 83,
+              "playedMate": null,
+              "bestProbability": 0.6759015277259407,
+              "playedProbability": 0.5516896693427,
+              "dropPct": 12.421185838324067,
+              "alternative": null
+            },
+            {
+              "ply": 28,
+              "san": "Nxe5",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": -88,
+              "bestMate": null,
+              "playedEval": -321,
+              "playedMate": null,
+              "bestProbability": 0.4452207648927852,
+              "playedProbability": 0.3094909987724293,
+              "dropPct": 13.572976612035593,
+              "alternative": null
+            },
+            {
+              "ply": 44,
+              "san": "Kxe6",
+              "expected": "Mossa mancata",
+              "actual": "blunder",
+              "base": "blunder",
+              "reason": "no-opponent-error",
+              "bestEval": 756,
+              "bestMate": null,
+              "playedEval": 279,
+              "playedMate": null,
+              "bestProbability": 0.8687555305614766,
+              "playedProbability": 0.6676332571171155,
+              "dropPct": 20.112227344436107,
+              "alternative": null
+            },
+            {
+              "ply": 94,
+              "san": "Qg1+",
+              "expected": "Mossa mancata",
+              "actual": "excellent",
+              "base": "excellent",
+              "reason": "no-opponent-error",
+              "bestEval": 3777,
+              "bestMate": null,
+              "playedEval": 3648,
+              "playedMate": null,
+              "bestProbability": 0.9999207243294317,
+              "playedProbability": 0.9998905573016795,
+              "dropPct": 0.0030167027752159292,
+              "alternative": null
+            }
+          ],
+          "specialCandidates": [
+            {
+              "ply": 19,
+              "san": "Nxd6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 32,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 42,
+              "san": "Bxe6",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 5,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": true,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 72.08581500032545,
+              "used": 68,
+              "total": 68,
+              "weighted": 80.87897578763611,
+              "harmonic": 63.2926542130148
+            },
+            "black": {
+              "value": 87.19062420652168,
+              "used": 68,
+              "total": 68,
+              "weighted": 85.05586165216506,
+              "harmonic": 89.3253867608783
+            },
+            "windowSize": 8,
+            "partial": false
+          }
+        },
+        "large19Nodes200k": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "precision": null,
+            "recall": 0
+          },
+          "missedCases": [
+            {
+              "ply": 27,
+              "san": "Nxe5",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": 398,
+              "bestMate": null,
+              "playedEval": 122,
+              "playedMate": null,
+              "bestProbability": 0.7300743839811188,
+              "playedProbability": 0.5756643510425494,
+              "dropPct": 15.441003293856937,
+              "alternative": null
+            },
+            {
+              "ply": 28,
+              "san": "Nxe5",
+              "expected": "Mossa mancata",
+              "actual": "blunder",
+              "base": "blunder",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": -122,
+              "bestMate": null,
+              "playedEval": -516,
+              "playedMate": null,
+              "bestProbability": 0.42433564895745063,
+              "playedProbability": 0.21585281082251456,
+              "dropPct": 20.848283813493605,
+              "alternative": null
+            },
+            {
+              "ply": 44,
+              "san": "Kxe6",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-opponent-error",
+              "bestEval": 836,
+              "bestMate": null,
+              "playedEval": 379,
+              "playedMate": null,
+              "bestProbability": 0.8899274256374969,
+              "playedProbability": 0.7206121300108707,
+              "dropPct": 16.93152956266263,
+              "alternative": null
+            },
+            {
+              "ply": 94,
+              "san": "Qg1+",
+              "expected": "Mossa mancata",
+              "actual": "excellent",
+              "base": "excellent",
+              "reason": "no-opponent-error",
+              "bestEval": 1041,
+              "bestMate": null,
+              "playedEval": 884,
+              "playedMate": null,
+              "bestProbability": 0.9310223021979629,
+              "playedProbability": 0.9011439268218306,
+              "dropPct": 2.987837537613225,
+              "alternative": null
+            }
+          ],
+          "specialCandidates": [
+            {
+              "ply": 19,
+              "san": "Nxd6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 32,
+              "cachedRootCount": 4,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 42,
+              "san": "Bxe6",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 5,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": true,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 59.77220098639761,
+              "used": 68,
+              "total": 68,
+              "weighted": 80.3769974637108,
+              "harmonic": 39.16740450908443
+            },
+            "black": {
+              "value": 85.46976709505543,
+              "used": 68,
+              "total": 68,
+              "weighted": 82.94230109090464,
+              "harmonic": 87.99723309920623
+            },
+            "windowSize": 8,
+            "partial": false
+          }
+        }
+      }
+    },
+    {
+      "id": "personal-04",
+      "group": "development",
+      "labels": "ProprioI0 vs BUMCestinait0, 2026.10.04",
+      "elo": {
+        "white": "791",
+        "black": "738"
+      },
+      "schemes": {
+        "native16Depth12": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null
+          },
+          "missedCases": [],
+          "specialCandidates": [
+            {
+              "ply": 22,
+              "san": "Qb4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 39,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 29,
+              "san": "Nd6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 36,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 90.90774136443159,
+              "used": 28,
+              "total": 28,
+              "weighted": 90.38834122996518,
+              "harmonic": 91.427141498898
+            },
+            "black": {
+              "value": 65.27262071796176,
+              "used": 27,
+              "total": 27,
+              "weighted": 78.92946064647566,
+              "harmonic": 51.61578078944785
+            },
+            "windowSize": 5,
+            "partial": false
+          }
+        },
+        "large19Nodes200k": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null
+          },
+          "missedCases": [],
+          "specialCandidates": [
+            {
+              "ply": 22,
+              "san": "Qb4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 39,
+              "cachedRootCount": 4,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 29,
+              "san": "Nd6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 36,
+              "cachedRootCount": 4,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 86.48333293386156,
+              "used": 28,
+              "total": 28,
+              "weighted": 84.22278198066465,
+              "harmonic": 88.74388388705849
+            },
+            "black": {
+              "value": 50.64156582319588,
+              "used": 27,
+              "total": 27,
+              "weighted": 80.06180856098136,
+              "harmonic": 21.2213230854104
+            },
+            "windowSize": 5,
+            "partial": false
+          }
+        }
+      }
+    },
+    {
+      "id": "personal-05",
+      "group": "development",
+      "labels": "BUMCestinait0 vs ProprioI0, 2026.10.04",
+      "elo": {
+        "white": "738",
+        "black": "791"
+      },
+      "schemes": {
+        "native16Depth12": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0
+          },
+          "missedCases": [
+            {
+              "ply": 12,
+              "san": "Nxf2",
+              "expected": "Mossa mancata",
+              "actual": "inaccuracy",
+              "base": "inaccuracy",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": 127,
+              "bestMate": null,
+              "playedEval": 0,
+              "playedMate": null,
+              "bestProbability": 0.578714862460134,
+              "playedProbability": 0.5,
+              "dropPct": 7.871486246013404,
+              "alternative": null
+            },
+            {
+              "ply": 14,
+              "san": "Qxd7",
+              "expected": "Mossa mancata",
+              "actual": "inaccuracy",
+              "base": "inaccuracy",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": 254,
+              "bestMate": null,
+              "playedEval": 110,
+              "playedMate": null,
+              "bestProbability": 0.653622330899504,
+              "playedProbability": 0.5683199834782481,
+              "dropPct": 8.530234742125586,
+              "alternative": null
+            }
+          ],
+          "specialCandidates": [
+            {
+              "ply": 16,
+              "san": "Nxh1",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 47,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 27,
+              "san": "Qxa8",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 48,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 37,
+              "san": "Bh6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 45,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 70.77609821631837,
+              "used": 19,
+              "total": 19,
+              "weighted": 68.16651896575488,
+              "harmonic": 73.38567746688187
+            },
+            "black": {
+              "value": 52.80366491694788,
+              "used": 18,
+              "total": 18,
+              "weighted": 61.48658146545927,
+              "harmonic": 44.120748368436495
+            },
+            "windowSize": 3,
+            "partial": false
+          }
+        },
+        "large19Nodes200k": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "precision": null,
+            "recall": 0
+          },
+          "missedCases": [
+            {
+              "ply": 12,
+              "san": "Nxf2",
+              "expected": "Mossa mancata",
+              "actual": "inaccuracy",
+              "base": "inaccuracy",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": 105,
+              "bestMate": null,
+              "playedEval": -51,
+              "playedMate": null,
+              "bestProbability": 0.5652507475670999,
+              "playedProbability": 0.4681681105837757,
+              "dropPct": 9.70826369833242,
+              "alternative": null
+            },
+            {
+              "ply": 14,
+              "san": "Qxd7",
+              "expected": "Mossa mancata",
+              "actual": "mistake",
+              "base": "mistake",
+              "reason": "no-confirmed-winning-opportunity",
+              "bestEval": 345,
+              "bestMate": null,
+              "playedEval": 123,
+              "playedMate": null,
+              "bestProbability": 0.7031827112198086,
+              "playedProbability": 0.5762749224932653,
+              "dropPct": 12.69077887265433,
+              "alternative": null
+            }
+          ],
+          "specialCandidates": [
+            {
+              "ply": 16,
+              "san": "Nxh1",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 47,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 27,
+              "san": "Qxa8",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 48,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 37,
+              "san": "Bh6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 45,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 63.15380446446634,
+              "used": 19,
+              "total": 19,
+              "weighted": 59.45687065975943,
+              "harmonic": 66.85073826917325
+            },
+            "black": {
+              "value": 36.5729565781436,
+              "used": 18,
+              "total": 18,
+              "weighted": 58.24139028912048,
+              "harmonic": 14.904522867166715
+            },
+            "windowSize": 3,
+            "partial": false
+          }
+        }
+      }
+    },
+    {
+      "id": "personal-06",
+      "group": "development",
+      "labels": "BUMCestinait0 vs ProprioI0, 2026.10.04",
+      "elo": {
+        "white": "738",
+        "black": "791"
+      },
+      "schemes": {
+        "native16Depth12": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null
+          },
+          "missedCases": [],
+          "specialCandidates": [
+            {
+              "ply": 11,
+              "san": "Nxe5",
+              "expected": "Geniale",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 28,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-sacrifice-defense-counterfactual-proof"
+            },
+            {
+              "ply": 13,
+              "san": "d4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 29,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 31,
+              "san": "Nd5",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 34,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 93.00211563758558,
+              "used": 23,
+              "total": 23,
+              "weighted": 91.56739357621217,
+              "harmonic": 94.43683769895898
+            },
+            "black": {
+              "value": 82.11579990772108,
+              "used": 22,
+              "total": 22,
+              "weighted": 78.39027629153973,
+              "harmonic": 85.84132352390242
+            },
+            "windowSize": 4,
+            "partial": false
+          }
+        },
+        "large19Nodes200k": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null
+          },
+          "missedCases": [],
+          "specialCandidates": [
+            {
+              "ply": 11,
+              "san": "Nxe5",
+              "expected": "Geniale",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 28,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-sacrifice-defense-counterfactual-proof"
+            },
+            {
+              "ply": 13,
+              "san": "d4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 29,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 31,
+              "san": "Nd5",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 34,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 93.54700229649833,
+              "used": 23,
+              "total": 23,
+              "weighted": 92.63435200296595,
+              "harmonic": 94.4596525900307
+            },
+            "black": {
+              "value": 81.81917520384195,
+              "used": 22,
+              "total": 22,
+              "weighted": 79.03984169534733,
+              "harmonic": 84.59850871233657
+            },
+            "windowSize": 4,
+            "partial": false
+          }
+        }
+      }
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "group": "historical",
+      "labels": "Chigorin vs Steinitz, 1892 (World Championship Rematch, Game 1)",
+      "elo": {
+        "white": "?",
+        "black": "?"
+      },
+      "schemes": {
+        "native16Depth12": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null
+          },
+          "missedCases": [],
+          "specialCandidates": [
+            {
+              "ply": 25,
+              "san": "Nc4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 30,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 28,
+              "san": "c6",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 39,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 31,
+              "san": "Nd6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 33,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 39,
+              "san": "e6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 32,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 43,
+              "san": "Re1",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 40,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 45,
+              "san": "Qh5",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 43,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 53,
+              "san": "Rb3",
+              "expected": "Geniale",
+              "actual": "good",
+              "isEngineBest": false,
+              "common": "good",
+              "legalCount": 41,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-sacrifice-defense-counterfactual-proof"
+            },
+            {
+              "ply": 61,
+              "san": "Rxf5+",
+              "expected": "Geniale",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 40,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-sacrifice-defense-counterfactual-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 90.00779067478344,
+              "used": 31,
+              "total": 31,
+              "weighted": 90.161069398535,
+              "harmonic": 89.85451195103187
+            },
+            "black": {
+              "value": 85.1440574143604,
+              "used": 30,
+              "total": 30,
+              "weighted": 85.45849657051272,
+              "harmonic": 84.82961825820809
+            },
+            "windowSize": 6,
+            "partial": false
+          }
+        },
+        "large19Nodes200k": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null
+          },
+          "missedCases": [],
+          "specialCandidates": [
+            {
+              "ply": 25,
+              "san": "Nc4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 30,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 28,
+              "san": "c6",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 39,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 31,
+              "san": "Nd6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 33,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 39,
+              "san": "e6+",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 32,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 43,
+              "san": "Re1",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 40,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 45,
+              "san": "Qh5",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 43,
+              "cachedRootCount": 4,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 53,
+              "san": "Rb3",
+              "expected": "Geniale",
+              "actual": "excellent",
+              "isEngineBest": false,
+              "common": "excellent",
+              "legalCount": 41,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-sacrifice-defense-counterfactual-proof"
+            },
+            {
+              "ply": 61,
+              "san": "Rxf5+",
+              "expected": "Geniale",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 40,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-sacrifice-defense-counterfactual-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 87.75216102646263,
+              "used": 31,
+              "total": 31,
+              "weighted": 88.02790728930393,
+              "harmonic": 87.47641476362135
+            },
+            "black": {
+              "value": 82.97484964595046,
+              "used": 30,
+              "total": 30,
+              "weighted": 83.30169961331246,
+              "harmonic": 82.64799967858846
+            },
+            "windowSize": 6,
+            "partial": false
+          }
+        }
+      }
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "group": "historical",
+      "labels": "Saint Amant vs Staunton, 1843",
+      "elo": {
+        "white": "?",
+        "black": "?"
+      },
+      "schemes": {
+        "native16Depth12": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null
+          },
+          "missedCases": [],
+          "specialCandidates": [
+            {
+              "ply": 56,
+              "san": "axb4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 31,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 76,
+              "san": "Ne4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 40,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 80,
+              "san": "Nxc3",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 39,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 82,
+              "san": "Bf3",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 35,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": true,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 89.5448171444229,
+              "used": 66,
+              "total": 66,
+              "weighted": 89.03723039642814,
+              "harmonic": 90.05240389241764
+            },
+            "black": {
+              "value": 92.56625338659758,
+              "used": 66,
+              "total": 66,
+              "weighted": 92.64096582040389,
+              "harmonic": 92.49154095279127
+            },
+            "windowSize": 8,
+            "partial": false
+          }
+        },
+        "large19Nodes200k": {
+          "missed": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null
+          },
+          "missedCases": [],
+          "specialCandidates": [
+            {
+              "ply": 56,
+              "san": "axb4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 31,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 76,
+              "san": "Ne4",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 40,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 80,
+              "san": "Nxc3",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 39,
+              "cachedRootCount": 4,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            },
+            {
+              "ply": 82,
+              "san": "Bf3",
+              "expected": "Grande",
+              "actual": "best",
+              "isEngineBest": true,
+              "common": "best",
+              "legalCount": 35,
+              "cachedRootCount": 5,
+              "allLegalRootsCovered": false,
+              "sameRealDepth": false,
+              "decision": "not-adopted",
+              "reason": "no-complete-uniqueness-proof"
+            }
+          ],
+          "accuracy": {
+            "white": {
+              "value": 88.38162028931669,
+              "used": 66,
+              "total": 66,
+              "weighted": 87.84702650126935,
+              "harmonic": 88.91621407736402
+            },
+            "black": {
+              "value": 91.94203739874216,
+              "used": 66,
+              "total": 66,
+              "weighted": 91.7174457794003,
+              "harmonic": 92.16662901808402
+            },
+            "windowSize": 8,
+            "partial": false
+          }
+        }
+      }
+    }
+  ],
+  "protectedFiles": 24,
+  "hashesUnchanged": true,
+  "searches": 0,
+  "comparisonChessCom": "pending-user-data",
+  "levelModel": "pending-user-data"
+}

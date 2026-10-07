@@ -12,7 +12,7 @@ import PositionEditor from './components/PositionEditor.jsx'
 import GameArchive from './components/GameArchive.jsx'
 import { archiveAnalysisStatus, describePgn } from './lib/gameArchive.js'
 import { setPieceAtFen } from './lib/positionEditor.js'
-import { getKeyboardNavigationTarget } from './lib/analysisPresentation.js'
+import { getKeyboardNavigationTarget, resolveAnalysisEntryForPosition } from './lib/analysisPresentation.js'
 
 function AppContent() {
   const { fen, moveHistorySan, navigationHistorySan, importPgn, resetGame, loadMoveSequence, exportPgn } = useGame()
@@ -150,7 +150,7 @@ function AppContent() {
             <ChatPanel
               opening={opening}
               engineData={engineData}
-              analysisEntry={analysisEntries.at(-1) ?? null}
+              analysisEntry={resolveAnalysisEntryForPosition(fen, moveHistorySan, analysisEntries)}
             />
           </details>
         </details>

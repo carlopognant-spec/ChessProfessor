@@ -97,6 +97,7 @@ export async function analyzeGame({
   for (const [index, san] of moves.entries()) {
     throwIfAborted(signal)
     const fenBefore = game.fen()
+    const moveNumber = Number(fenBefore.split(' ')[5])
     const moveHistorySan = game.history()
     const side = game.turn()
     const cacheKey = `analysis:${analysisKey ? analysisKey + ':' : ''}${fenBefore}:${san}`
@@ -153,7 +154,7 @@ export async function analyzeGame({
     entry = {
       ...entry,
       ply: index + 1,
-      moveNumber: Math.floor(index / 2) + 1,
+      moveNumber,
       side,
       moveHistorySan,
       isBookMove,
@@ -179,15 +180,6 @@ export async function analyzeGame({
 export function buildAnalysisProgress({ total = 0, current = 0 } = {}) {
   if (!total) return 0
   return Math.min(100, Math.max(0, (current / total) * 100))
-}
-
-export function summarizeAnalysis(entries = []) {
-  return entries.reduce((summary, entry) => {
-    summary.total += 1
-    summary.evalSum += entry?.evalCp ?? 0
-    if (entry?.mate != null) summary.mateCount += 1
-    return summary
-  }, { total: 0, evalSum: 0, mateCount: 0 })
 }
 
 export function buildAnalysisSummary(entries = []) {

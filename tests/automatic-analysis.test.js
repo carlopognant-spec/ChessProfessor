@@ -9,6 +9,18 @@ const BOOK_PATH = ['e4', 'e5', 'Nf3', 'Nc6', 'Nc3', 'Nf6']
 const DEVIATING_PATH = ['e4', 'e5', 'Nc3', 'Nc6', 'Nf3', 'Nf6']
 const NO_BOOK = createOpeningBook()
 
+it('retains the fullmove counter for analysis beginning with Black', async () => {
+  const game = new Chess()
+  game.move('d4')
+  const baseFen = game.fen().replace(/ 1$/, ' 17')
+  const entries = await analyzeGame({ baseFen, moves: ['d5', 'c4'], openingBook: NO_BOOK,
+    analyzePosition: async () => ({ evalCp: 0, pv: [] }),
+  })
+  expect(entries.map(({ side, moveNumber }) => ({ side, moveNumber }))).toEqual([
+    { side: 'b', moveNumber: 17 }, { side: 'w', moveNumber: 18 },
+  ])
+})
+
 function transpositionBook() {
   const game = new Chess()
   return createOpeningBook(BOOK_PATH.map(san => {

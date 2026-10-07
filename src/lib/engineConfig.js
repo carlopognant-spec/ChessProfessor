@@ -14,11 +14,7 @@ export const ENGINE_CONFIG = {
   loadTimeoutMs: 180000,
   // Legacy depth-only QA caches retain their original configuration.
   defaultDepth: 12,
-  // Unused legacy setting: no consumer in src, scripts or tests applies a fallback depth.
-  fallbackDepth: 8,
   multiPv: 5,
-  // Unused legacy setting: Libro uses the local repertoire, not an Explorer game minimum.
-  explorerMinGames: 20,
   // Active: stop Explorer requests below this total game count; does not classify Libro.
   explorerThreshold: 15,
   maxAnalysisEntries: 250,
