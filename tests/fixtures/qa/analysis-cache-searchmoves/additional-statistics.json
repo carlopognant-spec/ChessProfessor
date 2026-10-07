@@ -1,0 +1,339 @@
+{
+  "insideByGroup": [
+    {
+      "group": "personal",
+      "total": 295,
+      "cp": 265,
+      "mean": 184.91698113207548,
+      "median": 18,
+      "p90": 214,
+      "max": 3136,
+      "signInversions": 4,
+      "mateCp": 6,
+      "mateMate": 24
+    },
+    {
+      "group": "historical",
+      "total": 161,
+      "cp": 160,
+      "mean": 22.30625,
+      "median": 13,
+      "p90": 54,
+      "max": 140,
+      "signInversions": 1,
+      "mateCp": 1,
+      "mateMate": 0
+    },
+    {
+      "group": "all",
+      "total": 456,
+      "cp": 425,
+      "mean": 123.69882352941177,
+      "median": 16,
+      "p90": 104,
+      "max": 3136,
+      "signInversions": 5,
+      "mateCp": 7,
+      "mateMate": 24
+    }
+  ],
+  "outsideComparisons": [
+    {
+      "comparison": "pair played vs single",
+      "total": 136,
+      "cp": 125,
+      "mean": 27.712,
+      "median": 16,
+      "p90": 48,
+      "max": 648,
+      "signInversions": 3,
+      "mateCp": 1,
+      "mateMate": 10
+    },
+    {
+      "comparison": "pair played vs cached child (sign inverted)",
+      "total": 136,
+      "cp": 124,
+      "mean": 32.79838709677419,
+      "median": 15.5,
+      "p90": 66,
+      "max": 583,
+      "signInversions": 4,
+      "mateCp": 2,
+      "mateMate": 10
+    },
+    {
+      "comparison": "pair cached-best candidate vs cached best",
+      "total": 136,
+      "cp": 126,
+      "mean": 38.75396825396825,
+      "median": 15,
+      "p90": 70,
+      "max": 652,
+      "signInversions": 1,
+      "mateCp": 3,
+      "mateMate": 7
+    }
+  ],
+  "cases": [
+    {
+      "id": "personal-01",
+      "ply": 32,
+      "san": "Bxf3",
+      "singleCp": 79,
+      "singleMate": null,
+      "cachedCp": -2,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-01",
+      "ply": 35,
+      "san": "Bc3",
+      "singleCp": -32,
+      "singleMate": null,
+      "cachedCp": 22,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-02",
+      "ply": 49,
+      "san": "Qf2+",
+      "singleCp": 1116,
+      "singleMate": null,
+      "cachedCp": null,
+      "cachedMate": 10
+    },
+    {
+      "id": "personal-03",
+      "ply": 88,
+      "san": "Qd3+",
+      "singleCp": 934,
+      "singleMate": null,
+      "cachedCp": 3723,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 89,
+      "san": "Kg4",
+      "singleCp": -1061,
+      "singleMate": null,
+      "cachedCp": -3729,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 90,
+      "san": "Qxd4",
+      "singleCp": 1075,
+      "singleMate": null,
+      "cachedCp": 3737,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 91,
+      "san": "Kg5",
+      "singleCp": -1238,
+      "singleMate": null,
+      "cachedCp": -3737,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 92,
+      "san": "Qxc5+",
+      "singleCp": 601,
+      "singleMate": null,
+      "cachedCp": 3737,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 93,
+      "san": "f5",
+      "singleCp": -1267,
+      "singleMate": null,
+      "cachedCp": -3777,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 94,
+      "san": "Qg1+",
+      "singleCp": 670,
+      "singleMate": null,
+      "cachedCp": 3648,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 95,
+      "san": "Kf6",
+      "singleCp": -1271,
+      "singleMate": null,
+      "cachedCp": -3729,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 96,
+      "san": "Qf2",
+      "singleCp": 823,
+      "singleMate": null,
+      "cachedCp": 3648,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 97,
+      "san": "Ke5",
+      "singleCp": -1273,
+      "singleMate": null,
+      "cachedCp": -3706,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 98,
+      "san": "a5",
+      "singleCp": 1271,
+      "singleMate": null,
+      "cachedCp": 3718,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 99,
+      "san": "f6",
+      "singleCp": -1271,
+      "singleMate": null,
+      "cachedCp": -3729,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 100,
+      "san": "a4",
+      "singleCp": 1295,
+      "singleMate": null,
+      "cachedCp": 3718,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 101,
+      "san": "Ke6",
+      "singleCp": -1295,
+      "singleMate": null,
+      "cachedCp": -4401,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-03",
+      "ply": 103,
+      "san": "f7",
+      "singleCp": -4341,
+      "singleMate": null,
+      "cachedCp": null,
+      "cachedMate": -10
+    },
+    {
+      "id": "personal-03",
+      "ply": 104,
+      "san": "a2",
+      "singleCp": 4341,
+      "singleMate": null,
+      "cachedCp": null,
+      "cachedMate": 10
+    },
+    {
+      "id": "personal-03",
+      "ply": 116,
+      "san": "c4",
+      "singleCp": 4354,
+      "singleMate": null,
+      "cachedCp": null,
+      "cachedMate": 14
+    },
+    {
+      "id": "personal-03",
+      "ply": 117,
+      "san": "Kf4",
+      "singleCp": -4383,
+      "singleMate": null,
+      "cachedCp": null,
+      "cachedMate": -12
+    },
+    {
+      "id": "personal-04",
+      "ply": 53,
+      "san": "Qxg5+",
+      "singleCp": 1276,
+      "singleMate": null,
+      "cachedCp": null,
+      "cachedMate": 9
+    },
+    {
+      "id": "personal-06",
+      "ply": 12,
+      "san": "Nxe5",
+      "singleCp": -21,
+      "singleMate": null,
+      "cachedCp": 3,
+      "cachedMate": null
+    },
+    {
+      "id": "personal-06",
+      "ply": 13,
+      "san": "d4",
+      "singleCp": 21,
+      "singleMate": null,
+      "cachedCp": -9,
+      "cachedMate": null
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "ply": 61,
+      "san": "Rxf5+",
+      "singleCp": 841,
+      "singleMate": null,
+      "cachedCp": null,
+      "cachedMate": 8
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 20,
+      "san": "Nc6",
+      "singleCp": -6,
+      "singleMate": null,
+      "cachedCp": 4,
+      "cachedMate": null
+    }
+  ],
+  "realGo": {
+    "single": 592,
+    "pairAdditional": 136,
+    "repeat": 100
+  },
+  "realSeconds": {
+    "single": 13.688110800000027,
+    "pairAdditional": 7.9052493999999935,
+    "repeat": 3.029722999999998,
+    "total": 31.4750364
+  },
+  "changes": [
+    {
+      "scheme": "single",
+      "total": 91,
+      "personal": 63,
+      "historical": 28
+    },
+    {
+      "scheme": "pair",
+      "total": 54,
+      "personal": 39,
+      "historical": 15
+    }
+  ]
+}

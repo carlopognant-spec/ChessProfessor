@@ -1,0 +1,5014 @@
+{
+  "schemaVersion": 1,
+  "experiment": "C7",
+  "engineVersion": "Stockfish 16",
+  "depth": 12,
+  "threads": 1,
+  "hashMb": 16,
+  "hashPolicy": "new process and ucinewgame per game/scheme; retained within ascending selected plies",
+  "startedAt": "2026-10-07T06:50:17.154Z",
+  "baselineSha256": "ca2b120078a27403258b3c1e233d4a83b4298dd0b5e6c0b88fc2b5ecde2fa353",
+  "entries": [
+    {
+      "ply": 1,
+      "uci": "d2d4",
+      "fenBefore": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "go depth 12 searchmoves d2d4"
+        ],
+        "bestmove": "bestmove d2d4 ponder g8f6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 20,
+            "mate": null,
+            "pv": [
+              "d2d4",
+              "g8f6",
+              "g1f3",
+              "e7e6",
+              "c1f4",
+              "d7d5",
+              "e2e3",
+              "c7c5",
+              "f1e2",
+              "c5d4",
+              "e3d4",
+              "f8d6",
+              "f4d6"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 20 nodes 24587 nps 472826 hashfull 12 tbhits 0 time 52 pv d2d4 g8f6 g1f3 e7e6 c1f4 d7d5 e2e3 c7c5 f1e2 c5d4 e3d4 f8d6 f4d6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 51.5480000000025
+      }
+    },
+    {
+      "ply": 2,
+      "uci": "d7d5",
+      "fenBefore": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+          "go depth 12 searchmoves d7d5"
+        ],
+        "bestmove": "bestmove d7d5 ponder e2e3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -14,
+            "mate": null,
+            "pv": [
+              "d7d5",
+              "e2e3",
+              "e7e6",
+              "c2c4",
+              "g8f6",
+              "g1f3",
+              "c7c5",
+              "b1c3",
+              "b8c6"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp -14 nodes 14138 nps 504928 hashfull 5 tbhits 0 time 28 pv d7d5 e2e3 e7e6 c2c4 g8f6 g1f3 c7c5 b1c3 b8c6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 26.52509999999893
+      }
+    },
+    {
+      "ply": 3,
+      "uci": "c2c4",
+      "fenBefore": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+          "go depth 12 searchmoves c2c4"
+        ],
+        "bestmove": "bestmove c2c4 ponder e7e6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 18,
+            "mate": null,
+            "pv": [
+              "c2c4",
+              "e7e6",
+              "e2e3",
+              "g8f6",
+              "g1f3",
+              "f8e7",
+              "c1d2",
+              "c7c5",
+              "d4c5"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 18 nodes 13215 nps 489444 hashfull 5 tbhits 0 time 27 pv c2c4 e7e6 e2e3 g8f6 g1f3 f8e7 c1d2 c7c5 d4c5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 25.975800000000163
+      }
+    },
+    {
+      "ply": 4,
+      "uci": "e7e6",
+      "fenBefore": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+          "go depth 12 searchmoves e7e6"
+        ],
+        "bestmove": "bestmove e7e6 ponder b1c3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -41,
+            "mate": null,
+            "pv": [
+              "e7e6",
+              "b1c3",
+              "g8f6",
+              "g1f3",
+              "c7c5",
+              "c4d5",
+              "f6d5",
+              "e2e4",
+              "d5c3",
+              "b2c3",
+              "c5d4"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -41 nodes 32481 nps 532475 hashfull 14 tbhits 0 time 61 pv e7e6 b1c3 g8f6 g1f3 c7c5 c4d5 f6d5 e2e4 d5c3 b2c3 c5d4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 60.915899999999965
+      }
+    },
+    {
+      "ply": 5,
+      "uci": "e2e3",
+      "fenBefore": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+          "go depth 12 searchmoves e2e3"
+        ],
+        "bestmove": "bestmove e2e3 ponder f8e7",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 19,
+            "mate": null,
+            "pv": [
+              "e2e3",
+              "f8e7",
+              "g1f3",
+              "g8f6",
+              "b2b3",
+              "d5c4",
+              "f1c4",
+              "c7c5",
+              "e1g1",
+              "c5d4"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp 19 nodes 3980 nps 568571 hashfull 2 tbhits 0 time 7 pv e2e3 f8e7 g1f3 g8f6 b2b3 d5c4 f1c4 c7c5 e1g1 c5d4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 6.442500000001019
+      }
+    },
+    {
+      "ply": 6,
+      "uci": "c7c5",
+      "fenBefore": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/4P3/PP3PPP/RNBQKBNR b KQkq - 0 3",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/4P3/PP3PPP/RNBQKBNR b KQkq - 0 3",
+          "go depth 12 searchmoves c7c5"
+        ],
+        "bestmove": "bestmove c7c5 ponder b1c3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -23,
+            "mate": null,
+            "pv": [
+              "c7c5",
+              "b1c3",
+              "g8f6",
+              "g1f3",
+              "b8c6",
+              "c4d5",
+              "e6d5",
+              "f1e2",
+              "f8e7",
+              "e1g1",
+              "e8g8",
+              "b2b3"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -23 nodes 8832 nps 490666 hashfull 5 tbhits 0 time 18 pv c7c5 b1c3 g8f6 g1f3 b8c6 c4d5 e6d5 f1e2 f8e7 e1g1 e8g8 b2b3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 16.724400000002788
+      }
+    },
+    {
+      "ply": 7,
+      "uci": "b1c3",
+      "fenBefore": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/4P3/PP3PPP/RNBQKBNR w KQkq - 0 4",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/4P3/PP3PPP/RNBQKBNR w KQkq - 0 4",
+          "go depth 12 searchmoves b1c3"
+        ],
+        "bestmove": "bestmove b1c3 ponder g8f6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 20,
+            "mate": null,
+            "pv": [
+              "b1c3",
+              "g8f6",
+              "g1f3",
+              "b8c6",
+              "c4d5",
+              "e6d5",
+              "f1e2",
+              "f8d6",
+              "d4c5",
+              "d6c5",
+              "b2b3"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 20 nodes 5118 nps 465272 hashfull 1 tbhits 0 time 11 pv b1c3 g8f6 g1f3 b8c6 c4d5 e6d5 f1e2 f8d6 d4c5 d6c5 b2b3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 10.0653999999995
+      }
+    },
+    {
+      "ply": 8,
+      "uci": "g8f6",
+      "fenBefore": "rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N1P3/PP3PPP/R1BQKBNR b KQkq - 1 4",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkbnr/pp3ppp/4p3/2pp4/2PP4/2N1P3/PP3PPP/R1BQKBNR b KQkq - 1 4",
+          "go depth 12 searchmoves g8f6"
+        ],
+        "bestmove": "bestmove g8f6 ponder g1f3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -21,
+            "mate": null,
+            "pv": [
+              "g8f6",
+              "g1f3",
+              "b8c6",
+              "f1d3",
+              "d5c4",
+              "d3c4",
+              "f8e7",
+              "e1g1",
+              "c5d4",
+              "e3d4",
+              "e8g8",
+              "c1f4",
+              "b7b6",
+              "d4d5",
+              "c6a5"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -21 nodes 13692 nps 507111 hashfull 6 tbhits 0 time 27 pv g8f6 g1f3 b8c6 f1d3 d5c4 d3c4 f8e7 e1g1 c5d4 e3d4 e8g8 c1f4 b7b6 d4d5 c6a5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 26.698599999999715
+      }
+    },
+    {
+      "ply": 9,
+      "uci": "g1f3",
+      "fenBefore": "rnbqkb1r/pp3ppp/4pn2/2pp4/2PP4/2N1P3/PP3PPP/R1BQKBNR w KQkq - 2 5",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkb1r/pp3ppp/4pn2/2pp4/2PP4/2N1P3/PP3PPP/R1BQKBNR w KQkq - 2 5",
+          "go depth 12 searchmoves g1f3"
+        ],
+        "bestmove": "bestmove g1f3 ponder b8c6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 26,
+            "mate": null,
+            "pv": [
+              "g1f3",
+              "b8c6",
+              "c4d5",
+              "e6d5",
+              "f1e2",
+              "f8d6",
+              "d4c5",
+              "d6c5",
+              "e1g1",
+              "e8g8",
+              "b2b3",
+              "d5d4"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp 26 nodes 6692 nps 557666 hashfull 3 tbhits 0 time 12 pv g1f3 b8c6 c4d5 e6d5 f1e2 f8d6 d4c5 d6c5 e1g1 e8g8 b2b3 d5d4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 11.18119999999908
+      }
+    },
+    {
+      "ply": 10,
+      "uci": "f8e7",
+      "fenBefore": "rnbqkb1r/pp3ppp/4pn2/2pp4/2PP4/2N1PN2/PP3PPP/R1BQKB1R b KQkq - 3 5",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqkb1r/pp3ppp/4pn2/2pp4/2PP4/2N1PN2/PP3PPP/R1BQKB1R b KQkq - 3 5",
+          "go depth 12 searchmoves f8e7"
+        ],
+        "bestmove": "bestmove f8e7 ponder d4c5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -41,
+            "mate": null,
+            "pv": [
+              "f8e7",
+              "d4c5",
+              "e8g8",
+              "c4d5",
+              "f6d5",
+              "c1d2",
+              "e7c5",
+              "f1d3",
+              "d5f6"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -41 nodes 15086 nps 471437 hashfull 9 tbhits 0 time 32 pv f8e7 d4c5 e8g8 c4d5 f6d5 c1d2 e7c5 f1d3 d5f6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 30.87710000000152
+      }
+    },
+    {
+      "ply": 11,
+      "uci": "f1d3",
+      "fenBefore": "rnbqk2r/pp2bppp/4pn2/2pp4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq - 4 6",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqk2r/pp2bppp/4pn2/2pp4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq - 4 6",
+          "go depth 12 searchmoves f1d3"
+        ],
+        "bestmove": "bestmove f1d3 ponder d5c4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 8,
+            "mate": null,
+            "pv": [
+              "f1d3",
+              "d5c4",
+              "d3c4",
+              "e8g8",
+              "e1g1",
+              "c5d4",
+              "e3d4",
+              "b8c6",
+              "f1e1",
+              "b7b6",
+              "a2a3",
+              "c8b7",
+              "c4a2",
+              "a8c8",
+              "c1g5"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp 8 nodes 15420 nps 481875 hashfull 6 tbhits 0 time 32 pv f1d3 d5c4 d3c4 e8g8 e1g1 c5d4 e3d4 b8c6 f1e1 b7b6 a2a3 c8b7 c4a2 a8c8 c1g5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 31.305200000002515
+      }
+    },
+    {
+      "ply": 12,
+      "uci": "b7b6",
+      "fenBefore": "rnbqk2r/pp2bppp/4pn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQK2R b KQkq - 5 6",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqk2r/pp2bppp/4pn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQK2R b KQkq - 5 6",
+          "go depth 12 searchmoves b7b6"
+        ],
+        "bestmove": "bestmove b7b6 ponder e1g1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -35,
+            "mate": null,
+            "pv": [
+              "b7b6",
+              "e1g1",
+              "e8g8",
+              "c4d5",
+              "f6d5",
+              "e3e4",
+              "d5c3",
+              "b2c3",
+              "c5d4",
+              "c3d4",
+              "b8c6"
+            ],
+            "raw": "info depth 12 seldepth 20 multipv 1 score cp -35 nodes 37923 nps 480037 hashfull 15 tbhits 0 time 79 pv b7b6 e1g1 e8g8 c4d5 f6d5 e3e4 d5c3 b2c3 c5d4 c3d4 b8c6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 78.08199999999852
+      }
+    },
+    {
+      "ply": 13,
+      "uci": "e1g1",
+      "fenBefore": "rnbqk2r/p3bppp/1p2pn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQK2R w KQkq - 0 7",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqk2r/p3bppp/1p2pn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQK2R w KQkq - 0 7",
+          "go depth 12 searchmoves e1g1"
+        ],
+        "bestmove": "bestmove e1g1 ponder e8g8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 27,
+            "mate": null,
+            "pv": [
+              "e1g1",
+              "e8g8",
+              "c4d5",
+              "e6d5",
+              "d4c5",
+              "b6c5",
+              "b2b3",
+              "b8c6",
+              "c1b2",
+              "d8a5",
+              "c3a4",
+              "f6e4",
+              "a1c1"
+            ],
+            "raw": "info depth 12 seldepth 18 multipv 1 score cp 27 nodes 16752 nps 523500 hashfull 5 tbhits 0 time 32 pv e1g1 e8g8 c4d5 e6d5 d4c5 b6c5 b2b3 b8c6 c1b2 d8a5 c3a4 f6e4 a1c1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 31.418400000002293
+      }
+    },
+    {
+      "ply": 14,
+      "uci": "e8g8",
+      "fenBefore": "rnbqk2r/p3bppp/1p2pn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQ1RK1 b kq - 1 7",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbqk2r/p3bppp/1p2pn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQ1RK1 b kq - 1 7",
+          "go depth 12 searchmoves e8g8"
+        ],
+        "bestmove": "bestmove e8g8 ponder c4d5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -29,
+            "mate": null,
+            "pv": [
+              "e8g8",
+              "c4d5",
+              "f6d5",
+              "c3d5",
+              "e6d5",
+              "d4c5",
+              "b6c5",
+              "b2b3",
+              "e7f6",
+              "a1b1",
+              "b8a6",
+              "a2a3"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -29 nodes 10208 nps 510400 hashfull 4 tbhits 0 time 20 pv e8g8 c4d5 f6d5 c3d5 e6d5 d4c5 b6c5 b2b3 e7f6 a1b1 b8a6 a2a3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 19.16949999999997
+      }
+    },
+    {
+      "ply": 15,
+      "uci": "b2b3",
+      "fenBefore": "rnbq1rk1/p3bppp/1p2pn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 2 8",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbq1rk1/p3bppp/1p2pn2/2pp4/2PP4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 2 8",
+          "go depth 12 searchmoves b2b3"
+        ],
+        "bestmove": "bestmove b2b3 ponder c5d4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 4,
+            "mate": null,
+            "pv": [
+              "b2b3",
+              "c5d4",
+              "f3d4",
+              "c8b7",
+              "c1b2",
+              "d5c4",
+              "d3c4",
+              "b8c6",
+              "d4c6",
+              "b7c6",
+              "d1e2"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 4 nodes 8295 nps 487941 hashfull 2 tbhits 0 time 17 pv b2b3 c5d4 f3d4 c8b7 c1b2 d5c4 d3c4 b8c6 d4c6 b7c6 d1e2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 16.092899999999645
+      }
+    },
+    {
+      "ply": 16,
+      "uci": "c8b7",
+      "fenBefore": "rnbq1rk1/p3bppp/1p2pn2/2pp4/2PP4/1PNBPN2/P4PPP/R1BQ1RK1 b - - 0 8",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rnbq1rk1/p3bppp/1p2pn2/2pp4/2PP4/1PNBPN2/P4PPP/R1BQ1RK1 b - - 0 8",
+          "go depth 12 searchmoves c8b7"
+        ],
+        "bestmove": "bestmove c8b7 ponder d4c5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -15,
+            "mate": null,
+            "pv": [
+              "c8b7",
+              "d4c5",
+              "e7c5",
+              "c1b2",
+              "b8c6",
+              "c4d5",
+              "f6d5",
+              "d3e2"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -15 nodes 15216 nps 507200 hashfull 5 tbhits 0 time 30 pv c8b7 d4c5 e7c5 c1b2 b8c6 c4d5 f6d5 d3e2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 28.93550000000323
+      }
+    },
+    {
+      "ply": 17,
+      "uci": "c4d5",
+      "fenBefore": "rn1q1rk1/pb2bppp/1p2pn2/2pp4/2PP4/1PNBPN2/P4PPP/R1BQ1RK1 w - - 1 9",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rn1q1rk1/pb2bppp/1p2pn2/2pp4/2PP4/1PNBPN2/P4PPP/R1BQ1RK1 w - - 1 9",
+          "go depth 12 searchmoves c4d5"
+        ],
+        "bestmove": "bestmove c4d5 ponder f6d5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 3,
+            "mate": null,
+            "pv": [
+              "c4d5",
+              "f6d5",
+              "c3d5",
+              "d8d5",
+              "d1c2",
+              "c5d4",
+              "c1b2"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 3 nodes 10633 nps 506333 hashfull 5 tbhits 0 time 21 pv c4d5 f6d5 c3d5 d8d5 d1c2 c5d4 c1b2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 20.485500000002503
+      }
+    },
+    {
+      "ply": 18,
+      "uci": "e6d5",
+      "fenBefore": "rn1q1rk1/pb2bppp/1p2pn2/2pP4/3P4/1PNBPN2/P4PPP/R1BQ1RK1 b - - 0 9",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rn1q1rk1/pb2bppp/1p2pn2/2pP4/3P4/1PNBPN2/P4PPP/R1BQ1RK1 b - - 0 9",
+          "go depth 12 searchmoves e6d5"
+        ],
+        "bestmove": "bestmove e6d5 ponder c1b2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -36,
+            "mate": null,
+            "pv": [
+              "e6d5",
+              "c1b2",
+              "f8e8",
+              "a1c1",
+              "e7f8",
+              "c3e2"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -36 nodes 31308 nps 521800 hashfull 13 tbhits 0 time 60 pv e6d5 c1b2 f8e8 a1c1 e7f8 c3e2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 59.18950000000041
+      }
+    },
+    {
+      "ply": 19,
+      "uci": "d1c2",
+      "fenBefore": "rn1q1rk1/pb2bppp/1p3n2/2pp4/3P4/1PNBPN2/P4PPP/R1BQ1RK1 w - - 0 10",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rn1q1rk1/pb2bppp/1p3n2/2pp4/3P4/1PNBPN2/P4PPP/R1BQ1RK1 w - - 0 10",
+          "go depth 12 searchmoves d1c2"
+        ],
+        "bestmove": "bestmove d1c2 ponder b8c6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 28,
+            "mate": null,
+            "pv": [
+              "d1c2",
+              "b8c6",
+              "a2a3",
+              "h7h6",
+              "c1b2",
+              "f8e8",
+              "c3e2",
+              "e7f8",
+              "f1e1"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp 28 nodes 19705 nps 480609 hashfull 10 tbhits 0 time 41 pv d1c2 b8c6 a2a3 h7h6 c1b2 f8e8 c3e2 e7f8 f1e1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 40.27070000000094
+      }
+    },
+    {
+      "ply": 20,
+      "uci": "b8c6",
+      "fenBefore": "rn1q1rk1/pb2bppp/1p3n2/2pp4/3P4/1PNBPN2/P1Q2PPP/R1B2RK1 b - - 1 10",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen rn1q1rk1/pb2bppp/1p3n2/2pp4/3P4/1PNBPN2/P1Q2PPP/R1B2RK1 b - - 1 10",
+          "go depth 12 searchmoves b8c6"
+        ],
+        "bestmove": "bestmove b8c6 ponder a2a3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -6,
+            "mate": null,
+            "pv": [
+              "b8c6",
+              "a2a3",
+              "h7h6",
+              "c1b2",
+              "c5d4",
+              "e3d4",
+              "e7d6",
+              "b3b4",
+              "a8c8",
+              "f1e1"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -6 nodes 14366 nps 495379 hashfull 6 tbhits 0 time 29 pv b8c6 a2a3 h7h6 c1b2 c5d4 e3d4 e7d6 b3b4 a8c8 f1e1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 28.15560000000187
+      }
+    },
+    {
+      "ply": 21,
+      "uci": "a2a3",
+      "fenBefore": "r2q1rk1/pb2bppp/1pn2n2/2pp4/3P4/1PNBPN2/P1Q2PPP/R1B2RK1 w - - 2 11",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/pb2bppp/1pn2n2/2pp4/3P4/1PNBPN2/P1Q2PPP/R1B2RK1 w - - 2 11",
+          "go depth 12 searchmoves a2a3"
+        ],
+        "bestmove": "bestmove a2a3 ponder f8e8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 3,
+            "mate": null,
+            "pv": [
+              "a2a3",
+              "f8e8",
+              "d4c5",
+              "b6c5",
+              "c3e2",
+              "a8c8",
+              "c1b2"
+            ],
+            "raw": "info depth 12 seldepth 11 multipv 1 score cp 3 nodes 31637 nps 494328 hashfull 13 tbhits 0 time 64 pv a2a3 f8e8 d4c5 b6c5 c3e2 a8c8 c1b2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 62.92699999999968
+      }
+    },
+    {
+      "ply": 22,
+      "uci": "a7a6",
+      "fenBefore": "r2q1rk1/pb2bppp/1pn2n2/2pp4/3P4/PPNBPN2/2Q2PPP/R1B2RK1 b - - 0 11",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/pb2bppp/1pn2n2/2pp4/3P4/PPNBPN2/2Q2PPP/R1B2RK1 b - - 0 11",
+          "go depth 12 searchmoves a7a6"
+        ],
+        "bestmove": "bestmove a7a6 ponder d4c5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -52,
+            "mate": null,
+            "pv": [
+              "a7a6",
+              "d4c5",
+              "b6c5",
+              "c3a4",
+              "c6a5",
+              "a4c5",
+              "e7c5",
+              "b3b4",
+              "c5a7",
+              "b4a5",
+              "d8a5"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp -52 nodes 8801 nps 488944 hashfull 3 tbhits 0 time 18 pv a7a6 d4c5 b6c5 c3a4 c6a5 a4c5 e7c5 b3b4 c5a7 b4a5 d8a5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 16.642899999998917
+      }
+    },
+    {
+      "ply": 23,
+      "uci": "f1d1",
+      "fenBefore": "r2q1rk1/1b2bppp/ppn2n2/2pp4/3P4/PPNBPN2/2Q2PPP/R1B2RK1 w - - 0 12",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b2bppp/ppn2n2/2pp4/3P4/PPNBPN2/2Q2PPP/R1B2RK1 w - - 0 12",
+          "go depth 12 searchmoves f1d1"
+        ],
+        "bestmove": "bestmove f1d1 ponder c5d4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 23,
+            "mate": null,
+            "pv": [
+              "f1d1",
+              "c5d4",
+              "e3d4",
+              "h7h6",
+              "c1f4",
+              "f6h5",
+              "f4e5",
+              "c6e5",
+              "d4e5",
+              "h5f4",
+              "d3h7",
+              "g8h8",
+              "h7f5",
+              "f4e6"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp 23 nodes 18185 nps 491486 hashfull 10 tbhits 0 time 37 pv f1d1 c5d4 e3d4 h7h6 c1f4 f6h5 f4e5 c6e5 d4e5 h5f4 d3h7 g8h8 h7f5 f4e6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 36.14950000000317
+      }
+    },
+    {
+      "ply": 24,
+      "uci": "c5d4",
+      "fenBefore": "r2q1rk1/1b2bppp/ppn2n2/2pp4/3P4/PPNBPN2/2Q2PPP/R1BR2K1 b - - 1 12",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b2bppp/ppn2n2/2pp4/3P4/PPNBPN2/2Q2PPP/R1BR2K1 b - - 1 12",
+          "go depth 12 searchmoves c5d4"
+        ],
+        "bestmove": "bestmove c5d4 ponder e3d4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -39,
+            "mate": null,
+            "pv": [
+              "c5d4",
+              "e3d4",
+              "h7h6",
+              "d1e1",
+              "a8c8",
+              "d3f5",
+              "c8c7",
+              "c1f4",
+              "e7d6",
+              "f4d6",
+              "d8d6",
+              "b3b4"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -39 nodes 24945 nps 479711 hashfull 13 tbhits 0 time 52 pv c5d4 e3d4 h7h6 d1e1 a8c8 d3f5 c8c7 c1f4 e7d6 f4d6 d8d6 b3b4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 51.02720000000045
+      }
+    },
+    {
+      "ply": 25,
+      "uci": "e3d4",
+      "fenBefore": "r2q1rk1/1b2bppp/ppn2n2/3p4/3p4/PPNBPN2/2Q2PPP/R1BR2K1 w - - 0 13",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b2bppp/ppn2n2/3p4/3p4/PPNBPN2/2Q2PPP/R1BR2K1 w - - 0 13",
+          "go depth 12 searchmoves e3d4"
+        ],
+        "bestmove": "bestmove e3d4 ponder f8e8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 34,
+            "mate": null,
+            "pv": [
+              "e3d4",
+              "f8e8",
+              "d1e1",
+              "h7h6",
+              "b3b4",
+              "e7d6",
+              "e1e8",
+              "f6e8",
+              "c1b2",
+              "a8c8",
+              "d3h7",
+              "g8f8"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp 34 nodes 17372 nps 469513 hashfull 8 tbhits 0 time 37 pv e3d4 f8e8 d1e1 h7h6 b3b4 e7d6 e1e8 f6e8 c1b2 a8c8 d3h7 g8f8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 36.23819999999978
+      }
+    },
+    {
+      "ply": 26,
+      "uci": "h7h6",
+      "fenBefore": "r2q1rk1/1b2bppp/ppn2n2/3p4/3P4/PPNB1N2/2Q2PPP/R1BR2K1 b - - 0 13",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b2bppp/ppn2n2/3p4/3P4/PPNB1N2/2Q2PPP/R1BR2K1 b - - 0 13",
+          "go depth 12 searchmoves h7h6"
+        ],
+        "bestmove": "bestmove h7h6 ponder c1f4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -39,
+            "mate": null,
+            "pv": [
+              "h7h6",
+              "c1f4",
+              "e7d6",
+              "f4d6",
+              "d8d6",
+              "b3b4",
+              "f8c8",
+              "c2b2",
+              "f6h5",
+              "c3a4",
+              "c6a7"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -39 nodes 36087 nps 487662 hashfull 16 tbhits 0 time 74 pv h7h6 c1f4 e7d6 f4d6 d8d6 b3b4 f8c8 c2b2 f6h5 c3a4 c6a7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 73.1704000000027
+      }
+    },
+    {
+      "ply": 27,
+      "uci": "b3b4",
+      "fenBefore": "r2q1rk1/1b2bpp1/ppn2n1p/3p4/3P4/PPNB1N2/2Q2PPP/R1BR2K1 w - - 0 14",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b2bpp1/ppn2n1p/3p4/3P4/PPNB1N2/2Q2PPP/R1BR2K1 w - - 0 14",
+          "go depth 12 searchmoves b3b4"
+        ],
+        "bestmove": "bestmove b3b4 ponder e7d6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 14,
+            "mate": null,
+            "pv": [
+              "b3b4",
+              "e7d6",
+              "d1e1",
+              "f8e8",
+              "e1e8",
+              "d8e8",
+              "c3e2",
+              "a8c8",
+              "c2b2",
+              "e8d8",
+              "c1f4",
+              "d6f4",
+              "e2f4"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 14 nodes 32214 nps 473735 hashfull 15 tbhits 0 time 68 pv b3b4 e7d6 d1e1 f8e8 e1e8 d8e8 c3e2 a8c8 c2b2 e8d8 c1f4 d6f4 e2f4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 67.38779999999679
+      }
+    },
+    {
+      "ply": 28,
+      "uci": "e7d6",
+      "fenBefore": "r2q1rk1/1b2bpp1/ppn2n1p/3p4/1P1P4/P1NB1N2/2Q2PPP/R1BR2K1 b - - 0 14",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b2bpp1/ppn2n1p/3p4/1P1P4/P1NB1N2/2Q2PPP/R1BR2K1 b - - 0 14",
+          "go depth 12 searchmoves e7d6"
+        ],
+        "bestmove": "bestmove e7d6 ponder c2b2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -22,
+            "mate": null,
+            "pv": [
+              "e7d6",
+              "c2b2",
+              "b7c8",
+              "d1e1",
+              "f8e8",
+              "e1e8",
+              "d8e8",
+              "h2h3"
+            ],
+            "raw": "info depth 12 seldepth 18 multipv 1 score cp -22 nodes 18241 nps 493000 hashfull 9 tbhits 0 time 37 pv e7d6 c2b2 b7c8 d1e1 f8e8 e1e8 d8e8 h2h3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 36.42849999999817
+      }
+    },
+    {
+      "ply": 29,
+      "uci": "d1e1",
+      "fenBefore": "r2q1rk1/1b3pp1/ppnb1n1p/3p4/1P1P4/P1NB1N2/2Q2PPP/R1BR2K1 w - - 1 15",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b3pp1/ppnb1n1p/3p4/1P1P4/P1NB1N2/2Q2PPP/R1BR2K1 w - - 1 15",
+          "go depth 12 searchmoves d1e1"
+        ],
+        "bestmove": "bestmove d1e1 ponder b6b5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 23,
+            "mate": null,
+            "pv": [
+              "d1e1",
+              "b6b5",
+              "c3e2",
+              "f8e8",
+              "c2b2",
+              "f6h5",
+              "c1d2",
+              "d8f6",
+              "e2g3"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp 23 nodes 19058 nps 488666 hashfull 9 tbhits 0 time 39 pv d1e1 b6b5 c3e2 f8e8 c2b2 f6h5 c1d2 d8f6 e2g3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 38.04170000000158
+      }
+    },
+    {
+      "ply": 30,
+      "uci": "b6b5",
+      "fenBefore": "r2q1rk1/1b3pp1/ppnb1n1p/3p4/1P1P4/P1NB1N2/2Q2PPP/R1B1R1K1 b - - 2 15",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b3pp1/ppnb1n1p/3p4/1P1P4/P1NB1N2/2Q2PPP/R1B1R1K1 b - - 2 15",
+          "go depth 12 searchmoves b6b5"
+        ],
+        "bestmove": "bestmove b6b5 ponder c3e2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -20,
+            "mate": null,
+            "pv": [
+              "b6b5",
+              "c3e2",
+              "a6a5",
+              "d3b5",
+              "a5b4",
+              "b5c6",
+              "b4b3",
+              "c2b3",
+              "b7c6",
+              "f3e5",
+              "c6a4",
+              "b3b2"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -20 nodes 9350 nps 519444 hashfull 5 tbhits 0 time 18 pv b6b5 c3e2 a6a5 d3b5 a5b4 b5c6 b4b3 c2b3 b7c6 f3e5 c6a4 b3b2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 16.85490000000209
+      }
+    },
+    {
+      "ply": 31,
+      "uci": "h2h3",
+      "fenBefore": "r2q1rk1/1b3pp1/p1nb1n1p/1p1p4/1P1P4/P1NB1N2/2Q2PPP/R1B1R1K1 w - - 0 16",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b3pp1/p1nb1n1p/1p1p4/1P1P4/P1NB1N2/2Q2PPP/R1B1R1K1 w - - 0 16",
+          "go depth 12 searchmoves h2h3"
+        ],
+        "bestmove": "bestmove h2h3 ponder a8c8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 17,
+            "mate": null,
+            "pv": [
+              "h2h3",
+              "a8c8",
+              "c2b2",
+              "c8c7",
+              "c1d2",
+              "c7e7",
+              "e1e7",
+              "d8e7",
+              "a1e1",
+              "e7d8"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 17 nodes 20135 nps 447444 hashfull 9 tbhits 0 time 45 pv h2h3 a8c8 c2b2 c8c7 c1d2 c7e7 e1e7 d8e7 a1e1 e7d8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 43.81999999999971
+      }
+    },
+    {
+      "ply": 32,
+      "uci": "a8c8",
+      "fenBefore": "r2q1rk1/1b3pp1/p1nb1n1p/1p1p4/1P1P4/P1NB1N1P/2Q2PP1/R1B1R1K1 b - - 0 16",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen r2q1rk1/1b3pp1/p1nb1n1p/1p1p4/1P1P4/P1NB1N1P/2Q2PP1/R1B1R1K1 b - - 0 16",
+          "go depth 12 searchmoves a8c8"
+        ],
+        "bestmove": "bestmove a8c8 ponder c2b2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -19,
+            "mate": null,
+            "pv": [
+              "a8c8",
+              "c2b2",
+              "c8c7",
+              "c1d2",
+              "b7c8",
+              "a1c1",
+              "c8b7",
+              "e1e3"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -19 nodes 19795 nps 494875 hashfull 7 tbhits 0 time 40 pv a8c8 c2b2 c8c7 c1d2 b7c8 a1c1 c8b7 e1e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 39.38390000000072
+      }
+    },
+    {
+      "ply": 33,
+      "uci": "c2b3",
+      "fenBefore": "2rq1rk1/1b3pp1/p1nb1n1p/1p1p4/1P1P4/P1NB1N1P/2Q2PP1/R1B1R1K1 w - - 1 17",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2rq1rk1/1b3pp1/p1nb1n1p/1p1p4/1P1P4/P1NB1N1P/2Q2PP1/R1B1R1K1 w - - 1 17",
+          "go depth 12 searchmoves c2b3"
+        ],
+        "bestmove": "bestmove c2b3 ponder d8b6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 26,
+            "mate": null,
+            "pv": [
+              "c2b3",
+              "d8b6",
+              "c1e3",
+              "f8e8",
+              "a1c1",
+              "b6d8",
+              "d3b1",
+              "c8c7",
+              "c3e2",
+              "f6e4",
+              "e3f4",
+              "d8f6",
+              "f4d6",
+              "e4d6"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 26 nodes 30406 nps 453820 hashfull 21 tbhits 0 time 67 pv c2b3 d8b6 c1e3 f8e8 a1c1 b6d8 d3b1 c8c7 c3e2 f6e4 e3f4 d8f6 f4d6 e4d6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 65.81499999999869
+      }
+    },
+    {
+      "ply": 34,
+      "uci": "d8c7",
+      "fenBefore": "2rq1rk1/1b3pp1/p1nb1n1p/1p1p4/1P1P4/PQNB1N1P/5PP1/R1B1R1K1 b - - 2 17",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2rq1rk1/1b3pp1/p1nb1n1p/1p1p4/1P1P4/PQNB1N1P/5PP1/R1B1R1K1 b - - 2 17",
+          "go depth 12 searchmoves d8c7"
+        ],
+        "bestmove": "bestmove d8c7 ponder c1d2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -17,
+            "mate": null,
+            "pv": [
+              "d8c7",
+              "c1d2",
+              "f8e8",
+              "a1c1",
+              "e8e1",
+              "c1e1",
+              "c7d8"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -17 nodes 50426 nps 466907 hashfull 22 tbhits 0 time 108 pv d8c7 c1d2 f8e8 a1c1 e8e1 c1e1 c7d8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 106.79750000000058
+      }
+    },
+    {
+      "ply": 35,
+      "uci": "c1d2",
+      "fenBefore": "2r2rk1/1bq2pp1/p1nb1n1p/1p1p4/1P1P4/PQNB1N1P/5PP1/R1B1R1K1 w - - 3 18",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1bq2pp1/p1nb1n1p/1p1p4/1P1P4/PQNB1N1P/5PP1/R1B1R1K1 w - - 3 18",
+          "go depth 12 searchmoves c1d2"
+        ],
+        "bestmove": "bestmove c1d2 ponder f8e8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 21,
+            "mate": null,
+            "pv": [
+              "c1d2",
+              "f8e8",
+              "a1c1",
+              "c7b8",
+              "b3b2",
+              "e8e1",
+              "c1e1",
+              "c8d8"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp 21 nodes 24612 nps 502285 hashfull 11 tbhits 0 time 49 pv c1d2 f8e8 a1c1 c7b8 b3b2 e8e1 c1e1 c8d8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 48.71169999999984
+      }
+    },
+    {
+      "ply": 36,
+      "uci": "c7b6",
+      "fenBefore": "2r2rk1/1bq2pp1/p1nb1n1p/1p1p4/1P1P4/PQNB1N1P/3B1PP1/R3R1K1 b - - 4 18",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1bq2pp1/p1nb1n1p/1p1p4/1P1P4/PQNB1N1P/3B1PP1/R3R1K1 b - - 4 18",
+          "go depth 12 searchmoves c7b6"
+        ],
+        "bestmove": "bestmove c7b6 ponder d2e3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -28,
+            "mate": null,
+            "pv": [
+              "c7b6",
+              "d2e3",
+              "b6d8",
+              "a1c1",
+              "f8e8",
+              "d3b1",
+              "d6b8",
+              "c3e2",
+              "f6e4",
+              "e2f4",
+              "d8d6",
+              "f4d3"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -28 nodes 4146 nps 518250 hashfull 10 tbhits 0 time 8 pv c7b6 d2e3 b6d8 a1c1 f8e8 d3b1 d6b8 c3e2 f6e4 e2f4 d8d6 f4d3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 7.568200000001525
+      }
+    },
+    {
+      "ply": 37,
+      "uci": "d2e3",
+      "fenBefore": "2r2rk1/1b3pp1/pqnb1n1p/1p1p4/1P1P4/PQNB1N1P/3B1PP1/R3R1K1 w - - 5 19",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1b3pp1/pqnb1n1p/1p1p4/1P1P4/PQNB1N1P/3B1PP1/R3R1K1 w - - 5 19",
+          "go depth 12 searchmoves d2e3"
+        ],
+        "bestmove": "bestmove d2e3 ponder f8e8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 25,
+            "mate": null,
+            "pv": [
+              "d2e3",
+              "f8e8",
+              "a1c1",
+              "b6d8",
+              "d3b1",
+              "c8c7",
+              "g1h1",
+              "c6e7",
+              "f3e5",
+              "c7c4",
+              "c3e2"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 25 nodes 27164 nps 485071 hashfull 19 tbhits 0 time 56 pv d2e3 f8e8 a1c1 b6d8 d3b1 c8c7 g1h1 c6e7 f3e5 c7c4 c3e2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 55.056500000002416
+      }
+    },
+    {
+      "ply": 38,
+      "uci": "c6e7",
+      "fenBefore": "2r2rk1/1b3pp1/pqnb1n1p/1p1p4/1P1P4/PQNBBN1P/5PP1/R3R1K1 b - - 6 19",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1b3pp1/pqnb1n1p/1p1p4/1P1P4/PQNBBN1P/5PP1/R3R1K1 b - - 6 19",
+          "go depth 12 searchmoves c6e7"
+        ],
+        "bestmove": "bestmove c6e7 ponder c3e2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -40,
+            "mate": null,
+            "pv": [
+              "c6e7",
+              "c3e2",
+              "b6d8",
+              "a1d1",
+              "e7c6",
+              "d3f5",
+              "c8c7",
+              "e3f4",
+              "f6e4",
+              "f3e5",
+              "c6e7",
+              "e2g3"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -40 nodes 23735 nps 456442 hashfull 11 tbhits 0 time 52 pv c6e7 c3e2 b6d8 a1d1 e7c6 d3f5 c8c7 e3f4 f6e4 f3e5 c6e7 e2g3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 51.168100000002596
+      }
+    },
+    {
+      "ply": 39,
+      "uci": "a1c1",
+      "fenBefore": "2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P4/PQNBBN1P/5PP1/R3R1K1 w - - 7 20",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P4/PQNBBN1P/5PP1/R3R1K1 w - - 7 20",
+          "go depth 12 searchmoves a1c1"
+        ],
+        "bestmove": "bestmove a1c1 ponder f8e8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 35,
+            "mate": null,
+            "pv": [
+              "a1c1",
+              "f8e8",
+              "d3b1",
+              "c8c4",
+              "f3e5",
+              "d6e5",
+              "d4e5",
+              "d5d4",
+              "e5f6",
+              "b6f6",
+              "e3d2",
+              "d4c3",
+              "c1c3"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp 35 nodes 33478 nps 478257 hashfull 15 tbhits 0 time 70 pv a1c1 f8e8 d3b1 c8c4 f3e5 d6e5 d4e5 d5d4 e5f6 b6f6 e3d2 d4c3 c1c3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 69.91670000000158
+      }
+    },
+    {
+      "ply": 40,
+      "uci": "f6h5",
+      "fenBefore": "2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P4/PQNBBN1P/5PP1/2R1R1K1 b - - 8 20",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P4/PQNBBN1P/5PP1/2R1R1K1 b - - 8 20",
+          "go depth 12 searchmoves f6h5"
+        ],
+        "bestmove": "bestmove f6h5 ponder b3d1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -71,
+            "mate": null,
+            "pv": [
+              "f6h5",
+              "b3d1",
+              "f8e8",
+              "f3e5",
+              "h5f6",
+              "f2f3",
+              "d6e5",
+              "d4e5",
+              "d5d4",
+              "e3f2",
+              "f6d5",
+              "c3e4",
+              "d5e3"
+            ],
+            "raw": "info depth 12 seldepth 19 multipv 1 score cp -71 nodes 40823 nps 438956 hashfull 24 tbhits 0 time 93 pv f6h5 b3d1 f8e8 f3e5 h5f6 f2f3 d6e5 d4e5 d5d4 e3f2 f6d5 c3e4 d5e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 92.10640000000058
+      }
+    },
+    {
+      "ply": 41,
+      "uci": "b3d1",
+      "fenBefore": "2r2rk1/1b2npp1/pq1b3p/1p1p3n/1P1P4/PQNBBN1P/5PP1/2R1R1K1 w - - 9 21",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1b2npp1/pq1b3p/1p1p3n/1P1P4/PQNBBN1P/5PP1/2R1R1K1 w - - 9 21",
+          "go depth 12 searchmoves b3d1"
+        ],
+        "bestmove": "bestmove b3d1 ponder f8e8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 71,
+            "mate": null,
+            "pv": [
+              "b3d1",
+              "f8e8",
+              "f3e5",
+              "h5f6",
+              "f2f3",
+              "d6e5",
+              "d4e5",
+              "d5d4",
+              "e3f2",
+              "f6d5",
+              "c3e4",
+              "d5e3"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 71 nodes 3617 nps 452125 hashfull 5 tbhits 0 time 8 pv b3d1 f8e8 f3e5 h5f6 f2f3 d6e5 d4e5 d5d4 e3f2 f6d5 c3e4 d5e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 7.613500000003114
+      }
+    },
+    {
+      "ply": 42,
+      "uci": "h5f6",
+      "fenBefore": "2r2rk1/1b2npp1/pq1b3p/1p1p3n/1P1P4/P1NBBN1P/5PP1/2RQR1K1 b - - 10 21",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1b2npp1/pq1b3p/1p1p3n/1P1P4/P1NBBN1P/5PP1/2RQR1K1 b - - 10 21",
+          "go depth 12 searchmoves h5f6"
+        ],
+        "bestmove": "bestmove h5f6 ponder f3e5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -74,
+            "mate": null,
+            "pv": [
+              "h5f6",
+              "f3e5",
+              "f8e8",
+              "f2f3",
+              "d6e5",
+              "d4e5",
+              "d5d4",
+              "e3f2",
+              "f6d5",
+              "c3e2",
+              "d5e3",
+              "c1c8",
+              "e8c8",
+              "d1a1"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -74 nodes 26708 nps 452677 hashfull 20 tbhits 0 time 59 pv h5f6 f3e5 f8e8 f2f3 d6e5 d4e5 d5d4 e3f2 f6d5 c3e2 d5e3 c1c8 e8c8 d1a1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 58.275699999998324
+      }
+    },
+    {
+      "ply": 43,
+      "uci": "f3h4",
+      "fenBefore": "2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P4/P1NBBN1P/5PP1/2RQR1K1 w - - 11 22",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P4/P1NBBN1P/5PP1/2RQR1K1 w - - 11 22",
+          "go depth 12 searchmoves f3h4"
+        ],
+        "bestmove": "bestmove f3h4 ponder f8e8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 3,
+            "mate": null,
+            "pv": [
+              "f3h4",
+              "f8e8",
+              "d1f3",
+              "c8c6",
+              "e3h6",
+              "b6d4"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 3 nodes 18328 nps 482315 hashfull 14 tbhits 0 time 38 pv f3h4 f8e8 d1f3 c8c6 e3h6 b6d4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 38.08240000000296
+      }
+    },
+    {
+      "ply": 44,
+      "uci": "c8c7",
+      "fenBefore": "2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/5PP1/2RQR1K1 b - - 12 22",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/5PP1/2RQR1K1 b - - 12 22",
+          "go depth 12 searchmoves c8c7"
+        ],
+        "bestmove": "bestmove c8c7 ponder d1d2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -46,
+            "mate": null,
+            "pv": [
+              "c8c7",
+              "d1d2",
+              "f8e8",
+              "d3b1",
+              "c7c4",
+              "h4f3",
+              "e7g6"
+            ],
+            "raw": "info depth 12 seldepth 21 multipv 1 score cp -46 nodes 56205 nps 506351 hashfull 37 tbhits 0 time 111 pv c8c7 d1d2 f8e8 d3b1 c7c4 h4f3 e7g6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 110.75469999999768
+      }
+    },
+    {
+      "ply": 45,
+      "uci": "d1d2",
+      "fenBefore": "5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/5PP1/2RQR1K1 w - - 13 23",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/5PP1/2RQR1K1 w - - 13 23",
+          "go depth 12 searchmoves d1d2"
+        ],
+        "bestmove": "bestmove d1d2 ponder f8c8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 17,
+            "mate": null,
+            "pv": [
+              "d1d2",
+              "f8c8",
+              "g2g4",
+              "c8e8",
+              "g4g5",
+              "h6g5",
+              "e3g5",
+              "f6e4",
+              "c3e4",
+              "d5e4",
+              "d3e4",
+              "c7c1",
+              "d2c1",
+              "e7d5",
+              "h4f5",
+              "d6f8"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp 17 nodes 62653 nps 580120 hashfull 37 tbhits 0 time 108 pv d1d2 f8c8 g2g4 c8e8 g4g5 h6g5 e3g5 f6e4 c3e4 d5e4 d3e4 c7c1 d2c1 e7d5 h4f5 d6f8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 106.69220000000132
+      }
+    },
+    {
+      "ply": 46,
+      "uci": "f6h7",
+      "fenBefore": "5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/3Q1PP1/2R1R1K1 b - - 14 23",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/3Q1PP1/2R1R1K1 b - - 14 23",
+          "go depth 12 searchmoves f6h7"
+        ],
+        "bestmove": "bestmove f6h7 ponder h4f3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -97,
+            "mate": null,
+            "pv": [
+              "f6h7",
+              "h4f3",
+              "b7c8",
+              "f3e5",
+              "c8e6",
+              "e3h6",
+              "d6e5",
+              "e1e5",
+              "g7h6",
+              "d2h6"
+            ],
+            "raw": "info depth 12 seldepth 18 multipv 1 score cp -97 nodes 67058 nps 496725 hashfull 37 tbhits 0 time 135 pv f6h7 h4f3 b7c8 f3e5 c8e6 e3h6 d6e5 e1e5 g7h6 d2h6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 134.34490000000005
+      }
+    },
+    {
+      "ply": 47,
+      "uci": "d2c2",
+      "fenBefore": "5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/3Q1PP1/2R1R1K1 w - - 15 24",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/3Q1PP1/2R1R1K1 w - - 15 24",
+          "go depth 12 searchmoves d2c2"
+        ],
+        "bestmove": "bestmove d2c2 ponder h7f6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 17,
+            "mate": null,
+            "pv": [
+              "d2c2",
+              "h7f6",
+              "h4f3",
+              "f6e4",
+              "d3e4",
+              "d5e4",
+              "d4d5"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 17 nodes 10128 nps 460363 hashfull 4 tbhits 0 time 22 pv d2c2 h7f6 h4f3 f6e4 d3e4 d5e4 d4d5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 20.620699999999488
+      }
+    },
+    {
+      "ply": 48,
+      "uci": "h7f6",
+      "fenBefore": "5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 b - - 16 24",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 b - - 16 24",
+          "go depth 12 searchmoves h7f6"
+        ],
+        "bestmove": "bestmove h7f6 ponder h4f3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -20,
+            "mate": null,
+            "pv": [
+              "h7f6",
+              "h4f3",
+              "f6e4",
+              "c2b3",
+              "e4c3",
+              "c1c3",
+              "b7c8",
+              "c3c7",
+              "b6c7",
+              "e3d2"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -20 nodes 30111 nps 501850 hashfull 19 tbhits 0 time 60 pv h7f6 h4f3 f6e4 c2b3 e4c3 c1c3 b7c8 c3c7 b6c7 e3d2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 59.41330000000016
+      }
+    },
+    {
+      "ply": 49,
+      "uci": "g1h1",
+      "fenBefore": "5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 w - - 17 25",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 w - - 17 25",
+          "go depth 12 searchmoves g1h1"
+        ],
+        "bestmove": "bestmove g1h1 ponder c7c6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 6,
+            "mate": null,
+            "pv": [
+              "g1h1",
+              "c7c6",
+              "c2b2",
+              "b7c8",
+              "b2d2",
+              "c8e6",
+              "h4f3",
+              "e6f5",
+              "f3e5",
+              "c6c8"
+            ],
+            "raw": "info depth 12 seldepth 10 multipv 1 score cp 6 nodes 38877 nps 479962 hashfull 22 tbhits 0 time 81 pv g1h1 c7c6 c2b2 b7c8 b2d2 c8e6 h4f3 e6f5 f3e5 c6c8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 80.92180000000008
+      }
+    },
+    {
+      "ply": 50,
+      "uci": "f6e8",
+      "fenBefore": "5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R2K b - - 18 25",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R2K b - - 18 25",
+          "go depth 12 searchmoves f6e8"
+        ],
+        "bestmove": "bestmove f6e8 ponder c2d2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -45,
+            "mate": null,
+            "pv": [
+              "f6e8",
+              "c2d2",
+              "e8f6",
+              "h1g1",
+              "f8c8",
+              "h4f3",
+              "e7g6",
+              "d3f5",
+              "c8e8",
+              "f3e5",
+              "g6h4",
+              "f5b1"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -45 nodes 21395 nps 509404 hashfull 20 tbhits 0 time 42 pv f6e8 c2d2 e8f6 h1g1 f8c8 h4f3 e7g6 d3f5 c8e8 f3e5 g6h4 f5b1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 40.50790000000052
+      }
+    },
+    {
+      "ply": 51,
+      "uci": "h4f5",
+      "fenBefore": "4nrk1/1br1npp1/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R2K w - - 19 26",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1br1npp1/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R2K w - - 19 26",
+          "go depth 12 searchmoves h4f5"
+        ],
+        "bestmove": "bestmove h4f5 ponder e7f5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -40,
+            "mate": null,
+            "pv": [
+              "h4f5",
+              "e7f5",
+              "d3f5",
+              "e8f6",
+              "c2d2",
+              "f8e8",
+              "f2f3",
+              "d6g3",
+              "e3f2",
+              "g3f2",
+              "e1e8",
+              "f6e8",
+              "d2f2",
+              "c7c4"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -40 nodes 15809 nps 509967 hashfull 14 tbhits 0 time 31 pv h4f5 e7f5 d3f5 e8f6 c2d2 f8e8 f2f3 d6g3 e3f2 g3f2 e1e8 f6e8 d2f2 c7c4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 30.186900000000605
+      }
+    },
+    {
+      "ply": 52,
+      "uci": "e7f5",
+      "fenBefore": "4nrk1/1br1npp1/pq1b3p/1p1p1N2/1P1P4/P1NBB2P/2Q2PP1/2R1R2K b - - 20 26",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1br1npp1/pq1b3p/1p1p1N2/1P1P4/P1NBB2P/2Q2PP1/2R1R2K b - - 20 26",
+          "go depth 12 searchmoves e7f5"
+        ],
+        "bestmove": "bestmove e7f5 ponder d3f5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 14,
+            "mate": null,
+            "pv": [
+              "e7f5",
+              "d3f5",
+              "e8f6",
+              "c2d2",
+              "b7c8",
+              "f5d3",
+              "f8e8",
+              "a3a4",
+              "b5a4",
+              "c3a4",
+              "b6b4",
+              "d2b4",
+              "d6b4",
+              "c1c7",
+              "b4e1",
+              "a4c5"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp 14 nodes 10273 nps 513650 hashfull 9 tbhits 0 time 20 pv e7f5 d3f5 e8f6 c2d2 b7c8 f5d3 f8e8 a3a4 b5a4 c3a4 b6b4 d2b4 d6b4 c1c7 b4e1 a4c5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 19.495200000001205
+      }
+    },
+    {
+      "ply": 53,
+      "uci": "d3f5",
+      "fenBefore": "4nrk1/1br2pp1/pq1b3p/1p1p1n2/1P1P4/P1NBB2P/2Q2PP1/2R1R2K w - - 0 27",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1br2pp1/pq1b3p/1p1p1n2/1P1P4/P1NBB2P/2Q2PP1/2R1R2K w - - 0 27",
+          "go depth 12 searchmoves d3f5"
+        ],
+        "bestmove": "bestmove d3f5 ponder e8f6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -22,
+            "mate": null,
+            "pv": [
+              "d3f5",
+              "e8f6",
+              "c2d2",
+              "b7c8",
+              "f5b1",
+              "f8e8",
+              "h1g1",
+              "c7e7",
+              "e1f1",
+              "b6d8",
+              "e3f4",
+              "d6f4",
+              "d2f4"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp -22 nodes 10899 nps 495409 hashfull 19 tbhits 0 time 22 pv d3f5 e8f6 c2d2 b7c8 f5b1 f8e8 h1g1 c7e7 e1f1 b6d8 e3f4 d6f4 d2f4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 21.884500000000116
+      }
+    },
+    {
+      "ply": 54,
+      "uci": "a6a5",
+      "fenBefore": "4nrk1/1br2pp1/pq1b3p/1p1p1B2/1P1P4/P1N1B2P/2Q2PP1/2R1R2K b - - 0 27",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1br2pp1/pq1b3p/1p1p1B2/1P1P4/P1N1B2P/2Q2PP1/2R1R2K b - - 0 27",
+          "go depth 12 searchmoves a6a5"
+        ],
+        "bestmove": "bestmove a6a5 ponder f5h7",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -20,
+            "mate": null,
+            "pv": [
+              "a6a5",
+              "f5h7",
+              "g8h8",
+              "h7d3",
+              "a5b4",
+              "a3b4",
+              "d6b4",
+              "c2b2",
+              "b4c3",
+              "c1c3",
+              "c7c3",
+              "b2c3",
+              "e8d6",
+              "c3b4"
+            ],
+            "raw": "info depth 12 seldepth 18 multipv 1 score cp -20 nodes 24878 nps 565409 hashfull 13 tbhits 0 time 44 pv a6a5 f5h7 g8h8 h7d3 a5b4 a3b4 d6b4 c2b2 b4c3 c1c3 c7c3 b2c3 e8d6 c3b4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 43.97500000000218
+      }
+    },
+    {
+      "ply": 55,
+      "uci": "c2b3",
+      "fenBefore": "4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/P1N1B2P/2Q2PP1/2R1R2K w - - 0 28",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/P1N1B2P/2Q2PP1/2R1R2K w - - 0 28",
+          "go depth 12 searchmoves c2b3"
+        ],
+        "bestmove": "bestmove c2b3 ponder a5b4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -77,
+            "mate": null,
+            "pv": [
+              "c2b3",
+              "a5b4",
+              "a3b4",
+              "c7c4",
+              "f5d3",
+              "c4b4",
+              "b3a2",
+              "e8f6",
+              "h1g1",
+              "f8c8",
+              "a2d2",
+              "c8e8",
+              "c1b1"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -77 nodes 14101 nps 470033 hashfull 13 tbhits 0 time 30 pv c2b3 a5b4 a3b4 c7c4 f5d3 c4b4 b3a2 e8f6 h1g1 f8c8 a2d2 c8e8 c1b1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 29.172200000000885
+      }
+    },
+    {
+      "ply": 56,
+      "uci": "a5b4",
+      "fenBefore": "4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/PQN1B2P/5PP1/2R1R2K b - - 1 28",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/PQN1B2P/5PP1/2R1R2K b - - 1 28",
+          "go depth 12 searchmoves a5b4"
+        ],
+        "bestmove": "bestmove a5b4 ponder a3b4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 84,
+            "mate": null,
+            "pv": [
+              "a5b4",
+              "a3b4",
+              "c7c4",
+              "c1b1",
+              "e8f6",
+              "h1g1",
+              "f8a8",
+              "f5d3",
+              "c4b4",
+              "b3c2",
+              "b4b1",
+              "c2b1"
+            ],
+            "raw": "info depth 12 seldepth 20 multipv 1 score cp 84 nodes 19892 nps 473619 hashfull 18 tbhits 0 time 42 pv a5b4 a3b4 c7c4 c1b1 e8f6 h1g1 f8a8 f5d3 c4b4 b3c2 b4b1 c2b1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 41.76090000000113
+      }
+    },
+    {
+      "ply": 57,
+      "uci": "a3b4",
+      "fenBefore": "4nrk1/1br2pp1/1q1b3p/1p1p1B2/1p1P4/PQN1B2P/5PP1/2R1R2K w - - 0 29",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1br2pp1/1q1b3p/1p1p1B2/1p1P4/PQN1B2P/5PP1/2R1R2K w - - 0 29",
+          "go depth 12 searchmoves a3b4"
+        ],
+        "bestmove": "bestmove a3b4 ponder c7c4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -86,
+            "mate": null,
+            "pv": [
+              "a3b4",
+              "c7c4",
+              "h1g1",
+              "e8f6",
+              "c1b1",
+              "b6c6",
+              "e1c1",
+              "c4b4",
+              "b3d1",
+              "b4b1",
+              "c3b1",
+              "c6b6",
+              "b1c3"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -86 nodes 17976 nps 528705 hashfull 14 tbhits 0 time 34 pv a3b4 c7c4 h1g1 e8f6 c1b1 b6c6 e1c1 c4b4 b3d1 b4b1 c3b1 c6b6 b1c3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 33.5025999999998
+      }
+    },
+    {
+      "ply": 58,
+      "uci": "c7c4",
+      "fenBefore": "4nrk1/1br2pp1/1q1b3p/1p1p1B2/1P1P4/1QN1B2P/5PP1/2R1R2K b - - 0 29",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1br2pp1/1q1b3p/1p1p1B2/1P1P4/1QN1B2P/5PP1/2R1R2K b - - 0 29",
+          "go depth 12 searchmoves c7c4"
+        ],
+        "bestmove": "bestmove c7c4 ponder h1g1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 75,
+            "mate": null,
+            "pv": [
+              "c7c4",
+              "h1g1",
+              "e8f6",
+              "f5d3",
+              "c4b4",
+              "b3c2",
+              "f8a8",
+              "c1b1",
+              "a8c8",
+              "c2d2",
+              "b7a6"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp 75 nodes 15533 nps 501064 hashfull 20 tbhits 0 time 31 pv c7c4 h1g1 e8f6 f5d3 c4b4 b3c2 f8a8 c1b1 a8c8 c2d2 b7a6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 30.120599999998376
+      }
+    },
+    {
+      "ply": 59,
+      "uci": "c3a2",
+      "fenBefore": "4nrk1/1b3pp1/1q1b3p/1p1p1B2/1PrP4/1QN1B2P/5PP1/2R1R2K w - - 1 30",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1b3pp1/1q1b3p/1p1p1B2/1PrP4/1QN1B2P/5PP1/2R1R2K w - - 1 30",
+          "go depth 12 searchmoves c3a2"
+        ],
+        "bestmove": "bestmove c3a2 ponder e8f6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -91,
+            "mate": null,
+            "pv": [
+              "c3a2",
+              "e8f6",
+              "h1g1",
+              "d6b8",
+              "a2c3",
+              "f8e8",
+              "b3b1",
+              "b8d6",
+              "f5d3",
+              "c4b4"
+            ],
+            "raw": "info depth 12 seldepth 11 multipv 1 score cp -91 nodes 11947 nps 459500 hashfull 17 tbhits 0 time 26 pv c3a2 e8f6 h1g1 d6b8 a2c3 f8e8 b3b1 b8d6 f5d3 c4b4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 25.085300000002462
+      }
+    },
+    {
+      "ply": 60,
+      "uci": "e8f6",
+      "fenBefore": "4nrk1/1b3pp1/1q1b3p/1p1p1B2/1PrP4/1Q2B2P/N4PP1/2R1R2K b - - 2 30",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4nrk1/1b3pp1/1q1b3p/1p1p1B2/1PrP4/1Q2B2P/N4PP1/2R1R2K b - - 2 30",
+          "go depth 12 searchmoves e8f6"
+        ],
+        "bestmove": "bestmove e8f6 ponder h1g1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 128,
+            "mate": null,
+            "pv": [
+              "e8f6",
+              "h1g1",
+              "d6b8",
+              "a2c3",
+              "f8e8",
+              "b3a3",
+              "b6d6"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 128 nodes 14192 nps 567680 hashfull 12 tbhits 0 time 25 pv e8f6 h1g1 d6b8 a2c3 f8e8 b3a3 b6d6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 23.431399999997666
+      }
+    },
+    {
+      "ply": 61,
+      "uci": "f5d3",
+      "fenBefore": "5rk1/1b3pp1/1q1b1n1p/1p1p1B2/1PrP4/1Q2B2P/N4PP1/2R1R2K w - - 3 31",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b3pp1/1q1b1n1p/1p1p1B2/1PrP4/1Q2B2P/N4PP1/2R1R2K w - - 3 31",
+          "go depth 12 searchmoves f5d3"
+        ],
+        "bestmove": "bestmove f5d3 ponder d6b8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -134,
+            "mate": null,
+            "pv": [
+              "f5d3",
+              "d6b8",
+              "g2g3",
+              "b6d6",
+              "d3f1",
+              "d6d7",
+              "c1a1",
+              "f8e8",
+              "a2c1",
+              "f6e4",
+              "c1d3",
+              "b8g3",
+              "d3c5"
+            ],
+            "raw": "info depth 12 seldepth 19 multipv 1 score cp -134 nodes 29091 nps 528927 hashfull 18 tbhits 0 time 55 pv f5d3 d6b8 g2g3 b6d6 d3f1 d6d7 c1a1 f8e8 a2c1 f6e4 c1d3 b8g3 d3c5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 54.38560000000143
+      }
+    },
+    {
+      "ply": 62,
+      "uci": "b6c6",
+      "fenBefore": "5rk1/1b3pp1/1q1b1n1p/1p1p4/1PrP4/1Q1BB2P/N4PP1/2R1R2K b - - 4 31",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b3pp1/1q1b1n1p/1p1p4/1PrP4/1Q1BB2P/N4PP1/2R1R2K b - - 4 31",
+          "go depth 12 searchmoves b6c6"
+        ],
+        "bestmove": "bestmove b6c6 ponder h1g1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 114,
+            "mate": null,
+            "pv": [
+              "b6c6",
+              "h1g1",
+              "d6b8",
+              "d3f1",
+              "c6d6",
+              "g2g3",
+              "d6d7",
+              "b3d3",
+              "f6e4",
+              "a2c3",
+              "b8d6",
+              "c3e4",
+              "d5e4",
+              "d3d1",
+              "c4b4",
+              "d4d5",
+              "f8a8",
+              "e3c5",
+              "b4a4"
+            ],
+            "raw": "info depth 12 seldepth 20 multipv 1 score cp 114 nodes 25743 nps 485716 hashfull 14 tbhits 0 time 53 pv b6c6 h1g1 d6b8 d3f1 c6d6 g2g3 d6d7 b3d3 f6e4 a2c3 b8d6 c3e4 d5e4 d3d1 c4b4 d4d5 f8a8 e3c5 b4a4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 52.19540000000052
+      }
+    },
+    {
+      "ply": 63,
+      "uci": "b3b2",
+      "fenBefore": "5rk1/1b3pp1/2qb1n1p/1p1p4/1PrP4/1Q1BB2P/N4PP1/2R1R2K w - - 5 32",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b3pp1/2qb1n1p/1p1p4/1PrP4/1Q1BB2P/N4PP1/2R1R2K w - - 5 32",
+          "go depth 12 searchmoves b3b2"
+        ],
+        "bestmove": "bestmove b3b2 ponder d6b8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -135,
+            "mate": null,
+            "pv": [
+              "b3b2",
+              "d6b8",
+              "f2f4",
+              "c6d6",
+              "h1g1",
+              "b7c6"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -135 nodes 25304 nps 550086 hashfull 18 tbhits 0 time 46 pv b3b2 d6b8 f2f4 c6d6 h1g1 b7c6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 44.852899999998044
+      }
+    },
+    {
+      "ply": 64,
+      "uci": "c6d7",
+      "fenBefore": "5rk1/1b3pp1/2qb1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R2K b - - 6 32",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b3pp1/2qb1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R2K b - - 6 32",
+          "go depth 12 searchmoves c6d7"
+        ],
+        "bestmove": "bestmove c6d7 ponder b2e2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 90,
+            "mate": null,
+            "pv": [
+              "c6d7",
+              "b2e2",
+              "d6b8",
+              "a2c3",
+              "f8e8",
+              "e2d2",
+              "d7d6",
+              "f2f4",
+              "d6d7",
+              "d3c4",
+              "d5c4"
+            ],
+            "raw": "info depth 12 seldepth 18 multipv 1 score cp 90 nodes 28512 nps 518400 hashfull 20 tbhits 0 time 55 pv c6d7 b2e2 d6b8 a2c3 f8e8 e2d2 d7d6 f2f4 d6d7 d3c4 d5c4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 53.94759999999951
+      }
+    },
+    {
+      "ply": 65,
+      "uci": "h1g1",
+      "fenBefore": "5rk1/1b1q1pp1/3b1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R2K w - - 7 33",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q1pp1/3b1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R2K w - - 7 33",
+          "go depth 12 searchmoves h1g1"
+        ],
+        "bestmove": "bestmove h1g1 ponder d6b8",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -96,
+            "mate": null,
+            "pv": [
+              "h1g1",
+              "d6b8",
+              "b2d2",
+              "d7d6",
+              "f2f4",
+              "b7c6",
+              "a2c3",
+              "c4b4",
+              "c1b1",
+              "b4b1",
+              "e1b1",
+              "f6h5",
+              "d3b5",
+              "f8e8",
+              "b5c6",
+              "d6c6"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp -96 nodes 3525 nps 587500 hashfull 20 tbhits 0 time 6 pv h1g1 d6b8 b2d2 d7d6 f2f4 b7c6 a2c3 c4b4 c1b1 b4b1 e1b1 f6h5 d3b5 f8e8 b5c6 d6c6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 4.5570000000006985
+      }
+    },
+    {
+      "ply": 66,
+      "uci": "f6h5",
+      "fenBefore": "5rk1/1b1q1pp1/3b1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R1K1 b - - 8 33",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q1pp1/3b1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R1K1 b - - 8 33",
+          "go depth 12 searchmoves f6h5"
+        ],
+        "bestmove": "bestmove f6h5 ponder d3c4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -57,
+            "mate": null,
+            "pv": [
+              "f6h5",
+              "d3c4",
+              "d5c4",
+              "d4d5",
+              "d6c7",
+              "a2c3",
+              "f8e8",
+              "e3c5",
+              "h5f4",
+              "b2d2",
+              "e8e5",
+              "e1e5",
+              "c7e5",
+              "c1d1",
+              "f4d3"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -57 nodes 31136 nps 566109 hashfull 28 tbhits 0 time 55 pv f6h5 d3c4 d5c4 d4d5 d6c7 a2c3 f8e8 e3c5 h5f4 b2d2 e8e5 e1e5 c7e5 c1d1 f4d3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 54.33770000000004
+      }
+    },
+    {
+      "ply": 67,
+      "uci": "b2d2",
+      "fenBefore": "5rk1/1b1q1pp1/3b3p/1p1p3n/1PrP4/3BB2P/NQ3PP1/2R1R1K1 w - - 9 34",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q1pp1/3b3p/1p1p3n/1PrP4/3BB2P/NQ3PP1/2R1R1K1 w - - 9 34",
+          "go depth 12 searchmoves b2d2"
+        ],
+        "bestmove": "bestmove b2d2 ponder f7f5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -15,
+            "mate": null,
+            "pv": [
+              "b2d2",
+              "f7f5",
+              "d3e2",
+              "h5f6",
+              "e3f4",
+              "f6e4",
+              "d2e3"
+            ],
+            "raw": "info depth 12 seldepth 10 multipv 1 score cp -15 nodes 16926 nps 546000 hashfull 13 tbhits 0 time 31 pv b2d2 f7f5 d3e2 h5f6 e3f4 f6e4 d2e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 30.272100000001956
+      }
+    },
+    {
+      "ply": 68,
+      "uci": "f7f5",
+      "fenBefore": "5rk1/1b1q1pp1/3b3p/1p1p3n/1PrP4/3BB2P/N2Q1PP1/2R1R1K1 b - - 10 34",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q1pp1/3b3p/1p1p3n/1PrP4/3BB2P/N2Q1PP1/2R1R1K1 b - - 10 34",
+          "go depth 12 searchmoves f7f5"
+        ],
+        "bestmove": "bestmove f7f5 ponder d3c4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 20,
+            "mate": null,
+            "pv": [
+              "f7f5",
+              "d3c4",
+              "d5c4",
+              "d4d5",
+              "f5f4",
+              "e3c5",
+              "f4f3",
+              "c5d6",
+              "d7d6",
+              "e1e6",
+              "d6d5",
+              "d2d5",
+              "b7d5"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp 20 nodes 11614 nps 527909 hashfull 15 tbhits 0 time 22 pv f7f5 d3c4 d5c4 d4d5 f5f4 e3c5 f4f3 c5d6 d7d6 e1e6 d6d5 d2d5 b7d5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 20.35109999999986
+      }
+    },
+    {
+      "ply": 69,
+      "uci": "f2f4",
+      "fenBefore": "5rk1/1b1q2p1/3b3p/1p1p1p1n/1PrP4/3BB2P/N2Q1PP1/2R1R1K1 w - - 0 35",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q2p1/3b3p/1p1p1p1n/1PrP4/3BB2P/N2Q1PP1/2R1R1K1 w - - 0 35",
+          "go depth 12 searchmoves f2f4"
+        ],
+        "bestmove": "bestmove f2f4 ponder h5f6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -116,
+            "mate": null,
+            "pv": [
+              "f2f4",
+              "h5f6",
+              "c1a1",
+              "f6e4",
+              "d2b2",
+              "d6b8",
+              "d3c4",
+              "d5c4",
+              "a2c3",
+              "e4c3",
+              "b2c3"
+            ],
+            "raw": "info depth 12 seldepth 11 multipv 1 score cp -116 nodes 27866 nps 497607 hashfull 27 tbhits 0 time 56 pv f2f4 h5f6 c1a1 f6e4 d2b2 d6b8 d3c4 d5c4 a2c3 e4c3 b2c3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 55.02479999999923
+      }
+    },
+    {
+      "ply": 70,
+      "uci": "h5g3",
+      "fenBefore": "5rk1/1b1q2p1/3b3p/1p1p1p1n/1PrP1P2/3BB2P/N2Q2P1/2R1R1K1 b - - 0 35",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q2p1/3b3p/1p1p1p1n/1PrP1P2/3BB2P/N2Q2P1/2R1R1K1 b - - 0 35",
+          "go depth 12 searchmoves h5g3"
+        ],
+        "bestmove": "bestmove h5g3 ponder d3c4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 67,
+            "mate": null,
+            "pv": [
+              "h5g3",
+              "d3c4",
+              "d5c4",
+              "d4d5",
+              "g3e4",
+              "d2d4",
+              "f8f6",
+              "e1d1",
+              "d7e7"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp 67 nodes 15124 nps 487870 hashfull 15 tbhits 0 time 31 pv h5g3 d3c4 d5c4 d4d5 g3e4 d2d4 f8f6 e1d1 d7e7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 29.947800000001735
+      }
+    },
+    {
+      "ply": 71,
+      "uci": "d3c4",
+      "fenBefore": "5rk1/1b1q2p1/3b3p/1p1p1p2/1PrP1P2/3BB1nP/N2Q2P1/2R1R1K1 w - - 1 36",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q2p1/3b3p/1p1p1p2/1PrP1P2/3BB1nP/N2Q2P1/2R1R1K1 w - - 1 36",
+          "go depth 12 searchmoves d3c4"
+        ],
+        "bestmove": "bestmove d3c4 ponder d5c4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -98,
+            "mate": null,
+            "pv": [
+              "d3c4",
+              "d5c4",
+              "d4d5",
+              "g3e4",
+              "d2b2",
+              "b7d5",
+              "a2c3",
+              "e4c3",
+              "b2c3",
+              "f8f6",
+              "c1d1",
+              "d7c6"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -98 nodes 20465 nps 538552 hashfull 23 tbhits 0 time 38 pv d3c4 d5c4 d4d5 g3e4 d2b2 b7d5 a2c3 e4c3 b2c3 f8f6 c1d1 d7c6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 37.032600000002276
+      }
+    },
+    {
+      "ply": 72,
+      "uci": "d5c4",
+      "fenBefore": "5rk1/1b1q2p1/3b3p/1p1p1p2/1PBP1P2/4B1nP/N2Q2P1/2R1R1K1 b - - 0 36",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q2p1/3b3p/1p1p1p2/1PBP1P2/4B1nP/N2Q2P1/2R1R1K1 b - - 0 36",
+          "go depth 12 searchmoves d5c4"
+        ],
+        "bestmove": "bestmove d5c4 ponder d4d5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 114,
+            "mate": null,
+            "pv": [
+              "d5c4",
+              "d4d5",
+              "g3e4",
+              "d2b2",
+              "b7d5",
+              "c1d1",
+              "d5c6",
+              "a2c3",
+              "d7e7",
+              "c3d5",
+              "e7h4",
+              "d5c3",
+              "f8f6"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp 114 nodes 7882 nps 606307 hashfull 23 tbhits 0 time 13 pv d5c4 d4d5 g3e4 d2b2 b7d5 c1d1 d5c6 a2c3 d7e7 c3d5 e7h4 d5c3 f8f6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 12.525300000001153
+      }
+    },
+    {
+      "ply": 73,
+      "uci": "d2b2",
+      "fenBefore": "5rk1/1b1q2p1/3b3p/1p3p2/1PpP1P2/4B1nP/N2Q2P1/2R1R1K1 w - - 0 37",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q2p1/3b3p/1p3p2/1PpP1P2/4B1nP/N2Q2P1/2R1R1K1 w - - 0 37",
+          "go depth 12 searchmoves d2b2"
+        ],
+        "bestmove": "bestmove d2b2 ponder g3e4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -125,
+            "mate": null,
+            "pv": [
+              "d2b2",
+              "g3e4",
+              "d4d5",
+              "b7d5",
+              "c1d1",
+              "d5c6",
+              "a2c3",
+              "d7e7",
+              "c3d5",
+              "e7e6",
+              "d5c3",
+              "f8f6",
+              "c3e2",
+              "f6g6",
+              "e2d4",
+              "e6f6"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp -125 nodes 14087 nps 640318 hashfull 10 tbhits 0 time 22 pv d2b2 g3e4 d4d5 b7d5 c1d1 d5c6 a2c3 d7e7 c3d5 e7e6 d5c3 f8f6 c3e2 f6g6 e2d4 e6f6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 20.520199999999022
+      }
+    },
+    {
+      "ply": 74,
+      "uci": "f8f6",
+      "fenBefore": "5rk1/1b1q2p1/3b3p/1p3p2/1PpP1P2/4B1nP/NQ4P1/2R1R1K1 b - - 1 37",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 5rk1/1b1q2p1/3b3p/1p3p2/1PpP1P2/4B1nP/NQ4P1/2R1R1K1 b - - 1 37",
+          "go depth 12 searchmoves f8f6"
+        ],
+        "bestmove": "bestmove f8f6 ponder c1d1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 78,
+            "mate": null,
+            "pv": [
+              "f8f6",
+              "c1d1",
+              "g3h5",
+              "d4d5",
+              "h5f4",
+              "e3f4",
+              "d6f4",
+              "b2f2"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp 78 nodes 9485 nps 499210 hashfull 22 tbhits 0 time 19 pv f8f6 c1d1 g3h5 d4d5 h5f4 e3f4 d6f4 b2f2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 18.267400000000634
+      }
+    },
+    {
+      "ply": 75,
+      "uci": "a2c3",
+      "fenBefore": "6k1/1b1q2p1/3b1r1p/1p3p2/1PpP1P2/4B1nP/NQ4P1/2R1R1K1 w - - 2 38",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/1b1q2p1/3b1r1p/1p3p2/1PpP1P2/4B1nP/NQ4P1/2R1R1K1 w - - 2 38",
+          "go depth 12 searchmoves a2c3"
+        ],
+        "bestmove": "bestmove a2c3 ponder g3e4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -164,
+            "mate": null,
+            "pv": [
+              "a2c3",
+              "g3e4",
+              "d4d5",
+              "e4c3",
+              "b2c3",
+              "b7d5",
+              "c1d1",
+              "d7c6",
+              "c3d2",
+              "d5e4",
+              "e3d4",
+              "f6g6",
+              "e1e2"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -164 nodes 11159 nps 531380 hashfull 17 tbhits 0 time 21 pv a2c3 g3e4 d4d5 e4c3 b2c3 b7d5 c1d1 d7c6 c3d2 d5e4 e3d4 f6g6 e1e2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 20.095899999996618
+      }
+    },
+    {
+      "ply": 76,
+      "uci": "g3e4",
+      "fenBefore": "6k1/1b1q2p1/3b1r1p/1p3p2/1PpP1P2/2N1B1nP/1Q4P1/2R1R1K1 b - - 3 38",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/1b1q2p1/3b1r1p/1p3p2/1PpP1P2/2N1B1nP/1Q4P1/2R1R1K1 b - - 3 38",
+          "go depth 12 searchmoves g3e4"
+        ],
+        "bestmove": "bestmove g3e4 ponder d4d5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 117,
+            "mate": null,
+            "pv": [
+              "g3e4",
+              "d4d5",
+              "e4c3",
+              "b2c3",
+              "b7d5",
+              "c1d1",
+              "d7c6",
+              "g1h2",
+              "d5g2",
+              "e1g1",
+              "c6f3"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp 117 nodes 19389 nps 440659 hashfull 33 tbhits 0 time 44 pv g3e4 d4d5 e4c3 b2c3 b7d5 c1d1 d7c6 g1h2 d5g2 e1g1 c6f3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 42.97160000000076
+      }
+    },
+    {
+      "ply": 77,
+      "uci": "e1e2",
+      "fenBefore": "6k1/1b1q2p1/3b1r1p/1p3p2/1PpPnP2/2N1B2P/1Q4P1/2R1R1K1 w - - 4 39",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/1b1q2p1/3b1r1p/1p3p2/1PpPnP2/2N1B2P/1Q4P1/2R1R1K1 w - - 4 39",
+          "go depth 12 searchmoves e1e2"
+        ],
+        "bestmove": "bestmove e1e2 ponder e4c3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -164,
+            "mate": null,
+            "pv": [
+              "e1e2",
+              "e4c3",
+              "c1c3",
+              "f6e6",
+              "e3c1",
+              "e6e2",
+              "b2e2",
+              "d6b4",
+              "c3g3",
+              "b7e4",
+              "g1h2",
+              "b4d6",
+              "e2h5"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -164 nodes 24917 nps 488568 hashfull 44 tbhits 0 time 51 pv e1e2 e4c3 c1c3 f6e6 e3c1 e6e2 b2e2 d6b4 c3g3 b7e4 g1h2 b4d6 e2h5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 49.72690000000148
+      }
+    },
+    {
+      "ply": 78,
+      "uci": "f6g6",
+      "fenBefore": "6k1/1b1q2p1/3b1r1p/1p3p2/1PpPnP2/2N1B2P/1Q2R1P1/2R3K1 b - - 5 39",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/1b1q2p1/3b1r1p/1p3p2/1PpPnP2/2N1B2P/1Q2R1P1/2R3K1 b - - 5 39",
+          "go depth 12 searchmoves f6g6"
+        ],
+        "bestmove": "bestmove f6g6 ponder d4d5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 151,
+            "mate": null,
+            "pv": [
+              "f6g6",
+              "d4d5",
+              "e4c3",
+              "c1c3",
+              "b7d5",
+              "c3a3",
+              "d5e4",
+              "a3a7",
+              "d7d8",
+              "e3d4",
+              "d6c7"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp 151 nodes 18759 nps 507000 hashfull 41 tbhits 0 time 37 pv f6g6 d4d5 e4c3 c1c3 b7d5 c3a3 d5e4 a3a7 d7d8 e3d4 d6c7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 36.44999999999709
+      }
+    },
+    {
+      "ply": 79,
+      "uci": "c1d1",
+      "fenBefore": "6k1/1b1q2p1/3b2rp/1p3p2/1PpPnP2/2N1B2P/1Q2R1P1/2R3K1 w - - 6 40",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/1b1q2p1/3b2rp/1p3p2/1PpPnP2/2N1B2P/1Q2R1P1/2R3K1 w - - 6 40",
+          "go depth 12 searchmoves c1d1"
+        ],
+        "bestmove": "bestmove c1d1 ponder e4c3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -232,
+            "mate": null,
+            "pv": [
+              "c1d1",
+              "e4c3",
+              "b2c3",
+              "b7f3",
+              "d1d2",
+              "d7e7"
+            ],
+            "raw": "info depth 12 seldepth 9 multipv 1 score cp -232 nodes 1605 nps 401250 hashfull 3 tbhits 0 time 4 pv c1d1 e4c3 b2c3 b7f3 d1d2 d7e7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 3.414999999997235
+      }
+    },
+    {
+      "ply": 80,
+      "uci": "e4c3",
+      "fenBefore": "6k1/1b1q2p1/3b2rp/1p3p2/1PpPnP2/2N1B2P/1Q2R1P1/3R2K1 b - - 7 40",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/1b1q2p1/3b2rp/1p3p2/1PpPnP2/2N1B2P/1Q2R1P1/3R2K1 b - - 7 40",
+          "go depth 12 searchmoves e4c3"
+        ],
+        "bestmove": "bestmove e4c3 ponder b2c3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 251,
+            "mate": null,
+            "pv": [
+              "e4c3",
+              "b2c3",
+              "b7f3",
+              "d1e1",
+              "d7e7",
+              "c3c2",
+              "d6b4",
+              "c2f5",
+              "b4e1"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 251 nodes 3367 nps 420875 hashfull 19 tbhits 0 time 8 pv e4c3 b2c3 b7f3 d1e1 d7e7 c3c2 d6b4 c2f5 b4e1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 6.974599999997736
+      }
+    },
+    {
+      "ply": 81,
+      "uci": "b2c3",
+      "fenBefore": "6k1/1b1q2p1/3b2rp/1p3p2/1PpP1P2/2n1B2P/1Q2R1P1/3R2K1 w - - 0 41",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/1b1q2p1/3b2rp/1p3p2/1PpP1P2/2n1B2P/1Q2R1P1/3R2K1 w - - 0 41",
+          "go depth 12 searchmoves b2c3"
+        ],
+        "bestmove": "bestmove b2c3 ponder b7f3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -263,
+            "mate": null,
+            "pv": [
+              "b2c3",
+              "b7f3",
+              "d1e1",
+              "f3e2",
+              "e1e2",
+              "g6e6",
+              "e2a2",
+              "d7e7",
+              "e3d2",
+              "e6e2",
+              "c3f3",
+              "e7e4",
+              "f3e4",
+              "f5e4"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -263 nodes 9277 nps 488263 hashfull 24 tbhits 0 time 19 pv b2c3 b7f3 d1e1 f3e2 e1e2 g6e6 e2a2 d7e7 e3d2 e6e2 c3f3 e7e4 f3e4 f5e4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 17.805100000001403
+      }
+    },
+    {
+      "ply": 82,
+      "uci": "b7f3",
+      "fenBefore": "6k1/1b1q2p1/3b2rp/1p3p2/1PpP1P2/2Q1B2P/4R1P1/3R2K1 b - - 0 41",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/1b1q2p1/3b2rp/1p3p2/1PpP1P2/2Q1B2P/4R1P1/3R2K1 b - - 0 41",
+          "go depth 12 searchmoves b7f3"
+        ],
+        "bestmove": "bestmove b7f3 ponder d1d2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 233,
+            "mate": null,
+            "pv": [
+              "b7f3",
+              "d1d2",
+              "f3e2",
+              "d2e2",
+              "g6e6",
+              "d4d5",
+              "e6e4",
+              "e2a2",
+              "d7e7",
+              "e3d2",
+              "e7b7",
+              "c3g3",
+              "b7d5"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp 233 nodes 13563 nps 484392 hashfull 25 tbhits 0 time 28 pv b7f3 d1d2 f3e2 d2e2 g6e6 d4d5 e6e4 e2a2 d7e7 e3d2 e7b7 c3g3 b7d5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 27.20180000000255
+      }
+    },
+    {
+      "ply": 83,
+      "uci": "d1e1",
+      "fenBefore": "6k1/3q2p1/3b2rp/1p3p2/1PpP1P2/2Q1Bb1P/4R1P1/3R2K1 w - - 1 42",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/3q2p1/3b2rp/1p3p2/1PpP1P2/2Q1Bb1P/4R1P1/3R2K1 w - - 1 42",
+          "go depth 12 searchmoves d1e1"
+        ],
+        "bestmove": "bestmove d1e1 ponder d7e7",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -283,
+            "mate": null,
+            "pv": [
+              "d1e1",
+              "d7e7",
+              "e2b2",
+              "e7h4",
+              "g1f1",
+              "f3d5",
+              "e3c1",
+              "g6g3",
+              "e1e8",
+              "g8h7",
+              "c3e1",
+              "c4c3",
+              "b2f2",
+              "h4h5",
+              "e8e3",
+              "g3e3"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -283 nodes 10910 nps 606111 hashfull 18 tbhits 0 time 18 pv d1e1 d7e7 e2b2 e7h4 g1f1 f3d5 e3c1 g6g3 e1e8 g8h7 c3e1 c4c3 b2f2 h4h5 e8e3 g3e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 17.51339999999982
+      }
+    },
+    {
+      "ply": 84,
+      "uci": "f3e2",
+      "fenBefore": "6k1/3q2p1/3b2rp/1p3p2/1PpP1P2/2Q1Bb1P/4R1P1/4R1K1 b - - 2 42",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/3q2p1/3b2rp/1p3p2/1PpP1P2/2Q1Bb1P/4R1P1/4R1K1 b - - 2 42",
+          "go depth 12 searchmoves f3e2"
+        ],
+        "bestmove": "bestmove f3e2 ponder e1e2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 226,
+            "mate": null,
+            "pv": [
+              "f3e2",
+              "e1e2",
+              "g6e6",
+              "d4d5",
+              "e6e4",
+              "e2a2",
+              "d7e7",
+              "e3d2",
+              "e7f7",
+              "c3g3",
+              "g8h7"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 226 nodes 7716 nps 551142 hashfull 10 tbhits 0 time 14 pv f3e2 e1e2 g6e6 d4d5 e6e4 e2a2 d7e7 e3d2 e7f7 c3g3 g8h7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 13.884099999999307
+      }
+    },
+    {
+      "ply": 85,
+      "uci": "e1e2",
+      "fenBefore": "6k1/3q2p1/3b2rp/1p3p2/1PpP1P2/2Q1B2P/4b1P1/4R1K1 w - - 0 43",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/3q2p1/3b2rp/1p3p2/1PpP1P2/2Q1B2P/4b1P1/4R1K1 w - - 0 43",
+          "go depth 12 searchmoves e1e2"
+        ],
+        "bestmove": "bestmove e1e2 ponder d7e7",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -250,
+            "mate": null,
+            "pv": [
+              "e1e2",
+              "d7e7",
+              "d4d5",
+              "d6f4",
+              "c3d2",
+              "f4d6",
+              "e3f2",
+              "d6b4",
+              "e2e7",
+              "b4d2"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -250 nodes 11116 nps 529333 hashfull 19 tbhits 0 time 21 pv e1e2 d7e7 d4d5 d6f4 c3d2 f4d6 e3f2 d6b4 e2e7 b4d2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 20.39219999999841
+      }
+    },
+    {
+      "ply": 86,
+      "uci": "d7e7",
+      "fenBefore": "6k1/3q2p1/3b2rp/1p3p2/1PpP1P2/2Q1B2P/4R1P1/6K1 b - - 0 43",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/3q2p1/3b2rp/1p3p2/1PpP1P2/2Q1B2P/4R1P1/6K1 b - - 0 43",
+          "go depth 12 searchmoves d7e7"
+        ],
+        "bestmove": "bestmove d7e7 ponder d4d5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 185,
+            "mate": null,
+            "pv": [
+              "d7e7",
+              "d4d5",
+              "d6b4",
+              "c3e5",
+              "e7d7",
+              "e3d4",
+              "b4d6",
+              "e5e8",
+              "d7e8",
+              "e2e8",
+              "g8f7",
+              "e8a8",
+              "d6f4",
+              "a8a7",
+              "f7g8"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 185 nodes 13991 nps 466366 hashfull 16 tbhits 0 time 30 pv d7e7 d4d5 d6b4 c3e5 e7d7 e3d4 b4d6 e5e8 d7e8 e2e8 g8f7 e8a8 d6f4 a8a7 f7g8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 28.863000000001193
+      }
+    },
+    {
+      "ply": 87,
+      "uci": "c3b2",
+      "fenBefore": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/2Q1B2P/4R1P1/6K1 w - - 1 44",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/2Q1B2P/4R1P1/6K1 w - - 1 44",
+          "go depth 12 searchmoves c3b2"
+        ],
+        "bestmove": "bestmove c3b2 ponder g6e6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -313,
+            "mate": null,
+            "pv": [
+              "c3b2",
+              "g6e6",
+              "g1f2",
+              "d6b4",
+              "g2g3",
+              "e6e4",
+              "b2a2",
+              "e7d7",
+              "a2a6"
+            ],
+            "raw": "info depth 12 seldepth 11 multipv 1 score cp -313 nodes 5357 nps 446416 hashfull 13 tbhits 0 time 12 pv c3b2 g6e6 g1f2 d6b4 g2g3 e6e4 b2a2 e7d7 a2a6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 11.58009999999922
+      }
+    },
+    {
+      "ply": 88,
+      "uci": "g6e6",
+      "fenBefore": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44",
+          "go depth 12 searchmoves g6e6"
+        ],
+        "bestmove": "bestmove g6e6 ponder g1f2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 296,
+            "mate": null,
+            "pv": [
+              "g6e6",
+              "g1f2",
+              "e6e4",
+              "g2g3",
+              "h6h5",
+              "b2a2",
+              "d6b4",
+              "a2a6",
+              "e7d7"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 296 nodes 6715 nps 419687 hashfull 16 tbhits 0 time 16 pv g6e6 g1f2 e6e4 g2g3 h6h5 b2a2 d6b4 a2a6 e7d7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 14.481700000000274
+      }
+    },
+    {
+      "ply": 89,
+      "uci": "g1f2",
+      "fenBefore": "6k1/4q1p1/3br2p/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/4q1p1/3br2p/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45",
+          "go depth 12 searchmoves g1f2"
+        ],
+        "bestmove": "bestmove g1f2 ponder e6e4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -311,
+            "mate": null,
+            "pv": [
+              "g1f2",
+              "e6e4",
+              "g2g3",
+              "d6b4",
+              "f2f3",
+              "h6h5",
+              "d4d5",
+              "e7d6",
+              "g3g4",
+              "b4c5",
+              "b2b5",
+              "c5e3"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp -311 nodes 20650 nps 529487 hashfull 21 tbhits 0 time 39 pv g1f2 e6e4 g2g3 d6b4 f2f3 h6h5 d4d5 e7d6 g3g4 b4c5 b2b5 c5e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 38.673399999999674
+      }
+    },
+    {
+      "ply": 90,
+      "uci": "e6e4",
+      "fenBefore": "6k1/4q1p1/3br2p/1p3p2/1PpP1P2/4B2P/1Q2RKP1/8 b - - 4 45",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/4q1p1/3br2p/1p3p2/1PpP1P2/4B2P/1Q2RKP1/8 b - - 4 45",
+          "go depth 12 searchmoves e6e4"
+        ],
+        "bestmove": "bestmove e6e4 ponder g2g3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 298,
+            "mate": null,
+            "pv": [
+              "e6e4",
+              "g2g3",
+              "d6b4",
+              "b2b1",
+              "h6h5",
+              "e2a2",
+              "g8h7",
+              "a2a6",
+              "e7b7"
+            ],
+            "raw": "info depth 12 seldepth 19 multipv 1 score cp 298 nodes 16943 nps 546548 hashfull 23 tbhits 0 time 31 pv e6e4 g2g3 d6b4 b2b1 h6h5 e2a2 g8h7 a2a6 e7b7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 30.504499999999098
+      }
+    },
+    {
+      "ply": 91,
+      "uci": "b2a2",
+      "fenBefore": "6k1/4q1p1/3b3p/1p3p2/1PpPrP2/4B2P/1Q2RKP1/8 w - - 5 46",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/4q1p1/3b3p/1p3p2/1PpPrP2/4B2P/1Q2RKP1/8 w - - 5 46",
+          "go depth 12 searchmoves b2a2"
+        ],
+        "bestmove": "bestmove b2a2 ponder g8h7",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -298,
+            "mate": null,
+            "pv": [
+              "b2a2",
+              "g8h7",
+              "g2g3",
+              "d6b4",
+              "a2b2",
+              "h6h5",
+              "b2b1",
+              "b4c3",
+              "b1b5",
+              "c3d4",
+              "b5f5",
+              "g7g6"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -298 nodes 11344 nps 597052 hashfull 18 tbhits 0 time 19 pv b2a2 g8h7 g2g3 d6b4 a2b2 h6h5 b2b1 b4c3 b1b5 c3d4 b5f5 g7g6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 18.22780000000057
+      }
+    },
+    {
+      "ply": 92,
+      "uci": "g8f7",
+      "fenBefore": "6k1/4q1p1/3b3p/1p3p2/1PpPrP2/4B2P/Q3RKP1/8 b - - 6 46",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 6k1/4q1p1/3b3p/1p3p2/1PpPrP2/4B2P/Q3RKP1/8 b - - 6 46",
+          "go depth 12 searchmoves g8f7"
+        ],
+        "bestmove": "bestmove g8f7 ponder g2g3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 238,
+            "mate": null,
+            "pv": [
+              "g8f7",
+              "g2g3",
+              "e7b7",
+              "a2a3",
+              "b7d5",
+              "e2a2"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp 238 nodes 13867 nps 495250 hashfull 19 tbhits 0 time 28 pv g8f7 g2g3 e7b7 a2a3 b7d5 e2a2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 26.66990000000078
+      }
+    },
+    {
+      "ply": 93,
+      "uci": "g2g3",
+      "fenBefore": "8/4qkp1/3b3p/1p3p2/1PpPrP2/4B2P/Q3RKP1/8 w - - 7 47",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/4qkp1/3b3p/1p3p2/1PpPrP2/4B2P/Q3RKP1/8 w - - 7 47",
+          "go depth 12 searchmoves g2g3"
+        ],
+        "bestmove": "bestmove g2g3 ponder g7g5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -259,
+            "mate": null,
+            "pv": [
+              "g2g3",
+              "g7g5",
+              "d4d5",
+              "d6b4",
+              "a2a6",
+              "g5f4",
+              "g3f4",
+              "b4c5",
+              "a6h6",
+              "e4e3"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -259 nodes 12438 nps 540782 hashfull 22 tbhits 0 time 23 pv g2g3 g7g5 d4d5 d6b4 a2a6 g5f4 g3f4 b4c5 a6h6 e4e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 22.290100000001985
+      }
+    },
+    {
+      "ply": 94,
+      "uci": "e7b7",
+      "fenBefore": "8/4qkp1/3b3p/1p3p2/1PpPrP2/4B1PP/Q3RK2/8 b - - 0 47",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/4qkp1/3b3p/1p3p2/1PpPrP2/4B1PP/Q3RK2/8 b - - 0 47",
+          "go depth 12 searchmoves e7b7"
+        ],
+        "bestmove": "bestmove e7b7 ponder a2a3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 244,
+            "mate": null,
+            "pv": [
+              "e7b7",
+              "a2a3",
+              "e4e6",
+              "e2a2",
+              "b7e4",
+              "a2e2",
+              "g7g5",
+              "a3a7",
+              "e6e7",
+              "a7a6",
+              "g5f4",
+              "a6d6",
+              "f4e3",
+              "f2g1"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp 244 nodes 19613 nps 516131 hashfull 19 tbhits 0 time 38 pv e7b7 a2a3 e4e6 e2a2 b7e4 a2e2 g7g5 a3a7 e6e7 a7a6 g5f4 a6d6 f4e3 f2g1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 37.007799999999406
+      }
+    },
+    {
+      "ply": 95,
+      "uci": "a2a3",
+      "fenBefore": "8/1q3kp1/3b3p/1p3p2/1PpPrP2/4B1PP/Q3RK2/8 w - - 1 48",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/1q3kp1/3b3p/1p3p2/1PpPrP2/4B1PP/Q3RK2/8 w - - 1 48",
+          "go depth 12 searchmoves a2a3"
+        ],
+        "bestmove": "bestmove a2a3 ponder e4e6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -236,
+            "mate": null,
+            "pv": [
+              "a2a3",
+              "e4e6",
+              "h3h4",
+              "d6e7",
+              "e2a2",
+              "b7e4",
+              "a3c3",
+              "f7g6",
+              "a2a3",
+              "e7f6",
+              "a3a5"
+            ],
+            "raw": "info depth 12 seldepth 21 multipv 1 score cp -236 nodes 10004 nps 526526 hashfull 20 tbhits 0 time 19 pv a2a3 e4e6 h3h4 d6e7 e2a2 b7e4 a3c3 f7g6 a2a3 e7f6 a3a5"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 17.937000000001717
+      }
+    },
+    {
+      "ply": 96,
+      "uci": "e4e8",
+      "fenBefore": "8/1q3kp1/3b3p/1p3p2/1PpPrP2/Q3B1PP/4RK2/8 b - - 2 48",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/1q3kp1/3b3p/1p3p2/1PpPrP2/Q3B1PP/4RK2/8 b - - 2 48",
+          "go depth 12 searchmoves e4e8"
+        ],
+        "bestmove": "bestmove e4e8 ponder d4d5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 236,
+            "mate": null,
+            "pv": [
+              "e4e8",
+              "d4d5",
+              "b7d5",
+              "e2d2",
+              "d5e6",
+              "d2e2",
+              "f7g8",
+              "a3a6",
+              "d6b4",
+              "a6b5",
+              "b4c3",
+              "b5b6"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 236 nodes 11064 nps 553200 hashfull 23 tbhits 0 time 20 pv e4e8 d4d5 b7d5 e2d2 d5e6 d2e2 f7g8 a3a6 d6b4 a6b5 b4c3 b5b6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 18.80370000000039
+      }
+    },
+    {
+      "ply": 97,
+      "uci": "a3c3",
+      "fenBefore": "4r3/1q3kp1/3b3p/1p3p2/1PpP1P2/Q3B1PP/4RK2/8 w - - 3 49",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/1q3kp1/3b3p/1p3p2/1PpP1P2/Q3B1PP/4RK2/8 w - - 3 49",
+          "go depth 12 searchmoves a3c3"
+        ],
+        "bestmove": "bestmove a3c3 ponder b7h1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -291,
+            "mate": null,
+            "pv": [
+              "a3c3",
+              "b7h1",
+              "h3h4",
+              "g7g5",
+              "f4g5",
+              "h6g5",
+              "h4g5",
+              "h1h3",
+              "g5g6",
+              "f7g6"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -291 nodes 12132 nps 485280 hashfull 21 tbhits 0 time 25 pv a3c3 b7h1 h3h4 g7g5 f4g5 h6g5 h4g5 h1h3 g5g6 f7g6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 23.767400000000634
+      }
+    },
+    {
+      "ply": 98,
+      "uci": "b7h1",
+      "fenBefore": "4r3/1q3kp1/3b3p/1p3p2/1PpP1P2/2Q1B1PP/4RK2/8 b - - 4 49",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/1q3kp1/3b3p/1p3p2/1PpP1P2/2Q1B1PP/4RK2/8 b - - 4 49",
+          "go depth 12 searchmoves b7h1"
+        ],
+        "bestmove": "bestmove b7h1 ponder h3h4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 291,
+            "mate": null,
+            "pv": [
+              "b7h1",
+              "h3h4",
+              "g7g5",
+              "h4g5",
+              "h6g5",
+              "c3e1",
+              "h1h2",
+              "f2f1",
+              "h2h5",
+              "f1f2",
+              "e8e4",
+              "f4g5",
+              "h5h2",
+              "f2f3"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 291 nodes 6829 nps 525307 hashfull 29 tbhits 0 time 13 pv b7h1 h3h4 g7g5 h4g5 h6g5 c3e1 h1h2 f2f1 h2h5 f1f2 e8e4 f4g5 h5h2 f2f3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 12.461100000000442
+      }
+    },
+    {
+      "ply": 99,
+      "uci": "h3h4",
+      "fenBefore": "4r3/5kp1/3b3p/1p3p2/1PpP1P2/2Q1B1PP/4RK2/7q w - - 5 50",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5kp1/3b3p/1p3p2/1PpP1P2/2Q1B1PP/4RK2/7q w - - 5 50",
+          "go depth 12 searchmoves h3h4"
+        ],
+        "bestmove": "bestmove h3h4 ponder g7g5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -330,
+            "mate": null,
+            "pv": [
+              "h3h4",
+              "g7g5",
+              "h4g5",
+              "h6g5",
+              "c3e1",
+              "h1h2",
+              "f2f1",
+              "h2h3",
+              "f1g1",
+              "e8h8",
+              "e2g2",
+              "h3h1",
+              "g1f2",
+              "h1e1",
+              "f2e1",
+              "d6b4",
+              "e1e2"
+            ],
+            "raw": "info depth 12 seldepth 18 multipv 1 score cp -330 nodes 7110 nps 646363 hashfull 13 tbhits 0 time 11 pv h3h4 g7g5 h4g5 h6g5 c3e1 h1h2 f2f1 h2h3 f1g1 e8h8 e2g2 h3h1 g1f2 h1e1 f2e1 d6b4 e1e2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 10.10649999999805
+      }
+    },
+    {
+      "ply": 100,
+      "uci": "g7g5",
+      "fenBefore": "4r3/5kp1/3b3p/1p3p2/1PpP1P1P/2Q1B1P1/4RK2/7q b - - 0 50",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5kp1/3b3p/1p3p2/1PpP1P1P/2Q1B1P1/4RK2/7q b - - 0 50",
+          "go depth 12 searchmoves g7g5"
+        ],
+        "bestmove": "bestmove g7g5 ponder h4g5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 330,
+            "mate": null,
+            "pv": [
+              "g7g5",
+              "h4g5",
+              "h6g5",
+              "c3e1",
+              "h1h2",
+              "f2f1",
+              "h2h3",
+              "f1g1",
+              "e8h8",
+              "e2g2",
+              "h3h1",
+              "g1f2",
+              "h1e1",
+              "f2e1",
+              "d6b4",
+              "e1e2"
+            ],
+            "raw": "info depth 12 seldepth 17 multipv 1 score cp 330 nodes 2887 nps 577400 hashfull 13 tbhits 0 time 5 pv g7g5 h4g5 h6g5 c3e1 h1h2 f2f1 h2h3 f1g1 e8h8 e2g2 h3h1 g1f2 h1e1 f2e1 d6b4 e1e2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 4.819999999999709
+      }
+    },
+    {
+      "ply": 101,
+      "uci": "c3e1",
+      "fenBefore": "4r3/5k2/3b3p/1p3pp1/1PpP1P1P/2Q1B1P1/4RK2/7q w - - 0 51",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/3b3p/1p3pp1/1PpP1P1P/2Q1B1P1/4RK2/7q w - - 0 51",
+          "go depth 12 searchmoves c3e1"
+        ],
+        "bestmove": "bestmove c3e1 ponder h1h2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -397,
+            "mate": null,
+            "pv": [
+              "c3e1",
+              "h1h2",
+              "f2f1",
+              "h2h3",
+              "f1g1",
+              "g5h4",
+              "e2h2",
+              "h3g3",
+              "e1g3",
+              "h4g3",
+              "h2h6",
+              "e8e3",
+              "h6d6"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -397 nodes 2018 nps 403600 hashfull 25 tbhits 0 time 5 pv c3e1 h1h2 f2f1 h2h3 f1g1 g5h4 e2h2 h3g3 e1g3 h4g3 h2h6 e8e3 h6d6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 3.413300000000163
+      }
+    },
+    {
+      "ply": 102,
+      "uci": "h1h2",
+      "fenBefore": "4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1P1/4RK2/4Q2q b - - 1 51",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1P1/4RK2/4Q2q b - - 1 51",
+          "go depth 12 searchmoves h1h2"
+        ],
+        "bestmove": "bestmove h1h2 ponder f2f1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 420,
+            "mate": null,
+            "pv": [
+              "h1h2",
+              "f2f1",
+              "h2h3",
+              "f1g1",
+              "g5h4",
+              "e2h2",
+              "h3g3",
+              "e1g3",
+              "h4g3",
+              "h2h6",
+              "d6b4"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp 420 nodes 2088 nps 417600 hashfull 14 tbhits 0 time 5 pv h1h2 f2f1 h2h3 f1g1 g5h4 e2h2 h3g3 e1g3 h4g3 h2h6 d6b4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 4.095799999999144
+      }
+    },
+    {
+      "ply": 103,
+      "uci": "f2f1",
+      "fenBefore": "4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1P1/4RK1q/4Q3 w - - 2 52",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1P1/4RK1q/4Q3 w - - 2 52",
+          "go depth 12 searchmoves f2f1"
+        ],
+        "bestmove": "bestmove f2f1 ponder h2h3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -451,
+            "mate": null,
+            "pv": [
+              "f2f1",
+              "h2h3",
+              "f1g1",
+              "g5h4",
+              "e2g2",
+              "d6f4",
+              "g3f4",
+              "h3e3",
+              "e1e3",
+              "e8e3",
+              "g2a2",
+              "c4c3",
+              "g1h2",
+              "f7e6"
+            ],
+            "raw": "info depth 12 seldepth 18 multipv 1 score cp -451 nodes 5679 nps 516272 hashfull 22 tbhits 0 time 11 pv f2f1 h2h3 f1g1 g5h4 e2g2 d6f4 g3f4 h3e3 e1e3 e8e3 g2a2 c4c3 g1h2 f7e6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 9.941299999998591
+      }
+    },
+    {
+      "ply": 104,
+      "uci": "h2h3",
+      "fenBefore": "4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1P1/4R2q/4QK2 b - - 3 52",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1P1/4R2q/4QK2 b - - 3 52",
+          "go depth 12 searchmoves h2h3"
+        ],
+        "bestmove": "bestmove h2h3 ponder f1g1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 426,
+            "mate": null,
+            "pv": [
+              "h2h3",
+              "f1g1",
+              "g5h4",
+              "e3d2",
+              "e8e2",
+              "e1e2",
+              "h3g3",
+              "e2g2",
+              "g3g2",
+              "g1g2",
+              "d6e7"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 426 nodes 6116 nps 556000 hashfull 24 tbhits 0 time 11 pv h2h3 f1g1 g5h4 e3d2 e8e2 e1e2 h3g3 e2g2 g3g2 g1g2 d6e7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 10.719900000000052
+      }
+    },
+    {
+      "ply": 105,
+      "uci": "f1g1",
+      "fenBefore": "4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1Pq/4R3/4QK2 w - - 4 53",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1Pq/4R3/4QK2 w - - 4 53",
+          "go depth 12 searchmoves f1g1"
+        ],
+        "bestmove": "bestmove f1g1 ponder g5h4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -471,
+            "mate": null,
+            "pv": [
+              "f1g1",
+              "g5h4",
+              "e2g2",
+              "d6f4",
+              "g3f4",
+              "h3e3",
+              "e1e3",
+              "e8e3",
+              "g1h2",
+              "c4c3",
+              "d4d5",
+              "e3d3",
+              "g2a2",
+              "d3d2",
+              "h2h3"
+            ],
+            "raw": "info depth 12 seldepth 19 multipv 1 score cp -471 nodes 6770 nps 564166 hashfull 12 tbhits 0 time 12 pv f1g1 g5h4 e2g2 d6f4 g3f4 h3e3 e1e3 e8e3 g1h2 c4c3 d4d5 e3d3 g2a2 d3d2 h2h3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 11.9304000000011
+      }
+    },
+    {
+      "ply": 106,
+      "uci": "h3g4",
+      "fenBefore": "4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1Pq/4R3/4Q1K1 b - - 5 53",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/3b3p/1p3pp1/1PpP1P1P/4B1Pq/4R3/4Q1K1 b - - 5 53",
+          "go depth 12 searchmoves h3g4"
+        ],
+        "bestmove": "bestmove h3g4 ponder h4g5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 376,
+            "mate": null,
+            "pv": [
+              "h3g4",
+              "h4g5",
+              "h6g5",
+              "e2h2",
+              "g5f4",
+              "h2h7",
+              "f7g8"
+            ],
+            "raw": "info depth 12 seldepth 8 multipv 1 score cp 376 nodes 6173 nps 561181 hashfull 24 tbhits 0 time 11 pv h3g4 h4g5 h6g5 e2h2 g5f4 h2h7 f7g8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 10.211999999999534
+      }
+    },
+    {
+      "ply": 107,
+      "uci": "h4g5",
+      "fenBefore": "4r3/5k2/3b3p/1p3pp1/1PpP1PqP/4B1P1/4R3/4Q1K1 w - - 6 54",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/3b3p/1p3pp1/1PpP1PqP/4B1P1/4R3/4Q1K1 w - - 6 54",
+          "go depth 12 searchmoves h4g5"
+        ],
+        "bestmove": "bestmove h4g5 ponder h6g5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -434,
+            "mate": null,
+            "pv": [
+              "h4g5",
+              "h6g5",
+              "e2h2",
+              "g5f4",
+              "h2h7",
+              "f7g6",
+              "h7h4",
+              "g4g3",
+              "e1g3",
+              "f4g3",
+              "h4h6",
+              "g6f7"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -434 nodes 7900 nps 564285 hashfull 19 tbhits 0 time 14 pv h4g5 h6g5 e2h2 g5f4 h2h7 f7g6 h7h4 g4g3 e1g3 f4g3 h4h6 g6f7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 13.32890000000043
+      }
+    },
+    {
+      "ply": 108,
+      "uci": "d6f4",
+      "fenBefore": "4r3/5k2/3b3p/1p3pP1/1PpP1Pq1/4B1P1/4R3/4Q1K1 b - - 0 54",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/3b3p/1p3pP1/1PpP1Pq1/4B1P1/4R3/4Q1K1 b - - 0 54",
+          "go depth 12 searchmoves d6f4"
+        ],
+        "bestmove": "bestmove d6f4 ponder e3f4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 414,
+            "mate": null,
+            "pv": [
+              "d6f4",
+              "e3f4",
+              "e8e2",
+              "e1a1",
+              "h6g5",
+              "f4e5",
+              "e2e5",
+              "d4e5",
+              "g4g3",
+              "g1h1",
+              "g3f3",
+              "h1g1"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp 414 nodes 3243 nps 463285 hashfull 33 tbhits 0 time 7 pv d6f4 e3f4 e8e2 e1a1 h6g5 f4e5 e2e5 d4e5 g4g3 g1h1 g3f3 h1g1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 5.680200000002515
+      }
+    },
+    {
+      "ply": 109,
+      "uci": "e3f4",
+      "fenBefore": "4r3/5k2/7p/1p3pP1/1PpP1bq1/4B1P1/4R3/4Q1K1 w - - 0 55",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/7p/1p3pP1/1PpP1bq1/4B1P1/4R3/4Q1K1 w - - 0 55",
+          "go depth 12 searchmoves e3f4"
+        ],
+        "bestmove": "bestmove e3f4 ponder e8e2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -436,
+            "mate": null,
+            "pv": [
+              "e3f4",
+              "e8e2",
+              "g5g6",
+              "f7g6",
+              "e1a1",
+              "g6h5",
+              "d4d5",
+              "g4f3"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -436 nodes 5195 nps 649375 hashfull 41 tbhits 0 time 8 pv e3f4 e8e2 g5g6 f7g6 e1a1 g6h5 d4d5 g4f3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 7.418000000001484
+      }
+    },
+    {
+      "ply": 110,
+      "uci": "g4e2",
+      "fenBefore": "4r3/5k2/7p/1p3pP1/1PpP1Bq1/6P1/4R3/4Q1K1 b - - 0 55",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/7p/1p3pP1/1PpP1Bq1/6P1/4R3/4Q1K1 b - - 0 55",
+          "go depth 12 searchmoves g4e2"
+        ],
+        "bestmove": "bestmove g4e2 ponder e1e2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 281,
+            "mate": null,
+            "pv": [
+              "g4e2",
+              "e1e2",
+              "e8e2",
+              "g5h6",
+              "c4c3",
+              "g1f1",
+              "e2b2",
+              "d4d5",
+              "b2b4",
+              "d5d6",
+              "b4d4"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp 281 nodes 2970 nps 424285 hashfull 40 tbhits 0 time 7 pv g4e2 e1e2 e8e2 g5h6 c4c3 g1f1 e2b2 d4d5 b2b4 d5d6 b4d4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 5.984300000000076
+      }
+    },
+    {
+      "ply": 111,
+      "uci": "e1e2",
+      "fenBefore": "4r3/5k2/7p/1p3pP1/1PpP1B2/6P1/4q3/4Q1K1 w - - 0 56",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/7p/1p3pP1/1PpP1B2/6P1/4q3/4Q1K1 w - - 0 56",
+          "go depth 12 searchmoves e1e2"
+        ],
+        "bestmove": "bestmove e1e2 ponder e8e2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -344,
+            "mate": null,
+            "pv": [
+              "e1e2",
+              "e8e2",
+              "g5h6",
+              "c4c3",
+              "d4d5",
+              "c3c2",
+              "g1f1",
+              "e2e4",
+              "f1g2",
+              "f7g6"
+            ],
+            "raw": "info depth 12 seldepth 18 multipv 1 score cp -344 nodes 8869 nps 591266 hashfull 7 tbhits 0 time 15 pv e1e2 e8e2 g5h6 c4c3 d4d5 c3c2 g1f1 e2e4 f1g2 f7g6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 14.169999999998254
+      }
+    },
+    {
+      "ply": 112,
+      "uci": "e8e2",
+      "fenBefore": "4r3/5k2/7p/1p3pP1/1PpP1B2/6P1/4Q3/6K1 b - - 0 56",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 4r3/5k2/7p/1p3pP1/1PpP1B2/6P1/4Q3/6K1 b - - 0 56",
+          "go depth 12 searchmoves e8e2"
+        ],
+        "bestmove": "bestmove e8e2 ponder g5h6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 447,
+            "mate": null,
+            "pv": [
+              "e8e2",
+              "g5h6",
+              "c4c3",
+              "d4d5",
+              "c3c2",
+              "g1f1",
+              "e2e4",
+              "d5d6",
+              "e4d4",
+              "f1e2",
+              "d4d6",
+              "f4d6",
+              "c2c1q",
+              "h6h7",
+              "c1c4",
+              "e2f2"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 447 nodes 16721 nps 668840 hashfull 22 tbhits 0 time 25 pv e8e2 g5h6 c4c3 d4d5 c3c2 g1f1 e2e4 d5d6 e4d4 f1e2 d4d6 f4d6 c2c1q h6h7 c1c4 e2f2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 23.88969999999972
+      }
+    },
+    {
+      "ply": 113,
+      "uci": "g5h6",
+      "fenBefore": "8/5k2/7p/1p3pP1/1PpP1B2/6P1/4r3/6K1 w - - 0 57",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/5k2/7p/1p3pP1/1PpP1B2/6P1/4r3/6K1 w - - 0 57",
+          "go depth 12 searchmoves g5h6"
+        ],
+        "bestmove": "bestmove g5h6 ponder c4c3",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -455,
+            "mate": null,
+            "pv": [
+              "g5h6",
+              "c4c3",
+              "g1f1",
+              "e2e4",
+              "f1f2",
+              "c3c2",
+              "f4e3",
+              "f7g6",
+              "d4d5",
+              "e4d4",
+              "e3d4",
+              "c2c1q",
+              "d5d6",
+              "c1d2",
+              "f2f1"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp -455 nodes 13449 nps 707842 hashfull 26 tbhits 0 time 19 pv g5h6 c4c3 g1f1 e2e4 f1f2 c3c2 f4e3 f7g6 d4d5 e4d4 e3d4 c2c1q d5d6 c1d2 f2f1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 17.65980000000127
+      }
+    },
+    {
+      "ply": 114,
+      "uci": "c4c3",
+      "fenBefore": "8/5k2/7P/1p3p2/1PpP1B2/6P1/4r3/6K1 b - - 0 57",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/5k2/7P/1p3p2/1PpP1B2/6P1/4r3/6K1 b - - 0 57",
+          "go depth 12 searchmoves c4c3"
+        ],
+        "bestmove": "bestmove c4c3 ponder g1f1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 456,
+            "mate": null,
+            "pv": [
+              "c4c3",
+              "g1f1",
+              "e2e4",
+              "f1f2",
+              "c3c2",
+              "f4e3",
+              "f7g6",
+              "f2f3",
+              "e4e3",
+              "f3e3",
+              "c2c1b",
+              "e3f2",
+              "c1h6"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp 456 nodes 2826 nps 706500 hashfull 25 tbhits 0 time 4 pv c4c3 g1f1 e2e4 f1f2 c3c2 f4e3 f7g6 f2f3 e4e3 f3e3 c2c1b e3f2 c1h6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 2.8278000000027532
+      }
+    },
+    {
+      "ply": 115,
+      "uci": "g1f1",
+      "fenBefore": "8/5k2/7P/1p3p2/1P1P1B2/2p3P1/4r3/6K1 w - - 0 58",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/5k2/7P/1p3p2/1P1P1B2/2p3P1/4r3/6K1 w - - 0 58",
+          "go depth 12 searchmoves g1f1"
+        ],
+        "bestmove": "bestmove g1f1 ponder e2e4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -462,
+            "mate": null,
+            "pv": [
+              "g1f1",
+              "e2e4",
+              "f1f2",
+              "f7g6",
+              "f4e3",
+              "c3c2",
+              "f2f3",
+              "e4e3",
+              "f3e3",
+              "c2c1q",
+              "e3f2"
+            ],
+            "raw": "info depth 12 seldepth 19 multipv 1 score cp -462 nodes 8456 nps 1208000 hashfull 19 tbhits 0 time 7 pv g1f1 e2e4 f1f2 f7g6 f4e3 c3c2 f2f3 e4e3 f3e3 c2c1q e3f2"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 6.629100000001927
+      }
+    },
+    {
+      "ply": 116,
+      "uci": "e2e4",
+      "fenBefore": "8/5k2/7P/1p3p2/1P1P1B2/2p3P1/4r3/5K2 b - - 1 58",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/5k2/7P/1p3p2/1P1P1B2/2p3P1/4r3/5K2 b - - 1 58",
+          "go depth 12 searchmoves e2e4"
+        ],
+        "bestmove": "bestmove e2e4 ponder f1f2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 474,
+            "mate": null,
+            "pv": [
+              "e2e4",
+              "f1f2",
+              "c3c2",
+              "f4e3",
+              "f7g6",
+              "f2f3",
+              "e4e3",
+              "f3e3",
+              "c2c1q",
+              "e3f2",
+              "c1d2",
+              "f2g1",
+              "d2d4",
+              "g1f1",
+              "d4d3",
+              "f1g2",
+              "g6h6"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp 474 nodes 5412 nps 1082400 hashfull 9 tbhits 0 time 5 pv e2e4 f1f2 c3c2 f4e3 f7g6 f2f3 e4e3 f3e3 c2c1q e3f2 c1d2 f2g1 d2d4 g1f1 d4d3 f1g2 g6h6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 4.966099999997823
+      }
+    },
+    {
+      "ply": 117,
+      "uci": "f4c1",
+      "fenBefore": "8/5k2/7P/1p3p2/1P1PrB2/2p3P1/8/5K2 w - - 2 59",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/5k2/7P/1p3p2/1P1PrB2/2p3P1/8/5K2 w - - 2 59",
+          "go depth 12 searchmoves f4c1"
+        ],
+        "bestmove": "bestmove f4c1 ponder c3c2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -493,
+            "mate": null,
+            "pv": [
+              "f4c1",
+              "c3c2",
+              "g3g4",
+              "e4d4",
+              "f1e2",
+              "d4d1",
+              "h6h7",
+              "f7g7",
+              "c1b2",
+              "g7h7"
+            ],
+            "raw": "info depth 12 seldepth 13 multipv 1 score cp -493 nodes 7010 nps 584166 hashfull 22 tbhits 0 time 12 pv f4c1 c3c2 g3g4 e4d4 f1e2 d4d1 h6h7 f7g7 c1b2 g7h7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 12.018499999998312
+      }
+    },
+    {
+      "ply": 118,
+      "uci": "f7g6",
+      "fenBefore": "8/5k2/7P/1p3p2/1P1Pr3/2p3P1/8/2B2K2 b - - 3 59",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/5k2/7P/1p3p2/1P1Pr3/2p3P1/8/2B2K2 b - - 3 59",
+          "go depth 12 searchmoves f7g6"
+        ],
+        "bestmove": "bestmove f7g6 ponder d4d5",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 526,
+            "mate": null,
+            "pv": [
+              "f7g6",
+              "d4d5",
+              "e4d4",
+              "d5d6",
+              "d4d6",
+              "c1f4",
+              "c3c2",
+              "f4e3"
+            ],
+            "raw": "info depth 12 seldepth 10 multipv 1 score cp 526 nodes 4573 nps 571625 hashfull 16 tbhits 0 time 8 pv f7g6 d4d5 e4d4 d5d6 d4d6 c1f4 c3c2 f4e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 7.469199999999546
+      }
+    },
+    {
+      "ply": 119,
+      "uci": "d4d5",
+      "fenBefore": "8/8/6kP/1p3p2/1P1Pr3/2p3P1/8/2B2K2 w - - 4 60",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/6kP/1p3p2/1P1Pr3/2p3P1/8/2B2K2 w - - 4 60",
+          "go depth 12 searchmoves d4d5"
+        ],
+        "bestmove": "bestmove d4d5 ponder e4d4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -505,
+            "mate": null,
+            "pv": [
+              "d4d5",
+              "e4d4",
+              "c1d2",
+              "d4d2",
+              "f1e1"
+            ],
+            "raw": "info depth 12 seldepth 15 multipv 1 score cp -505 nodes 8682 nps 667846 hashfull 13 tbhits 0 time 13 pv d4d5 e4d4 c1d2 d4d2 f1e1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 11.993299999998271
+      }
+    },
+    {
+      "ply": 120,
+      "uci": "c3c2",
+      "fenBefore": "8/8/6kP/1p1P1p2/1P2r3/2p3P1/8/2B2K2 b - - 0 60",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/6kP/1p1P1p2/1P2r3/2p3P1/8/2B2K2 b - - 0 60",
+          "go depth 12 searchmoves c3c2"
+        ],
+        "bestmove": "bestmove c3c2 ponder g3g4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 546,
+            "mate": null,
+            "pv": [
+              "c3c2",
+              "g3g4",
+              "f5g4",
+              "f1f2",
+              "e4d4",
+              "c1b2",
+              "d4b4"
+            ],
+            "raw": "info depth 12 seldepth 16 multipv 1 score cp 546 nodes 10632 nps 708800 hashfull 17 tbhits 0 time 15 pv c3c2 g3g4 f5g4 f1f2 e4d4 c1b2 d4b4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 14.595000000001164
+      }
+    },
+    {
+      "ply": 121,
+      "uci": "c1d2",
+      "fenBefore": "8/8/6kP/1p1P1p2/1P2r3/6P1/2p5/2B2K2 w - - 0 61",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/6kP/1p1P1p2/1P2r3/6P1/2p5/2B2K2 w - - 0 61",
+          "go depth 12 searchmoves c1d2"
+        ],
+        "bestmove": "bestmove c1d2 ponder e4d4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -559,
+            "mate": null,
+            "pv": [
+              "c1d2",
+              "e4d4",
+              "f1e1",
+              "d4d5",
+              "e1e2",
+              "d5d8",
+              "e2e1",
+              "d8e8",
+              "e1f2",
+              "g6h7"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp -559 nodes 3200 nps 640000 hashfull 17 tbhits 0 time 5 pv c1d2 e4d4 f1e1 d4d5 e1e2 d5d8 e2e1 d8e8 e1f2 g6h7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 4.305899999999383
+      }
+    },
+    {
+      "ply": 122,
+      "uci": "e4b4",
+      "fenBefore": "8/8/6kP/1p1P1p2/1P2r3/6P1/2pB4/5K2 b - - 1 61",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/6kP/1p1P1p2/1P2r3/6P1/2pB4/5K2 b - - 1 61",
+          "go depth 12 searchmoves e4b4"
+        ],
+        "bestmove": "bestmove e4b4 ponder g3g4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 533,
+            "mate": null,
+            "pv": [
+              "e4b4",
+              "g3g4",
+              "f5g4",
+              "f1g2",
+              "b4b2",
+              "g2g3"
+            ],
+            "raw": "info depth 12 seldepth 10 multipv 1 score cp 533 nodes 7198 nps 599833 hashfull 25 tbhits 0 time 12 pv e4b4 g3g4 f5g4 f1g2 b4b2 g2g3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 11.602199999997538
+      }
+    },
+    {
+      "ply": 123,
+      "uci": "d5d6",
+      "fenBefore": "8/8/6kP/1p1P1p2/1r6/6P1/2pB4/5K2 w - - 0 62",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/6kP/1p1P1p2/1r6/6P1/2pB4/5K2 w - - 0 62",
+          "go depth 12 searchmoves d5d6"
+        ],
+        "bestmove": "bestmove d5d6 ponder b4d4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -615,
+            "mate": null,
+            "pv": [
+              "d5d6",
+              "b4d4",
+              "f1e2",
+              "d4d6",
+              "d2a5",
+              "d6d8"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp -615 nodes 3870 nps 552857 hashfull 19 tbhits 0 time 7 pv d5d6 b4d4 f1e2 d4d6 d2a5 d6d8"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 6.332300000001851
+      }
+    },
+    {
+      "ply": 124,
+      "uci": "b4d4",
+      "fenBefore": "8/8/3P2kP/1p3p2/1r6/6P1/2pB4/5K2 b - - 0 62",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3P2kP/1p3p2/1r6/6P1/2pB4/5K2 b - - 0 62",
+          "go depth 12 searchmoves b4d4"
+        ],
+        "bestmove": "bestmove b4d4 ponder f1e2",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 630,
+            "mate": null,
+            "pv": [
+              "b4d4",
+              "f1e2",
+              "d4d6",
+              "d2f4",
+              "d6d4",
+              "f4d2",
+              "g6h7"
+            ],
+            "raw": "info depth 12 seldepth 10 multipv 1 score cp 630 nodes 10162 nps 846833 hashfull 21 tbhits 0 time 12 pv b4d4 f1e2 d4d6 d2f4 d6d4 f4d2 g6h7"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 10.980800000001182
+      }
+    },
+    {
+      "ply": 125,
+      "uci": "f1e2",
+      "fenBefore": "8/8/3P2kP/1p3p2/3r4/6P1/2pB4/5K2 w - - 1 63",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3P2kP/1p3p2/3r4/6P1/2pB4/5K2 w - - 1 63",
+          "go depth 12 searchmoves f1e2"
+        ],
+        "bestmove": "bestmove f1e2 ponder d4d6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -645,
+            "mate": null,
+            "pv": [
+              "f1e2",
+              "d4d6",
+              "d2f4",
+              "g6h7",
+              "f4d2",
+              "d6d4",
+              "d2e3"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp -645 nodes 5994 nps 749250 hashfull 23 tbhits 0 time 8 pv f1e2 d4d6 d2f4 g6h7 f4d2 d6d4 d2e3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 7.128100000001723
+      }
+    },
+    {
+      "ply": 126,
+      "uci": "d4d6",
+      "fenBefore": "8/8/3P2kP/1p3p2/3r4/6P1/2pBK3/8 b - - 2 63",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3P2kP/1p3p2/3r4/6P1/2pBK3/8 b - - 2 63",
+          "go depth 12 searchmoves d4d6"
+        ],
+        "bestmove": "bestmove d4d6 ponder d2c1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 655,
+            "mate": null,
+            "pv": [
+              "d4d6",
+              "d2c1",
+              "d6d1",
+              "c1f4",
+              "c2c1q",
+              "f4c1",
+              "d1c1",
+              "e2f2",
+              "c1c4",
+              "f2g2",
+              "c4c2",
+              "g2h1"
+            ],
+            "raw": "info depth 12 seldepth 14 multipv 1 score cp 655 nodes 7476 nps 747600 hashfull 20 tbhits 0 time 10 pv d4d6 d2c1 d6d1 c1f4 c2c1q f4c1 d1c1 e2f2 c1c4 f2g2 c4c2 g2h1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 8.944899999998597
+      }
+    },
+    {
+      "ply": 127,
+      "uci": "e2e3",
+      "fenBefore": "8/8/3r2kP/1p3p2/8/6P1/2pBK3/8 w - - 0 64",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3r2kP/1p3p2/8/6P1/2pBK3/8 w - - 0 64",
+          "go depth 12 searchmoves e2e3"
+        ],
+        "bestmove": "bestmove e2e3 ponder g6h6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -680,
+            "mate": null,
+            "pv": [
+              "e2e3",
+              "g6h6",
+              "d2c1",
+              "h6h7",
+              "c1a3"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp -680 nodes 3815 nps 635833 hashfull 20 tbhits 0 time 6 pv e2e3 g6h6 d2c1 h6h7 c1a3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 5.3761000000013155
+      }
+    },
+    {
+      "ply": 128,
+      "uci": "g6h6",
+      "fenBefore": "8/8/3r2kP/1p3p2/8/4K1P1/2pB4/8 b - - 1 64",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3r2kP/1p3p2/8/4K1P1/2pB4/8 b - - 1 64",
+          "go depth 12 searchmoves g6h6"
+        ],
+        "bestmove": "bestmove g6h6 ponder d2c1",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 624,
+            "mate": null,
+            "pv": [
+              "g6h6",
+              "d2c1",
+              "h6h7",
+              "c1d2",
+              "d6c6"
+            ],
+            "raw": "info depth 12 seldepth 10 multipv 1 score cp 624 nodes 3189 nps 531500 hashfull 23 tbhits 0 time 6 pv g6h6 d2c1 h6h7 c1d2 d6c6"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 4.977999999999156
+      }
+    },
+    {
+      "ply": 129,
+      "uci": "e3e2",
+      "fenBefore": "8/8/3r3k/1p3p2/8/4K1P1/2pB4/8 w - - 0 65",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3r3k/1p3p2/8/4K1P1/2pB4/8 w - - 0 65",
+          "go depth 12 searchmoves e3e2"
+        ],
+        "bestmove": "bestmove e3e2 ponder h6h7",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -663,
+            "mate": null,
+            "pv": [
+              "e3e2",
+              "h6h7",
+              "d2e3",
+              "d6e6",
+              "e2d3",
+              "e6e3",
+              "d3e3",
+              "c2c1r",
+              "e3d3",
+              "c1h1"
+            ],
+            "raw": "info depth 12 seldepth 12 multipv 1 score cp -663 nodes 8401 nps 646230 hashfull 25 tbhits 0 time 13 pv e3e2 h6h7 d2e3 d6e6 e2d3 e6e3 d3e3 c2c1r e3d3 c1h1"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 11.805000000000291
+      }
+    },
+    {
+      "ply": 130,
+      "uci": "h6g6",
+      "fenBefore": "8/8/3r3k/1p3p2/8/6P1/2pBK3/8 b - - 1 65",
+      "insideMultiPv": true,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3r3k/1p3p2/8/6P1/2pBK3/8 b - - 1 65",
+          "go depth 12 searchmoves h6g6"
+        ],
+        "bestmove": "bestmove h6g6 ponder d2f4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 672,
+            "mate": null,
+            "pv": [
+              "h6g6",
+              "d2f4",
+              "d6d5",
+              "e2f3"
+            ],
+            "raw": "info depth 12 seldepth 11 multipv 1 score cp 672 nodes 5001 nps 625125 hashfull 30 tbhits 0 time 8 pv h6g6 d2f4 d6d5 e2f3"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 7.282899999998335
+      }
+    },
+    {
+      "ply": 131,
+      "uci": "e2e1",
+      "fenBefore": "8/8/3r2k1/1p3p2/8/6P1/2pBK3/8 w - - 2 66",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3r2k1/1p3p2/8/6P1/2pBK3/8 w - - 2 66",
+          "go depth 12 searchmoves e2e1"
+        ],
+        "bestmove": "bestmove e2e1 ponder d6e6",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": -705,
+            "mate": null,
+            "pv": [
+              "e2e1",
+              "d6e6",
+              "e1f2",
+              "e6a6",
+              "g3g4",
+              "f5g4"
+            ],
+            "raw": "info depth 12 seldepth 11 multipv 1 score cp -705 nodes 4810 nps 687142 hashfull 15 tbhits 0 time 7 pv e2e1 d6e6 e1f2 e6a6 g3g4 f5g4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 6.0953000000008615
+      }
+    },
+    {
+      "ply": 132,
+      "uci": "b5b4",
+      "fenBefore": "8/8/3r2k1/1p3p2/8/6P1/2pB4/4K3 b - - 3 66",
+      "insideMultiPv": false,
+      "result": {
+        "commands": [
+          "setoption name MultiPV value 1",
+          "position fen 8/8/3r2k1/1p3p2/8/6P1/2pB4/4K3 b - - 3 66",
+          "go depth 12 searchmoves b5b4"
+        ],
+        "bestmove": "bestmove b5b4 ponder g3g4",
+        "lines": [
+          {
+            "multipv": 1,
+            "depth": 12,
+            "evalCp": 704,
+            "mate": null,
+            "pv": [
+              "b5b4",
+              "g3g4",
+              "f5g4",
+              "d2f4"
+            ],
+            "raw": "info depth 12 seldepth 9 multipv 1 score cp 704 nodes 2023 nps 674333 hashfull 13 tbhits 0 time 3 pv b5b4 g3g4 f5g4 d2f4"
+          }
+        ],
+        "discardedBounds": [],
+        "elapsedMs": 2.5297000000027765
+      }
+    }
+  ]
+}
