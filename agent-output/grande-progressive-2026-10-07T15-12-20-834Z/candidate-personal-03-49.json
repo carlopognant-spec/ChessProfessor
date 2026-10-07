@@ -1,0 +1,38 @@
+{
+  "gameId": "personal-03",
+  "ply": 49,
+  "san": "Kd2",
+  "uci": "c1d2",
+  "legalCount": 5,
+  "status": "rejected",
+  "reason": "played-below-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "c1d2",
+      "scores": [
+        {
+          "evalCp": -566,
+          "mate": null,
+          "bound": false,
+          "depth": 17,
+          "pv": [
+            "c1d2",
+            "g1a1",
+            "e2g4",
+            "e6e5",
+            "d2c3",
+            "a1a2",
+            "d3d4",
+            "e5f6",
+            "c4c5",
+            "f6e7",
+            "g4c8",
+            "a2f2"
+          ],
+          "raw": "info depth 17 seldepth 28 multipv 1 score cp -566 nodes 200159 nps 287998 hashfull 72 time 695 pv c1d2 g1a1 e2g4 e6e5 d2c3 a1a2 d3d4 e5f6 c4c5 f6e7 g4c8 a2f2"
+        }
+      ]
+    }
+  ]
+}

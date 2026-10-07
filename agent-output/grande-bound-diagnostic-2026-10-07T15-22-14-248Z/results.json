@@ -1,0 +1,2118 @@
+{
+  "summary": {
+    "searchesExecuted": 0,
+    "sourceSearchesRead": 200,
+    "originalAbstentions": 40,
+    "priorCompletedScoresAvailable": 40,
+    "recoveredStates": {
+      "requires-additional-searches": 14,
+      "excluded-under-replay-policy": 26
+    },
+    "replayStatesAllVisited": {
+      "requires-additional-searches": 15,
+      "excluded-under-replay-policy": 49,
+      "verified-under-replay-policy": 1
+    },
+    "completedDepthRange": [
+      15,
+      20
+    ],
+    "completedNodeFractionRange": [
+      0.22806456289083393,
+      0.9638836228962693
+    ],
+    "sourceHashesUnchanged": true,
+    "annotationsRead": false,
+    "interpretation": "Offline policy variant; original run unchanged. Earlier unbounded scores are estimates at recorded completed depths, not exact evaluations at all allocated nodes. Missing searches remain missing; no new labels activated."
+  },
+  "recovered": [
+    {
+      "gameId": "personal-01",
+      "ply": 13,
+      "san": "Bxc3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "d2c3",
+      "finalBoundCp": 112,
+      "finalBoundDepth": 16,
+      "completedCp": 109,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 88913,
+      "totalSearchNodes": 200202,
+      "completedNodeFraction": 0.4441164423931829,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 9,
+      "san": "Nc3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "b1c3",
+      "finalBoundCp": 56,
+      "finalBoundDepth": 17,
+      "completedCp": 59,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 149965,
+      "totalSearchNodes": 200130,
+      "completedNodeFraction": 0.7493379303452755,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 11,
+      "san": "Bxf6",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "g5f6",
+      "finalBoundCp": 51,
+      "finalBoundDepth": 17,
+      "completedCp": 60,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 122363,
+      "totalSearchNodes": 200210,
+      "completedNodeFraction": 0.611173268068528,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 11,
+      "san": "Bg2",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "f1g2",
+      "finalBoundCp": 9,
+      "finalBoundDepth": 18,
+      "completedCp": 14,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 121830,
+      "totalSearchNodes": 200184,
+      "completedNodeFraction": 0.6085900971106581,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 16,
+      "san": "Nxh1",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard",
+      "rootRole": "alternative",
+      "uci": "b7b6",
+      "finalBoundCp": 94,
+      "finalBoundDepth": 18,
+      "completedCp": 115,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 45625,
+      "totalSearchNodes": 200053,
+      "completedNodeFraction": 0.22806456289083393,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 11,
+      "san": "Nxe5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "f3e5",
+      "finalBoundCp": 29,
+      "finalBoundDepth": 17,
+      "completedCp": 32,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 124507,
+      "totalSearchNodes": 200227,
+      "completedNodeFraction": 0.6218292238309518,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 14,
+      "san": "Nf6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "g8f6",
+      "finalBoundCp": -102,
+      "finalBoundDepth": 17,
+      "completedCp": -109,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 114349,
+      "totalSearchNodes": 200006,
+      "completedNodeFraction": 0.571727848164555,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 10,
+      "san": "e5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "e7e5",
+      "finalBoundCp": -55,
+      "finalBoundDepth": 18,
+      "completedCp": -52,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 177952,
+      "totalSearchNodes": 200071,
+      "completedNodeFraction": 0.8894442472922113,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 13,
+      "san": "Bxd6",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "f4d6",
+      "finalBoundCp": 55,
+      "finalBoundDepth": 17,
+      "completedCp": 53,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 123314,
+      "totalSearchNodes": 200031,
+      "completedNodeFraction": 0.6164744464607986,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 12,
+      "san": "Bb4",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "f8b4",
+      "finalBoundCp": -37,
+      "finalBoundDepth": 20,
+      "completedCp": -29,
+      "completedMate": null,
+      "completedDepth": 19,
+      "nodesAtCompletedScore": 119592,
+      "totalSearchNodes": 200086,
+      "completedNodeFraction": 0.5977029877152824,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 19,
+      "san": "Nxd6+",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "b5d6",
+      "finalBoundCp": 105,
+      "finalBoundDepth": 17,
+      "completedCp": 111,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 94171,
+      "totalSearchNodes": 200171,
+      "completedNodeFraction": 0.47045276288773097,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 14,
+      "san": "Qxd6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "d8d6",
+      "finalBoundCp": -46,
+      "finalBoundDepth": 17,
+      "completedCp": -44,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 146921,
+      "totalSearchNodes": 200174,
+      "completedNodeFraction": 0.7339664491892054,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 13,
+      "san": "d4",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "d2d4",
+      "finalBoundCp": 26,
+      "finalBoundDepth": 18,
+      "completedCp": 29,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 176150,
+      "totalSearchNodes": 200187,
+      "completedNodeFraction": 0.8799272680044159,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 20,
+      "san": "b6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "b7b6",
+      "finalBoundCp": -88,
+      "finalBoundDepth": 18,
+      "completedCp": -90,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 155782,
+      "totalSearchNodes": 200243,
+      "completedNodeFraction": 0.7779647728010467,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 18,
+      "san": "Rxf7",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard",
+      "rootRole": "alternative",
+      "uci": "g8f7",
+      "finalBoundCp": 193,
+      "finalBoundDepth": 16,
+      "completedCp": 163,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 72871,
+      "totalSearchNodes": 200150,
+      "completedNodeFraction": 0.36408193854609044,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 24,
+      "san": "g5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "g7g5",
+      "finalBoundCp": -170,
+      "finalBoundDepth": 17,
+      "completedCp": -175,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 133094,
+      "totalSearchNodes": 200032,
+      "completedNodeFraction": 0.6653635418333067,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 18,
+      "san": "Bg6",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "f5g6",
+      "finalBoundCp": 98,
+      "finalBoundDepth": 21,
+      "completedCp": 93,
+      "completedMate": null,
+      "completedDepth": 20,
+      "nodesAtCompletedScore": 891357,
+      "totalSearchNodes": 1000616,
+      "completedNodeFraction": 0.8908082621105399,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 27,
+      "san": "Qxa8",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard",
+      "rootRole": "alternative",
+      "uci": "e4f3",
+      "finalBoundCp": 74,
+      "finalBoundDepth": 16,
+      "completedCp": 59,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 166116,
+      "totalSearchNodes": 200076,
+      "completedNodeFraction": 0.8302644994901938,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 15,
+      "san": "Qxd4",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "d1d4",
+      "finalBoundCp": 88,
+      "finalBoundDepth": 18,
+      "completedCp": 91,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 154363,
+      "totalSearchNodes": 200282,
+      "completedNodeFraction": 0.7707282731348798,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 19,
+      "san": "Bc4",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "f1c4",
+      "finalBoundCp": -370,
+      "finalBoundDepth": 18,
+      "completedCp": -316,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 60572,
+      "totalSearchNodes": 200091,
+      "completedNodeFraction": 0.30272226137107616,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 29,
+      "san": "Qxe5+",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard",
+      "rootRole": "alternative",
+      "uci": "e1c1",
+      "finalBoundCp": -153,
+      "finalBoundDepth": 18,
+      "completedCp": -136,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 139318,
+      "totalSearchNodes": 200220,
+      "completedNodeFraction": 0.6958245929477574,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 19,
+      "san": "O-O",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "e1g1",
+      "finalBoundCp": -93,
+      "finalBoundDepth": 18,
+      "completedCp": -98,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 147066,
+      "totalSearchNodes": 200258,
+      "completedNodeFraction": 0.7343826463861618,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 16,
+      "san": "d6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "d7d6",
+      "finalBoundCp": -82,
+      "finalBoundDepth": 17,
+      "completedCp": -84,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 173051,
+      "totalSearchNodes": 200173,
+      "completedNodeFraction": 0.8645072012709006,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 26,
+      "san": "Re8",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "f8e8",
+      "finalBoundCp": -77,
+      "finalBoundDepth": 16,
+      "completedCp": -85,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 131038,
+      "totalSearchNodes": 200187,
+      "completedNodeFraction": 0.6545779695984255,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 21,
+      "san": "Bxf7",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "c4f7",
+      "finalBoundCp": 72,
+      "finalBoundDepth": 16,
+      "completedCp": 72,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 100468,
+      "totalSearchNodes": 200167,
+      "completedNodeFraction": 0.5019208960517968,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 22,
+      "san": "Qb4",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard",
+      "rootRole": "alternative",
+      "uci": "d6c7",
+      "finalBoundCp": 57,
+      "finalBoundDepth": 17,
+      "completedCp": 96,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 98826,
+      "totalSearchNodes": 200122,
+      "completedNodeFraction": 0.49382876445368323,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 22,
+      "san": "Bg6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "h5g6",
+      "finalBoundCp": -239,
+      "finalBoundDepth": 17,
+      "completedCp": -254,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 136631,
+      "totalSearchNodes": 200207,
+      "completedNodeFraction": 0.6824486656310719,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 32,
+      "san": "Bxf3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "b7f3",
+      "finalBoundCp": 129,
+      "finalBoundDepth": 17,
+      "completedCp": 124,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 126905,
+      "totalSearchNodes": 200234,
+      "completedNodeFraction": 0.6337834733361967,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 22,
+      "san": "Kxf7",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "f8f7",
+      "finalBoundCp": -88,
+      "finalBoundDepth": 16,
+      "completedCp": -94,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 119029,
+      "totalSearchNodes": 200055,
+      "completedNodeFraction": 0.5949813801204669,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 24,
+      "san": "hxg5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard",
+      "rootRole": "alternative",
+      "uci": "g6d3",
+      "finalBoundCp": 216,
+      "finalBoundDepth": 18,
+      "completedCp": 210,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 142223,
+      "totalSearchNodes": 200186,
+      "completedNodeFraction": 0.7104542775219046,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 24,
+      "san": "h6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "h7h6",
+      "finalBoundCp": -292,
+      "finalBoundDepth": 17,
+      "completedCp": -271,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 155432,
+      "totalSearchNodes": 200150,
+      "completedNodeFraction": 0.7765775668248813,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 39,
+      "san": "Be4",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "d3e4",
+      "finalBoundCp": 78,
+      "finalBoundDepth": 18,
+      "completedCp": 83,
+      "completedMate": null,
+      "completedDepth": 17,
+      "nodesAtCompletedScore": 143517,
+      "totalSearchNodes": 200219,
+      "completedNodeFraction": 0.7168001038862446,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 23,
+      "san": "a3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "a2a3",
+      "finalBoundCp": 89,
+      "finalBoundDepth": 16,
+      "completedCp": 97,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 155509,
+      "totalSearchNodes": 200218,
+      "completedNodeFraction": 0.7766983987453675,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 41,
+      "san": "Bxa8",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "e4a8",
+      "finalBoundCp": 97,
+      "finalBoundDepth": 20,
+      "completedCp": 97,
+      "completedMate": null,
+      "completedDepth": 19,
+      "nodesAtCompletedScore": 733131,
+      "totalSearchNodes": 1000339,
+      "completedNodeFraction": 0.7328825528145958,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 24,
+      "san": "Bc5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "b4c5",
+      "finalBoundCp": -107,
+      "finalBoundDepth": 16,
+      "completedCp": -102,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 149147,
+      "totalSearchNodes": 200002,
+      "completedNodeFraction": 0.7457275427245728,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 42,
+      "san": "Qxa8",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "d8a8",
+      "finalBoundCp": -122,
+      "finalBoundDepth": 16,
+      "completedCp": -120,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 138970,
+      "totalSearchNodes": 200197,
+      "completedNodeFraction": 0.6941662462474463,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 31,
+      "san": "Nxb5",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "alternative",
+      "uci": "f2f4",
+      "finalBoundCp": -451,
+      "finalBoundDepth": 20,
+      "completedCp": -408,
+      "completedMate": null,
+      "completedDepth": 19,
+      "nodesAtCompletedScore": 246837,
+      "totalSearchNodes": 1000250,
+      "completedNodeFraction": 0.24677530617345664,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 31,
+      "san": "Nd5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard",
+      "rootRole": "alternative",
+      "uci": "c3d1",
+      "finalBoundCp": 216,
+      "finalBoundDepth": 16,
+      "completedCp": 226,
+      "completedMate": null,
+      "completedDepth": 15,
+      "nodesAtCompletedScore": 103020,
+      "totalSearchNodes": 200125,
+      "completedNodeFraction": 0.5147782635852592,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 43,
+      "san": "Qg3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget",
+      "rootRole": "played",
+      "uci": "e3g3",
+      "finalBoundCp": 109,
+      "finalBoundDepth": 20,
+      "completedCp": 102,
+      "completedMate": null,
+      "completedDepth": 19,
+      "nodesAtCompletedScore": 964007,
+      "totalSearchNodes": 1000128,
+      "completedNodeFraction": 0.9638836228962693,
+      "scoreAvailable": true
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 27,
+      "san": "Qe1",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard",
+      "rootRole": "played",
+      "uci": "d1e1",
+      "finalBoundCp": 44,
+      "finalBoundDepth": 17,
+      "completedCp": 43,
+      "completedMate": null,
+      "completedDepth": 16,
+      "nodesAtCompletedScore": 169246,
+      "totalSearchNodes": 200056,
+      "completedNodeFraction": 0.8459931219258607,
+      "scoreAvailable": true
+    }
+  ],
+  "replay": [
+    {
+      "gameId": "personal-01",
+      "ply": 13,
+      "san": "Bxc3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 9,
+      "san": "Nc3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 11,
+      "san": "Bxf6",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 11,
+      "san": "Bg2",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 16,
+      "san": "Nxh1",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 11,
+      "san": "Nxe5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 14,
+      "san": "Nf6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 10,
+      "san": "e5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 12,
+      "san": "Qxf6",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 13,
+      "san": "Bxd6",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 20,
+      "san": "O-O",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 12,
+      "san": "Nxe5",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 16,
+      "san": "O-O",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 12,
+      "san": "Bb4",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 19,
+      "san": "Nxd6+",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 14,
+      "san": "Qxd6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 25,
+      "san": "Bxg5",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "unstable-score"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 13,
+      "san": "d4",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 20,
+      "san": "b6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 18,
+      "san": "Rxf7",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 24,
+      "san": "g5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 18,
+      "san": "Bg6",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 27,
+      "san": "Qxa8",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 15,
+      "san": "Qxd4",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 22,
+      "san": "Bb7",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 19,
+      "san": "Bc4",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 29,
+      "san": "Qxe5+",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 19,
+      "san": "O-O",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 33,
+      "san": "Kd2",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "unstable-score"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 16,
+      "san": "d6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 26,
+      "san": "Re8",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 21,
+      "san": "Bxf7",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 35,
+      "san": "gxf4",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 22,
+      "san": "Qb4",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 35,
+      "san": "Re1",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "unstable-score"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 22,
+      "san": "Bg6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 32,
+      "san": "Bxf3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 22,
+      "san": "Kxf7",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 37,
+      "san": "Re1",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 24,
+      "san": "hxg5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 24,
+      "san": "h6",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 39,
+      "san": "Be4",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 23,
+      "san": "a3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 38,
+      "san": "gxf4",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 27,
+      "san": "Nxc4",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 25,
+      "san": "Bh4",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "unstable-score"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 41,
+      "san": "Bxa8",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 24,
+      "san": "Bc5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 40,
+      "san": "Rhg8",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 29,
+      "san": "Nd6+",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "unstable-score"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 27,
+      "san": "Qf2",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "unstable-score"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 42,
+      "san": "Qxa8",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 26,
+      "san": "Bg4",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 42,
+      "san": "Bxe6",
+      "originalStatus": "verified-experimental",
+      "replayState": "verified-under-replay-policy",
+      "reason": "verified-under-experimental-policy"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 31,
+      "san": "Nxb5",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 31,
+      "san": "Nd5",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 43,
+      "san": "Qg3",
+      "originalStatus": "abstained",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 27,
+      "san": "Qe1",
+      "originalStatus": "abstained",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 46,
+      "san": "Rxg8",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "unstable-score"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 33,
+      "san": "Bxb7",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 33,
+      "san": "Bxf6",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 45,
+      "san": "Qxc7",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "unstable-score"
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 31,
+      "san": "Rxf2",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "alternative-above-guard"
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 49,
+      "san": "Kd2",
+      "originalStatus": "rejected",
+      "replayState": "excluded-under-replay-policy",
+      "reason": "played-below-guard"
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 35,
+      "san": "Bxa8",
+      "originalStatus": "incomplete",
+      "replayState": "requires-additional-searches",
+      "reason": "incomplete-coverage-or-second-budget"
+    }
+  ],
+  "protectedFiles": [
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/results.json",
+      "sha256": "f6427ba0e0dae158eade163cbcc21f4d2c680bef78c9c90e3c15ef78e5819b74"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0001.json",
+      "sha256": "67aa2e5ede8db6dd0d48b4028a4eb96e35730acc2a01ea45bf906cf5cc00831f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0002.json",
+      "sha256": "c9bd94acae6394ba84838c8ad2d9b0689d71e0157f94d16f3965ed247ad7e8ca"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0003.json",
+      "sha256": "a8de362407af4df3454959bdd8f1ada0352ab69b7a4a2060c4b944f7ffc4c632"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0004.json",
+      "sha256": "7e84d748c913416b5fc6e98ebf33757675dec952064d8295d1b0de3b0ba64bc0"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0005.json",
+      "sha256": "819efa80400241a4031ff62510ab146a75df1670238411d86462866ab12526c8"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0006.json",
+      "sha256": "8d572f4108d94179baad3ada89e017a297c199c54892c3faaca475e62ef6ae5a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0007.json",
+      "sha256": "0eea5e2631677abe0e2b6a5ec8e55e1de5a75daf048fff66ab8a0eb2570dc18d"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0008.json",
+      "sha256": "fed710441a7325f6400abe3b4218441414d161569758426ff24fe94d51c3e3af"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0009.json",
+      "sha256": "a55775b9f8a7bd4cc7bae54bf3907d12a18e4529c72b291b588f8b9dffde46ef"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0010.json",
+      "sha256": "e46ba843d0c49bef9f0cee4a22e13cb40c43a46f5953822801513783a99e1635"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0011.json",
+      "sha256": "3622a5b36d1c03133a44f6ff1740c2b760b977ef54867aad800a2b3f758299d1"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0012.json",
+      "sha256": "d2ddd3e31b753cd4056185a7bc70037625383dc1d4287be81a7e99c1971d1bd4"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0013.json",
+      "sha256": "f09f3a65bb192c8b273d5851b27aa01fcb5756e7b0699fc255f3073de303fcb8"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0014.json",
+      "sha256": "5f996b0de2f9e69d0c09653a0fa6165b694e6804bd393d59db25a44a856b0340"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0015.json",
+      "sha256": "c240cf1790da82254cf3cc743d019fcf8b243d8b6d22e490e00c88a97bd20121"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0016.json",
+      "sha256": "00f55626ea0f8939a5d29ed882d32f0f753ff9fe7fbed2eeea0782e077a7bbeb"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0017.json",
+      "sha256": "e7d1b1d6fd2727763c6bf46bf92474cbe317c86479d9a45ed97853ef0b03d037"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0018.json",
+      "sha256": "c8a87dd1dba31bb0dfad0fbf3ba4af4c7ddabfc3d648136c7a7ab7b4c1f79ddb"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0019.json",
+      "sha256": "eeb45ff5341c0c02db6812148fdfec6bfd08fb32a322c64162ff48c36559357b"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0020.json",
+      "sha256": "ff6c350850413d9cd3d722c95733e538328b5423aee26d3429eaf02ca3b1421f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0021.json",
+      "sha256": "eb40b4854cd9993145fe1a479e47f7b4504f076e4042591d6862670ee86b5130"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0022.json",
+      "sha256": "11e4e3f943b5d00055a3bd5084fb7d078af45c3c24309d440339159f253d7fae"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0023.json",
+      "sha256": "07d1e06567ace307806fb4f97397934dcdbbb036a518eea862db3badc0222181"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0024.json",
+      "sha256": "795f12a7397df88746d56d4eadda66c1f3aafb465f4dbb134ad25f4e1f1e00b9"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0025.json",
+      "sha256": "39e38c48ca78fefc55f7258b1ebcdfa4a5e4d602eb227a21a3f81c11c1576718"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0026.json",
+      "sha256": "c8a05ded933f3f604d4f7eeee055c6fd2fe841b16ae1a90b46a34917b055de13"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0027.json",
+      "sha256": "fe8b0791b849ff51cf89e74957024428920b37371ba09055a0fe2197d3d2e745"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0028.json",
+      "sha256": "e6d9754cd055bd1a2620421c9be07306ab1deca4da0851fafc22d0077ba50ea9"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0029.json",
+      "sha256": "ed45491d296f9fad86db5400c74524efb7feb73a4bdc5a473c2f5349d51585c6"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0030.json",
+      "sha256": "7a6ae5eb989d340f771f2d77cbdf8d96c54eb64f290ba95e92cbfa498c9544ae"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0031.json",
+      "sha256": "0ad89ed5d261e702dc3d861da68b273e56c76125d9ec82d5a07905e4e0963910"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0032.json",
+      "sha256": "53b44e62dd81d2f3e7dec83fd4d672fb375268c1f05bbb9395d82f080a9b2d7a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0033.json",
+      "sha256": "5524bab602ec4a62c1fbeccec88c2c71c131cbaf61d6fe5bdaee12de7602a03c"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0034.json",
+      "sha256": "9905ad834a062a02f69b6742b06c224f039a655a5f03ad6ffc98979dc992d0e1"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0035.json",
+      "sha256": "8f9a0f06e6323970b48d68f89f2b8154e9ef68cc3d23a1cc8d571f3d8b8ac071"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0036.json",
+      "sha256": "d2c2b8f87f7e2af886fdd7e3a8a441ecb0879ff129c0ea66451aaa69d6914ac2"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0037.json",
+      "sha256": "692a89c9f0ef928acb7f9fd03f4e4ed25b09fb44f71a40f2d5bbca4c9cafbf76"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0038.json",
+      "sha256": "c2716fa54017994f819df74e11b38922aadbf44ad31c215431c713a4edb686a4"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0039.json",
+      "sha256": "9aa7a960ab0a8caa6988a90c840798b13f9e55a2bf389512a8283ddcc10bdfe0"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0040.json",
+      "sha256": "1b372e9ccf3d07f3ce92168c198284fb0a1f9f132b3bf3e8c1d12a2d25fea467"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0041.json",
+      "sha256": "0e96f858f215d6b2d929a74ffe5e120ed21ffdea960f61d929c600610d98e434"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0042.json",
+      "sha256": "6d0464e417ab4f2c94f12145f06e2b4264cac46c942762dfa5845d85933c3e0e"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0043.json",
+      "sha256": "955d557a399f84ce5c175d13928d87e990cedd8c04e0dce26dfa721831f17246"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0044.json",
+      "sha256": "5bfab267d43620a492da85df535f7ae4766cdbfa05def1e9d2083b8a037217ac"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0045.json",
+      "sha256": "585579f41d23ed50f0c42eb7d9086792da1b7933135833cfce63dc9effcc90a1"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0046.json",
+      "sha256": "9021e5a2faec5f4bd63c5eb6c44521166f3f37415945ca41b3693081e036f23a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0047.json",
+      "sha256": "093004556f9075a6c08c2b1b9d5bb104fef466259cbfa1cb263e1f69a55d393e"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0048.json",
+      "sha256": "7bd51f15cf132b6e3306ef7a7f894cb95750a4ba12cbd3f5243b3cf34292322c"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0049.json",
+      "sha256": "29a08fbebd92c1d56a8871af074d9380c7e14faaf5425412f1cb327493ba0fd5"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0050.json",
+      "sha256": "c16e21234b3c446670a0374ebff31b32944fec8bc4aa84574dc20ecb3ceccf3b"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0051.json",
+      "sha256": "60b5a1270a96377db515fa29027776612218d48d19ce7a3067a55e6a6f47155e"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0052.json",
+      "sha256": "cacf5cf44fc08e4cae2438e1fba83be27c120c8ed5e4de29350bed40905f9b6d"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0053.json",
+      "sha256": "5cea001a49705849982932016c8b99d69e5b8528dc7cc1beff2f4583db5e4452"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0054.json",
+      "sha256": "d6e65f9ceada3b96066f7501868ea52c6f527402fcb9100f02dc71909dff44a7"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0055.json",
+      "sha256": "e5dbff1ccc3d911433b87b3f7b063a2af1e87fe869b602144bb8c65e2e86913c"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0056.json",
+      "sha256": "4153559c413d80baf4c9550d2cb749b813de24515a5e8551e9447de59ca40b4c"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0057.json",
+      "sha256": "211bea2da4fc268b46f5b4ef070f40b319ab736339740558761ecc26261acbb9"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0058.json",
+      "sha256": "fbafd6824b395f8fc25e39b8117c35b49b05d25464265038d9e01013df41bf0c"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0059.json",
+      "sha256": "490e5179bbe0ca0480bb1e25432a54f13d2965b59ed60d4069872de741560f24"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0060.json",
+      "sha256": "795182f39b585ae5c542926e2ba33a7dfc90a2ba9cbbcb38def5a4f77c867ba2"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0061.json",
+      "sha256": "756e30209019f97ffc22ff74185fcea5babe03e7d920d0b15c86231d9c485c4e"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0062.json",
+      "sha256": "e4bf8b875dc43e6161175e533754268bb78421bd89da5ef32bbb125e923b7df2"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0063.json",
+      "sha256": "f09a6b56d14b56035b5241f2fd86addba52ad97af2a282329e044588f67cc2fe"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0064.json",
+      "sha256": "4fad3b4bd9c581b2f7dc57c6062d9f91d0e088761c96c88d74cd793e3785ee10"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0065.json",
+      "sha256": "ff4f38e5f0d64f6b2fffd90b06293214640cf1c1779044272d0b3e8897ed7ee0"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0066.json",
+      "sha256": "4d1e4027887414d45169b959cb2bf763ab51fe3ab36da7eabd17fce2b47f5f45"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0067.json",
+      "sha256": "197e1ad3fc02076e40e527ce9bb852c73ac74e6909611d04a059e1419117c882"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0068.json",
+      "sha256": "820300637689ac244066d316add9c857b3688f79abe330835832a44951b925d5"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0069.json",
+      "sha256": "444bf4cf5d8546583e3796634eddca3197b5ccebef83c53ab8e60822da3e1b8d"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0070.json",
+      "sha256": "a855283aa4a7beada1ee2045ddaaad4e0fc0b464b04427e1790ff433537e5f0d"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0071.json",
+      "sha256": "b88c1b414637b9e0eaa687deb3ce7e799a0a37dc8fb6b0a01eb7c7a7d1b5de47"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0072.json",
+      "sha256": "e1dbd3aaa935bb7245647d97053f59a6f56763c03c4e7a2841255597bf041508"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0073.json",
+      "sha256": "7feef29e85529f674f2ddb428be26988ff06eca282cf5d4f441b47cc79587674"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0074.json",
+      "sha256": "f4859af08722fdfd53bba1c1b5594f700aae6033b4bc6b8761c2a4572961a6d7"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0075.json",
+      "sha256": "c542bb978992aa35ccc60d53dc8181a52258593e7b5ae86d09871d29e885beb1"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0076.json",
+      "sha256": "a60806f7129ee6e85686e42f041071ec2f68bb4b2a8fbacdf94b07648996b003"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0077.json",
+      "sha256": "3115da9ce3b7f4196db155f21b977012ca2089e2006e07831acc91101ca4de92"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0078.json",
+      "sha256": "f6f00114e515711c68d142d682414181e774a6b7f77c8870ef1d45b5e928a70d"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0079.json",
+      "sha256": "f7e93ca55245472f572f8deb279ad3bb95dcc61b01f8ba9da3d55da3b6d52159"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0080.json",
+      "sha256": "a8ee313af9d441a8e1fa629043500ceb5143f42645da91b6e378314211800ed4"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0081.json",
+      "sha256": "c183c5171f72b380447859c089615518717f6a6fb5b6b7ab294f5c1967f9caf0"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0082.json",
+      "sha256": "4821d24be4b6b333a7e799ff8fffd310b605fc9bce295f58b2fd060925e7253e"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0083.json",
+      "sha256": "f2e14f0931bf361375259260dad78dc25936ec9bd204d5defb6e122ae7195129"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0084.json",
+      "sha256": "e06916ba55fb652c181cf6ba833b3e99171a290e7ed29ede08dbe5383cb4ace8"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0085.json",
+      "sha256": "5b8a5f606c90135f9f58a402dd43a4dcb607b8b34f01f5eda6a6f809ad3845f4"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0086.json",
+      "sha256": "1310536caab8ef747da9c2ff44e2e4133fe17e70c181a47a695cae1728039e36"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0087.json",
+      "sha256": "f90fafb705f81a3e53f7eadd791a0c55785091b14d55a7e4036e2fde790dc6ab"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0088.json",
+      "sha256": "061ddb3eaad12c09794af28af5b0e63e07c5c3bba7edb2d7745cd9258276c6ca"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0089.json",
+      "sha256": "40806b6ea301cf203f09167081476f34cc2164c33b9cd7be4a8f30328d69a30d"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0090.json",
+      "sha256": "edb2d7844171c596a552338f48ca069bc9b77a19d472d6fc22ee1f3087eff2c5"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0091.json",
+      "sha256": "d2f57726f8c1166916c07a5ff1d4f4b91dd7dc9fd143a00c50e01c6791a17b36"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0092.json",
+      "sha256": "b1837b474ef60def11043def3be1c45b1474fb49ffa551f470f8dd06a8b37c18"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0093.json",
+      "sha256": "ba5969b51241049148c4d558da231b025c0f55c440b3827644aa4302d54b6ba4"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0094.json",
+      "sha256": "9bcc95b150834c4cb3086a5d3de75c5de5697bd79ed43fd21d88182cd937f9d8"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0095.json",
+      "sha256": "380c3915d39e269141ca22f7138d7beff45fe29784e1632627395fc92b8af586"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0096.json",
+      "sha256": "173979bc8d31d95b1e61400489ca344d8bd1b3c277fa898e7267932fa448d920"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0097.json",
+      "sha256": "25690da035f4344ab27ecd2d57dfb1affe784419909cf6be73d06648fb55f981"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0098.json",
+      "sha256": "3cae0e696f19b08a1b9bc7cccf6e926297affb681fc3c406a2828ee83ac80d5f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0099.json",
+      "sha256": "af675e5a5a9176239b8328230b8e645a811e91e9bb7a6a664dcd739fd013b83e"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0100.json",
+      "sha256": "a5b439b039969d60f1097fdb5839ec232ce50c943d01b409bbcb0e535f517e02"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0101.json",
+      "sha256": "ef28c9c6259d5bd1e9d9669d4f00749d9c0a7828f798a8e2144eb5b9e0de6199"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0102.json",
+      "sha256": "505e40719206139732d5398137fe101dbe3b6dc0cdf530c2e0019258cf891712"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0103.json",
+      "sha256": "645cd9e95f167c99b4ae24f3c7377c95cb8452e8ed4939dcf6e822dfa4392f21"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0104.json",
+      "sha256": "c7b5dd3f043a09b51733790d3417c90576e59bc8b847184f859594627b4b77a0"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0105.json",
+      "sha256": "da4c45d87d625c5a94f35294e8771b55efe47e3d7b2791e8da54cee17a31e5cd"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0106.json",
+      "sha256": "641ddd3d88cbfedddda501bdfab2ebe5b127ca52b30739e210dbbb95e07b66f6"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0107.json",
+      "sha256": "ab92e1c4d59b321855a8c96ed1df072122ced0d069900cbe4d468098ca0acf13"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0108.json",
+      "sha256": "34a2ec3f77d0cf24c1e5a17a35be7d30aa09e97c87394375a0fe1519c1910d78"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0109.json",
+      "sha256": "495d7e4bb5d255519258ae59d0453dbd9a87fd4414ee6c12b1710bc31ad2fd36"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0110.json",
+      "sha256": "314a96617d5485f772067b8e0be84f71142e352832a4465843c48825938467e7"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0111.json",
+      "sha256": "94495252f42f012f7b43f1d22e09012e267f704c1806828fe01fa409b97a4cdf"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0112.json",
+      "sha256": "e92a45385206f885aebce73b6554bca91f32f1dfd9d76a29e9ea2e8a0e15410f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0113.json",
+      "sha256": "6ab949d2f18045e8cb6d0e278f30f9735fe008c5f1e13b8f7dec5a8c624826d6"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0114.json",
+      "sha256": "3ecfce84b55f882fbb83f181d99e79146fd15e1c48f789d8d8d865f58bb9e94b"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0115.json",
+      "sha256": "cb1d882e6a47e5585eae78dc8dde07af8f9e4c04f453967deead855692c0051c"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0116.json",
+      "sha256": "523781d30c42d9e0eab3ba92aa347d42cba0ca1540fe4cd4eaf969833a2d5fbe"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0117.json",
+      "sha256": "11225ed0568b2284ef709b6c1c4d954ffb041eff57f218374b5e4f32141f3dfa"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0118.json",
+      "sha256": "73f486bfae83a8e5cb03d711b4bc8710d53e7f17750504680843933d1678e726"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0119.json",
+      "sha256": "60b8233147ad8d1f3c0d54c2d88d040b58eceae1e3a68ef1115ad552d1df2a5f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0120.json",
+      "sha256": "0fb8092d4a3e10ff94dc6198eb30eededa0ea2e31d0da0518e483981b1f09041"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0121.json",
+      "sha256": "118c3dea99217543f6054fdf1d197e0b6c2eed4217e89229dfd212f21cf7ae3d"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0122.json",
+      "sha256": "742a15a00eada51625f2cc0b35cc3619f0c09f324f93ea039a22ab98f168e458"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0123.json",
+      "sha256": "1d915616c81d7e4a679f1398c5a9fe208f6528c48e3ac282f64553b7e700a511"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0124.json",
+      "sha256": "ba3c3428c47066729a1fa3ad1dfa15f5d1a3a145623eb25789ca3c7c6e700ddc"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0125.json",
+      "sha256": "1dbc93d1edd814afe809c7aaec3de2b3108529adb683afd3586c571b69e26558"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0126.json",
+      "sha256": "abc133077247fdcca6993499ead679faa051f75e8555451a60714c9eaecf6d49"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0127.json",
+      "sha256": "fa33cb151d350a4f3526c852e51c57502d10fbc785da61ea1eb772452e952bb8"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0128.json",
+      "sha256": "4977f1519a4a91fb6f6f5fef1febf428e777e518a2ff61a1b881b6aa1f27e7f6"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0129.json",
+      "sha256": "84387b935936f3bc205b0e5ae66f4e23523abeef3b8fb03d030712012a140276"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0130.json",
+      "sha256": "dd9ed9663ad276c3ad814ea53fe1f0720784a26ec2bec96ba5fe541b44772998"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0131.json",
+      "sha256": "3f09e5a491fc6e852409216d29173949da8275c764f417837d63b539c4ea292f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0132.json",
+      "sha256": "644b1891e28101c0cf01c6939e3afcae6123151e60ad0ff5cddec708404da43b"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0133.json",
+      "sha256": "60aa89b5a2f6878631747d816c1e9ceb60b72adf7d748e878768faa5a50c2f84"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0134.json",
+      "sha256": "6f008357483036aca9f2223e9c9b4ff3e488aee72c1318877fb01bc22e0fd9bc"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0135.json",
+      "sha256": "b84b4c92bb4dfcc3bee078b6b188663df780688e34a1ff8f83d9dda98140bd55"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0136.json",
+      "sha256": "bf872e852b42484cf618c7a8ceb02373b0949c398df7016695ef9f1052a3571f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0137.json",
+      "sha256": "f36c7f56381b9e3daf5531a7d67cc4ccdc324e68a57d30d3f65f24ae9d11bdcf"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0138.json",
+      "sha256": "df0369761e2003cc30295ead740a239a8c7efa7605ecc738771f91a1aa37f7ce"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0139.json",
+      "sha256": "e8311cd83aa76479f312294d400e3e222d8dc8f864d1c9b38ad03f13b9af385a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0140.json",
+      "sha256": "0f20678121a489a2c2e5b9bc114de632f18fe3acec427c83a7463b92de674577"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0141.json",
+      "sha256": "99ada97be999e75e5677ba46e1f1468064f730acbf45a4a43a445da94a642523"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0142.json",
+      "sha256": "1278083294cf36b2c6ffba89ddcf1b08b1898598deb02595b4dc1a3eac6bd937"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0143.json",
+      "sha256": "a6896d45d2b9db59205f5b873466ba5670327c50d8aa16c06e952b450fcdc4b5"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0144.json",
+      "sha256": "3f190ac5922a481ea645eecba21be773a0d67d6af268c308bd481703cae1d70a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0145.json",
+      "sha256": "29c4b559545bdf5fef25573ce81ef88c46bfe0acd23a44b1696f9b1be43faada"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0146.json",
+      "sha256": "1c7d6eb223c085526fdbf31a3178ce6c45ed1541082ea69244d948f13060c72a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0147.json",
+      "sha256": "75ccd87e820ae90b1fcc19e8b9117918822bd06602bdc86387fa3503d7bb3a3f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0148.json",
+      "sha256": "c77416c52a003cfd1805c19a57e31a2f63a1edf8b9099d7eeedfd6f653475576"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0149.json",
+      "sha256": "7dbaf550a6fed9cb2da6a94962341100426c7c92c299b845c70d18dfd4a6a367"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0150.json",
+      "sha256": "a9c3a7ec5cf3707de6d31aa36f8a3d55c633d1efdf4d6d10eb2da8917b9f05c4"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0151.json",
+      "sha256": "7775051d03242089bd7d68e802986667dc1dc1c1222fa8663ad6902d6bace2e0"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0152.json",
+      "sha256": "78707246c2bf6bbf56b0a3ad1df215994d231cf5cd5aa1dcdfc7d8f86bc95a22"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0153.json",
+      "sha256": "f25f1b504360aabe103d54563688eab1b073f208c4b27db58d93607f0d69c869"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0154.json",
+      "sha256": "792420e7848c3d5d70e596dd0a0d9525de67f99f830ff0864cc01dc0bbeecb57"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0155.json",
+      "sha256": "5922a2b8ea4ce2f06bba9d1643cba5ebd71a503c977436bb3284363f854365cc"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0156.json",
+      "sha256": "d69e2cb5c5c72e68402e29970dbf50b30701d0ad48c95b7cc241370cf65d7d8e"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0157.json",
+      "sha256": "cd64ef222f32be4b48e828c96507ae3ddde19c57a630c5815f9b7914de762730"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0158.json",
+      "sha256": "661e4d836096d05ed3ffb03d15774e120ead6da6292cf163b32d8e05ce8fc0b8"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0159.json",
+      "sha256": "ab578e0c1f6b3b622aed5c1bc2e07dab0e944282d333a5d399042c6f540fcd59"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0160.json",
+      "sha256": "d7e76c061fc273198888252eacbf3abd2fd3eab1bac903f058439db2160b5fbc"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0161.json",
+      "sha256": "c9533938aa8f166113eeef3a90699842ee23bc987558c7e7b1604b821a3974d6"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0162.json",
+      "sha256": "d91e92204358951b59382affef52193c183fd1d10484f34a0196b6b95be8b5bf"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0163.json",
+      "sha256": "5539464b553f1886bafc5bec62084812bdcf29057c3203b54982aebade1209f3"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0164.json",
+      "sha256": "e35342ffe90fc4fd18ed3e7aaf1b1e71dc6726d6a00f783dc2fd011dd10cdbea"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0165.json",
+      "sha256": "043c2da6a0ceb326faa995cf30f83d9afb4b1b07b3e246cf647a37e2484865fc"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0166.json",
+      "sha256": "453238bcabedea3b67409029b39d22de417309863a44508f6ae143a24d278775"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0167.json",
+      "sha256": "70b74fac2b5123942a85b89e2182f2b7076098a298384546b769149f7d9cf032"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0168.json",
+      "sha256": "993fc1aa10a2387a06dc626c4bc1a78100d292fda5419456e3c364db729e1740"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0169.json",
+      "sha256": "bd01a3865311f23197fcc11930dd85a9d07e1f30dc081b6dbe8cf02c24836b12"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0170.json",
+      "sha256": "7ccaa02090e7bb19e7602ace252a5ab7d537dccb6bdc5a8bebad830e51f91153"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0171.json",
+      "sha256": "e0585ba680bae8507d8ec00507d7f367991715dd1e32b8e99fb49f4fae22b47a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0172.json",
+      "sha256": "83ade3d3d4d3dfd9dfbe2e4fbc062fefe49f18f9d5773a5302e377b33af2a609"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0173.json",
+      "sha256": "e954c96f8de3d6d7a3a45f79fd3d037b0a8d618e46d4854d0cfd6c1abcf34088"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0174.json",
+      "sha256": "1e2a1ad60e7ac294829f63193533c3cece694a4497fa4feb72c58917fc5a1067"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0175.json",
+      "sha256": "566be9079dc663ce5737acfad6ac30d9bec15768c55834ea0b0162ca55d3279a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0176.json",
+      "sha256": "728122ed7319c912319df689ee025332d748d7cf25dd86218087726ab48b8413"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0177.json",
+      "sha256": "56ac19c45a2b42622a486001a3cc7bfa432ae83eda0c9c908755a3d27d4b1298"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0178.json",
+      "sha256": "270705cecee85c1ffe5b006b86afb0ea7e1d41a94b1e21e03df53e2060b0a77a"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0179.json",
+      "sha256": "66f88c19127e61ba6b054577eb805f799964084b93d853ae6bed1f97cb64d5a4"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0180.json",
+      "sha256": "a5e8e00783ea1cd3ec64803a004647bd45353b9e0d5bfd6af18faae226e9b1fa"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0181.json",
+      "sha256": "928d18b26974c5179d0b63a4a4a6a0e3b3b8497046d31354c5f6aee823e08676"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0182.json",
+      "sha256": "c351158c34a349aefcf452c2a928cc26c632b665de587052bd0bbdb935acc151"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0183.json",
+      "sha256": "0e2ef072a9761aa6355bb7b5ba2b0c4309445e2504ba3609daa2c3e28944e089"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0184.json",
+      "sha256": "a0812debab6060a247b6a0bda7f0f4a0eb5e42a038d812d0030b5da945283e0f"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0185.json",
+      "sha256": "94dd4f416885e86a543421446f1a201976d9952db9c7917e0dbd8de8f675cc2d"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0186.json",
+      "sha256": "d8bedb6671b52041723d9e2dc181a1d7c7048c09fcbbd511894adaf212a833c6"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0187.json",
+      "sha256": "ff388b71e33c5380e91f063801f93fa88ea8139e97f17671754e04890e590a92"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0188.json",
+      "sha256": "126b512831352aef1c438efc4235e6ceb99e703d0842ebedcdb492cdffe0bd11"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0189.json",
+      "sha256": "1f8c6c7715abf9d73db44728447f8360742a694c629bd88ae713d7e75968630c"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0190.json",
+      "sha256": "f668f94fe63affecec8f518c60441e26515b5893c57162b2f1e4d9b1ebca1030"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0191.json",
+      "sha256": "4f06dcd9a03110fb605deb5e1f6b3e57a0a81087521dc62d261bfaa9f095d2c1"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0192.json",
+      "sha256": "acd0c844bb927b8dc553c2728d9f9fa700ea4cc38630b0e84cdb5fc4f4ebeb4b"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0193.json",
+      "sha256": "1cc8304377f8c64a2610b4bec8b454fdb540b79afd088e94722c46bb35092503"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0194.json",
+      "sha256": "f2413bff60cf0d77dcf982de337b3b41824868ac218da39242936751bb7ffdb7"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0195.json",
+      "sha256": "6f457a25689c4458d0e58b61abc2d4929862479b29c9cf2b039ed58d82898ed0"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0196.json",
+      "sha256": "4bc1fa5a35a8cc90bdf12a95507cd98607df1c08b8e9e4eda0c3e169394bae86"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0197.json",
+      "sha256": "8abfa6b986a1c343e22f19be40f0de97a6139c0dfb7c15c36fc15b15342d2d12"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0198.json",
+      "sha256": "b30b5ec082b36e6e65ef7c952b098649718272dad919121563265e876efedff1"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0199.json",
+      "sha256": "8b0a8071e62661e39e65180f7b82b22ee15a1a54591e13c16105227bc37b27ee"
+    },
+    {
+      "path": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0200.json",
+      "sha256": "f9a9039f87ed4d9a212bd013c1f41aef2f3edfd33331e8e1e78255d43ebda4f3"
+    }
+  ]
+}

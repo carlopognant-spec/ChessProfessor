@@ -1,0 +1,79 @@
+{
+  "gameId": "personal-03",
+  "ply": 56,
+  "san": "Kc5",
+  "uci": "d6c5",
+  "legalCount": 19,
+  "status": "rejected",
+  "reason": "unstable-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "d6c5",
+      "scores": [
+        {
+          "evalCp": 757,
+          "mate": null,
+          "bound": false,
+          "depth": 17,
+          "nodesAtScore": 200358,
+          "pv": [
+            "d6c5",
+            "b3b4",
+            "c5d4",
+            "e2f1",
+            "c7c5",
+            "b4b5",
+            "a6a5",
+            "b5b6",
+            "h6h5",
+            "e1d1",
+            "d4e3",
+            "d3d4",
+            "e3d4",
+            "d1e1",
+            "d4e3",
+            "e1d1"
+          ],
+          "raw": "info depth 17 seldepth 20 multipv 1 score cp 757 nodes 200358 nps 286225 hashfull 69 time 700 pv d6c5 b3b4 c5d4 e2f1 c7c5 b4b5 a6a5 b5b6 h6h5 e1d1 d4e3 d3d4 e3d4 d1e1 d4e3 e1d1"
+        },
+        {
+          "evalCp": 864,
+          "mate": null,
+          "bound": false,
+          "depth": 23,
+          "nodesAtScore": 1000070,
+          "pv": [
+            "d6c5",
+            "b3b4",
+            "c5d4",
+            "e1d1",
+            "d4e3",
+            "d3d4",
+            "h2e2",
+            "d4d5",
+            "h6h5",
+            "d1c1",
+            "e3f3",
+            "b4b5",
+            "e2e8",
+            "c1c2"
+          ],
+          "raw": "info depth 23 seldepth 26 multipv 1 score cp 864 nodes 1000070 nps 358576 hashfull 311 time 2789 pv d6c5 b3b4 c5d4 e1d1 d4e3 d3d4 h2e2 d4d5 h6h5 d1c1 e3f3 b4b5 e2e8 c1c2"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0148.json",
+          "reused": false
+        },
+        {
+          "budget": 1000000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0149.json",
+          "reused": false
+        }
+      ]
+    }
+  ]
+}

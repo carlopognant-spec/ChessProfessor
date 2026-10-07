@@ -1,0 +1,107 @@
+{
+  "gameId": "personal-06",
+  "ply": 39,
+  "san": "Qg3",
+  "uci": "f2g3",
+  "legalCount": 30,
+  "status": "rejected",
+  "reason": "alternative-above-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "f2g3",
+      "scores": [
+        {
+          "evalCp": 900,
+          "mate": null,
+          "bound": false,
+          "depth": 16,
+          "nodesAtScore": 200082,
+          "pv": [
+            "f2g3",
+            "f8e8",
+            "f1f2",
+            "a8d8",
+            "h2h4",
+            "d6d5",
+            "e4d5",
+            "d7f6",
+            "d5d6",
+            "e8e6",
+            "g2h3",
+            "e6d6"
+          ],
+          "raw": "info depth 16 seldepth 25 multipv 1 score cp 900 nodes 200082 nps 203128 hashfull 86 time 985 pv f2g3 f8e8 f1f2 a8d8 h2h4 d6d5 e4d5 d7f6 d5d6 e8e6 g2h3 e6d6"
+        },
+        {
+          "evalCp": 904,
+          "mate": null,
+          "bound": false,
+          "depth": 18,
+          "nodesAtScore": 1000357,
+          "pv": [
+            "f2g3",
+            "d7f6",
+            "f1d1",
+            "a8e8",
+            "d1d6",
+            "e8e6",
+            "d6d3",
+            "h6h5",
+            "d3b3",
+            "h5h4",
+            "g3e1",
+            "h4h3",
+            "g2h3"
+          ],
+          "raw": "info depth 18 seldepth 22 multipv 1 score cp 904 nodes 1000357 nps 250026 hashfull 413 time 4001 pv f2g3 d7f6 f1d1 a8e8 d1d6 e8e6 d6d3 h6h5 d3b3 h5h4 g3e1 h4h3 g2h3"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0168.json",
+          "reused": false
+        },
+        {
+          "budget": 1000000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0169.json",
+          "reused": false
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "f2e1",
+      "scores": [
+        {
+          "evalCp": 870,
+          "mate": null,
+          "bound": false,
+          "depth": 15,
+          "nodesAtScore": 200098,
+          "pv": [
+            "f2e1",
+            "d6d5",
+            "e4d5",
+            "a8e8",
+            "e1g3",
+            "f7f5",
+            "d5d6",
+            "f5f4",
+            "g3f2",
+            "d7f6"
+          ],
+          "raw": "info depth 15 seldepth 24 multipv 1 score cp 870 nodes 200098 nps 262940 hashfull 91 time 761 pv f2e1 d6d5 e4d5 a8e8 e1g3 f7f5 d5d6 f5f4 g3f2 d7f6"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0170.json",
+          "reused": false
+        }
+      ]
+    }
+  ]
+}

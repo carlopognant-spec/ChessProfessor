@@ -1,0 +1,86 @@
+{
+  "gameId": "personal-06",
+  "ply": 33,
+  "san": "Bxf6",
+  "uci": "h4f6",
+  "legalCount": 38,
+  "status": "rejected",
+  "reason": "alternative-above-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "h4f6",
+      "scores": [
+        {
+          "evalCp": 770,
+          "mate": null,
+          "bound": false,
+          "depth": 17,
+          "pv": [
+            "h4f6",
+            "a8e8",
+            "f2g3",
+            "b4b3",
+            "c2b3",
+            "c5c4",
+            "f6e5",
+            "e8e5",
+            "b3c4"
+          ],
+          "raw": "info depth 17 seldepth 18 multipv 1 score cp 770 nodes 200110 nps 230541 hashfull 97 time 868 pv h4f6 a8e8 f2g3 b4b3 c2b3 c5c4 f6e5 e8e5 b3c4"
+        },
+        {
+          "evalCp": 759,
+          "mate": null,
+          "bound": false,
+          "depth": 20,
+          "pv": [
+            "h4f6",
+            "b4b3",
+            "c2c3",
+            "c5c4",
+            "f2d4",
+            "a7a6",
+            "f6h4",
+            "e5d3",
+            "f1b1"
+          ],
+          "raw": "info depth 20 seldepth 22 multipv 1 score cp 759 nodes 1000341 nps 221657 hashfull 443 time 4513 pv h4f6 b4b3 c2c3 c5c4 f2d4 a7a6 f6h4 e5d3 f1b1"
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "d5f6",
+      "scores": [
+        {
+          "evalCp": 537,
+          "mate": null,
+          "bound": false,
+          "depth": 17,
+          "pv": [
+            "d5f6",
+            "g7f6",
+            "h2h3",
+            "a8e8",
+            "a1d1",
+            "h6h5",
+            "h4f6",
+            "d7e6",
+            "g4g5",
+            "e5d7",
+            "f2h4",
+            "a7a5",
+            "f1e1",
+            "d7f6",
+            "g5f6",
+            "e6e5",
+            "f3f4",
+            "e5b2"
+          ],
+          "raw": "info depth 17 seldepth 31 multipv 1 score cp 537 nodes 200190 nps 229575 hashfull 103 time 872 pv d5f6 g7f6 h2h3 a8e8 a1d1 h6h5 h4f6 d7e6 g4g5 e5d7 f2h4 a7a5 f1e1 d7f6 g5f6 e6e5 f3f4 e5b2"
+        }
+      ]
+    }
+  ]
+}

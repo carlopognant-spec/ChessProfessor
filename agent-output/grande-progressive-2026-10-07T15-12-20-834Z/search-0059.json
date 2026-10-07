@@ -1,0 +1,44 @@
+{
+  "gameId": "personal-03",
+  "ply": 29,
+  "fen": "r1b1k2r/1pp5/p6p/2qPn1p1/2P2p2/1P1P2P1/P3QP1P/R3KB1R w KQkq - 0 15",
+  "uci": "e1c1",
+  "budgetNodes": 200000,
+  "score": {
+    "evalCp": -153,
+    "mate": null,
+    "bound": true,
+    "depth": 18,
+    "pv": [
+      "e1c1",
+      "c5e7"
+    ],
+    "raw": "info depth 18 seldepth 31 multipv 1 score cp -153 upperbound nodes 200220 nps 284000 hashfull 73 time 705 pv e1c1 c5e7"
+  },
+  "bestmove": "bestmove e1c1 ponder c5e7",
+  "actualNodes": 200220,
+  "elapsedMs": 705.5095000000001,
+  "rawLines": [
+    "info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))",
+    "info string Network replica 1: Local memory. Shared memory not supported by the OS. Local allocation fallback.",
+    "info depth 1 seldepth 3 multipv 1 score cp -38 nodes 2 nps 2000 hashfull 0 time 1 pv e1c1",
+    "info depth 2 seldepth 6 multipv 1 score cp -372 nodes 52 nps 52000 hashfull 0 time 1 pv e1c1 c5a3 e2b2 a3b2 c1b2",
+    "info depth 3 seldepth 6 multipv 1 score cp -78 nodes 70 nps 70000 hashfull 0 time 1 pv e1c1",
+    "info depth 4 seldepth 5 multipv 1 score cp 38 nodes 106 nps 106000 hashfull 0 time 1 pv e1c1",
+    "info depth 5 seldepth 7 multipv 1 score cp -209 nodes 433 nps 433000 hashfull 0 time 1 pv e1c1 c5d4 d1e1 d4c3 c1d1",
+    "info depth 6 seldepth 9 multipv 1 score cp -124 nodes 624 nps 312000 hashfull 0 time 2 pv e1c1 c5d4 d1e1",
+    "info depth 7 seldepth 9 multipv 1 score cp -24 nodes 1068 nps 356000 hashfull 0 time 3 pv e1c1 c5d4",
+    "info depth 8 seldepth 14 multipv 1 score cp -136 nodes 3474 nps 315818 hashfull 1 time 11 pv e1c1 c5e7 g3f4 e5g6 f4g5 h6g5 h1g1 e7e2 f1e2",
+    "info depth 9 seldepth 21 multipv 1 score cp -173 nodes 12121 nps 303025 hashfull 4 time 40 pv e1c1 c5e7 d3d4 e5g4 d1e1 e7e2 e1e2 e8f7 g3f4 c8f5",
+    "info depth 10 seldepth 14 multipv 1 score cp -176 nodes 13317 nps 302659 hashfull 5 time 44 pv e1c1 c5e7 g3f4 e5g6 f4g5 h6g5 h1g1 e7e2 f1e2 g6f4 c1d2 f4e2",
+    "info depth 11 seldepth 13 multipv 1 score cp -176 nodes 13526 nps 300577 hashfull 5 time 45 pv e1c1 c5e7 g3f4 e5g6 f4g5 h6g5 h1g1 e7e2 f1e2 g6f4 c1d2",
+    "info depth 12 seldepth 14 multipv 1 score cp -176 nodes 13701 nps 232220 hashfull 5 time 59 pv e1c1 c5e7 g3f4 e5g6 f4g5 h6g5 h1g1 e7e2 f1e2 g6f4 c1d2 f4e2",
+    "info depth 13 seldepth 23 multipv 1 score cp -184 nodes 28213 nps 256481 hashfull 11 time 110 pv e1c1 c5e7 g3f4 e5g6 f4g5 h6g5 h1g1 e8d8 e2d2",
+    "info depth 14 seldepth 30 multipv 1 score cp -156 nodes 45439 nps 287588 hashfull 17 time 158 pv e1c1 c5e7 g3f4 e5g6 f4g5 h6g5 h1g1 e7e2 f1e2 g6f4 d1e1 e8f7 g1g5 f7f6 g5g1",
+    "info depth 15 seldepth 28 multipv 1 score cp -144 nodes 70722 nps 300944 hashfull 26 time 235 pv e1c1 c5e7 g3f4 e5g6 f4g5 e7e2 f1e2 h6g5 h1g1 g6f4 d1e1 e8f7 g1g5 f7f6 g5g3 c8f5 c1d2 h8h2 g3f3",
+    "info depth 16 seldepth 33 multipv 1 score cp -136 nodes 126197 nps 286811 hashfull 43 time 440 pv e1c1 c5e7 g3f4 e5g6 f4g5 e7e2 f1e2 g6f4 d1e1 h6g5 h1g1 e8e7 g1g5 e7f6 g5g3 c8f5 g3f3 h8h4 c1d2 a8e8 f3e3",
+    "info depth 17 seldepth 31 multipv 1 score cp -136 nodes 139318 nps 289642 hashfull 51 time 481 pv e1c1 c5e7 g3f4 e5g6 f4g5 e7e2 f1e2 g6f4 d1e1 h6g5 h1g1 e8e7 g1g5 e7f6 g5g3 c8f5 g3f3 h8h4 c1d2 a8e8",
+    "info depth 18 seldepth 31 multipv 1 score cp -153 upperbound nodes 200220 nps 284000 hashfull 73 time 705 pv e1c1 c5e7",
+    "bestmove e1c1 ponder c5e7"
+  ]
+}

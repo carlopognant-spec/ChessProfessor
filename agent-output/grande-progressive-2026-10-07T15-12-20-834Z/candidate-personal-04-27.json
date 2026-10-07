@@ -1,0 +1,45 @@
+{
+  "gameId": "personal-04",
+  "ply": 27,
+  "san": "Nxc4",
+  "uci": "d2c4",
+  "legalCount": 33,
+  "status": "rejected",
+  "reason": "played-below-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "d2c4",
+      "scores": [
+        {
+          "evalCp": -461,
+          "mate": null,
+          "bound": false,
+          "depth": 16,
+          "pv": [
+            "d2c4",
+            "b2c2",
+            "c4d6",
+            "e8f8",
+            "d1g4",
+            "b8d7",
+            "a3a4",
+            "c2b2",
+            "f1d1",
+            "g6h5",
+            "g4g5",
+            "h5d1",
+            "a1d1",
+            "e7g6",
+            "h2h4",
+            "h8h6",
+            "h4h5",
+            "g6h8",
+            "g3g4"
+          ],
+          "raw": "info depth 16 seldepth 26 multipv 1 score cp -461 nodes 200114 nps 226629 hashfull 92 time 883 pv d2c4 b2c2 c4d6 e8f8 d1g4 b8d7 a3a4 c2b2 f1d1 g6h5 g4g5 h5d1 a1d1 e7g6 h2h4 h8h6 h4h5 g6h8 g3g4"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "gameId": "personal-04",
+  "ply": 35,
+  "san": "Bxa8",
+  "uci": "b7a8",
+  "legalCount": 29,
+  "status": "incomplete",
+  "reason": "budget-cap",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "b7a8",
+      "scores": [
+        {
+          "evalCp": 839,
+          "mate": null,
+          "bound": false,
+          "depth": 15,
+          "pv": [
+            "b7a8",
+            "g6e4",
+            "f2f3",
+            "e4d5",
+            "a3a4",
+            "e7f5",
+            "a4b5",
+            "f5e3",
+            "b5c6",
+            "f8g8"
+          ],
+          "raw": "info depth 15 seldepth 25 multipv 1 score cp 839 nodes 200023 nps 256111 hashfull 87 time 781 pv b7a8 g6e4 f2f3 e4d5 a3a4 e7f5 a4b5 f5e3 b5c6 f8g8"
+        }
+      ]
+    }
+  ]
+}

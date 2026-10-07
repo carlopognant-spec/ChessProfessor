@@ -1,0 +1,51 @@
+{
+  "gameId": "personal-04",
+  "ply": 41,
+  "san": "Qxb8+",
+  "uci": "b5b8",
+  "legalCount": 42,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "b5b8",
+      "scores": [
+        {
+          "evalCp": null,
+          "mate": 9,
+          "bound": false,
+          "depth": 25,
+          "nodesAtScore": 200153,
+          "pv": [
+            "b5b8",
+            "f8e7",
+            "b8d6",
+            "e7e8",
+            "d6d4",
+            "f7f6",
+            "f1c1",
+            "f6e5",
+            "d4a7",
+            "e8f8",
+            "c1c8",
+            "g6e8",
+            "a7d7",
+            "f8g8",
+            "d7e8",
+            "g8h7",
+            "e8h5"
+          ],
+          "raw": "info depth 25 seldepth 18 multipv 1 score mate 9 nodes 200153 nps 326513 hashfull 73 time 613 pv b5b8 f8e7 b8d6 e7e8 d6d4 f7f6 f1c1 f6e5 d4a7 e8f8 c1c8 g6e8 a7d7 f8g8 d7e8 g8h7 e8h5"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0156.json",
+          "reused": false
+        }
+      ]
+    }
+  ]
+}

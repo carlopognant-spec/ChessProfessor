@@ -1,0 +1,92 @@
+{
+  "gameId": "personal-01",
+  "ply": 49,
+  "san": "Qxf6",
+  "uci": "e5f6",
+  "legalCount": 43,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "e5f6",
+      "scores": [
+        {
+          "evalCp": 1587,
+          "mate": null,
+          "bound": false,
+          "depth": 23,
+          "nodesAtScore": 200226,
+          "pv": [
+            "e5f6",
+            "e6e5",
+            "e1e5",
+            "a8b7",
+            "e5e8",
+            "h5e8",
+            "f6h8",
+            "g8f7",
+            "h8g7",
+            "f7e6",
+            "a1e1",
+            "e6d6",
+            "g7b7",
+            "f8e6",
+            "c3e5",
+            "d6c5",
+            "b7e7",
+            "c5c6",
+            "e7e6",
+            "c6b7"
+          ],
+          "raw": "info depth 23 seldepth 28 multipv 1 score cp 1587 nodes 200226 nps 323990 hashfull 90 time 618 pv e5f6 e6e5 e1e5 a8b7 e5e8 h5e8 f6h8 g8f7 h8g7 f7e6 a1e1 e6d6 g7b7 f8e6 c3e5 d6c5 b7e7 c5c6 e7e6 c6b7"
+        },
+        {
+          "evalCp": null,
+          "mate": 12,
+          "bound": false,
+          "depth": 32,
+          "nodesAtScore": 1000447,
+          "pv": [
+            "e5f6",
+            "e6e5",
+            "e1e5",
+            "e8e5",
+            "f6e5",
+            "a8b7",
+            "e5h8",
+            "g8f7",
+            "h8g7",
+            "f7e8",
+            "a1e1",
+            "e8d8",
+            "g7b7",
+            "f8d7",
+            "b7a8",
+            "d8c7",
+            "e1e7",
+            "c7d6",
+            "a8d8",
+            "h5e8",
+            "c3b4",
+            "d6c6",
+            "d8c8"
+          ],
+          "raw": "info depth 32 seldepth 24 multipv 1 score mate 12 nodes 1000447 nps 350542 hashfull 344 time 2854 pv e5f6 e6e5 e1e5 e8e5 f6e5 a8b7 e5h8 g8f7 h8g7 f7e8 a1e1 e8d8 g7b7 f8d7 b7a8 d8c7 e1e7 c7d6 a8d8 h5e8 c3b4 d6c6 d8c8"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0160.json",
+          "reused": false
+        },
+        {
+          "budget": 1000000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0161.json",
+          "reused": false
+        }
+      ]
+    }
+  ]
+}

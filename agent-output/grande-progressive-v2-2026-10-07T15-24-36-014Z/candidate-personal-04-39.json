@@ -1,0 +1,78 @@
+{
+  "gameId": "personal-04",
+  "ply": 39,
+  "san": "Qxb5",
+  "uci": "b3b5",
+  "legalCount": 40,
+  "status": "rejected",
+  "reason": "unstable-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "b3b5",
+      "scores": [
+        {
+          "evalCp": 1022,
+          "mate": null,
+          "bound": false,
+          "depth": 19,
+          "nodesAtScore": 200218,
+          "pv": [
+            "b3b5",
+            "f8g8",
+            "b5b8",
+            "g8h7",
+            "b8a7",
+            "h8d8",
+            "f1b1",
+            "f5d4",
+            "b1b8",
+            "g6f5",
+            "b8d8",
+            "d4e2",
+            "g1g2"
+          ],
+          "raw": "info depth 19 seldepth 20 multipv 1 score cp 1022 nodes 200218 nps 272035 hashfull 89 time 736 pv b3b5 f8g8 b5b8 g8h7 b8a7 h8d8 f1b1 f5d4 b1b8 g6f5 b8d8 d4e2 g1g2"
+        },
+        {
+          "evalCp": 1075,
+          "mate": null,
+          "bound": false,
+          "depth": 23,
+          "nodesAtScore": 1000040,
+          "pv": [
+            "b3b5",
+            "f8g8",
+            "b5b8",
+            "g8h7",
+            "b8a7",
+            "h8c8",
+            "f1c1",
+            "c8d8",
+            "a3a4",
+            "g5g4",
+            "c1d1",
+            "f5e7",
+            "a8g2",
+            "e7f5",
+            "d4d5",
+            "e6d5"
+          ],
+          "raw": "info depth 23 seldepth 26 multipv 1 score cp 1075 nodes 1000040 nps 279575 hashfull 404 time 3577 pv b3b5 f8g8 b5b8 g8h7 b8a7 h8c8 f1c1 c8d8 a3a4 g5g4 c1d1 f5e7 a8g2 e7f5 d4d5 e6d5"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0150.json",
+          "reused": false
+        },
+        {
+          "budget": 1000000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0151.json",
+          "reused": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "policy": "v3-branch-a",
+  "ordering": "ascending completion cost, then game and ply; not expected labels",
+  "selection": "first five from previously saved cost plan",
+  "cap": 20000000,
+  "selected": [
+    {
+      "gameId": "personal-03",
+      "ply": 19,
+      "san": "Nxd6+",
+      "missingSearches": 2,
+      "nominalNodes": 1200000,
+      "missing": [
+        {
+          "uci": "h2h4",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "h2h4",
+          "budgetNodes": 1000000
+        }
+      ]
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 46,
+      "san": "Rxg8",
+      "missingSearches": 2,
+      "nominalNodes": 1200000,
+      "missing": [
+        {
+          "uci": "h6h5",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "h6h5",
+          "budgetNodes": 1000000
+        }
+      ]
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 83,
+      "san": "Kf3",
+      "missingSearches": 4,
+      "nominalNodes": 2400000,
+      "missing": [
+        {
+          "uci": "e3f3",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "e3f3",
+          "budgetNodes": 1000000
+        },
+        {
+          "uci": "e3d3",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "e3d3",
+          "budgetNodes": 1000000
+        }
+      ]
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 89,
+      "san": "Kg4",
+      "missingSearches": 6,
+      "nominalNodes": 3600000,
+      "missing": [
+        {
+          "uci": "f3g4",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "f3g4",
+          "budgetNodes": 1000000
+        },
+        {
+          "uci": "f3g2",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "f3g2",
+          "budgetNodes": 1000000
+        },
+        {
+          "uci": "f3f2",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "f3f2",
+          "budgetNodes": 1000000
+        }
+      ]
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 62,
+      "san": "Kg7",
+      "missingSearches": 8,
+      "nominalNodes": 4800000,
+      "missing": [
+        {
+          "uci": "f7g7",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "f7g7",
+          "budgetNodes": 1000000
+        },
+        {
+          "uci": "f7g8",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "f7g8",
+          "budgetNodes": 1000000
+        },
+        {
+          "uci": "f7e8",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "f7e8",
+          "budgetNodes": 1000000
+        },
+        {
+          "uci": "c2f5",
+          "budgetNodes": 200000
+        },
+        {
+          "uci": "c2f5",
+          "budgetNodes": 1000000
+        }
+      ]
+    }
+  ],
+  "maximumNominalNodes": 13200000,
+  "previous": "agent-output/grande-v3-branch-a-2026-10-07T15-37-51-155Z/"
+}

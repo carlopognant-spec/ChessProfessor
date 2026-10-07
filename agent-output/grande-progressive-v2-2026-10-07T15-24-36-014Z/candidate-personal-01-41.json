@@ -1,0 +1,126 @@
+{
+  "gameId": "personal-01",
+  "ply": 41,
+  "san": "Bxa8",
+  "uci": "e4a8",
+  "legalCount": 53,
+  "status": "rejected",
+  "reason": "alternative-above-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "e4a8",
+      "scores": [
+        {
+          "evalCp": 105,
+          "mate": null,
+          "bound": false,
+          "depth": 17,
+          "nodesAtScore": 200098,
+          "pv": [
+            "e4a8",
+            "d8a8",
+            "e3g3",
+            "h5g6",
+            "g3c7",
+            "d7f8",
+            "a4a5",
+            "e8c8",
+            "c7g3",
+            "a8b7",
+            "a5a6",
+            "b7e7",
+            "b2b3",
+            "f7f6",
+            "g1h2",
+            "g8h7",
+            "a1d1"
+          ],
+          "raw": "info depth 17 seldepth 24 multipv 1 score cp 105 nodes 200098 nps 299100 hashfull 72 time 669 pv e4a8 d8a8 e3g3 h5g6 g3c7 d7f8 a4a5 e8c8 c7g3 a8b7 a5a6 b7e7 b2b3 f7f6 g1h2 g8h7 a1d1"
+        },
+        {
+          "evalCp": 97,
+          "mate": null,
+          "bound": false,
+          "depth": 19,
+          "nodesAtScore": 733131,
+          "pv": [
+            "e4a8",
+            "d8a8",
+            "e3g3",
+            "h5g6",
+            "g3c7",
+            "d7f8",
+            "a4a5",
+            "e8c8",
+            "c7e7",
+            "b6a5",
+            "a1a5",
+            "a7a6",
+            "e7h4",
+            "f7f6",
+            "e1a1",
+            "c8c6",
+            "c3b4",
+            "a8c8",
+            "b4f8",
+            "g8f8",
+            "h4g3"
+          ],
+          "raw": "info depth 19 seldepth 33 multipv 1 score cp 97 nodes 733131 nps 282625 hashfull 260 time 2594 pv e4a8 d8a8 e3g3 h5g6 g3c7 d7f8 a4a5 e8c8 c7e7 b6a5 a1a5 a7a6 e7h4 f7f6 e1a1 c8c6 c3b4 a8c8 b4f8 g8f8 h4g3"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0090.json",
+          "reused": true
+        },
+        {
+          "budget": 1000000,
+          "source": "agent-output/grande-progressive-2026-10-07T15-12-20-834Z/search-0091.json",
+          "reused": true
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "e4c6",
+      "scores": [
+        {
+          "evalCp": 92,
+          "mate": null,
+          "bound": false,
+          "depth": 16,
+          "nodesAtScore": 144942,
+          "pv": [
+            "e4c6",
+            "d8e7",
+            "e3g3",
+            "d7f6",
+            "g3h4",
+            "h5g6",
+            "c6e8",
+            "a8e8",
+            "c3f6",
+            "e7f6",
+            "h4f6",
+            "g7f6",
+            "a1c1",
+            "e8c8",
+            "e1d1",
+            "g6e4"
+          ],
+          "raw": "info depth 16 seldepth 23 multipv 1 score cp 92 nodes 144942 nps 312375 hashfull 46 time 464 pv e4c6 d8e7 e3g3 d7f6 g3h4 h5g6 c6e8 a8e8 c3f6 e7f6 h4f6 g7f6 a1c1 e8c8 e1d1 g6e4"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0128.json",
+          "reused": false
+        }
+      ]
+    }
+  ]
+}

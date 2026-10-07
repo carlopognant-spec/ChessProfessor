@@ -1,0 +1,63 @@
+{
+  "gameId": "personal-02",
+  "ply": 62,
+  "san": "Kg7",
+  "uci": "f7g7",
+  "legalCount": 4,
+  "previousStatus": "not-run",
+  "previousReason": null,
+  "status": "rejected",
+  "reason": "played-below-guard",
+  "bounds": [],
+  "roots": [
+    {
+      "uci": "f7g7",
+      "scores": [
+        {
+          "evalCp": -854,
+          "mate": null,
+          "bound": false,
+          "depth": 20,
+          "nodesAtScore": 200266,
+          "pv": [
+            "f7g7",
+            "h6a6",
+            "c8a8",
+            "h3h4",
+            "c2g6",
+            "f4f6",
+            "g7g8",
+            "h4h5",
+            "g6f7",
+            "g5h6"
+          ],
+          "raw": "info depth 20 seldepth 23 multipv 1 score cp -854 nodes 200266 nps 301605 hashfull 76 time 664 pv f7g7 h6a6 c8a8 h3h4 c2g6 f4f6 g7g8 h4h5 g6f7 g5h6"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-v3-completion-2026-10-07T15-41-08-944Z\\search-0007.json"
+        }
+      ]
+    },
+    {
+      "uci": "f7g8",
+      "scores": [],
+      "provenance": []
+    },
+    {
+      "uci": "f7e8",
+      "scores": [],
+      "provenance": []
+    },
+    {
+      "uci": "c2f5",
+      "scores": [],
+      "provenance": []
+    }
+  ],
+  "failedRoot": "f7g7",
+  "low": -904,
+  "high": -804
+}

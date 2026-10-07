@@ -1,0 +1,50 @@
+{
+  "gameId": "personal-03",
+  "ply": 63,
+  "san": "d4",
+  "uci": "d3d4",
+  "legalCount": 7,
+  "status": "rejected",
+  "reason": "played-below-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "d3d4",
+      "scores": [
+        {
+          "evalCp": -787,
+          "mate": null,
+          "bound": false,
+          "depth": 22,
+          "nodesAtScore": 200164,
+          "pv": [
+            "d3d4",
+            "a6a5",
+            "d4d5",
+            "h2h5",
+            "e2c4",
+            "a4b4",
+            "d5d6",
+            "c7d6",
+            "c5d6",
+            "b4c4",
+            "d6d7",
+            "h5d5",
+            "e1f1",
+            "c4c3",
+            "d7d8q",
+            "d5d8"
+          ],
+          "raw": "info depth 22 seldepth 25 multipv 1 score cp -787 nodes 200164 nps 389424 hashfull 62 time 514 pv d3d4 a6a5 d4d5 h2h5 e2c4 a4b4 d5d6 c7d6 c5d6 b4c4 d6d7 h5d5 e1f1 c4c3 d7d8q d5d8"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0165.json",
+          "reused": false
+        }
+      ]
+    }
+  ]
+}

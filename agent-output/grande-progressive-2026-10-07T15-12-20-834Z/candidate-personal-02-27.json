@@ -1,0 +1,28 @@
+{
+  "gameId": "personal-02",
+  "ply": 27,
+  "san": "Qe1",
+  "uci": "d1e1",
+  "legalCount": 30,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "d1e1",
+      "scores": [
+        {
+          "evalCp": 44,
+          "mate": null,
+          "bound": true,
+          "depth": 17,
+          "pv": [
+            "d1e1",
+            "g4e6"
+          ],
+          "raw": "info depth 17 seldepth 23 multipv 1 score cp 44 lowerbound nodes 200056 nps 264624 hashfull 63 time 756 pv d1e1 g4e6"
+        }
+      ]
+    }
+  ]
+}

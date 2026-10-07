@@ -1,0 +1,282 @@
+{
+  "dataRole": "development-partial-session-not-independent-validation",
+  "tp": 1,
+  "fp": 0,
+  "fn": 13,
+  "precision": 1,
+  "observedRecall": 0.07142857142857142,
+  "recallNote": "No-label counted against every expected Grande, including abstentions, initial exclusions and unrun candidates; not a completed experiment estimate.",
+  "statusCounts": {
+    "abstained": 40,
+    "rejected": 23,
+    "verified-experimental": 1,
+    "incomplete": 1
+  },
+  "reasonCounts": {
+    "insufficient-score": 40,
+    "played-below-guard": 9,
+    "alternative-above-guard": 6,
+    "unstable-score": 8,
+    "verified-under-experimental-policy": 1,
+    "budget-cap": 1
+  },
+  "expectedAndAssigned": [
+    {
+      "gameId": "personal-01",
+      "ply": 45,
+      "san": "Qxc7",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "rejected",
+      "reason": "unstable-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 47,
+      "san": "Qe5",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "not-run",
+      "reason": "eligible-for-full-root-experiment",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 21,
+      "san": "Bxf7",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "abstained",
+      "reason": "insufficient-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 31,
+      "san": "Rxf2",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "rejected",
+      "reason": "alternative-above-guard",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-02",
+      "ply": 73,
+      "san": "Rd7+",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "excluded-by-initial-filter",
+      "reason": "missing-or-mate-primary-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 19,
+      "san": "Nxd6+",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "abstained",
+      "reason": "insufficient-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-03",
+      "ply": 42,
+      "san": "Bxe6",
+      "expected": "Grande",
+      "predictedGrande": true,
+      "status": "verified-experimental",
+      "reason": "verified-under-experimental-policy",
+      "guardedGapCp": 1088
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 22,
+      "san": "Qb4",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "abstained",
+      "reason": "insufficient-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-04",
+      "ply": 29,
+      "san": "Nd6+",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "rejected",
+      "reason": "unstable-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 16,
+      "san": "Nxh1",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "abstained",
+      "reason": "insufficient-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 27,
+      "san": "Qxa8",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "abstained",
+      "reason": "insufficient-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-05",
+      "ply": 37,
+      "san": "Bh6+",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "excluded-by-initial-filter",
+      "reason": "missing-or-mate-primary-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 13,
+      "san": "d4",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "abstained",
+      "reason": "insufficient-score",
+      "guardedGapCp": null
+    },
+    {
+      "gameId": "personal-06",
+      "ply": 31,
+      "san": "Nd5",
+      "expected": "Grande",
+      "predictedGrande": false,
+      "status": "abstained",
+      "reason": "insufficient-score",
+      "guardedGapCp": null
+    }
+  ],
+  "verified": [
+    {
+      "gameId": "personal-03",
+      "ply": 42,
+      "san": "Bxe6",
+      "legalCount": 5,
+      "guardedGapCp": 1088,
+      "roots": [
+        {
+          "role": "played",
+          "uci": "g4e6",
+          "scores": [
+            {
+              "cp": 617,
+              "depth": 15,
+              "bound": false
+            },
+            {
+              "cp": 664,
+              "depth": 25,
+              "bound": false
+            }
+          ]
+        },
+        {
+          "role": "alternative",
+          "uci": "f6f7",
+          "scores": [
+            {
+              "cp": -571,
+              "depth": 17,
+              "bound": false
+            },
+            {
+              "cp": -592,
+              "depth": 18,
+              "bound": false
+            }
+          ]
+        },
+        {
+          "role": "alternative",
+          "uci": "f6f5",
+          "scores": [
+            {
+              "cp": -759,
+              "depth": 22,
+              "bound": false
+            },
+            {
+              "cp": -754,
+              "depth": 27,
+              "bound": false
+            }
+          ]
+        },
+        {
+          "role": "alternative",
+          "uci": "f6g5",
+          "scores": [
+            {
+              "cp": -765,
+              "depth": 22,
+              "bound": false
+            },
+            {
+              "cp": -773,
+              "depth": 26,
+              "bound": false
+            }
+          ]
+        },
+        {
+          "role": "alternative",
+          "uci": "f6g7",
+          "scores": [
+            {
+              "cp": -787,
+              "depth": 21,
+              "bound": false
+            },
+            {
+              "cp": -802,
+              "depth": 25,
+              "bound": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "annotationSources": [
+    {
+      "path": "tests/fixtures/qa/personal-01.json",
+      "sha256": "c96c451405decc38094480767ffef1f03de7fdff6756916f3015c081cff3974f"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-02.json",
+      "sha256": "12e7a695c1f2a2796c536fb9bde983feedac525404467280beda2802c72d751c"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-03.json",
+      "sha256": "acc9c32708e6cd1b4e0227134ababc16d280b7fceaa0bd2c42ede5c00c51c246"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-04.json",
+      "sha256": "372219d4b2bc7747e277944143d65dfff9a58ff37f28824c7ca21ae0531de594"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-05.json",
+      "sha256": "8e87f6e8d46c006e85e26969e46645a4f0e6eb67bc0f8af11b73431fb5c1b986"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-06.json",
+      "sha256": "4bc0b8fa71a6bdf1f8c31785881ea7c247f1b5586eab809a582df634a8f98ad4"
+    }
+  ]
+}

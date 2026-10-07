@@ -1,0 +1,28 @@
+{
+  "gameId": "personal-06",
+  "ply": 16,
+  "san": "d6",
+  "uci": "d7d6",
+  "legalCount": 28,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "d7d6",
+      "scores": [
+        {
+          "evalCp": -82,
+          "mate": null,
+          "bound": true,
+          "depth": 17,
+          "pv": [
+            "d7d6",
+            "f2f4"
+          ],
+          "raw": "info depth 17 seldepth 28 multipv 1 score cp -82 upperbound nodes 200173 nps 267253 hashfull 71 time 749 pv d7d6 f2f4"
+        }
+      ]
+    }
+  ]
+}

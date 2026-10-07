@@ -1,0 +1,88 @@
+{
+  "gameId": "personal-04",
+  "ply": 22,
+  "san": "Qb4",
+  "uci": "d6b4",
+  "legalCount": 39,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "d6b4",
+      "scores": [
+        {
+          "evalCp": 321,
+          "mate": null,
+          "bound": false,
+          "depth": 18,
+          "pv": [
+            "d6b4",
+            "g5f3",
+            "b4b2",
+            "d1d2",
+            "b2a1",
+            "b1c3",
+            "a1f1",
+            "g1f1",
+            "b8d7",
+            "f3h4",
+            "g6d3",
+            "f1g1",
+            "a8d8",
+            "d2b2",
+            "e8g8",
+            "b2a3"
+          ],
+          "raw": "info depth 18 seldepth 37 multipv 1 score cp 321 nodes 200026 nps 267414 hashfull 63 time 748 pv d6b4 g5f3 b4b2 d1d2 b2a1 b1c3 a1f1 g1f1 b8d7 f3h4 g6d3 f1g1 a8d8 d2b2 e8g8 b2a3"
+        },
+        {
+          "evalCp": 333,
+          "mate": null,
+          "bound": false,
+          "depth": 22,
+          "pv": [
+            "d6b4",
+            "g5f3",
+            "b4b2",
+            "d1d2",
+            "b2a1",
+            "b1c3",
+            "a1f1",
+            "g1f1",
+            "e8g8",
+            "g3g4",
+            "b8d7",
+            "h2h4",
+            "d7b6",
+            "h4h5",
+            "g6d3",
+            "f1g1",
+            "b6d5",
+            "g4g5",
+            "e7f5",
+            "c3e2"
+          ],
+          "raw": "info depth 22 seldepth 49 multipv 1 score cp 333 nodes 1000315 nps 257018 hashfull 362 time 3892 pv d6b4 g5f3 b4b2 d1d2 b2a1 b1c3 a1f1 g1f1 e8g8 g3g4 b8d7 h2h4 d7b6 h4h5 g6d3 f1g1 b6d5 g4g5 e7f5 c3e2"
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "d6c7",
+      "scores": [
+        {
+          "evalCp": 57,
+          "mate": null,
+          "bound": true,
+          "depth": 17,
+          "pv": [
+            "d6c7",
+            "g5e4"
+          ],
+          "raw": "info depth 17 seldepth 38 multipv 1 score cp 57 upperbound nodes 200122 nps 279500 hashfull 70 time 716 pv d6c7 g5e4"
+        }
+      ]
+    }
+  ]
+}

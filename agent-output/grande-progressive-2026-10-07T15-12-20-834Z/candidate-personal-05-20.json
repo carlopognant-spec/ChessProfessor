@@ -1,0 +1,97 @@
+{
+  "gameId": "personal-05",
+  "ply": 20,
+  "san": "O-O",
+  "uci": "e8g8",
+  "legalCount": 44,
+  "status": "rejected",
+  "reason": "alternative-above-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "e8g8",
+      "scores": [
+        {
+          "evalCp": 852,
+          "mate": null,
+          "bound": false,
+          "depth": 20,
+          "pv": [
+            "e8g8",
+            "b1c3",
+            "d7f5",
+            "c3e4",
+            "h7h6",
+            "g5f3",
+            "c8a6",
+            "c4a6",
+            "f5e4",
+            "a6e2",
+            "e4g4",
+            "c1e3",
+            "c5e3",
+            "e2e3",
+            "f8d8",
+            "f3d4",
+            "d8d4"
+          ],
+          "raw": "info depth 20 seldepth 24 multipv 1 score cp 852 nodes 200018 nps 239829 hashfull 89 time 834 pv e8g8 b1c3 d7f5 c3e4 h7h6 g5f3 c8a6 c4a6 f5e4 a6e2 e4g4 c1e3 c5e3 e2e3 f8d8 f3d4 d8d4"
+        },
+        {
+          "evalCp": 864,
+          "mate": null,
+          "bound": false,
+          "depth": 24,
+          "pv": [
+            "e8g8",
+            "b1c3",
+            "d7f5",
+            "c3e4",
+            "f5e5",
+            "g5f3",
+            "e5e8",
+            "e1f1",
+            "c8a6",
+            "e4f6",
+            "g7f6",
+            "c4a6",
+            "e8e6",
+            "c1h6",
+            "f8e8",
+            "a1d1",
+            "e6f5"
+          ],
+          "raw": "info depth 24 seldepth 27 multipv 1 score cp 864 nodes 1000576 nps 241918 hashfull 443 time 4136 pv e8g8 b1c3 d7f5 c3e4 f5e5 g5f3 e5e8 e1f1 c8a6 e4f6 g7f6 c4a6 e8e6 c1h6 f8e8 a1d1 e6f5"
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "d7f5",
+      "scores": [
+        {
+          "evalCp": 842,
+          "mate": null,
+          "bound": false,
+          "depth": 19,
+          "pv": [
+            "d7f5",
+            "c1f4",
+            "e8g8",
+            "b1c3",
+            "f5c2",
+            "c4e2",
+            "c2g6",
+            "e1c1",
+            "h1f2",
+            "d1f1",
+            "f2d3",
+            "e2d3",
+            "g6d3"
+          ],
+          "raw": "info depth 19 seldepth 20 multipv 1 score cp 842 nodes 200019 nps 246328 hashfull 83 time 812 pv d7f5 c1f4 e8g8 b1c3 f5c2 c4e2 c2g6 e1c1 h1f2 d1f1 f2d3 e2d3 g6d3"
+        }
+      ]
+    }
+  ]
+}

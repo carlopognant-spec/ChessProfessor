@@ -1,0 +1,47 @@
+{
+  "gameId": "personal-06",
+  "ply": 12,
+  "san": "Nxe5",
+  "uci": "c6e5",
+  "legalCount": 34,
+  "status": "rejected",
+  "reason": "played-below-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "c6e5",
+      "scores": [
+        {
+          "evalCp": -28,
+          "mate": null,
+          "bound": false,
+          "depth": 18,
+          "pv": [
+            "c6e5",
+            "d2d4",
+            "c5d6",
+            "d4e5",
+            "d6e5",
+            "e1g1",
+            "e5c3",
+            "b2c3",
+            "d7d6",
+            "d1d4",
+            "f8e8",
+            "c3c4",
+            "d8e7",
+            "f1e1",
+            "e7e5",
+            "c1b2",
+            "e5d4",
+            "b2d4",
+            "f6d7",
+            "a1b1",
+            "c7c5"
+          ],
+          "raw": "info depth 18 seldepth 36 multipv 1 score cp -28 nodes 200045 nps 278614 hashfull 69 time 718 pv c6e5 d2d4 c5d6 d4e5 d6e5 e1g1 e5c3 b2c3 d7d6 d1d4 f8e8 c3c4 d8e7 f1e1 e7e5 c1b2 e5d4 b2d4 f6d7 a1b1 c7c5"
+        }
+      ]
+    }
+  ]
+}

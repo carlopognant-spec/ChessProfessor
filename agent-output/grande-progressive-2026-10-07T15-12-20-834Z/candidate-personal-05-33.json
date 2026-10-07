@@ -1,0 +1,60 @@
+{
+  "gameId": "personal-05",
+  "ply": 33,
+  "san": "Kd2",
+  "uci": "e1d2",
+  "legalCount": 6,
+  "status": "rejected",
+  "reason": "unstable-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "e1d2",
+      "scores": [
+        {
+          "evalCp": 693,
+          "mate": null,
+          "bound": false,
+          "depth": 17,
+          "pv": [
+            "e1d2",
+            "g8g7",
+            "g5f4",
+            "e5e8",
+            "a1e1",
+            "e8e1",
+            "a8c8",
+            "e1e6",
+            "c8c7",
+            "f2e4",
+            "c3e4"
+          ],
+          "raw": "info depth 17 seldepth 20 multipv 1 score cp 693 nodes 200140 nps 269730 hashfull 87 time 742 pv e1d2 g8g7 g5f4 e5e8 a1e1 e8e1 a8c8 e1e6 c8c7 f2e4 c3e4"
+        },
+        {
+          "evalCp": 762,
+          "mate": null,
+          "bound": false,
+          "depth": 21,
+          "pv": [
+            "e1d2",
+            "e5g5",
+            "a8c8",
+            "g8g7",
+            "a1e1",
+            "c5d6",
+            "d2c1",
+            "d6h2",
+            "e1e8",
+            "h7h6",
+            "e8g8",
+            "g7f6",
+            "c8d8",
+            "f6e6"
+          ],
+          "raw": "info depth 21 seldepth 24 multipv 1 score cp 762 nodes 1000067 nps 272201 hashfull 405 time 3674 pv e1d2 e5g5 a8c8 g8g7 a1e1 c5d6 d2c1 d6h2 e1e8 h7h6 e8g8 g7f6 c8d8 f6e6"
+        }
+      ]
+    }
+  ]
+}

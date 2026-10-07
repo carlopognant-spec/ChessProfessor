@@ -1,0 +1,52 @@
+{
+  "gameId": "personal-04",
+  "ply": 18,
+  "san": "Bg6",
+  "uci": "f5g6",
+  "legalCount": 38,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "f5g6",
+      "scores": [
+        {
+          "evalCp": 90,
+          "mate": null,
+          "bound": false,
+          "depth": 18,
+          "pv": [
+            "f5g6",
+            "e1g1",
+            "b8d7",
+            "f1e1",
+            "e8g8",
+            "h2h4",
+            "f7f6",
+            "g5f3",
+            "g6h5",
+            "b2b3",
+            "f8d8",
+            "b1d2",
+            "c4c3",
+            "d2c4",
+            "d6b4"
+          ],
+          "raw": "info depth 18 seldepth 25 multipv 1 score cp 90 nodes 200180 nps 236340 hashfull 85 time 847 pv f5g6 e1g1 b8d7 f1e1 e8g8 h2h4 f7f6 g5f3 g6h5 b2b3 f8d8 b1d2 c4c3 d2c4 d6b4"
+        },
+        {
+          "evalCp": 98,
+          "mate": null,
+          "bound": true,
+          "depth": 21,
+          "pv": [
+            "f5g6",
+            "e1g1"
+          ],
+          "raw": "info depth 21 seldepth 35 multipv 1 score cp 98 lowerbound nodes 1000616 nps 245912 hashfull 374 time 4069 pv f5g6 e1g1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "gameId": "personal-04",
+  "ply": 33,
+  "san": "Bxb7",
+  "uci": "g2b7",
+  "legalCount": 31,
+  "status": "rejected",
+  "reason": "alternative-above-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "g2b7",
+      "scores": [
+        {
+          "evalCp": 832,
+          "mate": null,
+          "bound": false,
+          "depth": 15,
+          "pv": [
+            "g2b7",
+            "g6e4",
+            "b7e4",
+            "b8c6",
+            "a3a4",
+            "e7d5",
+            "e4d5",
+            "e6d5",
+            "a4b5",
+            "g7g6",
+            "f2f4",
+            "c6d4",
+            "f1f2",
+            "f8g7"
+          ],
+          "raw": "info depth 15 seldepth 25 multipv 1 score cp 832 nodes 200139 nps 241422 hashfull 93 time 829 pv g2b7 g6e4 b7e4 b8c6 a3a4 e7d5 e4d5 e6d5 a4b5 g7g6 f2f4 c6d4 f1f2 f8g7"
+        },
+        {
+          "evalCp": 861,
+          "mate": null,
+          "bound": false,
+          "depth": 20,
+          "pv": [
+            "g2b7",
+            "b8c6",
+            "b7a8",
+            "g6e4",
+            "f2f3",
+            "e4d5",
+            "a8c6",
+            "e7c6",
+            "f1f2",
+            "g7g6",
+            "a3a4",
+            "c6a5",
+            "a4b5"
+          ],
+          "raw": "info depth 20 seldepth 22 multipv 1 score cp 861 nodes 1000189 nps 251746 hashfull 406 time 3973 pv g2b7 b8c6 b7a8 g6e4 f2f3 e4d5 a8c6 e7c6 f1f2 g7g6 a3a4 c6a5 a4b5"
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "a3a4",
+      "scores": [
+        {
+          "evalCp": 720,
+          "mate": null,
+          "bound": false,
+          "depth": 19,
+          "pv": [
+            "a3a4",
+            "b8d7",
+            "a4b5",
+            "e7d5",
+            "g2d5",
+            "e6d5",
+            "d1b3",
+            "f8g8"
+          ],
+          "raw": "info depth 19 seldepth 22 multipv 1 score cp 720 nodes 200056 nps 256811 hashfull 91 time 779 pv a3a4 b8d7 a4b5 e7d5 g2d5 e6d5 d1b3 f8g8"
+        }
+      ]
+    }
+  ]
+}

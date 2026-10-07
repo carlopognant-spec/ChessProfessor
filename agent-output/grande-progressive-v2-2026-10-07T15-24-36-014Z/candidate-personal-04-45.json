@@ -1,0 +1,76 @@
+{
+  "gameId": "personal-04",
+  "ply": 45,
+  "san": "Kg2",
+  "uci": "g1g2",
+  "legalCount": 2,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "g1g2",
+      "scores": [
+        {
+          "evalCp": 1871,
+          "mate": null,
+          "bound": false,
+          "depth": 19,
+          "nodesAtScore": 200144,
+          "pv": [
+            "g1g2",
+            "e2c3",
+            "a8c6",
+            "g6e4",
+            "c6e4",
+            "e7d7",
+            "f1d1",
+            "c3d5",
+            "h8g7",
+            "d7c6",
+            "g7f7",
+            "c6b6",
+            "f7e6",
+            "b6c7"
+          ],
+          "raw": "info depth 19 seldepth 23 multipv 1 score cp 1871 nodes 200144 nps 298277 hashfull 75 time 671 pv g1g2 e2c3 a8c6 g6e4 c6e4 e7d7 f1d1 c3d5 h8g7 d7c6 g7f7 c6b6 f7e6 b6c7"
+        },
+        {
+          "evalCp": null,
+          "mate": 7,
+          "bound": false,
+          "depth": 41,
+          "nodesAtScore": 1000282,
+          "pv": [
+            "g1g2",
+            "e2c3",
+            "a1c1",
+            "g6c2",
+            "a8c6",
+            "c2e4",
+            "c6e4",
+            "f7f6",
+            "c1c3",
+            "f6e5",
+            "c3c7",
+            "e7d6",
+            "h8d8"
+          ],
+          "raw": "info depth 41 seldepth 14 multipv 1 score mate 7 nodes 1000282 nps 457167 hashfull 210 time 2188 pv g1g2 e2c3 a1c1 g6c2 a8c6 c2e4 c6e4 f7f6 c1c3 f6e5 c3c7 e7d6 h8d8"
+        }
+      ],
+      "provenance": [
+        {
+          "budget": 200000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0166.json",
+          "reused": false
+        },
+        {
+          "budget": 1000000,
+          "source": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-progressive-v2-2026-10-07T15-24-36-014Z\\search-0167.json",
+          "reused": false
+        }
+      ]
+    }
+  ]
+}

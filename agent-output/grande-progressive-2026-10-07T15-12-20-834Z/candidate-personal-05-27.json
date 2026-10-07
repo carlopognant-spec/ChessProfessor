@@ -1,0 +1,75 @@
+{
+  "gameId": "personal-05",
+  "ply": 27,
+  "san": "Qxa8",
+  "uci": "e4a8",
+  "legalCount": 48,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "e4a8",
+      "scores": [
+        {
+          "evalCp": 665,
+          "mate": null,
+          "bound": false,
+          "depth": 16,
+          "pv": [
+            "e4a8",
+            "f8e8",
+            "g5f4",
+            "g7g5",
+            "f4g3",
+            "f2h1",
+            "e1c1",
+            "h1g3",
+            "c1b1",
+            "g3f5",
+            "c3d5",
+            "f5e3"
+          ],
+          "raw": "info depth 16 seldepth 21 multipv 1 score cp 665 nodes 200002 nps 255104 hashfull 90 time 784 pv e4a8 f8e8 g5f4 g7g5 f4g3 f2h1 e1c1 h1g3 c1b1 g3f5 c3d5 f5e3"
+        },
+        {
+          "evalCp": 691,
+          "mate": null,
+          "bound": false,
+          "depth": 21,
+          "pv": [
+            "e4a8",
+            "c8f5",
+            "a8a7",
+            "f5c2",
+            "a7c7",
+            "c2f5",
+            "c3d5",
+            "g8h8",
+            "g5e3",
+            "f5e6",
+            "e1f2"
+          ],
+          "raw": "info depth 21 seldepth 22 multipv 1 score cp 691 nodes 1000210 nps 263838 hashfull 417 time 3791 pv e4a8 c8f5 a8a7 f5c2 a7c7 c2f5 c3d5 g8h8 g5e3 f5e6 e1f2"
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "e4f3",
+      "scores": [
+        {
+          "evalCp": 74,
+          "mate": null,
+          "bound": true,
+          "depth": 16,
+          "pv": [
+            "e4f3",
+            "c8g4"
+          ],
+          "raw": "info depth 16 seldepth 32 multipv 1 score cp 74 lowerbound nodes 200076 nps 273701 hashfull 75 time 731 pv e4f3 c8g4"
+        }
+      ]
+    }
+  ]
+}

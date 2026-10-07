@@ -1,0 +1,91 @@
+{
+  "gameId": "personal-06",
+  "ply": 31,
+  "san": "Nd5",
+  "uci": "c3d5",
+  "legalCount": 34,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "c3d5",
+      "scores": [
+        {
+          "evalCp": 477,
+          "mate": null,
+          "bound": false,
+          "depth": 17,
+          "pv": [
+            "c3d5",
+            "e5d7",
+            "a1d1",
+            "b4b3",
+            "c2b3",
+            "d8b8",
+            "d5f6",
+            "d7f6",
+            "h4f6",
+            "g7f6",
+            "f3f4",
+            "b8b3",
+            "f4f5",
+            "g6h7",
+            "d1d6",
+            "a8b8",
+            "d6f6",
+            "b3b2",
+            "f2b2",
+            "b8b2",
+            "f6h6",
+            "c5c4"
+          ],
+          "raw": "info depth 17 seldepth 29 multipv 1 score cp 477 nodes 200081 nps 241643 hashfull 87 time 828 pv c3d5 e5d7 a1d1 b4b3 c2b3 d8b8 d5f6 d7f6 h4f6 g7f6 f3f4 b8b3 f4f5 g6h7 d1d6 a8b8 d6f6 b3b2 f2b2 b8b2 f6h6 c5c4"
+        },
+        {
+          "evalCp": 508,
+          "mate": null,
+          "bound": false,
+          "depth": 19,
+          "pv": [
+            "c3d5",
+            "e5d7",
+            "a1d1",
+            "f8e8",
+            "d5f6",
+            "d7f6",
+            "e4e5",
+            "e8e5",
+            "f3f4",
+            "e5e8",
+            "f4f5",
+            "g6h7",
+            "g2a8",
+            "d8a8",
+            "h4f6",
+            "g7f6",
+            "f2e3"
+          ],
+          "raw": "info depth 19 seldepth 41 multipv 1 score cp 508 nodes 1000469 nps 233209 hashfull 400 time 4290 pv c3d5 e5d7 a1d1 f8e8 d5f6 d7f6 e4e5 e8e5 f3f4 e5e8 f4f5 g6h7 g2a8 d8a8 h4f6 g7f6 f2e3"
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "c3d1",
+      "scores": [
+        {
+          "evalCp": 216,
+          "mate": null,
+          "bound": true,
+          "depth": 16,
+          "pv": [
+            "c3d1",
+            "d6d5"
+          ],
+          "raw": "info depth 16 seldepth 33 multipv 1 score cp 216 lowerbound nodes 200125 nps 257561 hashfull 81 time 777 pv c3d1 d6d5"
+        }
+      ]
+    }
+  ]
+}

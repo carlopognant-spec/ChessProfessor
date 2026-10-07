@@ -1,0 +1,39 @@
+{
+  "gameId": "personal-03",
+  "ply": 12,
+  "san": "Qxf6",
+  "uci": "d8f6",
+  "legalCount": 31,
+  "status": "rejected",
+  "reason": "played-below-guard",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "d8f6",
+      "scores": [
+        {
+          "evalCp": -48,
+          "mate": null,
+          "bound": false,
+          "depth": 18,
+          "pv": [
+            "d8f6",
+            "d1d2",
+            "f8d6",
+            "d3d4",
+            "e5d4",
+            "c3b5",
+            "e8g8",
+            "e1c1",
+            "c7c5",
+            "d5c6",
+            "b8c6",
+            "b5d6",
+            "f6d6"
+          ],
+          "raw": "info depth 18 seldepth 25 multipv 1 score cp -48 nodes 200216 nps 236382 hashfull 80 time 847 pv d8f6 d1d2 f8d6 d3d4 e5d4 c3b5 e8g8 e1c1 c7c5 d5c6 b8c6 b5d6 f6d6"
+        }
+      ]
+    }
+  ]
+}

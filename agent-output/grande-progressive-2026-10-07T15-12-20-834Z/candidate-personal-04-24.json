@@ -1,0 +1,94 @@
+{
+  "gameId": "personal-04",
+  "ply": 24,
+  "san": "hxg5",
+  "uci": "h6g5",
+  "legalCount": 41,
+  "status": "abstained",
+  "reason": "insufficient-score",
+  "roots": [
+    {
+      "role": "played",
+      "uci": "h6g5",
+      "scores": [
+        {
+          "evalCp": 594,
+          "mate": null,
+          "bound": false,
+          "depth": 17,
+          "pv": [
+            "h6g5",
+            "a2a3",
+            "b4b5",
+            "a1c1",
+            "g6d3",
+            "f1e1",
+            "b5a6",
+            "g2e4",
+            "b8d7",
+            "b2b3",
+            "c4b3",
+            "d1b3",
+            "d3b5",
+            "a3a4",
+            "a6a4",
+            "b3e3",
+            "a4b4",
+            "e3g5",
+            "b4d4",
+            "d2b3"
+          ],
+          "raw": "info depth 17 seldepth 31 multipv 1 score cp 594 nodes 200084 nps 202105 hashfull 92 time 990 pv h6g5 a2a3 b4b5 a1c1 g6d3 f1e1 b5a6 g2e4 b8d7 b2b3 c4b3 d1b3 d3b5 a3a4 a6a4 b3e3 a4b4 e3g5 b4d4 d2b3"
+        },
+        {
+          "evalCp": 572,
+          "mate": null,
+          "bound": false,
+          "depth": 19,
+          "pv": [
+            "h6g5",
+            "a2a3",
+            "b4b5",
+            "a1c1",
+            "g6d3",
+            "f1e1",
+            "b8d7",
+            "g2e4",
+            "d3e4",
+            "d2e4",
+            "b5d5",
+            "c1c4",
+            "e7f5",
+            "c4b4",
+            "d7b6",
+            "d1g4",
+            "d5d7",
+            "g4g5",
+            "d7e7",
+            "b4b3",
+            "e8f8",
+            "g5d2"
+          ],
+          "raw": "info depth 19 seldepth 41 multipv 1 score cp 572 nodes 1000057 nps 222680 hashfull 437 time 4491 pv h6g5 a2a3 b4b5 a1c1 g6d3 f1e1 b8d7 g2e4 d3e4 d2e4 b5d5 c1c4 e7f5 c4b4 d7b6 d1g4 d5d7 g4g5 d7e7 b4b3 e8f8 g5d2"
+        }
+      ]
+    },
+    {
+      "role": "alternative",
+      "uci": "g6d3",
+      "scores": [
+        {
+          "evalCp": 216,
+          "mate": null,
+          "bound": true,
+          "depth": 18,
+          "pv": [
+            "g6d3",
+            "g5e4"
+          ],
+          "raw": "info depth 18 seldepth 28 multipv 1 score cp 216 lowerbound nodes 200186 nps 279199 hashfull 74 time 717 pv g6d3 g5e4"
+        }
+      ]
+    }
+  ]
+}
