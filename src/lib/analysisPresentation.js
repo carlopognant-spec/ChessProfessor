@@ -81,3 +81,13 @@ export function buildEngineArrowSegments(arrows = []) {
     }]
   })
 }
+
+export function getButtonNavigationTarget(action, currentPly, timeline = []) {
+  if (action === 'first') return timeline.slice(0, 0)
+  if (action === 'last') return [...timeline]
+  return getKeyboardNavigationTarget(
+    action === 'previous' ? 'ArrowLeft' : action === 'next' ? 'ArrowRight' : '',
+    currentPly,
+    timeline,
+  )
+}

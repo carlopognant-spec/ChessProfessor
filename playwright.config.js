@@ -7,7 +7,7 @@ export default defineConfig({
   workers: 1,
   use: { browserName: 'chromium', channel: process.env.PLAYWRIGHT_CHANNEL || 'msedge', headless: true },
   webServer: {
-    command: 'npm run dev -- --host 127.0.0.1 --port 4173 --strictPort',
+    command: 'npm run dev -- --config scripts/qa-no-env-build.config.js --host 127.0.0.1 --port 4173 --strictPort',
     url: 'http://127.0.0.1:4173/ChessProfessor/',
     reuseExistingServer: false,
   },

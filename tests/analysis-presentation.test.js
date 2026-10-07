@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildEngineArrowSegments, buildEngineArrows, buildMoveNavigation, getKeyboardNavigationTarget, resolveEngineForFen } from '../src/lib/analysisPresentation.js'
+import { buildEngineArrowSegments, buildEngineArrows, buildMoveNavigation, getButtonNavigationTarget, getKeyboardNavigationTarget, resolveEngineForFen } from '../src/lib/analysisPresentation.js'
 
 describe('analysis presentation', () => {
   it('rejects stale live data and never uses a pre-move engine for a post-move FEN', () => {
@@ -85,5 +85,16 @@ describe('analysis presentation', () => {
     expect(getKeyboardNavigationTarget('ArrowRight', 1, timeline)).toEqual(['e4', 'e5'])
     expect(getKeyboardNavigationTarget('ArrowRight', 3, timeline)).toEqual(['e4', 'e5', 'Nf3'])
     expect(getKeyboardNavigationTarget('ArrowUp', 1, timeline)).toBeNull()
+  })
+
+  it('navigates to both ends and uses the same one-ply targets as the keyboard', () => {
+    const timeline = ['e4', 'e5', 'Nf3']
+    expect(getButtonNavigationTarget('first', 2, timeline)).toEqual([])
+    expect(getButtonNavigationTarget('last', 0, timeline)).toEqual(timeline)
+    expect(getButtonNavigationTarget('previous', 2, timeline)).toEqual(getKeyboardNavigationTarget('ArrowLeft', 2, timeline))
+    expect(getButtonNavigationTarget('next', 1, timeline)).toEqual(getKeyboardNavigationTarget('ArrowRight', 1, timeline))
+    expect(getButtonNavigationTarget('previous', 0, timeline)).toEqual([])
+    expect(getButtonNavigationTarget('next', 3, timeline)).toEqual(timeline)
+    expect(getButtonNavigationTarget('last', 0, [])).toEqual([])
   })
 })

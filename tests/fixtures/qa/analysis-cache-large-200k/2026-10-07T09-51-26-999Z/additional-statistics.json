@@ -1,0 +1,1598 @@
+{
+  "groups": [
+    {
+      "group": "personal",
+      "legacyBaseline": {
+        "total": 399,
+        "included": 342,
+        "ordinalIncluded": 332,
+        "exact": 174,
+        "withinOne": 300,
+        "exactPct": 50.87719298245614,
+        "withinOnePct": 90.36144578313252,
+        "categories": {
+          "Migliore": {
+            "total": 122,
+            "included": 122,
+            "exact": 80
+          },
+          "Ottima": {
+            "total": 74,
+            "included": 74,
+            "exact": 51
+          },
+          "Buona": {
+            "total": 68,
+            "included": 68,
+            "exact": 23
+          },
+          "Imprecisione": {
+            "total": 33,
+            "included": 33,
+            "exact": 9
+          },
+          "Errore": {
+            "total": 27,
+            "included": 27,
+            "exact": 5
+          },
+          "Errore grave": {
+            "total": 8,
+            "included": 8,
+            "exact": 5
+          },
+          "Libro": {
+            "total": 39,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 1,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 14,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 10,
+            "included": 10,
+            "exact": 1
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "legacyCandidate": {
+        "total": 399,
+        "included": 342,
+        "ordinalIncluded": 332,
+        "exact": 178,
+        "withinOne": 296,
+        "exactPct": 52.046783625730995,
+        "withinOnePct": 89.1566265060241,
+        "categories": {
+          "Migliore": {
+            "total": 122,
+            "included": 122,
+            "exact": 80
+          },
+          "Ottima": {
+            "total": 74,
+            "included": 74,
+            "exact": 56
+          },
+          "Buona": {
+            "total": 68,
+            "included": 68,
+            "exact": 14
+          },
+          "Imprecisione": {
+            "total": 33,
+            "included": 33,
+            "exact": 12
+          },
+          "Errore": {
+            "total": 27,
+            "included": 27,
+            "exact": 7
+          },
+          "Errore grave": {
+            "total": 8,
+            "included": 8,
+            "exact": 8
+          },
+          "Libro": {
+            "total": 39,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 1,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 14,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 10,
+            "included": 10,
+            "exact": 1
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "appBaseline": {
+        "total": 399,
+        "included": 342,
+        "ordinalIncluded": 332,
+        "exact": 174,
+        "withinOne": 300,
+        "exactPct": 50.87719298245614,
+        "withinOnePct": 90.36144578313252,
+        "categories": {
+          "Migliore": {
+            "total": 122,
+            "included": 122,
+            "exact": 80
+          },
+          "Ottima": {
+            "total": 74,
+            "included": 74,
+            "exact": 51
+          },
+          "Buona": {
+            "total": 68,
+            "included": 68,
+            "exact": 23
+          },
+          "Imprecisione": {
+            "total": 33,
+            "included": 33,
+            "exact": 9
+          },
+          "Errore": {
+            "total": 27,
+            "included": 27,
+            "exact": 5
+          },
+          "Errore grave": {
+            "total": 8,
+            "included": 8,
+            "exact": 5
+          },
+          "Libro": {
+            "total": 39,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 1,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 14,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 10,
+            "included": 10,
+            "exact": 1
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "appCandidate": {
+        "total": 399,
+        "included": 342,
+        "ordinalIncluded": 332,
+        "exact": 178,
+        "withinOne": 296,
+        "exactPct": 52.046783625730995,
+        "withinOnePct": 89.1566265060241,
+        "categories": {
+          "Migliore": {
+            "total": 122,
+            "included": 122,
+            "exact": 80
+          },
+          "Ottima": {
+            "total": 74,
+            "included": 74,
+            "exact": 56
+          },
+          "Buona": {
+            "total": 68,
+            "included": 68,
+            "exact": 14
+          },
+          "Imprecisione": {
+            "total": 33,
+            "included": 33,
+            "exact": 12
+          },
+          "Errore": {
+            "total": 27,
+            "included": 27,
+            "exact": 7
+          },
+          "Errore grave": {
+            "total": 8,
+            "included": 8,
+            "exact": 8
+          },
+          "Libro": {
+            "total": 39,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 1,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 14,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 10,
+            "included": 10,
+            "exact": 1
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      }
+    },
+    {
+      "group": "historical",
+      "legacyBaseline": {
+        "total": 193,
+        "included": 161,
+        "ordinalIncluded": 161,
+        "exact": 82,
+        "withinOne": 139,
+        "exactPct": 50.93167701863354,
+        "withinOnePct": 86.33540372670808,
+        "categories": {
+          "Migliore": {
+            "total": 56,
+            "included": 56,
+            "exact": 45
+          },
+          "Ottima": {
+            "total": 47,
+            "included": 47,
+            "exact": 30
+          },
+          "Buona": {
+            "total": 26,
+            "included": 26,
+            "exact": 2
+          },
+          "Imprecisione": {
+            "total": 24,
+            "included": 24,
+            "exact": 4
+          },
+          "Errore": {
+            "total": 9,
+            "included": 8,
+            "exact": 1
+          },
+          "Errore grave": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Libro": {
+            "total": 19,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 2,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 10,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "legacyCandidate": {
+        "total": 193,
+        "included": 161,
+        "ordinalIncluded": 161,
+        "exact": 78,
+        "withinOne": 141,
+        "exactPct": 48.4472049689441,
+        "withinOnePct": 87.5776397515528,
+        "categories": {
+          "Migliore": {
+            "total": 56,
+            "included": 56,
+            "exact": 41
+          },
+          "Ottima": {
+            "total": 47,
+            "included": 47,
+            "exact": 27
+          },
+          "Buona": {
+            "total": 26,
+            "included": 26,
+            "exact": 3
+          },
+          "Imprecisione": {
+            "total": 24,
+            "included": 24,
+            "exact": 5
+          },
+          "Errore": {
+            "total": 9,
+            "included": 8,
+            "exact": 2
+          },
+          "Errore grave": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Libro": {
+            "total": 19,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 2,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 10,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "appBaseline": {
+        "total": 193,
+        "included": 161,
+        "ordinalIncluded": 161,
+        "exact": 80,
+        "withinOne": 137,
+        "exactPct": 49.68944099378882,
+        "withinOnePct": 85.09316770186335,
+        "categories": {
+          "Migliore": {
+            "total": 56,
+            "included": 56,
+            "exact": 43
+          },
+          "Ottima": {
+            "total": 47,
+            "included": 47,
+            "exact": 30
+          },
+          "Buona": {
+            "total": 26,
+            "included": 26,
+            "exact": 2
+          },
+          "Imprecisione": {
+            "total": 24,
+            "included": 24,
+            "exact": 4
+          },
+          "Errore": {
+            "total": 9,
+            "included": 8,
+            "exact": 1
+          },
+          "Errore grave": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Libro": {
+            "total": 19,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 2,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 10,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "appCandidate": {
+        "total": 193,
+        "included": 161,
+        "ordinalIncluded": 161,
+        "exact": 77,
+        "withinOne": 139,
+        "exactPct": 47.82608695652174,
+        "withinOnePct": 86.33540372670808,
+        "categories": {
+          "Migliore": {
+            "total": 56,
+            "included": 56,
+            "exact": 40
+          },
+          "Ottima": {
+            "total": 47,
+            "included": 47,
+            "exact": 27
+          },
+          "Buona": {
+            "total": 26,
+            "included": 26,
+            "exact": 3
+          },
+          "Imprecisione": {
+            "total": 24,
+            "included": 24,
+            "exact": 5
+          },
+          "Errore": {
+            "total": 9,
+            "included": 8,
+            "exact": 2
+          },
+          "Errore grave": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Libro": {
+            "total": 19,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 2,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 10,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      }
+    },
+    {
+      "group": "all",
+      "legacyBaseline": {
+        "total": 592,
+        "included": 503,
+        "ordinalIncluded": 493,
+        "exact": 256,
+        "withinOne": 439,
+        "exactPct": 50.89463220675945,
+        "withinOnePct": 89.04665314401623,
+        "categories": {
+          "Migliore": {
+            "total": 178,
+            "included": 178,
+            "exact": 125
+          },
+          "Ottima": {
+            "total": 121,
+            "included": 121,
+            "exact": 81
+          },
+          "Buona": {
+            "total": 94,
+            "included": 94,
+            "exact": 25
+          },
+          "Imprecisione": {
+            "total": 57,
+            "included": 57,
+            "exact": 13
+          },
+          "Errore": {
+            "total": 36,
+            "included": 35,
+            "exact": 6
+          },
+          "Errore grave": {
+            "total": 8,
+            "included": 8,
+            "exact": 5
+          },
+          "Libro": {
+            "total": 58,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 24,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 10,
+            "included": 10,
+            "exact": 1
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "legacyCandidate": {
+        "total": 592,
+        "included": 503,
+        "ordinalIncluded": 493,
+        "exact": 256,
+        "withinOne": 437,
+        "exactPct": 50.89463220675945,
+        "withinOnePct": 88.64097363083164,
+        "categories": {
+          "Migliore": {
+            "total": 178,
+            "included": 178,
+            "exact": 121
+          },
+          "Ottima": {
+            "total": 121,
+            "included": 121,
+            "exact": 83
+          },
+          "Buona": {
+            "total": 94,
+            "included": 94,
+            "exact": 17
+          },
+          "Imprecisione": {
+            "total": 57,
+            "included": 57,
+            "exact": 17
+          },
+          "Errore": {
+            "total": 36,
+            "included": 35,
+            "exact": 9
+          },
+          "Errore grave": {
+            "total": 8,
+            "included": 8,
+            "exact": 8
+          },
+          "Libro": {
+            "total": 58,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 24,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 10,
+            "included": 10,
+            "exact": 1
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "appBaseline": {
+        "total": 592,
+        "included": 503,
+        "ordinalIncluded": 493,
+        "exact": 254,
+        "withinOne": 437,
+        "exactPct": 50.49701789264414,
+        "withinOnePct": 88.64097363083164,
+        "categories": {
+          "Migliore": {
+            "total": 178,
+            "included": 178,
+            "exact": 123
+          },
+          "Ottima": {
+            "total": 121,
+            "included": 121,
+            "exact": 81
+          },
+          "Buona": {
+            "total": 94,
+            "included": 94,
+            "exact": 25
+          },
+          "Imprecisione": {
+            "total": 57,
+            "included": 57,
+            "exact": 13
+          },
+          "Errore": {
+            "total": 36,
+            "included": 35,
+            "exact": 6
+          },
+          "Errore grave": {
+            "total": 8,
+            "included": 8,
+            "exact": 5
+          },
+          "Libro": {
+            "total": 58,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 24,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 10,
+            "included": 10,
+            "exact": 1
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      },
+      "appCandidate": {
+        "total": 592,
+        "included": 503,
+        "ordinalIncluded": 493,
+        "exact": 255,
+        "withinOne": 435,
+        "exactPct": 50.69582504970179,
+        "withinOnePct": 88.23529411764706,
+        "categories": {
+          "Migliore": {
+            "total": 178,
+            "included": 178,
+            "exact": 120
+          },
+          "Ottima": {
+            "total": 121,
+            "included": 121,
+            "exact": 83
+          },
+          "Buona": {
+            "total": 94,
+            "included": 94,
+            "exact": 17
+          },
+          "Imprecisione": {
+            "total": 57,
+            "included": 57,
+            "exact": 17
+          },
+          "Errore": {
+            "total": 36,
+            "included": 35,
+            "exact": 9
+          },
+          "Errore grave": {
+            "total": 8,
+            "included": 8,
+            "exact": 8
+          },
+          "Libro": {
+            "total": 58,
+            "included": 0,
+            "exact": 0
+          },
+          "Geniale": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          },
+          "Grande": {
+            "total": 24,
+            "included": 0,
+            "exact": 0
+          },
+          "Mossa mancata": {
+            "total": 10,
+            "included": 10,
+            "exact": 1
+          },
+          "Non valutabile": {
+            "total": 0,
+            "included": 0,
+            "exact": 0
+          },
+          "Forzata": {
+            "total": 3,
+            "included": 0,
+            "exact": 0
+          }
+        }
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "personal-01",
+      "sameEligibleCohort": 42,
+      "changedToExpected": 4,
+      "changedAwayFromExpected": 3,
+      "unchangedBookFlags": true,
+      "searchesBelowNodeBudget": 1,
+      "minActualNodes": 0,
+      "maxActualNodes": 200277,
+      "primaryDepths": [
+        0,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "legacyQaBookDifferences": [
+        {
+          "ply": 1,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 2,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 3,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 4,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 5,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 6,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 7,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-02",
+      "sameEligibleCohort": 66,
+      "changedToExpected": 12,
+      "changedAwayFromExpected": 7,
+      "unchangedBookFlags": true,
+      "searchesBelowNodeBudget": 3,
+      "minActualNodes": 0,
+      "maxActualNodes": 200306,
+      "primaryDepths": [
+        0,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        24,
+        32,
+        245
+      ],
+      "legacyQaBookDifferences": [
+        {
+          "ply": 1,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 2,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 3,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 4,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 5,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-03",
+      "sameEligibleCohort": 129,
+      "changedToExpected": 19,
+      "changedAwayFromExpected": 18,
+      "unchangedBookFlags": true,
+      "searchesBelowNodeBudget": 17,
+      "minActualNodes": 0,
+      "maxActualNodes": 200335,
+      "primaryDepths": [
+        0,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        20,
+        21,
+        24,
+        25,
+        27,
+        31,
+        36,
+        39,
+        83,
+        94,
+        100,
+        103,
+        105,
+        120,
+        245
+      ],
+      "legacyQaBookDifferences": [
+        {
+          "ply": 1,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 2,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 3,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 4,
+          "expected": "Libro",
+          "legacyActual": "Buona",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-04",
+      "sameEligibleCohort": 46,
+      "changedToExpected": 5,
+      "changedAwayFromExpected": 8,
+      "unchangedBookFlags": true,
+      "searchesBelowNodeBudget": 0,
+      "minActualNodes": 200003,
+      "maxActualNodes": 200256,
+      "primaryDepths": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        27,
+        30,
+        45
+      ],
+      "legacyQaBookDifferences": [
+        {
+          "ply": 1,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 2,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 3,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 4,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 5,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 6,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-05",
+      "sameEligibleCohort": 26,
+      "changedToExpected": 6,
+      "changedAwayFromExpected": 1,
+      "unchangedBookFlags": true,
+      "searchesBelowNodeBudget": 1,
+      "minActualNodes": 20463,
+      "maxActualNodes": 200248,
+      "primaryDepths": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        245
+      ],
+      "legacyQaBookDifferences": [
+        {
+          "ply": 1,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 2,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 3,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 4,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 5,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 6,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 7,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 8,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-06",
+      "sameEligibleCohort": 33,
+      "changedToExpected": 3,
+      "changedAwayFromExpected": 8,
+      "unchangedBookFlags": true,
+      "searchesBelowNodeBudget": 0,
+      "minActualNodes": 200006,
+      "maxActualNodes": 200259,
+      "primaryDepths": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "legacyQaBookDifferences": [
+        {
+          "ply": 1,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 2,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 3,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 4,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 5,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 6,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 7,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 8,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 9,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "sameEligibleCohort": 40,
+      "changedToExpected": 5,
+      "changedAwayFromExpected": 5,
+      "unchangedBookFlags": true,
+      "searchesBelowNodeBudget": 0,
+      "minActualNodes": 200002,
+      "maxActualNodes": 200270,
+      "primaryDepths": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        42
+      ],
+      "legacyQaBookDifferences": [
+        {
+          "ply": 1,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 2,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 3,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 4,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 5,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 6,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 7,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 8,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 9,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 10,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 11,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 12,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 13,
+          "expected": "Migliore",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": []
+        },
+        {
+          "ply": 14,
+          "expected": "Migliore",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "sameEligibleCohort": 121,
+      "changedToExpected": 9,
+      "changedAwayFromExpected": 12,
+      "unchangedBookFlags": true,
+      "searchesBelowNodeBudget": 0,
+      "minActualNodes": 200000,
+      "maxActualNodes": 200352,
+      "primaryDepths": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "legacyQaBookDifferences": [
+        {
+          "ply": 1,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 2,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 3,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 4,
+          "expected": "Libro",
+          "legacyActual": "Migliore",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        },
+        {
+          "ply": 5,
+          "expected": "Libro",
+          "legacyActual": "Ottima",
+          "appActual": "Libro",
+          "excluded": [
+            "book"
+          ]
+        }
+      ]
+    }
+  ],
+  "transitions": {
+    "Migliore -> Ottima": 38,
+    "Buona -> Ottima": 25,
+    "Ottima -> Migliore": 39,
+    "Imprecisione -> Errore": 4,
+    "Buona -> Errore": 1,
+    "Ottima -> Buona": 20,
+    "Imprecisione -> Buona": 9,
+    "Buona -> Imprecisione": 12,
+    "Errore -> Errore grave": 4,
+    "Imprecisione -> Ottima": 6,
+    "Errore -> Imprecisione": 4,
+    "Errore grave -> Errore": 1,
+    "Ottima -> Imprecisione": 4,
+    "Buona -> Migliore": 3,
+    "Errore -> Ottima": 3,
+    "Migliore -> Buona": 3,
+    "Ottima -> Errore": 1,
+    "Migliore -> Imprecisione": 1
+  },
+  "changedToExpected": 63,
+  "changedAwayFromExpected": 62,
+  "unchangedBookFlags": true
+}

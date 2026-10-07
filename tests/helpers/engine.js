@@ -22,7 +22,7 @@ export function createStockfishTestWorker({ onAnalyze } = {}) {
         currentFen = message.slice('position fen '.length)
       }
 
-      if (typeof message === 'string' && message.startsWith('go depth')) {
+      if (typeof message === 'string' && message.startsWith('go nodes')) {
         const analysis = onAnalyze?.({ fen: currentFen, messages, command: message }) ?? {
           evalCp: 35,
           mate: null,

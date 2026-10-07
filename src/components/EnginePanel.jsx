@@ -1,14 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useGame } from '../context/GameContext.jsx'
 import { formatMateLabel, normalizeEvalToWhite } from '../lib/evaluation.js'
-import { StockfishEngine } from '../lib/stockfish.js'
 import { analyzeGame, createGameAnalysisSession, buildAnalysisProgress } from '../lib/gameAnalysis.js'
 import { ENGINE_CONFIG } from '../lib/engineConfig.js'
 import { fetchOpeningExplorer } from '../lib/lichessExplorer.js'
 import { resolveEngineForFen } from '../lib/analysisPresentation.js'
+import { engineAssetsCached, prepareEngineCache } from '../lib/engineAssets.js'
+import { analysisMetadataKey } from '../lib/analysisMetadata.js'
 
-export default function EnginePanel({ onEngineData, onAnalysisData }) {
-  const { fen, moveHistorySan } = useGame()
+export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysis = null }) {
+  const { fen, moveHistorySan, navigationHistorySan, baseFen } = useGame()
+  const [useSaved, setUseSaved] = useState(true)
+  const savedMatches = useSaved && savedAnalysis?.baseFen === baseFen
+    && JSON.stringify(savedAnalysis.moves) === JSON.stringify(navigationHistorySan)
   const engineRef = useRef(null)
   const analysisSessionRef = useRef(createGameAnalysisSession())
   const analysisEntriesRef = useRef([])
@@ -20,6 +24,11 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
   const [engineError, setEngineError] = useState('')
   const [engineFailed, setEngineFailed] = useState(false)
   const [engineGeneration, setEngineGeneration] = useState(0)
+  const [analysisEnabled, setAnalysisEnabled] = useState(false)
+  const [engineReady, setEngineReady] = useState(false)
+  const [engineLoading, setEngineLoading] = useState(false)
+  const [assetsCached, setAssetsCached] = useState(false)
+  const [cacheNote, setCacheNote] = useState('')
   const onEngineDataRef = useRef(onEngineData)
 
   fenRef.current = fen
@@ -46,40 +55,68 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
   }
 
   useEffect(() => {
+    let disposed = false
+    engineAssetsCached().then(cached => { if (!disposed) setAssetsCached(cached) })
+    return () => { disposed = true }
+  }, [])
+
+  useEffect(() => {
+    if (!analysisEnabled) return
     let engine = null
     let disposed = false
     const reportFailure = (error) => {
       if (disposed) return
       setEngineFailed(true)
+      setEngineReady(false)
+      setEngineLoading(false)
       setEngineError(error.message)
       setAnalyzing(false)
       setEvalData(null)
       onEngineDataRef.current?.(null)
     }
-    try {
+    setEngineReady(false)
+    setEngineLoading(true)
+    setEngineFailed(false)
+    setEngineError('')
+    Promise.all([import('../lib/stockfish.js'), prepareEngineCache()]).then(async ([{ StockfishEngine }, cache]) => {
+      if (disposed) return
+      setCacheNote(cache.note)
       engine = new StockfishEngine({ onFailure: reportFailure })
       engineRef.current = engine
-      setEngineFailed(false)
-      setEngineError('')
-    } catch (error) {
-      engineRef.current = null
-      reportFailure(error)
-    }
+      await engine.waitUntilReady()
+      if (disposed) return
+      setEngineLoading(false)
+      setEngineReady(true)
+      engineAssetsCached().then(cached => { if (!disposed) setAssetsCached(cached) })
+    }).catch(reportFailure)
     return () => {
       disposed = true
       engine?.destroy()
       if (engineRef.current === engine) engineRef.current = null
     }
-  }, [engineGeneration])
+  }, [analysisEnabled, engineGeneration])
 
   const analyzeCurrentPosition = useCallback((positionFen) => engineRef.current.analyze(
     positionFen,
-    ENGINE_CONFIG.defaultDepth,
+    ENGINE_CONFIG.nodes,
     ENGINE_CONFIG.multiPv,
   ), [])
 
   useEffect(() => {
-    if (!engineRef.current || engineRef.current.failure) return
+    if (!savedMatches) {
+      if (!engineReady) { onAnalysisData?.([]); setEvalData(null); onEngineData?.(null) }
+      return
+    }
+    analysisEntriesRef.current = savedAnalysis.entries
+    onAnalysisData?.(savedAnalysis.entries)
+    setEvalData(null)
+    onEngineData?.(null)
+    const cached = resolveEngineForFen(fen, savedAnalysis.entries)
+    if (cached) applyEngineData(cached, fen)
+  }, [savedMatches, savedAnalysis, fen, engineReady, onAnalysisData, onEngineData, applyEngineData])
+
+  useEffect(() => {
+    if (savedMatches || !engineReady || !engineRef.current || engineRef.current.failure) return
 
     analysisEntriesRef.current = []
     onAnalysisData?.([])
@@ -100,10 +137,12 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
 
     analyzeGame({
       moves: moveHistorySan,
+      baseFen,
       analyzePosition: analyzeCurrentPosition,
       analyzePlayedPosition: analyzeCurrentPosition,
       fetchExplorer: fetchExplorerSafely,
       session: analysisSessionRef.current,
+      analysisKey: analysisMetadataKey(),
       signal: controller.signal,
       onProgress: ({ current, total }) => {
         if (!cancelled) setProgress(buildAnalysisProgress({ current, total }))
@@ -140,10 +179,10 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
       gameAnalyzingRef.current = false
       controller.abort()
     }
-  }, [moveHistorySan, applyEngineData, onAnalysisData, engineGeneration])
+  }, [moveHistorySan, baseFen, savedMatches, applyEngineData, onAnalysisData, engineReady])
 
   useEffect(() => {
-    if (!engineRef.current || engineRef.current.failure) return
+    if (savedMatches || !engineReady || !engineRef.current || engineRef.current.failure) return
 
     setEvalData(null)
     onEngineData?.(null)
@@ -161,7 +200,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
     let cancelled = false
     setAnalyzing(true)
 
-    engineRef.current.analyze(fen, ENGINE_CONFIG.defaultDepth, ENGINE_CONFIG.multiPv)
+    engineRef.current.analyze(fen, ENGINE_CONFIG.nodes, ENGINE_CONFIG.multiPv)
       .then((data) => {
         if (!cancelled) applyEngineData(data, fen)
       })
@@ -177,33 +216,48 @@ export default function EnginePanel({ onEngineData, onAnalysisData }) {
     return () => {
       cancelled = true
     }
-  }, [fen, moveHistorySan, applyEngineData, onEngineData, engineGeneration])
+  }, [fen, moveHistorySan, savedMatches, applyEngineData, onEngineData, engineReady])
 
-  const barPercent = evalData?.mate != null
-    ? (evalData.mate > 0 ? 100 : 0)
-    : Math.min(100, Math.max(0, 50 + (evalData?.evalCp ?? 0) / 10))
+  const displayedData = evalData?.fen === fen ? evalData : null
+  const barPercent = displayedData?.mate != null
+    ? (displayedData.mate > 0 ? 100 : 0)
+    : Math.min(100, Math.max(0, 50 + (displayedData?.evalCp ?? 0) / 10))
 
   return (
     <div>
       <div className="engine-bar">
         <div className="engine-bar-fill" style={{ width: `${barPercent}%` }} />
       </div>
-      <p className="engine-eval-label">
+      <p className="engine-eval-label" data-fen={displayedData?.fen}>
+        {!analysisEnabled && (savedMatches ? 'Analisi salvata. ' : 'Analisi non avviata.')}
+        {engineLoading && 'Caricamento di Stockfish…'}
         {engineError && `Stockfish: ${engineError}`}
         {engineFailed && ' Il motore è fermo. Puoi riavviarlo senza perdere la partita.'}
-        {!engineError && !analyzing && evalData?.lines?.length > 0 &&
-          `${evalData.lines.length} linee MultiPV disponibili. `}
+        {!engineError && !analyzing && displayedData?.lines?.length > 0 &&
+          `${displayedData.lines.length} linee MultiPV disponibili. `}
         {analyzing && (moveHistorySan.length > 0
           ? `Analisi partita: ${Math.round(progress)}%`
           : 'Stockfish sta analizzando…')}
-        {!analyzing && evalData?.mate != null && (evalData.mate === 0 ? 'Scacco matto' : `Matto in ${Math.abs(evalData.mate)}`)}
-        {!analyzing && evalData?.mate == null && evalData?.evalCp != null &&
-          `Valutazione: ${(evalData.evalCp / 100).toFixed(2)}`}
-        {!analyzing && evalData?.mate == null && evalData?.evalCp == null && 'Nessuna valutazione disponibile.'}
-        {!analyzing && evalData?.mate != null && evalData?.mate && <span> ({formatMateLabel(evalData.mate)})</span>}
+        {!analyzing && displayedData?.mate != null && (displayedData.mate === 0 ? 'Scacco matto' : `Matto in ${Math.abs(displayedData.mate)}`)}
+        {!analyzing && displayedData?.mate == null && displayedData?.evalCp != null &&
+          `Valutazione: ${(displayedData.evalCp / 100).toFixed(2)}`}
+        {analysisEnabled && !engineLoading && !engineError && !analyzing && displayedData?.mate == null && displayedData?.evalCp == null && 'Nessuna valutazione disponibile.'}
+        {!analyzing && displayedData?.mate != null && displayedData?.mate && <span> ({formatMateLabel(displayedData.mate)})</span>}
       </p>
+      {!analysisEnabled && (
+        <div>
+          {!assetsCached && <p className="notice">La prima analisi scarica circa 100 MB. Il motore viene conservato nella cache di questo browser, se disponibile.</p>}
+          <button type="button" onClick={() => { setUseSaved(false); setAnalysisEnabled(true) }}>Avvia analisi</button>
+        </div>
+      )}
+      {cacheNote && <p className="notice">{cacheNote}</p>}
       {engineFailed && (
-        <button type="button" onClick={() => setEngineGeneration(generation => generation + 1)}>
+        <button type="button" onClick={() => {
+          analysisSessionRef.current.clear()
+          analysisEntriesRef.current = []
+          onAnalysisData?.([])
+          setEngineGeneration(generation => generation + 1)
+        }}>
           Riavvia motore
         </button>
       )}

@@ -1,11 +1,12 @@
 import { spawn } from 'node:child_process'
 import { createInterface } from 'node:readline'
+import { performance } from 'node:perf_hooks'
 
 export class NativeEngine {
-  constructor(executable, timeoutMs = 120000) {
+  constructor(executable, timeoutMs = 120000, args = []) {
     this.timeoutMs = timeoutMs
     this.failure = null
-    this.process = spawn(executable, [], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] })
+    this.process = spawn(executable, args, { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] })
     this.process.on('error', error => this.fail(error))
     this.process.stdin.on('error', error => this.fail(error))
     this.process.on('exit', code => this.fail(new Error(`Stockfish terminato (${code})`)))
@@ -21,7 +22,10 @@ export class NativeEngine {
     return new Promise((resolve, reject) => {
       const finish = (fn, value) => { clearTimeout(timer); this.pending = null; fn(value) }
       const timer = setTimeout(() => this.pending?.reject(new Error(`Timeout Stockfish: ${this.stderr}`)), this.timeoutMs)
-      this.pending = { reject: error => finish(reject, error), onLine: line => { const result = onLine(line); if (result !== undefined) finish(resolve, result) } }
+      this.pending = { reject: error => finish(reject, error), onLine: line => {
+        try { const result = onLine(line); if (result !== undefined) finish(resolve, result) }
+        catch (error) { finish(reject, error) }
+      } }
       this.process.stdin.write(commands.join('\n') + '\n')
     })
   }
@@ -34,16 +38,33 @@ export class NativeEngine {
   }
   async newGame() { await this.request(['ucinewgame', 'isready'], line => line === 'readyok' ? true : undefined) }
   async analyze(fen, depth, multiPv) {
+    return this.analyzeLimit(fen, `depth ${depth}`, multiPv)
+  }
+  async analyzeNodes(fen, nodes, multiPv) {
+    if (!Number.isSafeInteger(nodes) || nodes <= 0) throw new TypeError('Budget nodi non valido')
+    return this.analyzeLimit(fen, `nodes ${nodes}`, multiPv, true)
+  }
+  async analyzeLimit(fen, limit, multiPv, telemetry = false) {
     const lines = new Map()
-    return this.request([`setoption name MultiPV value ${multiPv}`, `position fen ${fen}`, `go depth ${depth}`], line => {
+    const bounds = []
+    let actualNodes = 0, engineTimeMs = null
+    const started = performance.now()
+    return this.request([`setoption name MultiPV value ${multiPv}`, `position fen ${fen}`, `go ${limit}`], line => {
+      if (line.startsWith('info ')) {
+        actualNodes = Math.max(actualNodes, Number(line.match(/\bnodes (\d+)/)?.[1] ?? 0))
+        const time = line.match(/\btime (\d+)/)
+        if (time) engineTimeMs = Number(time[1])
+      }
       const score = line.match(/\bscore (cp|mate) (-?\d+)/)
+      if (telemetry && score && /\b(upperbound|lowerbound)\b/.test(line)) bounds.push(line)
       if (line.startsWith('info ') && score && !/\b(upperbound|lowerbound)\b/.test(line)) {
         const multipv = Number(line.match(/\bmultipv (\d+)/)?.[1] ?? 1)
-        lines.set(multipv, { multipv, depth: Number(line.match(/\bdepth (\d+)/)?.[1] ?? 0), evalCp: score[1] === 'cp' ? Number(score[2]) : null, mate: score[1] === 'mate' ? Number(score[2]) : null, pv: line.match(/\bpv (.+)/)?.[1].trim().split(/\s+/) ?? [] })
+        lines.set(multipv, { multipv, depth: Number(line.match(/\bdepth (\d+)/)?.[1] ?? 0), evalCp: score[1] === 'cp' ? Number(score[2]) : null, mate: score[1] === 'mate' ? Number(score[2]) : null, pv: line.match(/\bpv (.+)/)?.[1].trim().split(/\s+/) ?? [], ...(telemetry ? { raw: line } : {}) })
       }
       if (line.startsWith('bestmove ')) {
         const ordered = [...lines.values()].sort((a, b) => a.multipv - b.multipv)
-        return { evalCp: ordered[0]?.evalCp ?? null, mate: ordered[0]?.mate ?? null, lines: ordered }
+        return { evalCp: ordered[0]?.evalCp ?? null, mate: ordered[0]?.mate ?? null, lines: ordered,
+          ...(telemetry ? { elapsedMs: performance.now() - started, engineTimeMs, actualNodes, bestmove: line, bounds } : {}) }
       }
     })
   }

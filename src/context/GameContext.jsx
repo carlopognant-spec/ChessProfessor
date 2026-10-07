@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { Chess } from 'chess.js'
-import { parsePgnMoves } from '../lib/pgn.js'
 import { parseAndValidateFen } from '../lib/positionEditor.js'
+import { captureGameSnapshot, replayGame, restoreGameSnapshot } from '../lib/gameNavigation.js'
 
 const GameContext = createContext(null)
 
@@ -12,102 +12,115 @@ function syncGameState(game, setFen, setMoveHistorySan) {
 
 export function GameProvider({ children }) {
   const gameRef = useRef(new Chess())
+  const baseFenRef = useRef(gameRef.current.fen())
+  const timelineRef = useRef([])
+  const importedPgnRef = useRef(null)
   const [fen, setFen] = useState(gameRef.current.fen())
   const [moveHistorySan, setMoveHistorySan] = useState([])
   const [navigationHistorySan, setNavigationHistorySan] = useState([])
-  // Stack di snapshot { fen, moveHistorySan } salvati PRIMA di ogni mossa
-  // applicata dalla chat, per poter tornare indietro con un pulsante.
+  // Chat undo restores the displayed prefix AND the continuation before its move.
   const [undoStack, setUndoStack] = useState([])
 
-  const snapshotBeforeChange = useCallback(() => {
-    setUndoStack((stack) => [...stack, { fen, moveHistorySan }])
-  }, [fen, moveHistorySan])
+  const updateTimeline = useCallback((timeline) => {
+    timelineRef.current = [...timeline]
+    setNavigationHistorySan(timelineRef.current)
+  }, [])
 
-  const applyMove = useCallback((sanOrMoveObj) => {
+  const applyMove = useCallback((sanOrMoveObj, fromChat = false) => {
     try {
+      const snapshot = fromChat
+        ? captureGameSnapshot(gameRef.current, baseFenRef.current, timelineRef.current)
+        : null
       const move = gameRef.current.move(sanOrMoveObj)
       if (!move) return false
       setFen(gameRef.current.fen())
       setMoveHistorySan(gameRef.current.history())
-      setNavigationHistorySan(gameRef.current.history())
+      updateTimeline(gameRef.current.history())
+      if (fromChat) setUndoStack((stack) => [...stack, snapshot])
+      else setUndoStack([])
       return true
     } catch {
       return false
     }
-  }, [])
+  }, [updateTimeline])
 
   /** Usata dal chatbot: salva snapshot PRIMA di applicare la mossa suggerita. */
   const applyMoveFromChat = useCallback((san) => {
-    snapshotBeforeChange()
-    const ok = applyMove(san)
-    if (!ok) {
-      // Mossa illegale o non riconosciuta: annulla lo snapshot inutilizzato.
-      setUndoStack((stack) => stack.slice(0, -1))
-    }
-    return ok
-  }, [applyMove, snapshotBeforeChange])
+    return applyMove(san, true)
+  }, [applyMove])
 
   const resetGame = useCallback(() => {
+    importedPgnRef.current = null
     const fresh = new Chess()
+    baseFenRef.current = fresh.fen()
     gameRef.current = fresh
     syncGameState(fresh, setFen, setMoveHistorySan)
-    setNavigationHistorySan([])
+    updateTimeline([])
     setUndoStack([])
-  }, [])
+  }, [updateTimeline])
 
   const loadFen = useCallback((nextFen) => {
+    importedPgnRef.current = null
     const validated = parseAndValidateFen(nextFen)
     const next = new Chess(validated.fen)
+    baseFenRef.current = next.fen()
     gameRef.current = next
     syncGameState(next, setFen, setMoveHistorySan)
-    setNavigationHistorySan([])
+    updateTimeline([])
     setUndoStack([])
-  }, [])
+  }, [updateTimeline])
 
   const loadMoveSequence = useCallback((moves = []) => {
-    const next = new Chess()
-    for (const san of moves) next.move(san)
+    const next = replayGame(baseFenRef.current, moves)
     gameRef.current = next
     syncGameState(next, setFen, setMoveHistorySan)
-    setNavigationHistorySan((timeline) => timeline.length > moves.length ? timeline : [...moves])
-    setUndoStack([])
-  }, [])
+    if (timelineRef.current.length < moves.length) updateTimeline(moves)
+  }, [updateTimeline])
 
   const importPgn = useCallback((pgn) => {
-    const moves = parsePgnMoves(pgn)
-    if (moves.length === 0) return false
-
     const next = new Chess()
-    for (const [index, san] of moves.entries()) {
-      const move = next.move(san)
-      if (!move) {
-        throw new Error(`Mossa PGN illegale al passo ${index + 1}: ${san}`)
-      }
-    }
-
+    next.loadPgn(pgn)
+    const moves = next.history()
+    if (moves.length === 0) return false
+    importedPgnRef.current = { pgn: next.pgn(), moves, headers: next.getHeaders() }
+    baseFenRef.current = next.getHeaders().FEN ?? new Chess().fen()
     gameRef.current = next
     syncGameState(next, setFen, setMoveHistorySan)
-    setNavigationHistorySan(moves)
+    updateTimeline(moves)
     setUndoStack([])
     return true
+  }, [updateTimeline])
+
+  const exportPgn = useCallback(() => {
+    const imported = importedPgnRef.current
+    // Navigation changes the displayed prefix, never the saved continuation.
+    if (imported && JSON.stringify(imported.moves) === JSON.stringify(timelineRef.current)) return imported.pgn
+    const full = replayGame(baseFenRef.current, timelineRef.current)
+    if (imported) {
+      for (const [key, value] of Object.entries(imported.headers)) {
+        if (!['FEN', 'SetUp', 'Result'].includes(key)) full.setHeader(key, value)
+      }
+      full.setHeader('Result', full.isCheckmate() ? (full.turn() === 'w' ? '0-1' : '1-0') : full.isDraw() ? '1/2-1/2' : '*')
+    }
+    return full.pgn()
   }, [])
 
   const undo = useCallback(() => {
-    setUndoStack((stack) => {
-      if (stack.length === 0) return stack
-      const last = stack[stack.length - 1]
-      gameRef.current = new Chess(last.fen)
-      setFen(last.fen)
-      setMoveHistorySan(last.moveHistorySan)
-      setNavigationHistorySan(last.moveHistorySan)
-      return stack.slice(0, -1)
-    })
-  }, [])
+    const last = undoStack.at(-1)
+    if (!last) return
+    gameRef.current = restoreGameSnapshot(last)
+    baseFenRef.current = last.baseFen
+    syncGameState(gameRef.current, setFen, setMoveHistorySan)
+    updateTimeline(last.navigationHistorySan)
+    setUndoStack(undoStack.slice(0, -1))
+  }, [undoStack, updateTimeline])
 
   const value = useMemo(() => ({
     fen,
     moveHistorySan,
     navigationHistorySan,
+    baseFen: baseFenRef.current,
+    exportPgn,
     applyMove,
     applyMoveFromChat,
     undo,
@@ -117,7 +130,7 @@ export function GameProvider({ children }) {
     loadMoveSequence,
     canUndo: undoStack.length > 0,
     isGameOver: gameRef.current.isGameOver(),
-  }), [fen, moveHistorySan, navigationHistorySan, applyMove, applyMoveFromChat, undo, undoStack, resetGame, importPgn, loadFen, loadMoveSequence])
+  }), [fen, moveHistorySan, navigationHistorySan, exportPgn, applyMove, applyMoveFromChat, undo, undoStack, resetGame, importPgn, loadFen, loadMoveSequence])
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>
 }

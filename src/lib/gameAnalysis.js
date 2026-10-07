@@ -70,12 +70,14 @@ export function shouldStopExplorerAtThreshold(explorerData, threshold = ENGINE_C
 
 export async function analyzeGame({
   moves = [],
+  baseFen,
   analyzePosition,
   analyzePlayedPosition,
   fetchExplorer,
   session = createGameAnalysisSession(),
   explorerThreshold = ENGINE_CONFIG.explorerThreshold,
   openingBook,
+  analysisKey = '',
   signal,
   onProgress,
   onEntry,
@@ -84,7 +86,7 @@ export async function analyzeGame({
     throw new TypeError('analyzePosition deve essere una funzione')
   }
 
-  const game = new Chess()
+  const game = new Chess(baseFen)
   throwIfAborted(signal)
   const book = openingBook ?? await loadOpeningBook()
   throwIfAborted(signal)
@@ -97,7 +99,7 @@ export async function analyzeGame({
     const fenBefore = game.fen()
     const moveHistorySan = game.history()
     const side = game.turn()
-    const cacheKey = `analysis:${fenBefore}:${san}`
+    const cacheKey = `analysis:${analysisKey ? analysisKey + ':' : ''}${fenBefore}:${san}`
     let entry = session.get(cacheKey)
 
     if (!entry) {
@@ -122,6 +124,7 @@ export async function analyzeGame({
         fenBefore,
         playedMove: san,
         engine,
+        ...(engine.analysisMetadata ? { analysisMetadata: engine.analysisMetadata } : {}),
         explorer,
       }
       game.move(san)

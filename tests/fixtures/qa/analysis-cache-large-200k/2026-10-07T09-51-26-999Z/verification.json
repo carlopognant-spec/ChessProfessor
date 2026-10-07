@@ -1,0 +1,32 @@
+{
+  "appReplayPlies": 1184,
+  "appReplaySchemas": [
+    "baseline",
+    "candidate"
+  ],
+  "numericZeroNormalization": true,
+  "additionalEngineGo": 0,
+  "protectedFilesUnchanged": 81,
+  "engineFilesUnchanged": 2,
+  "tests": {
+    "files": 21,
+    "passed": 125,
+    "skipped": 1,
+    "todo": 1,
+    "exitCode": 0,
+    "seconds": 16.44
+  },
+  "build": {
+    "modules": 68,
+    "exitCode": 0,
+    "seconds": 3.01,
+    "warning": "chunk oltre 500 kB"
+  },
+  "gitDiffCheck": {
+    "exitCode": 0,
+    "warnings": "LF/CRLF"
+  },
+  "noEnvironmentFilesRead": true,
+  "noPartite7To10Read": true,
+  "noSourceChanges": true
+}

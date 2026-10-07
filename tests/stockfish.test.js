@@ -21,12 +21,12 @@ describe('Stockfish MultiPV', () => {
     try {
       worker.emit('uciok')
       worker.emit('readyok')
-      const first = engine.analyze('first-fen', 12, 5)
+      const first = engine.analyze('first-fen', 200000, 5)
       const firstRejected = expect(first).rejects.toThrow('analysis superseded')
       await vi.advanceTimersByTimeAsync(0)
-      const middle = engine.analyze('middle-fen', 12, 5)
+      const middle = engine.analyze('middle-fen', 200000, 5)
       const middleRejected = expect(middle).rejects.toThrow('analysis superseded')
-      const latest = engine.analyze('latest-fen', 12, 5)
+      const latest = engine.analyze('latest-fen', 200000, 5)
       const latestRejected = expect(latest).rejects.toThrow('ricerca interrotta')
       await firstRejected
       await middleRejected
@@ -36,7 +36,7 @@ describe('Stockfish MultiPV', () => {
       await latestRejected
       expect(onFailure.mock.calls).toEqual([[engine.failure]])
       expect(worker.messages.filter(message => message === 'stop')).toHaveLength(1)
-      expect(worker.messages.filter(message => message.startsWith('go '))).toEqual(['go depth 12'])
+      expect(worker.messages.filter(message => message.startsWith('go '))).toEqual(['go nodes 200000'])
       await expect(engine.analyze('future-fen')).rejects.toBe(engine.failure)
       const messages = [...worker.messages]
       worker.emit('uciok')
@@ -111,7 +111,7 @@ describe('Stockfish MultiPV', () => {
       oldWorker.emit('uciok')
       oldWorker.emit('readyok')
       expect(oldWorker.messages).toEqual(['uci'])
-      expect(await engine.analyze('new-fen', 12, 5)).toMatchObject({ evalCp: 35 })
+      expect(await engine.analyze('new-fen', 200000, 5)).toMatchObject({ evalCp: 35 })
       expect(onFailure).not.toHaveBeenCalled()
     } finally {
       engine.destroy()
@@ -206,7 +206,7 @@ describe('Stockfish MultiPV', () => {
         queueMicrotask(() => {
           if (message === 'uci') this.onmessage({ data: 'uciok' })
           if (message === 'isready') this.onmessage({ data: 'readyok' })
-          if (message.startsWith('go depth')) {
+          if (message.startsWith('go nodes')) {
             for (const data of [
               'info depth 11 multipv 1 score mate 4 pv e2e4',
               'info depth 12 multipv 1 score cp 30 pv d2d4',
@@ -219,7 +219,7 @@ describe('Stockfish MultiPV', () => {
       terminate() {},
     }
     const engine = new StockfishEngine({ workerFactory: () => worker })
-    expect(await engine.analyze('test-fen', 12, 1)).toMatchObject({ evalCp: 30, mate: null, depth: 12, pv: ['d2d4'] })
+    expect(await engine.analyze('test-fen', 200000, 1)).toMatchObject({ evalCp: 30, mate: null, depth: 12, pv: ['d2d4'] })
     engine.destroy()
   })
   it('uses the local stockfish worker entrypoint', () => {
@@ -237,13 +237,14 @@ describe('Stockfish MultiPV', () => {
 
     try {
       new StockfishEngine()
-      expect(captured).toEqual([`${import.meta.env.BASE_URL}stockfish-19-lite-single.js`])
+      expect(captured).toEqual([`${import.meta.env.BASE_URL}stockfish-19.0.0-single.js`])
     } finally {
       globalThis.Worker = originalWorker
     }
   })
 
   it('rejects when stockfish never becomes ready', async () => {
+    vi.useFakeTimers()
     const worker = {
       onmessage: null,
       postMessage() {},
@@ -251,23 +252,33 @@ describe('Stockfish MultiPV', () => {
     }
     const engine = new StockfishEngine({ workerFactory: () => worker })
 
-    await expect(engine.waitUntilReady()).rejects.toThrow('Stockfish non si è inizializzato')
-    engine.destroy()
-  }, 20000)
+    try {
+      const rejection = expect(engine.waitUntilReady()).rejects.toThrow('Stockfish non si è inizializzato')
+      await vi.advanceTimersByTimeAsync(179999)
+      expect(engine.failure).toBeNull()
+      await vi.advanceTimersByTimeAsync(1)
+      await rejection
+    } finally { engine.destroy(); vi.useRealTimers() }
+  })
 
   it('requests and returns the configured number of principal variations', async () => {
     const worker = createStockfishTestWorker()
     const engine = new StockfishEngine({ workerFactory: () => worker })
 
-    const result = await engine.analyze('startpos-fen', 12, 2)
+    const result = await engine.analyze('startpos-fen', 200000, 2)
 
     expect(worker.messages).toContain('setoption name MultiPV value 2')
-    expect(worker.messages).toContain('go depth 12')
+    expect(worker.messages).toContain('go nodes 200000')
     expect(result.lines).toEqual([
       { multipv: 1, depth: 12, evalCp: 35, mate: null, pv: ['e2e4', 'e7e5'] },
       { multipv: 2, depth: 12, evalCp: 18, mate: null, pv: ['e7e5', 'g1f3'] },
     ])
     expect(result.evalCp).toBe(35)
+    expect(result.analysisMetadata).toMatchObject({ engine: { version: '19', build: 'large-single' }, budget: { kind: 'nodes', value: 200000 }, multiPv: 2 })
+    expect(worker.messages).toContain('setoption name Threads value 1')
+    expect(worker.messages).toContain('setoption name Hash value 16')
+    expect(worker.messages).toContain('ucinewgame')
+    expect(worker.messages).toContain('setoption name Clear Hash')
     engine.destroy()
   })
 })

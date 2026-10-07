@@ -1,0 +1,12 @@
+{
+  "source": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/",
+  "pairs": 584,
+  "scoreChanges": 0,
+  "changedLines": 0,
+  "goBefore": 1184,
+  "goProposed": 600,
+  "savedGo": 584,
+  "estimatedSavedSearchSeconds": 352.822654099999,
+  "measuredSearchSeconds": 713.3245625,
+  "implementation": false
+}

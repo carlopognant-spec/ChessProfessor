@@ -62,8 +62,8 @@ async function analyzeMoves(moves, responseMap, startingFen) {
     return await analyzeGame({
       moves,
       session: undefined,
-      analyzePosition: (fen) => engine.analyze(fen, 8, 2),
-      analyzePlayedPosition: (fen) => engine.analyze(fen, 8, 2),
+      analyzePosition: (fen) => engine.analyze(fen, 200000, 2),
+      analyzePlayedPosition: (fen) => engine.analyze(fen, 200000, 2),
     })
   } finally {
     engine.destroy()
@@ -139,13 +139,13 @@ describe('win probability classification', () => {
 
     const engine = createAnalyzingEngine(responseMap)
     try {
-      const finalAnalysis = await engine.analyze(finalFen, 8, 2)
+      const finalAnalysis = await engine.analyze(finalFen, 200000, 2)
       expect(finalAnalysis).toMatchObject({ evalCp: null, mate: 0 })
 
       const entries = await analyzeGame({
         moves,
-        analyzePosition: (fen) => engine.analyze(fen, 8, 2),
-        analyzePlayedPosition: (fen) => engine.analyze(fen, 8, 2),
+        analyzePosition: (fen) => engine.analyze(fen, 200000, 2),
+        analyzePlayedPosition: (fen) => engine.analyze(fen, 200000, 2),
       })
       const lastEntry = entries.at(-1)
 

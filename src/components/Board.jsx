@@ -115,7 +115,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
     <div className="board-stage" data-fen={boardFen}>
       <Chessboard options={chessboardOptions} />
       {engineArrowSegments.length > 0 && (
-        <svg className="engine-arrow-overlay" viewBox="0 0 100 100" aria-label="Linee migliori di Stockfish">
+        <svg className="engine-arrow-overlay" data-fen={analysisEngine?.fen ?? boardFen} viewBox="0 0 100 100" aria-label="Linee migliori di Stockfish">
           <defs>
             {engineArrowSegments.map((arrow) => (
               <marker
@@ -134,7 +134,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
           </defs>
           {engineArrowSegments.map((arrow) => (
             <line
-              key={`${arrow.startSquare}-${arrow.endSquare}`}
+              key={arrow.markerId}
               x1={arrow.x1}
               y1={arrow.y1}
               x2={arrow.x2}

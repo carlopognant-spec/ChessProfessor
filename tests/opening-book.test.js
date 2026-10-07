@@ -55,11 +55,12 @@ describe('local opening repertoire', () => {
     }
   })
 
-  it('recognizes exactly three book moves per side in game 10 even without headers or Explorer', async () => {
+  it('recognizes exactly three book moves per side in the fixed Sicilian line even without headers or Explorer', async () => {
+    const pgn = '[Event "Book regression"]\n\n1. e4 c5 2. Nf3 Nc6 3. Bc4 e6 4. c3 g6'
     const original = new Chess()
-    original.loadPgn(originalPgn(10))
+    original.loadPgn(pgn)
     const headerless = new Chess()
-    headerless.loadPgn(originalPgn(10).replace(/^\[.*\]\s*$/gm, ''))
+    headerless.loadPgn(pgn.replace(/^\[.*\]\s*$/gm, ''))
     expect(headerless.getHeaders().ECOUrl).toBeUndefined()
     const analyze = moves => analyzeGame({ moves, analyzePosition: engine, analyzePlayedPosition: engine })
     const entries = await analyze(original.history())

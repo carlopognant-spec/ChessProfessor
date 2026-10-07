@@ -1,4 +1,18 @@
 export const ENGINE_CONFIG = {
+  engine: {
+    name: 'Stockfish',
+    version: '19',
+    packageVersion: '19.0.0',
+    build: 'large-single',
+    workerFile: 'stockfish-19.0.0-single.js',
+    wasmFile: 'stockfish-19.0.0-single.wasm',
+  },
+  nodes: 200000,
+  threads: 1,
+  hashMb: 16,
+  hashPolicy: 'clear-per-search',
+  loadTimeoutMs: 180000,
+  // Legacy depth-only QA caches retain their original configuration.
   defaultDepth: 12,
   // Unused legacy setting: no consumer in src, scripts or tests applies a fallback depth.
   fallbackDepth: 8,

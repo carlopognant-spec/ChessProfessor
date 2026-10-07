@@ -1,0 +1,371 @@
+{
+  "startedAt": "2026-10-07T09:51:27.000Z",
+  "output": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\tests\\fixtures\\qa\\analysis-cache-large-200k\\2026-10-07T09-51-26-999Z",
+  "ids": [
+    "personal-01",
+    "personal-02",
+    "personal-03",
+    "personal-04",
+    "personal-05",
+    "personal-06",
+    "game-1-chigorin-steinitz-1892",
+    "game-2-saintamant-staunton-1843"
+  ],
+  "totalPlies": 592,
+  "expectedGo": 1184,
+  "budget": 200000,
+  "multiPv": 5,
+  "threads": 1,
+  "hashMb": 16,
+  "hashPolicy": "fresh process per game; ucinewgame + Clear Hash before every search; no position reuse",
+  "packageVersion": "19.0.0",
+  "engineFiles": [
+    {
+      "file": "node_modules/stockfish/bin/stockfish-19-single.js",
+      "bytes": 21315,
+      "sha256": "72772f8bdd7353e4e24245d946bb831f56bcccf02fa16a779c1b92a6c00e5cc2"
+    },
+    {
+      "file": "node_modules/stockfish/bin/stockfish-19-single.wasm",
+      "bytes": 99102793,
+      "sha256": "8725c26572762617fd96b2ea83ff130e6640b85815890d682bf8c49db0820721"
+    }
+  ],
+  "protectedFiles": [
+    {
+      "file": "tests/fixtures/qa/analysis-cache/game-1-chigorin-steinitz-1892.json",
+      "sha256": "7222a64d01e41f8bcc5318a03d99aa52396f1d42539df790bbe252da4a3f74e8"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache/game-2-saintamant-staunton-1843.json",
+      "sha256": "ca2b120078a27403258b3c1e233d4a83b4298dd0b5e6c0b88fc2b5ecde2fa353"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache/game-3-fools-mate.json",
+      "sha256": "6f2b8bce3b3e674e57f6fe1f9a38e00f52027f7360f91254444722165f94d881"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache/personal-01.json",
+      "sha256": "35d38affc32d20d8b54f2da2c63b3c24f23e143a6ae0c76270fa44bc6eecd6c7"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache/personal-02.json",
+      "sha256": "16e728aa71baba1899db8bb54b16b7b04284e9c5f7b39154711e8bc0d4ac56d6"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache/personal-03.json",
+      "sha256": "da395c3147c60c6d289f199a9bc3e87f1f71196369b5ba2bec8f043e2ba7c22a"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache/personal-04.json",
+      "sha256": "c834c65e9d812331b9ec7bb54057fe5c9077bad6da931e417acc434021edcb03"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache/personal-05.json",
+      "sha256": "8326decd071b98e2d0aa74572d78dfa02965401088b776d7197ed3c79159bfed"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache/personal-06.json",
+      "sha256": "b409c76bb65c483487f5b141c02bb9909f94ea7c01570ac3e5ce6f56e1c9f0ea"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/additional-statistics.json",
+      "sha256": "39946364bbc43a2a28362e04a0f0a84cff5f847eb6f27dcf2aa8cc2d780c912a"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/classifications.json",
+      "sha256": "80a5722071844edd5abb7a1a2a5bd84bd01ada9b7280362a73ff1a3392b2ec28"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/files-created.txt",
+      "sha256": "1dca4d65346db95a33ca0ff47f7ad05d38db651427d8895fa5186d4c6511f147"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/game-1-chigorin-steinitz-1892-pair.json",
+      "sha256": "66dac0cce0553a00b50678dd8c9698fd937568652b635e3e2c69294a8cd8b831"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/game-1-chigorin-steinitz-1892-single.json",
+      "sha256": "2257bfbcf8d1fd3bc7686cc77a12639c46c664005c7013c7ddf1cfff920f985a"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/game-2-saintamant-staunton-1843-pair.json",
+      "sha256": "b2a9311aae7849036bf84feb87c1cbf2442e5603ca270622daf217b362a1c500"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/game-2-saintamant-staunton-1843-single.json",
+      "sha256": "374ea02a277e94c7ba9f0962e798d3ac5edcdd11a1a4e17b563566266a45ae44"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/git-diff-check.txt",
+      "sha256": "971b0fbdf14269d9682dad726e966a8da8c907ff89f1a713e2d3087346663aa7"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/npm-build.txt",
+      "sha256": "f139a16c487773ff6e64124cb13bbdd43708b769285d724f9307c3c970d187ab"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/npm-test.txt",
+      "sha256": "ddb28c53d5fc808e7f010266980493374ee9a785042b7236367cf31d3613f803"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-01-pair.json",
+      "sha256": "ca890792fe1561c25b41bd9d7bf981dd889510909bf000b9337d82819895ea04"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-01-single.json",
+      "sha256": "5e0ff1710657bac458f77dcda02955e034422cef7eba860ba01890dba4d71ef7"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-02-pair.json",
+      "sha256": "d83ad06b1fe512893bcbde8509c01e22b50f1026db8faef4d70bc32a9758c7df"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-02-single.json",
+      "sha256": "e625e158ae87e13d1bf9fb2a876dd706ea7da190d651ea83b28ad3d0fbd35545"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-03-pair.json",
+      "sha256": "27ef805e13949ecfdfebdade4ef5f1a878ef168db32d18620708265eeb4e4859"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-03-single.json",
+      "sha256": "03c402efafc11f5ad9166f684568119cde5a233dea0e21580a6a81d997e57e30"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-04-pair.json",
+      "sha256": "10fc553e9b9ba3c31e2c94695a0d8c2a65c1da40b6bf6a80b9852769d934a0e1"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-04-single.json",
+      "sha256": "66a8a6f62652d085566aab6ce0450a34084e617c077d598e125ba10cb64a5977"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-05-pair.json",
+      "sha256": "7f276cd3cb153bfa8ea2a0b96c43c834351110a4858daf6d6d756f7e3d59f824"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-05-single.json",
+      "sha256": "e40d84afbc9074563a9fe9b96bf2c41d8b85a007205f060ea635d131a8d8be75"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-06-pair.json",
+      "sha256": "ce07d4eef21fe989cd31b0baec965bdd206f47e1772fdd9e0839af3cbbd988a2"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/personal-06-single.json",
+      "sha256": "cd414510db7654274854ab82c8c8a7df6c1478f31cf83e2b136b59e43a767c79"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/repeatability.json",
+      "sha256": "5dd8f39153b86c52cfcb8f32311d32286ffbef619d93b8dda582d8472006af15"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/report.md",
+      "sha256": "f058cbe4b2f524dd89575ec88f021b7845a7ee5d109a01f0019bca9ff708af92"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/summary.json",
+      "sha256": "58553150796945a8eafc532e5f10b22e86c313862594a725a705edff32371bbd"
+    },
+    {
+      "file": "tests/fixtures/qa/analysis-cache-searchmoves/verification.md",
+      "sha256": "7550b7bfa91eb070c51b58244d690cb02984cb0057ef040b41f88af671e5182f"
+    },
+    {
+      "file": "src/App.jsx",
+      "sha256": "25ff933e3afc8a155225b2f5685ab7977c588121f88cc9335ae3cd2f087dcf85"
+    },
+    {
+      "file": "src/components/AnalysisSummary.jsx",
+      "sha256": "b911164ee8df2d7bcbafa6dc3bb34a712d5971281efaf3097f8ebd24cc7fbd34"
+    },
+    {
+      "file": "src/components/Board.jsx",
+      "sha256": "0bfe7540575a0b9fc0997c158f9a626f37f96382beeb5c43d8b24e3dc6ed704d"
+    },
+    {
+      "file": "src/components/ChatPanel.jsx",
+      "sha256": "4fc8f431ecff09c6146dd897ff792bf7423a4f0e5c37271867a0296f9a520d5a"
+    },
+    {
+      "file": "src/components/EnginePanel.jsx",
+      "sha256": "9e228365cd107ec43ff9ecf7da0082ccaaa83d8d3160e0e545de54b8758f2c12"
+    },
+    {
+      "file": "src/components/MoveList.jsx",
+      "sha256": "14a9cab01e4b35fd0dcc0ececd150df78427959220220b7b37dfcfeb52d1a2a4"
+    },
+    {
+      "file": "src/components/MoveNavigation.jsx",
+      "sha256": "00a03b8da08830b60fd056f1c8746a288c6cd7a3d1d822255e7b0bb26c74b23c"
+    },
+    {
+      "file": "src/components/OpeningPanel.jsx",
+      "sha256": "e56b26e96d5b790a0880ed86820ad4b369810bf5c2246605ee8e5e882852489d"
+    },
+    {
+      "file": "src/components/PositionEditor.jsx",
+      "sha256": "fdd28d9452caa7f5e055491968693bfbd89b429f694d0fabff7670d6fc514eae"
+    },
+    {
+      "file": "src/components/UndoButton.jsx",
+      "sha256": "1ce6d0b46f45d9865a2215a436d62d3f6b6202752ea573ab9dd05c7e3f5365c0"
+    },
+    {
+      "file": "src/context/GameContext.jsx",
+      "sha256": "eb1edc44abfe88a701a6992f9c0acef0fec2c08ecb1478b7e0f0c38be57c46b4"
+    },
+    {
+      "file": "src/data/openingBook.LICENSE.txt",
+      "sha256": "1fe0b49b2d842cd5284eba26478fa4aa8bd7da8cae7a1045b5bb329eb94fe888"
+    },
+    {
+      "file": "src/data/openingPositions.json",
+      "sha256": "0b96012fd9330e01ff3eb85600cb678f997bf5f2ed7e6054828fa6f97c236b5a"
+    },
+    {
+      "file": "src/data/openingSupplements.json",
+      "sha256": "fa8e375154baec5c1a4eef47110034840a63b6e52eeef6829674e20e44ec4b87"
+    },
+    {
+      "file": "src/data/README.md",
+      "sha256": "e85781c5722de52be2fec61d37da4e77431f193f04e71a6fbf465fabd814a19a"
+    },
+    {
+      "file": "src/index.css",
+      "sha256": "b9c3691c31df20e5b3ed16a06883847761529b2c472bd3738086facc8ac98106"
+    },
+    {
+      "file": "src/lib/analysisCache.js",
+      "sha256": "4b05039c3bb625069c2050db94cd414a48d86c9ddfbfae6504fd28858ffb6f74"
+    },
+    {
+      "file": "src/lib/analysisPresentation.js",
+      "sha256": "8ab4d0221811e1198518a6f61f1462e8c4fb4764876767a24834b406c2e40a11"
+    },
+    {
+      "file": "src/lib/classification.js",
+      "sha256": "2bdd4f56ad53f36d29d051a98debd66faeab5e396ad6a78b7d7d54a38f41c262"
+    },
+    {
+      "file": "src/lib/engineConfig.js",
+      "sha256": "df2b332ab408a7705639f50d0556003eb922aa9c255f18888101a334af5fc4af"
+    },
+    {
+      "file": "src/lib/evaluation.js",
+      "sha256": "09e174188867ff6b08ab848dbe84a9c3fe7b8c4a98e7861fbf1d6c1639d4d9b5"
+    },
+    {
+      "file": "src/lib/gameAnalysis.js",
+      "sha256": "c4cc081e4341b89e58e882ca4be8fbd639f6d93c857e69992cc641beaace7f56"
+    },
+    {
+      "file": "src/lib/gameNavigation.js",
+      "sha256": "4d26e81b2a98a273d2ad5bbdca22f0d188c346fec1e08bb7a582a19cf7945323"
+    },
+    {
+      "file": "src/lib/lichessExplorer.js",
+      "sha256": "caab7afe431ebffc738ac47eb2b56d750784a58e8862877c2285ba61fb6cab80"
+    },
+    {
+      "file": "src/lib/llm/criticalContext.js",
+      "sha256": "6e808a588f1de89206aedba1fa305bb352409abbaae65298d6ba3b5dc110856b"
+    },
+    {
+      "file": "src/lib/llm/gemini.js",
+      "sha256": "7e9cad348481bf3a567d3e80942c15f1ae066aedcbd3b164023f56efb4e3557c"
+    },
+    {
+      "file": "src/lib/llm/groq.js",
+      "sha256": "0abd0bfb5b56dda0cc59c8970f985eee7b03fbf38f329e4bb4f8f4ffc09615b7"
+    },
+    {
+      "file": "src/lib/llm/index.js",
+      "sha256": "72488b7d93f9b980b9265d9e62d7e65dd2b6374b4d2f89f5705b6aec905f59e7"
+    },
+    {
+      "file": "src/lib/llm/systemPrompt.js",
+      "sha256": "077d59b0f3a0a55861e3e2799af43527374cf4dd28073c4a90e539a1d17f9775"
+    },
+    {
+      "file": "src/lib/mateComparison.js",
+      "sha256": "2cb95fd70b9071f67a70b9ebfd82c39976d07cbbb1d2d0f437338227c04539a7"
+    },
+    {
+      "file": "src/lib/missedOpportunity.js",
+      "sha256": "eacedc342ba25980e25375f204fa6307960be49afd4f29025b4dd0c81db221f6"
+    },
+    {
+      "file": "src/lib/openingBook.js",
+      "sha256": "7a0187a755c4c566e8aeb541b81477a2fa98708621256135624bd06b2655513c"
+    },
+    {
+      "file": "src/lib/pgn.js",
+      "sha256": "e97d3db1298ba09edf519f99a68b2c2d91e1ccfed2f62bfe7c9bd416add7e35d"
+    },
+    {
+      "file": "src/lib/positionEditor.js",
+      "sha256": "be2bb1df34d44f5b670f132a370e80745ab94cea1655460ba417cffb7eb97544"
+    },
+    {
+      "file": "src/lib/positionFacts.js",
+      "sha256": "1180bbbcd4640bb126b2ff52280965f6c91328135f89577c5d0dfe95bdb7e9c6"
+    },
+    {
+      "file": "src/lib/stockfish.js",
+      "sha256": "f7f3ec72bc4c74c9058f31a54b7513140325caaef4b7f4b73634d39aafe0b148"
+    },
+    {
+      "file": "src/main.jsx",
+      "sha256": "e9bb0d5c1730a9599eded1a6a1e4c8d960d28981690bd139bddab358630e08b2"
+    },
+    {
+      "file": "tests/fixtures/qa/suspect-labels.json",
+      "sha256": "79cccfce18b10bbb04402dc7648123ace80a915bcfd4142f106778027c78e579"
+    },
+    {
+      "file": "tests/fixtures/qa/personal-01.json",
+      "sha256": "c96c451405decc38094480767ffef1f03de7fdff6756916f3015c081cff3974f"
+    },
+    {
+      "file": "tests/fixtures/qa/personal-02.json",
+      "sha256": "12e7a695c1f2a2796c536fb9bde983feedac525404467280beda2802c72d751c"
+    },
+    {
+      "file": "tests/fixtures/qa/personal-03.json",
+      "sha256": "acc9c32708e6cd1b4e0227134ababc16d280b7fceaa0bd2c42ede5c00c51c246"
+    },
+    {
+      "file": "tests/fixtures/qa/personal-04.json",
+      "sha256": "372219d4b2bc7747e277944143d65dfff9a58ff37f28824c7ca21ae0531de594"
+    },
+    {
+      "file": "tests/fixtures/qa/personal-05.json",
+      "sha256": "8e87f6e8d46c006e85e26969e46645a4f0e6eb67bc0f8af11b73431fb5c1b986"
+    },
+    {
+      "file": "tests/fixtures/qa/personal-06.json",
+      "sha256": "4bc0b8fa71a6bdf1f8c31785881ea7c247f1b5586eab809a582df634a8f98ad4"
+    },
+    {
+      "file": "tests/fixtures/qa/game-1-chigorin-steinitz-1892.json",
+      "sha256": "9d51e6ec8f96f7b90505f968739e46f997559f22164ba81099289107db59e607"
+    },
+    {
+      "file": "tests/fixtures/qa/game-2-saintamant-staunton-1843.json",
+      "sha256": "af0c33baac84bffd29343e8310e116bbc5ba1947d0ff5c0c393bc9ccb41da6a0"
+    }
+  ],
+  "classification": {
+    "best": 1,
+    "excellent": 3,
+    "good": 5,
+    "inaccuracy": 10,
+    "mistake": 20
+  },
+  "missedOpportunity": {
+    "winningProbability": 0.75,
+    "nonWinningProbability": 0.6
+  }
+}
