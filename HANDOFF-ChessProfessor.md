@@ -310,6 +310,30 @@ Regole correnti: un punto alla volta con STOP e riepilogo; npm test, npm run bui
 - B3: gestire _fail terminale (stop non onorato entro 15 s o errore worker) ricreando il motore oppure mostrando un messaggio chiaro in EnginePanel; aggiungere un test con worker finto. Ancora da eseguire.
 - B4, solo progettazione: descrivere go depth N searchmoves <mossa giocata> dalla FEN iniziale per le mosse fuori dalla MultiPV, eliminando l'analisi della posizione dopo la mossa (analyzePlayedPosition). Coprire frecce e resolveEngineForFen per fenAfter, ultima posizione, matto/stallo, cache FEN+mossa, scripts/qa/native-engine.js con Stockfish 16 e worker Stockfish 19. Stimare numero di ricerche prima/dopo e rischi. Nessuna implementazione o generazione cache autorizzata; non confondere lo score root della mossa giocata con un'analisi completa del fenAfter.
 
+## Esiti Libro e soglie
+
+Risultati C4/C5 accettati da Carlo. Decisione: lasciare le soglie attuali 1/3/5/10/20 pp, il modello, Libro, Mossa mancata e il cap `isEngineBest=false -> massimo Ottima` invariati. L'evidenza iniziale di due alternative entrambe Migliore era un bug di chess.com successivamente risolto; non giustifica varianti senza cap. C9 resta sospeso.
+
+Libro locale coincide con tutte le etichette attese Libro su P1-P6 (conteggi 7, 5, 4, 6, 8, 9). Sulle storiche scarta di due ply per partita: H1 riconosce 14 contro 12 attese, includendo ply 13 d4 e 14 Bg4; H2 riconosce 5 contro 7 attese, escludendo ply 8 Nf6 e 9 Nf3. Nella posizione dopo 1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d4 Nxe4, il repertorio riconosce gia 5.O-O e tre risposte nere (Be7, a6, Nd6), con ulteriori continuazioni; 5.d5 e 5.dxe5 non risultano Libro.
+
+Ricalcolo offline sulle cache originali P1-P6 e H1-H2: (a) 1/3/5/10/20; (b) 1/2/5/10/20; (c) Migliore soltanto con perdita zero e identita PV1, Ottima a 2, poi 5/10/20, mantenendo l'eccezione corrente del matto dato. Tutte le altre regole e le esclusioni QA conservate. (b) e (c) coincidono su ogni categoria: cambiano 46 mosse incluse, tutte Ottima -> Buona, di cui 16 attese Buona e 15 attese Ottima. Altre sei valutazioni numeriche QA di mosse attese Libro cambiano, ma sono escluse dalle metriche e non cambiano il riconoscimento Libro. La fascia 2-3 pp non e distinguibile con affidabilita dal rumore nei confronti disponibili; non e stata dimostrata un'equivalenza statistica.
+
+| Gruppo | Esatta (a) | Esatta (b)/(c) | Entro una classe (a) | Entro una classe (b)/(c) |
+|---|---|---|---|---|
+| P1-P6 | 174/342 | 177/342 | 300/332 | 299/332 |
+| H1-H2 | 82/161 | 80/161 | 139/161 | 144/161 |
+| Totale | 256/503 | 257/503 | 439/493 | 443/493 |
+
+Su circa 500 mosse, esatta 256 -> 257 ed entro una classe 439 -> 443: beneficio esatto marginale e risultati misti fra gruppi. Le soglie pubblicate da chess.com appartengono a un modello a punti attesi dipendente anche dal rating, diverso dalla sigmoid locale dei cp: questo confronto sullo sviluppo non e una validazione e non autorizza modifiche alle soglie.
+
+Rumore chess.com: Carlo riporta due esecuzioni con stesso motore e stessa depth, +0,07 contro +0,29 per la stessa mossa (scarto 0,22 pedoni = 22 cp). E un singolo esempio riferito dall'utente, non una stima di media, varianza o limite generale, e non e stato riprodotto qui. Nel precedente confronto erano state indicate impostazioni diverse (Game Review/Torch Human contro Analisi/Stockfish 19 Lite); la condizione di uguaglianza motore/depth del nuovo confronto e quella riportata nell'ultimo aggiornamento, non verificata indipendentemente.
+
+P5 development, due Game Review con impostazioni Torch Human default e Stockfish 5 s: distanza L1 fra i conteggi 6 per il Bianco e 6 per il Nero. A totali uguali (19+18=37 mosse), almeno 12/2=6 mosse hanno etichette diverse; concordanza massima possibile 31/37=83,78%, circa 84%. E un tetto di concordanza fra queste due revisioni ricavato dai conteggi, non il tetto generale di accuratezza dell'app, ne un confronto per-ply: la concordanza reale puo essere inferiore. Entrambe distano dalla fixture P5 di 6+4=10; dall'app corrente distano rispettivamente 10+10=20 e 8+10=18. Il manifest delle etichette P1-P6 non registra motore, forza, depth o tempo di revisione.
+
+Provenienza Libro: 12.377 sequenze complete da JeffML/eco.json, revisione 36cfd9227f553dec1d39ee20fa0775eea8f8e165 (file ecoA-E.json, licenza MIT), piu due integrazioni con fonti documentate: Berlin 4.d4 Nxe4 da chess.com e Bowdler ritardata da Wikibooks. Il generatore scripts/build-opening-book.js valida e ripercorre tutte le sequenze, raccoglie ogni posizione intermedia e deduplica per i primi quattro campi FEN; produce 15.522 posizioni. Non legge fixture, etichette o directory Partite, e non filtra le posizioni sulla base delle etichette. Tuttavia le due integrazioni furono selezionate dopo aver osservato le partite di sviluppo, come gia documentato in questo HANDOFF: la coincidenza Libro su P1-P6 non e una validazione indipendente. I test confrontano esplicitamente i flag Libro con le etichette delle fixture P1-P6; questo e uso delle etichette per regressione, distinto dalla generazione.
+
+Diagnosi letture: tests/opening-book.test.js, test `recognizes exactly three book moves per side in game 10 even without headers or Explorer`, chiama originalPgn(10) due volte. L'helper elenca Partite/10 e legge il primo file .pgn trovato; non legge analisi.txt. Nello stesso file, it.each([1,2,3,4,5,6]) legge i PGN originali 1-6 e le relative fixture. Dalla ricerca statica nei test non risultano letture di Partite/7, /8 o /9, ne altre letture di /10. La lettura indiretta del PGN 10 nella suite completa C7 e gia stata dichiarata; nelle verifiche successive viene escluso l'intero file, senza modificare i test. Nessun file di Partite/7-10 o .env letto per questa diagnosi.
+
 ### Fase C — solo proposte, previa conferma della fase
 
 - C1: posizioni già vinte; confronto numerico con ±1000 usando A1, senza modificare il modello.
