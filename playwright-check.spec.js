@@ -596,6 +596,7 @@ test('completed analysis navigation stays fast without new engine searches', asy
       const move = new Chess(positions[ply - 1]).move(['Nf3', 'Nf6', 'Ng1', 'Ng8'][(ply - 1) % 4])
       await expect(page.locator('.move-classification-overlay')).toHaveAttribute('data-move-square', move.to)
       if (ply === 1) await expect(page.locator('.move-classification-overlay')).toHaveAttribute('data-classification', 'book')
+      if (ply === 1) await expect(page.locator('.move-classification-overlay [data-icon]')).toHaveAttribute('data-icon', 'book')
     }
     const elapsed = Date.now() - started
     navigationTimings.push({ button, elapsedMs: elapsed })
@@ -623,6 +624,47 @@ test('completed analysis navigation stays fast without new engine searches', asy
   await expect(page.locator('.move-classification-overlay')).toHaveCount(0)
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
+})
+
+test('classification reference colors and symbols render without an engine', async ({ page }) => {
+  const errors = []
+  page.on('pageerror', error => errors.push(error.message))
+  await page.addInitScript(() => { window.Worker = class { constructor() { throw new Error('Unexpected engine search') } } })
+  await page.setViewportSize({ width: 1050, height: 1300 })
+  await page.goto(appUrl)
+  const game = new Chess(), before = game.fen()
+  game.move('e4')
+  await page.evaluate(async ({ before, after }) => {
+    const { default: React } = await import('/ChessProfessor/node_modules/.vite/deps/react.js')
+    const { default: ReactDOM } = await import('/ChessProfessor/node_modules/.vite/deps/react-dom_client.js')
+    const { default: Board } = await import('/ChessProfessor/src/components/Board.jsx')
+    const { GameProvider, useGame } = await import('/ChessProfessor/src/context/GameContext.jsx')
+    const { MOVE_APPEARANCE } = await import('/ChessProfessor/src/lib/moveReviewPresentation.js')
+    function Preview({ classification }) {
+      const { applyMove } = useGame()
+      React.useEffect(() => { applyMove('e4') }, [applyMove])
+      const entry = { ply: 1, side: 'w', playedMove: 'e4', moveHistorySan: [], fenBefore: before, fenAfter: after,
+        classification, isBookMove: classification === 'book', engine: { lines: [{ multipv: 1, pv: ['d2d4'] }] }, playedEngine: {} }
+      return React.createElement(Board, { id: `reference-${classification}`, analysisEntries: [entry] })
+    }
+    document.querySelector('main').style.display = 'none'
+    const host = document.createElement('div')
+    host.id = 'classification-reference'
+    Object.assign(host.style, { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', padding: '16px' })
+    document.body.appendChild(host)
+    ReactDOM.createRoot(host).render(React.createElement(React.Fragment, null, ...Object.entries(MOVE_APPEARANCE).map(([classification, style]) =>
+      React.createElement('section', { key: classification, 'data-preview-category': classification },
+        React.createElement('h3', null, style.label),
+        React.createElement(GameProvider, null, React.createElement(Preview, { classification }))))))
+  }, { before, after: game.fen() })
+  await expect.poll(async () => ({ count: await page.locator('#classification-reference .move-classification-overlay').count(), errors }), { timeout: 5000 }).toEqual({ count: 11, errors: [] })
+  const excellent = page.locator('[data-preview-category="excellent"]')
+  await expect(excellent.locator('[data-icon]')).toHaveAttribute('data-icon', 'thumb')
+  await expect(page.locator('[data-preview-category="good"] [data-icon]')).toHaveAttribute('data-icon', 'check')
+  await expect(page.locator('[data-preview-category="book"] .engine-arrow')).toHaveCount(0)
+  expect(await page.locator('[data-preview-category="book"] [data-square="e4"] > div').evaluate(square => getComputedStyle(square).backgroundColor)).toBe('rgb(226, 202, 170)')
+  await page.waitForTimeout(150)
+  await page.locator('#classification-reference').screenshot({ path: 'agent-output/cleanup-review-2026-10-08/classification-reference.png' })
 })
 
 test('real Stockfish 19 refreshes a best-move arrow and hides it in book positions', async ({ page }) => {

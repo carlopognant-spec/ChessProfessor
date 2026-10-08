@@ -3,6 +3,7 @@ import { Chessboard } from 'react-chessboard'
 import { Chess } from 'chess.js'
 import { useGame } from '../context/GameContext.jsx'
 import MoveClassificationBadge from './MoveClassificationBadge.jsx'
+import { getReviewedMove, getReviewSquareStyles } from '../lib/moveReviewPresentation.js'
 import { buildEngineArrowSegments, buildEngineArrows, resolveEngineForFen, resolveMoveReview } from '../lib/analysisPresentation.js'
 
 const LIGHT_SQUARE = '#EDE6D6'
@@ -18,7 +19,7 @@ function Arrow({ arrow }) {
     fill="#81B64C" fillOpacity="0.88" />
 }
 
-export default function Board({ editorPiece = null, displayFen, onEditorSquare, analysisEntries = [], engineData = null }) {
+export default function Board({ id = 'study-board', editorPiece = null, displayFen, onEditorSquare, analysisEntries = [], engineData = null }) {
   const { fen, moveHistorySan, navigationHistorySan, applyMove } = useGame()
   const [moveFrom, setMoveFrom] = useState(null)
   const [optionSquares, setOptionSquares] = useState({})
@@ -29,6 +30,9 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
     ? resolveMoveReview(boardFen, moveHistorySan, analysisEntries) : null,
   [boardFen, moveHistorySan, analysisEntries, editorPiece])
   const reviewingGame = navigationHistorySan.length > 0
+  const reviewedMove = useMemo(() => getReviewedMove(review?.entry), [review?.entry])
+  const reviewSquareStyles = useMemo(() => getReviewSquareStyles(review?.entry, reviewedMove), [review?.entry, reviewedMove])
+  const squareStyles = useMemo(() => ({ ...reviewSquareStyles, ...optionSquares }), [reviewSquareStyles, optionSquares])
 
   const analysisEngine = useMemo(
     () => resolveEngineForFen(boardFen, analysisEntries, engineData),
@@ -120,14 +124,14 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
     position: boardFen,
     onPieceDrop,
     onSquareClick,
-    squareStyles: optionSquares,
+    squareStyles,
     arrows: userArrows,
     onArrowsChange,
     allowDrawingArrows: true,
     clearArrowsOnPositionChange: false,
     boardOrientation: 'white',
     animationDurationInMs: 120,
-    id: 'study-board',
+    id,
     lightSquareStyle: { backgroundColor: LIGHT_SQUARE },
     darkSquareStyle: { backgroundColor: DARK_SQUARE },
     boardStyle: { borderRadius: '4px', boxShadow: '0 8px 24px rgba(0,0,0,0.35)' },
@@ -142,7 +146,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
           {engineArrowSegments.map(arrow => <Arrow key={arrow.markerId} arrow={arrow} />)}
         </svg>
       )}
-      {review && <MoveClassificationBadge entry={review.entry} />}
+      {review && <MoveClassificationBadge entry={review.entry} move={reviewedMove} />}
     </div>
     {engineArrowSegments.length > 0 && (
       <p className="engine-arrow-status" aria-live="polite">
