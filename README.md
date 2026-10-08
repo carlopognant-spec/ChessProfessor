@@ -45,6 +45,13 @@ Apri l'indirizzo mostrato da Vite, normalmente
   semimosse richiede normalmente N+1 ricerche anziché 2N. La cronologia SAN viene
   conservata durante il passaggio sequenziale. L'analisi nell'app non attende
   l'Explorer; Libro continua a dipendere dal repertorio locale.
+  Una sola cache di sessione conserva i risultati senza scadenza temporale,
+  fino al reset o all'evizione della voce più vecchia, con limite di 250 voci.
+  Aggiornare una voce esistente non ne elimina un'altra. Se un chiamante inietta
+  una cache personalizzata in `createGameAnalysisSession`, quella cache è
+  l'unica fonte dei valori e mantiene la propria eventuale politica di scadenza;
+  deve fornire `get`, `set`, `delete` e `clear`. L'indice delle chiavi della
+  sessione serve soltanto a gestire il limite e l'ordine di evizione.
 - **Classificazione**: l'app assegna Libro dal repertorio locale, Migliore, Ottima,
   Buona, Imprecisione, Errore, Errore grave e Mossa mancata. Senza valutazioni
   sufficienti mostra Non valutabile. Le categorie **Grande e Geniale** sono

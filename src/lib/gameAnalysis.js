@@ -1,4 +1,3 @@
-import { createAnalysisCache } from './analysisCache.js'
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { Chess } from 'chess.js'
 import { classifyAnalysisEntries, moveEvaluationFields, MOVE_CLASSIFICATION } from './classification.js'
@@ -27,30 +26,37 @@ function throwIfAborted(signal) {
   }
 }
 
-export function createGameAnalysisSession({ cache = createAnalysisCache(), maxEntries = ENGINE_CONFIG.maxAnalysisEntries } = {}) {
-  const entries = new Map()
+export function createGameAnalysisSession({ cache = new Map(), maxEntries = ENGINE_CONFIG.maxAnalysisEntries } = {}) {
+  if (!Number.isSafeInteger(maxEntries) || maxEntries < 1) {
+    throw new RangeError('maxEntries deve essere un intero positivo')
+  }
+  // Keys track FIFO eviction only; the cache is the sole owner of values.
+  const keys = new Set()
   let explorerStopped = false
 
-  const write = (key, value) => {
-    if (entries.size >= maxEntries) {
-      const oldestKey = entries.keys().next().value
-      if (oldestKey) {
-        entries.delete(oldestKey)
-        cache.delete?.(oldestKey)
-      }
+  const rememberKey = (key) => {
+    if (keys.has(key)) return
+    if (keys.size >= maxEntries) {
+      const oldestKey = keys.values().next().value
+      keys.delete(oldestKey)
+      cache.delete(oldestKey)
     }
+    keys.add(key)
+  }
 
-    entries.set(key, value)
+  const write = (key, value) => {
+    rememberKey(key)
     cache.set(key, value)
     return value
   }
 
   const read = (key) => {
-    const cached = entries.get(key) ?? cache.get(key)
+    const cached = cache.get(key)
     if (cached !== null && cached !== undefined) {
-      entries.set(key, cached)
+      rememberKey(key)
       return cached
     }
+    keys.delete(key)
     return null
   }
 
@@ -58,12 +64,12 @@ export function createGameAnalysisSession({ cache = createAnalysisCache(), maxEn
     get: read,
     set: write,
     clear() {
-      entries.clear()
+      keys.clear()
       cache.clear()
       explorerStopped = false
     },
     size() {
-      return entries.size
+      return keys.size
     },
     isExplorerStopped() {
       return explorerStopped
