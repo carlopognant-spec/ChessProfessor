@@ -53,7 +53,6 @@ export function createGameAnalysisSession({ cache = createAnalysisCache(), maxEn
     size() {
       return entries.size
     },
-    config: ENGINE_CONFIG,
     isExplorerStopped() {
       return explorerStopped
     },
