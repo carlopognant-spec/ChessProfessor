@@ -2,7 +2,6 @@ import { Chess } from 'chess.js'
 import { auditProbability, auditSacrifices } from './brilliant-sacrifice-audit.js'
 import { attributeOffer } from './brilliant-offer-attribution-v3.js'
 
-const uciOf = m => `${m.from}${m.to}${m.promotion ?? ''}`
 function scoresAt(fen, rootUci, collections) {
   const rows = []
   for (const { source, lines } of collections) {
