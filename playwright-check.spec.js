@@ -512,6 +512,22 @@ test('partial MultiPV duplicate roots never leave old arrows after a position ch
   game.move('e4')
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', initial)
   await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay')).toBeVisible()
+  const arrowPaint = await page.locator('.engine-arrow-overlay line').evaluateAll(lines => lines.map(line => {
+    const style = getComputedStyle(line)
+    return {
+      width: parseFloat(style.strokeWidth),
+      expectedWidth: Number(line.getAttribute('stroke-width')),
+      opacity: parseFloat(style.strokeOpacity),
+      expectedOpacity: Number(line.getAttribute('stroke-opacity')),
+      stroke: style.stroke,
+    }
+  }))
+  expect(arrowPaint.every(line => line.width > 0 && line.opacity > 0 && line.stroke !== 'none')).toBe(true)
+  for (const line of arrowPaint) {
+    expect(line.width).toBeCloseTo(line.expectedWidth)
+    expect(line.opacity).toBeCloseTo(line.expectedOpacity)
+  }
   await assertLegalArrows(page)
   await page.locator('[data-square="e2"]').click()
   await page.locator('[data-square="e4"]').click()
