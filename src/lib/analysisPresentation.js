@@ -57,6 +57,18 @@ export function resolveAnalysisEntryForPosition(fen, moves = [], entries = []) {
     entry.moveHistorySan.every((san, index) => san === moves[index])) ?? null
 }
 
+export function resolveMoveReview(fen, moves = [], entries = []) {
+  const entry = resolveAnalysisEntryForPosition(fen, moves, entries)
+  if (!entry?.engine || !entry.playedEngine || !entry.classification) return null
+  const primary = entry.engine.lines?.find(line => (line.multipv ?? 1) === 1)
+  const bestMove = primary?.pv?.[0] ?? entry.engine.pv?.[0]
+  return {
+    entry,
+    bestMove: entry.isBookMove || entry.classification === 'book'
+      ? null : (/^[a-h][1-8][a-h][1-8][qrbn]?$/.test(bestMove ?? '') ? bestMove : null),
+  }
+}
+
 export function buildMoveNavigation(moveHistorySan = [], baseFen = '') {
   const fields = baseFen.split(' ')
   const startsBlack = fields[1] === 'b'

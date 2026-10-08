@@ -444,7 +444,7 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
     const game = new Chess()
     for (const move of ['e4', 'e5', 'd4', 'd5']) game.move(move)
     await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', game.fen())
-    await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(0)
+    await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
     expect(await page.evaluate(() => window.testWorkers.length)).toBe(1)
 
     // Navigation must not clear the failure or silently reuse the dead engine.
@@ -473,11 +473,10 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
 async function assertLegalArrows(page) {
   // Read position and arrows in one browser task: navigation can render between awaits.
   const { fen, engineFen, evalFen, moves } = await page.locator('.board-stage').evaluate(board => {
-    const square = (x, y) => String.fromCharCode(97 + Math.round((Number(x) - 6.25) / 12.5)) + (8 - Math.round((Number(y) - 6.25) / 12.5))
-    return { fen: board.dataset.fen, engineFen: board.querySelector('.engine-arrow-overlay')?.dataset.fen, evalFen: board.parentElement.querySelector('.engine-eval-label')?.dataset.fen, moves: [...board.querySelectorAll('.engine-arrow-overlay line')].map(line => square(line.getAttribute('x1'), line.getAttribute('y1')) + square(line.getAttribute('x2'), line.getAttribute('y2'))) }
+    return { fen: board.dataset.fen, engineFen: board.querySelector('.engine-arrow-overlay')?.dataset.fen, evalFen: board.parentElement.querySelector('.engine-eval-label')?.dataset.fen, moves: [...board.querySelectorAll('.engine-arrow-overlay .engine-arrow')].map(arrow => arrow.dataset.from + arrow.dataset.to) }
   })
-  const legal = new Chess(fen).moves({ verbose: true }).map(move => move.from + move.to)
-  expect(moves.length).toBeGreaterThan(0)
+  const legal = new Chess(engineFen ?? fen).moves({ verbose: true }).map(move => move.from + move.to)
+  expect(moves.length).toBeLessThanOrEqual(1)
   for (const move of moves) expect(legal, JSON.stringify({ fen, engineFen, evalFen, moves })).toContain(move)
 }
 
@@ -511,21 +510,164 @@ test('partial MultiPV duplicate roots never leave old arrows after a position ch
   const initial = new Chess().fen(), game = new Chess()
   game.move('e4')
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', initial)
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
+  await expect(page.locator('.engine-arrow-overlay')).toBeVisible()
+  const arrowPaint = await page.locator('.engine-arrow-overlay .engine-arrow').evaluateAll(lines => lines.map(line => {
+    const style = getComputedStyle(line)
+    return {
+      opacity: parseFloat(style.fillOpacity),
+      fill: style.fill,
+    }
+  }))
+  expect(arrowPaint.every(arrow => arrow.opacity > 0 && arrow.fill !== 'none')).toBe(true)
   await assertLegalArrows(page)
   await page.locator('[data-square="e2"]').click()
   await page.locator('[data-square="e4"]').click()
   for (const target of [game.fen(), initial, game.fen(), initial]) {
     await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', target)
     await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', target)
-    await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+    await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
     await assertLegalArrows(page)
     await page.keyboard.press(target === initial ? 'ArrowRight' : 'ArrowLeft')
   }
   expect(keyWarnings).toEqual([])
 })
 
-test('real Stockfish 19 refreshes five legal arrows after PGN import and navigation', async ({ page }) => {
+test('completed analysis navigation stays fast without new engine searches', async ({ page }) => {
+  const errors = []
+  page.on('pageerror', error => errors.push(error.message))
+  const heldExplorerRequests = []
+  await page.route('https://explorer.lichess.ovh/**', route => { heldExplorerRequests.push(route) })
+  await page.addInitScript(() => {
+    window.engineSearchCount = 0
+    window.Worker = class {
+      postMessage(command) {
+        if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
+        if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
+        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('go nodes')) {
+          window.engineSearchCount++
+          const moves = this.fen.split(' ')[1] === 'b'
+            ? ['e7e5', 'd7d5', 'b8c6', 'h7h6', 'a7a6']
+            : ['e2e4', 'd2d4', 'b1c3', 'h2h3', 'a2a3']
+          setTimeout(() => {
+            for (const [i, move] of moves.entries()) this.onmessage?.({ data: `info depth 12 multipv ${i + 1} score cp ${20 - i} pv ${move}` })
+            this.onmessage?.({ data: `bestmove ${moves[0]}` })
+          }, 5)
+        }
+      }
+      terminate() {}
+    }
+  })
+  const game = new Chess()
+  const positions = [game.fen()]
+  for (let i = 0; i < 168; i++) {
+    game.move(['Nf3', 'Nf6', 'Ng1', 'Ng8'][i % 4])
+    positions.push(game.fen())
+  }
+  await page.goto(appUrl)
+  await openTools(page, 'Partita e analisi')
+  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(game.pgn())
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
+  await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
+  await expect(page.locator('.analysis-row-button').first()).toBeVisible()
+  expect(await page.locator('.analysis-row-button').count()).toBeLessThan(168)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
+  await expect(page.locator('.move-classification-overlay')).toHaveCount(0)
+  await page.getByRole('button', { name: 'Primo', exact: true }).click()
+  await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
+  await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
+  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.analysis-row-button')).toHaveCount(168)
+  await page.getByRole('button', { name: 'Ultimo', exact: true }).click()
+  const searches = await page.evaluate(() => window.engineSearchCount)
+  expect(searches).toBe(169)
+  const summaryBefore = await page.locator('.summary-table').innerText()
+  const navigationTimings = []
+  for (const [button, ply] of [['Indietro', 167], ['Primo', 0], ['Avanti', 1], ['Ultimo', 168]]) {
+    const started = Date.now()
+    await page.getByRole('button', { name: button, exact: true }).click()
+    await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[ply])
+    await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[ply])
+    await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(ply <= 1 ? 0 : 1)
+    if (ply > 1) await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', positions[ply - 1])
+    await expect(page.locator('.move-classification-overlay')).toHaveCount(ply === 0 ? 0 : 1)
+    if (ply > 0) {
+      const move = new Chess(positions[ply - 1]).move(['Nf3', 'Nf6', 'Ng1', 'Ng8'][(ply - 1) % 4])
+      await expect(page.locator('.move-classification-overlay')).toHaveAttribute('data-move-square', move.to)
+      if (ply === 1) await expect(page.locator('.move-classification-overlay')).toHaveAttribute('data-classification', 'book')
+      if (ply === 1) await expect(page.locator('.move-classification-overlay [data-icon]')).toHaveAttribute('data-icon', 'book')
+    }
+    const elapsed = Date.now() - started
+    navigationTimings.push({ button, elapsedMs: elapsed })
+    expect(elapsed).toBeLessThan(1000)
+    await expect(page.locator('.analysis-row-button')).toHaveCount(168)
+    await assertLegalArrows(page)
+  }
+  for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowLeft')
+  for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowRight')
+  await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[168])
+  expect(await page.locator('.summary-table').innerText()).toBe(summaryBefore)
+  expect(await page.evaluate(() => window.engineSearchCount)).toBe(searches)
+  expect(errors).toEqual([])
+  // Analysis and navigation finish even while every Explorer response is withheld.
+  expect(heldExplorerRequests.length).toBeGreaterThan(0)
+  expect(new Set(heldExplorerRequests.map(route => route.request().url())).size).toBe(heldExplorerRequests.length)
+  await Promise.all(heldExplorerRequests.map(route => route.fulfill({ json: { white: 0, draws: 0, black: 0, moves: [] } })))
+  console.log('Mocked navigation timings:', JSON.stringify(navigationTimings))
+  await page.waitForTimeout(150) // Let the 120 ms piece animation finish for visual review.
+  await page.locator('.board-stage').screenshot({ path: 'agent-output/cleanup-review-2026-10-08/move-review-desktop.png' })
+  await page.setViewportSize({ width: 360, height: 844 })
+  await page.locator('.board-stage').screenshot({ path: 'agent-output/cleanup-review-2026-10-08/move-review-mobile.png' })
+  await page.getByRole('button', { name: 'Reset partita', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toHaveCount(0)
+  await expect(page.locator('.move-classification-overlay')).toHaveCount(0)
+  await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
+  await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
+})
+
+test('classification reference colors and symbols render without an engine', async ({ page }) => {
+  const errors = []
+  page.on('pageerror', error => errors.push(error.message))
+  await page.addInitScript(() => { window.Worker = class { constructor() { throw new Error('Unexpected engine search') } } })
+  await page.setViewportSize({ width: 1050, height: 1300 })
+  await page.goto(appUrl)
+  const game = new Chess(), before = game.fen()
+  game.move('e4')
+  await page.evaluate(async ({ before, after }) => {
+    const { default: React } = await import('/ChessProfessor/node_modules/.vite/deps/react.js')
+    const { default: ReactDOM } = await import('/ChessProfessor/node_modules/.vite/deps/react-dom_client.js')
+    const { default: Board } = await import('/ChessProfessor/src/components/Board.jsx')
+    const { GameProvider, useGame } = await import('/ChessProfessor/src/context/GameContext.jsx')
+    const { MOVE_APPEARANCE } = await import('/ChessProfessor/src/lib/moveReviewPresentation.js')
+    function Preview({ classification }) {
+      const { applyMove } = useGame()
+      React.useEffect(() => { applyMove('e4') }, [applyMove])
+      const entry = { ply: 1, side: 'w', playedMove: 'e4', moveHistorySan: [], fenBefore: before, fenAfter: after,
+        classification, isBookMove: classification === 'book', engine: { lines: [{ multipv: 1, pv: ['d2d4'] }] }, playedEngine: {} }
+      return React.createElement(Board, { id: `reference-${classification}`, analysisEntries: [entry] })
+    }
+    document.querySelector('main').style.display = 'none'
+    const host = document.createElement('div')
+    host.id = 'classification-reference'
+    Object.assign(host.style, { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', padding: '16px' })
+    document.body.appendChild(host)
+    ReactDOM.createRoot(host).render(React.createElement(React.Fragment, null, ...Object.entries(MOVE_APPEARANCE).map(([classification, style]) =>
+      React.createElement('section', { key: classification, 'data-preview-category': classification },
+        React.createElement('h3', null, style.label),
+        React.createElement(GameProvider, null, React.createElement(Preview, { classification }))))))
+  }, { before, after: game.fen() })
+  await expect.poll(async () => ({ count: await page.locator('#classification-reference .move-classification-overlay').count(), errors }), { timeout: 5000 }).toEqual({ count: 11, errors: [] })
+  const excellent = page.locator('[data-preview-category="excellent"]')
+  await expect(excellent.locator('[data-icon]')).toHaveAttribute('data-icon', 'thumb')
+  await expect(page.locator('[data-preview-category="good"] [data-icon]')).toHaveAttribute('data-icon', 'check')
+  await expect(page.locator('[data-preview-category="book"] .engine-arrow')).toHaveCount(0)
+  expect(await page.locator('[data-preview-category="book"] [data-square="e4"] > div').evaluate(square => getComputedStyle(square).backgroundColor)).toBe('rgb(226, 202, 170)')
+  await page.waitForTimeout(150)
+  await page.locator('#classification-reference').screenshot({ path: 'agent-output/cleanup-review-2026-10-08/classification-reference.png' })
+})
+
+test('real Stockfish 19 refreshes a best-move arrow and hides it in book positions', async ({ page }) => {
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
   await page.addInitScript(() => {
@@ -552,7 +694,7 @@ test('real Stockfish 19 refreshes five legal arrows after PGN import and navigat
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await wasm
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await assertLegalArrows(page)
   // Cache persistence is tested with the real worker, including an offline restart.
   const cacheName = 'chessprofessor-engine-' + ENGINE_CONFIG.engine.workerFile.replace(/\.js$/, '')
@@ -582,14 +724,14 @@ test('real Stockfish 19 refreshes five legal arrows after PGN import and navigat
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await expect(page.locator('.analysis-row-button')).toHaveCount(8)
   const savedSummary = await page.locator('.analysis-rows').textContent()
   const searchesBeforeClosing = await page.evaluate(() => window.engineSearchCount)
   await page.locator('.tools-menu > summary').click()
   await expect(page.locator('.analysis-summary')).not.toBeVisible()
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await openTools(page, 'Partita e analisi')
   expect(await page.locator('.analysis-rows').textContent()).toBe(savedSummary)
@@ -597,14 +739,14 @@ test('real Stockfish 19 refreshes five legal arrows after PGN import and navigat
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).blur()
   await page.keyboard.press('ArrowLeft')
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
   await assertLegalArrows(page)
   await page.getByRole('button', { name: 'Reset partita', exact: true }).click()
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await assertLegalArrows(page)
   const beforeRapidImport = await page.evaluate(() => window.engineSearchCount)
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. d4 d5 2. c4 e6 3. Nc3 Nf6 *')
@@ -613,7 +755,7 @@ test('real Stockfish 19 refreshes five legal arrows after PGN import and navigat
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. c4 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   expect(errors).toEqual([])
 })
@@ -639,10 +781,10 @@ test('clears previous arrows while a newly imported position is waiting for anal
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(1)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(0, { timeout: 500 })
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0, { timeout: 500 })
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
   await assertLegalArrows(page)
 })

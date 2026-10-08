@@ -20,9 +20,6 @@ export function createAnalysisCache(ttlMs = 60000) {
       })
       return value
     },
-    has(key) {
-      return this.get(key) !== null
-    },
     delete(key) {
       entries.delete(key)
     },

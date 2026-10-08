@@ -1,11 +1,22 @@
-import { createAnalysisCache } from './analysisCache.js'
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { Chess } from 'chess.js'
 import { classifyAnalysisEntries, moveEvaluationFields, MOVE_CLASSIFICATION } from './classification.js'
 import { loadOpeningBook } from './openingBook.js'
 import { classifyMissedOpportunity } from './missedOpportunity.js'
 
-const CLASSIFICATION_ORDER = Object.values(MOVE_CLASSIFICATION)
+const CLASSIFICATION_ORDER = [
+  MOVE_CLASSIFICATION.brilliant,
+  MOVE_CLASSIFICATION.great,
+  MOVE_CLASSIFICATION.book,
+  MOVE_CLASSIFICATION.best,
+  MOVE_CLASSIFICATION.excellent,
+  MOVE_CLASSIFICATION.good,
+  MOVE_CLASSIFICATION.inaccuracy,
+  MOVE_CLASSIFICATION.mistake,
+  MOVE_CLASSIFICATION.missed,
+  MOVE_CLASSIFICATION.blunder,
+  MOVE_CLASSIFICATION.unclassified,
+]
 
 function throwIfAborted(signal) {
   if (signal?.aborted) {
@@ -15,30 +26,37 @@ function throwIfAborted(signal) {
   }
 }
 
-export function createGameAnalysisSession({ cache = createAnalysisCache(), maxEntries = ENGINE_CONFIG.maxAnalysisEntries } = {}) {
-  const entries = new Map()
+export function createGameAnalysisSession({ cache = new Map(), maxEntries = ENGINE_CONFIG.maxAnalysisEntries } = {}) {
+  if (!Number.isSafeInteger(maxEntries) || maxEntries < 1) {
+    throw new RangeError('maxEntries deve essere un intero positivo')
+  }
+  // Keys track FIFO eviction only; the cache is the sole owner of values.
+  const keys = new Set()
   let explorerStopped = false
 
-  const write = (key, value) => {
-    if (entries.size >= maxEntries) {
-      const oldestKey = entries.keys().next().value
-      if (oldestKey) {
-        entries.delete(oldestKey)
-        cache.delete?.(oldestKey)
-      }
+  const rememberKey = (key) => {
+    if (keys.has(key)) return
+    if (keys.size >= maxEntries) {
+      const oldestKey = keys.values().next().value
+      keys.delete(oldestKey)
+      cache.delete(oldestKey)
     }
+    keys.add(key)
+  }
 
-    entries.set(key, value)
+  const write = (key, value) => {
+    rememberKey(key)
     cache.set(key, value)
     return value
   }
 
   const read = (key) => {
-    const cached = entries.get(key) ?? cache.get(key)
+    const cached = cache.get(key)
     if (cached !== null && cached !== undefined) {
-      entries.set(key, cached)
+      rememberKey(key)
       return cached
     }
+    keys.delete(key)
     return null
   }
 
@@ -46,14 +64,13 @@ export function createGameAnalysisSession({ cache = createAnalysisCache(), maxEn
     get: read,
     set: write,
     clear() {
-      entries.clear()
+      keys.clear()
       cache.clear()
       explorerStopped = false
     },
     size() {
-      return entries.size
+      return keys.size
     },
-    config: ENGINE_CONFIG,
     isExplorerStopped() {
       return explorerStopped
     },
@@ -91,6 +108,7 @@ export async function analyzeGame({
   const book = openingBook ?? await loadOpeningBook()
   throwIfAborted(signal)
   const results = []
+  const history = []
   let explorerStopped = session.isExplorerStopped?.() ?? false
   let bookPathActive = true
 
@@ -98,13 +116,18 @@ export async function analyzeGame({
     throwIfAborted(signal)
     const fenBefore = game.fen()
     const moveNumber = Number(fenBefore.split(' ')[5])
-    const moveHistorySan = game.history()
+    const moveHistorySan = [...history]
     const side = game.turn()
     const cacheKey = `analysis:${analysisKey ? analysisKey + ':' : ''}${fenBefore}:${san}`
     let entry = session.get(cacheKey)
+    let move
 
     if (!entry) {
-      const engine = await analyzePosition(fenBefore)
+      const previousEntry = results.at(-1)
+      // The UI uses the same search profile before and after each move.
+      const reusable = analyzePosition === analyzePlayedPosition
+        && previousEntry?.fenAfter === fenBefore && previousEntry.playedEngine
+      const engine = reusable || await analyzePosition(fenBefore)
       throwIfAborted(signal)
 
       let explorer = null
@@ -128,7 +151,7 @@ export async function analyzeGame({
         ...(engine.analysisMetadata ? { analysisMetadata: engine.analysisMetadata } : {}),
         explorer,
       }
-      game.move(san)
+      move = game.move(san)
       entry.fenAfter = game.fen()
 
       if (typeof analyzePlayedPosition === 'function') {
@@ -146,7 +169,8 @@ export async function analyzeGame({
       session.stopExplorer?.()
     }
 
-    if (game.history().length === index) game.move(san)
+    move ??= game.move(san)
+    history.push(move.san)
     // Preserve the existing final-mate classification even for named mating traps.
     const isBookMove = bookPathActive && !game.isCheckmate() && book.hasPosition(entry.fenAfter)
     const isFirstBookDeviation = bookPathActive && !isBookMove
@@ -161,7 +185,6 @@ export async function analyzeGame({
       isFirstBookDeviation,
     }
     if (entry.playedEngine) {
-      const move = game.history({ verbose: true }).at(-1)
       entry = classifyAnalysisEntries([{
         ...entry,
         ...moveEvaluationFields(entry.engine, entry.playedEngine, `${move.from}${move.to}${move.promotion ?? ''}`, { isCheckmate: game.isCheckmate() }),
