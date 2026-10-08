@@ -61,7 +61,10 @@ async function analyzeMoves(moves, responseMap, startingFen) {
   try {
     return await analyzeGame({
       moves,
+      baseFen: startingFen,
       session: undefined,
+      // Compare numeric classification; the real opening book is not mirrored.
+      openingBook: { hasPosition: () => false },
       analyzePosition: (fen) => engine.analyze(fen, 200000, 2),
       analyzePlayedPosition: (fen) => engine.analyze(fen, 200000, 2),
     })
@@ -94,8 +97,7 @@ describe('win probability classification', () => {
     expect(entry.classification).toBe('unclassified')
   })
 
-  it.skip('keeps white/black symmetry on a mirrored move pair analyzed with the shared Stockfish helper', async () => {
-    // TODO: analyzeGame starts from the standard initial position only; add a custom-start FEN path before re-enabling.
+  it('keeps white/black symmetry on a mirrored move pair analyzed with the shared Stockfish helper', async () => {
     const originalMoves = ['e4', 'e5', 'Nf3', 'Nc6']
     const originalEvaluations = [
       { before: { evalCp: 20, mate: null }, after: { evalCp: 18, mate: null } },
@@ -121,6 +123,8 @@ describe('win probability classification', () => {
     const originalEntries = await analyzeMoves(originalMoves, originalMap)
     const mirroredEntries = await analyzeMoves(mirroredSan, mirroredMap, mirrorFen(new Chess().fen()))
 
+    expect(originalEntries[0].fenBefore).toBe(new Chess().fen())
+    expect(mirroredEntries[0].fenBefore).toBe(new Chess(mirrorFen(new Chess().fen())).fen())
     expect(originalEntries.map((entry) => entry.classification)).toEqual(mirroredEntries.map((entry) => entry.classification))
     expect(Math.abs(originalEntries[3].dropPct - mirroredEntries[3].dropPct)).toBeLessThanOrEqual(1.5)
     expect(originalEntries[1].bestEval).toBeGreaterThan(0)
