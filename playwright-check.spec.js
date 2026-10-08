@@ -573,6 +573,7 @@ test('completed analysis navigation stays fast without new engine searches', asy
   await expect(page.locator('.analysis-row-button').first()).toBeVisible()
   expect(await page.locator('.analysis-row-button').count()).toBeLessThan(168)
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
+  await expect(page.locator('.move-classification-overlay')).toHaveCount(0)
   await page.getByRole('button', { name: 'Primo', exact: true }).click()
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
@@ -590,6 +591,12 @@ test('completed analysis navigation stays fast without new engine searches', asy
     await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[ply])
     await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(ply <= 1 ? 0 : 1)
     if (ply > 1) await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', positions[ply - 1])
+    await expect(page.locator('.move-classification-overlay')).toHaveCount(ply === 0 ? 0 : 1)
+    if (ply > 0) {
+      const move = new Chess(positions[ply - 1]).move(['Nf3', 'Nf6', 'Ng1', 'Ng8'][(ply - 1) % 4])
+      await expect(page.locator('.move-classification-overlay')).toHaveAttribute('data-move-square', move.to)
+      if (ply === 1) await expect(page.locator('.move-classification-overlay')).toHaveAttribute('data-classification', 'book')
+    }
     const elapsed = Date.now() - started
     navigationTimings.push({ button, elapsedMs: elapsed })
     expect(elapsed).toBeLessThan(1000)
@@ -607,8 +614,13 @@ test('completed analysis navigation stays fast without new engine searches', asy
   expect(new Set(heldExplorerRequests.map(route => route.request().url())).size).toBe(heldExplorerRequests.length)
   await Promise.all(heldExplorerRequests.map(route => route.fulfill({ json: { white: 0, draws: 0, black: 0, moves: [] } })))
   console.log('Mocked navigation timings:', JSON.stringify(navigationTimings))
+  await page.waitForTimeout(150) // Let the 120 ms piece animation finish for visual review.
+  await page.locator('.board-stage').screenshot({ path: 'agent-output/cleanup-review-2026-10-08/move-review-desktop.png' })
+  await page.setViewportSize({ width: 360, height: 844 })
+  await page.locator('.board-stage').screenshot({ path: 'agent-output/cleanup-review-2026-10-08/move-review-mobile.png' })
   await page.getByRole('button', { name: 'Reset partita', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(0)
+  await expect(page.locator('.move-classification-overlay')).toHaveCount(0)
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
 })

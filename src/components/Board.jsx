@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { Chessboard } from 'react-chessboard'
 import { Chess } from 'chess.js'
 import { useGame } from '../context/GameContext.jsx'
+import MoveClassificationBadge from './MoveClassificationBadge.jsx'
 import { buildEngineArrowSegments, buildEngineArrows, resolveEngineForFen, resolveMoveReview } from '../lib/analysisPresentation.js'
 
 const LIGHT_SQUARE = '#EDE6D6'
@@ -125,6 +126,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
     allowDrawingArrows: true,
     clearArrowsOnPositionChange: false,
     boardOrientation: 'white',
+    animationDurationInMs: 120,
     id: 'study-board',
     lightSquareStyle: { backgroundColor: LIGHT_SQUARE },
     darkSquareStyle: { backgroundColor: DARK_SQUARE },
@@ -132,6 +134,7 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
   }
 
   return (
+    <>
     <div className="board-stage" data-fen={boardFen}>
       <Chessboard options={chessboardOptions} />
       {engineArrowSegments.length > 0 && (
@@ -139,11 +142,13 @@ export default function Board({ editorPiece = null, displayFen, onEditorSquare, 
           {engineArrowSegments.map(arrow => <Arrow key={arrow.markerId} arrow={arrow} />)}
         </svg>
       )}
-      {engineArrowSegments.length > 0 && (
-        <span className="engine-arrow-status" aria-live="polite">
-          {reviewingGame ? 'Migliore alternativa alla mossa giocata' : 'Migliore mossa Stockfish'}
-        </span>
-      )}
+      {review && <MoveClassificationBadge entry={review.entry} />}
     </div>
+    {engineArrowSegments.length > 0 && (
+      <p className="engine-arrow-status" aria-live="polite">
+        {reviewingGame ? 'Migliore alternativa alla mossa giocata' : 'Migliore mossa Stockfish'}
+      </p>
+    )}
+    </>
   )
 }
