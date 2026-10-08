@@ -541,6 +541,76 @@ test('partial MultiPV duplicate roots never leave old arrows after a position ch
   expect(keyWarnings).toEqual([])
 })
 
+test('completed analysis navigation stays fast without new engine searches', async ({ page }) => {
+  const errors = []
+  page.on('pageerror', error => errors.push(error.message))
+  await page.addInitScript(() => {
+    window.engineSearchCount = 0
+    window.Worker = class {
+      postMessage(command) {
+        if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
+        if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
+        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('go nodes')) {
+          window.engineSearchCount++
+          const moves = this.fen.split(' ')[1] === 'b'
+            ? ['e7e5', 'd7d5', 'b8c6', 'h7h6', 'a7a6']
+            : ['e2e4', 'd2d4', 'b1c3', 'h2h3', 'a2a3']
+          setTimeout(() => {
+            for (const [i, move] of moves.entries()) this.onmessage?.({ data: `info depth 12 multipv ${i + 1} score cp ${20 - i} pv ${move}` })
+            this.onmessage?.({ data: `bestmove ${moves[0]}` })
+          }, 5)
+        }
+      }
+      terminate() {}
+    }
+  })
+  const game = new Chess()
+  const positions = [game.fen()]
+  for (let i = 0; i < 168; i++) {
+    game.move(['Nf3', 'Nf6', 'Ng1', 'Ng8'][i % 4])
+    positions.push(game.fen())
+  }
+  await page.goto(appUrl)
+  await openTools(page, 'Partita e analisi')
+  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(game.pgn())
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
+  await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
+  await expect(page.locator('.analysis-row-button').first()).toBeVisible()
+  expect(await page.locator('.analysis-row-button').count()).toBeLessThan(168)
+  await page.getByRole('button', { name: 'Primo', exact: true }).click()
+  await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
+  await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
+  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.analysis-row-button')).toHaveCount(168)
+  await page.getByRole('button', { name: 'Ultimo', exact: true }).click()
+  const searches = await page.evaluate(() => window.engineSearchCount)
+  const summaryBefore = await page.locator('.summary-table').innerText()
+  const navigationTimings = []
+  for (const [button, ply] of [['Indietro', 167], ['Primo', 0], ['Avanti', 1], ['Ultimo', 168]]) {
+    const started = Date.now()
+    await page.getByRole('button', { name: button, exact: true }).click()
+    await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[ply])
+    await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[ply])
+    const elapsed = Date.now() - started
+    navigationTimings.push({ button, elapsedMs: elapsed })
+    expect(elapsed).toBeLessThan(1000)
+    await expect(page.locator('.analysis-row-button')).toHaveCount(168)
+    await assertLegalArrows(page)
+  }
+  for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowLeft')
+  for (let i = 0; i < 5; i++) await page.keyboard.press('ArrowRight')
+  await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[168])
+  expect(await page.locator('.summary-table').innerText()).toBe(summaryBefore)
+  expect(await page.evaluate(() => window.engineSearchCount)).toBe(searches)
+  expect(errors).toEqual([])
+  console.log('Mocked navigation timings:', JSON.stringify(navigationTimings))
+  await page.getByRole('button', { name: 'Reset partita', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toHaveCount(0)
+  await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
+  await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
+})
+
 test('real Stockfish 19 refreshes five legal arrows after PGN import and navigation', async ({ page }) => {
   const errors = []
   page.on('pageerror', error => errors.push(error.message))

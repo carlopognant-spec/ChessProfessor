@@ -122,7 +122,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
     onAnalysisData?.([])
     setEngineError('')
 
-    if (moveHistorySan.length === 0) {
+    if (navigationHistorySan.length === 0) {
       analysisSessionRef.current.clear()
       return
     }
@@ -134,7 +134,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
     setProgress(0)
 
     analyzeGame({
-      moves: moveHistorySan,
+      moves: navigationHistorySan,
       baseFen,
       analyzePosition: analyzeCurrentPosition,
       analyzePlayedPosition: analyzeCurrentPosition,
@@ -177,7 +177,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
       gameAnalyzingRef.current = false
       controller.abort()
     }
-  }, [moveHistorySan, baseFen, savedMatches, applyEngineData, onAnalysisData, engineReady])
+  }, [navigationHistorySan, baseFen, savedMatches, applyEngineData, onAnalysisData, engineReady])
 
   useEffect(() => {
     if (savedMatches || !engineReady || !engineRef.current || engineRef.current.failure) return
@@ -186,7 +186,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
     onEngineData?.(null)
     setEngineError('')
 
-    if (moveHistorySan.length > 0) {
+    if (navigationHistorySan.length > 0) {
       const cached = resolveEngineForFen(fen, analysisEntriesRef.current)
       if (cached?.lines?.length) {
         applyEngineData(cached, fen)
@@ -214,7 +214,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
     return () => {
       cancelled = true
     }
-  }, [fen, moveHistorySan, savedMatches, applyEngineData, onEngineData, engineReady])
+  }, [fen, navigationHistorySan, savedMatches, applyEngineData, onEngineData, engineReady])
 
   const displayedData = evalData?.fen === fen ? evalData : null
   const barPercent = displayedData?.mate != null
