@@ -22,8 +22,10 @@ Apri l'indirizzo mostrato da Vite, normalmente
 ## Come funziona
 
 - **Scacchiera**: react-chessboard + chess.js. Trascina i pezzi per giocare una mossa.
-- **Aperture**: ad ogni posizione, l'app interroga la Opening Explorer API di Lichess
-  per nome ECO e statistiche. La verifica runtime del 2026-10-01 ha restituito `401
+- **Aperture**: il pannello interroga la Opening Explorer API di Lichess
+  per nome ECO e statistiche, indipendentemente dall'analisi Stockfish. Riusa le
+  ultime 100 richieste, incluse quelle ancora in corso, durante la navigazione.
+  La verifica runtime del 2026-10-01 ha restituito `401
   Unauthorized` sia senza token sia con un token invalido: `VITE_LICHESS_TOKEN` è
   quindi richiesto e viene inviato come Bearer token. Errori 401, rate limit e
   posizioni senza partite vengono mostrati senza alterare la posizione corrente.
@@ -37,8 +39,12 @@ Apri l'indirizzo mostrato da Vite, normalmente
   né un fallback a depth 8. Il motore calcola valutazioni e varianti, senza testo.
 - **Analisi partita**: dopo l'avvio, analizza le semimosse giocate o importate,
   mostra il progresso e riusa dati della posizione e della mossa con una chiave
-  che include la configurazione di analisi. Le richieste Explorer dell'analisi si
-  interrompono sotto `15` partite complessive; questa soglia non assegna Libro.
+  che include la configurazione di analisi. Navigare cambia la posizione mostrata
+  senza riavviare l'analisi o svuotare i risultati. La posizione dopo una mossa
+  viene riusata prima della successiva con lo stesso profilo: una partita di N
+  semimosse richiede normalmente N+1 ricerche anziché 2N. La cronologia SAN viene
+  conservata durante il passaggio sequenziale. L'analisi nell'app non attende
+  l'Explorer; Libro continua a dipendere dal repertorio locale.
 - **Classificazione**: l'app assegna Libro dal repertorio locale, Migliore, Ottima,
   Buona, Imprecisione, Errore, Errore grave e Mossa mancata. Senza valutazioni
   sufficienti mostra Non valutabile. Le categorie **Grande e Geniale** sono

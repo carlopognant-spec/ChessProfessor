@@ -35,8 +35,10 @@ suo score MultiPV a pari profondità se presente; altrimenti quello della
 posizione successiva, riportato alla prospettiva di chi muove.
 
 Libro viene assegnato dal repertorio locale finché la partita non devia;
-la soglia Explorer di 15 partite serve solo a fermare le richieste durante
-l'analisi. Le posizioni senza score sufficienti sono Non valutabile.
+la soglia Explorer di 15 partite serve solo a fermare le richieste quando
+`analyzeGame` riceve un provider Explorer. L'app consulta l'Explorer nel pannello
+Aperture, indipendentemente dall'analisi Stockfish. Le posizioni senza score
+sufficienti sono Non valutabile.
 
 Matto vincente/perdente corrisponde a probabilità 1/0. Il matto dato ha perdita
 zero. Conservare lo stesso esito del matto non penalizza una variazione della
