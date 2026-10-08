@@ -1,0 +1,281 @@
+{
+  "summary": {
+    "offers": 6,
+    "moves": 4,
+    "referenceGrande": 0,
+    "searchesExecuted": 0,
+    "classificationChanged": false,
+    "sourceHashesUnchanged": true
+  },
+  "rows": [
+    {
+      "id": "personal-04",
+      "ply": 48,
+      "moveNumber": 24,
+      "side": "b",
+      "san": "Nd4",
+      "fenBefore": "B6Q/p3kpp1/4p3/4P1p1/4b3/P4PP1/4n1KP/R4R2 b - - 0 24",
+      "fenAfter": "B6Q/p3kpp1/4p3/4P1p1/3nb3/P4PP1/6KP/R4R2 w - - 1 25",
+      "reference": "Errore",
+      "common": "excellent",
+      "prediction": "Ottima",
+      "grandeReason": "protected-or-not-best",
+      "features": null,
+      "fields": {
+        "bestEval": -1444,
+        "bestMate": null,
+        "playedEval": null,
+        "playedMate": -7,
+        "playedUci": "e2d4",
+        "bestUci": "e4d5",
+        "isEngineBest": false,
+        "evaluationSource": "independent-position"
+      },
+      "bestSan": "Bd5",
+      "previous": {
+        "ply": 47,
+        "san": "f3",
+        "classification": "excellent",
+        "fields": {
+          "bestEval": 1684,
+          "bestMate": null,
+          "playedEval": 1403,
+          "playedMate": null,
+          "playedUci": "f2f3",
+          "bestUci": "a8e4",
+          "isEngineBest": false,
+          "evaluationSource": "root-pv"
+        }
+      },
+      "offers": [
+        {
+          "san": "Bxe4",
+          "probabilityMover": 0,
+          "scoreEvidence": [
+            {
+              "evalCpOpponent": null,
+              "mateOpponent": 7,
+              "depth": 16,
+              "raw": "info depth 16 seldepth 19 multipv 1 score mate 7 nodes 200175 nps 322342 hashfull 80 time 621 pv a8e4 d4f5 a1b1 f5d6 e5d6 e7f6 h8d8 f6e5 f1d1 a7a6 d8g5 f7f5 g5g7"
+            }
+          ]
+        },
+        {
+          "san": "fxe4",
+          "probabilityMover": 0.016342639709701956,
+          "scoreEvidence": [
+            {
+              "evalCpOpponent": 1639,
+              "mateOpponent": null,
+              "depth": 15,
+              "raw": "info depth 15 seldepth 30 multipv 3 score cp 1639 nodes 200175 nps 321824 hashfull 80 time 622 pv f3e4 g5g4 h8h4 e7e8 h4g4 d4c2 g4g5 c2e3 g5e3 e8f8 f1d1 f8g8 d1d8 g8h7 e3g5 f7f6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-06",
+      "ply": 32,
+      "moveNumber": 16,
+      "side": "b",
+      "san": "Qd7",
+      "fenBefore": "r2q1rk1/p4pp1/3p1nbp/2pNn3/Pp2P1PB/5P2/1PP2QBP/R4RK1 b - - 1 16",
+      "fenAfter": "r4rk1/p2q1pp1/3p1nbp/2pNn3/Pp2P1PB/5P2/1PP2QBP/R4RK1 w - - 2 17",
+      "reference": "Buona",
+      "common": "mistake",
+      "prediction": "Errore",
+      "grandeReason": "protected-or-not-best",
+      "features": null,
+      "fields": {
+        "bestEval": -422,
+        "bestMate": null,
+        "playedEval": -769,
+        "playedMate": null,
+        "playedUci": "d8d7",
+        "bestUci": "e5d7",
+        "isEngineBest": false,
+        "evaluationSource": "independent-position"
+      },
+      "bestSan": "Ned7",
+      "previous": {
+        "ply": 31,
+        "san": "Nd5",
+        "classification": "best",
+        "fields": {
+          "bestEval": 429,
+          "bestMate": null,
+          "playedEval": 429,
+          "playedMate": null,
+          "playedUci": "c3d5",
+          "bestUci": "c3d5",
+          "isEngineBest": true,
+          "evaluationSource": "root-pv"
+        }
+      },
+      "offers": [
+        {
+          "san": "Nxf6+",
+          "probabilityMover": 0.20141081084042667,
+          "scoreEvidence": [
+            {
+              "evalCpOpponent": 551,
+              "mateOpponent": null,
+              "depth": 14,
+              "raw": "info depth 14 seldepth 22 multipv 2 score cp 551 nodes 200220 nps 256035 hashfull 79 time 782 pv d5f6 g7f6 h2h3 a8e8 a1d1 g8g7 f3f4 e5c4 b2b3 g6e4 b3c4 e4g2 f2g2 e8e3 f4f5"
+            }
+          ]
+        },
+        {
+          "san": "Bxf6",
+          "probabilityMover": 0.1275830431216678,
+          "scoreEvidence": [
+            {
+              "evalCpOpponent": 769,
+              "mateOpponent": null,
+              "depth": 15,
+              "raw": "info depth 15 seldepth 21 multipv 1 score cp 769 nodes 200220 nps 256035 hashfull 79 time 782 pv h4f6 b4b3 c2c3 h6h5 g4h5 g6h5 f6h4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "ply": 46,
+      "moveNumber": 23,
+      "side": "b",
+      "san": "g6",
+      "fenBefore": "r1q4r/pp2n1pp/1bp2k2/3pNn1Q/P2P4/B7/5PPP/1R2R1K1 b - - 5 23",
+      "fenAfter": "r1q4r/pp2n2p/1bp2kp1/3pNn1Q/P2P4/B7/5PPP/1R2R1K1 w - - 0 24",
+      "reference": "Ottima",
+      "common": "best",
+      "prediction": "Migliore",
+      "grandeReason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "fields": {
+        "bestEval": -383,
+        "bestMate": null,
+        "playedEval": -383,
+        "playedMate": null,
+        "playedUci": "g7g6",
+        "bestUci": "g7g6",
+        "isEngineBest": true,
+        "evaluationSource": "root-pv"
+      },
+      "bestSan": "g6",
+      "previous": {
+        "ply": 45,
+        "san": "Qh5",
+        "classification": "best",
+        "fields": {
+          "bestEval": 404,
+          "bestMate": null,
+          "playedEval": 404,
+          "playedMate": null,
+          "playedUci": "d1h5",
+          "bestUci": "d1h5",
+          "isEngineBest": true,
+          "evaluationSource": "root-pv"
+        }
+      },
+      "offers": [
+        {
+          "san": "Bxe7+",
+          "probabilityMover": 0.29733934565526854,
+          "scoreEvidence": [
+            {
+              "evalCpOpponent": 344,
+              "mateOpponent": null,
+              "depth": 13,
+              "raw": "info depth 13 seldepth 18 multipv 2 score cp 344 nodes 148994 nps 337854 hashfull 39 time 441 pv a3e7 f6e7 e5g6 e7f6 g6h8 c8d7 g2g4 a8h8 g4f5 d7f5 h5h4 f5g5 h4g5 f6g5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 79,
+      "moveNumber": 40,
+      "side": "w",
+      "san": "Rd1",
+      "fenBefore": "6k1/1b1q2p1/3b2rp/1p3p2/1PpPnP2/2N1B2P/1Q2R1P1/2R3K1 w - - 6 40",
+      "fenAfter": "6k1/1b1q2p1/3b2rp/1p3p2/1PpPnP2/2N1B2P/1Q2R1P1/3R2K1 b - - 7 40",
+      "reference": "Errore",
+      "common": "mistake",
+      "prediction": "Errore",
+      "grandeReason": "protected-or-not-best",
+      "features": null,
+      "fields": {
+        "bestEval": -143,
+        "bestMate": null,
+        "playedEval": -328,
+        "playedMate": null,
+        "playedUci": "c1d1",
+        "bestUci": "d4d5",
+        "isEngineBest": false,
+        "evaluationSource": "independent-position"
+      },
+      "bestSan": "d5",
+      "previous": {
+        "ply": 78,
+        "san": "Rg6",
+        "classification": "best",
+        "fields": {
+          "bestEval": 137,
+          "bestMate": null,
+          "playedEval": 137,
+          "playedMate": null,
+          "playedUci": "f6g6",
+          "bestUci": "f6g6",
+          "isEngineBest": true,
+          "evaluationSource": "root-pv"
+        }
+      },
+      "offers": [
+        {
+          "san": "Nxc3",
+          "probabilityMover": 0.3057636598919695,
+          "scoreEvidence": [
+            {
+              "evalCpOpponent": 328,
+              "mateOpponent": null,
+              "depth": 14,
+              "raw": "info depth 14 seldepth 25 multipv 1 score cp 328 nodes 200167 nps 353651 hashfull 46 time 566 pv e4c3 b2c3 b7f3 d1d2 f3e2 d2e2 g6e6 d4d5 e6e4 e2a2 d7e7 e3d2 g8h7 g1f1 e7d7 f1g1 d6f4 d2f4 e4f4 c3e5 f4e4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "agent-output/brilliant-compensation-history-2026-10-08T02-33-32-816Z/results.json",
+      "sha256": "82906bc769d436f07010b8cea9d5980f2c682b3c957c35bbc0c07fdf6351abed"
+    },
+    {
+      "path": "agent-output/grande-frozen-evaluation-2026-10-08T01-39-08-868Z/results.json",
+      "sha256": "2f347b0def9c2bec445bb6c38ac33c7d754a6fdc79b763bddcae7bff52dbcf5b"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-04.json",
+      "sha256": "aae68ad6b5b86a2d932d28fcb4f28da1ff494c035cbabec299ff9036742e97c4"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-06.json",
+      "sha256": "74f507ce703e004938c61e361479e24bd5152fdcc29f2cdafe6e6826bb73e895"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-1-chigorin-steinitz-1892.json",
+      "sha256": "1f58f75e557a5ace54a6f0951d8cd34861ceaafe42e0b5d6bddb3b1e4889b954"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "sha256": "3711ce611820d1a45c049abfcf5a499032d6c75ef9d8f778df6be5bf267dd8ea"
+    }
+  ]
+}

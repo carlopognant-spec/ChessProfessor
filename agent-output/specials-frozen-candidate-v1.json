@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "version": "specials-frozen-candidate-v1",
+  "status": "experimental-not-enabled",
+  "frozenOn": "2026-10-08",
+  "grandeVersion": "grande-prudent-candidate-v1",
+  "brilliantVersion": "same-offer-v4",
+  "priority": "Geniale > Grande > common category; report overlaps",
+  "independentValidation": false,
+  "policy": "No fitting, threshold change or automatic engine search. Fail on changed dependencies. References never enter detectors.",
+  "sources": [
+    {
+      "path": "scripts/specials-frozen-evaluation.js",
+      "sha256": "703c4a181a963a293d7948feb77cebf47030fc70d643a144d639e3a0bf6ee9c3"
+    },
+    {
+      "path": "scripts/specials-frozen-evaluate.js",
+      "sha256": "f2bab18896317965ad9d0e351e88a7e6c28c7bfb9e6445c92a2bd951c822bcde"
+    },
+    {
+      "path": "scripts/grande-frozen-evaluation.js",
+      "sha256": "e213ae414bf78ccd6464963597db8a173fd7e329886c4fa52791712701696355"
+    },
+    {
+      "path": "scripts/grande-frozen-input-path.js",
+      "sha256": "b6e03e06fe27f85d8be0dd48a59ec2d86108b9641d78ac9c3538f78ea8257467"
+    },
+    {
+      "path": "scripts/grande-completed-score.js",
+      "sha256": "fa840c9776d19a5b021e0ba7a80f6b06a945d158edd22f678fb80028141ab772"
+    },
+    {
+      "path": "scripts/brilliant-same-offer-v4.js",
+      "sha256": "704cb6a68498ec155c15d173e1a761151d1dc1ed388348523b6cc3fcdcb17251"
+    },
+    {
+      "path": "scripts/brilliant-offer-attribution-v3.js",
+      "sha256": "d9f81667bfaf93559d506306efe2077a2450e7a1c09b85151dff2a9c913a3e48"
+    },
+    {
+      "path": "scripts/brilliant-offer-v2.js",
+      "sha256": "c4c2e690f215dfb0fb93cec36e92735e039f05764ed55e9394b3845e046a238d"
+    },
+    {
+      "path": "scripts/brilliant-sacrifice-audit.js",
+      "sha256": "7efd4a571f3da1c7827c18915ffe43639430cabda371c41062bb68bed54f627f"
+    },
+    {
+      "path": "scripts/stockfish-specials-simple.js",
+      "sha256": "8a5aae92829417e6cbacfd28b67c2b294bf127d1c6369b691eeec7b077c852f4"
+    },
+    {
+      "path": "src/lib/classification.js",
+      "sha256": "2bdd4f56ad53f36d29d051a98debd66faeab5e396ad6a78b7d7d54a38f41c262"
+    },
+    {
+      "path": "src/lib/evaluation.js",
+      "sha256": "09e174188867ff6b08ab848dbe84a9c3fe7b8c4a98e7861fbf1d6c1639d4d9b5"
+    },
+    {
+      "path": "src/lib/missedOpportunity.js",
+      "sha256": "eacedc342ba25980e25375f204fa6307960be49afd4f29025b4dd0c81db221f6"
+    },
+    {
+      "path": "src/lib/engineConfig.js",
+      "sha256": "506890191d0d9a9837c0f0ec6571c6cb4bac055d47265fc329040f08d8af787a"
+    },
+    {
+      "path": "src/lib/mateComparison.js",
+      "sha256": "2cb95fd70b9071f67a70b9ebfd82c39976d07cbbb1d2d0f437338227c04539a7"
+    },
+    {
+      "path": "src/lib/openingBook.js",
+      "sha256": "7a0187a755c4c566e8aeb541b81477a2fa98708621256135624bd06b2655513c"
+    },
+    {
+      "path": "src/data/openingPositions.json",
+      "sha256": "0b96012fd9330e01ff3eb85600cb678f997bf5f2ed7e6054828fa6f97c236b5a"
+    },
+    {
+      "path": "agent-output/grande-prudent-candidate-v1.json",
+      "sha256": "88eec0367df02592e906b909ebba64ec505a4f0c6c81271d512e1fa5912eef66"
+    },
+    {
+      "path": "node_modules/chess.js/package.json",
+      "sha256": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd"
+    },
+    {
+      "path": "node_modules/chess.js/dist/cjs/chess.js",
+      "sha256": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f"
+    }
+  ]
+}

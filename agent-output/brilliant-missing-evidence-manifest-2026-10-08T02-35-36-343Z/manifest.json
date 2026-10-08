@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "status": "prepared-not-executed",
+  "selectionUsesExpectedLabels": false,
+  "selection": "all v3 abstentions caused by missing acceptance score; fixture order, ply order, legal reply order",
+  "searchesExecuted": 0,
+  "actualNodes": null,
+  "requests": 30,
+  "distinctPositions": 26,
+  "nominalNodes": 6000000,
+  "proposedGlobalActualNodeCap": 7500000,
+  "stopOnCap": true,
+  "retryPolicy": "none",
+  "configuration": {
+    "packageVersion": "19.0.0",
+    "build": "large-single",
+    "multiPv": 1,
+    "threads": 1,
+    "hashMb": 16,
+    "hashPolicy": "ucinewgame + Clear Hash before every search",
+    "requestedAdditionalOutput": "UCI_ShowWDL true; record option support",
+    "collection": "last completed unbounded root score; raw UCI; legal PV replay; node counts"
+  },
+  "classificationPolicy": "evaluate frozen v3 once all evidence is collected; never treat missing/truncated search as favorable; no app activation",
+  "budgetCapIsForFutureRun": true,
+  "independentValidation": false,
+  "sources": [
+    {
+      "path": "agent-output/brilliant-offer-v2-2026-10-08T02-16-04-769Z/results.json",
+      "sha256": "c4b7efc4c615905d1555f22f47d46391affd3156fe32397e86afd372b4a47c37"
+    },
+    {
+      "path": "agent-output/brilliant-offer-attribution-v3-2026-10-08T02-28-55-079Z/results.json",
+      "sha256": "ac54ed97d8997492ec870cca70c673ffa709d7c902f1599aff651b91832818d4"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json",
+      "sha256": "41e376797b4c302049cb8728afc8bc83add05f58d2200950d96ff42c1ded694b"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-02.json",
+      "sha256": "ec57a961511dbb4eb2ef044d18331e947b64c009f932a06f77ab7fba056118da"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-03.json",
+      "sha256": "cb6b22e3ac7d7655b732a9c3570b8d74e1cbfa03fdcf7843575a5b3757ef3dcc"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-04.json",
+      "sha256": "aae68ad6b5b86a2d932d28fcb4f28da1ff494c035cbabec299ff9036742e97c4"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-05.json",
+      "sha256": "77d7cffb595ca38fc3ca5cc3b55c6737b05ef2fb42f3a0647f5b42d4492c1ce8"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-06.json",
+      "sha256": "74f507ce703e004938c61e361479e24bd5152fdcc29f2cdafe6e6826bb73e895"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-1-chigorin-steinitz-1892.json",
+      "sha256": "1f58f75e557a5ace54a6f0951d8cd34861ceaafe42e0b5d6bddb3b1e4889b954"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "sha256": "3711ce611820d1a45c049abfcf5a499032d6c75ef9d8f778df6be5bf267dd8ea"
+    }
+  ],
+  "schedule": [
+    {
+      "id": "personal-01",
+      "ply": 11,
+      "san": "Bd2",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json",
+      "fen": "rnbqk1nr/ppp2ppp/4p3/8/1b1P4/2N2N2/PPPB1PPP/R2QKB1R b KQkq - 3 6",
+      "rootUci": "b4c3",
+      "replySan": "Bxc3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-01",
+      "ply": 23,
+      "san": "a4",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json",
+      "fen": "rn1q1rk1/pbp2pp1/1p2pn1p/8/P2P4/2BB1N1P/1PP2PP1/R2QR1K1 b - - 0 12",
+      "rootUci": "b7f3",
+      "replySan": "Bxf3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-01",
+      "ply": 25,
+      "san": "Bb4",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json",
+      "fen": "rn3rk1/pbp2pp1/1p2pn1p/3q4/PB1P4/3B1N1P/1PP2PP1/R2QR1K1 b - - 2 13",
+      "rootUci": "d5f3",
+      "replySan": "Qxf3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-01",
+      "ply": 37,
+      "san": "Qe3",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json",
+      "fen": "rn1qr1k1/p1p2pp1/1p2p2p/7P/P1P5/2BBQb1P/1P3P2/R3R1K1 b - - 3 19",
+      "rootUci": "d8d3",
+      "replySan": "Qxd3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-02",
+      "ply": 26,
+      "san": "Bg4",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-02.json",
+      "fen": "r2q4/pp3kpp/n2p1n2/2b5/4P1b1/P1N5/1PPB1PPP/R2Q1RK1 w - - 3 14",
+      "rootUci": "d1g4",
+      "replySan": "Qxg4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-04",
+      "ply": 9,
+      "san": "Bf4",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-04.json",
+      "fen": "rn1qkbnr/pp2pppp/2p5/5b2/2pP1B2/5NP1/PP2PP1P/RN1QKB1R b KQkq - 2 5",
+      "rootUci": "f5b1",
+      "replySan": "Bxb1",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-04",
+      "ply": 10,
+      "san": "e6",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-04.json",
+      "fen": "rn1qkbnr/pp3ppp/2p1p3/5b2/2pP1B2/5NP1/PP2PP1P/RN1QKB1R w KQkq - 0 6",
+      "rootUci": "f4b8",
+      "replySan": "Bxb8",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-04",
+      "ply": 55,
+      "san": "Rac1",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-04.json",
+      "fen": "8/p2k1p2/4p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 b - - 2 28",
+      "rootUci": "c3e4",
+      "replySan": "Nxe4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-06",
+      "ply": 16,
+      "san": "d6",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-06.json",
+      "fen": "r1bq1rk1/ppp2ppp/3p1n2/4n3/3QP3/2N3P1/PPP2PBP/R1B1K2R w KQ - 0 9",
+      "rootUci": "d4e5",
+      "replySan": "Qxe5",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "personal-06",
+      "ply": 31,
+      "san": "Nd5",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-06.json",
+      "fen": "r2q1rk1/p4pp1/3p1nbp/2pNn3/Pp2P1PB/5P2/1PP2QBP/R4RK1 b - - 1 16",
+      "rootUci": "f6d5",
+      "replySan": "Nxd5",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "ply": 33,
+      "san": "Ba3",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-1-chigorin-steinitz-1892.json",
+      "fen": "r4k1r/pp1qnppp/1bpN3n/3pP3/P2P4/B4N2/5PPP/R2Q1RK1 b - - 3 17",
+      "rootUci": "d7d6",
+      "replySan": "Qxd6",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "ply": 35,
+      "san": "Rb1",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-1-chigorin-steinitz-1892.json",
+      "fen": "r5kr/pp1qnppp/1bpN3n/3pP3/P2P4/B4N2/5PPP/1R1Q1RK1 b - - 5 18",
+      "rootUci": "d7d6",
+      "replySan": "Qxd6",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 39,
+      "san": "Rac1",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "2r2rk1/1b2npp1/pq1b1n1p/1p1p4/1P1P4/PQNBBN1P/5PP1/2R1R1K1 b - - 8 20",
+      "rootUci": "c8c3",
+      "replySan": "Rxc3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 41,
+      "san": "Qd1",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "2r2rk1/1b2npp1/pq1b3p/1p1p3n/1P1P4/P1NBBN1P/5PP1/2RQR1K1 b - - 10 21",
+      "rootUci": "c8c3",
+      "replySan": "Rxc3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 45,
+      "san": "Qd2",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/3Q1PP1/2R1R1K1 b - - 14 23",
+      "rootUci": "c7c3",
+      "replySan": "Rxc3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 49,
+      "san": "Kh1",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1br1npp1/pq1b1n1p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R2K b - - 18 25",
+      "rootUci": "c7c3",
+      "replySan": "Rxc3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 51,
+      "san": "Nf5",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "4nrk1/1br1npp1/pq1b3p/1p1p1N2/1P1P4/P1NBB2P/2Q2PP1/2R1R2K b - - 20 26",
+      "rootUci": "c7c3",
+      "replySan": "Rxc3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 57,
+      "san": "axb4",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "4nrk1/1br2pp1/1q1b3p/1p1p1B2/1P1P4/1QN1B2P/5PP1/2R1R2K b - - 0 29",
+      "rootUci": "c7c3",
+      "replySan": "Rxc3",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 58,
+      "san": "Rc4",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "4nrk1/1b3pp1/1q1b3p/1p1p1B2/1PrP4/1QN1B2P/5PP1/2R1R2K w - - 1 30",
+      "rootUci": "b3c4",
+      "replySan": "Qxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 60,
+      "san": "Nf6",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b3pp1/1q1b1n1p/1p1p1B2/1PrP4/1Q2B2P/N4PP1/2R1R2K w - - 3 31",
+      "rootUci": "b3c4",
+      "replySan": "Qxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 60,
+      "san": "Nf6",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b3pp1/1q1b1n1p/1p1p1B2/1PrP4/1Q2B2P/N4PP1/2R1R2K w - - 3 31",
+      "rootUci": "c1c4",
+      "replySan": "Rxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 62,
+      "san": "Qc6",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b3pp1/2qb1n1p/1p1p4/1PrP4/1Q1BB2P/N4PP1/2R1R2K w - - 5 32",
+      "rootUci": "b3c4",
+      "replySan": "Qxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 62,
+      "san": "Qc6",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b3pp1/2qb1n1p/1p1p4/1PrP4/1Q1BB2P/N4PP1/2R1R2K w - - 5 32",
+      "rootUci": "d3c4",
+      "replySan": "Bxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 62,
+      "san": "Qc6",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b3pp1/2qb1n1p/1p1p4/1PrP4/1Q1BB2P/N4PP1/2R1R2K w - - 5 32",
+      "rootUci": "c1c4",
+      "replySan": "Rxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 64,
+      "san": "Qd7",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b1q1pp1/3b1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R2K w - - 7 33",
+      "rootUci": "d3c4",
+      "replySan": "Bxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 64,
+      "san": "Qd7",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b1q1pp1/3b1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R2K w - - 7 33",
+      "rootUci": "c1c4",
+      "replySan": "Rxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 65,
+      "san": "Kg1",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b1q1pp1/3b1n1p/1p1p4/1PrP4/3BB2P/NQ3PP1/2R1R1K1 b - - 8 33",
+      "rootUci": "c4c1",
+      "replySan": "Rxc1",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 68,
+      "san": "f5",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b1q2p1/3b3p/1p1p1p1n/1PrP4/3BB2P/N2Q1PP1/2R1R1K1 w - - 0 35",
+      "rootUci": "c1c4",
+      "replySan": "Rxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 70,
+      "san": "Ng3",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "5rk1/1b1q2p1/3b3p/1p1p1p2/1PrP1P2/3BB1nP/N2Q2P1/2R1R1K1 w - - 1 36",
+      "rootUci": "c1c4",
+      "replySan": "Rxc4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 76,
+      "san": "Ne4",
+      "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "fen": "6k1/1b1q2p1/3b1r1p/1p3p2/1PpPnP2/2N1B2P/1Q4P1/2R1R1K1 w - - 4 39",
+      "rootUci": "c3e4",
+      "replySan": "Nxe4",
+      "scorePerspective": "side-to-move at FEN; opponent of offering player",
+      "reason": "missing saved score for legal material acceptance",
+      "budgetNodes": 200000
+    }
+  ]
+}

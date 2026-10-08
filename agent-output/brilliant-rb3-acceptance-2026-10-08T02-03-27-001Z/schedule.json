@@ -1,0 +1,19 @@
+{
+  "selectedCase": "historical annotated Rb3",
+  "selectionIsLabelGuided": true,
+  "diagnosticOnly": true,
+  "fen": "r1q4N/pp5p/2p2k2/3p1n1Q/P2b4/1R6/5PPP/4R1K1 b - - 1 27",
+  "rootUci": "c8h8",
+  "budgets": [
+    200000,
+    1000000
+  ],
+  "nominalMaximum": 1200000,
+  "cap": 1300000,
+  "hashPolicy": "clear-per-search",
+  "enginePackage": "19.0.0",
+  "build": "large-single",
+  "multiPv": 1,
+  "threads": 1,
+  "hashMb": 16
+}

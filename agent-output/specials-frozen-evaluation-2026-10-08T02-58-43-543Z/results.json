@@ -1,0 +1,3458 @@
+{
+  "summary": {
+    "version": "specials-frozen-candidate-v1",
+    "games": 1,
+    "metrics": {
+      "plies": 51,
+      "included": 50,
+      "labelled": 50,
+      "unlabelled": 0,
+      "overlaps": 0,
+      "categories": [
+        {
+          "category": "Grande",
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1,
+          "recall": 0.5,
+          "unlabelledAssignments": 0
+        },
+        {
+          "category": "Geniale",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "unlabelledAssignments": 0
+        }
+      ],
+      "brilliantAbstentions": 4,
+      "grandeAbstentions": 0
+    },
+    "regression": null,
+    "supplementalSearchesReused": 0,
+    "searchesExecuted": 0,
+    "retrainingExecuted": false,
+    "sourceHashesUnchanged": true,
+    "independentValidation": false,
+    "appIntegration": false
+  },
+  "games": [
+    {
+      "id": "personal-01",
+      "role": "provided-not-confirmed-independent",
+      "metrics": {
+        "plies": 51,
+        "included": 50,
+        "labelled": 50,
+        "unlabelled": 0,
+        "overlaps": 0,
+        "categories": [
+          {
+            "category": "Grande",
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1,
+            "recall": 0.5,
+            "unlabelledAssignments": 0
+          },
+          {
+            "category": "Geniale",
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "precision": null,
+            "recall": null,
+            "unlabelledAssignments": 0
+          }
+        ],
+        "brilliantAbstentions": 4,
+        "grandeAbstentions": 0
+      }
+    }
+  ],
+  "rows": [
+    {
+      "gameId": "personal-01",
+      "ply": 1,
+      "san": "e4",
+      "expected": "Libro",
+      "predicted": "Libro",
+      "base": "Libro",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 14,
+        "playedProbability": 0.5224848247918001,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 2,
+      "san": "d5",
+      "expected": "Libro",
+      "predicted": "Libro",
+      "base": "Libro",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 3,
+      "san": "exd5",
+      "expected": "Libro",
+      "predicted": "Libro",
+      "base": "Libro",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 14,
+        "playedProbability": 0.538672605206508,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 4,
+      "san": "Qxd5",
+      "expected": "Libro",
+      "predicted": "Libro",
+      "base": "Libro",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 13,
+        "playedProbability": 0.45264238185691075,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 5,
+      "san": "Nc3",
+      "expected": "Libro",
+      "predicted": "Libro",
+      "base": "Libro",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.538672605206508,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 6,
+      "san": "Qd8",
+      "expected": "Libro",
+      "predicted": "Libro",
+      "base": "Libro",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.45512110762641994,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 7,
+      "san": "d4",
+      "expected": "Libro",
+      "predicted": "Libro",
+      "base": "Libro",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 2,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 8,
+      "san": "e6",
+      "expected": "Ottima",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.4476920904256747
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 14,
+        "playedProbability": 0.45078487089866653,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 9,
+      "san": "Nf3",
+      "expected": "Ottima",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5479769376367964
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 13,
+        "playedProbability": 0.5504527113395278,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 10,
+      "san": "Bb4",
+      "expected": "Buona",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.4322934519266399
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 11,
+      "san": "Bd2",
+      "expected": "Ottima",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "insufficient",
+      "brilliantReason": "missing-acceptance-score",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "b4c3",
+            "replySan": "Bxc3",
+            "offeredType": "n",
+            "offeredSquare": "c3",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": false,
+            "continuation": null
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5584811124381613
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.5664790559676279,
+        "alternatives": [
+          {
+            "uci": "f1d3",
+            "san": "Bd3",
+            "depth": 12,
+            "evalCp": 109,
+            "mate": null,
+            "probability": 0.5677065480733601,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "c3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "d1d3",
+            "san": "Qd3",
+            "depth": 12,
+            "evalCp": 96,
+            "mate": null,
+            "probability": 0.5597136492671929,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "c3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "c1g5",
+            "san": "Bg5",
+            "depth": 12,
+            "evalCp": 95,
+            "mate": null,
+            "probability": 0.559097471902393,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "c3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "a2a3",
+            "san": "a3",
+            "depth": 12,
+            "evalCp": 90,
+            "mate": null,
+            "probability": 0.5560138905446199,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "c3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 12,
+      "san": "Bxc3",
+      "expected": "Buona",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "b2c3",
+            "replySan": "bxc3",
+            "offeredType": "b",
+            "offeredSquare": "c3",
+            "offeredValue": 3,
+            "isMovedPiece": true,
+            "geometricallyAttackedBefore": false,
+            "materialDeltaAfterOffer": 3,
+            "materialDeltaAfterAcceptance": 0,
+            "candidateMaterialLoss": false,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": true,
+            "continuation": {
+              "depth": 13,
+              "rawCpOpponent": 109,
+              "rawMateOpponent": null,
+              "probabilityMover": 0.4322934519266399,
+              "events": [
+                {
+                  "san": "bxc3",
+                  "uci": "b2c3",
+                  "captured": "b",
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Nf6",
+                  "uci": "g8f6",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bd3",
+                  "uci": "f1d3",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "b6",
+                  "uci": "b7b6",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Qe2",
+                  "uci": "d1e2",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bb7",
+                  "uci": "c8b7",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "h4",
+                  "uci": "h2h4",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Nc6",
+                  "uci": "b8c6",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                }
+              ],
+              "availablePlies": 16,
+              "completeHorizon": true,
+              "immediateRecovery": true,
+              "immediateRecoveryByCapture": false,
+              "laterRecoveryPly": 3,
+              "endIsMate": false
+            }
+          },
+          {
+            "replyUci": "d2c3",
+            "replySan": "Bxc3",
+            "offeredType": "b",
+            "offeredSquare": "c3",
+            "offeredValue": 3,
+            "isMovedPiece": true,
+            "geometricallyAttackedBefore": false,
+            "materialDeltaAfterOffer": 3,
+            "materialDeltaAfterAcceptance": 0,
+            "candidateMaterialLoss": false,
+            "bestDefenseAcceptsThis": true,
+            "cachedAcceptance": true,
+            "continuation": {
+              "depth": 14,
+              "rawCpOpponent": 112,
+              "rawMateOpponent": null,
+              "probabilityMover": 0.43045377606077095,
+              "events": [
+                {
+                  "san": "Bxc3",
+                  "uci": "d2c3",
+                  "captured": "b",
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Nf6",
+                  "uci": "g8f6",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bb5+",
+                  "uci": "f1b5",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bd7",
+                  "uci": "c8d7",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bd3",
+                  "uci": "b5d3",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bc6",
+                  "uci": "d7c6",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Ne5",
+                  "uci": "f3e5",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Be4",
+                  "uci": "c6e4",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                }
+              ],
+              "availablePlies": 14,
+              "completeHorizon": true,
+              "immediateRecovery": true,
+              "immediateRecoveryByCapture": false,
+              "laterRecoveryPly": 3,
+              "endIsMate": false
+            }
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.43045377606077095
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 13,
+      "san": "Bxc3",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": true
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.578105232884309
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 14,
+        "playedProbability": 0.569546223939229,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 14,
+      "san": "Nf6",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.4329070950345457
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 14,
+        "playedProbability": 0.4218947671156909,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 15,
+      "san": "h3",
+      "expected": "Buona",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.541156668150228
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 16,
+      "san": "O-O",
+      "expected": "Ottima",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.44892873069265804
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 13,
+        "playedProbability": 0.45884333184977194,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 17,
+      "san": "Bd3",
+      "expected": "Migliore",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5510712693073421
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 13,
+        "playedProbability": 0.5473576181430894,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 18,
+      "san": "h6",
+      "expected": "Imprecisione",
+      "predicted": "Buona",
+      "base": "Buona",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 19,
+      "san": "O-O",
+      "expected": "Buona",
+      "predicted": "Buona",
+      "base": "Buona",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 20,
+      "san": "b6",
+      "expected": "Ottima",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.4433690400777467
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.44831033065729986,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 21,
+      "san": "Re1",
+      "expected": "Ottima",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5578645727207345
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 22,
+      "san": "Bb7",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.45264238185691064
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 13,
+        "playedProbability": 0.4421354272792655,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 23,
+      "san": "a4",
+      "expected": "Ottima",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "insufficient",
+      "brilliantReason": "missing-acceptance-score",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "b7f3",
+            "replySan": "Bxf3",
+            "offeredType": "n",
+            "offeredSquare": "f3",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": false,
+            "continuation": null
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.541156668150228
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [
+          {
+            "uci": "a2a3",
+            "san": "a3",
+            "depth": 12,
+            "evalCp": 76,
+            "mate": null,
+            "probability": 0.5473576181430894,
+            "comparable": false,
+            "alternativeRootCount": 2,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "b2b3",
+            "san": "b3",
+            "depth": 12,
+            "evalCp": 75,
+            "mate": null,
+            "probability": 0.5467381519846138,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "d1e2",
+            "san": "Qe2",
+            "depth": 12,
+            "evalCp": 75,
+            "mate": null,
+            "probability": 0.5467381519846138,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "a2a3",
+            "san": "a3",
+            "depth": 11,
+            "evalCp": 59,
+            "mate": null,
+            "probability": 0.5368082899889803,
+            "comparable": false,
+            "alternativeRootCount": 2,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "a1c1",
+            "san": "Rc1",
+            "depth": 11,
+            "evalCp": 57,
+            "mate": null,
+            "probability": 0.5355648379838539,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 24,
+      "san": "Qd5",
+      "expected": "Buona",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.4322934519266399
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 25,
+      "san": "Bb4",
+      "expected": "Buona",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "insufficient",
+      "brilliantReason": "missing-acceptance-score",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "d5f3",
+            "replySan": "Qxf3",
+            "offeredType": "n",
+            "offeredSquare": "f3",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": false,
+            "continuation": null
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5634067862621936
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 11,
+        "playedProbability": 0.5529259881329059,
+        "alternatives": [
+          {
+            "uci": "a4a5",
+            "san": "a5",
+            "depth": 12,
+            "evalCp": 109,
+            "mate": null,
+            "probability": 0.5677065480733601,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "b2b4",
+            "san": "b4",
+            "depth": 12,
+            "evalCp": 106,
+            "mate": null,
+            "probability": 0.5658650028954817,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "b2b3",
+            "san": "b3",
+            "depth": 12,
+            "evalCp": 92,
+            "mate": null,
+            "probability": 0.5572478545985555,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "e1e3",
+            "san": "Re3",
+            "depth": 11,
+            "evalCp": 86,
+            "mate": null,
+            "probability": 0.5535439031511183,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 26,
+      "san": "Re8",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.43782349911420193
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 13,
+        "playedProbability": 0.4365932137378063,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 27,
+      "san": "c4",
+      "expected": "Ottima",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "ordinary-exchanges",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "d5f3",
+            "replySan": "Qxf3",
+            "offeredType": "n",
+            "offeredSquare": "f3",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": true,
+            "continuation": {
+              "depth": 12,
+              "rawCpOpponent": -716,
+              "rawMateOpponent": null,
+              "probabilityMover": 0.8569272765199192,
+              "events": [
+                {
+                  "san": "Qxf3",
+                  "uci": "d5f3",
+                  "captured": "n",
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "gxf3",
+                  "uci": "g2f3",
+                  "captured": "q",
+                  "materialDelta": 6,
+                  "mate": false
+                },
+                {
+                  "san": "Nc6",
+                  "uci": "b8c6",
+                  "captured": null,
+                  "materialDelta": 6,
+                  "mate": false
+                },
+                {
+                  "san": "Bc3",
+                  "uci": "b4c3",
+                  "captured": null,
+                  "materialDelta": 6,
+                  "mate": false
+                },
+                {
+                  "san": "Rad8",
+                  "uci": "a8d8",
+                  "captured": null,
+                  "materialDelta": 6,
+                  "mate": false
+                },
+                {
+                  "san": "Re3",
+                  "uci": "e1e3",
+                  "captured": null,
+                  "materialDelta": 6,
+                  "mate": false
+                },
+                {
+                  "san": "Nxd4",
+                  "uci": "c6d4",
+                  "captured": "p",
+                  "materialDelta": 5,
+                  "mate": false
+                },
+                {
+                  "san": "Bxd4",
+                  "uci": "c3d4",
+                  "captured": "n",
+                  "materialDelta": 8,
+                  "mate": false
+                }
+              ],
+              "availablePlies": 14,
+              "completeHorizon": true,
+              "immediateRecovery": true,
+              "immediateRecoveryByCapture": true,
+              "laterRecoveryPly": 3,
+              "endIsMate": false
+            }
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5578645727207345
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.5572478545985555,
+        "alternatives": [
+          {
+            "uci": "e1e3",
+            "san": "Re3",
+            "depth": 12,
+            "evalCp": 100,
+            "mate": null,
+            "probability": 0.5621765008857981,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "a1a3",
+            "san": "Ra3",
+            "depth": 11,
+            "evalCp": 83,
+            "mate": null,
+            "probability": 0.5516896693427,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "d1d2",
+            "san": "Qd2",
+            "depth": 11,
+            "evalCp": 68,
+            "mate": null,
+            "probability": 0.542397940774351,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "d3f1",
+            "san": "Bf1",
+            "depth": 11,
+            "evalCp": 66,
+            "mate": null,
+            "probability": 0.5411566681502281,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 28,
+      "san": "Qd8",
+      "expected": "Imprecisione",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.4007118364916439
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 13,
+        "playedProbability": 0.41884903571060617,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 29,
+      "san": "Qd2",
+      "expected": "Errore",
+      "predicted": "Errore",
+      "base": "Errore",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "b7f3",
+            "replySan": "Bxf3",
+            "offeredType": "n",
+            "offeredSquare": "f3",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": true,
+            "continuation": {
+              "depth": 12,
+              "rawCpOpponent": 45,
+              "rawMateOpponent": null,
+              "probabilityMover": 0.47190462559161295,
+              "events": [
+                {
+                  "san": "Bxf3",
+                  "uci": "b7f3",
+                  "captured": "n",
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "gxf3",
+                  "uci": "g2f3",
+                  "captured": "b",
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "c5",
+                  "uci": "c7c5",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "dxc5",
+                  "uci": "d4c5",
+                  "captured": "p",
+                  "materialDelta": 1,
+                  "mate": false
+                },
+                {
+                  "san": "Nc6",
+                  "uci": "b8c6",
+                  "captured": null,
+                  "materialDelta": 1,
+                  "mate": false
+                },
+                {
+                  "san": "Bc3",
+                  "uci": "b4c3",
+                  "captured": null,
+                  "materialDelta": 1,
+                  "mate": false
+                },
+                {
+                  "san": "bxc5",
+                  "uci": "b6c5",
+                  "captured": "p",
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Qe3",
+                  "uci": "d2e3",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                }
+              ],
+              "availablePlies": 18,
+              "completeHorizon": true,
+              "immediateRecovery": true,
+              "immediateRecoveryByCapture": true,
+              "laterRecoveryPly": 3,
+              "endIsMate": false
+            }
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [
+          {
+            "uci": "b4c3",
+            "san": "Bc3",
+            "depth": 12,
+            "evalCp": 161,
+            "mate": null,
+            "probability": 0.5992881635083561,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "a4a5",
+            "san": "a5",
+            "depth": 12,
+            "evalCp": 134,
+            "mate": null,
+            "probability": 0.5829754542011996,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "f3e5",
+            "san": "Ne5",
+            "depth": 12,
+            "evalCp": 124,
+            "mate": null,
+            "probability": 0.5768852611320463,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": []
+          },
+          {
+            "uci": "e1e3",
+            "san": "Re3",
+            "depth": 12,
+            "evalCp": 114,
+            "mate": null,
+            "probability": 0.5707716118944918,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "a1a3",
+            "san": "Ra3",
+            "depth": 12,
+            "evalCp": 97,
+            "mate": null,
+            "probability": 0.5603296426885532,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 30,
+      "san": "Nh5",
+      "expected": "Mossa mancata",
+      "predicted": "Errore",
+      "base": "Errore",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 31,
+      "san": "g4",
+      "expected": "Errore",
+      "predicted": "Errore",
+      "base": "Errore",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "b7f3",
+            "replySan": "Bxf3",
+            "offeredType": "n",
+            "offeredSquare": "f3",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": true,
+            "cachedAcceptance": true,
+            "continuation": {
+              "depth": 13,
+              "rawCpOpponent": 73,
+              "rawMateOpponent": null,
+              "probabilityMover": 0.4545012127872179,
+              "events": [
+                {
+                  "san": "Bxf3",
+                  "uci": "b7f3",
+                  "captured": "n",
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "Qe3",
+                  "uci": "d2e3",
+                  "captured": null,
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "Nc6",
+                  "uci": "b8c6",
+                  "captured": null,
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "Bc3",
+                  "uci": "b4c3",
+                  "captured": null,
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "Nf6",
+                  "uci": "h5f6",
+                  "captured": null,
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "a5",
+                  "uci": "a4a5",
+                  "captured": null,
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "bxa5",
+                  "uci": "b6a5",
+                  "captured": "p",
+                  "materialDelta": -4,
+                  "mate": false
+                },
+                {
+                  "san": "Qxf3",
+                  "uci": "e3f3",
+                  "captured": "b",
+                  "materialDelta": -1,
+                  "mate": false
+                }
+              ],
+              "availablePlies": 17,
+              "completeHorizon": true,
+              "immediateRecovery": false,
+              "immediateRecoveryByCapture": false,
+              "laterRecoveryPly": null,
+              "endIsMate": false
+            }
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": false
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [
+          {
+            "uci": "d2e3",
+            "san": "Qe3",
+            "depth": 12,
+            "evalCp": 191,
+            "mate": null,
+            "probability": 0.6171573626529722,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "e1e3",
+            "san": "Re3",
+            "depth": 12,
+            "evalCp": 145,
+            "mate": null,
+            "probability": 0.5896454785627312,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "d3e2",
+            "san": "Be2",
+            "depth": 12,
+            "evalCp": 124,
+            "mate": null,
+            "probability": 0.5768852611320463,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "f3",
+                "type": "n",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "d4d5",
+            "san": "d5",
+            "depth": 12,
+            "evalCp": 117,
+            "mate": null,
+            "probability": 0.5726080638632601,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": []
+          },
+          {
+            "uci": "f3e5",
+            "san": "Ne5",
+            "depth": 11,
+            "evalCp": 105,
+            "mate": null,
+            "probability": 0.5652507475670999,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": []
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 32,
+      "san": "Bxf3",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": true,
+        "capture": true
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "g4h5",
+            "replySan": "gxh5",
+            "offeredType": "n",
+            "offeredSquare": "h5",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 3,
+            "materialDeltaAfterAcceptance": 0,
+            "candidateMaterialLoss": false,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": true,
+            "continuation": {
+              "depth": 11,
+              "rawCpOpponent": -136,
+              "rawMateOpponent": null,
+              "probabilityMover": 0.5841905229354074,
+              "events": [
+                {
+                  "san": "gxh5",
+                  "uci": "g4h5",
+                  "captured": "n",
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Nc6",
+                  "uci": "b8c6",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bc3",
+                  "uci": "b4c3",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Qh4",
+                  "uci": "d8h4",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bf1",
+                  "uci": "d3f1",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Rad8",
+                  "uci": "a8d8",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Qe3",
+                  "uci": "d2e3",
+                  "captured": null,
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Bxh5",
+                  "uci": "f3h5",
+                  "captured": "p",
+                  "materialDelta": 1,
+                  "mate": false
+                }
+              ],
+              "availablePlies": 15,
+              "completeHorizon": true,
+              "immediateRecovery": true,
+              "immediateRecoveryByCapture": false,
+              "laterRecoveryPly": 3,
+              "endIsMate": false
+            }
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.569546223939229
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 13,
+        "playedProbability": 0.5454987872127821,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 33,
+      "san": "gxh5",
+      "expected": "Imprecisione",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.4115648798723618
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 11,
+        "playedProbability": 0.4158094770645926,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 34,
+      "san": "Qxd4",
+      "expected": "Errore grave",
+      "predicted": "Errore grave",
+      "base": "Errore grave",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 35,
+      "san": "Bc3",
+      "expected": "Mossa mancata",
+      "predicted": "Mossa mancata",
+      "base": "Mossa mancata",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "d4d3",
+            "replySan": "Qxd3",
+            "offeredType": "b",
+            "offeredSquare": "d3",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": false,
+            "continuation": null
+          },
+          {
+            "replyUci": "d4c3",
+            "replySan": "Qxc3",
+            "offeredType": "b",
+            "offeredSquare": "c3",
+            "offeredValue": 3,
+            "isMovedPiece": true,
+            "geometricallyAttackedBefore": false,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": false,
+            "continuation": null
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 15,
+        "playedProbability": 0.4675456936126812,
+        "alternatives": [
+          {
+            "uci": "d3h7",
+            "san": "Bh7+",
+            "depth": 16,
+            "evalCp": 705,
+            "mate": null,
+            "probability": 0.8535224911382661,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": []
+          },
+          {
+            "uci": "d2e3",
+            "san": "Qe3",
+            "depth": 15,
+            "evalCp": -100,
+            "mate": null,
+            "probability": 0.43782349911420193,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "d3",
+                "type": "b",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "e1e6",
+            "san": "Rxe6",
+            "depth": 15,
+            "evalCp": -186,
+            "mate": null,
+            "probability": 0.38580035722310485,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "d3",
+                "type": "b",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "a1a3",
+            "san": "Ra3",
+            "depth": 15,
+            "evalCp": -243,
+            "mate": null,
+            "probability": 0.35262969241845105,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "d3",
+                "type": "b",
+                "color": "w"
+              }
+            ]
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 36,
+      "san": "Qd8",
+      "expected": "Imprecisione",
+      "predicted": "Errore",
+      "base": "Errore",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 11,
+        "playedProbability": 0.4607061941016405,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 37,
+      "san": "Qe3",
+      "expected": "Ottima",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "insufficient",
+      "brilliantReason": "missing-acceptance-score",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "d8d3",
+            "replySan": "Qxd3",
+            "offeredType": "b",
+            "offeredSquare": "d3",
+            "offeredValue": 3,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -3,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": false,
+            "cachedAcceptance": false,
+            "continuation": null
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5218610539716015
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 11,
+        "playedProbability": 0.5224848247918001,
+        "alternatives": [
+          {
+            "uci": "g1h2",
+            "san": "Kh2",
+            "depth": 12,
+            "evalCp": 60,
+            "mate": null,
+            "probability": 0.5374298453437496,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "d3",
+                "type": "b",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "d2f4",
+            "san": "Qf4",
+            "depth": 12,
+            "evalCp": 25,
+            "mate": null,
+            "probability": 0.5156199157230156,
+            "comparable": false,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "d3",
+                "type": "b",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "a4a5",
+            "san": "a5",
+            "depth": 11,
+            "evalCp": -48,
+            "mate": null,
+            "probability": 0.4700359482354282,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "d3",
+                "type": "b",
+                "color": "w"
+              }
+            ]
+          },
+          {
+            "uci": "c4c5",
+            "san": "c5",
+            "depth": 11,
+            "evalCp": -49,
+            "mate": null,
+            "probability": 0.469413239817919,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "d3",
+                "type": "b",
+                "color": "w"
+              }
+            ]
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 38,
+      "san": "Bxh5",
+      "expected": "Buona",
+      "predicted": "Ottima",
+      "base": "Ottima",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.45636131276292113
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 14,
+        "playedProbability": 0.45512110762641994,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 39,
+      "san": "Be4",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5330766223661046
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.5436386872370789,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 40,
+      "san": "Nd7",
+      "expected": "Ottima",
+      "predicted": "Buona",
+      "base": "Buona",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "e4a8",
+            "replySan": "Bxa8",
+            "offeredType": "r",
+            "offeredSquare": "a8",
+            "offeredValue": 5,
+            "isMovedPiece": false,
+            "geometricallyAttackedBefore": true,
+            "materialDeltaAfterOffer": 0,
+            "materialDeltaAfterAcceptance": -5,
+            "candidateMaterialLoss": true,
+            "bestDefenseAcceptsThis": true,
+            "cachedAcceptance": true,
+            "continuation": {
+              "depth": 12,
+              "rawCpOpponent": 144,
+              "rawMateOpponent": null,
+              "probabilityMover": 0.41095956594133487,
+              "events": [
+                {
+                  "san": "Bxa8",
+                  "uci": "e4a8",
+                  "captured": "r",
+                  "materialDelta": -5,
+                  "mate": false
+                },
+                {
+                  "san": "Qxa8",
+                  "uci": "d8a8",
+                  "captured": "b",
+                  "materialDelta": -2,
+                  "mate": false
+                },
+                {
+                  "san": "Qg3",
+                  "uci": "e3g3",
+                  "captured": null,
+                  "materialDelta": -2,
+                  "mate": false
+                },
+                {
+                  "san": "e5",
+                  "uci": "e6e5",
+                  "captured": null,
+                  "materialDelta": -2,
+                  "mate": false
+                },
+                {
+                  "san": "Bxe5",
+                  "uci": "c3e5",
+                  "captured": "p",
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "Nxe5",
+                  "uci": "d7e5",
+                  "captured": "b",
+                  "materialDelta": 0,
+                  "mate": false
+                },
+                {
+                  "san": "Rxe5",
+                  "uci": "e1e5",
+                  "captured": "n",
+                  "materialDelta": -3,
+                  "mate": false
+                },
+                {
+                  "san": "Rxe5",
+                  "uci": "e8e5",
+                  "captured": "r",
+                  "materialDelta": 2,
+                  "mate": false
+                }
+              ],
+              "availablePlies": 17,
+              "completeHorizon": true,
+              "immediateRecovery": false,
+              "immediateRecoveryByCapture": false,
+              "laterRecoveryPly": 6,
+              "endIsMate": false
+            }
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": false
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.421285137539866,
+        "alternatives": [
+          {
+            "uci": "c7c6",
+            "san": "c6",
+            "depth": 12,
+            "evalCp": -53,
+            "mate": null,
+            "probability": 0.46692337763389535,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": []
+          },
+          {
+            "uci": "e6e5",
+            "san": "e5",
+            "depth": 12,
+            "evalCp": -535,
+            "mate": null,
+            "probability": 0.20792148327471954,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "a8",
+                "type": "r",
+                "color": "b"
+              }
+            ]
+          },
+          {
+            "uci": "a7a5",
+            "san": "a5",
+            "depth": 12,
+            "evalCp": -628,
+            "mate": null,
+            "probability": 0.1722163917338778,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "a8",
+                "type": "r",
+                "color": "b"
+              }
+            ]
+          },
+          {
+            "uci": "f7f5",
+            "san": "f5",
+            "depth": 12,
+            "evalCp": -642,
+            "mate": null,
+            "probability": 0.16728395553848313,
+            "comparable": true,
+            "alternativeRootCount": 1,
+            "sameOffers": [
+              {
+                "square": "a8",
+                "type": "r",
+                "color": "b"
+              }
+            ]
+          }
+        ],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 41,
+      "san": "Bxa8",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": true
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [
+          {
+            "replyUci": "d8a8",
+            "replySan": "Qxa8",
+            "offeredType": "b",
+            "offeredSquare": "a8",
+            "offeredValue": 3,
+            "isMovedPiece": true,
+            "geometricallyAttackedBefore": false,
+            "materialDeltaAfterOffer": 5,
+            "materialDeltaAfterAcceptance": 2,
+            "candidateMaterialLoss": false,
+            "bestDefenseAcceptsThis": true,
+            "cachedAcceptance": true,
+            "continuation": {
+              "depth": 14,
+              "rawCpOpponent": -113,
+              "rawMateOpponent": null,
+              "probabilityMover": 0.5701590253818353,
+              "events": [
+                {
+                  "san": "Qxa8",
+                  "uci": "d8a8",
+                  "captured": "b",
+                  "materialDelta": 2,
+                  "mate": false
+                },
+                {
+                  "san": "Qg3",
+                  "uci": "e3g3",
+                  "captured": null,
+                  "materialDelta": 2,
+                  "mate": false
+                },
+                {
+                  "san": "f6",
+                  "uci": "f7f6",
+                  "captured": null,
+                  "materialDelta": 2,
+                  "mate": false
+                },
+                {
+                  "san": "Qxc7",
+                  "uci": "g3c7",
+                  "captured": "p",
+                  "materialDelta": 3,
+                  "mate": false
+                },
+                {
+                  "san": "Nc5",
+                  "uci": "d7c5",
+                  "captured": null,
+                  "materialDelta": 3,
+                  "mate": false
+                },
+                {
+                  "san": "a5",
+                  "uci": "a4a5",
+                  "captured": null,
+                  "materialDelta": 3,
+                  "mate": false
+                },
+                {
+                  "san": "Qc8",
+                  "uci": "a8c8",
+                  "captured": null,
+                  "materialDelta": 3,
+                  "mate": false
+                },
+                {
+                  "san": "axb6",
+                  "uci": "a5b6",
+                  "captured": "p",
+                  "materialDelta": 4,
+                  "mate": false
+                }
+              ],
+              "availablePlies": 14,
+              "completeHorizon": true,
+              "immediateRecovery": true,
+              "immediateRecoveryByCapture": false,
+              "laterRecoveryPly": 3,
+              "endIsMate": false
+            }
+          }
+        ],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5701590253818353
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.5890404340586651,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 42,
+      "san": "Qxa8",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": true
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.44707401186709406
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 14,
+        "playedProbability": 0.42984097461816473,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 43,
+      "san": "Qg3",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.5658650028954817
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.5529259881329059,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 44,
+      "san": "g5",
+      "expected": "Errore",
+      "predicted": "Imprecisione",
+      "base": "Imprecisione",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 11,
+        "playedProbability": 0.38461624360881785,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 45,
+      "san": "Qxc7",
+      "expected": "Grande",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": true
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.6883678768310286
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 12,
+        "playedProbability": 0.6598217549720575,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 46,
+      "san": "Nf8",
+      "expected": "Errore",
+      "predicted": "Errore grave",
+      "base": "Errore grave",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 47,
+      "san": "Qe5",
+      "expected": "Grande",
+      "predicted": "Grande",
+      "base": "Migliore",
+      "status": "candidate",
+      "reason": "frozen-rule-match",
+      "features": {
+        "afterError": true,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": true,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "candidate",
+      "grandeReason": "frozen-rule-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.9522341494809803
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 16,
+        "playedProbability": 0.9513161919637547,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 48,
+      "san": "f6",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": false
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "poor-after-position",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.04641968669604202
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 14,
+        "playedProbability": 0.04776585051901967,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 49,
+      "san": "Qxf6",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "rejected",
+      "reason": "frozen-rule-no-match",
+      "features": {
+        "afterError": false,
+        "capture": true
+      },
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "rejected",
+      "grandeReason": "frozen-rule-no-match",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "no-material-offer",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true,
+        "afterProbability": 0.9546744715853167
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 16,
+        "playedProbability": 0.953580313303958,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 50,
+      "san": "Nd7",
+      "expected": "Errore",
+      "predicted": "Buona",
+      "base": "Buona",
+      "status": "protected",
+      "reason": "protected-or-not-best",
+      "features": null,
+      "deliveredMate": false,
+      "excluded": false,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "protected-or-not-best",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 0,
+        "playedDepth": null,
+        "playedProbability": null,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    },
+    {
+      "gameId": "personal-01",
+      "ply": 51,
+      "san": "Qg7#",
+      "expected": "Migliore",
+      "predicted": "Migliore",
+      "base": "Migliore",
+      "status": "protected",
+      "reason": "terminal-or-forced",
+      "features": null,
+      "deliveredMate": true,
+      "excluded": true,
+      "grandeAssigned": false,
+      "brilliantAssigned": false,
+      "overlap": false,
+      "grandeStatus": "protected",
+      "grandeReason": "terminal-or-forced",
+      "brilliantStatus": "rejected",
+      "brilliantReason": "protected-category",
+      "brilliantEvidence": {
+        "offers": [],
+        "winningNonSacrifices": [],
+        "supplementalUsed": [],
+        "bestDefenseRefuses": true
+      },
+      "comparison": {
+        "playedRootCount": 1,
+        "playedDepth": 15,
+        "playedProbability": 1,
+        "alternatives": [],
+        "matches": []
+      },
+      "attributions": [],
+      "role": "provided-not-confirmed-independent"
+    }
+  ],
+  "watched": [
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\specials-frozen-candidate-v1.json",
+      "sha256": "994416032ef313a8983388fd4d71524b63f2cb59ed3efa5079fb723781fe9a9e"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\specials-frozen-evaluation.js",
+      "sha256": "703c4a181a963a293d7948feb77cebf47030fc70d643a144d639e3a0bf6ee9c3"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\specials-frozen-evaluate.js",
+      "sha256": "f2bab18896317965ad9d0e351e88a7e6c28c7bfb9e6445c92a2bd951c822bcde"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\grande-frozen-evaluation.js",
+      "sha256": "e213ae414bf78ccd6464963597db8a173fd7e329886c4fa52791712701696355"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\grande-frozen-input-path.js",
+      "sha256": "b6e03e06fe27f85d8be0dd48a59ec2d86108b9641d78ac9c3538f78ea8257467"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\grande-completed-score.js",
+      "sha256": "fa840c9776d19a5b021e0ba7a80f6b06a945d158edd22f678fb80028141ab772"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\brilliant-same-offer-v4.js",
+      "sha256": "704cb6a68498ec155c15d173e1a761151d1dc1ed388348523b6cc3fcdcb17251"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\brilliant-offer-attribution-v3.js",
+      "sha256": "d9f81667bfaf93559d506306efe2077a2450e7a1c09b85151dff2a9c913a3e48"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\brilliant-offer-v2.js",
+      "sha256": "c4c2e690f215dfb0fb93cec36e92735e039f05764ed55e9394b3845e046a238d"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\brilliant-sacrifice-audit.js",
+      "sha256": "7efd4a571f3da1c7827c18915ffe43639430cabda371c41062bb68bed54f627f"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\scripts\\stockfish-specials-simple.js",
+      "sha256": "8a5aae92829417e6cbacfd28b67c2b294bf127d1c6369b691eeec7b077c852f4"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\src\\lib\\classification.js",
+      "sha256": "2bdd4f56ad53f36d29d051a98debd66faeab5e396ad6a78b7d7d54a38f41c262"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\src\\lib\\evaluation.js",
+      "sha256": "09e174188867ff6b08ab848dbe84a9c3fe7b8c4a98e7861fbf1d6c1639d4d9b5"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\src\\lib\\missedOpportunity.js",
+      "sha256": "eacedc342ba25980e25375f204fa6307960be49afd4f29025b4dd0c81db221f6"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\src\\lib\\engineConfig.js",
+      "sha256": "506890191d0d9a9837c0f0ec6571c6cb4bac055d47265fc329040f08d8af787a"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\src\\lib\\mateComparison.js",
+      "sha256": "2cb95fd70b9071f67a70b9ebfd82c39976d07cbbb1d2d0f437338227c04539a7"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\src\\lib\\openingBook.js",
+      "sha256": "7a0187a755c4c566e8aeb541b81477a2fa98708621256135624bd06b2655513c"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\src\\data\\openingPositions.json",
+      "sha256": "0b96012fd9330e01ff3eb85600cb678f997bf5f2ed7e6054828fa6f97c236b5a"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-prudent-candidate-v1.json",
+      "sha256": "88eec0367df02592e906b909ebba64ec505a4f0c6c81271d512e1fa5912eef66"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\node_modules\\chess.js\\package.json",
+      "sha256": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\node_modules\\chess.js\\dist\\cjs\\chess.js",
+      "sha256": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\agent-output\\grande-prudent-candidate-v1.json",
+      "sha256": "88eec0367df02592e906b909ebba64ec505a4f0c6c81271d512e1fa5912eef66"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\src\\data\\openingPositions.json",
+      "sha256": "0b96012fd9330e01ff3eb85600cb678f997bf5f2ed7e6054828fa6f97c236b5a"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\tests\\fixtures\\qa\\personal-01.json",
+      "sha256": "c96c451405decc38094480767ffef1f03de7fdff6756916f3015c081cff3974f"
+    },
+    {
+      "path": "C:\\Users\\carlo\\Desktop\\ChessProfessor\\tests\\fixtures\\qa\\analysis-cache-large-200k\\2026-10-07T09-51-26-999Z\\personal-01.json",
+      "sha256": "41e376797b4c302049cb8728afc8bc83add05f58d2200950d96ff42c1ded694b"
+    }
+  ]
+}

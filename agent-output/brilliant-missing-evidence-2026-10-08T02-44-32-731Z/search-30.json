@@ -1,0 +1,78 @@
+{
+  "id": "game-2-saintamant-staunton-1843",
+  "ply": 76,
+  "san": "Ne4",
+  "cachePath": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+  "fen": "6k1/1b1q2p1/3b1r1p/1p3p2/1PpPnP2/2N1B2P/1Q4P1/2R1R1K1 w - - 4 39",
+  "rootUci": "c3e4",
+  "replySan": "Nxe4",
+  "scorePerspective": "side-to-move at FEN; opponent of offering player",
+  "reason": "missing saved score for legal material acceptance",
+  "budgetNodes": 200000,
+  "actualNodes": 200180,
+  "elapsedMs": 712.9220999999998,
+  "engineVersion": "Stockfish 19 WASM",
+  "bestmove": "bestmove c3e4 ponder b7e4",
+  "rawLines": [
+    "info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))",
+    "info string Network replica 1: Local memory. Shared memory not supported by the OS. Local allocation fallback.",
+    "info depth 1 seldepth 3 multipv 1 score cp -113 wdl 0 345 655 nodes 3 nps 3000 hashfull 0 time 1 pv c3e4 b7e4",
+    "info depth 2 seldepth 3 multipv 1 score cp -113 wdl 0 345 655 nodes 6 nps 6000 hashfull 0 time 1 pv c3e4 b7e4",
+    "info depth 3 seldepth 5 multipv 1 score cp -128 wdl 0 198 802 nodes 31 nps 31000 hashfull 0 time 1 pv c3e4 b7e4",
+    "info depth 4 seldepth 5 multipv 1 score cp -97 wdl 0 542 458 nodes 54 nps 54000 hashfull 0 time 1 pv c3e4 b7e4",
+    "info depth 5 seldepth 6 multipv 1 score cp -59 wdl 0 887 113 nodes 97 nps 97000 hashfull 0 time 1 pv c3e4 b7e4",
+    "info depth 6 seldepth 7 multipv 1 score cp -34 wdl 1 964 35 nodes 229 nps 229000 hashfull 0 time 1 pv c3e4 b7e4 d4d5",
+    "info depth 7 seldepth 9 multipv 1 score cp -19 wdl 2 981 17 nodes 577 nps 288500 hashfull 0 time 2 pv c3e4 b7e4 d4d5",
+    "info depth 8 seldepth 14 multipv 1 score cp -143 wdl 0 104 896 nodes 3190 nps 354444 hashfull 0 time 9 pv c3e4 b7e4 e3d2 f6g6 e1e2 d7e7 b2c3 e7h4",
+    "info depth 9 seldepth 16 multipv 1 score cp -192 wdl 0 10 990 nodes 5855 nps 365937 hashfull 1 time 16 pv c3e4 b7e4 d4d5 d7e7 e1e2 f6g6 c1a1 e4g2 e2g2 g6g2 b2g2 e7e3 g2f2 e3h3",
+    "info depth 10 seldepth 16 multipv 1 score cp -182 wdl 0 16 984 nodes 9293 nps 357423 hashfull 2 time 26 pv c3e4 b7e4 g2g3 h6h5 h3h4 f6g6 g1h2 d7e7 e3d2",
+    "info depth 11 seldepth 18 multipv 1 score cp -197 wdl 0 8 992 nodes 16578 nps 338326 hashfull 4 time 49 pv c3e4 b7e4 e1e2 d7e7",
+    "info depth 12 seldepth 15 multipv 1 score cp -173 wdl 0 25 975 nodes 21957 nps 337800 hashfull 5 time 65 pv c3e4 b7e4 e1e2 f6g6 d4d5 d7d8 c1a1 g8h7 a1a3 e4d5 e3d2",
+    "info depth 13 seldepth 22 multipv 1 score cp -178 wdl 0 20 980 nodes 40211 nps 332322 hashfull 12 time 121 pv c3e4 b7e4 e1e2 f6g6 d4d5 d7e7 e3d2 d6c7 c1a1 e7h4 a1a3 e4d5 d2e1",
+    "info depth 14 seldepth 25 multipv 1 score cp -180 wdl 0 18 982 nodes 57817 nps 323000 hashfull 20 time 179 pv c3e4 b7e4 e1e2 f6g6 c1a1 d7e7 e3d2 e7b7 g1h2 g6g2 e2g2 e4g2 b2c3 g2e4 c3g3 g8h7",
+    "info depth 15 seldepth 34 multipv 1 score cp -170 wdl 0 29 971 nodes 90249 nps 290189 hashfull 31 time 311 pv c3e4 b7e4 e1e2 f6g6 d4d5 d7d8 c1f1 e4d3 e3d4 d3e2 b2e2 d6b4 e2e5 d8d7 f1b1 b4e7",
+    "info depth 16 seldepth 44 multipv 1 score cp -176 wdl 0 22 978 nodes 170625 nps 278799 hashfull 68 time 612 pv c3e4 b7e4 e1e2 f6g6 d4d5 e4d5 c1a1 d5e4 a1a3 e4d3",
+    "info depth 17 seldepth 24 multipv 1 score cp -168 lowerbound wdl 0 31 969 nodes 200180 nps 281547 hashfull 79 time 711 pv c3e4 b7e4",
+    "bestmove c3e4 ponder b7e4"
+  ],
+  "completed": {
+    "evalCp": -176,
+    "mate": null,
+    "bound": false,
+    "depth": 16,
+    "nodesAtScore": 170625,
+    "pv": [
+      "c3e4",
+      "b7e4",
+      "e1e2",
+      "f6g6",
+      "d4d5",
+      "e4d5",
+      "c1a1",
+      "d5e4",
+      "a1a3",
+      "e4d3"
+    ],
+    "raw": "info depth 16 seldepth 44 multipv 1 score cp -176 wdl 0 22 978 nodes 170625 nps 278799 hashfull 68 time 612 pv c3e4 b7e4 e1e2 f6g6 d4d5 e4d5 c1a1 d5e4 a1a3 e4d3"
+  },
+  "latest": {
+    "evalCp": -168,
+    "mate": null,
+    "bound": true,
+    "depth": 17,
+    "nodesAtScore": 200180,
+    "pv": [
+      "c3e4",
+      "b7e4"
+    ],
+    "raw": "info depth 17 seldepth 24 multipv 1 score cp -168 lowerbound wdl 0 31 969 nodes 200180 nps 281547 hashfull 79 time 711 pv c3e4 b7e4"
+  },
+  "status": "estimated",
+  "stoppedForCap": false,
+  "wdlOpponentPermille": {
+    "win": 0,
+    "draw": 22,
+    "loss": 978
+  },
+  "expectedPointsMoverFromEngineWdl": 0.989
+}

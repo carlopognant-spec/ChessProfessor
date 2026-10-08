@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "status": "prepared-not-executed",
+  "selection": "all eligible local best/root-best moves with geometric double attack; no reference-category predicate",
+  "selectionUsesExpectedLabels": false,
+  "engineSearchesPlanned": 0,
+  "classificationChangesPlanned": false,
+  "task": "Enumerate legal replies and verify whether the same moving piece can capture a fork target; treat geometry as a candidate, not proof of winning material or a Grande label.",
+  "source": {
+    "path": "agent-output/grande-missed-families-2026-10-08T03-05-48-750Z/results.json",
+    "sha256": "9d278c0f64d4b14c58c4b2e6c1c5b342de1e2447caff2516f9dbf3156c5a87c4"
+  },
+  "cases": [
+    {
+      "id": "personal-02",
+      "ply": 19,
+      "san": "Bc4",
+      "targets": [
+        {
+          "square": "f7",
+          "type": "r"
+        },
+        {
+          "square": "a6",
+          "type": "n"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-02.json"
+    },
+    {
+      "id": "personal-02",
+      "ply": 43,
+      "san": "Rxf6+",
+      "targets": [
+        {
+          "square": "f8",
+          "type": "k"
+        },
+        {
+          "square": "a6",
+          "type": "n"
+        },
+        {
+          "square": "g6",
+          "type": "b"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-02.json"
+    },
+    {
+      "id": "personal-03",
+      "ply": 19,
+      "san": "Nxd6+",
+      "targets": [
+        {
+          "square": "c8",
+          "type": "b"
+        },
+        {
+          "square": "e8",
+          "type": "k"
+        },
+        {
+          "square": "b7",
+          "type": "p"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-03.json"
+    },
+    {
+      "id": "personal-03",
+      "ply": 29,
+      "san": "Qxe5+",
+      "targets": [
+        {
+          "square": "e8",
+          "type": "k"
+        },
+        {
+          "square": "h8",
+          "type": "r"
+        },
+        {
+          "square": "c7",
+          "type": "p"
+        },
+        {
+          "square": "g5",
+          "type": "p"
+        },
+        {
+          "square": "f4",
+          "type": "p"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-03.json"
+    },
+    {
+      "id": "personal-04",
+      "ply": 29,
+      "san": "Nd6+",
+      "targets": [
+        {
+          "square": "e8",
+          "type": "k"
+        },
+        {
+          "square": "b7",
+          "type": "p"
+        },
+        {
+          "square": "f7",
+          "type": "p"
+        },
+        {
+          "square": "b5",
+          "type": "q"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-04.json"
+    },
+    {
+      "id": "personal-06",
+      "ply": 13,
+      "san": "d4",
+      "targets": [
+        {
+          "square": "c5",
+          "type": "b"
+        },
+        {
+          "square": "e5",
+          "type": "n"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-06.json"
+    },
+    {
+      "id": "personal-06",
+      "ply": 35,
+      "san": "Nxf6+",
+      "targets": [
+        {
+          "square": "g8",
+          "type": "k"
+        },
+        {
+          "square": "d7",
+          "type": "q"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-06.json"
+    },
+    {
+      "id": "personal-06",
+      "ply": 37,
+      "san": "Nxd7",
+      "targets": [
+        {
+          "square": "f8",
+          "type": "r"
+        },
+        {
+          "square": "c5",
+          "type": "p"
+        },
+        {
+          "square": "e5",
+          "type": "n"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-06.json"
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "ply": 39,
+      "san": "e6+",
+      "targets": [
+        {
+          "square": "d7",
+          "type": "q"
+        },
+        {
+          "square": "f7",
+          "type": "k"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-1-chigorin-steinitz-1892.json"
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "ply": 80,
+      "san": "Nxc3",
+      "targets": [
+        {
+          "square": "e2",
+          "type": "r"
+        },
+        {
+          "square": "d1",
+          "type": "r"
+        }
+      ],
+      "cache": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json"
+    }
+  ]
+}

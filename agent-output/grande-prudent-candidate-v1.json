@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "version": "grande-prudent-candidate-v1",
+  "status": "experimental-not-enabled",
+  "frozenOn": "2026-10-08",
+  "category": "great",
+  "model": {
+    "policyName": "cautious",
+    "policy": {
+      "falsePositiveCost": 4,
+      "minimumPrecision": 0.8,
+      "minimumNewPositives": 3,
+      "maxRules": 2
+    },
+    "trainingRows": 114,
+    "trainingPositives": 14,
+    "rules": [
+      {
+        "predicates": [
+          {
+            "name": "afterError",
+            "value": true
+          },
+          {
+            "name": "capture",
+            "value": false
+          }
+        ],
+        "trainingNewTp": 5,
+        "trainingNewFp": 0,
+        "gain": 5,
+        "laplacePrecision": 0.8571428571428571
+      }
+    ]
+  },
+  "trainingGames": [
+    "personal-01",
+    "personal-02",
+    "personal-03",
+    "personal-04",
+    "personal-05",
+    "personal-06"
+  ],
+  "source": {
+    "path": "agent-output/grande-leave-game-out-2026-10-07T20-47-09-175Z/results.json",
+    "sha256": "b02debd4175b739fea8464298a34239286a8865169ebf139f9197d1826d44ae6"
+  },
+  "eligibility": {
+    "commonClassification": "best",
+    "playedIsPv1": true,
+    "isBookMove": false,
+    "deliveredMate": false,
+    "minimumLegalMoves": 2,
+    "preserveBrilliantV1": true
+  },
+  "featureContract": {
+    "afterError": "Previous move classified mistake/blunder by numerical classifier without book override; expected labels never used.",
+    "capture": "Played move legally captures, including en passant."
+  },
+  "observedResults": {
+    "developmentLeaveGameOut": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 9
+    },
+    "historicalSeparate": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 9
+    }
+  },
+  "independentValidation": false,
+  "futureEvaluation": "Apply this fixed model before any retraining or threshold changes; report all positives, negatives and unknown inputs."
+}

@@ -1,0 +1,892 @@
+{
+  "summary": {
+    "searches": 15,
+    "selected": 15,
+    "budget": 200000,
+    "cap": 4000000,
+    "nominalNodes": 3000000,
+    "actualNodes": 3002050,
+    "capExceeded": false,
+    "elapsedMs": 12336.400099999999,
+    "sourceHashesUnchanged": true,
+    "failure": null,
+    "completeSnapshots": 15,
+    "bestmoveDisagreements": 0,
+    "recoveredComparisons": 15,
+    "newLatestMixedDepth": 15,
+    "newLatestDuplicates": 5,
+    "selectedMetrics": [
+      {
+        "version": "original",
+        "moves": 15,
+        "matches": 11,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 0,
+            "expected": 2,
+            "tp": 0,
+            "fp": 0,
+            "fn": 2
+          },
+          {
+            "category": "Geniale",
+            "assigned": 0,
+            "expected": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        ]
+      },
+      {
+        "version": "latest",
+        "moves": 15,
+        "matches": 11,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 0,
+            "expected": 2,
+            "tp": 0,
+            "fp": 0,
+            "fn": 2
+          },
+          {
+            "category": "Geniale",
+            "assigned": 0,
+            "expected": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        ]
+      },
+      {
+        "version": "snapshot",
+        "moves": 15,
+        "matches": 8,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 3,
+            "expected": 2,
+            "tp": 0,
+            "fp": 3,
+            "fn": 2
+          },
+          {
+            "category": "Geniale",
+            "assigned": 0,
+            "expected": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        ]
+      }
+    ],
+    "groupMetrics": [
+      {
+        "group": "development",
+        "version": "original",
+        "moves": 11,
+        "matches": 10,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 0,
+            "expected": 1,
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          {
+            "category": "Geniale",
+            "assigned": 0,
+            "expected": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        ]
+      },
+      {
+        "group": "development",
+        "version": "snapshot",
+        "moves": 11,
+        "matches": 7,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 3,
+            "expected": 1,
+            "tp": 0,
+            "fp": 3,
+            "fn": 1
+          },
+          {
+            "category": "Geniale",
+            "assigned": 0,
+            "expected": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        ]
+      },
+      {
+        "group": "historical",
+        "version": "original",
+        "moves": 4,
+        "matches": 1,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 0,
+            "expected": 1,
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          {
+            "category": "Geniale",
+            "assigned": 0,
+            "expected": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        ]
+      },
+      {
+        "group": "historical",
+        "version": "snapshot",
+        "moves": 4,
+        "matches": 1,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 0,
+            "expected": 1,
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          {
+            "category": "Geniale",
+            "assigned": 0,
+            "expected": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          }
+        ]
+      }
+    ],
+    "wholePartiallyReplaced": [
+      {
+        "version": "original",
+        "moves": 586,
+        "matches": 310,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 8,
+            "expected": 24,
+            "tp": 4,
+            "fp": 4,
+            "fn": 20
+          },
+          {
+            "category": "Geniale",
+            "assigned": 1,
+            "expected": 3,
+            "tp": 1,
+            "fp": 0,
+            "fn": 2
+          }
+        ]
+      },
+      {
+        "version": "snapshot",
+        "moves": 586,
+        "matches": 307,
+        "categories": [
+          {
+            "category": "Grande",
+            "assigned": 11,
+            "expected": 24,
+            "tp": 4,
+            "fp": 7,
+            "fn": 20
+          },
+          {
+            "category": "Geniale",
+            "assigned": 1,
+            "expected": 3,
+            "tp": 1,
+            "fp": 0,
+            "fn": 2
+          }
+        ]
+      }
+    ],
+    "appIntegration": false,
+    "independentValidation": false
+  },
+  "outcomes": [
+    {
+      "id": "personal-01",
+      "group": "development",
+      "ply": 13,
+      "san": "Bxc3",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 13,
+      "nodesAtSnapshot": 176366,
+      "actualNodes": 200193,
+      "snapshotFraction": 0.880979854440465,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        14,
+        13,
+        13,
+        13,
+        13
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.5683199834782481,
+        "after": 0.578105232884309,
+        "alternative": 0.5677065480733601,
+        "gap": 0.0006134354048880075,
+        "depth": 13,
+        "shownAlternatives": 4,
+        "legalAlternatives": 26,
+        "rootChildDisagreement": 0.009785249406060958,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-02",
+      "group": "development",
+      "ply": 10,
+      "san": "e5",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "invalid-or-duplicate-roots",
+      "latest": "Migliore",
+      "latestReason": "invalid-or-duplicate-roots",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 11,
+      "nodesAtSnapshot": 124334,
+      "actualNodes": 200076,
+      "snapshotFraction": 0.6214338551350487,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        12,
+        12,
+        11,
+        11,
+        11
+      ],
+      "latestHasDuplicates": true,
+      "snapshotEvidence": {
+        "best": 0.4656790563306954,
+        "after": 0.46319171001101966,
+        "alternative": 0.45760205922564895,
+        "gap": 0.008076997105046446,
+        "depth": 11,
+        "shownAlternatives": 4,
+        "legalAlternatives": 23,
+        "rootChildDisagreement": 0.0024873463196757317,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-03",
+      "group": "development",
+      "ply": 11,
+      "san": "Bxf6",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 11,
+      "nodesAtSnapshot": 173656,
+      "actualNodes": 200160,
+      "snapshotFraction": 0.8675859312549961,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        12,
+        11,
+        11,
+        11,
+        11
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.5287183569514396,
+        "after": 0.5368082899889804,
+        "alternative": 0.49875000260416025,
+        "gap": 0.029968354347279402,
+        "depth": 11,
+        "shownAlternatives": 4,
+        "legalAlternatives": 38,
+        "rootChildDisagreement": 0.008089933037540797,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-04",
+      "group": "development",
+      "ply": 18,
+      "san": "Bg6",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 13,
+      "nodesAtSnapshot": 133079,
+      "actualNodes": 200101,
+      "snapshotFraction": 0.6650591451317085,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        14,
+        13,
+        13,
+        13,
+        13
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.5634067862621936,
+        "after": 0.5640216374262575,
+        "alternative": 0.498125008789013,
+        "gap": 0.06528177747318065,
+        "depth": 13,
+        "shownAlternatives": 4,
+        "legalAlternatives": 37,
+        "rootChildDisagreement": 0.0006148511640639009,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-05",
+      "group": "development",
+      "ply": 25,
+      "san": "Bxg5",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "invalid-or-duplicate-roots",
+      "latest": "Migliore",
+      "latestReason": "invalid-or-duplicate-roots",
+      "snapshot": "Grande",
+      "snapshotReason": "only-good-estimate",
+      "snapshotStatus": "candidate",
+      "depth": 13,
+      "nodesAtSnapshot": 70947,
+      "actualNodes": 200132,
+      "snapshotFraction": 0.35450102932064836,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        14,
+        14,
+        14,
+        13,
+        13
+      ],
+      "latestHasDuplicates": true,
+      "snapshotEvidence": {
+        "best": 0.759510916949111,
+        "after": 0.7803144887848326,
+        "alternative": 0.10133303925112525,
+        "gap": 0.6581778776979857,
+        "depth": 13,
+        "shownAlternatives": 4,
+        "legalAlternatives": 40,
+        "rootChildDisagreement": 0.020803571835721568,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-06",
+      "group": "development",
+      "ply": 15,
+      "san": "Qxd4",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Grande",
+      "snapshotReason": "only-good-estimate",
+      "snapshotStatus": "candidate",
+      "depth": 15,
+      "nodesAtSnapshot": 194425,
+      "actualNodes": 200127,
+      "snapshotFraction": 0.9715080923613505,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        15,
+        16,
+        16,
+        16,
+        16
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.5479769376367963,
+        "after": 0.5578645727207345,
+        "alternative": 0.19154534856146752,
+        "gap": 0.3564315890753288,
+        "depth": 15,
+        "shownAlternatives": 4,
+        "legalAlternatives": 35,
+        "rootChildDisagreement": 0.009887635083938195,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "group": "historical",
+      "ply": 21,
+      "san": "Bxd7+",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 11,
+      "nodesAtSnapshot": 152704,
+      "actualNodes": 200029,
+      "snapshotFraction": 0.7634093056506807,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        12,
+        11,
+        12,
+        11,
+        11
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.5299640517645717,
+        "after": 0.5504527113395279,
+        "alternative": 0.5156199157230156,
+        "gap": 0.014344136041556155,
+        "depth": 11,
+        "shownAlternatives": 4,
+        "legalAlternatives": 35,
+        "rootChildDisagreement": 0.02048865957495616,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "group": "historical",
+      "ply": 8,
+      "san": "Nf6",
+      "expected": "Libro",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 13,
+      "nodesAtSnapshot": 197140,
+      "actualNodes": 200279,
+      "snapshotFraction": 0.9843268640246856,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        13,
+        14,
+        14,
+        13,
+        13
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.4931254332354657,
+        "after": 0.4956251116502265,
+        "alternative": 0.4875026035157896,
+        "gap": 0.005622829719676092,
+        "depth": 13,
+        "shownAlternatives": 4,
+        "legalAlternatives": 32,
+        "rootChildDisagreement": 0.0024996784147607864,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-01",
+      "group": "development",
+      "ply": 14,
+      "san": "Nf6",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 13,
+      "nodesAtSnapshot": 176248,
+      "actualNodes": 200164,
+      "snapshotFraction": 0.8805179752602865,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        14,
+        13,
+        13,
+        13,
+        13
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.4182406231581638,
+        "after": 0.4329070950345457,
+        "alternative": 0.4182406231581638,
+        "gap": 0,
+        "depth": 13,
+        "shownAlternatives": 4,
+        "legalAlternatives": 30,
+        "rootChildDisagreement": 0.014666471876381926,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-02",
+      "group": "development",
+      "ply": 12,
+      "san": "Bb4",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "invalid-or-duplicate-roots",
+      "latest": "Migliore",
+      "latestReason": "invalid-or-duplicate-roots",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 12,
+      "nodesAtSnapshot": 125664,
+      "actualNodes": 200217,
+      "snapshotFraction": 0.6276390116723355,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        13,
+        13,
+        13,
+        13,
+        12
+      ],
+      "latestHasDuplicates": true,
+      "snapshotEvidence": {
+        "best": 0.47065874995421436,
+        "after": 0.48500449838059,
+        "alternative": 0.45078487089866653,
+        "gap": 0.019873879055547827,
+        "depth": 12,
+        "shownAlternatives": 4,
+        "legalAlternatives": 28,
+        "rootChildDisagreement": 0.014345748426375649,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-03",
+      "group": "development",
+      "ply": 12,
+      "san": "Qxf6",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "invalid-or-duplicate-roots",
+      "latest": "Migliore",
+      "latestReason": "invalid-or-duplicate-roots",
+      "snapshot": "Grande",
+      "snapshotReason": "only-good-estimate",
+      "snapshotStatus": "candidate",
+      "depth": 13,
+      "nodesAtSnapshot": 96839,
+      "actualNodes": 200092,
+      "snapshotFraction": 0.4839723727085541,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        14,
+        14,
+        14,
+        13,
+        14
+      ],
+      "latestHasDuplicates": true,
+      "snapshotEvidence": {
+        "best": 0.46319171001101955,
+        "after": 0.46630116456709914,
+        "alternative": 0.20751005855963559,
+        "gap": 0.255681651451384,
+        "depth": 13,
+        "shownAlternatives": 4,
+        "legalAlternatives": 30,
+        "rootChildDisagreement": 0.0031094545560795828,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "personal-04",
+      "group": "development",
+      "ply": 22,
+      "san": "Qb4",
+      "expected": "Grande",
+      "original": "Migliore",
+      "originalReason": "invalid-or-duplicate-roots",
+      "latest": "Migliore",
+      "latestReason": "invalid-or-duplicate-roots",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 12,
+      "nodesAtSnapshot": 158628,
+      "actualNodes": 200071,
+      "snapshotFraction": 0.7928585352199969,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        13,
+        13,
+        12,
+        13,
+        12
+      ],
+      "latestHasDuplicates": true,
+      "snapshotEvidence": {
+        "best": 0.669295402777446,
+        "after": 0.6637386974043527,
+        "alternative": 0.5566309599222533,
+        "gap": 0.11266444285519273,
+        "depth": 12,
+        "shownAlternatives": 4,
+        "legalAlternatives": 38,
+        "rootChildDisagreement": 0.005556705373093385,
+        "fullAlternativeProof": false,
+        "beforeOpportunity": 0.5652507475670998,
+        "offered": 0.6681877721681662
+      }
+    },
+    {
+      "id": "personal-06",
+      "group": "development",
+      "ply": 33,
+      "san": "Bxf6",
+      "expected": "Migliore",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 14,
+      "nodesAtSnapshot": 123725,
+      "actualNodes": 200220,
+      "snapshotFraction": 0.6179452602137648,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        15,
+        14,
+        14,
+        14,
+        14
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.8661687415332987,
+        "after": 0.8690403162690898,
+        "alternative": 0.7985891891595733,
+        "gap": 0.06757955237372537,
+        "depth": 14,
+        "shownAlternatives": 4,
+        "legalAlternatives": 37,
+        "rootChildDisagreement": 0.002871574735791138,
+        "fullAlternativeProof": false,
+        "beforeOpportunity": 0.7417338799314313,
+        "offered": 0.8724169568783322
+      }
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "group": "historical",
+      "ply": 25,
+      "san": "Nc4",
+      "expected": "Grande",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 11,
+      "nodesAtSnapshot": 179929,
+      "actualNodes": 200185,
+      "snapshotFraction": 0.8988135974223843,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        12,
+        11,
+        11,
+        11,
+        11
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.5896454785627312,
+        "after": 0.5664790559676279,
+        "alternative": 0.5361866202317948,
+        "gap": 0.05345885833093644,
+        "depth": 11,
+        "shownAlternatives": 4,
+        "legalAlternatives": 29,
+        "rootChildDisagreement": 0.023166422595103264,
+        "fullAlternativeProof": false
+      }
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "group": "historical",
+      "ply": 9,
+      "san": "Nf3",
+      "expected": "Libro",
+      "original": "Migliore",
+      "originalReason": "different-root-depths",
+      "latest": "Migliore",
+      "latestReason": "different-root-depths",
+      "snapshot": "Migliore",
+      "snapshotReason": "no-special-condition",
+      "snapshotStatus": "rejected",
+      "depth": 13,
+      "nodesAtSnapshot": 183500,
+      "actualNodes": 200004,
+      "snapshotFraction": 0.9174816503669927,
+      "bestmoveMatchesSnapshot": true,
+      "latestDepths": [
+        14,
+        13,
+        13,
+        13,
+        13
+      ],
+      "latestHasDuplicates": false,
+      "snapshotEvidence": {
+        "best": 0.5031249593105316,
+        "after": 0.5062496744995104,
+        "alternative": 0.5031249593105316,
+        "gap": 0,
+        "depth": 13,
+        "shownAlternatives": 4,
+        "legalAlternatives": 36,
+        "rootChildDisagreement": 0.0031247151889788327,
+        "fullAlternativeProof": false
+      }
+    }
+  ],
+  "watched": [
+    {
+      "path": "agent-output/stockfish-specials-simple-2026-10-07T19-25-40-871Z/results.json",
+      "sha256": "b63aaf213bfbfd72e215ced6d10d636e8953149bf1e1a827aac3fa4b1ef13534"
+    },
+    {
+      "path": "node_modules/stockfish/package.json",
+      "sha256": "05c54a01a21441d3091a82e109b87d3e6e605c4244a6f5eeea40fffc244ce4ab"
+    },
+    {
+      "path": "src/data/openingPositions.json",
+      "sha256": "0b96012fd9330e01ff3eb85600cb678f997bf5f2ed7e6054828fa6f97c236b5a"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-01.json",
+      "sha256": "c96c451405decc38094480767ffef1f03de7fdff6756916f3015c081cff3974f"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json",
+      "sha256": "41e376797b4c302049cb8728afc8bc83add05f58d2200950d96ff42c1ded694b"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-02.json",
+      "sha256": "12e7a695c1f2a2796c536fb9bde983feedac525404467280beda2802c72d751c"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-02.json",
+      "sha256": "ec57a961511dbb4eb2ef044d18331e947b64c009f932a06f77ab7fba056118da"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-03.json",
+      "sha256": "acc9c32708e6cd1b4e0227134ababc16d280b7fceaa0bd2c42ede5c00c51c246"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-03.json",
+      "sha256": "cb6b22e3ac7d7655b732a9c3570b8d74e1cbfa03fdcf7843575a5b3757ef3dcc"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-04.json",
+      "sha256": "372219d4b2bc7747e277944143d65dfff9a58ff37f28824c7ca21ae0531de594"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-04.json",
+      "sha256": "aae68ad6b5b86a2d932d28fcb4f28da1ff494c035cbabec299ff9036742e97c4"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-05.json",
+      "sha256": "8e87f6e8d46c006e85e26969e46645a4f0e6eb67bc0f8af11b73431fb5c1b986"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-05.json",
+      "sha256": "77d7cffb595ca38fc3ca5cc3b55c6737b05ef2fb42f3a0647f5b42d4492c1ce8"
+    },
+    {
+      "path": "tests/fixtures/qa/personal-06.json",
+      "sha256": "4bc0b8fa71a6bdf1f8c31785881ea7c247f1b5586eab809a582df634a8f98ad4"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-06.json",
+      "sha256": "74f507ce703e004938c61e361479e24bd5152fdcc29f2cdafe6e6826bb73e895"
+    },
+    {
+      "path": "tests/fixtures/qa/game-1-chigorin-steinitz-1892.json",
+      "sha256": "9d51e6ec8f96f7b90505f968739e46f997559f22164ba81099289107db59e607"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-1-chigorin-steinitz-1892.json",
+      "sha256": "1f58f75e557a5ace54a6f0951d8cd34861ceaafe42e0b5d6bddb3b1e4889b954"
+    },
+    {
+      "path": "tests/fixtures/qa/game-2-saintamant-staunton-1843.json",
+      "sha256": "af0c33baac84bffd29343e8310e116bbc5ba1947d0ff5c0c393bc9ccb41da6a0"
+    },
+    {
+      "path": "tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-2-saintamant-staunton-1843.json",
+      "sha256": "3711ce611820d1a45c049abfcf5a499032d6c75ef9d8f778df6be5bf267dd8ea"
+    }
+  ]
+}
