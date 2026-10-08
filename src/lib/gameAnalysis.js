@@ -117,7 +117,11 @@ export async function analyzeGame({
     let move
 
     if (!entry) {
-      const engine = await analyzePosition(fenBefore)
+      const previousEntry = results.at(-1)
+      // The UI uses the same search profile before and after each move.
+      const reusable = analyzePosition === analyzePlayedPosition
+        && previousEntry?.fenAfter === fenBefore && previousEntry.playedEngine
+      const engine = reusable || await analyzePosition(fenBefore)
       throwIfAborted(signal)
 
       let explorer = null

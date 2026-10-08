@@ -47,6 +47,34 @@ function transpositionExplorer() {
 }
 
 describe('automatic game analysis', () => {
+  it('reuses consecutive position searches without changing the analysis results', async () => {
+    const evaluate = async fen => ({ evalCp: fen.split(' ')[1] === 'w' ? 30 : -20, mate: null, pv: [] })
+    const moves = ['e4', 'e5', 'Nf3', 'Nc6']
+    const expected = await analyzeGame({ moves, openingBook: NO_BOOK,
+      analyzePosition: fen => evaluate(fen), analyzePlayedPosition: fen => evaluate(fen),
+    })
+    const analyzePosition = vi.fn(evaluate)
+    const session = createGameAnalysisSession()
+    const options = { moves, openingBook: NO_BOOK, analyzePosition, analyzePlayedPosition: analyzePosition, session }
+    expect(await analyzeGame(options)).toEqual(expected)
+    expect(analyzePosition).toHaveBeenCalledTimes(moves.length + 1)
+    analyzePosition.mockClear()
+    const extended = await analyzeGame({ ...options, moves: [...moves, 'Bc4'] })
+    expect(extended.slice(0, moves.length)).toEqual(expected)
+    expect(analyzePosition).toHaveBeenCalledTimes(1)
+    expect(analyzePosition).toHaveBeenCalledWith(extended.at(-1).fenAfter)
+  })
+
+  it('keeps separate before-move and played-position search providers independent', async () => {
+    const analyzePosition = vi.fn(async () => ({ evalCp: 30, mate: null, pv: [] }))
+    const analyzePlayedPosition = vi.fn(async () => ({ evalCp: -70, mate: null, pv: [] }))
+    const entries = await analyzeGame({ moves: ['e4', 'e5'], openingBook: NO_BOOK, analyzePosition, analyzePlayedPosition })
+    expect(analyzePosition).toHaveBeenCalledTimes(2)
+    expect(analyzePlayedPosition).toHaveBeenCalledTimes(2)
+    expect(entries[1].engine.evalCp).toBe(30)
+    expect(entries[0].playedEngine.evalCp).toBe(-70)
+  })
+
   it('preserves canonical SAN history and cached results when a check suffix is omitted', async () => {
     const checkingMoves = ['e4', 'e5', 'Qh5', 'Nc6', 'Qxe5', 'Nxe5']
     const session = createGameAnalysisSession()

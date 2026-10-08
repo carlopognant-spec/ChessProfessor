@@ -585,6 +585,7 @@ test('completed analysis navigation stays fast without new engine searches', asy
   await expect(page.locator('.analysis-row-button')).toHaveCount(168)
   await page.getByRole('button', { name: 'Ultimo', exact: true }).click()
   const searches = await page.evaluate(() => window.engineSearchCount)
+  expect(searches).toBe(169)
   const summaryBefore = await page.locator('.summary-table').innerText()
   const navigationTimings = []
   for (const [button, ply] of [['Indietro', 167], ['Primo', 0], ['Avanti', 1], ['Ultimo', 168]]) {
