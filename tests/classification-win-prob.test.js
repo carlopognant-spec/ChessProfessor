@@ -134,7 +134,7 @@ describe('win probability classification', () => {
     const finalFen = game.fen()
     const responseMap = new Map([
       [new Chess().fen(), { evalCp: 0, mate: null }],
-      [game.history().length ? finalFen : finalFen, { evalCp: null, mate: 0 }],
+      [finalFen, { evalCp: null, mate: 0 }],
     ])
 
     const engine = createAnalyzingEngine(responseMap)
