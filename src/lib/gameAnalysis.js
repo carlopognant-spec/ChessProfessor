@@ -5,7 +5,19 @@ import { classifyAnalysisEntries, moveEvaluationFields, MOVE_CLASSIFICATION } fr
 import { loadOpeningBook } from './openingBook.js'
 import { classifyMissedOpportunity } from './missedOpportunity.js'
 
-const CLASSIFICATION_ORDER = Object.values(MOVE_CLASSIFICATION)
+const CLASSIFICATION_ORDER = [
+  MOVE_CLASSIFICATION.brilliant,
+  MOVE_CLASSIFICATION.great,
+  MOVE_CLASSIFICATION.book,
+  MOVE_CLASSIFICATION.best,
+  MOVE_CLASSIFICATION.excellent,
+  MOVE_CLASSIFICATION.good,
+  MOVE_CLASSIFICATION.inaccuracy,
+  MOVE_CLASSIFICATION.mistake,
+  MOVE_CLASSIFICATION.missed,
+  MOVE_CLASSIFICATION.blunder,
+  MOVE_CLASSIFICATION.unclassified,
+]
 
 function throwIfAborted(signal) {
   if (signal?.aborted) {
