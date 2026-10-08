@@ -81,12 +81,6 @@ h1, h2, h3 {
   pointer-events: none;
 }
 
-.engine-arrow-overlay line {
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  opacity: 0.92;
-}
-
 .eco-label {
   font-family: var(--font-mono);
   font-size: 0.85rem;
