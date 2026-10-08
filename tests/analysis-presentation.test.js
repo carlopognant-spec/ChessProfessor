@@ -1,7 +1,19 @@
 import { describe, expect, it } from 'vitest'
-import { buildEngineArrowSegments, buildEngineArrows, buildMoveNavigation, getButtonNavigationTarget, getKeyboardNavigationTarget, resolveEngineForFen } from '../src/lib/analysisPresentation.js'
+import { buildEngineArrowSegments, buildEngineArrows, buildMoveNavigation, getButtonNavigationTarget, getKeyboardNavigationTarget, resolveEngineForFen, resolveMoveReview } from '../src/lib/analysisPresentation.js'
 
 describe('analysis presentation', () => {
+  it('reviews the completed played move using the best alternative from before it', () => {
+    const entry = { ply: 1, fenBefore: 'before', fenAfter: 'after', playedMove: 'd4', moveHistorySan: [],
+      classification: 'good', engine: { lines: [{ multipv: 2, pv: ['c2c4'] }, { multipv: 1, pv: ['e2e4'] }] },
+      playedEngine: { lines: [{ multipv: 1, pv: ['e7e5'] }] },
+    }
+    expect(resolveMoveReview('after', ['d4'], [entry]).bestMove).toBe('e2e4')
+    expect(resolveMoveReview('after', ['d4'], [{ ...entry, isBookMove: true }]).bestMove).toBeNull()
+    expect(resolveMoveReview('after', ['d4'], [{ ...entry, classification: 'book' }]).bestMove).toBeNull()
+    expect(resolveMoveReview('after', ['d4'], [{ ...entry, playedEngine: null }])).toBeNull()
+    expect(resolveMoveReview('after', ['e4'], [entry])).toBeNull()
+    expect(resolveMoveReview('before', [], [entry])).toBeNull()
+  })
   it('rejects stale live data and never uses a pre-move engine for a post-move FEN', () => {
     const live = { fen: 'before', lines: [{ pv: ['e2e4'] }] }
     expect(resolveEngineForFen('after', [], live)).toBeNull()

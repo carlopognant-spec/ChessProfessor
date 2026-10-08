@@ -444,7 +444,7 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
     const game = new Chess()
     for (const move of ['e4', 'e5', 'd4', 'd5']) game.move(move)
     await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', game.fen())
-    await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(0)
+    await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
     expect(await page.evaluate(() => window.testWorkers.length)).toBe(1)
 
     // Navigation must not clear the failure or silently reuse the dead engine.
@@ -473,11 +473,10 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
 async function assertLegalArrows(page) {
   // Read position and arrows in one browser task: navigation can render between awaits.
   const { fen, engineFen, evalFen, moves } = await page.locator('.board-stage').evaluate(board => {
-    const square = (x, y) => String.fromCharCode(97 + Math.round((Number(x) - 6.25) / 12.5)) + (8 - Math.round((Number(y) - 6.25) / 12.5))
-    return { fen: board.dataset.fen, engineFen: board.querySelector('.engine-arrow-overlay')?.dataset.fen, evalFen: board.parentElement.querySelector('.engine-eval-label')?.dataset.fen, moves: [...board.querySelectorAll('.engine-arrow-overlay line')].map(line => square(line.getAttribute('x1'), line.getAttribute('y1')) + square(line.getAttribute('x2'), line.getAttribute('y2'))) }
+    return { fen: board.dataset.fen, engineFen: board.querySelector('.engine-arrow-overlay')?.dataset.fen, evalFen: board.parentElement.querySelector('.engine-eval-label')?.dataset.fen, moves: [...board.querySelectorAll('.engine-arrow-overlay .engine-arrow')].map(arrow => arrow.dataset.from + arrow.dataset.to) }
   })
-  const legal = new Chess(fen).moves({ verbose: true }).map(move => move.from + move.to)
-  expect(moves.length).toBeGreaterThan(0)
+  const legal = new Chess(engineFen ?? fen).moves({ verbose: true }).map(move => move.from + move.to)
+  expect(moves.length).toBeLessThanOrEqual(1)
   for (const move of moves) expect(legal, JSON.stringify({ fen, engineFen, evalFen, moves })).toContain(move)
 }
 
@@ -511,30 +510,23 @@ test('partial MultiPV duplicate roots never leave old arrows after a position ch
   const initial = new Chess().fen(), game = new Chess()
   game.move('e4')
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', initial)
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await expect(page.locator('.engine-arrow-overlay')).toBeVisible()
-  const arrowPaint = await page.locator('.engine-arrow-overlay line').evaluateAll(lines => lines.map(line => {
+  const arrowPaint = await page.locator('.engine-arrow-overlay .engine-arrow').evaluateAll(lines => lines.map(line => {
     const style = getComputedStyle(line)
     return {
-      width: parseFloat(style.strokeWidth),
-      expectedWidth: Number(line.getAttribute('stroke-width')),
-      opacity: parseFloat(style.strokeOpacity),
-      expectedOpacity: Number(line.getAttribute('stroke-opacity')),
-      stroke: style.stroke,
+      opacity: parseFloat(style.fillOpacity),
+      fill: style.fill,
     }
   }))
-  expect(arrowPaint.every(line => line.width > 0 && line.opacity > 0 && line.stroke !== 'none')).toBe(true)
-  for (const line of arrowPaint) {
-    expect(line.width).toBeCloseTo(line.expectedWidth)
-    expect(line.opacity).toBeCloseTo(line.expectedOpacity)
-  }
+  expect(arrowPaint.every(arrow => arrow.opacity > 0 && arrow.fill !== 'none')).toBe(true)
   await assertLegalArrows(page)
   await page.locator('[data-square="e2"]').click()
   await page.locator('[data-square="e4"]').click()
   for (const target of [game.fen(), initial, game.fen(), initial]) {
     await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', target)
     await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', target)
-    await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+    await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
     await assertLegalArrows(page)
     await page.keyboard.press(target === initial ? 'ArrowRight' : 'ArrowLeft')
   }
@@ -580,6 +572,7 @@ test('completed analysis navigation stays fast without new engine searches', asy
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await expect(page.locator('.analysis-row-button').first()).toBeVisible()
   expect(await page.locator('.analysis-row-button').count()).toBeLessThan(168)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await page.getByRole('button', { name: 'Primo', exact: true }).click()
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
@@ -595,6 +588,8 @@ test('completed analysis navigation stays fast without new engine searches', asy
     await page.getByRole('button', { name: button, exact: true }).click()
     await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[ply])
     await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[ply])
+    await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(ply <= 1 ? 0 : 1)
+    if (ply > 1) await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', positions[ply - 1])
     const elapsed = Date.now() - started
     navigationTimings.push({ button, elapsedMs: elapsed })
     expect(elapsed).toBeLessThan(1000)
@@ -618,7 +613,7 @@ test('completed analysis navigation stays fast without new engine searches', asy
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
 })
 
-test('real Stockfish 19 refreshes five legal arrows after PGN import and navigation', async ({ page }) => {
+test('real Stockfish 19 refreshes a best-move arrow and hides it in book positions', async ({ page }) => {
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
   await page.addInitScript(() => {
@@ -645,7 +640,7 @@ test('real Stockfish 19 refreshes five legal arrows after PGN import and navigat
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await wasm
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await assertLegalArrows(page)
   // Cache persistence is tested with the real worker, including an offline restart.
   const cacheName = 'chessprofessor-engine-' + ENGINE_CONFIG.engine.workerFile.replace(/\.js$/, '')
@@ -675,14 +670,14 @@ test('real Stockfish 19 refreshes five legal arrows after PGN import and navigat
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await expect(page.locator('.analysis-row-button')).toHaveCount(8)
   const savedSummary = await page.locator('.analysis-rows').textContent()
   const searchesBeforeClosing = await page.evaluate(() => window.engineSearchCount)
   await page.locator('.tools-menu > summary').click()
   await expect(page.locator('.analysis-summary')).not.toBeVisible()
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await openTools(page, 'Partita e analisi')
   expect(await page.locator('.analysis-rows').textContent()).toBe(savedSummary)
@@ -690,14 +685,14 @@ test('real Stockfish 19 refreshes five legal arrows after PGN import and navigat
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).blur()
   await page.keyboard.press('ArrowLeft')
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
   await assertLegalArrows(page)
   await page.getByRole('button', { name: 'Reset partita', exact: true }).click()
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await assertLegalArrows(page)
   const beforeRapidImport = await page.evaluate(() => window.engineSearchCount)
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. d4 d5 2. c4 e6 3. Nc3 Nf6 *')
@@ -706,7 +701,7 @@ test('real Stockfish 19 refreshes five legal arrows after PGN import and navigat
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. c4 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(5)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   expect(errors).toEqual([])
 })
@@ -732,10 +727,10 @@ test('clears previous arrows while a newly imported position is waiting for anal
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(1)
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
-  await expect(page.locator('.engine-arrow-overlay line')).toHaveCount(0, { timeout: 500 })
+  await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0, { timeout: 500 })
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
   await assertLegalArrows(page)
 })
