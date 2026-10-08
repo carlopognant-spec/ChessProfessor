@@ -129,7 +129,6 @@ export function GameProvider({ children }) {
     loadFen,
     loadMoveSequence,
     canUndo: undoStack.length > 0,
-    isGameOver: gameRef.current.isGameOver(),
   }), [fen, moveHistorySan, navigationHistorySan, exportPgn, applyMove, applyMoveFromChat, undo, undoStack, resetGame, importPgn, loadFen, loadMoveSequence])
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>
