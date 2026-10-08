@@ -124,8 +124,6 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
 
     if (moveHistorySan.length === 0) {
       analysisSessionRef.current.clear()
-      analysisEntriesRef.current = []
-      onAnalysisData?.([])
       return
     }
 
