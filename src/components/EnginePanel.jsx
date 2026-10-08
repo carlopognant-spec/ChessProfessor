@@ -3,7 +3,6 @@ import { useGame } from '../context/GameContext.jsx'
 import { formatMateLabel, normalizeEvalToWhite } from '../lib/evaluation.js'
 import { analyzeGame, createGameAnalysisSession, buildAnalysisProgress } from '../lib/gameAnalysis.js'
 import { ENGINE_CONFIG } from '../lib/engineConfig.js'
-import { fetchOpeningExplorer } from '../lib/lichessExplorer.js'
 import { resolveEngineForFen } from '../lib/analysisPresentation.js'
 import { engineAssetsCached, prepareEngineCache } from '../lib/engineAssets.js'
 import { analysisMetadataKey } from '../lib/analysisMetadata.js'
@@ -45,14 +44,6 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
     setEvalData(normalized)
     onEngineData?.(normalized)
   }, [onEngineData])
-
-  const fetchExplorerSafely = async (positionFen) => {
-    try {
-      return await fetchOpeningExplorer(positionFen)
-    } catch {
-      return null
-    }
-  }
 
   useEffect(() => {
     let disposed = false
@@ -138,7 +129,6 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
       baseFen,
       analyzePosition: analyzeCurrentPosition,
       analyzePlayedPosition: analyzeCurrentPosition,
-      fetchExplorer: fetchExplorerSafely,
       session: analysisSessionRef.current,
       analysisKey: analysisMetadataKey(),
       signal: controller.signal,

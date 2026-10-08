@@ -544,6 +544,8 @@ test('partial MultiPV duplicate roots never leave old arrows after a position ch
 test('completed analysis navigation stays fast without new engine searches', async ({ page }) => {
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
+  const heldExplorerRequests = []
+  await page.route('https://explorer.lichess.ovh/**', route => { heldExplorerRequests.push(route) })
   await page.addInitScript(() => {
     window.engineSearchCount = 0
     window.Worker = class {
@@ -605,6 +607,10 @@ test('completed analysis navigation stays fast without new engine searches', asy
   expect(await page.locator('.summary-table').innerText()).toBe(summaryBefore)
   expect(await page.evaluate(() => window.engineSearchCount)).toBe(searches)
   expect(errors).toEqual([])
+  // Analysis and navigation finish even while every Explorer response is withheld.
+  expect(heldExplorerRequests.length).toBeGreaterThan(0)
+  expect(new Set(heldExplorerRequests.map(route => route.request().url())).size).toBe(heldExplorerRequests.length)
+  await Promise.all(heldExplorerRequests.map(route => route.fulfill({ json: { white: 0, draws: 0, black: 0, moves: [] } })))
   console.log('Mocked navigation timings:', JSON.stringify(navigationTimings))
   await page.getByRole('button', { name: 'Reset partita', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(0)

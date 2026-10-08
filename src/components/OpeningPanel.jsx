@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useGame } from '../context/GameContext.jsx'
 import { fetchOpeningExplorer } from '../lib/lichessExplorer.js'
 
@@ -26,13 +26,24 @@ export default function OpeningPanel({ onOpeningData }) {
   const [opening, setOpening] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const requestsRef = useRef(new Map())
 
   useEffect(() => {
     let cancelled = false
     setLoading(true)
     setError(null)
 
-    fetchOpeningExplorer(fen)
+    // Share pending requests too, including StrictMode and quick back/forward navigation.
+    let request = requestsRef.current.get(fen)
+    if (!request) {
+      request = fetchOpeningExplorer(fen)
+      requestsRef.current.set(fen, request)
+      if (requestsRef.current.size > 100) {
+        requestsRef.current.delete(requestsRef.current.keys().next().value)
+      }
+    }
+
+    request
       .then((raw) => {
         if (cancelled) return
         const data = toOpeningView(raw)
@@ -40,6 +51,7 @@ export default function OpeningPanel({ onOpeningData }) {
         onOpeningData?.(data)
       })
       .catch((err) => {
+        if (requestsRef.current.get(fen) === request) requestsRef.current.delete(fen)
         if (cancelled) return
         setError(err.message)
         onOpeningData?.(null)
