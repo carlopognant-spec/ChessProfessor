@@ -47,6 +47,19 @@ function transpositionExplorer() {
 }
 
 describe('automatic game analysis', () => {
+  it('preserves canonical SAN history and cached results when a check suffix is omitted', async () => {
+    const checkingMoves = ['e4', 'e5', 'Qh5', 'Nc6', 'Qxe5', 'Nxe5']
+    const session = createGameAnalysisSession()
+    const analyzePosition = vi.fn(async () => ({ evalCp: 0, mate: null, pv: [] }))
+    const options = { moves: checkingMoves, session, openingBook: NO_BOOK, analyzePosition, analyzePlayedPosition: analyzePosition }
+    const entries = await analyzeGame(options)
+    expect(entries.at(-1).moveHistorySan.at(-1)).toBe('Qxe5+')
+    expect(entries.at(-1).moveHistorySan).toEqual(['e4', 'e5', 'Qh5', 'Nc6', 'Qxe5+'])
+    analyzePosition.mockClear()
+    expect(await analyzeGame(options)).toEqual(entries)
+    expect(analyzePosition).not.toHaveBeenCalled()
+  })
+
   it('uses known theory independently of Explorer move counts', async () => {
     const analyzePosition = async () => ({ evalCp: 0, mate: null, pv: [] })
     const analyze = (san, white) => analyzeGame({

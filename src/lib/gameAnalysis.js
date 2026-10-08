@@ -102,6 +102,7 @@ export async function analyzeGame({
   const book = openingBook ?? await loadOpeningBook()
   throwIfAborted(signal)
   const results = []
+  const history = []
   let explorerStopped = session.isExplorerStopped?.() ?? false
   let bookPathActive = true
 
@@ -109,10 +110,11 @@ export async function analyzeGame({
     throwIfAborted(signal)
     const fenBefore = game.fen()
     const moveNumber = Number(fenBefore.split(' ')[5])
-    const moveHistorySan = game.history()
+    const moveHistorySan = [...history]
     const side = game.turn()
     const cacheKey = `analysis:${analysisKey ? analysisKey + ':' : ''}${fenBefore}:${san}`
     let entry = session.get(cacheKey)
+    let move
 
     if (!entry) {
       const engine = await analyzePosition(fenBefore)
@@ -139,7 +141,7 @@ export async function analyzeGame({
         ...(engine.analysisMetadata ? { analysisMetadata: engine.analysisMetadata } : {}),
         explorer,
       }
-      game.move(san)
+      move = game.move(san)
       entry.fenAfter = game.fen()
 
       if (typeof analyzePlayedPosition === 'function') {
@@ -157,7 +159,8 @@ export async function analyzeGame({
       session.stopExplorer?.()
     }
 
-    if (game.history().length === index) game.move(san)
+    move ??= game.move(san)
+    history.push(move.san)
     // Preserve the existing final-mate classification even for named mating traps.
     const isBookMove = bookPathActive && !game.isCheckmate() && book.hasPosition(entry.fenAfter)
     const isFirstBookDeviation = bookPathActive && !isBookMove
@@ -172,7 +175,6 @@ export async function analyzeGame({
       isFirstBookDeviation,
     }
     if (entry.playedEngine) {
-      const move = game.history({ verbose: true }).at(-1)
       entry = classifyAnalysisEntries([{
         ...entry,
         ...moveEvaluationFields(entry.engine, entry.playedEngine, `${move.from}${move.to}${move.promotion ?? ''}`, { isCheckmate: game.isCheckmate() }),
