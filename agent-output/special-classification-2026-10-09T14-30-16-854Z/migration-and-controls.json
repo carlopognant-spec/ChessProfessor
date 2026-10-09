@@ -1,0 +1,116 @@
+{
+  "version": "counterfactual-v6",
+  "newSearches": 0,
+  "development": {
+    "plies": 592,
+    "classificationChanges": 0,
+    "matches": 15,
+    "totalSpecialReferences": 37,
+    "metrics": [
+      {
+        "category": "great",
+        "tp": 11,
+        "fp": 0,
+        "fn": 13,
+        "assigned": 11,
+        "precision": 1,
+        "recall": 0.4583333333333333
+      },
+      {
+        "category": "brilliant",
+        "tp": 1,
+        "fp": 0,
+        "fn": 2,
+        "assigned": 1,
+        "precision": 1,
+        "recall": 0.3333333333333333
+      },
+      {
+        "category": "missed",
+        "tp": 3,
+        "fp": 0,
+        "fn": 7,
+        "assigned": 3,
+        "precision": 1,
+        "recall": 0.3
+      }
+    ]
+  },
+  "publicExamples": {
+    "plies": 25,
+    "labelled": 4,
+    "matches": 3,
+    "labels": [
+      {
+        "ply": 15,
+        "san": "Bxf4",
+        "expected": "brilliant",
+        "actual": "brilliant"
+      },
+      {
+        "ply": 17,
+        "san": "Bxf7+",
+        "expected": "brilliant",
+        "actual": "brilliant"
+      },
+      {
+        "ply": 19,
+        "san": "Qxf3",
+        "expected": "great",
+        "actual": "best"
+      },
+      {
+        "ply": 21,
+        "san": "Qh5+",
+        "expected": "great",
+        "actual": "great"
+      }
+    ],
+    "unlabelledAssignments": [],
+    "independentValidation": false
+  },
+  "controls": [
+    {
+      "id": "personal-02",
+      "ply": 14,
+      "san": "O-O",
+      "classification": "excellent",
+      "reason": "persistent-offer"
+    },
+    {
+      "id": "personal-04",
+      "ply": 55,
+      "san": "Rac1",
+      "classification": "excellent",
+      "reason": "missing-acceptance-analysis"
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "ply": 53,
+      "san": "Rb3",
+      "classification": "excellent",
+      "reason": "persistent-offer"
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "ply": 55,
+      "san": "Rf3",
+      "classification": "best",
+      "reason": "persistent-offer"
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "ply": 61,
+      "san": "Rxf5+",
+      "classification": "best",
+      "reason": "winning-alternative-without-new-sacrifice"
+    }
+  ],
+  "verification": {
+    "unitPassed": 225,
+    "unitTodo": 1,
+    "browserPassed": 10,
+    "buildPassed": true
+  },
+  "sourceHashesUnchanged": true
+}

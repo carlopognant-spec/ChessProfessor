@@ -1,0 +1,43 @@
+{
+  "offlineOnly": true,
+  "newSearches": 0,
+  "verifiedSearches": 50,
+  "verifiedActualNodes": 9630726,
+  "cumulativeNodesAcrossAttemptsKnown": false,
+  "discordantLatestRoots": 2,
+  "allSavedClassificationsReproduced": true,
+  "hashesUnchanged": true,
+  "sameFenEvidence": {
+    "san": "Bxf4",
+    "originalClassification": "best",
+    "originalReason": "missing-acceptance-analysis",
+    "acceptanceSource": "next-move-completed-root-snapshot",
+    "fen": "r1bqkbnr/pppp1p1p/2n5/4P3/2BP1Bp1/2N2N2/PPP3PP/R2QK2R b KQkq - 0 8",
+    "depth": 12,
+    "evalCpOpponent": -416,
+    "mateOpponent": null,
+    "pv": [
+      "gxf3",
+      "Bxf7+",
+      "Kxf7",
+      "Qxf3",
+      "Nxd4",
+      "Qh5+",
+      "Ke6",
+      "O-O",
+      "Ne7",
+      "Bg5",
+      "d5",
+      "exd6",
+      "Kxd6",
+      "Bf6",
+      "Kc6",
+      "Bxh8",
+      "Be6"
+    ],
+    "hypotheticalClassification": "best",
+    "hypotheticalReason": "unresolved-tactical-sequence",
+    "categoryChanged": false,
+    "explanation": "The acceptance score supports compensation; the PV ends with Bxh8 followed by Be6, so the current final-two-quiet-plies requirement remains unsatisfied."
+  }
+}

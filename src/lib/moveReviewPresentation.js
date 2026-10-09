@@ -2,6 +2,7 @@ import { Chess } from 'chess.js'
 
 // Display colors only: these do not participate in move classification.
 export const MOVE_APPEARANCE = {
+  forced: { label: 'Forzata', symbol: '=', color: '#7D91A5', light: '#C6D1DC', dark: '#879BAF' },
   brilliant: { label: 'Geniale', symbol: '!!', color: '#1BBF9F', light: '#8CD6BE', dark: '#4AAF89' },
   great: { label: 'Grande', symbol: '!', color: '#749BBF', light: '#A2C5C1', dark: '#769B8C' },
   book: { label: 'Libro', icon: 'book', color: '#D0A17B', light: '#E2CAAA', dark: '#C1A07A' },

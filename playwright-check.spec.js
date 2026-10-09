@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test'
 import { Chess } from 'chess.js'
 import { ENGINE_CONFIG } from './src/lib/engineConfig.js'
+import { createAnalysisMetadata } from './src/lib/analysisMetadata.js'
+import { readFileSync } from 'node:fs'
+import { classifyAnalysisEntries, moveEvaluationFields } from './src/lib/classification.js'
 
 const appUrl = 'http://127.0.0.1:4173/ChessProfessor/'
 
@@ -894,3 +897,255 @@ test('missed opportunity renders the verified alternative and previous opponent 
   await expect(missedMove).toContainText('Mossa mancata')
   await expect(missedMove).toContainText("Dopo f3, l'occasione era Nc6 d4.")
 })
+
+test('missed mate labels refresh in saved analysis offline without another engine search', async ({ page }) => {
+  const game = new Chess()
+  for (const san of ['f3', 'e5', 'g4']) game.move(san)
+  const before = game.fen()
+  await page.addInitScript(({ before }) => {
+    window.workerCount = 0
+    window.Worker = class {
+      constructor() { window.workerCount++ }
+      postMessage(command) {
+        if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
+        if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
+        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('go nodes')) queueMicrotask(() => {
+          const score = this.fen === before ? 'mate 1' : 'cp -1200'
+          const pv = this.fen === before ? 'd8h4' : 'e2e4'
+          this.onmessage?.({ data: `info depth 12 multipv 1 score ${score} pv ${pv}` })
+          this.onmessage?.({ data: `bestmove ${pv}` })
+        })
+      }
+      terminate() {}
+    }
+  }, { before })
+  await page.goto(appUrl)
+  await openTools(page, 'Partita e analisi')
+  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(`[SetUp "1"]\n[FEN "${before}"]\n\n2... Nc6 *`)
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
+  await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toContainText('Mossa mancata')
+  await expect(page.locator('.analysis-row-button')).toContainText('Matto in 1 non mantenuto')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Salva partita e analisi' }).click()
+  await expect(page.locator('.game-archive li')).toContainText('Analisi salvata: 1 mosse.')
+  // Emulate a record saved by the old classifier, preserving all raw evidence.
+  await page.evaluate(async () => {
+    const db = await new Promise(resolve => {
+      const request = indexedDB.open('chessprofessor-games', 1)
+      request.onsuccess = () => resolve(request.result)
+    })
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction('games', 'readwrite'), store = tx.objectStore('games')
+      tx.oncomplete = resolve; tx.onabort = reject
+      const request = store.getAll()
+      request.onsuccess = () => {
+        const record = request.result[0], entry = record.analysisEntries[0]
+        entry.classification = entry.baseClassification
+        entry.missedOpportunity = null
+        store.put(record)
+      }
+    })
+    db.close()
+  })
+  await page.reload()
+  await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toContainText('Mossa mancata')
+  await expect(page.locator('.analysis-row-button')).toContainText('Matto in 1 non mantenuto')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+for (const category of ['Grande', 'Geniale']) {
+  test(`experimental ${category} shows evidence offline and toggles without engine searches`, async ({ page }) => {
+    const initial = 'rnbq1rk1/ppp2ppp/3bpn2/3p4/3P4/2NBPN2/PPP2PPP/R1BQ1RK1 w - - 0 1'
+    const sacrifice = category === 'Geniale', metadata = createAnalysisMetadata()
+    const sequence = (fen, sans) => {
+      const game = new Chess(fen)
+      return sans.map(san => { const move = game.move(san); return `${move.from}${move.to}${move.promotion ?? ''}` })
+    }
+    const sans = sacrifice
+      ? ['Bxh7+', 'Kxh7', 'Ng5+', 'Kg8', 'Qh5', 'Re8', 'Qxf7+', 'Kh8', 'Qxe8+', 'Nxe8', 'Nf7+', 'Kg8', 'Ng5', 'Nf6']
+      : ['e4', 'dxe4', 'Nxe4']
+    const pv = sequence(initial, sans), game = new Chess(initial), move = game.move(sans[0])
+    const line = (multipv, evalCp, pv) => ({ multipv, evalCp, mate: null, depth: 15, pv })
+    const best = sacrifice ? 100 : 0
+    const roots = [line(1, best, pv), ...new Chess(initial).moves({ verbose: true })
+      .filter(other => `${other.from}${other.to}` !== pv[0]).slice(0, 4)
+      .map((other, index) => line(index + 2, sacrifice ? 50 : -400, [`${other.from}${other.to}`]))]
+    const children = [line(1, -best, pv.slice(1))]
+    if (sacrifice) children.push(line(2, -best, sequence(game.fen(), ['Nxh7', 'Kh1', 'Kh8'])))
+    const entry = { ply: 1, moveNumber: 1, side: 'w', playedMove: move.san, playedUci: pv[0],
+      moveHistorySan: [], fenBefore: initial, fenAfter: game.fen(), classification: 'best',
+      bestEval: best, playedEval: best, bestMate: null, playedMate: null, isEngineBest: true,
+      bestProbability: 1 / (1 + Math.exp(-best / 400)), playedProbability: 1 / (1 + Math.exp(-best / 400)),
+      analysisMetadata: metadata, engine: { ...roots[0], lines: roots, analysisMetadata: metadata },
+      playedEngine: { ...children[0], lines: children, analysisMetadata: metadata } }
+    const pgn = `[SetUp "1"]\n[FEN "${initial}"]\n\n1. ${move.san} *`
+    await page.addInitScript(() => {
+      window.workerCount = 0
+      window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+    })
+    await page.goto(appUrl)
+    await page.evaluate(async ({ pgn, entry }) => {
+      const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+      const archive = createGameArchive()
+      await archive.save({ pgn, title: 'Prova categorie', analysisEntries: [entry] })
+      await archive.close()
+    }, { pgn, entry })
+    await page.reload()
+    await page.context().setOffline(true)
+    await openTools(page, 'Partita e analisi')
+    await page.locator('.game-archive summary').click()
+    await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+    const row = page.locator('.analysis-row-button')
+    const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
+    await expect(toggle).toBeChecked()
+    await expect(row).toContainText(category)
+    await expect(row).toContainText(sacrifice ? 'Sacrificio compensato' : 'Difesa decisiva')
+    await toggle.uncheck()
+    await expect(row).toContainText('Migliore')
+    await toggle.check()
+    await expect(row).toContainText(category)
+    expect(await page.evaluate(() => window.workerCount)).toBe(0)
+  })
+}
+
+for (const { id, ply, san, category } of [
+  { id: 'personal-06', ply: 11, san: 'Nxe5', category: 'Geniale' },
+  { id: 'personal-06', ply: 13, san: 'd4', category: 'Grande' },
+  { id: 'personal-03', ply: 19, san: 'Nxd6+', category: 'Grande' },
+  { id: 'personal-02', ply: 21, san: 'Bxf7', category: 'Grande' },
+]) {
+test(`real archived ${san} is reclassified ${category} by default offline from mixed-depth evidence`, async ({ page }) => {
+  const cache = JSON.parse(readFileSync(new URL(`./tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/${id}.json`, import.meta.url)))
+  const metadata = createAnalysisMetadata(), game = new Chess(cache.entries[0].fenBefore)
+  const entries = cache.entries.slice(0, ply).map(e => {
+    game.move(e.san)
+    return classifyAnalysisEntries([{ ...e, playedMove: e.san, side: e.fenBefore.split(' ')[1],
+      moveNumber: Math.ceil(e.ply / 2), isBookMove: false, analysisMetadata: metadata,
+      ...moveEvaluationFields(e.engine, e.playedEngine, e.uci),
+      engine: { ...e.engine, analysisMetadata: metadata },
+      playedEngine: { ...e.playedEngine, analysisMetadata: metadata } }])[0]
+  })
+  expect(entries[ply - 1].classification).toBe('best')
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    await archive.save({ pgn, title: 'Sacrificio reale', analysisEntries: entries })
+    await archive.close()
+  }, { pgn: game.pgn(), entries })
+  await page.reload()
+  await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  const row = page.locator('.analysis-row-button').filter({ hasText: `${Math.ceil(ply / 2)}. ${san}` })
+  await expect(row).toContainText(category)
+  await expect(row).toContainText(category === 'Geniale' ? 'Sacrificio compensato'
+    : san === 'Bxf7' ? 'Recupera una posizione circa equilibrata' : 'Difesa decisiva')
+  const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
+  await toggle.uncheck()
+  await expect(row).toContainText('Migliore')
+  await toggle.check()
+  await expect(row).toContainText(category)
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+}
+
+test('corroborated Bxf4 sacrifice refreshes a v5 archive offline without an engine', async ({ page }) => {
+  const source = JSON.parse(readFileSync(new URL('./agent-output/external-specials-probe-2026-10-09T14-03-37-245Z/results.json', import.meta.url)))
+  const fixture = JSON.parse(readFileSync(new URL('./agent-output/external-specials-v1/fixture.json', import.meta.url)))
+  const metadata = createAnalysisMetadata()
+  // Present a current-profile archive to exercise migration; raw scores and PVs
+  // remain the collected evidence, and the source fixture is never modified.
+  const entries = source.entries.map(e => ({ ...e, analysisMetadata: metadata,
+    engine: { ...e.engine, analysisMetadata: metadata },
+    playedEngine: { ...e.playedEngine, analysisMetadata: metadata } }))
+  expect(entries[14].classification).toBe('best')
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    await archive.save({ pgn, title: 'Compensazione corroborata', analysisEntries: entries })
+    await archive.close()
+  }, { pgn: fixture.pgn, entries })
+  await page.reload()
+  await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  const row = page.locator('.analysis-row-button').filter({ hasText: '8. Bxf4' })
+  await expect(row).toContainText('Geniale')
+  await expect(row).toContainText('Compensazione confermata anche')
+  const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
+  await toggle.uncheck(); await expect(row).toContainText('Migliore')
+  await toggle.check(); await expect(row).toContainText('Geniale')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+for (const mode of ['forced', 'book-snapshot', 'conflicting']) {
+  test(`review reliability ${mode} migrates an archive offline without searches`, async ({ page }) => {
+    const metadata = createAnalysisMetadata()
+    const initial = mode === 'forced'
+      ? 'r4k2/p4Q1p/R7/1p6/1P2b1P1/P1B4P/2P5/3R2K1 b - - 0 26' : new Chess().fen()
+    const game = new Chess(initial), san = mode === 'forced' ? 'Kxf7' : 'e4'
+    const move = game.move(san), fenAfter = game.fen()
+    const roots = (mode === 'forced' ? ['f8f7'] : ['d2d4', 'c2c4', 'g1f3', 'b1c3', 'e2e4'])
+      .map((uci, i) => ({ multipv: i + 1, depth: 10, evalCp: mode === 'forced' ? -925 : 100 - i * 50,
+        mate: null, pv: [uci] }))
+    const latest = roots.map((line, i) => ({ ...line, depth: i === 0 ? 11 : 10,
+      evalCp: mode === 'forced' ? -925 : i === 0 ? 500 : line.evalCp }))
+    const reply = game.moves({ verbose: true })[0]
+    const child = { multipv: 1, depth: 12, evalCp: mode === 'forced' ? 925 : mode === 'conflicting' ? -900 : 100,
+      mate: null, pv: [`${reply.from}${reply.to}${reply.promotion ?? ''}`] }
+    const entry = { ply: 1, side: initial.split(' ')[1], moveNumber: Number(initial.split(' ')[5]),
+      fenBefore: initial, fenAfter, playedMove: move.san, moveHistorySan: [],
+      classification: mode === 'book-snapshot' ? 'book' : 'best', isBookMove: mode === 'book-snapshot',
+      analysisMetadata: metadata,
+      engine: { ...latest[0], fen: initial, lines: latest, specialLines: mode === 'conflicting' ? [] : roots, analysisMetadata: metadata },
+      playedEngine: { ...child, fen: fenAfter, lines: [child], analysisMetadata: metadata } }
+    await page.addInitScript(() => {
+      window.workerCount = 0
+      window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+    })
+    await page.goto(appUrl)
+    await page.evaluate(async ({ pgn, entry }) => {
+      const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+      const archive = createGameArchive()
+      await archive.save({ pgn, title: 'Affidabilità confronto', analysisEntries: [entry] })
+      await archive.close()
+    }, { pgn: game.pgn(), entry })
+    await page.reload()
+    await page.context().setOffline(true)
+    await openTools(page, 'Partita e analisi')
+    await page.locator('.game-archive summary').click()
+    await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+    const row = page.locator('.analysis-row-button')
+    if (mode === 'forced') {
+      await expect(row).toContainText('Forzata')
+      await expect(row).toContainText('Unica mossa legale')
+      await page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' }).uncheck()
+      await expect(row).toContainText('Forzata')
+    } else if (mode === 'book-snapshot') {
+      await expect(row).toContainText('Libro · Valutazione: Errore')
+      await expect(row).toContainText('Migliore: Eval 1.00')
+      await expect(row).not.toContainText('analisi separate')
+    } else {
+      await expect(row).toContainText('Valutazioni discordanti: classificazione provvisoria.')
+    }
+    expect(await page.evaluate(() => window.workerCount)).toBe(0)
+  })
+}

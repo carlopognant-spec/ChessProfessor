@@ -1,13 +1,14 @@
 import { Chess } from 'chess.js'
-import { classifyAnalysisEntries, moveEvaluationFields } from '../../src/lib/classification.js'
+import { classifyReviewedMove } from '../../src/lib/reviewEvaluation.js'
 import { ENGINE_CONFIG } from '../../src/lib/engineConfig.js'
 import { formatMateComparison } from '../../src/lib/mateComparison.js'
-import { classifyMissedOpportunity, formatMissedOpportunity } from '../../src/lib/missedOpportunity.js'
+import { formatMoveOpportunity } from '../../src/lib/moveOpportunities.js'
+import { classifySpecialMove } from '../../src/lib/specialClassification.js'
+import { reclassifyReviewedMoves } from '../../src/lib/reviewMoves.js'
 
-export const labels = { best: 'Migliore', excellent: 'Ottima', good: 'Buona', inaccuracy: 'Imprecisione', mistake: 'Errore', blunder: 'Errore grave', book: 'Libro', brilliant: 'Geniale', great: 'Grande', missed: 'Mossa mancata', unclassified: 'Non valutabile' }
+export const labels = { best: 'Migliore', excellent: 'Ottima', good: 'Buona', inaccuracy: 'Imprecisione', mistake: 'Errore', blunder: 'Errore grave', book: 'Libro', brilliant: 'Geniale', great: 'Grande', missed: 'Mossa mancata', forced: 'Forzata', unclassified: 'Non valutabile' }
 const scale = ['Migliore', 'Ottima', 'Buona', 'Imprecisione', 'Errore', 'Errore grave']
-const unsupported = ['Geniale', 'Grande']
-const referenceLabels = [...Object.values(labels), 'Forzata']
+const referenceLabels = Object.values(labels)
 
 export function fixtureMoves(fixture) {
   const game = new Chess()
@@ -49,22 +50,20 @@ export function compare(fixture, cache, suspectLabels = [], { openingBook } = {}
   let bookPathActive = Boolean(openingBook)
   for (const [index, entry] of cache.entries.entries()) {
     const isCheckmate = new Chess(entry.fenAfter).isCheckmate()
-    const fields = moveEvaluationFields(entry.engine, entry.playedEngine, entry.uci, { isCheckmate })
     const isBookMove = bookPathActive && !isCheckmate && openingBook.hasPosition(entry.fenAfter)
     if (!isBookMove) bookPathActive = false
-    const base = classifyAnalysisEntries([{ ...entry, ...fields, ply: index + 1, playedMove: entry.san, isBookMove: false }])[0]
-    classifiedEntries.push(classifyMissedOpportunity({ ...base, isBookMove }, classifiedEntries.at(-1)))
+    const base = classifyReviewedMove({ ...entry, ply: index + 1, playedMove: entry.san, isBookMove: false })
+    classifiedEntries.push(classifySpecialMove({ ...base, isBookMove }, classifiedEntries.at(-1), classifiedEntries.at(-2)))
   }
+  const refreshedEntries = reclassifyReviewedMoves(classifiedEntries)
   const rows = fixture.annotations.map(annotation => {
     const entry = cache.entries[annotation.ply - 1]
     if (!entry || entry.san !== annotation.san) throw new Error(`Cache/annotazione discordanti: ply ${annotation.ply}`)
-    const classified = classifiedEntries[annotation.ply - 1]
+    const classified = refreshedEntries[annotation.ply - 1]
     const actual = labels[classified.classification]
     const reasons = []
     expectedCounts[annotation.category]++
     if (annotation.category === 'Libro') reasons.push('book')
-    if (annotation.category === 'Forzata') reasons.push('forced')
-    if (unsupported.includes(annotation.category)) reasons.push('unsupported')
     if (suspectLabels.some(item => item.game === fixture.id && item.ply === annotation.ply)) reasons.push('suspect')
     if (classified.dropPct == null) reasons.push('missing')
     for (const reason of reasons) exclusions[reason]++
@@ -72,7 +71,7 @@ export function compare(fixture, cache, suspectLabels = [], { openingBook } = {}
       included++
       if (scale.includes(annotation.category)) ordinalIncluded++
       if (actual === annotation.category) exact++
-      if (scale.includes(actual) && Math.abs(scale.indexOf(actual) - scale.indexOf(annotation.category)) <= 1) withinOne++
+      if (scale.includes(annotation.category) && scale.includes(actual) && Math.abs(scale.indexOf(actual) - scale.indexOf(annotation.category)) <= 1) withinOne++
       matrix[annotation.category] ??= {}
       matrix[annotation.category][actual] = (matrix[annotation.category][actual] ?? 0) + 1
     }
@@ -85,8 +84,9 @@ export function renderReport(reports, pending = []) {
   const cell = value => value == null ? 'N/D' : String(value).replaceAll('|', '\\|').replaceAll('\n', ' ')
   const out = ['# Confronto QA', '', 'Classificazione per calo di probabilità (punti percentuali). Soglie iniziali non tarate sulle fixture: ' + JSON.stringify(ENGINE_CONFIG.classification) + '. Le esclusioni possono sovrapporsi. Modello approssimato: sigmoid(cp/400), senza taglio dei centipawn. Matto vincente: 100%; perdente: 0%.', '']
   const main = reports.filter(report => !report.sanity)
-  out.push('Mossa giocata valutata dalla stessa ricerca MultiPV quando presente a pari profondità; altrimenti analisi indipendente della posizione successiva. Una mossa diversa dalla PV principale riceve al massimo Ottima, salvo matto dato. Senza identità UCI/PV si conserva il criterio precedente.', '')
+  out.push('Migliore e giocata confrontate nello stesso snapshot MultiPV completato quando valido; altrimenti coppia root legacy esatta a pari profondità o analisi separate indicate come provvisorie. Forzata identifica una sola mossa legale ed entra nel confronto esatto. Una mossa diversa dalla PV principale riceve al massimo Ottima, salvo matto dato.', '')
   out.push('Mossa mancata inclusa nel confronto esatto, senza posizione nella scala ordinale. Entro una classe usa soltanto le categorie comuni attese. Regola locale provvisoria: ' + JSON.stringify(ENGINE_CONFIG.missedOpportunity) + '; errore avversario adiacente, nuova occasione confermata e PV alternativa legale.', '')
+  out.push('Il confronto esatto include anche Grande e Geniale del criterio sperimentale counterfactual-v1. Queste categorie non entrano nella distanza ordinale; i nuovi denominatori non sono direttamente confrontabili con i report storici che le escludevano.', '')
   if (main.length) {
     const summary = summarizeReports(main)
     out.push('## Totale del gruppo (sanity esclusa)', '', `Ply: ${summary.total}; inclusi: ${summary.included}; esclusi: ${summary.total - summary.included}.`, `Corrispondenza esatta: ${cell(summary.exactPct)}%; entro una classe: ${cell(summary.withinOnePct)}%.`, '', '| Categoria attesa | Totale | Inclusi | Esatti |', '|---|---|---|---|')
@@ -105,7 +105,7 @@ export function renderReport(reports, pending = []) {
     const missedRows = report.rows.filter(row => row.expected === 'Mossa mancata' || row.actual === 'Mossa mancata')
     if (missedRows.length) {
       out.push('Confronto Mossa mancata:', '', '| ply | SAN | Attesa | Ottenuta | Verifica | Variante |', '|---|---|---|---|---|---|')
-      for (const row of missedRows) out.push('| ' + [row.ply, row.san, row.expected, row.actual, row.missedOpportunityReason, formatMissedOpportunity(row.missedOpportunity)].map(cell).join(' | ') + ' |')
+      for (const row of missedRows) out.push('| ' + [row.ply, row.san, row.expected, row.actual, row.missedOpportunityReason, formatMoveOpportunity(row.missedOpportunity)].map(cell).join(' | ') + ' |')
       out.push('')
     }
     const mateRows = report.rows.filter(row => row.mateComparison)

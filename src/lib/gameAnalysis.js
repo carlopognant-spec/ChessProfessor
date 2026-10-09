@@ -1,13 +1,15 @@
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { Chess } from 'chess.js'
-import { classifyAnalysisEntries, moveEvaluationFields, MOVE_CLASSIFICATION } from './classification.js'
+import { MOVE_CLASSIFICATION } from './classification.js'
+import { classifyReviewedMove, applyMoveFacts } from './reviewEvaluation.js'
 import { loadOpeningBook } from './openingBook.js'
-import { classifyMissedOpportunity } from './missedOpportunity.js'
+import { classifySpecialMove, refreshPreviousSacrifice } from './specialClassification.js'
 
 const CLASSIFICATION_ORDER = [
   MOVE_CLASSIFICATION.brilliant,
   MOVE_CLASSIFICATION.great,
   MOVE_CLASSIFICATION.book,
+  'forced',
   MOVE_CLASSIFICATION.best,
   MOVE_CLASSIFICATION.excellent,
   MOVE_CLASSIFICATION.good,
@@ -185,14 +187,17 @@ export async function analyzeGame({
       isFirstBookDeviation,
     }
     if (entry.playedEngine) {
-      entry = classifyAnalysisEntries([{
+      entry = classifyReviewedMove({
         ...entry,
-        ...moveEvaluationFields(entry.engine, entry.playedEngine, `${move.from}${move.to}${move.promotion ?? ''}`, { isCheckmate: game.isCheckmate() }),
-      }])[0]
-      entry = classifyMissedOpportunity(entry, results.at(-1))
+        playedUci: `${move.from}${move.to}${move.promotion ?? ''}`,
+      })
+      entry = classifySpecialMove(entry, results.at(-1), results.at(-2))
+      entry = applyMoveFacts(entry)
     }
 
     results.push(entry)
+    const refreshed = refreshPreviousSacrifice(results)
+    if (refreshed !== results) results[results.length - 2] = refreshed[refreshed.length - 2]
     onEntry?.(entry, [...results])
     onProgress?.({ current: index + 1, total: moves.length })
   }

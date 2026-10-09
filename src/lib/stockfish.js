@@ -1,5 +1,7 @@
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { createAnalysisMetadata } from './analysisMetadata.js'
+import { Chess } from 'chess.js'
+import { createMultiPvEvidence } from './multiPvEvidence.js'
 
 function createWorker() {
   return new Worker(`${import.meta.env.BASE_URL}${ENGINE_CONFIG.engine.workerFile}`)
@@ -120,12 +122,16 @@ export class StockfishEngine {
     const request = this._pendingRequest
     this._pendingRequest = null
     const { fen, nodes, multiPv, resolve } = request
+    let evidenceCount = Math.max(1, multiPv)
+    try { evidenceCount = Math.min(evidenceCount, new Chess(fen).moves().length || 1) } catch { /* Test workers may use synthetic position IDs. */ }
+    const evidence = createMultiPvEvidence(evidenceCount)
     const lines = new Map()
     let actualNodes = 0
 
     this._currentRequest = request
     this._onLine = (line) => {
       if (request.cancelled && !line.startsWith('bestmove')) return
+      evidence.accept(line)
       if (line.startsWith('info ')) actualNodes = Math.max(actualNodes, Number(line.match(/\bnodes (\d+)/)?.[1] ?? 0))
 
       if (line.startsWith('info') && line.includes('score') && !/\b(upperbound|lowerbound)\b/.test(line)) {
@@ -156,7 +162,8 @@ export class StockfishEngine {
         this._currentRequest = null
         const orderedLines = [...lines.values()].sort((left, right) => left.multipv - right.multipv)
         const primary = orderedLines[0] ?? { evalCp: null, mate: null, pv: [] }
-        if (!request.cancelled) resolve({ ...primary, fen, lines: orderedLines, actualNodes,
+        if (!request.cancelled) resolve({ ...primary, fen, bestmove: line.split(/\s+/)[1], lines: orderedLines, actualNodes,
+          specialLines: evidence.finish(line.split(/\s+/)[1]),
           analysisMetadata: createAnalysisMetadata({ nodes, multiPv, actualEngineId: this.engineId }) })
         this._startPending()
       }

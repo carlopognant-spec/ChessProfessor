@@ -293,8 +293,8 @@ describe('automatic game analysis', () => {
   it('inverts played mate with the same mover perspective used for played eval', async () => {
     const analyzePosition = vi.fn(async (fen) => (
       fen === START_FEN
-        ? { evalCp: null, mate: 3, pv: ['mate-in-3'] }
-        : { evalCp: null, mate: -5, pv: ['mate-in-5'] }
+        ? { evalCp: null, mate: 3, pv: [] }
+        : { evalCp: null, mate: -5, pv: [] }
     ))
 
     const [entry] = await analyzeGame({

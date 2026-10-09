@@ -1,4 +1,5 @@
 import { it, expect } from 'vitest'
+import { Chess } from 'chess.js'
 import { parsePersonal } from '../scripts/qa/personal-import.js'
 import { compare, summarizeReports } from '../scripts/qa/compare.js'
 
@@ -14,17 +15,23 @@ it('keeps unannotated data separate and rejects partial or mismatched input', ()
   expect(() => parsePersonal(pgn, '1. e4 e5\n2. g4 Qh4#', 'test')).toThrow('SAN')
   expect(() => parsePersonal(pgn, '1. f3 errore e5 sconosciuta\n2. g4 errore Qh4# migliore', 'test')).toThrow('sconosciuta')
 })
-it('counts forced labels separately and excludes them from accuracy', () => {
+it('includes forced references without treating their annotation as proof of a forced move', () => {
   const fixture = parsePersonal('1. e4 e5 *', '1. e4 migliore e5 forzata', 'test').fixture
   const score = { evalCp: 0, mate: null, lines: [] }
-  const report = compare(fixture, { entries: [{ san: 'e4', engine: score, playedEngine: score }, { san: 'e5', engine: score, playedEngine: score }] })
-  expect(report.included).toBe(1)
-  expect(report.exactPct).toBe(100)
+  const game = new Chess()
+  const entries = ['e4', 'e5'].map(san => {
+    const fenBefore = game.fen(), move = game.move(san)
+    return { san, uci: move.from + move.to, fenBefore, fenAfter: game.fen(), engine: score, playedEngine: score }
+  })
+  const report = compare(fixture, { entries })
+  expect(report.included).toBe(2)
+  expect(report.exactPct).toBe(50)
   expect(report.expectedCounts.Forzata).toBe(1)
-  expect(report.exclusions.forced).toBe(1)
+  expect(report.exclusions.forced).toBe(0)
+  expect(report.rows[1].moveFacts.forced).toBe(false)
   const summary = summarizeReports([report, { ...report, sanity: true }])
   expect(summary.total).toBe(2)
-  expect(summary.included).toBe(1)
-  expect(summary.categories.Forzata).toEqual({ total: 1, included: 0, exact: 0 })
-  expect(summary.exactPct).toBe(100)
+  expect(summary.included).toBe(2)
+  expect(summary.categories.Forzata).toEqual({ total: 1, included: 1, exact: 0 })
+  expect(summary.exactPct).toBe(50)
 })

@@ -1,6 +1,6 @@
 import { getPositionFacts } from '../positionFacts.js'
 
-const CRITICAL_CLASSIFICATIONS = new Set(['mistake', 'blunder', 'missed'])
+const CRITICAL_CLASSIFICATIONS = new Set(['mistake', 'blunder', 'missed', 'great', 'brilliant'])
 
 export function shouldUseCriticalLlm({ classification, isFirstBookDeviation = false } = {}) {
   return isFirstBookDeviation || CRITICAL_CLASSIFICATIONS.has(classification)
@@ -22,6 +22,9 @@ export function buildCriticalContext({
       ? { eco: opening.eco ?? null, name: opening.name ?? null }
       : null,
     classification: analysisEntry?.classification ?? null,
+    numericalClassification: analysisEntry?.numericalClassification ?? null,
+    moveFacts: analysisEntry?.moveFacts ?? null,
+    evaluationEvidence: analysisEntry?.evaluationEvidence ?? null,
     playedMove: analysisEntry?.playedMove ?? null,
     bestEval: analysisEntry?.bestEval ?? null,
     playedEval: analysisEntry?.playedEval ?? null,
@@ -29,8 +32,9 @@ export function buildCriticalContext({
     playedMate: analysisEntry?.playedMate ?? null,
     mateComparison: analysisEntry?.mateComparison ?? null,
     missedOpportunity: analysisEntry?.missedOpportunity ?? null,
+    specialAssessment: analysisEntry?.specialAssessment ?? null,
     evalDelta: analysisEntry?.evalDelta ?? null,
-    pv: analysisEntry?.engine?.pv ?? analysisEntry?.pv ?? [],
+    pv: analysisEntry?.comparisonPv ?? analysisEntry?.engine?.pv ?? analysisEntry?.pv ?? [],
     facts: getPositionFacts(fen),
   }
 }

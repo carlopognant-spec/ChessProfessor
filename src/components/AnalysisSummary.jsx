@@ -1,11 +1,14 @@
 import { buildAnalysisSummary } from '../lib/gameAnalysis.js'
 import { useGame } from '../context/GameContext.jsx'
 import { formatAnalysisScore, formatMateComparison } from '../lib/mateComparison.js'
-import { formatMissedOpportunity } from '../lib/missedOpportunity.js'
+import { formatMoveOpportunity } from '../lib/moveOpportunities.js'
+import { formatSpecialAssessment } from '../lib/specialClassification.js'
+import { formatEvaluationEvidence } from '../lib/reviewEvaluation.js'
 import AccuracySummary from './AccuracySummary.jsx'
 
 const CATEGORY_LABELS = {
   book: 'Libro',
+  forced: 'Forzata',
   brilliant: 'Geniale',
   great: 'Grande',
   best: 'Migliore',
@@ -57,7 +60,11 @@ export default function AnalysisSummary({ entries = [] }) {
               {formatAnalysisScore(row.playedEval, row.playedMate, { delivered: row.playedMate === 0 })}
               {row.bestEval != null || row.bestMate != null ? ` / Migliore: ${formatAnalysisScore(row.bestEval, row.bestMate)}` : ''}
               {row.mateComparison && <small className="mate-distance-note" title="Distanze confrontate dalla posizione prima della mossa">{formatMateComparison(row.mateComparison)}</small>}
-              {row.missedOpportunity && <small className="mate-distance-note">{formatMissedOpportunity(row.missedOpportunity)}</small>}
+              {row.missedOpportunity && <small className="mate-distance-note">{formatMoveOpportunity(row.missedOpportunity)}</small>}
+              {formatSpecialAssessment(row) && <small className="mate-distance-note">{formatSpecialAssessment(row)}</small>}
+              {row.moveFacts?.forced && <small className="mate-distance-note">Unica mossa legale nella posizione.</small>}
+              {row.moveFacts?.book && row.numericalClassification && <small className="mate-distance-note">Libro · Valutazione: {CATEGORY_LABELS[row.numericalClassification]}</small>}
+              {formatEvaluationEvidence(row) && <small className="mate-distance-note">{formatEvaluationEvidence(row)}</small>}
             </span>
           </button>
         ))}

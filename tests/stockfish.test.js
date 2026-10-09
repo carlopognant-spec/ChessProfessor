@@ -13,6 +13,22 @@ function controlledWorker() {
 }
 
 describe('Stockfish MultiPV', () => {
+  it('keeps a completed comparison snapshot separately from a newer partial score', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      worker.emit('readyok')
+      const pending = engine.analyze('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1', 200000, 2)
+      await vi.waitFor(() => expect(worker.messages).toContain('go nodes 200000'))
+      worker.emit('info depth 10 multipv 1 score cp 100 pv e2e4 e7e5')
+      worker.emit('info depth 10 multipv 2 score cp 50 pv d2d4 d7d5')
+      worker.emit('info depth 11 multipv 1 score cp 200 pv e2e4 e7e5')
+      worker.emit('bestmove e2e4')
+      const result = await pending
+      expect(result.evalCp).toBe(200)
+      expect(result.specialLines.map(line => [line.depth, line.evalCp])).toEqual([[10, 100], [10, 50]])
+      expect(worker.messages.filter(message => message.startsWith('go '))).toEqual(['go nodes 200000'])
+    } finally { engine.destroy() }
+  })
   it('reports a terminal stop failure after the unchanged 15 seconds and rejects all queued work', async () => {
     vi.useFakeTimers()
     const worker = controlledWorker()

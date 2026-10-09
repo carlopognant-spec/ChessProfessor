@@ -11,7 +11,8 @@ describe('analysis summary', () => {
       { side: 'b', classification: MOVE_CLASSIFICATION.unclassified },
     ])
 
-    expect(summary.categories).toHaveLength(11)
+    expect(summary.categories).toHaveLength(12)
+    expect(summary.bySide.black.forced).toBe(0)
     expect(summary.bySide.black.unclassified).toBe(1)
     expect(summary.bySide.white.book).toBe(1)
     expect(summary.bySide.white.blunder).toBe(1)

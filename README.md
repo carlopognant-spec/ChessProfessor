@@ -4,6 +4,8 @@ App web di studio delle aperture e delle partite con chatbot esplicativo,
 scacchiera interattiva, motore Stockfish lato client, database Lichess,
 analisi automatica e classificazione delle semimosse.
 
+Stato del lavoro e limiti attuali: [handoff del 9 ottobre](HANDOFF-2026-10-09.md).
+
 ## Setup locale
 
 Da PowerShell, nella cartella del progetto:
@@ -55,9 +57,30 @@ Apri l'indirizzo mostrato da Vite, normalmente
 - **Classificazione**: l'app assegna Libro dal repertorio locale, Migliore, Ottima,
   Buona, Imprecisione, Errore, Errore grave e Mossa mancata. Senza valutazioni
   sufficienti mostra Non valutabile. Le categorie **Grande e Geniale** sono
-  presenti nel resoconto, ma i loro rilevatori sono sperimentali e non attivati
-  nell'app. Le soglie e la politica Mossa mancata sono in
+  disponibili con l'opzione **Mostra Grande e Geniale sperimentali** nel pannello
+  analisi, attiva inizialmente e disattivabile. La qualità numerica resta conservata e
+  i candidati non confermati riportano il motivo dell'incertezza. Il criterio
+  è in `src/lib/specialClassification.js`; i confronti dichiarano se coprono
+  tutte le mosse legali o soltanto le alternative analizzate. Grande include
+  anche la famiglia empirica già verificata delle risposte migliori senza
+  presa dopo un errore avversario; questa non prova l'unicità della scelta.
+  Le soglie numeriche e la politica originaria Mossa mancata sono in
   `src/lib/engineConfig.js`; non riproducono il modello privato di Chess.com.
+  `src/lib/moveOpportunities.js` riconosce inoltre la rinuncia a una variante
+  di matto completa indicata dal motore e verificata legalmente, anche se la
+  posizione rimane materialmente vincente. Le etichette vengono ricalcolate
+  anche aprendo le analisi salvate, usando i risultati motore già disponibili.
+  Il criterio nuovo valuta anche un'occasione vincente creata dalla scelta
+  avversaria senza richiedere che questa riceva prima Errore/Errore grave.
+  Il worker conserva separatamente l'ultima iterazione MultiPV completa per
+  confrontare alternative coerenti, senza ulteriori ricerche.
+  Anche il confronto numerico usa quell'iterazione quando valida, mantenendo
+  migliore e giocata alla stessa profondità. Le analisi separate vengono
+  indicate come valutazioni indicative; le perdite grezze negative come
+  valutazioni discordanti. **Forzata** identifica una sola mossa legale e
+  conserva la categoria numerica. Per Libro il resoconto mostra separatamente
+  la presenza nel repertorio e la valutazione numerica. Curva, soglie e rating
+  restano invariati; il percorso corrente è `src/lib/reviewEvaluation.js`.
 - **Resoconto**: la tabella separa i conteggi Bianco/Nero e le righe selezionabili
   riportano alla posizione precedente alla semimossa.
 - **Precisione**: il resoconto include un valore 0–100 per lato con formula pubblica

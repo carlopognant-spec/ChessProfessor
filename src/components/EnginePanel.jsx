@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useGame } from '../context/GameContext.jsx'
 import { formatMateLabel, normalizeEvalToWhite } from '../lib/evaluation.js'
 import { analyzeGame, createGameAnalysisSession, buildAnalysisProgress } from '../lib/gameAnalysis.js'
@@ -6,12 +6,15 @@ import { ENGINE_CONFIG } from '../lib/engineConfig.js'
 import { resolveEngineForFen } from '../lib/analysisPresentation.js'
 import { engineAssetsCached, prepareEngineCache } from '../lib/engineAssets.js'
 import { analysisMetadataKey } from '../lib/analysisMetadata.js'
+import { displaySpecialMoves } from '../lib/specialClassification.js'
+import { reclassifyReviewedMoves } from '../lib/reviewMoves.js'
 
 export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysis = null }) {
   const { fen, moveHistorySan, navigationHistorySan, baseFen } = useGame()
   const [useSaved, setUseSaved] = useState(true)
   const savedMatches = useSaved && savedAnalysis?.baseFen === baseFen
     && JSON.stringify(savedAnalysis.moves) === JSON.stringify(navigationHistorySan)
+  const savedEntries = useMemo(() => reclassifyReviewedMoves(savedAnalysis?.entries), [savedAnalysis?.entries])
   const engineRef = useRef(null)
   const analysisSessionRef = useRef(createGameAnalysisSession())
   const analysisEntriesRef = useRef([])
@@ -29,6 +32,15 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
   const [assetsCached, setAssetsCached] = useState(false)
   const [cacheNote, setCacheNote] = useState('')
   const onEngineDataRef = useRef(onEngineData)
+  const [experimentalSpecials, setExperimentalSpecials] = useState(true)
+  const experimentalSpecialsRef = useRef(experimentalSpecials)
+  experimentalSpecialsRef.current = experimentalSpecials
+  const publishAnalysis = useCallback(entries => {
+    onAnalysisData?.(displaySpecialMoves(entries, experimentalSpecialsRef.current))
+  }, [onAnalysisData])
+  useEffect(() => {
+    publishAnalysis(analysisEntriesRef.current)
+  }, [experimentalSpecials, publishAnalysis])
 
   fenRef.current = fen
   onEngineDataRef.current = onEngineData
@@ -95,22 +107,22 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
 
   useEffect(() => {
     if (!savedMatches) {
-      if (!engineReady) { onAnalysisData?.([]); setEvalData(null); onEngineData?.(null) }
+      if (!engineReady) { publishAnalysis([]); setEvalData(null); onEngineData?.(null) }
       return
     }
-    analysisEntriesRef.current = savedAnalysis.entries
-    onAnalysisData?.(savedAnalysis.entries)
+    analysisEntriesRef.current = savedEntries
+    publishAnalysis(savedEntries)
     setEvalData(null)
     onEngineData?.(null)
-    const cached = resolveEngineForFen(fen, savedAnalysis.entries)
+    const cached = resolveEngineForFen(fen, savedEntries)
     if (cached) applyEngineData(cached, fen)
-  }, [savedMatches, savedAnalysis, fen, engineReady, onAnalysisData, onEngineData, applyEngineData])
+  }, [savedMatches, savedEntries, fen, engineReady, publishAnalysis, onEngineData, applyEngineData])
 
   useEffect(() => {
     if (savedMatches || !engineReady || !engineRef.current || engineRef.current.failure) return
 
     analysisEntriesRef.current = []
-    onAnalysisData?.([])
+    publishAnalysis([])
     setEngineError('')
 
     if (navigationHistorySan.length === 0) {
@@ -138,7 +150,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
       onEntry: (_entry, results) => {
         if (cancelled) return
         analysisEntriesRef.current = results
-        onAnalysisData?.(results)
+        publishAnalysis(results)
         const cached = resolveEngineForFen(fenRef.current, results)
         if (cached) applyEngineData(cached, fenRef.current)
       },
@@ -146,7 +158,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
       .then((entries) => {
         if (cancelled) return
         analysisEntriesRef.current = entries
-        onAnalysisData?.(entries)
+        publishAnalysis(entries)
         const cached = resolveEngineForFen(fenRef.current, entries)
         if (cached) applyEngineData(cached, fenRef.current)
       })
@@ -167,7 +179,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
       gameAnalyzingRef.current = false
       controller.abort()
     }
-  }, [navigationHistorySan, baseFen, savedMatches, applyEngineData, onAnalysisData, engineReady])
+  }, [navigationHistorySan, baseFen, savedMatches, applyEngineData, publishAnalysis, engineReady])
 
   useEffect(() => {
     if (savedMatches || !engineReady || !engineRef.current || engineRef.current.failure) return
@@ -239,11 +251,16 @@ export default function EnginePanel({ onEngineData, onAnalysisData, savedAnalysi
         </div>
       )}
       {cacheNote && <p className="notice">{cacheNote}</p>}
+      <label>
+        <input type="checkbox" checked={experimentalSpecials} onChange={event => setExperimentalSpecials(event.target.checked)} />
+        Mostra Grande e Geniale sperimentali
+      </label>
+      {experimentalSpecials && <p className="notice">Criteri locali ancora in verifica. Le etichette possono differire dalla Game Review.</p>}
       {engineFailed && (
         <button type="button" onClick={() => {
           analysisSessionRef.current.clear()
           analysisEntriesRef.current = []
-          onAnalysisData?.([])
+          publishAnalysis([])
           setEngineGeneration(generation => generation + 1)
         }}>
           Riavvia motore

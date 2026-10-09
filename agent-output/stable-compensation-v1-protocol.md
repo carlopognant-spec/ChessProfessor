@@ -1,0 +1,13 @@
+# Compensazione corroborata, esperimento v1
+
+9 ottobre 2026. Protocollo fissato prima del confronto sui 592 ply consentiti e sulla partita esterna già studiata (25 ply). Quest'ultima ora è un dato di sviluppo, non un nuovo test indipendente. Nessuna nuova ricerca motore, lettura .env/partite 7–10, modifica a cache/lock/fonti/report precedenti.
+
+Confrontare tre condizioni: A criterio v5 attuale; B sola copertura mediante root dell'analisi avversaria successiva della stessa FEN; C copertura più conferma della compensazione nella posizione dopo l'accettazione. Non abbassare soglie: mantenere good 0,45, accordo 0,10, perdita 2, veto sulle alternative vincenti e tutte le protezioni esistenti. Non cambiare Grande/Mossa mancata.
+
+Per la copertura aggiuntiva richiedere catena FEN e ply adiacenti legalmente ripercorsa, snapshot completato (se presente) o insieme legacy coerente: rank consecutivi, depth uniforme positiva, radici distinte, score senza bound, tutte le PV legali, ordine score coerente. Richiedere accordo con la migliore difesa child originaria. Aggiungere una fonte solo quando la radice di accettazione è assente; non sostituire score presenti ma invalidi, discordanti o duplicati con uno più favorevole.
+
+Per la stabilità richiedere la posizione esatta dopo quella cattura, con il sacrificante al tratto, e l'analisi già esistente child della mossa avversaria che ha effettivamente accettato. Usare solo score primario positivo in depth, senza bound, PV completa legale con almeno due ply. Accettazione e posizione successiva devono essere entrambe nella fascia good e accordarsi entro 0,10. Non confrontare cp con distanza di matto e non chiamare l'accordo prova contro tutte le difese. Non inventare ricerche o cambiare il lato al tratto della FEN.
+
+La conferma può sostituire soltanto il requisito finale di due mosse quiete. Non scavalca scambi ordinari, recuperi materiali immediati irrisolti, offerta persistente, posizione sfavorevole, alternative già vincenti, mosse forzate/di libro, qualità numerica insufficiente o accettazioni senza copertura. Tutte le accettazioni legali restano obbligatorie; conoscere solo la risposta effettivamente giocata non basta se ne esistono altre.
+
+Etichette unite dopo i calcoli. Riportare cambiamenti A→B e B→C separati, tutti i falsi positivi e i riconoscimenti perduti, con controlli espliciti O-O, Rf3 e Rac1. Prima di attivare nell'app: nessuna regressione osservata, test negativi significativi e comportamento coerente fra analisi live e archivio. Non promuovere il modello se il campione peggiora; conservare report del tentativo.

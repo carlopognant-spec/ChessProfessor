@@ -27,8 +27,17 @@ export const CRITICAL_SYSTEM_PROMPT = `${SYSTEM_PROMPT}
 
 CONTESTO CRITICO:
 - Spiega solo la categoria e i fatti verificati ricevuti.
+- Forzata indica una sola mossa legale, non una scelta particolarmente meritevole.
+  Libro indica presenza nel repertorio; la categoria numerica è separata.
+  Con evaluationEvidence independent o conflicting presenta il giudizio come
+  indicativo o provvisorio, senza descrivere le analisi come una prova certa.
 - Per Mossa mancata usa la mossa avversaria e la variante alternativa verificata;
   le probabilità e i limiti sono del modello locale, non di chess.com.
+- Per Grande e Geniale usa solo le prove in specialAssessment. Rispetta lo scope:
+  alternative analizzate non significa tutte le mosse legali. Un candidato non
+  è un riconoscimento confermato. I punteggi sono indici locali, non probabilità umane.
+- Con evidenceKind empirical-family descrivi il criterio empirico e l'errore
+  numerico avversario; non affermare che la risposta sia l'unica mossa buona.
 - Il confronto della distanza del matto parte dalla posizione prima della mossa;
   con source independent-position le distanze sono stime da analisi separate.
   Non trasformare una variazione della distanza in una perdita percentuale o in una nuova categoria.
@@ -60,6 +69,10 @@ Matto migliore (prospettiva di chi muove): ${criticalContext.bestMate ?? 'non di
 Matto mossa giocata (prospettiva di chi muove): ${criticalContext.playedMate ?? 'non disponibile'}
 Confronto distanza matto: ${JSON.stringify(criticalContext.mateComparison ?? null)}
 Occasione mancata verificata: ${JSON.stringify(criticalContext.missedOpportunity ?? null)}
+Prove delle categorie speciali: ${JSON.stringify(criticalContext.specialAssessment ?? null)}
+Categoria numerica: ${criticalContext.numericalClassification ?? 'non disponibile'}
+Fatti della mossa: ${JSON.stringify(criticalContext.moveFacts ?? null)}
+Affidabilità del confronto: ${JSON.stringify(criticalContext.evaluationEvidence ?? null)}
 Perdita: ${criticalContext.evalDelta ?? 'non disponibile'}`
     : 'Nessun contesto critico aggiuntivo disponibile.'
 

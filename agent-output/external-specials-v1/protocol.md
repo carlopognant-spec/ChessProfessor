@@ -1,0 +1,9 @@
+# Primo confronto esterno, regole v5 fisse
+
+9 ottobre 2026. Carlo autorizza a proseguire analizzando partite e cercando esempi online. Selezione di una sola partita pubblica, game 53976549565, già identificata come esempio di due Geniale e due Grande. Non campionamento casuale. Fonte etichette: resoconto diretto del recensore Michael Tam del 22 agosto 2022; fonte mosse: API pubblica Chess.com. Nessuna equivalenza presunta fra annotazione tradizionale `!` e categoria Grande.
+
+Bloccare fixture e manifest prima di `go`. Applicare il classificatore counterfactual-v5 attuale senza cambiamenti. Analizzare tutte le 25 mosse, compresi i contesti precedenti: 50 ricerche indipendenti, 200.000 nodi ciascuna, MultiPV 5 prima e 1 dopo. Stockfish npm 19.0.0 large-single, Threads 1, Hash 16, ucinewgame + Clear Hash a ogni ricerca. Massimo nominale 10.000.000 nodi, cap effettivo 10.200.000; riserva 2.000 prima di ogni go. Nessun supplemento, ripetizione o aumento di budget dopo l'esito.
+
+Salvare raw UCI e telemetria a ogni ricerca. Verificare bestmove, PV legali, hash degli input prima/dopo. Usare snapshot MultiPV completati come nell'app. Fallimenti o budget esaurito fermano la raccolta, con report incompleto e nessun tentativo automatico di recupero. Nessun accesso a .env, partite riservate 7–10, modifiche a fixture/cache storiche, dipendenze congelate o app.
+
+Le quattro etichette sono parziali e risalgono al 2022. Le altre mosse non sono negativi certi: non calcolare precisione, specificità o falsi positivi. Registrare separatamente eventuali assegnazioni speciali non annotate. Non mescolare i risultati al campione 15/37. Questo è un primo confronto su una partita esterna, non una validazione rappresentativa. Qualunque futura modifica basata su questa partita la rende dato di sviluppo.

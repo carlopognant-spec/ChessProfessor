@@ -61,7 +61,7 @@ export function resolveMoveReview(fen, moves = [], entries = []) {
   const entry = resolveAnalysisEntryForPosition(fen, moves, entries)
   if (!entry?.engine || !entry.playedEngine || !entry.classification) return null
   const primary = entry.engine.lines?.find(line => (line.multipv ?? 1) === 1)
-  const bestMove = primary?.pv?.[0] ?? entry.engine.pv?.[0]
+  const bestMove = entry.bestUci ?? primary?.pv?.[0] ?? entry.engine.pv?.[0]
   return {
     entry,
     bestMove: entry.isBookMove || entry.classification === 'book'

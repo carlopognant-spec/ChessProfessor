@@ -31,6 +31,8 @@ describe('critical LLM context', () => {
     expect(shouldUseCriticalLlm({ classification: 'mistake' })).toBe(true)
     expect(shouldUseCriticalLlm({ classification: 'blunder' })).toBe(true)
     expect(shouldUseCriticalLlm({ classification: 'missed' })).toBe(true)
+    expect(shouldUseCriticalLlm({ classification: 'great' })).toBe(true)
+    expect(shouldUseCriticalLlm({ classification: 'brilliant' })).toBe(true)
     expect(shouldUseCriticalLlm({ isFirstBookDeviation: true })).toBe(true)
   })
 

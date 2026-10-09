@@ -1,0 +1,63 @@
+{
+  "id": "external-vienna-53976549565",
+  "gameUrl": "https://www.chess.com/game/live/53976549565",
+  "article": "https://adventuresofachessnoob.com/2022/08/22/brilliant-vienna-gambit-my-subscriber-goes-super-saiyan/",
+  "api": "https://api.chess.com/pub/player/yosoyfood/games/2022/08",
+  "annotationProvenance": "author-reported Chess.com Game Review, August 2022; not fresh platform labels",
+  "partialAnnotations": true,
+  "selection": "public positive examples; not random or representative",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2022.08.11\"]\n[Round \"-\"]\n[White \"yosoyfood\"]\n[Black \"TheByzantineEmperor\"]\n[Result \"1-0\"]\n[CurrentPosition \"r1bq1b1r/ppppk2p/2n2B2/4P2Q/3P4/2N5/PPP3PP/R3K2R b KQ -\"]\n[Timezone \"UTC\"]\n[ECO \"C28\"]\n[ECOUrl \"https://www.chess.com/openings/Vienna-Game-Falkbeer-Vienna-Gambit\"]\n[UTCDate \"2022.08.11\"]\n[UTCTime \"17:02:59\"]\n[WhiteElo \"1028\"]\n[BlackElo \"1058\"]\n[TimeControl \"600\"]\n[Termination \"yosoyfood won by resignation\"]\n[StartTime \"17:02:59\"]\n[EndDate \"2022.08.11\"]\n[EndTime \"17:06:25\"]\n[Link \"https://www.chess.com/game/live/53976549565\"]\n\n1. e4 {[%clk 0:10:00]} 1... e5 {[%clk 0:09:59.5]} 2. Nc3 {[%clk 0:09:58.1]} 2... Nf6 {[%clk 0:09:57.6]} 3. f4 {[%clk 0:09:57]} 3... exf4 {[%clk 0:09:56.8]} 4. e5 {[%clk 0:09:55.4]} 4... Ng8 {[%clk 0:09:52.6]} 5. Nf3 {[%clk 0:09:47.3]} 5... Nc6 {[%clk 0:09:50.9]} 6. d4 {[%clk 0:09:44.3]} 6... g5 {[%clk 0:09:48.6]} 7. Bc4 {[%clk 0:09:35]} 7... g4 {[%clk 0:09:36.2]} 8. Bxf4 {[%clk 0:08:51.7]} 8... gxf3 {[%clk 0:09:28.1]} 9. Bxf7+ {[%clk 0:08:35.2]} 9... Kxf7 {[%clk 0:09:23.6]} 10. Qxf3 {[%clk 0:08:18.9]} 10... Ke8 {[%clk 0:09:14.5]} 11. Qh5+ {[%clk 0:08:04.7]} 11... Ke7 {[%clk 0:09:03.6]} 12. Bg5+ {[%clk 0:07:46.7]} 12... Nf6 {[%clk 0:09:02.3]} 13. Bxf6+ {[%clk 0:07:43.7]} 1-0\n",
+  "ratings": {
+    "white": 1028,
+    "black": 1058
+  },
+  "moves": [
+    "e4",
+    "e5",
+    "Nc3",
+    "Nf6",
+    "f4",
+    "exf4",
+    "e5",
+    "Ng8",
+    "Nf3",
+    "Nc6",
+    "d4",
+    "g5",
+    "Bc4",
+    "g4",
+    "Bxf4",
+    "gxf3",
+    "Bxf7+",
+    "Kxf7",
+    "Qxf3",
+    "Ke8",
+    "Qh5+",
+    "Ke7",
+    "Bg5+",
+    "Nf6",
+    "Bxf6+"
+  ],
+  "annotations": [
+    {
+      "ply": 15,
+      "san": "Bxf4",
+      "category": "brilliant"
+    },
+    {
+      "ply": 17,
+      "san": "Bxf7+",
+      "category": "brilliant"
+    },
+    {
+      "ply": 19,
+      "san": "Qxf3",
+      "category": "great"
+    },
+    {
+      "ply": 21,
+      "san": "Qh5+",
+      "category": "great"
+    }
+  ]
+}

@@ -17,6 +17,14 @@ function sample(categories = ['Migliore', 'Ottima', 'Imprecisione', 'Errore grav
 }
 
 describe('QA comparison', () => {
+  it('never assigns an ordinal distance to a missed Grande or Geniale prediction', () => {
+    const { fixture, cache } = sample(['Grande', 'Geniale', 'Grande', 'Geniale'])
+    const report = compare(fixture, cache)
+    expect(report.included).toBe(4)
+    expect(report.ordinalIncluded).toBe(0)
+    expect(report.withinOne).toBe(0)
+    expect(report.withinOnePct).toBeNull()
+  })
   it('shares opponent-error context with the app and gives missed labels no ordinal distance', () => {
     const game = new Chess()
     const fixture = { pgn: '1. f3 e5 *', annotations: [
@@ -68,9 +76,9 @@ describe('QA comparison', () => {
     const { fixture, cache } = sample(['Libro', 'Geniale', 'Grande', 'Mossa mancata'])
     cache.entries[0].engine.evalCp = null
     const report = compare(fixture, cache, [{ game: 'sample', ply: 1 }])
-    expect(report.excluded).toBe(3)
-    expect(report.included).toBe(1)
-    expect(report.exclusions).toEqual({ book: 1, unsupported: 2, suspect: 1, missing: 1, forced: 0 })
+    expect(report.excluded).toBe(1)
+    expect(report.included).toBe(3)
+    expect(report.exclusions).toEqual({ book: 1, unsupported: 0, suspect: 1, missing: 1, forced: 0 })
     expect(report.exactPct).toBe(0)
     expect(report.withinOnePct).toBeNull()
     expect(report.expectedCounts.Geniale).toBe(1)

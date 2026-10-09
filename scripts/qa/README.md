@@ -31,8 +31,15 @@ prospettiva di chi muove, limitata inferiormente a zero.
 Massimi correnti: Migliore 1, Ottima 3, Buona 5, Imprecisione 10, Errore 20;
 oltre 20, Errore grave. Una mossa diversa dalla PV principale riceve al massimo
 Ottima quando l'identità UCI è nota, salvo matto dato. La mossa giocata usa il
-suo score MultiPV a pari profondità se presente; altrimenti quello della
-posizione successiva, riportato alla prospettiva di chi muove.
+suo score nell'ultima iterazione MultiPV completa e valida quando disponibile.
+Anche la migliore viene valutata nella stessa iterazione. Le coppie root legacy
+devono avere score esatti, stessa profondità, radici non ambigue e PV legali.
+Altrimenti si usa la posizione successiva, riportata alla prospettiva di chi
+muove, dichiarando il confronto indicativo o discordante in `evaluationEvidence`.
+App, archivi e QA condividono `reviewEvaluation.js` e `reviewMoves.js`.
+Forzata significa unica mossa legale, conserva la categoria numerica ed entra
+nel confronto esatto; resta fuori dalla scala ordinale. Libro è registrato
+anche in `moveFacts.book`, separatamente da `numericalClassification`.
 
 Libro viene assegnato dal repertorio locale finché la partita non devia;
 la soglia Explorer di 15 partite serve solo a fermare le richieste quando
@@ -51,10 +58,54 @@ variante alternativa legalmente verificata. La politica richiede probabilità
 vincente almeno 0,75 e usa 0,60 come limite non vincente. Non è il modello
 dipendente dal rating di Chess.com.
 
-Grande e Geniale restano categorie sperimentali, non attivate nell'app.
-Il confronto comune le considera non supportate. Gli esperimenti v2/v3/v4 e
-il valutatore congelato hanno risultati separati e non modificano la scala
-produttiva. Il valutatore verifica le dipendenze elencate in
+Il percorso corrente aggiunge `missed-mate-v1` in `moveOpportunities.js`:
+PV principale unbounded con matto positivo, variante completa legalmente
+verificata fino al matto, giocata diversa e nessun matto vincente conservato
+nelle evidenze della giocata. Serve uno score child finito senza mate/bound.
+Questo criterio locale riconosce una rinuncia al matto anche mantenendo
+vantaggio materiale e non richiede un nuovo errore avversario. Una PV legale
+non è una prova contro tutte le difese: la valutazione di matto proviene dal
+motore. I moduli congelati degli esperimenti continuano a usare la politica
+originaria; il QA corrente e l'app condividono il nuovo percorso.
+
+Grande e Geniale sono disponibili nell'app con un'opzione sperimentale,
+attiva inizialmente e disattivabile. Il percorso `specialClassification.js` confronta
+alternative, difese e compensazione, con versione `counterfactual-v6`.
+Le accettazioni mancanti possono usare uno snapshot coerente già disponibile
+della stessa FEN nell'analisi avversaria successiva. Una seconda stima concorde
+della posizione dopo la cattura può confermare la compensazione quando la PV
+termina durante uno scambio. Non sostituisce score invalidi o discordanti e non
+scavalca le protezioni contro scambi ordinari, offerte persistenti e alternative
+già vincenti. Live e archivio aggiornano le etichette senza nuove ricerche.
+Include il recupero da posizione povera a circa equilibrata dopo un errore
+numerico avversario, anche con una presa: servono ricerca indipendente concorde,
+confronto coerente e alternative disponibili sotto la banda favorevole.
+Le difese critiche circa equilibrate possono usare un confronto parziale
+alla profondità della PV1, purché tutte le alternative disponibili restino
+nella banda povera. Le ripetizioni legacy a profondità diverse sono selezionate
+per profondità, senza scegliere lo score; copie ambigue nella stessa iterazione
+restano invalide. La copertura e le righe scartate sono dichiarate.
+Recupera inoltre il modello empirico congelato `grande-prudent-candidate-v1`
+per la risposta Migliore/PV1 senza presa dopo errore numerico avversario:
+la motivazione dichiara questo criterio senza affermare unicità tra alternative.
+Il modello distingue anche riprese materiali e incassi di doppi attacchi
+da una nuova decisione critica: senza un nuovo guadagno di opportunità,
+mantiene la categoria numerica e spiega l'incertezza sulla novità.
+Il QA corrente confronta le sue etichette includendo Grande/Geniale nel
+denominatore esatto; la metrica ordinale conserva solo le categorie comuni.
+Il criterio aggiunge anche il confronto causale dell'occasione vincente,
+senza richiedere la categoria numerica Errore/Errore grave del predecessore.
+Nuovo audit isolato, sulle sole otto partite consentite e senza motori:
+`node scripts/audit-special-classification.js`.
+
+Il worker conserva in `specialLines` le linee dell'ultima iterazione completa,
+con radici distinte e bestmove coerente, mentre gli score numerici rimangono
+quelli del percorso precedente. Le vecchie cache senza snapshot sono usate
+solo quando le linee disponibili sono confrontabili. L'opzione sperimentale
+cambia la presentazione delle etichette, senza avviare altre ricerche.
+
+Gli esperimenti v2/v3/v4 e il valutatore congelato hanno risultati separati,
+con le regole originarie. Il valutatore verifica le dipendenze elencate in
 `agent-output/specials-frozen-candidate-v1.json`: una mancata corrispondenza
 degli hash richiede diagnosi, senza aggiornare il lock per aggirare il controllo.
 
@@ -112,7 +163,7 @@ usa `ucinewgame` e una cache nuova; non riusa la cache dell'app. La hash policy
 del QA legacy non va descritta come quella delle ricerche correnti a nodi.
 
 Il confronto esatto include Mossa mancata; la metrica entro una classe usa
-solo le sei categorie comuni attese. Libro, Forzata, categorie non supportate,
+solo le sei categorie comuni attese. Libro, categorie non supportate,
 etichette sospette e score mancanti sono esclusi secondo la politica della
 CLI. Le ragioni possono sovrapporsi; ciascuna riga viene esclusa dal
 denominatore una sola volta. Con denominatore zero la percentuale è N/D.

@@ -1,0 +1,102 @@
+{
+  "index": 43,
+  "ply": 22,
+  "phase": "after",
+  "fen": "r1bq1bnr/ppppk2p/2n5/4P2Q/3P1B2/2N5/PPP3PP/R3K2R w KQ - 3 12",
+  "multiPv": 1,
+  "budgetNodes": 200000,
+  "engineVersion": "Stockfish 19 WASM",
+  "actualNodes": 200145,
+  "bestmove": "f4g5",
+  "rawLines": [
+    "info string NNUE evaluation using nn-1a298aa575a0.nnue (109MiB, (86896, 1024, 32, 32, 1))",
+    "info string Network replica 1: Local memory. Shared memory not supported by the OS. Local allocation fallback.",
+    "info depth 1 seldepth 7 multipv 1 score cp 979 nodes 75 nps 75000 hashfull 0 time 1 pv f4g5 g8f6 g5f6 e7e6 f6d8",
+    "info depth 2 seldepth 7 multipv 1 score cp 859 nodes 174 nps 174000 hashfull 0 time 1 pv f4g5 e7e6 g5d8",
+    "info depth 3 seldepth 9 multipv 1 score cp 1389 nodes 256 nps 256000 hashfull 0 time 1 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6",
+    "info depth 4 seldepth 9 multipv 1 score cp 1389 nodes 324 nps 324000 hashfull 0 time 1 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6",
+    "info depth 5 seldepth 9 multipv 1 score cp 1389 nodes 395 nps 395000 hashfull 0 time 1 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6",
+    "info depth 6 seldepth 9 multipv 1 score cp 1160 nodes 477 nps 477000 hashfull 0 time 1 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d6",
+    "info depth 7 seldepth 12 multipv 1 score cp 1528 nodes 618 nps 309000 hashfull 0 time 2 pv f4g5 e7e6 d4d5 e6f5 g5d8 f5f4",
+    "info depth 8 seldepth 13 multipv 1 score cp 1552 nodes 780 nps 390000 hashfull 0 time 2 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 b7c6",
+    "info depth 9 seldepth 12 multipv 1 score cp 1482 nodes 915 nps 305000 hashfull 0 time 3 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 b7c6 c3e2 d4e4",
+    "info depth 10 seldepth 13 multipv 1 score cp 1608 nodes 1130 nps 376666 hashfull 0 time 3 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 f8b4 h5d5 d4e3",
+    "info depth 11 seldepth 18 multipv 1 score cp 1612 nodes 1905 nps 317500 hashfull 0 time 6 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 b7c6",
+    "info depth 12 seldepth 16 multipv 1 score cp 1612 nodes 2226 nps 371000 hashfull 0 time 6 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 b7c6 a1d1 d4c4",
+    "info depth 13 seldepth 17 multipv 1 score cp 1706 nodes 2846 nps 355750 hashfull 0 time 8 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5",
+    "info depth 14 seldepth 21 multipv 1 score mate 8 nodes 3956 nps 329666 hashfull 0 time 12 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 15 seldepth 16 multipv 1 score mate 8 nodes 5513 nps 324294 hashfull 1 time 17 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 16 seldepth 16 multipv 1 score mate 8 nodes 7707 nps 321125 hashfull 1 time 24 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 17 seldepth 16 multipv 1 score mate 8 nodes 11732 nps 335200 hashfull 3 time 35 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 18 seldepth 16 multipv 1 score mate 8 nodes 15898 nps 240878 hashfull 5 time 66 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 19 seldepth 16 multipv 1 score mate 8 nodes 22088 nps 266120 hashfull 6 time 83 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 20 seldepth 16 multipv 1 score mate 8 nodes 29313 nps 281855 hashfull 6 time 104 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 21 seldepth 16 multipv 1 score mate 8 nodes 38213 nps 300889 hashfull 8 time 127 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 22 seldepth 16 multipv 1 score mate 8 nodes 47740 nps 306025 hashfull 11 time 156 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 23 seldepth 16 multipv 1 score mate 8 nodes 59785 nps 303477 hashfull 16 time 197 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 24 seldepth 16 multipv 1 score mate 8 nodes 73407 nps 303334 hashfull 21 time 242 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 25 seldepth 16 multipv 1 score mate 8 nodes 93415 nps 302313 hashfull 28 time 309 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 26 seldepth 16 multipv 1 score mate 8 nodes 112845 nps 291589 hashfull 35 time 387 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 d5c6 d7c6 a1d1 d4c4 h5h4 c8g4 h4g4 c4c5 g4d4",
+    "info depth 27 seldepth 16 multipv 1 score mate 7 nodes 136926 nps 284669 hashfull 43 time 481 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 a1d1 d4c4 d5d6 c6e5 h5e5 c7d6 e5b5",
+    "info depth 28 seldepth 14 multipv 1 score mate 7 nodes 162510 nps 293339 hashfull 52 time 554 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 a1d1 d4c4 d5d6 c6e5 h5e5 c7d6 e5b5",
+    "info depth 29 seldepth 14 multipv 1 score mate 7 nodes 200145 nps 284701 hashfull 63 time 703 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 a1d1 d4c4 d5d6 c6e5 h5e5 c7d6 e5b5",
+    "bestmove f4g5 ponder e7e6"
+  ],
+  "latestRootMatchesBestmove": true,
+  "engine": {
+    "evalCp": null,
+    "mate": 7,
+    "lines": [
+      {
+        "multipv": 1,
+        "depth": 29,
+        "evalCp": null,
+        "mate": 7,
+        "pv": [
+          "f4g5",
+          "e7e6",
+          "d4d5",
+          "e6e5",
+          "g5d8",
+          "e5d4",
+          "a1d1",
+          "d4c4",
+          "d5d6",
+          "c6e5",
+          "h5e5",
+          "c7d6",
+          "e5b5"
+        ],
+        "raw": "info depth 29 seldepth 14 multipv 1 score mate 7 nodes 200145 nps 284701 hashfull 63 time 703 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 a1d1 d4c4 d5d6 c6e5 h5e5 c7d6 e5b5"
+      }
+    ],
+    "specialLines": [
+      {
+        "multipv": 1,
+        "depth": 29,
+        "evalCp": null,
+        "mate": 7,
+        "pv": [
+          "f4g5",
+          "e7e6",
+          "d4d5",
+          "e6e5",
+          "g5d8",
+          "e5d4",
+          "a1d1",
+          "d4c4",
+          "d5d6",
+          "c6e5",
+          "h5e5",
+          "c7d6",
+          "e5b5"
+        ],
+        "raw": "info depth 29 seldepth 14 multipv 1 score mate 7 nodes 200145 nps 284701 hashfull 63 time 703 pv f4g5 e7e6 d4d5 e6e5 g5d8 e5d4 a1d1 d4c4 d5d6 c6e5 h5e5 c7d6 e5b5"
+      }
+    ],
+    "analysisMetadata": {
+      "multiPv": 1,
+      "nodes": 200000
+    }
+  }
+}

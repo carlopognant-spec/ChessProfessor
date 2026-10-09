@@ -1,0 +1,7 @@
+# Correzione del trasporto prima delle mosse annotate
+
+9 ottobre 2026. La prima raccolta si è fermata alla ricerca dopo 1.e4: il runner pretendeva che l'ultima PV1 senza bound coincidesse con bestmove. Il worker dell'app conserva invece l'ultimo score senza bound e lascia vuota l'evidenza speciale se manca uno snapshot completato che coincide con bestmove. Allineare il runner al worker, registrando la discordanza senza forzare uno score o una categoria.
+
+La ricerca fallita non è stata salvata: difetto di contabilità del runner, nessun risultato speciale osservato. Non riportare come totale di quell'esecuzione i soli nodi della prima ricerca salvata. I nodi effettivi della ricerca fallita sono sconosciuti; il suo limite nominale era 200.000. Correggere il runner perché salvi raw/telemetria prima di qualsiasi validazione che può fallire.
+
+Eccezione esplicita al protocollo iniziale, fissata prima di riprendere: riutilizzare la ricerca 0 già salvata; eseguire le 49 rimanenti con gli stessi budget e configurazioni, inclusa una ripetizione tecnica della ricerca 1 non recuperabile. Nessuna selezione basata sulle etichette, nessun cambiamento al classificatore e nessuna osservazione delle quattro predizioni prima dell'emendamento. Cap dell'esecuzione ripresa 10.200.000, includendo la ricerca salvata riutilizzata; nominale di nuovi go 9.800.000. Il totale effettivo di entrambe le esecuzioni non può essere dichiarato esatto a causa della telemetria mancante. Nessun ulteriore tentativo o supplemento previsto.
