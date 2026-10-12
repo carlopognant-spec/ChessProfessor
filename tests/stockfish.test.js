@@ -13,6 +13,27 @@ function controlledWorker() {
 }
 
 describe('Stockfish MultiPV', () => {
+  it('returns a complete earlier snapshot when bestmove returns to an earlier first choice', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      worker.emit('readyok')
+      const pending = engine.analyze('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1', 200000, 2)
+      await vi.waitFor(() => expect(worker.messages).toContain('go nodes 200000'))
+      for (const raw of [
+        'info depth 10 multipv 1 score cp 80 pv e2e4 e7e5',
+        'info depth 10 multipv 2 score cp 60 pv d2d4 d7d5',
+        'info depth 11 multipv 1 score cp 100 pv d2d4 d7d5',
+        'info depth 11 multipv 2 score cp 50 pv e2e4 e7e5',
+        'info depth 12 multipv 1 score cp 150 pv e2e4 e7e5',
+        'bestmove e2e4',
+      ]) worker.emit(raw)
+      const result = await pending
+      expect(result).toMatchObject({ bestmove: 'e2e4', evalCp: 150 })
+      expect(result.specialLines.map(l => [l.depth, l.pv[0], l.evalCp]))
+        .toEqual([[10, 'e2e4', 80], [10, 'd2d4', 60]])
+      expect(worker.messages.filter(m => m.startsWith('go '))).toEqual(['go nodes 200000'])
+    } finally { engine.destroy() }
+  })
   it('keeps a completed comparison snapshot separately from a newer partial score', async () => {
     const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
     try {

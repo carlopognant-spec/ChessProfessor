@@ -1,7 +1,10 @@
-// Keep completed iterations for special-category comparisons; ordinary scores
-// may continue to use the latest result. No additional engine search is needed.
+// Keep the latest complete iteration for each first choice. A partial final
+// iteration can return an earlier choice after another move briefly led.
+// Never splice scores from different iterations or select a snapshot by score.
 export function createMultiPvEvidence(count) {
-  let working = null, completed = null
+  if (!Number.isSafeInteger(count) || count < 1) throw new RangeError('Invalid MultiPV count')
+  let working = null
+  const completed = new Map()
   return {
     accept(raw) {
       if (!raw.startsWith('info ')) return
@@ -19,10 +22,16 @@ export function createMultiPvEvidence(count) {
         || working.length && working[0].depth !== line.depth
         || working.some(other => other.pv[0] === line.pv[0])) { working = null; return }
       working.push(line)
-      if (working.length === count) { completed = working; working = null }
+      if (working.length === count) {
+        const first = working[0].pv[0]
+        completed.delete(first)
+        completed.set(first, working)
+        if (completed.size > 256) completed.delete(completed.keys().next().value)
+        working = null
+      }
     },
     finish(bestmove) {
-      return completed && completed[0].pv[0] === bestmove ? completed : []
+      return completed.get(bestmove) ?? []
     },
   }
 }

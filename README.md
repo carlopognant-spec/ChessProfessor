@@ -74,6 +74,8 @@ Apri l'indirizzo mostrato da Vite, normalmente
   avversaria senza richiedere che questa riceva prima Errore/Errore grave.
   Il worker conserva separatamente l'ultima iterazione MultiPV completa per
   confrontare alternative coerenti, senza ulteriori ricerche.
+  Conserva l'ultima iterazione completa per ogni prima scelta, così un cambio
+  temporaneo di PV1 non elimina quella coerente con il bestmove finale.
   Anche il confronto numerico usa quell'iterazione quando valida, mantenendo
   migliore e giocata alla stessa profondità. Le analisi separate vengono
   indicate come valutazioni indicative; le perdite grezze negative come
