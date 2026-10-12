@@ -1,0 +1,903 @@
+{
+  "summary": {
+    "policy": "counterfactual-v6",
+    "newSearches": 13,
+    "actualNodes": 2601616,
+    "nominalNodes": 2600000,
+    "sourceHashesUnchanged": true,
+    "appChanged": false,
+    "independentAccuracyValidation": false,
+    "standardBest": "f1g2",
+    "targetedBest": "f1g2",
+    "standardExact": 1,
+    "targetedExact": 1
+  },
+  "rows": [
+    {
+      "san": "Qe2",
+      "expected": "brilliant",
+      "standard": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestUci": "f1g2",
+        "bestEval": 21,
+        "playedEval": 16,
+        "dropPct": 0.3123319302277716,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "legacy-root-pair",
+          "rootDepth": 12,
+          "playedDepth": 12,
+          "unclampedDropPct": 0.3123319302277716,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "targeted": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestUci": "f1g2",
+        "bestEval": 26,
+        "playedEval": 20,
+        "dropPct": 0.37468845778620974,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "legacy-root-pair",
+          "rootDepth": 13,
+          "playedDepth": 13,
+          "unclampedDropPct": 0.37468845778620974,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "acceptance": {
+        "evalCp": -8,
+        "depth": 12,
+        "mate": null,
+        "san": [
+          "dxc3",
+          "dxc3",
+          "Bd6",
+          "Bg2",
+          "O-O",
+          "Ng5",
+          "h6",
+          "Ne4",
+          "Qe7",
+          "Nxd6",
+          "cxd6"
+        ]
+      },
+      "afterAcceptance": {
+        "evalCp": 19,
+        "depth": 14,
+        "mate": null,
+        "san": [
+          "dxc3",
+          "f6",
+          "Bg2",
+          "Be6",
+          "Be3",
+          "Qd5",
+          "a4",
+          "O-O-O",
+          "b3",
+          "Qa5",
+          "Bd2",
+          "Qa6",
+          "Qxa6",
+          "bxa6",
+          "O-O-O",
+          "Ba3+",
+          "Kb1"
+        ]
+      }
+    },
+    {
+      "san": "d3",
+      "expected": "brilliant",
+      "standard": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestUci": "f1g2",
+        "bestEval": 21,
+        "playedEval": 11,
+        "dropPct": 0.624741941770901,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "legacy-root-pair",
+          "rootDepth": 12,
+          "playedDepth": 12,
+          "unclampedDropPct": 0.624741941770901,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "targeted": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestUci": "f1g2",
+        "bestEval": 26,
+        "playedEval": 5,
+        "dropPct": 1.3119321751540847,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 13,
+          "playedDepth": 13,
+          "unclampedDropPct": 1.3119321751540847,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "acceptance": {
+        "evalCp": -4,
+        "depth": 12,
+        "mate": null,
+        "san": [
+          "dxc3",
+          "bxc3",
+          "Be7",
+          "Qe2",
+          "Be6",
+          "Bg2",
+          "f6",
+          "Rb1",
+          "Rb8",
+          "O-O",
+          "O-O"
+        ]
+      },
+      "afterAcceptance": {
+        "evalCp": 13,
+        "depth": 13,
+        "mate": null,
+        "san": [
+          "bxc3",
+          "Be7",
+          "Qe2",
+          "O-O",
+          "Bg2",
+          "Re8",
+          "O-O",
+          "Bd7",
+          "Rb1",
+          "Rb8",
+          "Re1",
+          "h6"
+        ]
+      }
+    },
+    {
+      "san": "Bd3",
+      "expected": "brilliant",
+      "standard": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestUci": "f1g2",
+        "bestEval": 21,
+        "playedEval": -14,
+        "dropPct": 2.1871093062483524,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 12,
+          "playedDepth": 11,
+          "unclampedDropPct": 2.1871093062483524,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "targeted": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestUci": "f1g2",
+        "bestEval": 26,
+        "playedEval": -14,
+        "dropPct": 2.499338794231271,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 13,
+          "playedDepth": 11,
+          "unclampedDropPct": 2.499338794231271,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "acceptance": {
+        "evalCp": 14,
+        "depth": 10,
+        "mate": null,
+        "san": [
+          "dxc3",
+          "dxc3",
+          "Qe7",
+          "Be4",
+          "Bg4",
+          "h3",
+          "Bd7",
+          "Qe2",
+          "f6"
+        ]
+      },
+      "afterAcceptance": {
+        "evalCp": -9,
+        "depth": 13,
+        "mate": null,
+        "san": [
+          "dxc3",
+          "f6",
+          "Qe2",
+          "Bg4",
+          "h3",
+          "Be6",
+          "Be3",
+          "Qd5",
+          "c4",
+          "Qa5+",
+          "c3",
+          "O-O-O",
+          "O-O",
+          "Bxh3",
+          "Rfd1",
+          "Bg4",
+          "b4"
+        ]
+      }
+    },
+    {
+      "san": "Bb5",
+      "expected": "brilliant",
+      "standard": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestUci": "f1g2",
+        "bestEval": 21,
+        "playedEval": -20,
+        "dropPct": 2.561938266645364,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 12,
+          "playedDepth": 13,
+          "unclampedDropPct": 2.561938266645364,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "targeted": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestUci": "f1g2",
+        "bestEval": 26,
+        "playedEval": -20,
+        "dropPct": 2.8741677546282816,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 13,
+          "playedDepth": 13,
+          "unclampedDropPct": 2.8741677546282816,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "acceptance": {
+        "evalCp": 23,
+        "depth": 12,
+        "mate": null,
+        "san": [
+          "dxc3",
+          "Qe2",
+          "f6",
+          "bxc3",
+          "Be6",
+          "Bxc6+",
+          "bxc6",
+          "d4",
+          "Bd6",
+          "O-O"
+        ]
+      },
+      "afterAcceptance": {
+        "evalCp": -28,
+        "depth": 12,
+        "mate": null,
+        "san": [
+          "Qe2",
+          "Bd6",
+          "Nxe5",
+          "O-O",
+          "Nxc6",
+          "bxc6",
+          "Bxc6",
+          "cxb2",
+          "Bxb2",
+          "Bh3",
+          "Bxa8",
+          "Qxa8",
+          "O-O-O",
+          "Qb7",
+          "Rhe1"
+        ]
+      }
+    },
+    {
+      "san": "Bg2",
+      "expected": "best",
+      "standard": {
+        "classification": "best",
+        "numerical": "best",
+        "bestUci": "f1g2",
+        "bestEval": 21,
+        "playedEval": 21,
+        "dropPct": 0,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "legacy-root-pair",
+          "rootDepth": 12,
+          "playedDepth": 12,
+          "unclampedDropPct": 0,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "targeted": {
+        "classification": "best",
+        "numerical": "best",
+        "bestUci": "f1g2",
+        "bestEval": 26,
+        "playedEval": 26,
+        "dropPct": 0,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "legacy-root-pair",
+          "rootDepth": 13,
+          "playedDepth": 13,
+          "unclampedDropPct": 0,
+          "snapshotAvailable": false,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-alternatives"
+        }
+      },
+      "acceptance": {
+        "evalCp": -19,
+        "depth": 12,
+        "mate": null,
+        "san": [
+          "dxc3",
+          "bxc3",
+          "Bd6",
+          "O-O",
+          "O-O",
+          "d4",
+          "Re8",
+          "Re1",
+          "Bg4",
+          "h3",
+          "Bh5",
+          "g4"
+        ]
+      },
+      "afterAcceptance": {
+        "evalCp": 17,
+        "depth": 14,
+        "mate": null,
+        "san": [
+          "bxc3",
+          "Bc5",
+          "O-O",
+          "O-O",
+          "Re1",
+          "Bb6",
+          "d3",
+          "f6",
+          "a4",
+          "Re8",
+          "Ba3"
+        ]
+      }
+    }
+  ],
+  "rootStandard": {
+    "multipv": 1,
+    "depth": 12,
+    "evalCp": 21,
+    "mate": null,
+    "pv": [
+      "f1g2",
+      "d4c3",
+      "b2c3",
+      "c8g4",
+      "e1g1",
+      "d8d7",
+      "d2d4",
+      "e5e4"
+    ],
+    "raw": "info depth 12 seldepth 20 multipv 1 score cp 21 nodes 200001 nps 297178 hashfull 50 time 673 pv f1g2 d4c3 b2c3 c8g4 e1g1 d8d7 d2d4 e5e4",
+    "lines": [
+      {
+        "multipv": 1,
+        "depth": 12,
+        "evalCp": 21,
+        "mate": null,
+        "pv": [
+          "f1g2",
+          "d4c3",
+          "b2c3",
+          "c8g4",
+          "e1g1",
+          "d8d7",
+          "d2d4",
+          "e5e4"
+        ],
+        "raw": "info depth 12 seldepth 20 multipv 1 score cp 21 nodes 200001 nps 297178 hashfull 50 time 673 pv f1g2 d4c3 b2c3 c8g4 e1g1 d8d7 d2d4 e5e4"
+      },
+      {
+        "multipv": 2,
+        "depth": 12,
+        "evalCp": 16,
+        "mate": null,
+        "pv": [
+          "d1e2",
+          "d4c3",
+          "d2c3",
+          "f8d6",
+          "c1e3",
+          "d8e7",
+          "f3d2",
+          "f7f5",
+          "e1c1",
+          "e8g8",
+          "d2c4",
+          "f5f4",
+          "c4d6",
+          "c7d6",
+          "g3f4",
+          "e5f4"
+        ],
+        "raw": "info depth 12 seldepth 17 multipv 2 score cp 16 nodes 200001 nps 297178 hashfull 50 time 673 pv d1e2 d4c3 d2c3 f8d6 c1e3 d8e7 f3d2 f7f5 e1c1 e8g8 d2c4 f5f4 c4d6 c7d6 g3f4 e5f4"
+      },
+      {
+        "multipv": 3,
+        "depth": 12,
+        "evalCp": 11,
+        "mate": null,
+        "pv": [
+          "d2d3",
+          "d4c3",
+          "b2c3",
+          "f7f6",
+          "f1g2",
+          "c8e6",
+          "a1b1",
+          "f8c5",
+          "e1g1"
+        ],
+        "raw": "info depth 12 seldepth 18 multipv 3 score cp 11 nodes 200001 nps 297178 hashfull 50 time 673 pv d2d3 d4c3 b2c3 f7f6 f1g2 c8e6 a1b1 f8c5 e1g1"
+      },
+      {
+        "multipv": 4,
+        "depth": 12,
+        "evalCp": 0,
+        "mate": null,
+        "pv": [
+          "c3e4",
+          "f7f5",
+          "e4g5",
+          "e5e4",
+          "f1c4",
+          "e4f3",
+          "c4f7",
+          "e8d7",
+          "f7e6",
+          "d7e8",
+          "e6f7",
+          "e8d7"
+        ],
+        "raw": "info depth 12 seldepth 18 multipv 4 score cp 0 nodes 200001 nps 297178 hashfull 50 time 673 pv c3e4 f7f5 e4g5 e5e4 f1c4 e4f3 c4f7 e8d7 f7e6 d7e8 e6f7 e8d7"
+      },
+      {
+        "multipv": 5,
+        "depth": 11,
+        "evalCp": 0,
+        "mate": null,
+        "pv": [
+          "c3e4",
+          "f7f5",
+          "e4g5",
+          "e5e4",
+          "f1c4",
+          "e4f3",
+          "c4f7",
+          "e8d7",
+          "f7e6",
+          "d7e8",
+          "e6f7",
+          "e8d7"
+        ],
+        "raw": "info depth 11 seldepth 14 multipv 5 score cp 0 nodes 145228 nps 307035 hashfull 35 time 473 pv c3e4 f7f5 e4g5 e5e4 f1c4 e4f3 c4f7 e8d7 f7e6 d7e8 e6f7 e8d7"
+      }
+    ],
+    "fen": "r1bqkb1r/ppp2ppp/2n5/4p3/3p4/2N2NP1/PPPP1P1P/R1BQKB1R w KQkq - 0 7",
+    "bestmove": "f1g2",
+    "specialLines": [],
+    "analysisMetadata": {
+      "schemaVersion": 1,
+      "engine": {
+        "name": "Stockfish",
+        "version": "19",
+        "packageVersion": "19.0.0",
+        "build": "large-single",
+        "actualEngineId": null
+      },
+      "budget": {
+        "kind": "nodes",
+        "value": 200000
+      },
+      "multiPv": 5,
+      "threads": 1,
+      "hashMb": 16,
+      "hashPolicy": "clear-per-search"
+    }
+  },
+  "rootTargeted": {
+    "multipv": 1,
+    "depth": 13,
+    "evalCp": 26,
+    "mate": null,
+    "pv": [
+      "f1g2",
+      "d4c3",
+      "b2c3",
+      "f8d6",
+      "e1g1",
+      "e8g8",
+      "d2d4",
+      "c8g4",
+      "h2h3",
+      "g4f3",
+      "g2f3",
+      "d8f6",
+      "a1b1",
+      "a8b8",
+      "c1e3",
+      "f6e6",
+      "f1e1"
+    ],
+    "raw": "info depth 13 seldepth 24 multipv 1 score cp 26 nodes 200192 nps 287632 hashfull 62 time 696 pv f1g2 d4c3 b2c3 f8d6 e1g1 e8g8 d2d4 c8g4 h2h3 g4f3 g2f3 d8f6 a1b1 a8b8 c1e3 f6e6 f1e1",
+    "lines": [
+      {
+        "multipv": 1,
+        "depth": 13,
+        "evalCp": 26,
+        "mate": null,
+        "pv": [
+          "f1g2",
+          "d4c3",
+          "b2c3",
+          "f8d6",
+          "e1g1",
+          "e8g8",
+          "d2d4",
+          "c8g4",
+          "h2h3",
+          "g4f3",
+          "g2f3",
+          "d8f6",
+          "a1b1",
+          "a8b8",
+          "c1e3",
+          "f6e6",
+          "f1e1"
+        ],
+        "raw": "info depth 13 seldepth 24 multipv 1 score cp 26 nodes 200192 nps 287632 hashfull 62 time 696 pv f1g2 d4c3 b2c3 f8d6 e1g1 e8g8 d2d4 c8g4 h2h3 g4f3 g2f3 d8f6 a1b1 a8b8 c1e3 f6e6 f1e1"
+      },
+      {
+        "multipv": 2,
+        "depth": 13,
+        "evalCp": 20,
+        "mate": null,
+        "pv": [
+          "d1e2",
+          "d4c3",
+          "d2c3",
+          "f8d6",
+          "c1e3",
+          "e8g8",
+          "f3d2",
+          "c8e6",
+          "e1c1",
+          "e6a2",
+          "d2c4",
+          "a2c4",
+          "e2c4",
+          "d8f6"
+        ],
+        "raw": "info depth 13 seldepth 26 multipv 2 score cp 20 nodes 200192 nps 287632 hashfull 62 time 696 pv d1e2 d4c3 d2c3 f8d6 c1e3 e8g8 f3d2 c8e6 e1c1 e6a2 d2c4 a2c4 e2c4 d8f6"
+      },
+      {
+        "multipv": 3,
+        "depth": 12,
+        "evalCp": 5,
+        "mate": null,
+        "pv": [
+          "d2d3",
+          "f8b4",
+          "c1d2",
+          "d4c3",
+          "b2c3",
+          "b4c5",
+          "f1g2",
+          "e8g8",
+          "e1g1",
+          "f7f6",
+          "f1e1",
+          "c8g4",
+          "a2a4",
+          "g4h5"
+        ],
+        "raw": "info depth 12 seldepth 18 multipv 3 score cp 5 nodes 170267 nps 277760 hashfull 55 time 613 pv d2d3 f8b4 c1d2 d4c3 b2c3 b4c5 f1g2 e8g8 e1g1 f7f6 f1e1 c8g4 a2a4 g4h5"
+      },
+      {
+        "multipv": 4,
+        "depth": 12,
+        "evalCp": -2,
+        "mate": null,
+        "pv": [
+          "f1d3",
+          "d4c3",
+          "d2c3",
+          "d8e7",
+          "d1e2",
+          "f7f6",
+          "f3h4",
+          "c8d7",
+          "c1e3"
+        ],
+        "raw": "info depth 12 seldepth 21 multipv 4 score cp -2 nodes 200192 nps 287219 hashfull 62 time 697 pv f1d3 d4c3 d2c3 d8e7 d1e2 f7f6 f3h4 c8d7 c1e3"
+      },
+      {
+        "multipv": 5,
+        "depth": 12,
+        "evalCp": -10,
+        "mate": null,
+        "pv": [
+          "f1b5",
+          "d4c3",
+          "d1e2",
+          "f8d6",
+          "d2c3",
+          "e8g8",
+          "c1e3",
+          "e5e4",
+          "f3d2",
+          "c6e5",
+          "h2h3",
+          "c7c6",
+          "e1c1",
+          "c6b5",
+          "d2e4",
+          "e5c4",
+          "e4d6",
+          "c4d6",
+          "e2d2",
+          "d8a5"
+        ],
+        "raw": "info depth 12 seldepth 25 multipv 5 score cp -10 nodes 200192 nps 287219 hashfull 62 time 697 pv f1b5 d4c3 d1e2 f8d6 d2c3 e8g8 c1e3 e5e4 f3d2 c6e5 h2h3 c7c6 e1c1 c6b5 d2e4 e5c4 e4d6 c4d6 e2d2 d8a5"
+      }
+    ],
+    "fen": "r1bqkb1r/ppp2ppp/2n5/4p3/3p4/2N2NP1/PPPP1P1P/R1BQKB1R w KQkq - 0 7",
+    "bestmove": "f1g2",
+    "specialLines": [],
+    "analysisMetadata": {
+      "schemaVersion": 1,
+      "engine": {
+        "name": "Stockfish",
+        "version": "19",
+        "packageVersion": "19.0.0",
+        "build": "large-single",
+        "actualEngineId": null
+      },
+      "budget": {
+        "kind": "nodes",
+        "value": 200000
+      },
+      "multiPv": 5,
+      "threads": 1,
+      "hashMb": 16,
+      "hashPolicy": "clear-per-search"
+    },
+    "searchMoves": [
+      "d1e2",
+      "d2d3",
+      "f1d3",
+      "f1b5",
+      "f1g2"
+    ]
+  },
+  "sources": [
+    {
+      "path": "scripts/specials-frozen-evaluation.js",
+      "sha256": "703c4a181a963a293d7948feb77cebf47030fc70d643a144d639e3a0bf6ee9c3"
+    },
+    {
+      "path": "scripts/specials-frozen-evaluate.js",
+      "sha256": "f2bab18896317965ad9d0e351e88a7e6c28c7bfb9e6445c92a2bd951c822bcde"
+    },
+    {
+      "path": "scripts/grande-frozen-evaluation.js",
+      "sha256": "e213ae414bf78ccd6464963597db8a173fd7e329886c4fa52791712701696355"
+    },
+    {
+      "path": "scripts/grande-frozen-input-path.js",
+      "sha256": "b6e03e06fe27f85d8be0dd48a59ec2d86108b9641d78ac9c3538f78ea8257467"
+    },
+    {
+      "path": "scripts/grande-completed-score.js",
+      "sha256": "fa840c9776d19a5b021e0ba7a80f6b06a945d158edd22f678fb80028141ab772"
+    },
+    {
+      "path": "scripts/brilliant-same-offer-v4.js",
+      "sha256": "704cb6a68498ec155c15d173e1a761151d1dc1ed388348523b6cc3fcdcb17251"
+    },
+    {
+      "path": "scripts/brilliant-offer-attribution-v3.js",
+      "sha256": "d9f81667bfaf93559d506306efe2077a2450e7a1c09b85151dff2a9c913a3e48"
+    },
+    {
+      "path": "scripts/brilliant-offer-v2.js",
+      "sha256": "c4c2e690f215dfb0fb93cec36e92735e039f05764ed55e9394b3845e046a238d"
+    },
+    {
+      "path": "scripts/brilliant-sacrifice-audit.js",
+      "sha256": "7efd4a571f3da1c7827c18915ffe43639430cabda371c41062bb68bed54f627f"
+    },
+    {
+      "path": "scripts/stockfish-specials-simple.js",
+      "sha256": "8a5aae92829417e6cbacfd28b67c2b294bf127d1c6369b691eeec7b077c852f4"
+    },
+    {
+      "path": "src/lib/classification.js",
+      "sha256": "2bdd4f56ad53f36d29d051a98debd66faeab5e396ad6a78b7d7d54a38f41c262"
+    },
+    {
+      "path": "src/lib/evaluation.js",
+      "sha256": "09e174188867ff6b08ab848dbe84a9c3fe7b8c4a98e7861fbf1d6c1639d4d9b5"
+    },
+    {
+      "path": "src/lib/missedOpportunity.js",
+      "sha256": "eacedc342ba25980e25375f204fa6307960be49afd4f29025b4dd0c81db221f6"
+    },
+    {
+      "path": "src/lib/engineConfig.js",
+      "sha256": "506890191d0d9a9837c0f0ec6571c6cb4bac055d47265fc329040f08d8af787a"
+    },
+    {
+      "path": "src/lib/mateComparison.js",
+      "sha256": "2cb95fd70b9071f67a70b9ebfd82c39976d07cbbb1d2d0f437338227c04539a7"
+    },
+    {
+      "path": "src/lib/openingBook.js",
+      "sha256": "7a0187a755c4c566e8aeb541b81477a2fa98708621256135624bd06b2655513c"
+    },
+    {
+      "path": "src/data/openingPositions.json",
+      "sha256": "0b96012fd9330e01ff3eb85600cb678f997bf5f2ed7e6054828fa6f97c236b5a"
+    },
+    {
+      "path": "agent-output/grande-prudent-candidate-v1.json",
+      "sha256": "88eec0367df02592e906b909ebba64ec505a4f0c6c81271d512e1fa5912eef66"
+    },
+    {
+      "path": "node_modules/chess.js/package.json",
+      "sha256": "36a258fdfb5e76d0816bf2b63dab3c917a0a8652f943da0e6be7e9b543765dfd"
+    },
+    {
+      "path": "node_modules/chess.js/dist/cjs/chess.js",
+      "sha256": "ccf63ba6a6023ccebc8c110361361b8e14f85d40b556eff387baa8ede4fdd21f"
+    },
+    {
+      "path": "scripts/probe-glek-five-choices.js",
+      "sha256": "e47d38bc1ffb077c8a7ec2378f45c1bba3eb8462cc39e7b7df7d3bebdc8398e4"
+    },
+    {
+      "path": "agent-output/glek-five-choices-v1/protocol.md",
+      "sha256": "693146619ada0b8b652a9311314ccf6da6aa4a5c7b3f9c63fb086aafbb4ad811"
+    },
+    {
+      "path": "src/lib/reviewEvaluation.js",
+      "sha256": "e27b56afdae832ec7605a38a174e94109bc8be86236abc97177bce66a0662227"
+    },
+    {
+      "path": "src/lib/reviewMoves.js",
+      "sha256": "b6eb3a5287950e09a00c6ca867f3e75c057c9085933a86f322c3c92edf32d1cd"
+    },
+    {
+      "path": "src/lib/specialClassification.js",
+      "sha256": "d8889027e53fa8494cf76fb9044dae1d5d30ba1d1cec7cb4dc6107d8f80d2c14"
+    },
+    {
+      "path": "src/lib/sacrificeEvidence.js",
+      "sha256": "6142fe91626a56e3566c482bef28b00904ab830a8cb2c1695a4d1cfe02d6eacd"
+    },
+    {
+      "path": "src/lib/materialRealization.js",
+      "sha256": "2d21b8e9ec74c196bbd0f95e6928e15d3b6e3f51808f04d7f177d8953478ccd1"
+    },
+    {
+      "path": "src/lib/moveOpportunities.js",
+      "sha256": "20b41de62e2f3c1be57066967a4ef4bb7b6a493219ce395b950442c2361f75e8"
+    },
+    {
+      "path": "src/lib/multiPvEvidence.js",
+      "sha256": "201441d9ad1522ca88e3fc1fe1a65dd7d220725bcce4fd12106e0ffb016fb67b"
+    },
+    {
+      "path": "src/lib/analysisMetadata.js",
+      "sha256": "5d618bb3b6c7a1edc1434db6dea281a054dcdcf6aeb70b39f618b8ebff20fa3d"
+    },
+    {
+      "path": "scripts/qa/native-engine.js",
+      "sha256": "e270b48cf309ebcc757ccd5412449c2697829a7815006d81412d782e194642e9"
+    },
+    {
+      "path": "scripts/qa/wasm-engine.cjs",
+      "sha256": "0b930d59c4106034dc03ce098113c52817343fad40d961b2477b57d6b662c7e5"
+    },
+    {
+      "path": "node_modules/stockfish/package.json",
+      "sha256": "05c54a01a21441d3091a82e109b87d3e6e605c4244a6f5eeea40fffc244ce4ab"
+    }
+  ]
+}

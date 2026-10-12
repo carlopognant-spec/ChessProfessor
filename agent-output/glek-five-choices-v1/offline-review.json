@@ -1,0 +1,1027 @@
+{
+  "summary": {
+    "newSearches": 0,
+    "productionChanged": false,
+    "standardExact": 2,
+    "targetedExact": 3,
+    "snapshots": [
+      {
+        "key": "history",
+        "original": false,
+        "originalDepth": 12,
+        "matchingDepth": 12
+      },
+      {
+        "key": "standard",
+        "original": false,
+        "originalDepth": null,
+        "matchingDepth": 10
+      },
+      {
+        "key": "targeted",
+        "original": false,
+        "originalDepth": null,
+        "matchingDepth": 10
+      },
+      {
+        "key": "after-Qe2",
+        "original": false,
+        "originalDepth": 12,
+        "matchingDepth": 12
+      },
+      {
+        "key": "after-d3",
+        "original": false,
+        "originalDepth": 12,
+        "matchingDepth": 12
+      },
+      {
+        "key": "after-Bd3",
+        "original": false,
+        "originalDepth": 10,
+        "matchingDepth": 10
+      },
+      {
+        "key": "after-Bb5",
+        "original": false,
+        "originalDepth": 12,
+        "matchingDepth": 12
+      },
+      {
+        "key": "after-Bg2",
+        "original": false,
+        "originalDepth": 12,
+        "matchingDepth": 12
+      },
+      {
+        "key": "accepted-Qe2",
+        "original": false,
+        "originalDepth": 14,
+        "matchingDepth": 14
+      },
+      {
+        "key": "accepted-d3",
+        "original": false,
+        "originalDepth": 13,
+        "matchingDepth": 13
+      },
+      {
+        "key": "accepted-Bd3",
+        "original": false,
+        "originalDepth": 13,
+        "matchingDepth": 13
+      },
+      {
+        "key": "accepted-Bb5",
+        "original": false,
+        "originalDepth": 11,
+        "matchingDepth": 11
+      },
+      {
+        "key": "accepted-Bg2",
+        "original": false,
+        "originalDepth": 13,
+        "matchingDepth": 13
+      }
+    ]
+  },
+  "rows": [
+    {
+      "san": "Qe2",
+      "expected": "brilliant",
+      "standard": {
+        "classification": "brilliant",
+        "numerical": "excellent",
+        "bestEval": 15,
+        "playedEval": 13,
+        "dropPct": 0.12496166153999066,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 10,
+          "playedDepth": 10,
+          "unclampedDropPct": 0.12496166153999066,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        },
+        "brilliant": {
+          "status": "supported",
+          "reason": "compensated-new-offer",
+          "offers": [
+            {
+              "uci": "d4c3",
+              "san": "dxc3",
+              "square": "c3",
+              "type": "n",
+              "delta": -3,
+              "movedPiece": false,
+              "continuation": [
+                {
+                  "uci": "d4c3",
+                  "san": "dxc3",
+                  "captured": "n",
+                  "materialDelta": -3
+                },
+                {
+                  "uci": "d2c3",
+                  "san": "dxc3",
+                  "captured": "p",
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f8d6",
+                  "san": "Bd6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f1g2",
+                  "san": "Bg2",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e8g8",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f3g5",
+                  "san": "Ng5",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "h7h6",
+                  "san": "h6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "g5e4",
+                  "san": "Ne4",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d8e7",
+                  "san": "Qe7",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e4d6",
+                  "san": "Nxd6",
+                  "captured": "b",
+                  "materialDelta": 1
+                },
+                {
+                  "uci": "c7d6",
+                  "san": "cxd6",
+                  "captured": "n",
+                  "materialDelta": -2
+                }
+              ],
+              "compensation": "engine-estimate",
+              "afterIndex": 0.5049998333399996,
+              "acceptanceSource": "played-child-search",
+              "corroboration": {
+                "kind": "corroborated-compensation",
+                "acceptanceDepth": 12,
+                "confirmationDepth": 14,
+                "acceptanceIndex": 0.5049998333399996,
+                "confirmationIndex": 0.5118727677562528,
+                "source": "after-acceptance-child-search",
+                "defenseScope": "agreement-of-engine-estimates",
+                "proofAgainstEveryDefense": false
+              }
+            }
+          ],
+          "coverage": {
+            "analyzed": 5,
+            "available": 5,
+            "legal": 30,
+            "allLegal": false,
+            "scope": "analyzed-alternatives",
+            "source": "completed-snapshot",
+            "discarded": []
+          },
+          "defenseScope": "all-legal-acceptances-and-engine-best-defense"
+        }
+      },
+      "targeted": {
+        "classification": "brilliant",
+        "numerical": "excellent",
+        "bestEval": 20,
+        "playedEval": 19,
+        "dropPct": 0.062462872795754354,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 10,
+          "playedDepth": 10,
+          "unclampedDropPct": 0.062462872795754354,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        },
+        "brilliant": {
+          "status": "supported",
+          "reason": "compensated-new-offer",
+          "offers": [
+            {
+              "uci": "d4c3",
+              "san": "dxc3",
+              "square": "c3",
+              "type": "n",
+              "delta": -3,
+              "movedPiece": false,
+              "continuation": [
+                {
+                  "uci": "d4c3",
+                  "san": "dxc3",
+                  "captured": "n",
+                  "materialDelta": -3
+                },
+                {
+                  "uci": "d2c3",
+                  "san": "dxc3",
+                  "captured": "p",
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f8d6",
+                  "san": "Bd6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f1g2",
+                  "san": "Bg2",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e8g8",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f3g5",
+                  "san": "Ng5",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "h7h6",
+                  "san": "h6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "g5e4",
+                  "san": "Ne4",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d8e7",
+                  "san": "Qe7",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e4d6",
+                  "san": "Nxd6",
+                  "captured": "b",
+                  "materialDelta": 1
+                },
+                {
+                  "uci": "c7d6",
+                  "san": "cxd6",
+                  "captured": "n",
+                  "materialDelta": -2
+                }
+              ],
+              "compensation": "engine-estimate",
+              "afterIndex": 0.5049998333399996,
+              "acceptanceSource": "played-child-search",
+              "corroboration": {
+                "kind": "corroborated-compensation",
+                "acceptanceDepth": 12,
+                "confirmationDepth": 14,
+                "acceptanceIndex": 0.5049998333399996,
+                "confirmationIndex": 0.5118727677562528,
+                "source": "after-acceptance-child-search",
+                "defenseScope": "agreement-of-engine-estimates",
+                "proofAgainstEveryDefense": false
+              }
+            }
+          ],
+          "coverage": {
+            "analyzed": 5,
+            "available": 5,
+            "legal": 30,
+            "allLegal": false,
+            "scope": "analyzed-alternatives",
+            "source": "completed-snapshot",
+            "discarded": []
+          },
+          "defenseScope": "all-legal-acceptances-and-engine-best-defense"
+        }
+      }
+    },
+    {
+      "san": "d3",
+      "expected": "brilliant",
+      "standard": {
+        "classification": "brilliant",
+        "numerical": "excellent",
+        "bestEval": 15,
+        "playedEval": -4,
+        "dropPct": 1.1873880688535676,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 10,
+          "playedDepth": 10,
+          "unclampedDropPct": 1.1873880688535676,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        },
+        "brilliant": {
+          "status": "supported",
+          "reason": "compensated-new-offer",
+          "offers": [
+            {
+              "uci": "d4c3",
+              "san": "dxc3",
+              "square": "c3",
+              "type": "n",
+              "delta": -3,
+              "movedPiece": false,
+              "continuation": [
+                {
+                  "uci": "d4c3",
+                  "san": "dxc3",
+                  "captured": "n",
+                  "materialDelta": -3
+                },
+                {
+                  "uci": "b2c3",
+                  "san": "bxc3",
+                  "captured": "p",
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f8e7",
+                  "san": "Be7",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d1e2",
+                  "san": "Qe2",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "c8e6",
+                  "san": "Be6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f1g2",
+                  "san": "Bg2",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f7f6",
+                  "san": "f6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "a1b1",
+                  "san": "Rb1",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "a8b8",
+                  "san": "Rb8",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e1g1",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e8g8",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                }
+              ],
+              "compensation": "engine-estimate",
+              "afterIndex": 0.5024999791668749,
+              "acceptanceSource": "played-child-search",
+              "corroboration": {
+                "kind": "corroborated-compensation",
+                "acceptanceDepth": 12,
+                "confirmationDepth": 13,
+                "acceptanceIndex": 0.5024999791668749,
+                "confirmationIndex": 0.5081242849062608,
+                "source": "after-acceptance-child-search",
+                "defenseScope": "agreement-of-engine-estimates",
+                "proofAgainstEveryDefense": false
+              }
+            }
+          ],
+          "coverage": {
+            "analyzed": 5,
+            "available": 5,
+            "legal": 30,
+            "allLegal": false,
+            "scope": "analyzed-alternatives",
+            "source": "completed-snapshot",
+            "discarded": []
+          },
+          "defenseScope": "all-legal-acceptances-and-engine-best-defense"
+        }
+      },
+      "targeted": {
+        "classification": "brilliant",
+        "numerical": "excellent",
+        "bestEval": 20,
+        "playedEval": -2,
+        "dropPct": 1.3747393880050085,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 10,
+          "playedDepth": 10,
+          "unclampedDropPct": 1.3747393880050085,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        },
+        "brilliant": {
+          "status": "supported",
+          "reason": "compensated-new-offer",
+          "offers": [
+            {
+              "uci": "d4c3",
+              "san": "dxc3",
+              "square": "c3",
+              "type": "n",
+              "delta": -3,
+              "movedPiece": false,
+              "continuation": [
+                {
+                  "uci": "d4c3",
+                  "san": "dxc3",
+                  "captured": "n",
+                  "materialDelta": -3
+                },
+                {
+                  "uci": "b2c3",
+                  "san": "bxc3",
+                  "captured": "p",
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f8e7",
+                  "san": "Be7",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d1e2",
+                  "san": "Qe2",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "c8e6",
+                  "san": "Be6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f1g2",
+                  "san": "Bg2",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f7f6",
+                  "san": "f6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "a1b1",
+                  "san": "Rb1",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "a8b8",
+                  "san": "Rb8",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e1g1",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e8g8",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                }
+              ],
+              "compensation": "engine-estimate",
+              "afterIndex": 0.5024999791668749,
+              "acceptanceSource": "played-child-search",
+              "corroboration": {
+                "kind": "corroborated-compensation",
+                "acceptanceDepth": 12,
+                "confirmationDepth": 13,
+                "acceptanceIndex": 0.5024999791668749,
+                "confirmationIndex": 0.5081242849062608,
+                "source": "after-acceptance-child-search",
+                "defenseScope": "agreement-of-engine-estimates",
+                "proofAgainstEveryDefense": false
+              }
+            }
+          ],
+          "coverage": {
+            "analyzed": 5,
+            "available": 5,
+            "legal": 30,
+            "allLegal": false,
+            "scope": "analyzed-alternatives",
+            "source": "completed-snapshot",
+            "discarded": []
+          },
+          "defenseScope": "all-legal-acceptances-and-engine-best-defense"
+        }
+      }
+    },
+    {
+      "san": "Bd3",
+      "expected": "brilliant",
+      "standard": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestEval": 15,
+        "playedEval": -14,
+        "dropPct": 1.8123008401901008,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 10,
+          "playedDepth": 11,
+          "unclampedDropPct": 1.8123008401901008,
+          "snapshotAvailable": true,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-or-conflicting-played-score"
+        }
+      },
+      "targeted": {
+        "classification": "brilliant",
+        "numerical": "excellent",
+        "bestEval": 20,
+        "playedEval": 3,
+        "dropPct": 1.0622405273223445,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 10,
+          "playedDepth": 10,
+          "unclampedDropPct": 1.0622405273223445,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        },
+        "brilliant": {
+          "status": "supported",
+          "reason": "compensated-new-offer",
+          "offers": [
+            {
+              "uci": "d4c3",
+              "san": "dxc3",
+              "square": "c3",
+              "type": "n",
+              "delta": -3,
+              "movedPiece": false,
+              "continuation": [
+                {
+                  "uci": "d4c3",
+                  "san": "dxc3",
+                  "captured": "n",
+                  "materialDelta": -3
+                },
+                {
+                  "uci": "d2c3",
+                  "san": "dxc3",
+                  "captured": "p",
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d8e7",
+                  "san": "Qe7",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d3e4",
+                  "san": "Be4",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "c8g4",
+                  "san": "Bg4",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "h2h3",
+                  "san": "h3",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "g4d7",
+                  "san": "Bd7",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d1e2",
+                  "san": "Qe2",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f7f6",
+                  "san": "f6",
+                  "captured": null,
+                  "materialDelta": -2
+                }
+              ],
+              "compensation": "engine-estimate",
+              "afterIndex": 0.49125089311975967,
+              "acceptanceSource": "played-child-search",
+              "corroboration": {
+                "kind": "corroborated-compensation",
+                "acceptanceDepth": 10,
+                "confirmationDepth": 13,
+                "acceptanceIndex": 0.49125089311975967,
+                "confirmationIndex": 0.4943752372926745,
+                "source": "after-acceptance-child-search",
+                "defenseScope": "agreement-of-engine-estimates",
+                "proofAgainstEveryDefense": false
+              }
+            }
+          ],
+          "coverage": {
+            "analyzed": 5,
+            "available": 5,
+            "legal": 30,
+            "allLegal": false,
+            "scope": "analyzed-alternatives",
+            "source": "completed-snapshot",
+            "discarded": []
+          },
+          "defenseScope": "all-legal-acceptances-and-engine-best-defense"
+        }
+      }
+    },
+    {
+      "san": "Bb5",
+      "expected": "brilliant",
+      "standard": {
+        "classification": "excellent",
+        "numerical": "excellent",
+        "bestEval": 15,
+        "playedEval": -20,
+        "dropPct": 2.187129800587112,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 10,
+          "playedDepth": 13,
+          "unclampedDropPct": 2.187129800587112,
+          "snapshotAvailable": true,
+          "snapshotUsed": false
+        },
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-or-conflicting-played-score"
+        }
+      },
+      "targeted": {
+        "classification": "good",
+        "numerical": "good",
+        "bestEval": 20,
+        "playedEval": -30,
+        "dropPct": 3.1238612362745553,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 10,
+          "playedDepth": 10,
+          "unclampedDropPct": 3.1238612362745553,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        },
+        "brilliant": {
+          "status": "rejected",
+          "reason": "not-eligible"
+        }
+      }
+    },
+    {
+      "san": "Bg2",
+      "expected": "best",
+      "standard": {
+        "classification": "brilliant",
+        "numerical": "best",
+        "bestEval": 15,
+        "playedEval": 15,
+        "dropPct": 0,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 10,
+          "playedDepth": 10,
+          "unclampedDropPct": 0,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        },
+        "brilliant": {
+          "status": "supported",
+          "reason": "compensated-new-offer",
+          "offers": [
+            {
+              "uci": "d4c3",
+              "san": "dxc3",
+              "square": "c3",
+              "type": "n",
+              "delta": -3,
+              "movedPiece": false,
+              "continuation": [
+                {
+                  "uci": "d4c3",
+                  "san": "dxc3",
+                  "captured": "n",
+                  "materialDelta": -3
+                },
+                {
+                  "uci": "b2c3",
+                  "san": "bxc3",
+                  "captured": "p",
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f8d6",
+                  "san": "Bd6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e1g1",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e8g8",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d2d4",
+                  "san": "d4",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f8e8",
+                  "san": "Re8",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f1e1",
+                  "san": "Re1",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "c8g4",
+                  "san": "Bg4",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "h2h3",
+                  "san": "h3",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "g4h5",
+                  "san": "Bh5",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "g3g4",
+                  "san": "g4",
+                  "captured": null,
+                  "materialDelta": -2
+                }
+              ],
+              "compensation": "engine-estimate",
+              "afterIndex": 0.5118727677562528,
+              "acceptanceSource": "played-child-search",
+              "corroboration": {
+                "kind": "corroborated-compensation",
+                "acceptanceDepth": 12,
+                "confirmationDepth": 14,
+                "acceptanceIndex": 0.5118727677562528,
+                "confirmationIndex": 0.5106234010049637,
+                "source": "after-acceptance-child-search",
+                "defenseScope": "agreement-of-engine-estimates",
+                "proofAgainstEveryDefense": false
+              }
+            }
+          ],
+          "coverage": {
+            "analyzed": 5,
+            "available": 5,
+            "legal": 30,
+            "allLegal": false,
+            "scope": "analyzed-alternatives",
+            "source": "completed-snapshot",
+            "discarded": []
+          },
+          "defenseScope": "all-legal-acceptances-and-engine-best-defense"
+        }
+      },
+      "targeted": {
+        "classification": "brilliant",
+        "numerical": "best",
+        "bestEval": 20,
+        "playedEval": 20,
+        "dropPct": 0,
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 10,
+          "playedDepth": 10,
+          "unclampedDropPct": 0,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        },
+        "brilliant": {
+          "status": "supported",
+          "reason": "compensated-new-offer",
+          "offers": [
+            {
+              "uci": "d4c3",
+              "san": "dxc3",
+              "square": "c3",
+              "type": "n",
+              "delta": -3,
+              "movedPiece": false,
+              "continuation": [
+                {
+                  "uci": "d4c3",
+                  "san": "dxc3",
+                  "captured": "n",
+                  "materialDelta": -3
+                },
+                {
+                  "uci": "b2c3",
+                  "san": "bxc3",
+                  "captured": "p",
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f8d6",
+                  "san": "Bd6",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e1g1",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "e8g8",
+                  "san": "O-O",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "d2d4",
+                  "san": "d4",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f8e8",
+                  "san": "Re8",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "f1e1",
+                  "san": "Re1",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "c8g4",
+                  "san": "Bg4",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "h2h3",
+                  "san": "h3",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "g4h5",
+                  "san": "Bh5",
+                  "captured": null,
+                  "materialDelta": -2
+                },
+                {
+                  "uci": "g3g4",
+                  "san": "g4",
+                  "captured": null,
+                  "materialDelta": -2
+                }
+              ],
+              "compensation": "engine-estimate",
+              "afterIndex": 0.5118727677562528,
+              "acceptanceSource": "played-child-search",
+              "corroboration": {
+                "kind": "corroborated-compensation",
+                "acceptanceDepth": 12,
+                "confirmationDepth": 14,
+                "acceptanceIndex": 0.5118727677562528,
+                "confirmationIndex": 0.5106234010049637,
+                "source": "after-acceptance-child-search",
+                "defenseScope": "agreement-of-engine-estimates",
+                "proofAgainstEveryDefense": false
+              }
+            }
+          ],
+          "coverage": {
+            "analyzed": 5,
+            "available": 5,
+            "legal": 30,
+            "allLegal": false,
+            "scope": "analyzed-alternatives",
+            "source": "completed-snapshot",
+            "discarded": []
+          },
+          "defenseScope": "all-legal-acceptances-and-engine-best-defense"
+        }
+      }
+    }
+  ]
+}
