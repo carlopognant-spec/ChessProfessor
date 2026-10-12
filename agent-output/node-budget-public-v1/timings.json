@@ -1,0 +1,2082 @@
+[
+  {
+    "position": 0,
+    "nodes": 200000,
+    "actualNodes": 200243,
+    "elapsedMs": 795.7908,
+    "engineTimeMs": 784,
+    "file": "search-000.json"
+  },
+  {
+    "position": 0,
+    "nodes": 1000000,
+    "actualNodes": 1000153,
+    "elapsedMs": 3625.7309,
+    "engineTimeMs": 3614,
+    "file": "search-001.json"
+  },
+  {
+    "position": 1,
+    "nodes": 1000000,
+    "actualNodes": 1000039,
+    "elapsedMs": 3787.114600000001,
+    "engineTimeMs": 3775,
+    "file": "search-002.json"
+  },
+  {
+    "position": 1,
+    "nodes": 200000,
+    "actualNodes": 200208,
+    "elapsedMs": 743.4231,
+    "engineTimeMs": 732,
+    "file": "search-003.json"
+  },
+  {
+    "position": 2,
+    "nodes": 200000,
+    "actualNodes": 200054,
+    "elapsedMs": 710.4448000000011,
+    "engineTimeMs": 699,
+    "file": "search-004.json"
+  },
+  {
+    "position": 2,
+    "nodes": 1000000,
+    "actualNodes": 1000373,
+    "elapsedMs": 3649.8696999999993,
+    "engineTimeMs": 3637,
+    "file": "search-005.json"
+  },
+  {
+    "position": 3,
+    "nodes": 1000000,
+    "actualNodes": 1000343,
+    "elapsedMs": 3811.3394000000026,
+    "engineTimeMs": 3792,
+    "file": "search-006.json"
+  },
+  {
+    "position": 3,
+    "nodes": 200000,
+    "actualNodes": 200032,
+    "elapsedMs": 700.5017000000007,
+    "engineTimeMs": 689,
+    "file": "search-007.json"
+  },
+  {
+    "position": 4,
+    "nodes": 200000,
+    "actualNodes": 200097,
+    "elapsedMs": 624.8080999999984,
+    "engineTimeMs": 614,
+    "file": "search-008.json"
+  },
+  {
+    "position": 4,
+    "nodes": 1000000,
+    "actualNodes": 1000150,
+    "elapsedMs": 3453.1358,
+    "engineTimeMs": 3441,
+    "file": "search-009.json"
+  },
+  {
+    "position": 5,
+    "nodes": 1000000,
+    "actualNodes": 1000358,
+    "elapsedMs": 3744.006799999999,
+    "engineTimeMs": 3732,
+    "file": "search-010.json"
+  },
+  {
+    "position": 5,
+    "nodes": 200000,
+    "actualNodes": 200219,
+    "elapsedMs": 677.1761000000006,
+    "engineTimeMs": 667,
+    "file": "search-011.json"
+  },
+  {
+    "position": 6,
+    "nodes": 200000,
+    "actualNodes": 200092,
+    "elapsedMs": 758.3891999999978,
+    "engineTimeMs": 747,
+    "file": "search-012.json"
+  },
+  {
+    "position": 6,
+    "nodes": 1000000,
+    "actualNodes": 1000442,
+    "elapsedMs": 3513.687099999999,
+    "engineTimeMs": 3501,
+    "file": "search-013.json"
+  },
+  {
+    "position": 7,
+    "nodes": 1000000,
+    "actualNodes": 1000244,
+    "elapsedMs": 3790.3281000000025,
+    "engineTimeMs": 3780,
+    "file": "search-014.json"
+  },
+  {
+    "position": 7,
+    "nodes": 200000,
+    "actualNodes": 200039,
+    "elapsedMs": 764.7412999999942,
+    "engineTimeMs": 753,
+    "file": "search-015.json"
+  },
+  {
+    "position": 8,
+    "nodes": 200000,
+    "actualNodes": 200083,
+    "elapsedMs": 630.4731000000029,
+    "engineTimeMs": 619,
+    "file": "search-016.json"
+  },
+  {
+    "position": 8,
+    "nodes": 1000000,
+    "actualNodes": 1000456,
+    "elapsedMs": 3609.667300000001,
+    "engineTimeMs": 3598,
+    "file": "search-017.json"
+  },
+  {
+    "position": 9,
+    "nodes": 1000000,
+    "actualNodes": 1000033,
+    "elapsedMs": 4023.5149999999994,
+    "engineTimeMs": 4013,
+    "file": "search-018.json"
+  },
+  {
+    "position": 9,
+    "nodes": 200000,
+    "actualNodes": 200232,
+    "elapsedMs": 681.3444999999992,
+    "engineTimeMs": 669,
+    "file": "search-019.json"
+  },
+  {
+    "position": 10,
+    "nodes": 200000,
+    "actualNodes": 200013,
+    "elapsedMs": 759.1691000000064,
+    "engineTimeMs": 747,
+    "file": "search-020.json"
+  },
+  {
+    "position": 10,
+    "nodes": 1000000,
+    "actualNodes": 1000442,
+    "elapsedMs": 3907.3104999999996,
+    "engineTimeMs": 3896,
+    "file": "search-021.json"
+  },
+  {
+    "position": 11,
+    "nodes": 1000000,
+    "actualNodes": 1000065,
+    "elapsedMs": 3664.1758999999947,
+    "engineTimeMs": 3652,
+    "file": "search-022.json"
+  },
+  {
+    "position": 11,
+    "nodes": 200000,
+    "actualNodes": 200116,
+    "elapsedMs": 748.2420999999958,
+    "engineTimeMs": 735,
+    "file": "search-023.json"
+  },
+  {
+    "position": 12,
+    "nodes": 200000,
+    "actualNodes": 200071,
+    "elapsedMs": 757.536500000002,
+    "engineTimeMs": 747,
+    "file": "search-024.json"
+  },
+  {
+    "position": 12,
+    "nodes": 1000000,
+    "actualNodes": 1000198,
+    "elapsedMs": 3767.4819999999963,
+    "engineTimeMs": 3756,
+    "file": "search-025.json"
+  },
+  {
+    "position": 13,
+    "nodes": 1000000,
+    "actualNodes": 1000419,
+    "elapsedMs": 4130.1515,
+    "engineTimeMs": 4118,
+    "file": "search-026.json"
+  },
+  {
+    "position": 13,
+    "nodes": 200000,
+    "actualNodes": 200114,
+    "elapsedMs": 750.8505000000005,
+    "engineTimeMs": 740,
+    "file": "search-027.json"
+  },
+  {
+    "position": 14,
+    "nodes": 200000,
+    "actualNodes": 200281,
+    "elapsedMs": 790.165399999998,
+    "engineTimeMs": 779,
+    "file": "search-028.json"
+  },
+  {
+    "position": 14,
+    "nodes": 1000000,
+    "actualNodes": 1000352,
+    "elapsedMs": 4063.226899999994,
+    "engineTimeMs": 4051,
+    "file": "search-029.json"
+  },
+  {
+    "position": 15,
+    "nodes": 1000000,
+    "actualNodes": 1000666,
+    "elapsedMs": 4000.5227000000014,
+    "engineTimeMs": 3988,
+    "file": "search-030.json"
+  },
+  {
+    "position": 15,
+    "nodes": 200000,
+    "actualNodes": 200173,
+    "elapsedMs": 768.231500000009,
+    "engineTimeMs": 757,
+    "file": "search-031.json"
+  },
+  {
+    "position": 16,
+    "nodes": 200000,
+    "actualNodes": 200258,
+    "elapsedMs": 820.8922999999922,
+    "engineTimeMs": 810,
+    "file": "search-032.json"
+  },
+  {
+    "position": 16,
+    "nodes": 1000000,
+    "actualNodes": 1000332,
+    "elapsedMs": 4183.262500000012,
+    "engineTimeMs": 4173,
+    "file": "search-033.json"
+  },
+  {
+    "position": 17,
+    "nodes": 1000000,
+    "actualNodes": 1000275,
+    "elapsedMs": 4196.486099999995,
+    "engineTimeMs": 4186,
+    "file": "search-034.json"
+  },
+  {
+    "position": 17,
+    "nodes": 200000,
+    "actualNodes": 200136,
+    "elapsedMs": 801.7275999999983,
+    "engineTimeMs": 791,
+    "file": "search-035.json"
+  },
+  {
+    "position": 18,
+    "nodes": 200000,
+    "actualNodes": 200249,
+    "elapsedMs": 856.5244999999995,
+    "engineTimeMs": 846,
+    "file": "search-036.json"
+  },
+  {
+    "position": 18,
+    "nodes": 1000000,
+    "actualNodes": 1000587,
+    "elapsedMs": 4197.039600000004,
+    "engineTimeMs": 4186,
+    "file": "search-037.json"
+  },
+  {
+    "position": 19,
+    "nodes": 1000000,
+    "actualNodes": 1000389,
+    "elapsedMs": 3889.0799000000115,
+    "engineTimeMs": 3879,
+    "file": "search-038.json"
+  },
+  {
+    "position": 19,
+    "nodes": 200000,
+    "actualNodes": 200275,
+    "elapsedMs": 756.7716000000073,
+    "engineTimeMs": 746,
+    "file": "search-039.json"
+  },
+  {
+    "position": 20,
+    "nodes": 200000,
+    "actualNodes": 200052,
+    "elapsedMs": 869.7388000000064,
+    "engineTimeMs": 854,
+    "file": "search-040.json"
+  },
+  {
+    "position": 20,
+    "nodes": 1000000,
+    "actualNodes": 1000391,
+    "elapsedMs": 4214.530899999998,
+    "engineTimeMs": 4202,
+    "file": "search-041.json"
+  },
+  {
+    "position": 21,
+    "nodes": 1000000,
+    "actualNodes": 1000290,
+    "elapsedMs": 3772.1106,
+    "engineTimeMs": 3761,
+    "file": "search-042.json"
+  },
+  {
+    "position": 21,
+    "nodes": 200000,
+    "actualNodes": 200014,
+    "elapsedMs": 791.8200999999972,
+    "engineTimeMs": 781,
+    "file": "search-043.json"
+  },
+  {
+    "position": 22,
+    "nodes": 200000,
+    "actualNodes": 200125,
+    "elapsedMs": 730.5973999999987,
+    "engineTimeMs": 719,
+    "file": "search-044.json"
+  },
+  {
+    "position": 22,
+    "nodes": 1000000,
+    "actualNodes": 1000141,
+    "elapsedMs": 3868.144499999995,
+    "engineTimeMs": 3857,
+    "file": "search-045.json"
+  },
+  {
+    "position": 23,
+    "nodes": 1000000,
+    "actualNodes": 1000475,
+    "elapsedMs": 3788.037400000001,
+    "engineTimeMs": 3775,
+    "file": "search-046.json"
+  },
+  {
+    "position": 23,
+    "nodes": 200000,
+    "actualNodes": 200009,
+    "elapsedMs": 713.6512999999977,
+    "engineTimeMs": 703,
+    "file": "search-047.json"
+  },
+  {
+    "position": 24,
+    "nodes": 200000,
+    "actualNodes": 200202,
+    "elapsedMs": 678.1227000000072,
+    "engineTimeMs": 667,
+    "file": "search-048.json"
+  },
+  {
+    "position": 24,
+    "nodes": 1000000,
+    "actualNodes": 1000374,
+    "elapsedMs": 3821.4579000000085,
+    "engineTimeMs": 3811,
+    "file": "search-049.json"
+  },
+  {
+    "position": 25,
+    "nodes": 1000000,
+    "actualNodes": 1000462,
+    "elapsedMs": 3873.331600000005,
+    "engineTimeMs": 3862,
+    "file": "search-050.json"
+  },
+  {
+    "position": 25,
+    "nodes": 200000,
+    "actualNodes": 200175,
+    "elapsedMs": 713.8592999999964,
+    "engineTimeMs": 703,
+    "file": "search-051.json"
+  },
+  {
+    "position": 26,
+    "nodes": 200000,
+    "actualNodes": 200201,
+    "elapsedMs": 721.9633000000031,
+    "engineTimeMs": 711,
+    "file": "search-052.json"
+  },
+  {
+    "position": 26,
+    "nodes": 1000000,
+    "actualNodes": 1000331,
+    "elapsedMs": 3958.2139000000025,
+    "engineTimeMs": 3947,
+    "file": "search-053.json"
+  },
+  {
+    "position": 27,
+    "nodes": 1000000,
+    "actualNodes": 1000484,
+    "elapsedMs": 3927.795800000007,
+    "engineTimeMs": 3917,
+    "file": "search-054.json"
+  },
+  {
+    "position": 27,
+    "nodes": 200000,
+    "actualNodes": 200131,
+    "elapsedMs": 720.4416000000056,
+    "engineTimeMs": 710,
+    "file": "search-055.json"
+  },
+  {
+    "position": 28,
+    "nodes": 200000,
+    "actualNodes": 200058,
+    "elapsedMs": 709.6624000000011,
+    "engineTimeMs": 698,
+    "file": "search-056.json"
+  },
+  {
+    "position": 28,
+    "nodes": 1000000,
+    "actualNodes": 1000521,
+    "elapsedMs": 3899.8587999999872,
+    "engineTimeMs": 3889,
+    "file": "search-057.json"
+  },
+  {
+    "position": 29,
+    "nodes": 1000000,
+    "actualNodes": 1000372,
+    "elapsedMs": 3829.4748000000254,
+    "engineTimeMs": 3818,
+    "file": "search-058.json"
+  },
+  {
+    "position": 29,
+    "nodes": 200000,
+    "actualNodes": 200012,
+    "elapsedMs": 729.3620999999985,
+    "engineTimeMs": 718,
+    "file": "search-059.json"
+  },
+  {
+    "position": 30,
+    "nodes": 200000,
+    "actualNodes": 200074,
+    "elapsedMs": 883.5660000000207,
+    "engineTimeMs": 872,
+    "file": "search-060.json"
+  },
+  {
+    "position": 30,
+    "nodes": 1000000,
+    "actualNodes": 1000591,
+    "elapsedMs": 3804.783400000015,
+    "engineTimeMs": 3792,
+    "file": "search-061.json"
+  },
+  {
+    "position": 31,
+    "nodes": 1000000,
+    "actualNodes": 1000357,
+    "elapsedMs": 3988.1160999999847,
+    "engineTimeMs": 3977,
+    "file": "search-062.json"
+  },
+  {
+    "position": 31,
+    "nodes": 200000,
+    "actualNodes": 200199,
+    "elapsedMs": 750.1849999999977,
+    "engineTimeMs": 731,
+    "file": "search-063.json"
+  },
+  {
+    "position": 32,
+    "nodes": 200000,
+    "actualNodes": 200038,
+    "elapsedMs": 739.1551000000036,
+    "engineTimeMs": 728,
+    "file": "search-064.json"
+  },
+  {
+    "position": 32,
+    "nodes": 1000000,
+    "actualNodes": 1000016,
+    "elapsedMs": 3909.716400000005,
+    "engineTimeMs": 3899,
+    "file": "search-065.json"
+  },
+  {
+    "position": 33,
+    "nodes": 1000000,
+    "actualNodes": 1000346,
+    "elapsedMs": 4036.7142000000167,
+    "engineTimeMs": 4022,
+    "file": "search-066.json"
+  },
+  {
+    "position": 33,
+    "nodes": 200000,
+    "actualNodes": 200241,
+    "elapsedMs": 816.6833000000042,
+    "engineTimeMs": 806,
+    "file": "search-067.json"
+  },
+  {
+    "position": 34,
+    "nodes": 200000,
+    "actualNodes": 200206,
+    "elapsedMs": 815.0615999999864,
+    "engineTimeMs": 804,
+    "file": "search-068.json"
+  },
+  {
+    "position": 34,
+    "nodes": 1000000,
+    "actualNodes": 1000451,
+    "elapsedMs": 4035.8830000000016,
+    "engineTimeMs": 4025,
+    "file": "search-069.json"
+  },
+  {
+    "position": 35,
+    "nodes": 1000000,
+    "actualNodes": 1000175,
+    "elapsedMs": 3913.9694000000018,
+    "engineTimeMs": 3903,
+    "file": "search-070.json"
+  },
+  {
+    "position": 35,
+    "nodes": 200000,
+    "actualNodes": 200110,
+    "elapsedMs": 777.2463999999745,
+    "engineTimeMs": 767,
+    "file": "search-071.json"
+  },
+  {
+    "position": 36,
+    "nodes": 200000,
+    "actualNodes": 200131,
+    "elapsedMs": 728.1089999999967,
+    "engineTimeMs": 718,
+    "file": "search-072.json"
+  },
+  {
+    "position": 36,
+    "nodes": 1000000,
+    "actualNodes": 1000188,
+    "elapsedMs": 3699.482799999998,
+    "engineTimeMs": 3688,
+    "file": "search-073.json"
+  },
+  {
+    "position": 37,
+    "nodes": 1000000,
+    "actualNodes": 1000070,
+    "elapsedMs": 3835.731599999999,
+    "engineTimeMs": 3824,
+    "file": "search-074.json"
+  },
+  {
+    "position": 37,
+    "nodes": 200000,
+    "actualNodes": 200127,
+    "elapsedMs": 769.335699999996,
+    "engineTimeMs": 757,
+    "file": "search-075.json"
+  },
+  {
+    "position": 38,
+    "nodes": 200000,
+    "actualNodes": 200200,
+    "elapsedMs": 714.1902000000118,
+    "engineTimeMs": 703,
+    "file": "search-076.json"
+  },
+  {
+    "position": 38,
+    "nodes": 1000000,
+    "actualNodes": 1000235,
+    "elapsedMs": 3647.6856999999727,
+    "engineTimeMs": 3637,
+    "file": "search-077.json"
+  },
+  {
+    "position": 39,
+    "nodes": 1000000,
+    "actualNodes": 1000566,
+    "elapsedMs": 3906.7044999999925,
+    "engineTimeMs": 3895,
+    "file": "search-078.json"
+  },
+  {
+    "position": 39,
+    "nodes": 200000,
+    "actualNodes": 200163,
+    "elapsedMs": 842.366399999999,
+    "engineTimeMs": 831,
+    "file": "search-079.json"
+  },
+  {
+    "position": 40,
+    "nodes": 200000,
+    "actualNodes": 200027,
+    "elapsedMs": 731.0387000000046,
+    "engineTimeMs": 713,
+    "file": "search-080.json"
+  },
+  {
+    "position": 40,
+    "nodes": 1000000,
+    "actualNodes": 1000067,
+    "elapsedMs": 3747.217800000013,
+    "engineTimeMs": 3736,
+    "file": "search-081.json"
+  },
+  {
+    "position": 41,
+    "nodes": 1000000,
+    "actualNodes": 1000338,
+    "elapsedMs": 3885.073000000004,
+    "engineTimeMs": 3874,
+    "file": "search-082.json"
+  },
+  {
+    "position": 41,
+    "nodes": 200000,
+    "actualNodes": 200096,
+    "elapsedMs": 730.7913999999873,
+    "engineTimeMs": 719,
+    "file": "search-083.json"
+  },
+  {
+    "position": 42,
+    "nodes": 200000,
+    "actualNodes": 200161,
+    "elapsedMs": 718.2479999999923,
+    "engineTimeMs": 706,
+    "file": "search-084.json"
+  },
+  {
+    "position": 42,
+    "nodes": 1000000,
+    "actualNodes": 1000421,
+    "elapsedMs": 3744.0126000000164,
+    "engineTimeMs": 3732,
+    "file": "search-085.json"
+  },
+  {
+    "position": 43,
+    "nodes": 1000000,
+    "actualNodes": 1000151,
+    "elapsedMs": 3768.5619000000006,
+    "engineTimeMs": 3758,
+    "file": "search-086.json"
+  },
+  {
+    "position": 43,
+    "nodes": 200000,
+    "actualNodes": 200015,
+    "elapsedMs": 809.3716000000131,
+    "engineTimeMs": 799,
+    "file": "search-087.json"
+  },
+  {
+    "position": 44,
+    "nodes": 200000,
+    "actualNodes": 200014,
+    "elapsedMs": 723.1971000000194,
+    "engineTimeMs": 712,
+    "file": "search-088.json"
+  },
+  {
+    "position": 44,
+    "nodes": 1000000,
+    "actualNodes": 1000269,
+    "elapsedMs": 3634.6226000000024,
+    "engineTimeMs": 3624,
+    "file": "search-089.json"
+  },
+  {
+    "position": 45,
+    "nodes": 1000000,
+    "actualNodes": 1000424,
+    "elapsedMs": 4070.293399999995,
+    "engineTimeMs": 4059,
+    "file": "search-090.json"
+  },
+  {
+    "position": 45,
+    "nodes": 200000,
+    "actualNodes": 200098,
+    "elapsedMs": 763.8012999999919,
+    "engineTimeMs": 753,
+    "file": "search-091.json"
+  },
+  {
+    "position": 46,
+    "nodes": 200000,
+    "actualNodes": 200066,
+    "elapsedMs": 905.2478000000119,
+    "engineTimeMs": 894,
+    "file": "search-092.json"
+  },
+  {
+    "position": 46,
+    "nodes": 1000000,
+    "actualNodes": 1000355,
+    "elapsedMs": 3557.757200000022,
+    "engineTimeMs": 3543,
+    "file": "search-093.json"
+  },
+  {
+    "position": 47,
+    "nodes": 1000000,
+    "actualNodes": 1000281,
+    "elapsedMs": 3599.0399000000034,
+    "engineTimeMs": 3588,
+    "file": "search-094.json"
+  },
+  {
+    "position": 47,
+    "nodes": 200000,
+    "actualNodes": 200114,
+    "elapsedMs": 730.9982999999775,
+    "engineTimeMs": 720,
+    "file": "search-095.json"
+  },
+  {
+    "position": 48,
+    "nodes": 200000,
+    "actualNodes": 200187,
+    "elapsedMs": 787.8006999999925,
+    "engineTimeMs": 776,
+    "file": "search-096.json"
+  },
+  {
+    "position": 48,
+    "nodes": 1000000,
+    "actualNodes": 1000200,
+    "elapsedMs": 3776.2139000000025,
+    "engineTimeMs": 3763,
+    "file": "search-097.json"
+  },
+  {
+    "position": 49,
+    "nodes": 1000000,
+    "actualNodes": 1000661,
+    "elapsedMs": 3580.5113999999885,
+    "engineTimeMs": 3569,
+    "file": "search-098.json"
+  },
+  {
+    "position": 49,
+    "nodes": 200000,
+    "actualNodes": 200056,
+    "elapsedMs": 653.4426000000094,
+    "engineTimeMs": 642,
+    "file": "search-099.json"
+  },
+  {
+    "position": 50,
+    "nodes": 200000,
+    "actualNodes": 200181,
+    "elapsedMs": 765.6809000000067,
+    "engineTimeMs": 754,
+    "file": "search-100.json"
+  },
+  {
+    "position": 50,
+    "nodes": 1000000,
+    "actualNodes": 1000139,
+    "elapsedMs": 3735.1986000000034,
+    "engineTimeMs": 3725,
+    "file": "search-101.json"
+  },
+  {
+    "position": 51,
+    "nodes": 1000000,
+    "actualNodes": 1000328,
+    "elapsedMs": 3961.865700000024,
+    "engineTimeMs": 3951,
+    "file": "search-102.json"
+  },
+  {
+    "position": 51,
+    "nodes": 200000,
+    "actualNodes": 200081,
+    "elapsedMs": 769.3618000000133,
+    "engineTimeMs": 757,
+    "file": "search-103.json"
+  },
+  {
+    "position": 52,
+    "nodes": 200000,
+    "actualNodes": 200268,
+    "elapsedMs": 752.772100000002,
+    "engineTimeMs": 740,
+    "file": "search-104.json"
+  },
+  {
+    "position": 52,
+    "nodes": 1000000,
+    "actualNodes": 1000381,
+    "elapsedMs": 3689.4121999999916,
+    "engineTimeMs": 3679,
+    "file": "search-105.json"
+  },
+  {
+    "position": 53,
+    "nodes": 1000000,
+    "actualNodes": 1000006,
+    "elapsedMs": 3663.345399999991,
+    "engineTimeMs": 3653,
+    "file": "search-106.json"
+  },
+  {
+    "position": 53,
+    "nodes": 200000,
+    "actualNodes": 200115,
+    "elapsedMs": 718.2809999999881,
+    "engineTimeMs": 708,
+    "file": "search-107.json"
+  },
+  {
+    "position": 54,
+    "nodes": 200000,
+    "actualNodes": 200145,
+    "elapsedMs": 772.793399999995,
+    "engineTimeMs": 761,
+    "file": "search-108.json"
+  },
+  {
+    "position": 54,
+    "nodes": 1000000,
+    "actualNodes": 1000531,
+    "elapsedMs": 3583.4504000000015,
+    "engineTimeMs": 3573,
+    "file": "search-109.json"
+  },
+  {
+    "position": 55,
+    "nodes": 1000000,
+    "actualNodes": 1000478,
+    "elapsedMs": 3379.8213000000105,
+    "engineTimeMs": 3369,
+    "file": "search-110.json"
+  },
+  {
+    "position": 55,
+    "nodes": 200000,
+    "actualNodes": 200058,
+    "elapsedMs": 638.3392000000167,
+    "engineTimeMs": 627,
+    "file": "search-111.json"
+  },
+  {
+    "position": 56,
+    "nodes": 200000,
+    "actualNodes": 200242,
+    "elapsedMs": 713.6039000000164,
+    "engineTimeMs": 702,
+    "file": "search-112.json"
+  },
+  {
+    "position": 56,
+    "nodes": 1000000,
+    "actualNodes": 1000445,
+    "elapsedMs": 3739.354399999982,
+    "engineTimeMs": 3729,
+    "file": "search-113.json"
+  },
+  {
+    "position": 57,
+    "nodes": 1000000,
+    "actualNodes": 1000254,
+    "elapsedMs": 3426.8557000000146,
+    "engineTimeMs": 3416,
+    "file": "search-114.json"
+  },
+  {
+    "position": 57,
+    "nodes": 200000,
+    "actualNodes": 200096,
+    "elapsedMs": 722.9998999999953,
+    "engineTimeMs": 712,
+    "file": "search-115.json"
+  },
+  {
+    "position": 58,
+    "nodes": 200000,
+    "actualNodes": 200038,
+    "elapsedMs": 672.9447999999975,
+    "engineTimeMs": 662,
+    "file": "search-116.json"
+  },
+  {
+    "position": 58,
+    "nodes": 1000000,
+    "actualNodes": 1000640,
+    "elapsedMs": 3225.467100000009,
+    "engineTimeMs": 3215,
+    "file": "search-117.json"
+  },
+  {
+    "position": 59,
+    "nodes": 1000000,
+    "actualNodes": 1000191,
+    "elapsedMs": 3310.816200000001,
+    "engineTimeMs": 3300,
+    "file": "search-118.json"
+  },
+  {
+    "position": 59,
+    "nodes": 200000,
+    "actualNodes": 200176,
+    "elapsedMs": 677.227899999998,
+    "engineTimeMs": 667,
+    "file": "search-119.json"
+  },
+  {
+    "position": 60,
+    "nodes": 200000,
+    "actualNodes": 200052,
+    "elapsedMs": 672.4459999999963,
+    "engineTimeMs": 661,
+    "file": "search-120.json"
+  },
+  {
+    "position": 60,
+    "nodes": 1000000,
+    "actualNodes": 1000254,
+    "elapsedMs": 3453.02919999999,
+    "engineTimeMs": 3442,
+    "file": "search-121.json"
+  },
+  {
+    "position": 61,
+    "nodes": 1000000,
+    "actualNodes": 1000489,
+    "elapsedMs": 3273.724600000016,
+    "engineTimeMs": 3263,
+    "file": "search-122.json"
+  },
+  {
+    "position": 61,
+    "nodes": 200000,
+    "actualNodes": 200112,
+    "elapsedMs": 664.8931999999913,
+    "engineTimeMs": 654,
+    "file": "search-123.json"
+  },
+  {
+    "position": 62,
+    "nodes": 200000,
+    "actualNodes": 200068,
+    "elapsedMs": 716.67220000003,
+    "engineTimeMs": 705,
+    "file": "search-124.json"
+  },
+  {
+    "position": 62,
+    "nodes": 1000000,
+    "actualNodes": 1000007,
+    "elapsedMs": 3340.482299999974,
+    "engineTimeMs": 3329,
+    "file": "search-125.json"
+  },
+  {
+    "position": 63,
+    "nodes": 1000000,
+    "actualNodes": 1000222,
+    "elapsedMs": 3078.3904999999795,
+    "engineTimeMs": 3067,
+    "file": "search-126.json"
+  },
+  {
+    "position": 63,
+    "nodes": 200000,
+    "actualNodes": 200151,
+    "elapsedMs": 609.9433000000427,
+    "engineTimeMs": 599,
+    "file": "search-127.json"
+  },
+  {
+    "position": 64,
+    "nodes": 200000,
+    "actualNodes": 200011,
+    "elapsedMs": 585.8378999999841,
+    "engineTimeMs": 575,
+    "file": "search-128.json"
+  },
+  {
+    "position": 64,
+    "nodes": 1000000,
+    "actualNodes": 1000399,
+    "elapsedMs": 3208.992200000037,
+    "engineTimeMs": 3198,
+    "file": "search-129.json"
+  },
+  {
+    "position": 65,
+    "nodes": 1000000,
+    "actualNodes": 1000406,
+    "elapsedMs": 3127.9225000000442,
+    "engineTimeMs": 3117,
+    "file": "search-130.json"
+  },
+  {
+    "position": 65,
+    "nodes": 200000,
+    "actualNodes": 200040,
+    "elapsedMs": 615.6434000000008,
+    "engineTimeMs": 604,
+    "file": "search-131.json"
+  },
+  {
+    "position": 66,
+    "nodes": 200000,
+    "actualNodes": 200223,
+    "elapsedMs": 787.564400000032,
+    "engineTimeMs": 775,
+    "file": "search-132.json"
+  },
+  {
+    "position": 66,
+    "nodes": 1000000,
+    "actualNodes": 1000531,
+    "elapsedMs": 3318.761600000027,
+    "engineTimeMs": 3308,
+    "file": "search-133.json"
+  },
+  {
+    "position": 67,
+    "nodes": 1000000,
+    "actualNodes": 1000372,
+    "elapsedMs": 3363.897100000002,
+    "engineTimeMs": 3351,
+    "file": "search-134.json"
+  },
+  {
+    "position": 67,
+    "nodes": 200000,
+    "actualNodes": 200159,
+    "elapsedMs": 639.7852999999886,
+    "engineTimeMs": 629,
+    "file": "search-135.json"
+  },
+  {
+    "position": 68,
+    "nodes": 200000,
+    "actualNodes": 200202,
+    "elapsedMs": 536.5488999999943,
+    "engineTimeMs": 526,
+    "file": "search-136.json"
+  },
+  {
+    "position": 68,
+    "nodes": 1000000,
+    "actualNodes": 1000200,
+    "elapsedMs": 2789.715599999996,
+    "engineTimeMs": 2778,
+    "file": "search-137.json"
+  },
+  {
+    "position": 69,
+    "nodes": 1000000,
+    "actualNodes": 1000360,
+    "elapsedMs": 2878.55700000003,
+    "engineTimeMs": 2868,
+    "file": "search-138.json"
+  },
+  {
+    "position": 69,
+    "nodes": 200000,
+    "actualNodes": 200033,
+    "elapsedMs": 635.108899999992,
+    "engineTimeMs": 623,
+    "file": "search-139.json"
+  },
+  {
+    "position": 70,
+    "nodes": 200000,
+    "actualNodes": 200084,
+    "elapsedMs": 649.8994999999995,
+    "engineTimeMs": 639,
+    "file": "search-140.json"
+  },
+  {
+    "position": 70,
+    "nodes": 1000000,
+    "actualNodes": 1000031,
+    "elapsedMs": 3076.4063000000315,
+    "engineTimeMs": 3063,
+    "file": "search-141.json"
+  },
+  {
+    "position": 71,
+    "nodes": 1000000,
+    "actualNodes": 1000709,
+    "elapsedMs": 3119.3633000000264,
+    "engineTimeMs": 3107,
+    "file": "search-142.json"
+  },
+  {
+    "position": 71,
+    "nodes": 200000,
+    "actualNodes": 200052,
+    "elapsedMs": 594.1232999999775,
+    "engineTimeMs": 583,
+    "file": "search-143.json"
+  },
+  {
+    "position": 72,
+    "nodes": 200000,
+    "actualNodes": 200198,
+    "elapsedMs": 631.6986000000034,
+    "engineTimeMs": 621,
+    "file": "search-144.json"
+  },
+  {
+    "position": 72,
+    "nodes": 1000000,
+    "actualNodes": 1000502,
+    "elapsedMs": 2874.9303000000073,
+    "engineTimeMs": 2864,
+    "file": "search-145.json"
+  },
+  {
+    "position": 73,
+    "nodes": 1000000,
+    "actualNodes": 1000168,
+    "elapsedMs": 3084.704399999988,
+    "engineTimeMs": 3073,
+    "file": "search-146.json"
+  },
+  {
+    "position": 73,
+    "nodes": 200000,
+    "actualNodes": 200236,
+    "elapsedMs": 581.961500000034,
+    "engineTimeMs": 571,
+    "file": "search-147.json"
+  },
+  {
+    "position": 74,
+    "nodes": 200000,
+    "actualNodes": 200178,
+    "elapsedMs": 648.2018999999855,
+    "engineTimeMs": 637,
+    "file": "search-148.json"
+  },
+  {
+    "position": 74,
+    "nodes": 1000000,
+    "actualNodes": 1000194,
+    "elapsedMs": 3062.853400000022,
+    "engineTimeMs": 3052,
+    "file": "search-149.json"
+  },
+  {
+    "position": 75,
+    "nodes": 1000000,
+    "actualNodes": 1000005,
+    "elapsedMs": 2834.6780000000144,
+    "engineTimeMs": 2823,
+    "file": "search-150.json"
+  },
+  {
+    "position": 75,
+    "nodes": 200000,
+    "actualNodes": 200076,
+    "elapsedMs": 690.9300000000512,
+    "engineTimeMs": 680,
+    "file": "search-151.json"
+  },
+  {
+    "position": 76,
+    "nodes": 200000,
+    "actualNodes": 200211,
+    "elapsedMs": 664.3618999999599,
+    "engineTimeMs": 653,
+    "file": "search-152.json"
+  },
+  {
+    "position": 76,
+    "nodes": 1000000,
+    "actualNodes": 1000215,
+    "elapsedMs": 3086.557299999986,
+    "engineTimeMs": 3076,
+    "file": "search-153.json"
+  },
+  {
+    "position": 77,
+    "nodes": 1000000,
+    "actualNodes": 1000238,
+    "elapsedMs": 3156.7075000000186,
+    "engineTimeMs": 3146,
+    "file": "search-154.json"
+  },
+  {
+    "position": 77,
+    "nodes": 200000,
+    "actualNodes": 200073,
+    "elapsedMs": 661.32150000002,
+    "engineTimeMs": 649,
+    "file": "search-155.json"
+  },
+  {
+    "position": 78,
+    "nodes": 200000,
+    "actualNodes": 200093,
+    "elapsedMs": 699.8141000000178,
+    "engineTimeMs": 688,
+    "file": "search-156.json"
+  },
+  {
+    "position": 78,
+    "nodes": 1000000,
+    "actualNodes": 1000492,
+    "elapsedMs": 3294.18670000002,
+    "engineTimeMs": 3283,
+    "file": "search-157.json"
+  },
+  {
+    "position": 79,
+    "nodes": 1000000,
+    "actualNodes": 1000698,
+    "elapsedMs": 3119.108200000017,
+    "engineTimeMs": 3107,
+    "file": "search-158.json"
+  },
+  {
+    "position": 79,
+    "nodes": 200000,
+    "actualNodes": 200237,
+    "elapsedMs": 680.5262000000221,
+    "engineTimeMs": 669,
+    "file": "search-159.json"
+  },
+  {
+    "position": 80,
+    "nodes": 200000,
+    "actualNodes": 200037,
+    "elapsedMs": 728.3470000000088,
+    "engineTimeMs": 716,
+    "file": "search-160.json"
+  },
+  {
+    "position": 80,
+    "nodes": 1000000,
+    "actualNodes": 1000316,
+    "elapsedMs": 3158.9824999999837,
+    "engineTimeMs": 3148,
+    "file": "search-161.json"
+  },
+  {
+    "position": 81,
+    "nodes": 1000000,
+    "actualNodes": 1000009,
+    "elapsedMs": 3081.935999999987,
+    "engineTimeMs": 3071,
+    "file": "search-162.json"
+  },
+  {
+    "position": 81,
+    "nodes": 200000,
+    "actualNodes": 200285,
+    "elapsedMs": 609.7312999999849,
+    "engineTimeMs": 598,
+    "file": "search-163.json"
+  },
+  {
+    "position": 82,
+    "nodes": 200000,
+    "actualNodes": 200188,
+    "elapsedMs": 655.7737999999663,
+    "engineTimeMs": 645,
+    "file": "search-164.json"
+  },
+  {
+    "position": 82,
+    "nodes": 1000000,
+    "actualNodes": 1000350,
+    "elapsedMs": 3053.0160000000033,
+    "engineTimeMs": 3042,
+    "file": "search-165.json"
+  },
+  {
+    "position": 83,
+    "nodes": 1000000,
+    "actualNodes": 1000245,
+    "elapsedMs": 2667.9771000000183,
+    "engineTimeMs": 2656,
+    "file": "search-166.json"
+  },
+  {
+    "position": 83,
+    "nodes": 200000,
+    "actualNodes": 200028,
+    "elapsedMs": 594.9412000000011,
+    "engineTimeMs": 584,
+    "file": "search-167.json"
+  },
+  {
+    "position": 84,
+    "nodes": 200000,
+    "actualNodes": 200248,
+    "elapsedMs": 626.7945999999647,
+    "engineTimeMs": 617,
+    "file": "search-168.json"
+  },
+  {
+    "position": 84,
+    "nodes": 1000000,
+    "actualNodes": 1000465,
+    "elapsedMs": 3111.9121999999625,
+    "engineTimeMs": 3100,
+    "file": "search-169.json"
+  },
+  {
+    "position": 85,
+    "nodes": 1000000,
+    "actualNodes": 1000420,
+    "elapsedMs": 3557.239900000044,
+    "engineTimeMs": 3545,
+    "file": "search-170.json"
+  },
+  {
+    "position": 85,
+    "nodes": 200000,
+    "actualNodes": 200080,
+    "elapsedMs": 655.7758000000031,
+    "engineTimeMs": 644,
+    "file": "search-171.json"
+  },
+  {
+    "position": 86,
+    "nodes": 200000,
+    "actualNodes": 200129,
+    "elapsedMs": 736.0078999999678,
+    "engineTimeMs": 725,
+    "file": "search-172.json"
+  },
+  {
+    "position": 86,
+    "nodes": 1000000,
+    "actualNodes": 1000411,
+    "elapsedMs": 3837.7565000000177,
+    "engineTimeMs": 3827,
+    "file": "search-173.json"
+  },
+  {
+    "position": 87,
+    "nodes": 1000000,
+    "actualNodes": 1000547,
+    "elapsedMs": 3541.5034999999916,
+    "engineTimeMs": 3529,
+    "file": "search-174.json"
+  },
+  {
+    "position": 87,
+    "nodes": 200000,
+    "actualNodes": 200248,
+    "elapsedMs": 676.3598000000347,
+    "engineTimeMs": 665,
+    "file": "search-175.json"
+  },
+  {
+    "position": 88,
+    "nodes": 200000,
+    "actualNodes": 200091,
+    "elapsedMs": 771.2339999999967,
+    "engineTimeMs": 759,
+    "file": "search-176.json"
+  },
+  {
+    "position": 88,
+    "nodes": 1000000,
+    "actualNodes": 1000157,
+    "elapsedMs": 3722.7734000000055,
+    "engineTimeMs": 3712,
+    "file": "search-177.json"
+  },
+  {
+    "position": 89,
+    "nodes": 1000000,
+    "actualNodes": 1000225,
+    "elapsedMs": 3718.699800000002,
+    "engineTimeMs": 3709,
+    "file": "search-178.json"
+  },
+  {
+    "position": 89,
+    "nodes": 200000,
+    "actualNodes": 200179,
+    "elapsedMs": 715.3486000000266,
+    "engineTimeMs": 704,
+    "file": "search-179.json"
+  },
+  {
+    "position": 90,
+    "nodes": 200000,
+    "actualNodes": 200044,
+    "elapsedMs": 760.5973999999696,
+    "engineTimeMs": 749,
+    "file": "search-180.json"
+  },
+  {
+    "position": 90,
+    "nodes": 1000000,
+    "actualNodes": 1000213,
+    "elapsedMs": 3781.4001999999746,
+    "engineTimeMs": 3771,
+    "file": "search-181.json"
+  },
+  {
+    "position": 91,
+    "nodes": 1000000,
+    "actualNodes": 1000130,
+    "elapsedMs": 3904.5023999999976,
+    "engineTimeMs": 3893,
+    "file": "search-182.json"
+  },
+  {
+    "position": 91,
+    "nodes": 200000,
+    "actualNodes": 200082,
+    "elapsedMs": 743.3476000000373,
+    "engineTimeMs": 732,
+    "file": "search-183.json"
+  },
+  {
+    "position": 92,
+    "nodes": 200000,
+    "actualNodes": 200046,
+    "elapsedMs": 799.6467999999877,
+    "engineTimeMs": 789,
+    "file": "search-184.json"
+  },
+  {
+    "position": 92,
+    "nodes": 1000000,
+    "actualNodes": 1000472,
+    "elapsedMs": 3851.6805999999633,
+    "engineTimeMs": 3841,
+    "file": "search-185.json"
+  },
+  {
+    "position": 93,
+    "nodes": 1000000,
+    "actualNodes": 1000220,
+    "elapsedMs": 4006.722699999984,
+    "engineTimeMs": 3995,
+    "file": "search-186.json"
+  },
+  {
+    "position": 93,
+    "nodes": 200000,
+    "actualNodes": 200198,
+    "elapsedMs": 729.3927999999723,
+    "engineTimeMs": 718,
+    "file": "search-187.json"
+  },
+  {
+    "position": 94,
+    "nodes": 200000,
+    "actualNodes": 200131,
+    "elapsedMs": 816.4729999999981,
+    "engineTimeMs": 803,
+    "file": "search-188.json"
+  },
+  {
+    "position": 94,
+    "nodes": 1000000,
+    "actualNodes": 1000013,
+    "elapsedMs": 4080.2423999999883,
+    "engineTimeMs": 4068,
+    "file": "search-189.json"
+  },
+  {
+    "position": 95,
+    "nodes": 1000000,
+    "actualNodes": 1000430,
+    "elapsedMs": 3797.6375000000116,
+    "engineTimeMs": 3786,
+    "file": "search-190.json"
+  },
+  {
+    "position": 95,
+    "nodes": 200000,
+    "actualNodes": 200019,
+    "elapsedMs": 746.1067000000039,
+    "engineTimeMs": 735,
+    "file": "search-191.json"
+  },
+  {
+    "position": 96,
+    "nodes": 200000,
+    "actualNodes": 200155,
+    "elapsedMs": 729.7917000000016,
+    "engineTimeMs": 719,
+    "file": "search-192.json"
+  },
+  {
+    "position": 96,
+    "nodes": 1000000,
+    "actualNodes": 1000214,
+    "elapsedMs": 3672.1221999999834,
+    "engineTimeMs": 3661,
+    "file": "search-193.json"
+  },
+  {
+    "position": 97,
+    "nodes": 1000000,
+    "actualNodes": 1000112,
+    "elapsedMs": 4026.2908999999636,
+    "engineTimeMs": 4015,
+    "file": "search-194.json"
+  },
+  {
+    "position": 97,
+    "nodes": 200000,
+    "actualNodes": 200208,
+    "elapsedMs": 752.4458999999915,
+    "engineTimeMs": 741,
+    "file": "search-195.json"
+  },
+  {
+    "position": 98,
+    "nodes": 200000,
+    "actualNodes": 200100,
+    "elapsedMs": 715.0944000000018,
+    "engineTimeMs": 704,
+    "file": "search-196.json"
+  },
+  {
+    "position": 98,
+    "nodes": 1000000,
+    "actualNodes": 1000304,
+    "elapsedMs": 3691.442700000014,
+    "engineTimeMs": 3679,
+    "file": "search-197.json"
+  },
+  {
+    "position": 99,
+    "nodes": 1000000,
+    "actualNodes": 1000301,
+    "elapsedMs": 3601.6566999999923,
+    "engineTimeMs": 3591,
+    "file": "search-198.json"
+  },
+  {
+    "position": 99,
+    "nodes": 200000,
+    "actualNodes": 200100,
+    "elapsedMs": 727.8524000000325,
+    "engineTimeMs": 717,
+    "file": "search-199.json"
+  },
+  {
+    "position": 100,
+    "nodes": 200000,
+    "actualNodes": 200094,
+    "elapsedMs": 767.5219999999972,
+    "engineTimeMs": 756,
+    "file": "search-200.json"
+  },
+  {
+    "position": 100,
+    "nodes": 1000000,
+    "actualNodes": 1000526,
+    "elapsedMs": 3859.310899999982,
+    "engineTimeMs": 3847,
+    "file": "search-201.json"
+  },
+  {
+    "position": 101,
+    "nodes": 1000000,
+    "actualNodes": 1000488,
+    "elapsedMs": 3993.2409000000334,
+    "engineTimeMs": 3983,
+    "file": "search-202.json"
+  },
+  {
+    "position": 101,
+    "nodes": 200000,
+    "actualNodes": 200269,
+    "elapsedMs": 747.4298000000417,
+    "engineTimeMs": 735,
+    "file": "search-203.json"
+  },
+  {
+    "position": 102,
+    "nodes": 200000,
+    "actualNodes": 200002,
+    "elapsedMs": 710.1075000000419,
+    "engineTimeMs": 699,
+    "file": "search-204.json"
+  },
+  {
+    "position": 102,
+    "nodes": 1000000,
+    "actualNodes": 1000441,
+    "elapsedMs": 3661.01529999997,
+    "engineTimeMs": 3650,
+    "file": "search-205.json"
+  },
+  {
+    "position": 103,
+    "nodes": 1000000,
+    "actualNodes": 1000350,
+    "elapsedMs": 3593.4051999999792,
+    "engineTimeMs": 3583,
+    "file": "search-206.json"
+  },
+  {
+    "position": 103,
+    "nodes": 200000,
+    "actualNodes": 200122,
+    "elapsedMs": 674.7709000000032,
+    "engineTimeMs": 664,
+    "file": "search-207.json"
+  },
+  {
+    "position": 104,
+    "nodes": 200000,
+    "actualNodes": 200025,
+    "elapsedMs": 744.9732000000076,
+    "engineTimeMs": 733,
+    "file": "search-208.json"
+  },
+  {
+    "position": 104,
+    "nodes": 1000000,
+    "actualNodes": 1000211,
+    "elapsedMs": 3758.011700000032,
+    "engineTimeMs": 3747,
+    "file": "search-209.json"
+  },
+  {
+    "position": 105,
+    "nodes": 1000000,
+    "actualNodes": 1000479,
+    "elapsedMs": 3389.1344999999856,
+    "engineTimeMs": 3378,
+    "file": "search-210.json"
+  },
+  {
+    "position": 105,
+    "nodes": 200000,
+    "actualNodes": 200037,
+    "elapsedMs": 653.7090999999782,
+    "engineTimeMs": 642,
+    "file": "search-211.json"
+  },
+  {
+    "position": 106,
+    "nodes": 200000,
+    "actualNodes": 200134,
+    "elapsedMs": 657.1608000000124,
+    "engineTimeMs": 646,
+    "file": "search-212.json"
+  },
+  {
+    "position": 106,
+    "nodes": 1000000,
+    "actualNodes": 1000486,
+    "elapsedMs": 3536.738299999968,
+    "engineTimeMs": 3526,
+    "file": "search-213.json"
+  },
+  {
+    "position": 107,
+    "nodes": 1000000,
+    "actualNodes": 1000590,
+    "elapsedMs": 3488.661699999997,
+    "engineTimeMs": 3477,
+    "file": "search-214.json"
+  },
+  {
+    "position": 107,
+    "nodes": 200000,
+    "actualNodes": 200199,
+    "elapsedMs": 647.7673000000068,
+    "engineTimeMs": 638,
+    "file": "search-215.json"
+  },
+  {
+    "position": 108,
+    "nodes": 200000,
+    "actualNodes": 200011,
+    "elapsedMs": 629.7025999999605,
+    "engineTimeMs": 619,
+    "file": "search-216.json"
+  },
+  {
+    "position": 108,
+    "nodes": 1000000,
+    "actualNodes": 1000625,
+    "elapsedMs": 3258.9049999999697,
+    "engineTimeMs": 3249,
+    "file": "search-217.json"
+  },
+  {
+    "position": 109,
+    "nodes": 1000000,
+    "actualNodes": 1000618,
+    "elapsedMs": 3440.0039000000106,
+    "engineTimeMs": 3429,
+    "file": "search-218.json"
+  },
+  {
+    "position": 109,
+    "nodes": 200000,
+    "actualNodes": 200099,
+    "elapsedMs": 650.7140000000363,
+    "engineTimeMs": 639,
+    "file": "search-219.json"
+  },
+  {
+    "position": 110,
+    "nodes": 200000,
+    "actualNodes": 200012,
+    "elapsedMs": 680.4351000000024,
+    "engineTimeMs": 669,
+    "file": "search-220.json"
+  },
+  {
+    "position": 110,
+    "nodes": 1000000,
+    "actualNodes": 1000304,
+    "elapsedMs": 3544.295199999993,
+    "engineTimeMs": 3533,
+    "file": "search-221.json"
+  },
+  {
+    "position": 111,
+    "nodes": 1000000,
+    "actualNodes": 1000116,
+    "elapsedMs": 3443.3671999999788,
+    "engineTimeMs": 3433,
+    "file": "search-222.json"
+  },
+  {
+    "position": 111,
+    "nodes": 200000,
+    "actualNodes": 200018,
+    "elapsedMs": 657.13400000002,
+    "engineTimeMs": 646,
+    "file": "search-223.json"
+  },
+  {
+    "position": 112,
+    "nodes": 200000,
+    "actualNodes": 200204,
+    "elapsedMs": 724.5394000000088,
+    "engineTimeMs": 714,
+    "file": "search-224.json"
+  },
+  {
+    "position": 112,
+    "nodes": 1000000,
+    "actualNodes": 1000346,
+    "elapsedMs": 3627.4566999999806,
+    "engineTimeMs": 3616,
+    "file": "search-225.json"
+  },
+  {
+    "position": 113,
+    "nodes": 1000000,
+    "actualNodes": 1000679,
+    "elapsedMs": 3563.011600000027,
+    "engineTimeMs": 3552,
+    "file": "search-226.json"
+  },
+  {
+    "position": 113,
+    "nodes": 200000,
+    "actualNodes": 200185,
+    "elapsedMs": 746.9351000000024,
+    "engineTimeMs": 737,
+    "file": "search-227.json"
+  },
+  {
+    "position": 114,
+    "nodes": 200000,
+    "actualNodes": 200147,
+    "elapsedMs": 793.0874000000185,
+    "engineTimeMs": 783,
+    "file": "search-228.json"
+  },
+  {
+    "position": 114,
+    "nodes": 1000000,
+    "actualNodes": 1000563,
+    "elapsedMs": 3711.136200000008,
+    "engineTimeMs": 3699,
+    "file": "search-229.json"
+  },
+  {
+    "position": 115,
+    "nodes": 1000000,
+    "actualNodes": 1000013,
+    "elapsedMs": 3634.536300000036,
+    "engineTimeMs": 3624,
+    "file": "search-230.json"
+  },
+  {
+    "position": 115,
+    "nodes": 200000,
+    "actualNodes": 200146,
+    "elapsedMs": 703.4312999999966,
+    "engineTimeMs": 693,
+    "file": "search-231.json"
+  },
+  {
+    "position": 116,
+    "nodes": 200000,
+    "actualNodes": 200000,
+    "elapsedMs": 724.2065999999759,
+    "engineTimeMs": 714,
+    "file": "search-232.json"
+  },
+  {
+    "position": 116,
+    "nodes": 1000000,
+    "actualNodes": 1000098,
+    "elapsedMs": 3736.5304999999935,
+    "engineTimeMs": 3726,
+    "file": "search-233.json"
+  },
+  {
+    "position": 117,
+    "nodes": 1000000,
+    "actualNodes": 1000611,
+    "elapsedMs": 3815.583099999989,
+    "engineTimeMs": 3805,
+    "file": "search-234.json"
+  },
+  {
+    "position": 117,
+    "nodes": 200000,
+    "actualNodes": 200237,
+    "elapsedMs": 751.2453000000096,
+    "engineTimeMs": 739,
+    "file": "search-235.json"
+  },
+  {
+    "position": 118,
+    "nodes": 200000,
+    "actualNodes": 200091,
+    "elapsedMs": 752.2435000000405,
+    "engineTimeMs": 741,
+    "file": "search-236.json"
+  },
+  {
+    "position": 118,
+    "nodes": 1000000,
+    "actualNodes": 1000041,
+    "elapsedMs": 3853.937899999961,
+    "engineTimeMs": 3842,
+    "file": "search-237.json"
+  },
+  {
+    "position": 119,
+    "nodes": 1000000,
+    "actualNodes": 1000442,
+    "elapsedMs": 3631.745600000024,
+    "engineTimeMs": 3621,
+    "file": "search-238.json"
+  },
+  {
+    "position": 119,
+    "nodes": 200000,
+    "actualNodes": 200202,
+    "elapsedMs": 781.4925999999978,
+    "engineTimeMs": 771,
+    "file": "search-239.json"
+  },
+  {
+    "position": 120,
+    "nodes": 200000,
+    "actualNodes": 200156,
+    "elapsedMs": 710.9878999999491,
+    "engineTimeMs": 699,
+    "file": "search-240.json"
+  },
+  {
+    "position": 120,
+    "nodes": 1000000,
+    "actualNodes": 1000483,
+    "elapsedMs": 3810.8523999999743,
+    "engineTimeMs": 3799,
+    "file": "search-241.json"
+  },
+  {
+    "position": 121,
+    "nodes": 1000000,
+    "actualNodes": 1000586,
+    "elapsedMs": 3702.5030999999726,
+    "engineTimeMs": 3691,
+    "file": "search-242.json"
+  },
+  {
+    "position": 121,
+    "nodes": 200000,
+    "actualNodes": 200186,
+    "elapsedMs": 679.0743000000948,
+    "engineTimeMs": 668,
+    "file": "search-243.json"
+  },
+  {
+    "position": 122,
+    "nodes": 200000,
+    "actualNodes": 200169,
+    "elapsedMs": 662.7463999999454,
+    "engineTimeMs": 652,
+    "file": "search-244.json"
+  },
+  {
+    "position": 122,
+    "nodes": 1000000,
+    "actualNodes": 1000314,
+    "elapsedMs": 3466.0725000000093,
+    "engineTimeMs": 3455,
+    "file": "search-245.json"
+  },
+  {
+    "position": 123,
+    "nodes": 1000000,
+    "actualNodes": 1000122,
+    "elapsedMs": 3358.9956999999704,
+    "engineTimeMs": 3347,
+    "file": "search-246.json"
+  },
+  {
+    "position": 123,
+    "nodes": 200000,
+    "actualNodes": 200192,
+    "elapsedMs": 628.407600000035,
+    "engineTimeMs": 617,
+    "file": "search-247.json"
+  },
+  {
+    "position": 124,
+    "nodes": 200000,
+    "actualNodes": 200160,
+    "elapsedMs": 661.5036000000546,
+    "engineTimeMs": 651,
+    "file": "search-248.json"
+  },
+  {
+    "position": 124,
+    "nodes": 1000000,
+    "actualNodes": 1000414,
+    "elapsedMs": 3447.6841999999015,
+    "engineTimeMs": 3437,
+    "file": "search-249.json"
+  },
+  {
+    "position": 125,
+    "nodes": 1000000,
+    "actualNodes": 1000274,
+    "elapsedMs": 3479.435700000031,
+    "engineTimeMs": 3468,
+    "file": "search-250.json"
+  },
+  {
+    "position": 125,
+    "nodes": 200000,
+    "actualNodes": 200072,
+    "elapsedMs": 692.9714999999851,
+    "engineTimeMs": 682,
+    "file": "search-251.json"
+  },
+  {
+    "position": 126,
+    "nodes": 200000,
+    "actualNodes": 200122,
+    "elapsedMs": 724.452500000014,
+    "engineTimeMs": 714,
+    "file": "search-252.json"
+  },
+  {
+    "position": 126,
+    "nodes": 1000000,
+    "actualNodes": 1000350,
+    "elapsedMs": 3560.9851999999955,
+    "engineTimeMs": 3548,
+    "file": "search-253.json"
+  },
+  {
+    "position": 127,
+    "nodes": 1000000,
+    "actualNodes": 1000296,
+    "elapsedMs": 3462.0683000000427,
+    "engineTimeMs": 3450,
+    "file": "search-254.json"
+  },
+  {
+    "position": 127,
+    "nodes": 200000,
+    "actualNodes": 200201,
+    "elapsedMs": 657.1800999999978,
+    "engineTimeMs": 646,
+    "file": "search-255.json"
+  },
+  {
+    "position": 128,
+    "nodes": 200000,
+    "actualNodes": 200023,
+    "elapsedMs": 679.2306000000099,
+    "engineTimeMs": 667,
+    "file": "search-256.json"
+  },
+  {
+    "position": 128,
+    "nodes": 1000000,
+    "actualNodes": 1000095,
+    "elapsedMs": 3488.5187999999616,
+    "engineTimeMs": 3478,
+    "file": "search-257.json"
+  },
+  {
+    "position": 129,
+    "nodes": 1000000,
+    "actualNodes": 1000706,
+    "elapsedMs": 3472.875,
+    "engineTimeMs": 3461,
+    "file": "search-258.json"
+  },
+  {
+    "position": 129,
+    "nodes": 200000,
+    "actualNodes": 200060,
+    "elapsedMs": 790.2258999999613,
+    "engineTimeMs": 779,
+    "file": "search-259.json"
+  }
+]

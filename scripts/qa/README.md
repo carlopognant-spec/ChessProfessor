@@ -143,6 +143,24 @@ la curva della classificazione né con una stima Elo.
 
 ## Test senza nuove ricerche
 
+### Confronto pubblico dei budget, 12 ottobre 2026
+
+`scripts/benchmark-public-node-budgets.js` confronta le prime due partite
+pubbliche del Mondiale 2024, fissate prima delle ricerche, a 200k e 1M nodi.
+Protocollo e manifest monouso sono in `agent-output/node-budget-public-v1/`:
+non rilanciare la raccolta e non cambiare il campione dopo averne visto gli
+esiti. I due budget sono alternati per posizione; il profilo resta Stockfish
+19 large-single WASM, MultiPV 5, un thread, Hash 16 MB, pulita per ricerca.
+
+`scripts/report-public-node-budgets.js` verifica e riassume i dati offline,
+senza motore: ricostruisce gli snapshot dai raw UCI, riconcilia la telemetria,
+riproduce le classificazioni e confronta il primo lotto selettivo con la
+ricerca completa. Scrive solo file nuovi; anche il report esistente non va
+sovrascritto. Non leggere questo esperimento come precisione rispetto a
+Chess.com: mancano etichette indipendenti. I tempi sono del WASM tramite Node
+sul PC disponibile, non una prova nel browser o sul telefono. Non modifica
+app, soglie, rating, cache precedenti o i 20 input congelati.
+
 Da PowerShell nella radice del progetto:
 
 ```powershell
