@@ -1,0 +1,98 @@
+{
+  "newSearches": 0,
+  "plies": 51,
+  "currentCodeReproducesLabels": true,
+  "frozenInputsVerified": 20,
+  "source": {
+    "path": "agent-output/optional-refinement-full-game-v1/results.json",
+    "sha256": "d933a86ce6c4003a8eb4b1305101058ffa6b796ab2de697611a117d368bca93a"
+  },
+  "finalSources": [
+    {
+      "path": "src/lib/analysisRefinement.js",
+      "sha256": "eb92cdd0b3cb0af2f0b1b606f93a27b4c69def16b5258250bafcde14cae0d4bd"
+    },
+    {
+      "path": "src/components/EnginePanel.jsx",
+      "sha256": "030000844bd19391a7854d73fc39e0c15a71ba2b815df28a52d94a930ac9a4d0"
+    },
+    {
+      "path": "src/components/AnalysisSummary.jsx",
+      "sha256": "a95778305169f7462614726eb5fdecaf3023b8949514093c998025c74f2010b3"
+    }
+  ],
+  "categories": [
+    {
+      "label": "Libro",
+      "total": 7,
+      "initialCorrect": 7,
+      "refinedCorrect": 7
+    },
+    {
+      "label": "Forzata",
+      "total": 0,
+      "initialCorrect": 0,
+      "refinedCorrect": 0
+    },
+    {
+      "label": "Migliore",
+      "total": 13,
+      "initialCorrect": 12,
+      "refinedCorrect": 13
+    },
+    {
+      "label": "Ottima",
+      "total": 10,
+      "initialCorrect": 7,
+      "refinedCorrect": 8
+    },
+    {
+      "label": "Buona",
+      "total": 7,
+      "initialCorrect": 1,
+      "refinedCorrect": 3
+    },
+    {
+      "label": "Imprecisione",
+      "total": 4,
+      "initialCorrect": 0,
+      "refinedCorrect": 1
+    },
+    {
+      "label": "Errore",
+      "total": 5,
+      "initialCorrect": 2,
+      "refinedCorrect": 2
+    },
+    {
+      "label": "Errore grave",
+      "total": 1,
+      "initialCorrect": 1,
+      "refinedCorrect": 1
+    },
+    {
+      "label": "Grande",
+      "total": 2,
+      "initialCorrect": 1,
+      "refinedCorrect": 1
+    },
+    {
+      "label": "Geniale",
+      "total": 0,
+      "initialCorrect": 0,
+      "refinedCorrect": 0
+    },
+    {
+      "label": "Mossa mancata",
+      "total": 2,
+      "initialCorrect": 1,
+      "refinedCorrect": 1
+    },
+    {
+      "label": "Non valutabile",
+      "total": 0,
+      "initialCorrect": 0,
+      "refinedCorrect": 0
+    }
+  ]
+}

@@ -13,6 +13,25 @@ function controlledWorker() {
 }
 
 describe('Stockfish MultiPV', () => {
+  it('cancels an active request and drains its bestmove before accepting the next request', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      worker.emit('readyok')
+      const first = engine.analyze('first-fen', 1000000, 1)
+      const rejected = expect(first).rejects.toMatchObject({ name: 'AbortError' })
+      await vi.waitFor(() => expect(worker.messages).toContain('go nodes 1000000'))
+      engine.cancel(); await rejected
+      const next = engine.analyze('second-fen', 200000, 1)
+      expect(worker.messages.filter(m => m.startsWith('go '))).toHaveLength(1)
+      worker.emit('info depth 12 score cp 999 pv e2e4')
+      worker.emit('bestmove e2e4')
+      expect(worker.messages).toContain('position fen second-fen')
+      worker.emit('info depth 12 score cp 20 pv e7e5')
+      worker.emit('bestmove e7e5')
+      expect(await next).toMatchObject({ evalCp: 20 })
+      expect(worker.messages.filter(m => m === 'stop')).toHaveLength(1)
+    } finally { engine.destroy() }
+  })
   it('returns a complete earlier snapshot when bestmove returns to an earlier first choice', async () => {
     const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
     try {

@@ -85,6 +85,15 @@ Apri l'indirizzo mostrato da Vite, normalmente
   restano invariati; il percorso corrente è `src/lib/reviewEvaluation.js`.
 - **Resoconto**: la tabella separa i conteggi Bianco/Nero e le righe selezionabili
   riportano alla posizione precedente alla semimossa.
+- **Approfondimento facoltativo**: dopo l'analisi completa premi
+  **Approfondisci le mosse dubbie**. Ogni richiesta considera fino a 12 mosse
+  con valutazioni indicative, candidati non confermati o perdite vicine a un
+  cambio categoria. Usa un milione di nodi per posizione e riusa i risultati
+  disponibili. Puoi interromperla e confrontare categoria e punteggio iniziali
+  con quelli approfonditi tramite **Mostra analisi approfondita**.
+  **Salva partita e analisi** conserva entrambe le versioni, riapribili offline
+  senza nuove ricerche. Un cambiamento di etichetta non garantisce maggiore
+  concordanza con Chess.com; soglie, rating e analisi iniziale restano invariati.
 - **Precisione**: il resoconto include un valore 0–100 per lato con formula pubblica
   Lichess. È un calcolo distinto dalla classificazione delle mosse; dati mancanti
   o analisi incompleta sono segnalati come parziali.

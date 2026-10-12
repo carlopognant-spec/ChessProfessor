@@ -21,6 +21,7 @@ function AppContent() {
   const [pgnInput, setPgnInput] = useState('')
   const [pgnError, setPgnError] = useState('')
   const [analysisEntries, setAnalysisEntries] = useState([])
+  const [archiveEntries, setArchiveEntries] = useState([])
   const [editorPiece, setEditorPiece] = useState(null)
   const [positionDraft, setPositionDraft] = useState(fen)
   const [gameGeneration, setGameGeneration] = useState(0)
@@ -67,6 +68,7 @@ function AppContent() {
       }
       setPgnError('')
       setAnalysisEntries([])
+      setArchiveEntries([])
       setEngineData(null)
       setSavedAnalysis(null)
     } catch (error) {
@@ -77,6 +79,7 @@ function AppContent() {
   const handleResetGame = () => {
     resetGame()
     setAnalysisEntries([])
+    setArchiveEntries([])
     setEngineData(null)
     setSavedAnalysis(null)
   }
@@ -87,6 +90,7 @@ function AppContent() {
     const entries = archiveAnalysisStatus(record) === 'current' ? record.analysisEntries : []
     setSavedAnalysis(entries.length ? { entries, moves: document.moves, baseFen: document.baseFen } : null)
     setAnalysisEntries(entries)
+    setArchiveEntries(entries)
     setEngineData(null)
     setPgnInput(record.pgn)
     setPgnError('')
@@ -103,7 +107,7 @@ function AppContent() {
           analysisEntries={analysisEntries}
           engineData={engineData}
         />
-        <EnginePanel key={gameGeneration} savedAnalysis={savedAnalysis} onEngineData={setEngineData} onAnalysisData={setAnalysisEntries} />
+        <EnginePanel key={gameGeneration} savedAnalysis={savedAnalysis} onEngineData={setEngineData} onAnalysisData={setAnalysisEntries} onAnalysisArchiveData={setArchiveEntries} />
         <MoveNavigation />
         <details className="tools-menu" onToggle={event => {
           if (event.target === event.currentTarget) setToolsOpen(event.currentTarget.open)
@@ -139,7 +143,7 @@ function AppContent() {
               <UndoButton />
               <button type="button" onClick={handleResetGame}>Reset partita</button>
             </div>
-            <GameArchive getPgn={exportPgn} analysisEntries={analysisEntries} onOpen={handleOpenArchive} />
+            <GameArchive getPgn={exportPgn} analysisEntries={archiveEntries} onOpen={handleOpenArchive} />
           </details>
           <details className="tools-section tools-openings">
             <summary>Aperture</summary>

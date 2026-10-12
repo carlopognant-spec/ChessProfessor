@@ -23,6 +23,32 @@ lanciare durante una semplice pulizia del codice.
 
 ## Categorie e precisione
 
+L'approfondimento facoltativo è in `src/lib/analysisRefinement.js`. La versione
+iniziale resta a 200.000 nodi, con dati a 1.000.000 salvati separatamente nel
+campo `refinement`. Per richiesta: massimo 12 mosse, 24 FEN distinte e riserva
+telemetrica di 5.000 nodi per ricerca. Posizioni condivise e già approfondite
+non generano ricerche duplicate. Il piano deriva da evidenza indicativa,
+candidati speciali o distanza entro 1 punto da una soglia; non dalle etichette
+di riferimento. Questo margine non cambia le soglie del classificatore.
+
+La vista approfondita usa una sola evidenza per FEN anche nelle righe adiacenti.
+L'archivio conserva dati iniziali e approfonditi; un approfondimento con profilo
+incompatibile non viene proiettato sopra quello iniziale. Interruzioni ed errori
+preservano i dati iniziali e le posizioni completate. Non parte un retry al
+riavvio del worker. UI e archivio ricevono rispettivamente vista e dati canonici.
+
+La verifica motore reale su personal-01 completa è in
+`agent-output/optional-refinement-full-game-v1/`: 51 mosse, 12 selezionate,
+17 FEN, 5 ricerche pregresse riusate e 12 nuove. Concordanza 32/51 -> 37/51,
+cinque recuperi, nessuna regressione nel caso. È una partita già studiata e
+un approfondimento selettivo, non precisione generale. Le cache iniziali e
+il confronto complessivo 329/592 restano invariati.
+
+`scripts/validate-optional-refinement.js --prepare` fissa il manifest e
+`--run` consuma quel piano una sola volta; non è un comando da rilanciare
+durante una verifica ordinaria. I raw sono già conservati. La matrice iniziale
+si può verificare senza motore con `scripts/audit-special-classification.js`.
+
 App e QA condividono la classificazione numerica. Il modello attivo usa
 `sigmoid(cp/400)` senza taglio dei centipawn nella funzione
 `calculateWinProbability`. `dropPct` è la perdita in punti percentuali dalla

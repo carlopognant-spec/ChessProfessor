@@ -117,6 +117,19 @@ export class StockfishEngine {
     })
   }
 
+  cancel() {
+    const error = new Error('analysis aborted')
+    error.name = 'AbortError'
+    this._pendingRequest?.reject(error)
+    this._pendingRequest = null
+    const request = this._currentRequest
+    if (!request || request.cancelled) return
+    request.cancelled = true
+    request.reject(error)
+    this._stopTimeout = setTimeout(() => this._fail(new Error('Stockfish non ha completato la ricerca interrotta')), this._stopTimeoutMs)
+    this.worker.postMessage('stop')
+  }
+
   _startPending() {
     if (!this.ready || this._workerError || this._currentRequest || !this._pendingRequest) return
     const request = this._pendingRequest

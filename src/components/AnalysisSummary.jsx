@@ -65,6 +65,11 @@ export default function AnalysisSummary({ entries = [] }) {
               {row.moveFacts?.forced && <small className="mate-distance-note">Unica mossa legale nella posizione.</small>}
               {row.moveFacts?.book && row.numericalClassification && <small className="mate-distance-note">Libro · Valutazione: {CATEGORY_LABELS[row.numericalClassification]}</small>}
               {formatEvaluationEvidence(row) && <small className="mate-distance-note">{formatEvaluationEvidence(row)}</small>}
+              {row.refinementComparison?.examined && <small className="mate-distance-note">
+                Iniziale: {CATEGORY_LABELS[row.refinementComparison.initialClassification]} ({formatAnalysisScore(row.refinementComparison.initialEval, row.refinementComparison.initialMate, { delivered: row.refinementComparison.initialMate === 0 })})
+                {' → '}Approfondita: {CATEGORY_LABELS[row.refinementComparison.refinedClassification]} ({formatAnalysisScore(row.refinementComparison.refinedEval, row.refinementComparison.refinedMate, { delivered: row.refinementComparison.refinedMate === 0 })})
+                {row.refinementComparison.changed ? ' · Valutazione aggiornata.' : ' · Valutazione invariata.'}
+              </small>}
             </span>
           </button>
         ))}

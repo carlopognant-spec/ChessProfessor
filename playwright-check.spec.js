@@ -4,8 +4,88 @@ import { ENGINE_CONFIG } from './src/lib/engineConfig.js'
 import { createAnalysisMetadata } from './src/lib/analysisMetadata.js'
 import { readFileSync } from 'node:fs'
 import { classifyAnalysisEntries, moveEvaluationFields } from './src/lib/classification.js'
+import { createOpeningBook } from './src/lib/openingBook.js'
+import { reclassifyReviewedMoves } from './src/lib/reviewMoves.js'
+import { buildRefinementPlan } from './src/lib/analysisRefinement.js'
 
 const appUrl = 'http://127.0.0.1:4173/ChessProfessor/'
+
+function refinementExample() {
+  const cache = JSON.parse(readFileSync(new URL('./tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json', import.meta.url)))
+  const book = createOpeningBook(JSON.parse(readFileSync(new URL('./src/data/openingPositions.json', import.meta.url))).positions)
+  const metadata = createAnalysisMetadata(), history = [], packets = {}
+  let active = true
+  const raw = cache.entries.map(e => {
+    const isBookMove = active && book.hasPosition(e.fenAfter); if (!isBookMove) active = false
+    const entry = { ...e, playedMove: e.san, playedUci: e.uci, side: e.fenBefore.split(' ')[1],
+      moveNumber: Number(e.fenBefore.split(' ')[5]), moveHistorySan: [...history], isBookMove, analysisMetadata: metadata,
+      engine: { ...e.engine, fen: e.fenBefore, analysisMetadata: metadata },
+      playedEngine: { ...e.playedEngine, fen: e.fenAfter, analysisMetadata: metadata } }
+    history.push(e.san)
+    for (const fen of [e.fenBefore, e.fenAfter]) {
+      const legal = new Chess(fen).moves({ verbose: true }).slice(0, 5)
+      packets[fen] = legal.map((m, i) => `info depth 16 multipv ${i + 1} score cp ${50 - i * 30} nodes 5000 pv ${m.from}${m.to}${m.promotion ?? ''}`)
+      packets[fen].push(`bestmove ${legal[0] ? legal[0].from + legal[0].to + (legal[0].promotion ?? '') : '(none)'}`)
+    }
+    return entry
+  })
+  // Use existing real higher-budget evidence where present. Other packets are
+  // explicitly simulated to test the UI lifecycle, not classification accuracy.
+  for (let i = 0; i < 24; i++) {
+    const r = JSON.parse(readFileSync(new URL(`./agent-output/ordinary-depth-check-v1/search-${String(i).padStart(2, '0')}.json`, import.meta.url)))
+    if (packets[r.fen]) packets[r.fen] = r.rawLines
+  }
+  return { entries: reclassifyReviewedMoves(raw), pgn: cache.pgn, packets }
+}
+
+async function openRefinementExample(page, delay = 5) {
+  const data = refinementExample()
+  await page.addInitScript(({ packets, delay }) => {
+    window.workerCount = 0; window.refinementSearches = 0; window.fastSearches = 0
+    window.Worker = class {
+      constructor() { window.workerCount++ }
+      postMessage(command) {
+        if (command === 'uci') queueMicrotask(() => {
+          if (window.failWorkerStartup) { window.failWorkerStartup = false; this.onerror?.({}) }
+          else this.onmessage?.({ data: 'uciok' })
+        })
+        if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
+        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('go nodes ')) {
+          const deep = command === 'go nodes 1000000'
+          if (deep) window.refinementSearches++; else window.fastSearches++
+          if (deep && window.failRefinement) {
+            window.failRefinement = false
+            queueMicrotask(() => this.onerror?.({}))
+            return
+          }
+          const lines = packets[this.fen] ?? ['info depth 12 score cp 0 nodes 100 pv e7e5', 'bestmove e7e5']
+          this.lastBestmove = lines.find(l => l.startsWith('bestmove '))
+          this.timer = setTimeout(() => { for (const data of lines) this.onmessage?.({ data }) }, deep ? delay : 5)
+        }
+        if (command === 'stop') {
+          clearTimeout(this.timer)
+          queueMicrotask(() => {
+            this.onmessage?.({ data: 'info depth 99 score cp 999 nodes 999999 pv a1a8' })
+            this.onmessage?.({ data: this.lastBestmove ?? 'bestmove e2e4' })
+          })
+        }
+      }
+      terminate() { clearTimeout(this.timer) }
+    }
+  }, { packets: data.packets, delay })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ entries, pgn }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const a = createGameArchive(); await a.save({ pgn, analysisEntries: entries, title: 'Approfondimento completo' }); await a.close()
+  }, { entries: data.entries, pgn: data.pgn })
+  await page.reload()
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toHaveCount(data.entries.length)
+  return data
+}
 
 async function openTools(page, section) {
   const menu = page.locator('.tools-menu')
@@ -1148,4 +1228,77 @@ for (const mode of ['forced', 'book-snapshot', 'conflicting']) {
     }
     expect(await page.evaluate(() => window.workerCount)).toBe(0)
   })
+}
+
+test('optional refinement compares and archives a complete game, reopening both profiles offline without searches', async ({ page }) => {
+  const data = await openRefinementExample(page)
+  const plan = buildRefinementPlan(data.entries)
+  const initial = await page.locator('.summary-table').innerText()
+  await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
+  await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
+  expect(await page.evaluate(() => window.fastSearches)).toBe(0)
+  expect(await page.evaluate(() => window.refinementSearches)).toBe(plan.positions.length)
+  const toggle = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
+  await expect(toggle).toBeChecked()
+  await expect(page.locator('.analysis-row-button').filter({ hasText: 'Iniziale:' }).first()).toBeVisible()
+  const searches = await page.evaluate(() => window.refinementSearches)
+  await page.getByRole('button', { name: 'Primo', exact: true }).click()
+  await page.getByRole('button', { name: 'Ultimo', exact: true }).click()
+  await toggle.uncheck()
+  await expect(page.locator('.summary-table')).toHaveText(initial, { useInnerText: true })
+  await toggle.check()
+  expect(await page.evaluate(() => window.refinementSearches)).toBe(searches)
+  await page.locator('.game-archive').getByRole('button', { name: 'Salva partita e analisi' }).click()
+  const saved = await page.evaluate(async () => {
+    const { createGameArchive, archiveAnalysisStatus } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const a = createGameArchive(), r = (await a.list())[0]; await a.close()
+    return { status: archiveAnalysisStatus(r), initialNodes: r.analysisEntries.map(e => e.engine.analysisMetadata.budget.value),
+      refined: r.analysisEntries.filter(e => e.refinement).length }
+  })
+  expect(saved.status).toBe('current')
+  expect(new Set(saved.initialNodes)).toEqual(new Set([200000]))
+  expect(saved.refined).toBeGreaterThan(0)
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toHaveCount(data.entries.length)
+  await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
+  await expect(page.locator('.analysis-row-button').filter({ hasText: 'Iniziale:' }).first()).toBeVisible()
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+test('optional refinement cancellation preserves initial scores and an import cannot publish an old game result', async ({ page }) => {
+  await openRefinementExample(page, 1000)
+  const initial = await page.locator('.summary-table').innerText()
+  await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
+  await expect.poll(() => page.evaluate(() => window.refinementSearches)).toBe(1)
+  await page.getByRole('button', { name: 'Interrompi approfondimento', exact: true }).click()
+  await expect(page.getByText(/Approfondimento interrotto/)).toBeVisible()
+  await expect(page.locator('.summary-table')).toHaveText(initial, { useInnerText: true })
+  await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
+  await expect.poll(() => page.evaluate(() => window.refinementSearches)).toBe(2)
+  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 *')
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toHaveCount(2)
+  await expect(page.getByText(/Approfondimento completato:/)).toHaveCount(0)
+  await expect(page.locator('.analysis-row-button').filter({ hasText: 'Iniziale:' })).toHaveCount(0)
+})
+
+for (const failure of ['failRefinement', 'failWorkerStartup']) {
+test(`optional refinement ${failure} preserves the baseline and never retries on restart without a click`, async ({ page }) => {
+  await openRefinementExample(page)
+  const initial = await page.locator('.summary-table').innerText()
+  await page.evaluate(flag => { window[flag] = true }, failure)
+  await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
+  await expect(page.getByRole('button', { name: 'Riavvia motore', exact: true })).toBeVisible()
+  await expect(page.locator('.summary-table')).toHaveText(initial, { useInnerText: true })
+  await page.getByRole('button', { name: 'Riavvia motore', exact: true }).click()
+  await expect(page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ })).toBeEnabled()
+  expect(await page.evaluate(() => window.refinementSearches)).toBe(failure === 'failRefinement' ? 1 : 0)
+  expect(await page.evaluate(() => window.fastSearches)).toBe(0)
+  await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
+  await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
+  await expect(page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })).toBeChecked()
+})
 }

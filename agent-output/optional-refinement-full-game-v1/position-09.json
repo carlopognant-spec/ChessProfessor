@@ -1,0 +1,8 @@
+{
+  "i": 9,
+  "fen": "rnbq1rk1/ppp2ppp/4pn2/8/3P4/2BB1N1P/PPP2PP1/R2QK2R b KQ - 2 9",
+  "nodes": 1000000,
+  "reuse": "agent-output/ordinary-depth-check-v1/search-08.json",
+  "reused": true,
+  "sourceNodes": 1000088
+}

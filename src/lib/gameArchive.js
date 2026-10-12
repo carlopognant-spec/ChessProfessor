@@ -1,5 +1,6 @@
 import { Chess } from 'chess.js'
 import { isAnalysisCurrent } from './analysisMetadata.js'
+import { refinementFor } from './analysisRefinement.js'
 
 export const ARCHIVE_SCHEMA_VERSION = 1
 export const ANALYSIS_SCHEMA_VERSION = 1
@@ -114,7 +115,11 @@ export function createGameArchive(options = {}) {
             // Saving without analysis never deletes a previously stored analysis.
             if (entries.length && !(archiveAnalysisStatus(previous ?? {}) === 'current'
               && entries.length < previous.analysisEntries.length && entries.every(isAnalysisCurrent))) {
-              record.analysisEntries = structuredClone(entries)
+              record.analysisEntries = structuredClone(entries.map((entry, index) => {
+                const old = previous?.analysisEntries?.[index]
+                return !entry.refinement && old?.fenBefore === entry.fenBefore && old.fenAfter === entry.fenAfter && refinementFor(old)
+                  ? { ...entry, refinement: old.refinement } : entry
+              }))
               record.analysisMetadata = structuredClone(entries[0].analysisMetadata)
               record.analysisSchemaVersion = ANALYSIS_SCHEMA_VERSION
             }
