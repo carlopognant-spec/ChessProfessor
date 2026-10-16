@@ -250,6 +250,14 @@ export const OPENING_TRAPS = [
 ]
 
 export const italianOpeningName = name => name
+  .replace(/^Semi-Slav(?: Defense)?(?=:|$)/, 'Difesa Semislava')
+  .replace(/^Slav(?: Defense)?(?=:|$)/, 'Difesa Slava')
+  .replace(/^QGD(?=:|$)/, 'Gambetto di Donna Rifiutato')
+  .replace(/^QGA(?=:|$)/, 'Gambetto di Donna Accettato')
+  .replace(/^KID(?=:|$)/, 'Difesa Est-Indiana')
+  .replace(/^QID(?=:|$)/, 'Difesa Ovest-Indiana')
+  .replace(/^Sicilian(?=:|$)/, 'Difesa Siciliana')
+  .replace(/^French(?=:|$)/, 'Difesa Francese')
   .replace(/Queen's Gambit/g, 'Gambetto di Donna').replace(/King's Gambit/g, 'Gambetto di Re')
   .replace(/Ruy Lopez/g, 'Partita Spagnola').replace(/Italian Game/g, 'Partita Italiana')
   .replace(/Sicilian Defense/g, 'Difesa Siciliana').replace(/French Defense/g, 'Difesa Francese')

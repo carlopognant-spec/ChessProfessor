@@ -14,6 +14,9 @@ describe('opening catalog and exercises',()=>{
     const italian=prepareOpeningCatalog(data.entries.filter(e=>e.name==='Italian Game'))
     expect(italian.some(e=>e.search.includes('partita italiana'))).toBe(true)
     expect(normalizeOpeningQuery('Grünfeld, Réti — B90')).toBe('grunfeld reti b90')
+    const slav=prepareOpeningCatalog([{name:'Slav Defense: Exchange Variation',eco:'D13',moves:['d4','d5','c4','c6'],aliases:[],family:'queens-gambit'}])[0]
+    expect(slav.search).toContain('difesa slava')
+    expect(slav.search).toContain('slav defense')
   })
   it('separates the King’s Indian Attack from the defense',()=>{
     expect(openingFamily("King's Indian Attack").id).toBe('reti')
