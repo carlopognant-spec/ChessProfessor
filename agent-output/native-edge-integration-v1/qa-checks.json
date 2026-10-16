@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "version": "counterfactual-v24",
+  "developmentOnly": true,
+  "independentValidation": false,
+  "unit": {
+    "passed": 556,
+    "todo": 1,
+    "files": 60
+  },
+  "browser": {
+    "passed": 3,
+    "offlineWorkers": 0
+  },
+  "build": true,
+  "frozenDependenciesUnchanged": 20,
+  "replayNewEngineSearches": 0,
+  "newEngineResearch": {
+    "queries": 14,
+    "actualNodes": 104004969,
+    "cap": 104070000,
+    "retries": 0,
+    "replayPassed": true
+  },
+  "classificationFingerprint": "ea39be768d17d71712b09739480466d4a95dd65ae0960a79c999e23ce437750c",
+  "sources": [
+    {
+      "path": "src/lib/nativeEdgeChoice.js",
+      "sha256": "d3006ce1ede5207c75b2b239b4446d3fa00670bdf57878e81812ae266e517b32"
+    },
+    {
+      "path": "src/lib/nativeWinningChoice.js",
+      "sha256": "4747358f147d0752765dd7b6f9ba68548b0d71f1b0ecefdafadab9265b910c2b"
+    },
+    {
+      "path": "src/lib/specialClassification.js",
+      "sha256": "45ade3128fae0b8459823dca005639164dc26ced0c414af13fcd2185a8dd913a"
+    },
+    {
+      "path": "src/lib/specialPolicy.js",
+      "sha256": "ed8dffcc642a1992de0e023ceca214f53bf143572dec7b77ac8bf27272d1a520"
+    },
+    {
+      "path": "tests/native-edge-choice.test.js",
+      "sha256": "ffb26d5ac4f84e1856faa50687a108905175e5901dcdebc7c688ea42c5ced8bd"
+    },
+    {
+      "path": "tests/native-proof-flow.test.js",
+      "sha256": "ba6f9360ea4bc66f0493a33507e8eff31329210a739ad0d27215a8f8475e9e4b"
+    },
+    {
+      "path": "playwright-check.spec.js",
+      "sha256": "644bb5f7ab325f5ed2ebcf4611c0ac17e2beb5ce334ce7fa500b785c31ebb133"
+    },
+    {
+      "path": "scripts/review-automation.mjs",
+      "sha256": "5fe19466a42734c4ca281915b97836aca5acc30e51a6a1629274ebf8b234bd24"
+    },
+    {
+      "path": "scripts/qa/review-evidence.json",
+      "sha256": "75de2d03004842f4f2a05b7054269c8729f9d1ddd5c8c56cfe6863a71f9ff9c0"
+    }
+  ]
+}

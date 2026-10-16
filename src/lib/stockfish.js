@@ -97,13 +97,22 @@ export class StockfishEngine {
   * @param {number} multiPv
   * @returns {Promise<{evalCp: number|null, mate: number|null, pv: string[], lines: Array}>}
    */
-  analyze(fen, nodes = ENGINE_CONFIG.nodes, multiPv = ENGINE_CONFIG.multiPv) {
+  analyze(fen, nodes = ENGINE_CONFIG.nodes, multiPv = ENGINE_CONFIG.multiPv, options = {}) {
     if (!Number.isSafeInteger(nodes) || nodes <= 0) return Promise.reject(new TypeError('Budget nodi non valido'))
     if (!Number.isSafeInteger(multiPv) || multiPv <= 0) return Promise.reject(new TypeError('MultiPV non valido'))
+    let searchMoves
+    if (options.searchMoves !== undefined) {
+      try {
+        const legal = new Chess(fen).moves({ verbose: true }).map(m => `${m.from}${m.to}${m.promotion ?? ''}`)
+        searchMoves = [...options.searchMoves]
+        if (!searchMoves.length || new Set(searchMoves).size !== searchMoves.length
+          || searchMoves.some(m => !legal.includes(m))) throw Error('Mosse di ricerca non valide')
+      } catch (error) { return Promise.reject(error) }
+    }
     return new Promise((resolve, reject) => {
       if (this._workerError) { reject(this._workerError); return }
       this._pendingRequest?.reject(new Error('analysis superseded'))
-      this._pendingRequest = { fen, nodes, multiPv, resolve, reject, cancelled: false }
+      this._pendingRequest = { fen, nodes, multiPv, searchMoves, resolve, reject, cancelled: false }
       const previousRequest = this._currentRequest
       if (previousRequest && !previousRequest.cancelled) {
         previousRequest.cancelled = true
@@ -134,9 +143,10 @@ export class StockfishEngine {
     if (!this.ready || this._workerError || this._currentRequest || !this._pendingRequest) return
     const request = this._pendingRequest
     this._pendingRequest = null
-    const { fen, nodes, multiPv, resolve } = request
+    const { fen, nodes, multiPv, searchMoves, resolve } = request
     let evidenceCount = Math.max(1, multiPv)
     try { evidenceCount = Math.min(evidenceCount, new Chess(fen).moves().length || 1) } catch { /* Test workers may use synthetic position IDs. */ }
+    if (searchMoves) evidenceCount = Math.min(evidenceCount, searchMoves.length)
     const evidence = createMultiPvEvidence(evidenceCount)
     const lines = new Map()
     let actualNodes = 0
@@ -177,7 +187,8 @@ export class StockfishEngine {
         const primary = orderedLines[0] ?? { evalCp: null, mate: null, pv: [] }
         if (!request.cancelled) resolve({ ...primary, fen, bestmove: line.split(/\s+/)[1], lines: orderedLines, actualNodes,
           specialLines: evidence.finish(line.split(/\s+/)[1]),
-          analysisMetadata: createAnalysisMetadata({ nodes, multiPv, actualEngineId: this.engineId }) })
+          analysisMetadata: { ...createAnalysisMetadata({ nodes, multiPv, actualEngineId: this.engineId }),
+            ...(searchMoves ? { searchMoves } : {}) } })
         this._startPending()
       }
     }
@@ -186,7 +197,7 @@ export class StockfishEngine {
     this.worker.postMessage('setoption name Clear Hash')
     this.worker.postMessage(`setoption name MultiPV value ${Math.max(1, multiPv)}`)
     this.worker.postMessage(`position fen ${fen}`)
-    this.worker.postMessage(`go nodes ${nodes}`)
+    this.worker.postMessage(`go nodes ${nodes}${searchMoves ? ` searchmoves ${searchMoves.join(' ')}` : ''}`)
   }
 
   _fail(error) {

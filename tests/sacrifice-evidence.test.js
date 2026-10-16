@@ -43,7 +43,7 @@ describe('reuse of exact-position sacrifice evidence', () => {
       .specialAssessment.brilliant.reason).toBe('unresolved-tactical-sequence')
     const result = classifySpecialMove(entry, previous, own, evidence)
     expect(result.classification).toBe('brilliant')
-    expect(result.specialAssessment.version).toBe('counterfactual-v6')
+    expect(result.specialAssessment.version).toBe('counterfactual-v24')
     expect(result.specialAssessment.brilliant.offers[0].corroboration).toMatchObject({
       acceptanceDepth: 12, confirmationDepth: 17, proofAgainstEveryDefense: false })
     expect(JSON.stringify([entry, next])).toBe(original)

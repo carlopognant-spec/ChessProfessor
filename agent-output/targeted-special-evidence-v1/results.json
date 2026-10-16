@@ -1,0 +1,319 @@
+{
+  "complete": true,
+  "searches": 7,
+  "actualNodes": 6203178,
+  "cap": 6235000,
+  "newSearches": 7,
+  "applicationChanged": false,
+  "baselineChanged": false,
+  "acceptance": {
+    "game": "184316820266",
+    "ply": 41,
+    "initial": {
+      "san": "Qxe5",
+      "classification": "best",
+      "bestEval": -38,
+      "playedEval": -38,
+      "bestMate": null,
+      "playedMate": null,
+      "dropPct": 0,
+      "missedReason": "no-opponent-error",
+      "missedOpportunity": null,
+      "brilliant": {
+        "status": "candidate",
+        "reason": "missing-acceptance-analysis",
+        "offers": [
+          {
+            "uci": "f8f7",
+            "san": "Rxf7",
+            "square": "f7",
+            "type": "b",
+            "delta": -2,
+            "movedPiece": false
+          }
+        ]
+      },
+      "evidence": {
+        "version": "review-reliability-v1",
+        "status": "coherent",
+        "source": "completed-snapshot",
+        "rootDepth": 11,
+        "playedDepth": 11,
+        "unclampedDropPct": 0,
+        "snapshotAvailable": true,
+        "snapshotUsed": true
+      }
+    },
+    "targeted": {
+      "san": "Qxe5",
+      "classification": "best",
+      "bestEval": -38,
+      "playedEval": -38,
+      "bestMate": null,
+      "playedMate": null,
+      "dropPct": 0,
+      "missedReason": "no-opponent-error",
+      "missedOpportunity": null,
+      "brilliant": {
+        "status": "candidate",
+        "reason": "unresolved-immediate-recovery",
+        "offers": [
+          {
+            "uci": "f8f7",
+            "san": "Rxf7",
+            "square": "f7",
+            "type": "b",
+            "delta": -2,
+            "movedPiece": false
+          }
+        ]
+      },
+      "evidence": {
+        "version": "review-reliability-v1",
+        "status": "coherent",
+        "source": "completed-snapshot",
+        "rootDepth": 11,
+        "playedDepth": 11,
+        "unclampedDropPct": 0,
+        "snapshotAvailable": true,
+        "snapshotUsed": true
+      }
+    },
+    "line": {
+      "multipv": 1,
+      "depth": 16,
+      "evalCp": -269,
+      "mate": null,
+      "pv": [
+        "f8f7",
+        "e5e8",
+        "b8b7",
+        "e8f7",
+        "b6d4",
+        "f7e8",
+        "a7a6",
+        "b2b3",
+        "d6c6",
+        "a2a4",
+        "b5b4",
+        "a1a2",
+        "d2e3",
+        "e8c6",
+        "b7c6",
+        "d1d4",
+        "e3d4",
+        "a2c2",
+        "d4c3"
+      ],
+      "raw": "info depth 16 seldepth 36 multipv 1 score cp -269 nodes 200128 nps 224358 hashfull 82 time 892 pv f8f7 e5e8 b8b7 e8f7 b6d4 f7e8 a7a6 b2b3 d6c6 a2a4 b5b4 a1a2 d2e3 e8c6 b7c6 d1d4 e3d4 a2c2 d4c3"
+    },
+    "previousConfirmation": [
+      {
+        "captureUci": "f8f7",
+        "fen": "1k6/p1p2rpp/1q1r4/1p2Q3/8/5P2/PP1b2PP/R2R3K w - - 0 22",
+        "line": {
+          "multipv": 1,
+          "depth": 14,
+          "evalCp": 255,
+          "mate": null,
+          "pv": [
+            "e5e8",
+            "b8b7",
+            "e8f7",
+            "b6d4",
+            "f7e8",
+            "a7a6",
+            "b2b3",
+            "d4d3",
+            "e8e4",
+            "d3e4",
+            "f3e4",
+            "c7c5",
+            "e4e5",
+            "d6d4",
+            "e5e6",
+            "b7c7",
+            "a2a4",
+            "d2c3",
+            "d1d4",
+            "c5d4",
+            "e6e7",
+            "c7d7",
+            "a4b5"
+          ],
+          "raw": "info depth 14 seldepth 27 multipv 1 score cp 255 nodes 200063 nps 251651 hashfull 82 time 795 pv e5e8 b8b7 e8f7 b6d4 f7e8 a7a6 b2b3 d4d3 e8e4 d3e4 f3e4 c7c5 e4e5 d6d4 e5e6 b7c7 a2a4 d2c3 d1d4 c5d4 e6e7 c7d7 a4b5"
+        },
+        "index": 0.654188113761243,
+        "source": "after-acceptance-child-search"
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "game": "185262315732",
+      "ply": 29,
+      "expected": "Mossa mancata",
+      "initial": {
+        "san": "Qe2+",
+        "classification": "mistake",
+        "bestEval": 317,
+        "playedEval": 52,
+        "bestMate": null,
+        "playedMate": null,
+        "dropPct": 15.59135704437099,
+        "missedReason": "no-confirmed-winning-opportunity",
+        "missedOpportunity": null,
+        "brilliant": {
+          "status": "rejected",
+          "reason": "not-eligible"
+        },
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 11,
+          "playedDepth": 11,
+          "unclampedDropPct": 15.59135704437099,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        }
+      },
+      "targeted": {
+        "san": "Qe2+",
+        "classification": "mistake",
+        "bestEval": 334,
+        "playedEval": 0,
+        "bestMate": null,
+        "playedMate": null,
+        "dropPct": 19.74111143958823,
+        "missedReason": "no-confirmed-winning-opportunity",
+        "missedOpportunity": null,
+        "brilliant": {
+          "status": "rejected",
+          "reason": "not-eligible"
+        },
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "coherent",
+          "source": "completed-snapshot",
+          "rootDepth": 16,
+          "playedDepth": 16,
+          "unclampedDropPct": 19.74111143958823,
+          "snapshotAvailable": true,
+          "snapshotUsed": true
+        }
+      }
+    },
+    {
+      "game": "185262315732",
+      "ply": 57,
+      "expected": "Mossa mancata",
+      "initial": {
+        "san": "Bh6",
+        "classification": "mistake",
+        "bestEval": 1066,
+        "playedEval": 627,
+        "bestMate": null,
+        "playedMate": null,
+        "dropPct": 10.75025890757314,
+        "missedReason": "already-advantaged",
+        "missedOpportunity": null,
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-or-conflicting-played-score"
+        },
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 12,
+          "playedDepth": 15,
+          "unclampedDropPct": 10.75025890757314,
+          "snapshotAvailable": true,
+          "snapshotUsed": false
+        }
+      },
+      "targeted": {
+        "san": "Bh6",
+        "classification": "mistake",
+        "bestEval": 1676,
+        "playedEval": 626,
+        "bestMate": null,
+        "playedMate": null,
+        "dropPct": 15.801005210384444,
+        "missedReason": "already-advantaged",
+        "missedOpportunity": null,
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-or-conflicting-played-score"
+        },
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 15,
+          "playedDepth": 18,
+          "unclampedDropPct": 15.801005210384444,
+          "snapshotAvailable": true,
+          "snapshotUsed": false
+        }
+      }
+    },
+    {
+      "game": "185230271130",
+      "ply": 51,
+      "expected": "Mossa mancata",
+      "initial": {
+        "san": "Bd8+",
+        "classification": "blunder",
+        "bestEval": 1051,
+        "playedEval": 356,
+        "bestMate": null,
+        "playedMate": null,
+        "dropPct": 22.372042649979374,
+        "missedReason": "no-opponent-error",
+        "missedOpportunity": null,
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-or-conflicting-played-score"
+        },
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 13,
+          "playedDepth": 17,
+          "unclampedDropPct": 22.372042649979374,
+          "snapshotAvailable": true,
+          "snapshotUsed": false
+        }
+      },
+      "targeted": {
+        "san": "Bd8+",
+        "classification": "blunder",
+        "bestEval": 960,
+        "playedEval": 342,
+        "bestMate": null,
+        "playedMate": null,
+        "dropPct": 21.521234989067693,
+        "missedReason": "no-opponent-error",
+        "missedOpportunity": null,
+        "brilliant": {
+          "status": "insufficient",
+          "reason": "missing-or-conflicting-played-score"
+        },
+        "evidence": {
+          "version": "review-reliability-v1",
+          "status": "independent",
+          "source": "independent-position",
+          "rootDepth": 14,
+          "playedDepth": 19,
+          "unclampedDropPct": 21.521234989067693,
+          "snapshotAvailable": true,
+          "snapshotUsed": false
+        }
+      }
+    }
+  ],
+  "changes": []
+}

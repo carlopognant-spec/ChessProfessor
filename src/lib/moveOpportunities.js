@@ -1,12 +1,14 @@
 import { Chess } from 'chess.js'
 import { classifyMissedOpportunity, formatMissedOpportunity } from './missedOpportunity.js'
+import { classifyCoherentWinningOpportunity } from './opportunityEvidence.js'
+import { classifyStoredMatingContinuation } from './opportunityProofs.js'
 
 const primaryLine = engine => engine?.lines?.find(line => line.multipv === 1) ?? engine
 const isBound = line => Boolean(line?.bound || /\b(?:upperbound|lowerbound)\b/.test(line?.raw ?? ''))
 
 // The original winning-opportunity policy remains intact for frozen research.
 // A lost mating line is a separate local rule, even when a material win remains.
-export function classifyMoveOpportunity(entry, previous) {
+function classifyOriginalOpportunity(entry, previous) {
   if (['great', 'brilliant'].includes(entry.classification)) return entry
   const result = classifyMissedOpportunity(entry, previous)
   if (result.classification === 'missed' || ['book', 'unclassified'].includes(result.classification)
@@ -41,6 +43,11 @@ export function classifyMoveOpportunity(entry, previous) {
         matingLine: { uci: [...pv], san },
         policyVersion: 'missed-mate-v1' } }
   } catch { return result }
+}
+
+export function classifyMoveOpportunity(entry, previous) {
+  return classifyStoredMatingContinuation(
+    classifyCoherentWinningOpportunity(classifyOriginalOpportunity(entry, previous), entry, previous), entry, previous)
 }
 
 export function reclassifyMoveOpportunities(entries = []) {

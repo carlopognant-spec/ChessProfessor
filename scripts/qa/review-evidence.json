@@ -1,0 +1,8 @@
+{
+  "collections": [
+    {
+      "collection": "agent-output/native-edge-study-v1/collection.json",
+      "replay": "agent-output/native-edge-study-v1/replay-check.json"
+    }
+  ]
+}

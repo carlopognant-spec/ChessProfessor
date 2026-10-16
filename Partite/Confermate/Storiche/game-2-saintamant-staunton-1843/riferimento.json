@@ -1,0 +1,666 @@
+{
+  "label": "Saint Amant vs Staunton, 1843",
+  "pgn": "[Event \"Staunton - Saint Amant\"]\n[Site \"Paris FRA\"]\n[Date \"1843.12.19\"]\n[Round \"21\"]\n[White \"Pierre Charles Fournier de Saint Amant\"]\n[Black \"Howard Staunton\"]\n[Result \"0-1\"]\n[WhiteElo \"?\"]\n[BlackElo \"?\"]\n[ECO \"D30\"]\n[Link \"https://www.chess.com/analysis/collection/the-best-chess-games-of-all-time-annotated-KWuSgD8A/yuu4hdsjk/games?move=0\"]\n\n1. d4 d5 2. c4 e6 3. e3 c5 4. Nc3 Nf6 5. Nf3 Be7 6. Bd3 $6 b6 7. O-O O-O 8. b3\nBb7 9. cxd5 exd5 10. Qc2 Nc6 11. a3 a6 $6 12. Rd1 $6 {Given that Black is now\nbasically forced to exchange on d4 and leave White with a pawn there, this rook\nwill be misplaced.} (12. dxc5 $1 {This was a last chance for Saint Amant to change\nthe structure and saddle Black with hanging pawns as a modern master would\nprefer to do.}) 12... cxd4 13. exd4 h6 14. b4 Bd6 15. Re1 b5 16. h3 Rc8 17. Qb3\nQc7 18. Bd2 Qb6 {This is a good example of an odd habit of the players in this\ngame of shuffling around without any fear of losing tempo. The position is slow\nenough that the tempo loss cannot be brutally punished.} 19. Be3 Ne7 20. Rac1\nNh5 $6 {For reasons that are very unclear to me, both players choose to place\ntheir knights on the edge of the board.} 21. Qd1 Nf6 22. Nh4 $2 (22. Ne5 $14) 22...\nRc7 23. Qd2 Nh7 24. Qc2 $6 Nf6 25. Kh1 Ne8 $6 {A slightly odd move, but I guess\nBlack wants to put the knight on d6 and then c4, but it's tricky to get the\nbishop to move away from d6.} 26. Nf5 $6 Nxf5 27. Bxf5 a5 $6 28. Qb3 $2 axb4 $1 29.\naxb4 Rc4 30. Na2 $6 Nf6 31. Bd3 Qc6 $1 {Here's where things finally get spicy  $1 The\nrook simply can't be captured now, but Staunton will soon convert this pretend\nexchange sacrifice into a legitimate exchange sacrifice. In all cases, Staunton\nwill have great compensation if the exchange sacrifice is accepted.} 32. Qb2\n(32. Bxc4 $4 dxc4 {and checkmate and the queen are threatened.}) 32... Qd7 33.\nKg1 (33. Bxc4 {Now the exchange sacrifice can be accepted, but Black's\ncompensation is incredible.} 33... dxc4 {threatening ...Qxh3+} 34. Kg1 Nd5 {And\nthe amazing knight, bishops, and pawn structure secure Black a major\nadvantage.}) 33... Nh5 $2 (33... Bb8 $15 {is one possible improvement.}) 34. Qd2 $2\n(34. Bxc4 dxc4 35. d5 $13 {is much more unclear than before, largely because of\nhow unhelpful the knight is on h5, and because of that, White has achieved the\nfreeing d5.}) 34... f5 35. f4 $2 {This only makes the Be3 worse and gives Black\nthe e4-square and greater potential on the e-file.} (35. f3 $13) 35... Ng3 36.\nBxc4 {The exchange sacrifice is finally accepted.} 36... dxc4 37. Qb2 $6 Rf6 $6\n38. Nc3 Ne4 $1 39. Re2 $6 Rg6 40. Rd1 $6 Nxc3 $1 41. Qxc3 Bf3 $1 $19 {Even after ...Be4,\nStaunton would have a huge advantage due to the positional compensation, but\nthis move wins the material back, and now Staunton simply has a winning\nadvantage with a great bishop vs. a terrible one, better access to the open\ne-file, and many weak pawns to attack.} 42. Rde1 $2 Bxe2 43. Rxe2 Qe7 $6 44. Qb2 $6\nRe6 45. Kf2 Re4 46. Qa2 Kf7 47. g3 Qb7 48. Qa3 Re8 49. Qc3 $6 Qh1 50. h4 g5 $1 {An\nexcellent move, cracking things open just as Black's pieces are fully activated,\nand White's remain tangled.} 51. Qe1 Qh2+ 52. Kf1 Qh3+ 53. Kg1 Qg4 54. hxg5\nBxf4 $1 {another nice little tactic} 55. Bxf4 Qxe2 56. Qxe2 Rxe2 57. gxh6 c3 58.\nKf1 Re4 59. Bc1 Kg6 60. d5 c2 61. Bd2 Rxb4 $1 {a little trick that White could not\nprevent.} 62. d6 Rd4 63. Ke2 Rxd6 64. Ke3 Kxh6 65. Ke2+ Kg6 66. Ke1 b4 {Saint\nAmant finally resigned.} 0-1",
+  "annotations": [
+    {
+      "ply": 1,
+      "san": "d4",
+      "category": "Libro"
+    },
+    {
+      "ply": 2,
+      "san": "d5",
+      "category": "Libro"
+    },
+    {
+      "ply": 3,
+      "san": "c4",
+      "category": "Libro"
+    },
+    {
+      "ply": 4,
+      "san": "e6",
+      "category": "Libro"
+    },
+    {
+      "ply": 5,
+      "san": "e3",
+      "category": "Libro"
+    },
+    {
+      "ply": 6,
+      "san": "c5",
+      "category": "Buona"
+    },
+    {
+      "ply": 7,
+      "san": "Nc3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 8,
+      "san": "Nf6",
+      "category": "Libro"
+    },
+    {
+      "ply": 9,
+      "san": "Nf3",
+      "category": "Libro"
+    },
+    {
+      "ply": 10,
+      "san": "Be7",
+      "category": "Ottima"
+    },
+    {
+      "ply": 11,
+      "san": "Bd3",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 12,
+      "san": "b6",
+      "category": "Buona"
+    },
+    {
+      "ply": 13,
+      "san": "O-O",
+      "category": "Ottima"
+    },
+    {
+      "ply": 14,
+      "san": "O-O",
+      "category": "Ottima"
+    },
+    {
+      "ply": 15,
+      "san": "b3",
+      "category": "Buona"
+    },
+    {
+      "ply": 16,
+      "san": "Bb7",
+      "category": "Ottima"
+    },
+    {
+      "ply": 17,
+      "san": "cxd5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 18,
+      "san": "exd5",
+      "category": "Buona"
+    },
+    {
+      "ply": 19,
+      "san": "Qc2",
+      "category": "Buona"
+    },
+    {
+      "ply": 20,
+      "san": "Nc6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 21,
+      "san": "a3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 22,
+      "san": "a6",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 23,
+      "san": "Rd1",
+      "category": "Buona"
+    },
+    {
+      "ply": 24,
+      "san": "cxd4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 25,
+      "san": "exd4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 26,
+      "san": "h6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 27,
+      "san": "b4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 28,
+      "san": "Bd6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 29,
+      "san": "Re1",
+      "category": "Migliore"
+    },
+    {
+      "ply": 30,
+      "san": "b5",
+      "category": "Ottima"
+    },
+    {
+      "ply": 31,
+      "san": "h3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 32,
+      "san": "Rc8",
+      "category": "Migliore"
+    },
+    {
+      "ply": 33,
+      "san": "Qb3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 34,
+      "san": "Qc7",
+      "category": "Buona"
+    },
+    {
+      "ply": 35,
+      "san": "Bd2",
+      "category": "Ottima"
+    },
+    {
+      "ply": 36,
+      "san": "Qb6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 37,
+      "san": "Be3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 38,
+      "san": "Ne7",
+      "category": "Ottima"
+    },
+    {
+      "ply": 39,
+      "san": "Rac1",
+      "category": "Ottima"
+    },
+    {
+      "ply": 40,
+      "san": "Nh5",
+      "category": "Buona"
+    },
+    {
+      "ply": 41,
+      "san": "Qd1",
+      "category": "Migliore"
+    },
+    {
+      "ply": 42,
+      "san": "Nf6",
+      "category": "Buona"
+    },
+    {
+      "ply": 43,
+      "san": "Nh4",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 44,
+      "san": "Rc7",
+      "category": "Buona"
+    },
+    {
+      "ply": 45,
+      "san": "Qd2",
+      "category": "Ottima"
+    },
+    {
+      "ply": 46,
+      "san": "Nh7",
+      "category": "Buona"
+    },
+    {
+      "ply": 47,
+      "san": "Qc2",
+      "category": "Buona"
+    },
+    {
+      "ply": 48,
+      "san": "Nf6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 49,
+      "san": "Kh1",
+      "category": "Buona"
+    },
+    {
+      "ply": 50,
+      "san": "Ne8",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 51,
+      "san": "Nf5",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 52,
+      "san": "Nxf5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 53,
+      "san": "Bxf5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 54,
+      "san": "a5",
+      "category": "Ottima"
+    },
+    {
+      "ply": 55,
+      "san": "Qb3",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 56,
+      "san": "axb4",
+      "category": "Grande"
+    },
+    {
+      "ply": 57,
+      "san": "axb4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 58,
+      "san": "Rc4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 59,
+      "san": "Na2",
+      "category": "Errore"
+    },
+    {
+      "ply": 60,
+      "san": "Nf6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 61,
+      "san": "Bd3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 62,
+      "san": "Qc6",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 63,
+      "san": "Qb2",
+      "category": "Migliore"
+    },
+    {
+      "ply": 64,
+      "san": "Qd7",
+      "category": "Buona"
+    },
+    {
+      "ply": 65,
+      "san": "Kg1",
+      "category": "Ottima"
+    },
+    {
+      "ply": 66,
+      "san": "Nh5",
+      "category": "Errore"
+    },
+    {
+      "ply": 67,
+      "san": "Qd2",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 68,
+      "san": "f5",
+      "category": "Ottima"
+    },
+    {
+      "ply": 69,
+      "san": "f4",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 70,
+      "san": "Ng3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 71,
+      "san": "Bxc4",
+      "category": "Buona"
+    },
+    {
+      "ply": 72,
+      "san": "dxc4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 73,
+      "san": "Qb2",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 74,
+      "san": "Rf6",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 75,
+      "san": "Nc3",
+      "category": "Buona"
+    },
+    {
+      "ply": 76,
+      "san": "Ne4",
+      "category": "Grande"
+    },
+    {
+      "ply": 77,
+      "san": "Re2",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 78,
+      "san": "Rg6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 79,
+      "san": "Rd1",
+      "category": "Errore"
+    },
+    {
+      "ply": 80,
+      "san": "Nxc3",
+      "category": "Grande"
+    },
+    {
+      "ply": 81,
+      "san": "Qxc3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 82,
+      "san": "Bf3",
+      "category": "Grande"
+    },
+    {
+      "ply": 83,
+      "san": "Rde1",
+      "category": "Errore"
+    },
+    {
+      "ply": 84,
+      "san": "Bxe2",
+      "category": "Ottima"
+    },
+    {
+      "ply": 85,
+      "san": "Rxe2",
+      "category": "Migliore"
+    },
+    {
+      "ply": 86,
+      "san": "Qe7",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 87,
+      "san": "Qb2",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 88,
+      "san": "Re6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 89,
+      "san": "Kf2",
+      "category": "Migliore"
+    },
+    {
+      "ply": 90,
+      "san": "Re4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 91,
+      "san": "Qa2",
+      "category": "Buona"
+    },
+    {
+      "ply": 92,
+      "san": "Kf7",
+      "category": "Buona"
+    },
+    {
+      "ply": 93,
+      "san": "g3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 94,
+      "san": "Qb7",
+      "category": "Buona"
+    },
+    {
+      "ply": 95,
+      "san": "Qa3",
+      "category": "Migliore"
+    },
+    {
+      "ply": 96,
+      "san": "Re8",
+      "category": "Ottima"
+    },
+    {
+      "ply": 97,
+      "san": "Qc3",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 98,
+      "san": "Qh1",
+      "category": "Migliore"
+    },
+    {
+      "ply": 99,
+      "san": "h4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 100,
+      "san": "g5",
+      "category": "Buona"
+    },
+    {
+      "ply": 101,
+      "san": "Qe1",
+      "category": "Buona"
+    },
+    {
+      "ply": 102,
+      "san": "Qh2+",
+      "category": "Migliore"
+    },
+    {
+      "ply": 103,
+      "san": "Kf1",
+      "category": "Migliore"
+    },
+    {
+      "ply": 104,
+      "san": "Qh3+",
+      "category": "Migliore"
+    },
+    {
+      "ply": 105,
+      "san": "Kg1",
+      "category": "Migliore"
+    },
+    {
+      "ply": 106,
+      "san": "Qg4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 107,
+      "san": "hxg5",
+      "category": "Ottima"
+    },
+    {
+      "ply": 108,
+      "san": "Bxf4",
+      "category": "Buona"
+    },
+    {
+      "ply": 109,
+      "san": "Bxf4",
+      "category": "Buona"
+    },
+    {
+      "ply": 110,
+      "san": "Qxe2",
+      "category": "Buona"
+    },
+    {
+      "ply": 111,
+      "san": "Qxe2",
+      "category": "Migliore"
+    },
+    {
+      "ply": 112,
+      "san": "Rxe2",
+      "category": "Migliore"
+    },
+    {
+      "ply": 113,
+      "san": "gxh6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 114,
+      "san": "c3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 115,
+      "san": "Kf1",
+      "category": "Migliore"
+    },
+    {
+      "ply": 116,
+      "san": "Re4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 117,
+      "san": "Bc1",
+      "category": "Ottima"
+    },
+    {
+      "ply": 118,
+      "san": "Kg6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 119,
+      "san": "d5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 120,
+      "san": "c2",
+      "category": "Migliore"
+    },
+    {
+      "ply": 121,
+      "san": "Bd2",
+      "category": "Buona"
+    },
+    {
+      "ply": 122,
+      "san": "Rxb4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 123,
+      "san": "d6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 124,
+      "san": "Rd4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 125,
+      "san": "Ke2",
+      "category": "Ottima"
+    },
+    {
+      "ply": 126,
+      "san": "Rxd6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 127,
+      "san": "Ke3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 128,
+      "san": "Kxh6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 129,
+      "san": "Ke2+",
+      "category": "Ottima"
+    },
+    {
+      "ply": 130,
+      "san": "Kg6",
+      "category": "Ottima"
+    },
+    {
+      "ply": 131,
+      "san": "Ke1",
+      "category": "Ottima"
+    },
+    {
+      "ply": 132,
+      "san": "b4",
+      "category": "Ottima"
+    }
+  ]
+}

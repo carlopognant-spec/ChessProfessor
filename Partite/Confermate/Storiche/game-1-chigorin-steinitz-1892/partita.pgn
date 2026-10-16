@@ -1,0 +1,50 @@
+[Event "Steinitz - Chigorin World Championship Rematch"]
+[Site "Havana CUB"]
+[Date "1892.01.01"]
+[Round "1"]
+[White "Mikhail Chigorin"]
+[Black "Wilhelm Steinitz"]
+[Result "1-0"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[ECO "C52"]
+[Link "https://www.chess.com/analysis/collection/the-best-chess-games-of-all-time-annotated-KWuSgD8A/4EuNGvtJLW/games?move=60"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 {Hopefully, we will one day see more Evan's
+Gambits in the World Championship.} 4... Bxb4 {Whether or not, players in the
+1800s felt honor-bound to accept the sacrifice, Steinitz was a man of principal
+and was determined to accept and refute such gambits.} 5. c3 Ba5 6. O-O d6 7. d4
+Bg4 8. Bb5 exd4 9. cxd4 Bd7 $2 {Steinitz makes a clear concession. Obviously,
+retreating the bishop that just advanced to g4 cannot be correct.} (9... Ne7
+{Simply developing and readying to castle is right. d5 can be met by a6.}) 10.
+Bb2 Nce7 11. Bxd7+ Qxd7 12. Na3 {The knight goes to the side of the board with
+the purpose of returning to a central location on c4, hitting the a5-knight and
+supporting e5.} 12... Nh6 (12... Nf6 13. Nc4 Bb6 14. a4 $16 {creates strong
+pressure and a nice advantage for White, but it definitely better to have the
+knight on f6 than h6.}) 13. Nc4 Bb6 14. a4 c6 15. e5 d5 $2 {A fatal decision. The
+knight on d6 and the loss of the right to castle cannot be survived.} (15...
+dxe5 {Black must exchange the pawn and try to hold.} 16. dxe5 Qxd1 17. Raxd1 O-O
+18. Ba3 c5 19. Rd7 Nc6 20. Rxb7 {White has a better structure and better pieces
+and a good advantage, but Black is not lost.}) 16. Nd6+ Kf8 17. Ba3 {directing
+the bishop at the king.} 17... Kg8 18. Rb1 Nhf5 19. Nxf7 $3 {The tactical
+Steinitz finds a delightful winning path. One knight is surrendered, but the
+other will be a monster on e5.} 19... Kxf7 20. e6+ $1 Kxe6 (20... Qxe6 21. Ng5+ $18
+{is a nice royal fork.}) 21. Ne5 Qc8 22. Re1 {Black's king is in the line of the
+fire, and there's no good way to evacuate it.} 22... Kf6 23. Qh5 {Threatening
+Ng4# and Qf7+.} 23... g6 (23... Rf8 24. Ng4#) (23... Ng6 24. Bc1 Nxe5 25. Bg5+
+Ke6 26. Rxe5+ Kd6 27. Bf4 {Arranges the threat of another discovered check (and
+threatens f5), and forces checkmate in 9 at most according to the engine.}) 24.
+Bxe7+ Kxe7 (24... Nxe7 {This loses, often spectacularly, but possibly, it would
+have been more effective to resist this way as Chigorin would need to find some
+nice moves.} 25. Qh4+ g5 26. Ng4+ Kf7 27. Rxe7+ $3 {Prettiest and most
+effective.} 27... Kxe7 28. Qxg5+ Kd7 29. Nf6+ Kd6 30. Qe5#) 25. Nxg6+ Kf6 26.
+Nxh8 Bxd4 {A clever try. Picking off d4, and hoping to win the trapped knight on
+the next move.} (26... Qxh8 {Immediately capturing the knight keeps Black ahead
+on material, but White's heavy pieces overwhelm Black in all lines.} 27. Re5 Nd6
+(27... Nxd4 28. Qg5+ Kf7 29. Qe7+ Kg6 30. Rg5+ Kh6 31. Rg4 $18) 28. Rb3 $18) 27.
+Rb3 Qd7 28. Rf3 Rxh8 {Black has the material advantage, but...} 29. g4 {The
+knight now falls.} 29... Rg8 30. Qh6+ Rg6 (30... Kf7 31. Rxf5+ $4 {It's always
+possible to go wrong.} (31. Qxh7+ $1 Rg7 32. Rxf5+ Qxf5 33. Qxf5+ $18) 31... Qxf5
+$19) 31. Rxf5+ $1 {Chigorin forces resignation with yet another little tactic.}
+(31. Rxf5+ Qxf5 32. Qf8+ {wins the queen due to the skewer and mates soon
+after.}) 1-0

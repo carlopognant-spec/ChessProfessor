@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "review:auto": "node scripts/review-automation.mjs",
     "qa:compare": "node scripts/qa-compare.js",
     "dev": "vite",
     "build": "vite build",

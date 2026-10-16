@@ -1,0 +1,1139 @@
+[Event "Studio 185262315732 3...Qe7"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rnbqkb1r/pppp1ppp/5n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 3"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 3...Qe7.} 3. ... Qe7 {Posizione DOPO 3...Qe7. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 4.Nf3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rnb1kb1r/ppppqppp/5n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 1 4"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 4.Nf3.} 4. Nf3 {Posizione DOPO 4.Nf3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 5...Nfd7"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rnb1kb1r/ppp1qppp/5n2/3pP3/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 5"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore. Posizione PRIMA di 5...Nfd7.} 5. ... Nfd7 {Posizione DOPO 5...Nfd7. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 8...b5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rnb1kb1r/pp1nq1pp/2p2p2/3pP3/B2P4/5N2/PPP2PPP/RNBQK2R b KQkq - 1 8"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 8...b5.} 8. ... b5 {Posizione DOPO 8...b5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 13.gxf3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2kb1r/p3q1pp/2p5/1p1pn3/8/1BN2b1P/PPP2PP1/R1BQK2R w KQkq - 0 13"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 13.gxf3.} 13. gxf3 {Posizione DOPO 13.gxf3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 15.Qe2+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2kb1r/p5pp/2p2q2/1p1p4/8/1BN2n1P/PPP2P2/R1BQ1K1R w kq - 2 15"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore. Posizione PRIMA di 15.Qe2+.} 15. Qe2+ {Posizione DOPO 15.Qe2+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 15...Be7"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2kb1r/p5pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QP2/R1B2K1R b kq - 3 15"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 15...Be7.} 15. ... Be7 {Posizione DOPO 15...Be7. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 16.Kg2"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p3b1pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QP2/R1B2K1R w kq - 4 16"]
+
+{Riferimento Chess.com: Errore. App a 200k: Errore grave. Posizione PRIMA di 16.Kg2.} 16. Kg2 {Posizione DOPO 16.Kg2. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 16...Nd4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p3b1pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QPK1/R1B4R b kq - 5 16"]
+
+{Riferimento Chess.com: Buona. App a 200k: Errore. Posizione PRIMA di 16...Nd4.} 16. ... Nd4 {Posizione DOPO 16...Nd4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 17.Qh5+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p3b1pp/2p2q2/1p1p4/3n4/1BN4P/PPP1QPK1/R1B4R w kq - 6 17"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Ottima. Posizione PRIMA di 17.Qh5+.} 17. Qh5+ {Posizione DOPO 17.Qh5+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 18...Bc5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p3b2p/2p2qp1/1p1p4/3n2Q1/1BN4P/PPP2PK1/R1B4R b kq - 1 18"]
+
+{Riferimento Chess.com: Errore. App a 200k: Errore grave. Posizione PRIMA di 18...Bc5.} 18. ... Bc5 {Posizione DOPO 18...Bc5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 19.Re1+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p6p/2p2qp1/1pbp4/3n2Q1/1BN4P/PPP2PK1/R1B4R w kq - 2 19"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 19.Re1+.} 19. Re1+ {Posizione DOPO 19.Re1+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 19...Be7"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p6p/2p2qp1/1pbp4/3n2Q1/1BN4P/PPP2PK1/R1B1R3 b kq - 3 19"]
+
+{Riferimento Chess.com: Errore. App a 200k: Imprecisione. Posizione PRIMA di 19...Be7.} 19. ... Be7 {Posizione DOPO 19...Be7. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 20.Be3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p3b2p/2p2qp1/1p1p4/3n2Q1/1BN4P/PPP2PK1/R1B1R3 w kq - 4 20"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore. Posizione PRIMA di 20.Be3.} 20. Be3 {Posizione DOPO 20.Be3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 20...h5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p3b2p/2p2qp1/1p1p4/3n2Q1/1BN1B2P/PPP2PK1/R3R3 b kq - 5 20"]
+
+{Riferimento Chess.com: Errore. App a 200k: Imprecisione. Posizione PRIMA di 20...h5.} 20. ... h5 {Posizione DOPO 20...h5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 21.Qxd4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p3b3/2p2qp1/1p1p3p/3n2Q1/1BN1B2P/PPP2PK1/R3R3 w kq - 0 21"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 21.Qxd4.} 21. Qxd4 {Posizione DOPO 21.Qxd4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 21...O-O"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2k2r/p3b3/2p2qp1/1p1p3p/3Q4/1BN1B2P/PPP2PK1/R3R3 b kq - 0 21"]
+
+{Riferimento Chess.com: Errore. App a 200k: Ottima. Posizione PRIMA di 21...O-O.} 21. ... O-O {Posizione DOPO 21...O-O. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 22.Qxf6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn3rk1/p3b3/2p2qp1/1p1p3p/3Q4/1BN1B2P/PPP2PK1/R3R3 w - - 1 22"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Migliore. Posizione PRIMA di 22.Qxf6.} 22. Qxf6 {Posizione DOPO 22.Qxf6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 22...Rxf6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn3rk1/p3b3/2p2Qp1/1p1p3p/8/1BN1B2P/PPP2PK1/R3R3 b - - 0 22"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 22...Rxf6.} 22. ... Rxf6 {Posizione DOPO 22...Rxf6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 23.Bg5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn4k1/p3b3/2p2rp1/1p1p3p/8/1BN1B2P/PPP2PK1/R3R3 w - - 0 23"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 23.Bg5.} 23. Bg5 {Posizione DOPO 23.Bg5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 23...Rf7"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn4k1/p3b3/2p2rp1/1p1p2Bp/8/1BN4P/PPP2PK1/R3R3 b - - 1 23"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 23...Rf7.} 23. ... Rf7 {Posizione DOPO 23...Rf7. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 24...Rf8"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn4k1/p3Rr2/2p3p1/1p1p2Bp/8/1BN4P/PPP2PK1/R7 b - - 0 24"]
+
+{Riferimento Chess.com: Errore. App a 200k: Buona. Posizione PRIMA di 24...Rf8.} 24. ... Rf8 {Posizione DOPO 24...Rf8. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 26.Nxd5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn3rk1/p3R3/6p1/1ppp2Bp/8/1BN4P/PPP2PK1/4R3 w - - 0 26"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Buona. Posizione PRIMA di 26.Nxd5.} 26. Nxd5 {Posizione DOPO 26.Nxd5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 27.Bxc4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn3rk1/p3R3/6p1/1p1N2Bp/2p5/1B5P/PPP2PK1/4R3 w - - 0 27"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Geniale. Posizione PRIMA di 27.Bxc4.} 27. Bxc4 {Posizione DOPO 27.Bxc4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 27...Nc6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn3rk1/p3R3/6p1/1p1N2Bp/2B5/7P/PPP2PK1/4R3 b - - 0 27"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Ottima. Posizione PRIMA di 27...Nc6.} 27. ... Nc6 {Posizione DOPO 27...Nc6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 28...bxc4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r4rk1/p3R3/2n1R1p1/1p1N2Bp/2B5/7P/PPP2PK1/8 b - - 2 28"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore. Posizione PRIMA di 28...bxc4.} 28. ... bxc4 {Posizione DOPO 28...bxc4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 29.Bh6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r4rk1/p3R3/2n1R1p1/3N2Bp/2p5/7P/PPP2PK1/8 w - - 0 29"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore. Posizione PRIMA di 29.Bh6.} 29. Bh6 {Posizione DOPO 29.Bh6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 31.Nf6+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r4r2/p3n2k/6RB/3N3p/2p5/7P/PPP2PK1/8 w - - 1 31"]
+
+{Riferimento Chess.com: Errore grave. App a 200k: Mossa mancata. Posizione PRIMA di 31.Nf6+.} 31. Nf6+ {Posizione DOPO 31.Nf6+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 32.Rxf6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r7/p3n2k/5rRB/7p/2p5/7P/PPP2PK1/8 w - - 0 32"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 32.Rxf6.} 32. Rxf6 {Posizione DOPO 32.Rxf6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185262315732 32...Kg8"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r7/p3n2k/5R1B/7p/2p5/7P/PPP2PK1/8 b - - 0 32"]
+
+{Riferimento Chess.com: Buona. App a 200k: Imprecisione. Posizione PRIMA di 32...Kg8.} 32. ... Kg8 {Posizione DOPO 32...Kg8. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 3...Qxd5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3"]
+
+{Riferimento Chess.com: Libro. App a 200k: Buona. Posizione PRIMA di 3...Qxd5.} 3. ... Qxd5 {Posizione DOPO 3...Qxd5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 4.Nf3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rnb1kb1r/ppp1pppp/5n2/3q4/3P4/8/PP2PPPP/RNBQKBNR w KQkq - 0 4"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 4.Nf3.} 4. Nf3 {Posizione DOPO 4.Nf3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 6...Nc6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2kb1r/ppp1pppp/5n2/q7/3P2b1/2N2N2/PP1BPPPP/R2QKB1R b KQkq - 5 6"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 6...Nc6.} 6. ... Nc6 {Posizione DOPO 6...Nc6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 7...e5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3kb1r/ppp1pppp/2n2n2/q7/3PP1b1/2N2N2/PP1B1PPP/R2QKB1R b KQkq - 0 7"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore. Posizione PRIMA di 7...e5.} 7. ... e5 {Posizione DOPO 7...e5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 8.d5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3kb1r/ppp2ppp/2n2n2/q3p3/3PP1b1/2N2N2/PP1B1PPP/R2QKB1R w KQkq - 0 8"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore grave. Posizione PRIMA di 8.d5.} 8. d5 {Posizione DOPO 8.d5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 9.Nxe4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3kb1r/ppp2ppp/2n5/q2Pp3/4n1b1/2N2N2/PP1B1PPP/R2QKB1R w KQkq - 0 9"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore. Posizione PRIMA di 9.Nxe4.} 9. Nxe4 {Posizione DOPO 9.Nxe4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 10...O-O-O"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3kb1r/ppp2ppp/2n5/3qp3/4N1b1/5N2/PPQB1PPP/R3KB1R b KQkq - 1 10"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore. Posizione PRIMA di 10...O-O-O.} 10. ... O-O-O {Posizione DOPO 10...O-O-O. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 11.Bc4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "2kr1b1r/ppp2ppp/2n5/3qp3/4N1b1/5N2/PPQB1PPP/R3KB1R w KQ - 2 11"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 11.Bc4.} 11. Bc4 {Posizione DOPO 11.Bc4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 11...Nb4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "2kr1b1r/ppp2ppp/2n5/3qp3/2B1N1b1/5N2/PPQB1PPP/R3K2R b KQ - 3 11"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Ottima. Posizione PRIMA di 11...Nb4.} 11. ... Nb4 {Posizione DOPO 11...Nb4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 13...Qa5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "2kr3r/ppp2ppp/8/3qp3/1bB1N1b1/8/PPQN1PPP/R3K2R b KQ - 1 13"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore grave. Posizione PRIMA di 13...Qa5.} 13. ... Qa5 {Posizione DOPO 13...Qa5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 15.f3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "2kr3r/ppp2ppp/8/q3p3/2B1N1b1/8/PPQb1PPP/R4RK1 w - - 0 15"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore. Posizione PRIMA di 15.f3.} 15. f3 {Posizione DOPO 15.f3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 15...Bf5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "2kr3r/ppp2ppp/8/q3p3/2B1N1b1/5P2/PPQb2PP/R4RK1 b - - 0 15"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 15...Bf5.} 15. ... Bf5 {Posizione DOPO 15...Bf5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 16.Rfd1"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "2kr3r/ppp2ppp/8/q3pb2/2B1N3/5P2/PPQb2PP/R4RK1 w - - 1 16"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Buona. Posizione PRIMA di 16.Rfd1.} 16. Rfd1 {Posizione DOPO 16.Rfd1. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 17...Rxd6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "2kr3r/p1p2ppp/3N4/qp2pb2/2B5/5P2/PPQb2PP/R2R2K1 b - - 1 17"]
+
+{Riferimento Chess.com: Grande. App a 200k: Migliore. Posizione PRIMA di 17...Rxd6.} 17. ... Rxd6 {Posizione DOPO 17...Rxd6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 19...Qb6+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "1k5r/p1p2Bpp/3r4/qp2pQ2/8/5P2/PP1b2PP/R2R2K1 b - - 0 19"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 19...Qb6+.} 19. ... Qb6+ {Posizione DOPO 19...Qb6+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 20...Rf8"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "1k5r/p1p2Bpp/1q1r4/1p2pQ2/8/5P2/PP1b2PP/R2R3K b - - 2 20"]
+
+{Riferimento Chess.com: Errore. App a 200k: Imprecisione. Posizione PRIMA di 20...Rf8.} 20. ... Rf8 {Posizione DOPO 20...Rf8. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 21.Qxe5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "1k3r2/p1p2Bpp/1q1r4/1p2pQ2/8/5P2/PP1b2PP/R2R3K w - - 3 21"]
+
+{Riferimento Chess.com: Geniale. App a 200k: Migliore. Posizione PRIMA di 21.Qxe5.} 21. Qxe5 {Posizione DOPO 21.Qxe5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 24...a6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "8/pkp3pp/3r4/1p6/3q4/1Q3P2/PP1b2PP/R2R3K b - - 2 24"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Migliore. Posizione PRIMA di 24...a6.} 24. ... a6 {Posizione DOPO 24...a6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 25.a4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "8/1kp3pp/p2r4/1p6/3q4/1Q3P2/PP1b2PP/R2R3K w - - 0 25"]
+
+{Riferimento Chess.com: Buona. App a 200k: Migliore. Posizione PRIMA di 25.a4.} 25. a4 {Posizione DOPO 25.a4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 28...Kc6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "8/1k3Qpp/p2r4/1p6/q7/5P2/1P1b2PP/3R3K b - - 1 28"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 28...Kc6.} 28. ... Kc6 {Posizione DOPO 28...Kc6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316820266 31.Qf5+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "Smisiano"]
+[Result "*"]
+[SetUp "1"]
+[FEN "2Q5/6pp/p1r5/1pk5/q7/5P2/1P1b2PP/3R3K w - - 6 31"]
+
+{Riferimento Chess.com: Errore. App a 200k: Buona. Posizione PRIMA di 31.Qf5+.} 31. Qf5+ {Posizione DOPO 31.Qf5+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 3...Qc7"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1bqkbnr/pp1ppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"]
+
+{Riferimento Chess.com: Libro. App a 200k: Ottima. Posizione PRIMA di 3...Qc7.} 3. ... Qc7 {Posizione DOPO 3...Qc7. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 4.c3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kbnr/ppqppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 4.c3.} 4. c3 {Posizione DOPO 4.c3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 4...Nf6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kbnr/ppqppppp/2n5/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Migliore. Posizione PRIMA di 4...Nf6.} 4. ... Nf6 {Posizione DOPO 4...Nf6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 5.d4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/ppqppppp/2n2n2/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 5.d4.} 5. d4 {Posizione DOPO 5.d4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 6...Ng4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/ppq1pppp/2n2n2/1BppP3/3P4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 6"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore. Posizione PRIMA di 6...Ng4.} 6. ... Ng4 {Posizione DOPO 6...Ng4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 7.h3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/ppq1pppp/2n5/1BppP3/3P2n1/2P2N2/PP3PPP/RNBQK2R w KQkq - 1 7"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 7.h3.} 7. h3 {Posizione DOPO 7.h3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 8.Ba4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/1pq1pppp/p1n5/1BppP3/3P2n1/2P2N1P/PP3PP1/RNBQK2R w KQkq - 0 8"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore grave. Posizione PRIMA di 8.Ba4.} 8. Ba4 {Posizione DOPO 8.Ba4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 9...Ngxe5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/2q1pppp/p1n5/1pppP3/3P2n1/2P2N1P/PPB2PP1/RNBQK2R b KQkq - 1 9"]
+
+{Riferimento Chess.com: Buona. App a 200k: Errore. Posizione PRIMA di 9...Ngxe5.} 9. ... Ngxe5 {Posizione DOPO 9...Ngxe5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 10.Bf4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/2q1pppp/p1n5/1pppn3/3P4/2P2N1P/PPB2PP1/RNBQK2R w KQkq - 0 10"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore grave. Posizione PRIMA di 10.Bf4.} 10. Bf4 {Posizione DOPO 10.Bf4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 10...cxd4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/2q1pppp/p1n5/1pppn3/3P1B2/2P2N1P/PPB2PP1/RN1QK2R b KQkq - 1 10"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Imprecisione. Posizione PRIMA di 10...cxd4.} 10. ... cxd4 {Posizione DOPO 10...cxd4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 11.Bxe5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/2q1pppp/p1n5/1p1pn3/3p1B2/2P2N1P/PPB2PP1/RN1QK2R w KQkq - 0 11"]
+
+{Riferimento Chess.com: Errore. App a 200k: Errore grave. Posizione PRIMA di 11.Bxe5.} 11. Bxe5 {Posizione DOPO 11.Bxe5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 11...Nxe5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/2q1pppp/p1n5/1p1pB3/3p4/2P2N1P/PPB2PP1/RN1QK2R b KQkq - 0 11"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 11...Nxe5.} 11. ... Nxe5 {Posizione DOPO 11...Nxe5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 12.Nxe5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/2q1pppp/p7/1p1pn3/3p4/2P2N1P/PPB2PP1/RN1QK2R w KQkq - 0 12"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore. Posizione PRIMA di 12.Nxe5.} 12. Nxe5 {Posizione DOPO 12.Nxe5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 16.Nxd5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1k2r/5ppp/p3p3/1p1pq3/1b6/1BN4P/PP3PP1/R2Q1K1R w kq - 2 16"]
+
+{Riferimento Chess.com: Buona. App a 200k: Imprecisione. Posizione PRIMA di 16.Nxd5.} 16. Nxd5 {Posizione DOPO 16.Nxd5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 17.Bxd5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1k2r/5ppp/p7/1p1pq3/1b6/1B5P/PP3PP1/R2Q1K1R w kq - 0 17"]
+
+{Riferimento Chess.com: Buona. App a 200k: Migliore. Posizione PRIMA di 17.Bxd5.} 17. Bxd5 {Posizione DOPO 17.Bxd5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 18.a3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b2rk1/5ppp/p7/1p1Bq3/1b6/7P/PP3PP1/R2Q1K1R w - - 1 18"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore grave. Posizione PRIMA di 18.a3.} 18. a3 {Posizione DOPO 18.a3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 19.Qf3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1br2k1/5ppp/p7/1p1Bq3/1b6/P6P/1P3PP1/R2Q1K1R w - - 1 19"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore. Posizione PRIMA di 19.Qf3.} 19. Qf3 {Posizione DOPO 19.Qf3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 184316313800 20...Be6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b3k1/5ppp/p7/1p1rq3/1b6/PQ5P/1P3PP1/R4K1R b - - 1 20"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Ottima. Posizione PRIMA di 20...Be6.} 20. ... Be6 {Posizione DOPO 20...Be6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 6...Bxf3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn1qkb1r/pp2pppp/2p2n2/8/2BPP1b1/2N2N2/PP3PPP/R1BQK2R b KQkq - 0 6"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Buona. Posizione PRIMA di 6...Bxf3.} 6. ... Bxf3 {Posizione DOPO 6...Bxf3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 8...Nxe4"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2kb1r/pp2pppp/2p2n2/q7/2BPPP2/2N5/PP3P1P/R1BQK2R b KQkq - 0 8"]
+
+{Riferimento Chess.com: Grande. App a 200k: Migliore. Posizione PRIMA di 8...Nxe4.} 8. ... Nxe4 {Posizione DOPO 8...Nxe4. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 9...Nd6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "rn2kb1r/pp2pppp/2p5/q7/2BPnP2/2NQ4/PP3P1P/R1B1K2R b KQkq - 1 9"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Grande. Posizione PRIMA di 9...Nd6.} 9. ... Nd6 {Posizione DOPO 9...Nd6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 14...g6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3kb1r/ppqnp1pp/2p2p2/5Q2/3P4/1B6/PP1BNP1P/R3K2R b KQkq - 0 14"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Ottima. Posizione PRIMA di 14...g6.} 14. ... g6 {Posizione DOPO 14...g6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 15.Qe6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3kb1r/ppqnp2p/2p2pp1/5Q2/3P4/1B6/PP1BNP1P/R3K2R w KQkq - 0 15"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Ottima. Posizione PRIMA di 15.Qe6.} 15. Qe6 {Posizione DOPO 15.Qe6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 15...a6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3kb1r/ppqnp2p/2p1Qpp1/8/3P4/1B6/PP1BNP1P/R3K2R b KQkq - 1 15"]
+
+{Riferimento Chess.com: Errore. App a 200k: Buona. Posizione PRIMA di 15...a6.} 15. ... a6 {Posizione DOPO 15...a6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 17.O-O-O"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r2k1b1r/1pqnpQ1p/p1p2pp1/8/3P4/1B6/PP1BNP1P/R3K2R w KQ - 2 17"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 17.O-O-O.} 17. O-O-O {Posizione DOPO 17.O-O-O. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 17...e6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r2k1b1r/1pqnpQ1p/p1p2pp1/8/3P4/1B6/PP1BNP1P/2KR3R b - - 3 17"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Ottima. Posizione PRIMA di 17...e6.} 17. ... e6 {Posizione DOPO 17...e6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 18.Qxe6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r2k1b1r/1pqn1Q1p/p1p1ppp1/8/3P4/1B6/PP1BNP1P/2KR3R w - - 0 18"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Buona. Posizione PRIMA di 18.Qxe6.} 18. Qxe6 {Posizione DOPO 18.Qxe6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 19...Nf8"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r2k3r/1pqn3p/p1pbQpp1/8/3P4/1B6/PP1BNP1P/1K1R3R b - - 2 19"]
+
+{Riferimento Chess.com: Errore. App a 200k: Imprecisione. Posizione PRIMA di 19...Nf8.} 19. ... Nf8 {Posizione DOPO 19...Nf8. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 20.Qxf6+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r2k1n1r/1pq4p/p1pbQpp1/8/3P4/1B6/PP1BNP1P/1K1R3R w - - 3 20"]
+
+{Riferimento Chess.com: Grande. App a 200k: Migliore. Posizione PRIMA di 20.Qxf6+.} 20. Qxf6+ {Posizione DOPO 20.Qxf6+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 21...Qxe2"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r2k1n1Q/1p2q2p/p1pb2p1/8/3P4/1B6/PP1BNP1P/1K1R3R b - - 0 21"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Migliore. Posizione PRIMA di 21...Qxe2.} 21. ... Qxe2 {Posizione DOPO 21...Qxe2. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 22.Bg5+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r2k1n1Q/1p5p/p1pb2p1/8/3P4/1B6/PP1BqP1P/1K1R3R w - - 0 22"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Ottima. Posizione PRIMA di 22.Bg5+.} 22. Bg5+ {Posizione DOPO 22.Bg5+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 22...Kc8"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r2k1n1Q/1p5p/p1pb2p1/6B1/3P4/1B6/PP2qP1P/1K1R3R b - - 1 22"]
+
+{Riferimento Chess.com: Errore. App a 200k: Ottima. Posizione PRIMA di 22...Kc8.} 22. ... Kc8 {Posizione DOPO 22...Kc8. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 25.Qg7+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3Rn1Q/1pk4p/p1pb2p1/6B1/3P4/1B6/PP3q1P/1K1R4 w - - 2 25"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 25.Qg7+.} 25. Qg7+ {Posizione DOPO 25.Qg7+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 26.Bd8+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3R3/1pkn2Qp/p1pb2p1/6B1/3P4/1B6/PP3q1P/1K1R4 w - - 4 26"]
+
+{Riferimento Chess.com: Mossa mancata. App a 200k: Errore grave. Posizione PRIMA di 26.Bd8+.} 26. Bd8+ {Posizione DOPO 26.Bd8+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230271130 28.Bxf2"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "ProprioI0"]
+[Black "BUMCestinait0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r3R3/1pkn2Qp/p1pb2p1/8/3P3B/1B6/PP3q1P/1K1R4 w - - 8 28"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Migliore. Posizione PRIMA di 28.Bxf2.} 28. Bxf2 {Posizione DOPO 28.Bxf2. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 4...Ne5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kbnr/pp1ppppp/2n5/q1pP4/4P3/2P5/PP3PPP/RNBQKBNR b KQkq - 0 4"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Buona. Posizione PRIMA di 4...Ne5.} 4. ... Ne5 {Posizione DOPO 4...Ne5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 5.Nf3"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kbnr/pp1ppppp/8/q1pPn3/4P3/2P5/PP3PPP/RNBQKBNR w KQkq - 1 5"]
+
+{Riferimento Chess.com: Errore. App a 200k: Imprecisione. Posizione PRIMA di 5.Nf3.} 5. Nf3 {Posizione DOPO 5.Nf3. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 8.Bg5"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/pp2pppp/5n2/q1pPp3/4P3/2PB4/PP3PPP/RNBQK2R w KQkq - 2 8"]
+
+{Riferimento Chess.com: Buona. App a 200k: Ottima. Posizione PRIMA di 8.Bg5.} 8. Bg5 {Posizione DOPO 8.Bg5. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 8...Qb6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/pp2pppp/5n2/q1pPp1B1/4P3/2PB4/PP3PPP/RN1QK2R b KQkq - 3 8"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Buona. Posizione PRIMA di 8...Qb6.} 8. ... Qb6 {Posizione DOPO 8...Qb6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 9...h6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/pp2pppp/1q3n2/2pPp1B1/4P3/2PB4/PP2QPPP/RN2K2R b KQkq - 5 9"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Ottima. Posizione PRIMA di 9...h6.} 9. ... h6 {Posizione DOPO 9...h6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 10...Qxf6"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/pp2ppp1/1q3B1p/2pPp3/4P3/2PB4/PP2QPPP/RN2K2R b KQkq - 0 10"]
+
+{Riferimento Chess.com: Migliore. App a 200k: Ottima. Posizione PRIMA di 10...Qxf6.} 10. ... Qxf6 {Posizione DOPO 10...Qxf6. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 11.Nd2"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r1b1kb1r/pp2ppp1/5q1p/2pPp3/4P3/2PB4/PP2QPPP/RN2K2R w KQkq - 0 11"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Migliore. Posizione PRIMA di 11.Nd2.} 11. Nd2 {Posizione DOPO 11.Nd2. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 14.Qb5+"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r4b1r/pp1k1pp1/4pq1p/2pPp3/4P3/2P5/PP1NQPPP/R3K2R w KQ - 0 14"]
+
+{Riferimento Chess.com: Ottima. App a 200k: Migliore. Posizione PRIMA di 14.Qb5+.} 14. Qb5+ {Posizione DOPO 14.Qb5+. Il riferimento e stato confermato da Carlo.} *
+
+[Event "Studio 185230000668 14...Kc8"]
+[Site "ChessProfessor"]
+[Date "????.??.??"]
+[Round "?"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "*"]
+[SetUp "1"]
+[FEN "r4b1r/pp1k1pp1/4pq1p/1QpPp3/4P3/2P5/PP1N1PPP/R3K2R b KQ - 1 14"]
+
+{Riferimento Chess.com: Imprecisione. App a 200k: Errore. Posizione PRIMA di 14...Kc8.} 14. ... Kc8 {Posizione DOPO 14...Kc8. Il riferimento e stato confermato da Carlo.} *

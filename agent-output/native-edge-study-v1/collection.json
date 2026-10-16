@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "records": [
+    {
+      "index": 0,
+      "path": "agent-output/native-edge-study-v1/search-0.json",
+      "sha256": "f5fd9dcc13f57d89b1bbaa65cfb437ba7ad321625f69e38fd6eb2d00a57f8b83"
+    },
+    {
+      "index": 1,
+      "path": "agent-output/native-edge-study-v1/search-1.json",
+      "sha256": "4e757dc0490d1a9abbb485dc768005c4133b07cfdb4eacb954aacb8de5042a61"
+    },
+    {
+      "index": 2,
+      "path": "agent-output/native-edge-study-v1/search-2.json",
+      "sha256": "85a188f9d881b24eaf2d29e934c241f972dcd5fb9b37ca69489af82eba99d545"
+    },
+    {
+      "index": 3,
+      "path": "agent-output/native-edge-study-v1/search-3.json",
+      "sha256": "f053b64cb2893fecf27e03e1c8da66c570457d0738a3bbeff4e2912024a6a502"
+    }
+  ],
+  "actualNodes": 4000923,
+  "cap": 4020000
+}

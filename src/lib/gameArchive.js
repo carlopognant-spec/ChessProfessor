@@ -1,6 +1,9 @@
 import { Chess } from 'chess.js'
 import { isAnalysisCurrent } from './analysisMetadata.js'
 import { refinementFor } from './analysisRefinement.js'
+import {mergeGrandeProof} from './grandeProofs.js'
+import {mergeNativeProof} from './nativeEvidence.js'
+import { sacrificeSearchFor, preferredSacrificeConfirmation, mergeRecoveryProofs,mergeSacrificeAttempts } from './sacrificeSearches.js'
 
 export const ARCHIVE_SCHEMA_VERSION = 1
 export const ANALYSIS_SCHEMA_VERSION = 1
@@ -117,8 +120,26 @@ export function createGameArchive(options = {}) {
               && entries.length < previous.analysisEntries.length && entries.every(isAnalysisCurrent))) {
               record.analysisEntries = structuredClone(entries.map((entry, index) => {
                 const old = previous?.analysisEntries?.[index]
-                return !entry.refinement && old?.fenBefore === entry.fenBefore && old.fenAfter === entry.fenAfter && refinementFor(old)
-                  ? { ...entry, refinement: old.refinement } : entry
+                const prior = old?.fenBefore === entry.fenBefore && old.fenAfter === entry.fenAfter ? refinementFor(old) : null
+                if (!prior) return entry
+                const current = refinementFor(entry)
+                const grandeProof = mergeGrandeProof(entry,old.refinement?.grandeProof,entry.refinement?.grandeProof)
+                const nativeProof=mergeNativeProof(entry,old.refinement?.nativeProof,entry.refinement?.nativeProof)
+                const sacrifices = new Map()
+                for (const source of [old, entry]) for (const row of source.refinement?.sacrifices ?? []) {
+                  const valid = sacrificeSearchFor(source, row.captureUci)
+                  if (!valid?.acceptance && !valid?.confirmation) continue
+                  const previousRow = sacrifices.get(row.captureUci)
+                  sacrifices.set(row.captureUci, { ...valid, acceptance: valid.acceptance ?? previousRow?.acceptance ?? null,
+                    recoveries: mergeRecoveryProofs(valid.acceptedFen,previousRow?.recoveries,valid.recoveries),
+                    confirmation: preferredSacrificeConfirmation(valid.acceptedFen, previousRow?.confirmation, valid.confirmation) })
+                }
+                return { ...entry, refinement: current ? { ...prior, ...current,
+                  engine: current.engine ?? prior.engine, playedEngine: current.playedEngine ?? prior.playedEngine,
+                  ...(grandeProof ? {grandeProof} : {}),
+                  ...(nativeProof?{nativeProof}:{}),
+                  sacrificeAttempts:mergeSacrificeAttempts(prior.sacrificeAttempts,current.sacrificeAttempts),
+                  sacrifices: [...sacrifices.values()] } : old.refinement }
               }))
               record.analysisMetadata = structuredClone(entries[0].analysisMetadata)
               record.analysisSchemaVersion = ANALYSIS_SCHEMA_VERSION

@@ -1,0 +1,62 @@
+﻿[
+    {
+        "number":  7,
+        "source":  "C:\\Users\\carlo\\Desktop\\ChessProfessor\\Partite\\7",
+        "destination":  "C:\\Users\\carlo\\Desktop\\ChessProfessor\\Partite\\Archivio-non-analizzate\\7",
+        "files":  [
+                      {
+                          "relativePath":  "analisi.txt",
+                          "sha256":  "B9CE9AA8A8375DCBCE8896FC6091B38255D2E0293E4D61AC4055265528C194F9"
+                      },
+                      {
+                          "relativePath":  "drsbharath_vs_BUMCestinait0_2026.10.05.pgn",
+                          "sha256":  "0FEE4F6529A9A587E56F8126DC8361E109662C5C18B029C1142C85DA4BBE26DD"
+                      }
+                  ]
+    },
+    {
+        "number":  8,
+        "source":  "C:\\Users\\carlo\\Desktop\\ChessProfessor\\Partite\\8",
+        "destination":  "C:\\Users\\carlo\\Desktop\\ChessProfessor\\Partite\\Archivio-non-analizzate\\8",
+        "files":  [
+                      {
+                          "relativePath":  "analisi.txt",
+                          "sha256":  "623B643E57C4B0076913DB9C14A12FDDC2FF2B3F629846A489FFF01E1E82F1CE"
+                      },
+                      {
+                          "relativePath":  "BUMCestinait0_vs_YoannGaudiello_2026.10.05.pgn",
+                          "sha256":  "BA58B19A48542220CC61F2C84B8E1BBD03BF0D003678F290E3A3B4813841C90C"
+                      }
+                  ]
+    },
+    {
+        "number":  9,
+        "source":  "C:\\Users\\carlo\\Desktop\\ChessProfessor\\Partite\\9",
+        "destination":  "C:\\Users\\carlo\\Desktop\\ChessProfessor\\Partite\\Archivio-non-analizzate\\9",
+        "files":  [
+                      {
+                          "relativePath":  "akshay_patil_005_vs_BUMCestinait0_2026.10.05.pgn",
+                          "sha256":  "DEBB442DAD6115E919446F5F6341C04676A6D083D92618CA0059F4AEE77FD1E3"
+                      },
+                      {
+                          "relativePath":  "analisi.txt",
+                          "sha256":  "1EE17CBCC06BA503A68717ABC4F5304985B3D383DA25D5ADA2DEA45FBE38D21D"
+                      }
+                  ]
+    },
+    {
+        "number":  10,
+        "source":  "C:\\Users\\carlo\\Desktop\\ChessProfessor\\Partite\\10",
+        "destination":  "C:\\Users\\carlo\\Desktop\\ChessProfessor\\Partite\\Archivio-non-analizzate\\10",
+        "files":  [
+                      {
+                          "relativePath":  "analisi.txt",
+                          "sha256":  "73DB7215F2F87C29489F9CE10AE3E2FC8543177EF1A776C015E910F3BD6209A0"
+                      },
+                      {
+                          "relativePath":  "BUMCestinait0_vs_Bigmam1121_2026.10.05.pgn",
+                          "sha256":  "851C7E6BE958BD4A67E8B0A42EC5F69E5259CFDF3E8540CB54D7C7D956BC8E84"
+                      }
+                  ]
+    }
+]

@@ -1,0 +1,339 @@
+{
+  "schema": 1,
+  "fingerprint": "ea39be768d17d71712b09739480466d4a95dd65ae0960a79c999e23ce437750c",
+  "candidate": null,
+  "developmentOnly": true,
+  "independentValidation": false,
+  "newEngineSearches": 0,
+  "mode": "stored-evidence-classifier-replay",
+  "baselineVersion": "counterfactual-v22",
+  "sources": [
+    {
+      "path": "src/lib/accuracy.js",
+      "sha256": "132c120c39dfd98ad4c6560a40f2dfeb10f454e823976d33b7873d981c8c87e1"
+    },
+    {
+      "path": "src/lib/analysisCache.js",
+      "sha256": "c685d7fc63ca55105b7ba514dcd0b7cc46b5fd711cae453d3441b7987f1e72da"
+    },
+    {
+      "path": "src/lib/analysisMetadata.js",
+      "sha256": "5d618bb3b6c7a1edc1434db6dea281a054dcdcf6aeb70b39f618b8ebff20fa3d"
+    },
+    {
+      "path": "src/lib/analysisPresentation.js",
+      "sha256": "bd65c98ed51e91684a4645ca12e2904535ede77497d085b415e279941a58a05f"
+    },
+    {
+      "path": "src/lib/analysisRefinement.js",
+      "sha256": "6cfe84398a0c138b82ed3a3499c206fe0c90fb518569f2668f4dc4805344f8b0"
+    },
+    {
+      "path": "src/lib/bishopSkewer.js",
+      "sha256": "1a7bcd7fbe57b109ae1358c5b7ed06ae4f23f411cff70c485a7d3e5522d2ebf4"
+    },
+    {
+      "path": "src/lib/classification.js",
+      "sha256": "2bdd4f56ad53f36d29d051a98debd66faeab5e396ad6a78b7d7d54a38f41c262"
+    },
+    {
+      "path": "src/lib/deferredResponse.js",
+      "sha256": "b0698951d3812b81eb79a737291e14abf77a9a30f0c265dfb54745f37903cef4"
+    },
+    {
+      "path": "src/lib/discoveredCheck.js",
+      "sha256": "d53f6db517ee83a4a0a526b5e48c237e2b2c9db6c61945b9b9c4824b429feb63"
+    },
+    {
+      "path": "src/lib/engineAssets.js",
+      "sha256": "e62f826664f392a02c0a4795de8dab09a13d7808131f42fd189b10db3d57f1f6"
+    },
+    {
+      "path": "src/lib/engineConfig.js",
+      "sha256": "506890191d0d9a9837c0f0ec6571c6cb4bac055d47265fc329040f08d8af787a"
+    },
+    {
+      "path": "src/lib/evaluation.js",
+      "sha256": "09e174188867ff6b08ab848dbe84a9c3fe7b8c4a98e7861fbf1d6c1639d4d9b5"
+    },
+    {
+      "path": "src/lib/gameAnalysis.js",
+      "sha256": "8e3991b0766095427efb84d60b12f1c516b1b81b4cb45014c46b3368aa445e75"
+    },
+    {
+      "path": "src/lib/gameArchive.js",
+      "sha256": "5d9e70ce3f9961f76b4184f89ae6168c7fc6436a8046982a91e821bb4aadc898"
+    },
+    {
+      "path": "src/lib/gameNavigation.js",
+      "sha256": "4d26e81b2a98a273d2ad5bbdca22f0d188c346fec1e08bb7a582a19cf7945323"
+    },
+    {
+      "path": "src/lib/grandeProofs.js",
+      "sha256": "d7d7769af6b84f8b8b86e7d811bea35f9ccae87038e4328f5dbe7a4be8a39274"
+    },
+    {
+      "path": "src/lib/knightPinEvasion.js",
+      "sha256": "3ed8c9a17887ce43c80bb831acf2a36469063847e58bf19db05ee9965fe8598c"
+    },
+    {
+      "path": "src/lib/lichessExplorer.js",
+      "sha256": "caab7afe431ebffc738ac47eb2b56d750784a58e8862877c2285ba61fb6cab80"
+    },
+    {
+      "path": "src/lib/mateComparison.js",
+      "sha256": "2cb95fd70b9071f67a70b9ebfd82c39976d07cbbb1d2d0f437338227c04539a7"
+    },
+    {
+      "path": "src/lib/materialRealization.js",
+      "sha256": "b8e4200f055d7e688e27307c4827457005fa5114599b3851e1588157cf45ef23"
+    },
+    {
+      "path": "src/lib/matingThreat.js",
+      "sha256": "5eec2caeecc8a31a412a42c3702bb36b7e4a58102c9cfd18a46570b96c985745"
+    },
+    {
+      "path": "src/lib/missedOpportunity.js",
+      "sha256": "eacedc342ba25980e25375f204fa6307960be49afd4f29025b4dd0c81db221f6"
+    },
+    {
+      "path": "src/lib/moveOpportunities.js",
+      "sha256": "86be4decda08123036266abc053a1ea6175362f699be8bbc27852c09b5722c5c"
+    },
+    {
+      "path": "src/lib/moveReviewPresentation.js",
+      "sha256": "d7d912cb6dd5bd996a1d9d860a1fc7d276d9b04239857a448bcdb916eabd42db"
+    },
+    {
+      "path": "src/lib/multiPvEvidence.js",
+      "sha256": "91c351c7865feeee33db27866ee61e8d39e7b5f18acb90182a02a2ffd017ac09"
+    },
+    {
+      "path": "src/lib/nativeEdgeChoice.js",
+      "sha256": "d3006ce1ede5207c75b2b239b4446d3fa00670bdf57878e81812ae266e517b32"
+    },
+    {
+      "path": "src/lib/nativeEvidence.js",
+      "sha256": "1e522b3bce5b7200b791dd3e0b6918ac4a4ad6e882737551fc92f27092013928"
+    },
+    {
+      "path": "src/lib/nativeProofs.js",
+      "sha256": "24f37b524ad2af68cc37fbe700cfdf07c0986400e2a64bce0c6e78abc417dc9f"
+    },
+    {
+      "path": "src/lib/nativeWdl.js",
+      "sha256": "b83b1948acb7abacf6b9f22f8ab9ea9b710e4526d35b0bbae9e24dec54eb2c99"
+    },
+    {
+      "path": "src/lib/nativeWinningChoice.js",
+      "sha256": "4747358f147d0752765dd7b6f9ba68548b0d71f1b0ecefdafadab9265b910c2b"
+    },
+    {
+      "path": "src/lib/openingBook.js",
+      "sha256": "7a0187a755c4c566e8aeb541b81477a2fa98708621256135624bd06b2655513c"
+    },
+    {
+      "path": "src/lib/opportunityEpisodes.js",
+      "sha256": "1786fc69f8b480808ff18829b13068f7a87018f656067a3ecb07504d0531ecc9"
+    },
+    {
+      "path": "src/lib/opportunityEvidence.js",
+      "sha256": "80c100fbf669e41a0f6b0b1df6e5f18c6d9bc26da17a348bf6ec065aabf99246"
+    },
+    {
+      "path": "src/lib/opportunityProofs.js",
+      "sha256": "260fcee5d8eb228bd1a6a091c0ed718311d3200e4bc65143d1d705802f80edfd"
+    },
+    {
+      "path": "src/lib/positionEditor.js",
+      "sha256": "be2bb1df34d44f5b670f132a370e80745ab94cea1655460ba417cffb7eb97544"
+    },
+    {
+      "path": "src/lib/positionFacts.js",
+      "sha256": "1180bbbcd4640bb126b2ff52280965f6c91328135f89577c5d0dfe95bdb7e9c6"
+    },
+    {
+      "path": "src/lib/queenEvasion.js",
+      "sha256": "107a3a39bcdc5d1bdd77a80f2db614ab9a1c1c98e30db3e4d56d656c126bcc17"
+    },
+    {
+      "path": "src/lib/responseEvidence.js",
+      "sha256": "d5376bbce7b7b021db4f0dd80d166758015da687043458a87a3ef4d4ace186d8"
+    },
+    {
+      "path": "src/lib/restoredMateRoute.js",
+      "sha256": "b17d68444bc604fc1a5d27db93440a3a58779c9a0869d6ea17e3caca5b666c9b"
+    },
+    {
+      "path": "src/lib/reviewEvaluation.js",
+      "sha256": "33a8a3d14bd06964fc5710b8f7da596f675858889e84f81980147446627ce0ea"
+    },
+    {
+      "path": "src/lib/reviewMoves.js",
+      "sha256": "b6eb3a5287950e09a00c6ca867f3e75c057c9085933a86f322c3c92edf32d1cd"
+    },
+    {
+      "path": "src/lib/rookAccess.js",
+      "sha256": "7f5eca201bbe0a9c2a65d7a01816e289c717891e26289109fb2e82259df54b24"
+    },
+    {
+      "path": "src/lib/sacrificeEvidence.js",
+      "sha256": "06772d4bcaefc02f75d0f7905d52e2acc98729079bb85422a1e69e0720f541fa"
+    },
+    {
+      "path": "src/lib/sacrificeProofs.js",
+      "sha256": "ca00097fd9f335ac695380b3e08d4aa94e0d884ae073217759485968c1f440ca"
+    },
+    {
+      "path": "src/lib/sacrificeSearches.js",
+      "sha256": "dd82787f27cd1729f998799a2f18f98675f91db69b1ffca2a435ceebb1a85dfe"
+    },
+    {
+      "path": "src/lib/specialClassification.js",
+      "sha256": "45ade3128fae0b8459823dca005639164dc26ced0c414af13fcd2185a8dd913a"
+    },
+    {
+      "path": "src/lib/specialPolicy.js",
+      "sha256": "ed8dffcc642a1992de0e023ceca214f53bf143572dec7b77ac8bf27272d1a520"
+    },
+    {
+      "path": "src/lib/stockfish.js",
+      "sha256": "1fffbde9656c3f7692b9fb40feb70c187fce59eca56bad9eb5d765a9a787e9b8"
+    },
+    {
+      "path": "src/lib/tacticalEvidence.js",
+      "sha256": "c812ed79775b9b9153f0f2be8a0dc5829e43be695ce62b024d60d3ef4adc06bb"
+    },
+    {
+      "path": "scripts/review-automation.mjs",
+      "sha256": "5fe19466a42734c4ca281915b97836aca5acc30e51a6a1629274ebf8b234bd24"
+    },
+    {
+      "path": "scripts/qa/review-report.mjs",
+      "sha256": "7e06058e3a97be1977a4fc748f7a90de3dc4757358b08812375116515b857387"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "234de9e9c14aa05dde525c20c0982ac766a33c38fb84dd70c58fba4dde850ff7"
+    },
+    {
+      "path": "scripts/qa/review-evidence.json",
+      "sha256": "75de2d03004842f4f2a05b7054269c8729f9d1ddd5c8c56cfe6863a71f9ff9c0"
+    },
+    {
+      "path": "agent-output/native-edge-study-v1/replay-check.json",
+      "sha256": "e130fdea64fe2235f28f3eae62e1b5e798547a43e391855d517e9c6b96a2ac9f"
+    },
+    {
+      "path": "agent-output/native-edge-study-v1/collection.json",
+      "sha256": "d9a513305ed62ff2603f4e5757189d6ce609a36057806c9041ff2118330d8747"
+    },
+    {
+      "path": "agent-output/native-edge-study-v1/search-0.json",
+      "sha256": "f5fd9dcc13f57d89b1bbaa65cfb437ba7ad321625f69e38fd6eb2d00a57f8b83"
+    },
+    {
+      "path": "agent-output/native-edge-study-v1/search-1.json",
+      "sha256": "4e757dc0490d1a9abbb485dc768005c4133b07cfdb4eacb954aacb8de5042a61"
+    },
+    {
+      "path": "agent-output/native-edge-study-v1/search-2.json",
+      "sha256": "85a188f9d881b24eaf2d29e934c241f972dcd5fb9b37ca69489af82eba99d545"
+    },
+    {
+      "path": "agent-output/native-edge-study-v1/search-3.json",
+      "sha256": "f053b64cb2893fecf27e03e1c8da66c570457d0738a3bbeff4e2912024a6a502"
+    }
+  ],
+  "result": {
+    "passed": true,
+    "observations": 1116,
+    "uniqueMoves": 854,
+    "specials": [
+      {
+        "category": "Grande",
+        "expected": 34,
+        "correct": 32,
+        "false": 0
+      },
+      {
+        "category": "Geniale",
+        "expected": 4,
+        "correct": 4,
+        "false": 0
+      }
+    ],
+    "improvements": [
+      {
+        "cohort": "old",
+        "game": "personal-05",
+        "ply": 27,
+        "san": "Qxa8",
+        "expected": "Grande",
+        "actual": "Grande",
+        "numericUnchanged": true,
+        "reason": "verified-major-piece-tactic",
+        "before": "Migliore"
+      },
+      {
+        "cohort": "old",
+        "game": "personal-06",
+        "ply": 31,
+        "san": "Nd5",
+        "expected": "Grande",
+        "actual": "Grande",
+        "numericUnchanged": true,
+        "reason": "verified-major-piece-tactic",
+        "before": "Migliore"
+      },
+      {
+        "cohort": "old",
+        "game": "game-2-saintamant-staunton-1843",
+        "ply": 56,
+        "san": "axb4",
+        "expected": "Grande",
+        "actual": "Grande",
+        "numericUnchanged": true,
+        "reason": "critical-native-advantage-choice",
+        "before": "Migliore"
+      },
+      {
+        "cohort": "old",
+        "game": "game-2-saintamant-staunton-1843",
+        "ply": 82,
+        "san": "Bf3",
+        "expected": "Grande",
+        "actual": "Grande",
+        "numericUnchanged": true,
+        "reason": "verified-major-piece-tactic",
+        "before": "Migliore"
+      }
+    ],
+    "regressions": [],
+    "otherChanges": [],
+    "falsePositives": [],
+    "numericChanges": [],
+    "unresolved": [
+      {
+        "cohort": "old",
+        "game": "game-1-chigorin-steinitz-1892",
+        "ply": 28,
+        "san": "c6",
+        "expected": "Grande",
+        "actual": "Migliore",
+        "numericUnchanged": true,
+        "reason": "not-eligible"
+      },
+      {
+        "cohort": "old",
+        "game": "game-2-saintamant-staunton-1843",
+        "ply": 76,
+        "san": "Ne4",
+        "expected": "Grande",
+        "actual": "Migliore",
+        "numericUnchanged": true,
+        "reason": "incomplete-common-depth-snapshot"
+      }
+    ]
+  }
+}

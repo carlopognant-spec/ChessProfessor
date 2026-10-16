@@ -70,6 +70,9 @@ export default function AnalysisSummary({ entries = [] }) {
                 {' → '}Approfondita: {CATEGORY_LABELS[row.refinementComparison.refinedClassification]} ({formatAnalysisScore(row.refinementComparison.refinedEval, row.refinementComparison.refinedMate, { delivered: row.refinementComparison.refinedMate === 0 })})
                 {row.refinementComparison.changed ? ' · Valutazione aggiornata.' : ' · Valutazione invariata.'}
               </small>}
+              {row.refinementComparison?.rootComparisonChoice && <small className="mate-distance-note">
+                Confronto iniziale più profondo conservato.
+              </small>}
             </span>
           </button>
         ))}

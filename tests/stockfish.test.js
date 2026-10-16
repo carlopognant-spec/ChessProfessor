@@ -13,6 +13,22 @@ function controlledWorker() {
 }
 
 describe('Stockfish MultiPV', () => {
+  it('keeps restricted root searches separate from ordinary position profiles', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      worker.emit('readyok')
+      const fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
+      const pending = engine.analyze(fen, 200000, 1, { searchMoves: ['e2e4'] })
+      await vi.waitFor(() => expect(worker.messages).toContain('go nodes 200000 searchmoves e2e4'))
+      worker.emit('info depth 10 nodes 200100 score cp 20 pv e2e4 e7e5')
+      worker.emit('bestmove e2e4')
+      expect(await pending).toMatchObject({ analysisMetadata: { searchMoves: ['e2e4'] }, specialLines: [{ depth: 10 }] })
+      const count = worker.messages.length
+      await expect(engine.analyze(fen, 200000, 1, { searchMoves: ['e2e5'] })).rejects.toThrow()
+      await expect(engine.analyze(fen, 200000, 1, { searchMoves: [] })).rejects.toThrow()
+      expect(worker.messages).toHaveLength(count)
+    } finally { engine.destroy() }
+  })
   it('cancels an active request and drains its bestmove before accepting the next request', async () => {
     const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
     try {

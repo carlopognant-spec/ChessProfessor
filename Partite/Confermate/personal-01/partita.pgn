@@ -1,0 +1,32 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2026.10.01"]
+[Round "-"]
+[White "BUMCestinait0"]
+[Black "boyjonbum"]
+[Result "1-0"]
+[CurrentPosition "q3r1k1/p2n2Q1/1p2p2p/6pb/P1P5/2B4P/1P3P2/R3R1K1 b - - 2 26"]
+[Timezone "UTC"]
+[ECO "B01"]
+[ECOUrl "https://www.chess.com/openings/Scandinavian-Defense-Mieses-Kotrc-Variation-3.Nc3-Qd8-4.d4"]
+[UTCDate "2026.10.01"]
+[UTCTime "17:22:55"]
+[WhiteElo "729"]
+[BlackElo "707"]
+[TimeControl "600"]
+[Termination "BUMCestinait0 won by checkmate"]
+[StartTime "17:22:55"]
+[EndDate "2026.10.01"]
+[EndTime "17:33:40"]
+[Link "https://www.chess.com/analysis/game/live/184665328712/review?move=0"]
+[WhiteUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[WhiteCountry "76"]
+[WhiteTitle ""]
+[BlackUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[BlackCountry "70"]
+[BlackTitle ""]
+
+1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8 4. d4 e6 5. Nf3 Bb4 6. Bd2 Bxc3 7. Bxc3 Nf6 8.
+h3 O-O 9. Bd3 h6 10. O-O b6 11. Re1 Bb7 12. a4 Qd5 13. Bb4 Re8 14. c4 Qd8 15.
+Qd2 Nh5 16. g4 Bxf3 17. gxh5 Qxd4 18. Bc3 Qd8 19. Qe3 Bxh5 20. Be4 Nd7 21. Bxa8
+Qxa8 22. Qg3 g5 23. Qxc7 Nf8 24. Qe5 f6 25. Qxf6 Nd7 26. Qg7# 1-0

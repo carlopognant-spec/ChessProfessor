@@ -38,10 +38,25 @@ function refinementExample() {
   return { entries: reclassifyReviewedMoves(raw), pgn: cache.pgn, packets }
 }
 
-async function openRefinementExample(page, delay = 5) {
-  const data = refinementExample()
-  await page.addInitScript(({ packets, delay }) => {
-    window.workerCount = 0; window.refinementSearches = 0; window.fastSearches = 0
+async function openRefinementExample(page, delay = 5, example = null) {
+  const data = example ?? refinementExample()
+  const plan = buildRefinementPlan(data.entries)
+  const confirmationFens = [...plan.sacrifices.map(t => t.acceptedFen),...(data.proofConfirmationFens??[])]
+  for (const target of plan.sacrifices) {
+    // Restricted packets simulate the transport, not classification accuracy.
+    const game = new Chess(target.acceptedFen), reply = game.moves({ verbose: true })[0]
+    data.packets[`${target.fen}|${target.captureUci}`] ??= [
+      `info depth 16 multipv 1 score cp 0 nodes 5000 pv ${target.captureUci}${reply ? ` ${reply.from}${reply.to}${reply.promotion ?? ''}` : ''}`,
+      `bestmove ${target.captureUci}`,
+    ]
+    if (!data.packets[target.acceptedFen]) {
+      const legal = game.moves({ verbose: true }).slice(0, 5)
+      data.packets[target.acceptedFen] = legal.map((m, i) => `info depth 16 multipv ${i + 1} score cp ${50 - i * 30} nodes 5000 pv ${m.from}${m.to}${m.promotion ?? ''}`)
+      data.packets[target.acceptedFen].push(`bestmove ${legal[0].from}${legal[0].to}${legal[0].promotion ?? ''}`)
+    }
+  }
+  await page.addInitScript(({ packets, delay, confirmationFens }) => {
+    window.workerCount = 0; window.refinementSearches = 0; window.fastSearches = 0; window.sacrificeSearches = 0
     window.Worker = class {
       constructor() { window.workerCount++ }
       postMessage(command) {
@@ -53,13 +68,16 @@ async function openRefinementExample(page, delay = 5) {
         if (command.startsWith('position fen ')) this.fen = command.slice(13)
         if (command.startsWith('go nodes ')) {
           const deep = command === 'go nodes 1000000'
-          if (deep) window.refinementSearches++; else window.fastSearches++
+          const root = command.match(/ searchmoves (\S+)/)?.[1]
+          if (deep) window.refinementSearches++
+          else if (root || confirmationFens.includes(this.fen)) window.sacrificeSearches++
+          else window.fastSearches++
           if (deep && window.failRefinement) {
             window.failRefinement = false
             queueMicrotask(() => this.onerror?.({}))
             return
           }
-          const lines = packets[this.fen] ?? ['info depth 12 score cp 0 nodes 100 pv e7e5', 'bestmove e7e5']
+          const lines = packets[root ? `${this.fen}|${root}` : this.fen] ?? ['info depth 12 score cp 0 nodes 100 pv e7e5', 'bestmove e7e5']
           this.lastBestmove = lines.find(l => l.startsWith('bestmove '))
           this.timer = setTimeout(() => { for (const data of lines) this.onmessage?.({ data }) }, deep ? delay : 5)
         }
@@ -73,7 +91,7 @@ async function openRefinementExample(page, delay = 5) {
       }
       terminate() { clearTimeout(this.timer) }
     }
-  }, { packets: data.packets, delay })
+  }, { packets: data.packets, delay, confirmationFens })
   await page.goto(appUrl)
   await page.evaluate(async ({ entries, pgn }) => {
     const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
@@ -740,7 +758,7 @@ test('classification reference colors and symbols render without an engine', asy
         React.createElement('h3', null, style.label),
         React.createElement(GameProvider, null, React.createElement(Preview, { classification }))))))
   }, { before, after: game.fen() })
-  await expect.poll(async () => ({ count: await page.locator('#classification-reference .move-classification-overlay').count(), errors }), { timeout: 5000 }).toEqual({ count: 11, errors: [] })
+  await expect.poll(async () => ({ count: await page.locator('#classification-reference .move-classification-overlay').count(), errors }), { timeout: 5000 }).toEqual({ count: 12, errors: [] })
   const excellent = page.locator('[data-preview-category="excellent"]')
   await expect(excellent.locator('[data-icon]')).toHaveAttribute('data-icon', 'thumb')
   await expect(page.locator('[data-preview-category="good"] [data-icon]')).toHaveAttribute('data-icon', 'check')
@@ -1141,6 +1159,159 @@ test(`real archived ${san} is reclassified ${category} by default offline from m
 })
 }
 
+test('ordinary nonchecking recapture migrates a v7 Grande archive offline without an engine', async ({ page }) => {
+  const stored = JSON.parse(readFileSync(new URL('./agent-output/new-references-200k-v1/game-185262315732.json', import.meta.url)))
+  const pgn = readFileSync(new URL('./Partite/Confermate/chesscom-185262315732/partita.pgn', import.meta.url), 'utf8')
+  const entries = stored.entries.slice(0, 25)
+  expect(entries[24].classification).toBe('great')
+  entries[24].specialAssessment.version = 'counterfactual-v7'
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    await archive.save({ pgn, title: 'Ripresa ordinaria v7', analysisEntries: entries }); await archive.close()
+  }, { pgn, entries })
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  const row = page.locator('.analysis-row-button').filter({ hasText: '13. gxf3' })
+  await expect(row).toContainText('Migliore')
+  await expect(row).toContainText('Ripresa materiale')
+  await expect(row).not.toContainText('Difesa decisiva')
+  const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
+  await toggle.uncheck(); await expect(row).toContainText('Migliore')
+  await toggle.check(); await expect(row).toContainText('Migliore')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+test('unsupported Bf5 response migrates a v8 Grande archive offline without an engine', async ({ page }) => {
+  const stored = JSON.parse(readFileSync(new URL('./agent-output/new-references-200k-v1/game-184316820266.json', import.meta.url)))
+  const pgn = readFileSync(new URL('./Partite/Confermate/chesscom-184316820266/partita.pgn', import.meta.url), 'utf8')
+  const entries = stored.entries.slice(0, 30)
+  expect(entries[29].classification).toBe('great')
+  entries[29].specialAssessment.version = 'counterfactual-v8'
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    await archive.save({ pgn, title: 'Alternativa equivalente v8', analysisEntries: entries }); await archive.close()
+  }, { pgn, entries })
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  const row = page.locator('.analysis-row-button').filter({ hasText: '15... Bf5' })
+  await expect(row).toContainText('Migliore')
+  // The current policy rejects the missing forcing event before comparing
+  // alternatives. The legacy Grande must still migrate to numerical Best.
+  await expect(row).not.toContainText('Grande')
+  await expect(row).not.toContainText('Difesa decisiva')
+  const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
+  await toggle.uncheck(); await expect(row).toContainText('Migliore')
+  await toggle.check(); await expect(row).toContainText('Migliore')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+test('discovered attack realization migrates a v9 refined archive offline without an engine', async ({ page }) => {
+  const stored = JSON.parse(readFileSync(new URL('./agent-output/new-refinement-measurement-v1/game-185230271130-round-2.json', import.meta.url)))
+  const pgn = readFileSync(new URL('./Partite/Confermate/chesscom-185230271130/partita.pgn', import.meta.url), 'utf8')
+  const entries = stored.entries
+  expect(stored.view[26].classification).toBe('great')
+  entries[26].specialAssessment.version = 'counterfactual-v9'
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    await archive.save({ pgn, title: 'Attacco scoperto v9', analysisEntries: entries }); await archive.close()
+  }, { pgn, entries })
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
+  const row = page.locator('.analysis-row-button').filter({ hasText: '14. Qxf5' })
+  await expect(row).toContainText('Migliore')
+  await expect(row).toContainText('Incasso di un precedente attacco scoperto')
+  await expect(page.locator('.analysis-row-button').filter({ hasText: '13. Ne2' })).toContainText('Grande')
+  const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
+  await toggle.uncheck(); await expect(row).toContainText('Migliore')
+  await toggle.check(); await expect(row).toContainText('Migliore')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+test('batch review migrates exact CP ties and preserves the deeper comparison offline', async ({ page }) => {
+  const stored = JSON.parse(readFileSync(new URL('./agent-output/new-refinement-measurement-v1/game-185262315732-round-2.json', import.meta.url)))
+  const pgn = readFileSync(new URL('./Partite/Confermate/chesscom-185262315732/partita.pgn', import.meta.url), 'utf8')
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    await archive.save({ pgn, title: 'Gruppo di correzioni', analysisEntries: entries }); await archive.close()
+  }, { pgn, entries: stored.entries })
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  const refined = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
+  await refined.check()
+  const tie = page.locator('.analysis-row-button').filter({ hasText: '7... c6' })
+  await expect(tie).toContainText('Migliore')
+  await expect(tie).toContainText('Valutazione pari alla prima scelta')
+  const kept = page.locator('.analysis-row-button').filter({ hasText: '10. dxe5' })
+  await expect(kept).toContainText('Buona')
+  await expect(kept).toContainText('Confronto iniziale più profondo conservato')
+  await refined.uncheck(); await expect(kept).toContainText('Buona')
+  await refined.check(); await expect(kept).toContainText('Buona')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+test('batch review migrates a legacy equal-mate alternative offline', async ({ page }) => {
+  const cohort = JSON.parse(readFileSync(new URL('./agent-output/review-batch-v1/cohorts.json', import.meta.url)))
+  const fixture = JSON.parse(readFileSync(new URL('./tests/fixtures/qa/personal-02.json', import.meta.url)))
+  const metadata = createAnalysisMetadata()
+  // Simulate a current-profile archive with the old score layout; scores and
+  // PVs are the captured evidence, and the historical fixture stays unchanged.
+  const entries = cohort.cases.find(c => c.id === 'personal-02').entries.slice(0, 50).map(e => ({ ...e,
+    analysisMetadata: metadata, engine: { ...e.engine, analysisMetadata: metadata, fen: e.fenBefore },
+    playedEngine: { ...e.playedEngine, analysisMetadata: metadata, fen: e.fenAfter } }))
+  expect(entries[49].classification).toBe('excellent')
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    await archive.save({ pgn, title: 'Parità di matto legacy', analysisEntries: entries }); await archive.close()
+  }, { pgn: fixture.pgn, entries })
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  const row = page.locator('.analysis-row-button').filter({ hasText: '25... Qf7' })
+  await expect(row).toContainText('Migliore')
+  await expect(row).toContainText('Valutazione pari alla prima scelta')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
 test('corroborated Bxf4 sacrifice refreshes a v5 archive offline without an engine', async ({ page }) => {
   const source = JSON.parse(readFileSync(new URL('./agent-output/external-specials-probe-2026-10-09T14-03-37-245Z/results.json', import.meta.url)))
   const fixture = JSON.parse(readFileSync(new URL('./agent-output/external-specials-v1/fixture.json', import.meta.url)))
@@ -1238,6 +1409,7 @@ test('optional refinement compares and archives a complete game, reopening both 
   await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
   expect(await page.evaluate(() => window.fastSearches)).toBe(0)
   expect(await page.evaluate(() => window.refinementSearches)).toBe(plan.positions.length)
+  expect(await page.evaluate(() => window.sacrificeSearches)).toBeLessThanOrEqual(plan.extraSearches)
   const toggle = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
   await expect(toggle).toBeChecked()
   await expect(page.locator('.analysis-row-button').filter({ hasText: 'Iniziale:' }).first()).toBeVisible()
@@ -1266,6 +1438,350 @@ test('optional refinement compares and archives a complete game, reopening both 
   await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
   await expect(page.locator('.analysis-row-button').filter({ hasText: 'Iniziale:' }).first()).toBeVisible()
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+test('explicit Grande verification skips Bc4 already resolved by the policy and reopens offline', async ({ page }) => {
+  const stored = JSON.parse(readFileSync(new URL('./agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json', import.meta.url)))
+  const packet = JSON.parse(readFileSync(new URL('./agent-output/grande-comparison-probe-v1/search-2.json', import.meta.url)))
+  const data = { entries: reclassifyReviewedMoves(stored.entries),
+    pgn: readFileSync(new URL('./Partite/Confermate/chesscom-184316820266/partita.pgn', import.meta.url), 'utf8'),
+    packets: { [packet.fen]: packet.rawLines } }
+  await openRefinementExample(page, 5, data)
+  const toggle = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
+  await toggle.check()
+  const row = page.locator('.analysis-row-button').filter({ hasText: '11. Bc4' })
+  await expect(row).toContainText('Migliore')
+  const ordinary = page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ })
+  const ordinaryBefore = await ordinary.innerText()
+  await page.getByRole('button', { name: 'Verifica le Grandi', exact: true }).click()
+  await expect(page.getByText('Nessuna Grande da verificare con i dati attuali.')).toBeVisible()
+  await expect(row).toContainText('Migliore')
+  await expect(page.locator('.analysis-row-button').filter({ hasText: '24... a6' })).toContainText('Ottima')
+  await expect(page.locator('.analysis-row-button').filter({ hasText: '21. Qxe5' })).toContainText('Geniale')
+  expect(await page.evaluate(() => window.refinementSearches)).toBe(0)
+  expect(await page.evaluate(() => window.fastSearches)).toBe(0)
+  await expect(ordinary).toHaveText(ordinaryBefore)
+  await toggle.uncheck(); await expect(row).toContainText('Migliore')
+  await toggle.check(); await expect(row).toContainText('Migliore')
+  await page.getByRole('button', { name: 'Verifica le Grandi', exact: true }).click()
+  await expect(page.getByText('Nessuna Grande da verificare con i dati attuali.')).toBeVisible()
+  expect(await page.evaluate(() => window.refinementSearches)).toBe(0)
+  await page.locator('.game-archive').getByRole('button', { name: 'Salva partita e analisi' }).click()
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
+  await expect(page.locator('.analysis-row-button').filter({ hasText: '11. Bc4' })).toContainText('Migliore')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+test('v20 separate recovery verification confirms Nxe4, preserves Qd3 and reopens offline', async ({ page }) => {
+  const corpus = JSON.parse(readFileSync(new URL('./agent-output/special-completion-v1/cohorts.json', import.meta.url)))
+  const stored = corpus.cases.find(c => c.id === '185230271130' && c.cohort === 'refined')
+  const collection = JSON.parse(readFileSync(new URL('./agent-output/special-completion-evidence-v1/collection.json', import.meta.url)))
+  const record = collection.records.find(r => r.fen === stored.entries[15].fenAfter)
+  const packet = JSON.parse(readFileSync(new URL('./' + record.path, import.meta.url)))
+  const data = { entries: reclassifyReviewedMoves(stored.canonical), packets: { [packet.fen]: packet.rawLines },
+    pgn: readFileSync(new URL('./Partite/Confermate/chesscom-185230271130/partita.pgn', import.meta.url), 'utf8') }
+  await openRefinementExample(page, 5, data)
+  const toggle = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
+  await toggle.check()
+  const nxe4 = page.locator('.analysis-row-button').filter({ hasText: '8... Nxe4' })
+  const qd3 = page.locator('.analysis-row-button').filter({ hasText: '9. Qd3' })
+  await expect(nxe4).toContainText('Migliore'); await expect(qd3).toContainText('Errore')
+  const ordinary = page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ })
+  const ordinaryBefore = await ordinary.innerText()
+  const fieldsBefore = await page.evaluate(async () => {
+    const {createGameArchive} = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const {selectRefinementView} = await import('/ChessProfessor/src/lib/analysisRefinement.js')
+    const archive = createGameArchive(), record = (await archive.list())[0]; await archive.close()
+    return selectRefinementView(record.analysisEntries,true).map(e => [e.bestEval,e.playedEval,e.bestMate,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
+  })
+  await page.getByRole('button', { name: 'Verifica le Grandi', exact: true }).click()
+  await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
+  await expect(nxe4).toContainText('Grande'); await expect(qd3).toContainText('Errore')
+  await expect(ordinary).toHaveText(ordinaryBefore)
+  expect(await page.evaluate(() => window.refinementSearches)).toBe(1)
+  expect(await page.evaluate(() => window.fastSearches)).toBe(0)
+  await toggle.uncheck(); await expect(nxe4).toContainText('Migliore')
+  await toggle.check(); await expect(nxe4).toContainText('Grande')
+  await page.getByRole('button', { name: 'Verifica le Grandi', exact: true }).click()
+  await expect(page.getByText('Nessuna Grande da verificare con i dati attuali.')).toBeVisible()
+  expect(await page.evaluate(() => window.refinementSearches)).toBe(1)
+  await page.locator('.game-archive').getByRole('button', { name: 'Salva partita e analisi' }).click()
+  const fieldsAfter = await page.evaluate(async () => {
+    const {createGameArchive} = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const {selectRefinementView} = await import('/ChessProfessor/src/lib/analysisRefinement.js')
+    const archive = createGameArchive(), record = (await archive.list())[0]; await archive.close()
+    return selectRefinementView(record.analysisEntries,true).map(e => [e.bestEval,e.playedEval,e.bestMate,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
+  })
+  expect(fieldsAfter).toEqual(fieldsBefore)
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
+  await expect(page.locator('.analysis-row-button').filter({ hasText: '8... Nxe4' })).toContainText('Grande')
+  await expect(page.locator('.analysis-row-button').filter({ hasText: '9. Qd3' })).toContainText('Errore')
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
+})
+
+test('v21 sacrifice proofs confirm Rb3, preserve other specials and reopen offline', async ({ page }) => {
+  test.setTimeout(240000)
+  const corpus=JSON.parse(readFileSync(new URL('./agent-output/special-completion-v1/cohorts.json',import.meta.url)))
+  const stored=corpus.cases.find(c=>c.id==='game-1-chigorin-steinitz-1892')
+  const cache=JSON.parse(readFileSync(new URL('./tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/game-1-chigorin-steinitz-1892.json',import.meta.url)))
+  // Restore metadata from recorded conditions only; retain the original scores, PVs and incomplete iterations.
+  expect([cache.engineVersion,cache.packageVersion,cache.searchLimit.value,cache.multiPv,cache.threads,cache.hashMb])
+    .toEqual(['Stockfish 19 WASM','19.0.0',200000,5,1,16])
+  const metadata=createAnalysisMetadata({nodes:cache.searchLimit.value,multiPv:cache.multiPv,actualEngineId:cache.engineVersion})
+  const entries=reclassifyReviewedMoves(stored.entries.map(e=>({...e,analysisMetadata:metadata,
+    engine:{...e.engine,fen:e.fenBefore,analysisMetadata:metadata},playedEngine:{...e.playedEngine,fen:e.fenAfter,analysisMetadata:metadata}})))
+  const collection=JSON.parse(readFileSync(new URL('./agent-output/all-sacrifice-proofs-v1/collection.json',import.meta.url))),packets={}
+  for(const r of collection.records){const p=JSON.parse(readFileSync(new URL('./'+r.path,import.meta.url)));packets[p.fen+(p.searchMoves?'|'+p.searchMoves[0]:'')]=p.rawLines}
+  const plan=buildRefinementPlan(entries,{sacrificeOnly:true})
+  expect(plan.queries).toHaveLength(8)
+  const data={entries,pgn:cache.pgn,packets,proofConfirmationFens:plan.queries.filter(q=>!q.uci).map(q=>q.fen)}
+  await openRefinementExample(page,5,data)
+  const row=page.locator('.analysis-row-button').nth(52)
+  await expect(row).toContainText('Ottima')
+  const fieldsBefore=await page.evaluate(async()=>{
+    const {createGameArchive}=await import('/ChessProfessor/src/lib/gameArchive.js')
+    const {selectRefinementView}=await import('/ChessProfessor/src/lib/analysisRefinement.js')
+    const {reclassifyReviewedMoves}=await import('/ChessProfessor/src/lib/reviewMoves.js')
+    const a=createGameArchive(),r=(await a.list())[0];await a.close()
+    return selectRefinementView(reclassifyReviewedMoves(r.analysisEntries),true).map(e=>[e.bestEval,e.playedEval,e.bestMate,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
+  })
+  await page.getByRole('button',{name:'Verifica i sacrifici',exact:true}).click()
+  await expect(page.getByText(/Approfondimento completato:/)).toBeVisible({timeout:120000})
+  await expect(row).toContainText('Geniale')
+  for(const ply of [31,43,45])await expect(page.locator('.analysis-row-button').nth(ply-1)).toContainText('Grande')
+  await expect(page.locator('.analysis-row-button').nth(60)).toContainText('Geniale')
+  expect(await page.evaluate(()=>[window.refinementSearches,window.fastSearches,window.sacrificeSearches])).toEqual([0,0,8])
+  const toggle=page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true})
+  await toggle.uncheck();await expect(row).toContainText('Ottima')
+  await toggle.check();await expect(row).toContainText('Geniale')
+  await page.getByRole('button',{name:'Verifica i sacrifici',exact:true}).click()
+  await expect(page.getByText('Nessun sacrificio da verificare con i dati attuali.')).toBeVisible()
+  expect(await page.evaluate(()=>window.sacrificeSearches)).toBe(8)
+  await page.locator('.game-archive').getByRole('button',{name:'Salva partita e analisi'}).click()
+  const fieldsAfter=await page.evaluate(async()=>{
+    const {createGameArchive}=await import('/ChessProfessor/src/lib/gameArchive.js')
+    const {selectRefinementView}=await import('/ChessProfessor/src/lib/analysisRefinement.js')
+    const {reclassifyReviewedMoves}=await import('/ChessProfessor/src/lib/reviewMoves.js')
+    const a=createGameArchive(),r=(await a.list())[0];await a.close()
+    return selectRefinementView(reclassifyReviewedMoves(r.analysisEntries),true).map(e=>[e.bestEval,e.playedEval,e.bestMate,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
+  })
+  expect(fieldsAfter).toEqual(fieldsBefore)
+  await page.reload();await page.context().setOffline(true)
+  await openTools(page,'Partita e analisi');await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button',{name:'Apri',exact:true}).click()
+  await page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true}).check()
+  await expect(page.locator('.analysis-row-button').nth(52)).toContainText('Geniale')
+  await expect(page.locator('.analysis-row-button').nth(30)).toContainText('Grande')
+  expect(await page.evaluate(()=>window.workerCount)).toBe(0)
+})
+
+test('v23 tactical certificates migrate three v22 archives offline without engine workers',async({page})=>{
+  test.setTimeout(180000)
+  const corpus=JSON.parse(readFileSync(new URL('./agent-output/special-completion-v1/cohorts.json',import.meta.url)))
+  const engines=new Map()
+  for(const name of ['special-completion-evidence-v1','native-wdl-evidence-v1','native-alternative-evidence-v1']){
+    const collection=JSON.parse(readFileSync(new URL(`./agent-output/${name}/collection.json`,import.meta.url)))
+    for(const r of collection.records){const p=JSON.parse(readFileSync(new URL('./'+r.path,import.meta.url)));if(!engines.has(p.fen))engines.set(p.fen,p.engine)}
+  }
+  const scenarios=[['personal-05',27],['personal-06',31],['game-2-saintamant-staunton-1843',82]].map(([id,ply])=>{
+    const entries=structuredClone(corpus.cases.find(c=>c.id===id&&c.cohort==='old').entries)
+    for(const e of entries)if(e.specialAssessment)e.specialAssessment.version='counterfactual-v22'
+    const e=entries[ply-1]
+    e.refinement={...e.refinement,version:'optional-refinement-v1',nativeProof:{version:'native-winning-proof-v1',root:engines.get(e.fenBefore),child:engines.get(e.fenAfter),alternatives:[],attempts:[]}}
+    const cache=JSON.parse(readFileSync(new URL(`./tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/${id}.json`,import.meta.url)))
+    return{id,ply,entries,pgn:cache.pgn}
+  })
+  await page.addInitScript(()=>{window.workerCount=0;window.Worker=class{constructor(){window.workerCount++;throw Error('Unexpected engine search')}}})
+  await page.goto(appUrl)
+  const ids=await page.evaluate(async scenarios=>{
+    const {createGameArchive}=await import('/ChessProfessor/src/lib/gameArchive.js'),archive=createGameArchive(),ids=[]
+    for(const s of scenarios){const {record}=await archive.save({pgn:s.pgn,title:s.id,analysisEntries:s.entries});ids.push({id:record.id,ply:s.ply})}
+    await archive.close();return ids
+  },scenarios)
+  await page.reload()
+  await page.evaluate(async()=>{
+    window.tacticalArchive=await import('/ChessProfessor/src/lib/gameArchive.js')
+    window.tacticalReview=await import('/ChessProfessor/src/lib/reviewMoves.js')
+    window.tacticalRefinement=await import('/ChessProfessor/src/lib/analysisRefinement.js')
+  })
+  await page.context().setOffline(true)
+  const results=await page.evaluate(async ids=>{
+    const archive=window.tacticalArchive.createGameArchive(),results=[]
+    const numeric=es=>JSON.stringify(es.map(e=>[e.bestEval,e.bestMate,e.playedEval,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct]))
+    for(const s of ids){
+      const r=await archive.get(s.id),initial=window.tacticalReview.reclassifyReviewedMoves(r.analysisEntries)
+      const before=numeric(initial),engines=JSON.stringify(initial.map(e=>[e.engine,e.playedEngine]))
+      await archive.save({pgn:r.pgn,analysisEntries:initial})
+      const reopened=await archive.get(s.id),after=window.tacticalRefinement.selectRefinementView(window.tacticalReview.reclassifyReviewedMoves(reopened.analysisEntries),true)
+      results.push({classification:after[s.ply-1].classification,version:after[s.ply-1].specialAssessment.version,reason:after[s.ply-1].specialAssessment.grande.reason,
+        initial:initial[s.ply-1].classification,numbersUnchanged:numeric(after)===before,enginesUnchanged:JSON.stringify(after.map(e=>[e.engine,e.playedEngine]))===engines})
+    }
+    await archive.close();return{results,workers:window.workerCount}
+  },ids)
+  expect(results.workers).toBe(0)
+  expect(results.results).toHaveLength(3)
+  for(const r of results.results)expect(r).toEqual({classification:'great',version:'counterfactual-v24',reason:'verified-major-piece-tactic',initial:'best',numbersUnchanged:true,enginesUnchanged:true})
+})
+
+test('v24 axb4 verifies pair and alternatives, preserves scores, and reopens offline',async({page})=>{
+  test.setTimeout(180000)
+  const corpus=JSON.parse(readFileSync(new URL('./agent-output/special-completion-v1/cohorts.json',import.meta.url)))
+  const raw=structuredClone(corpus.cases.find(c=>c.id==='game-2-saintamant-staunton-1843').entries.slice(53,56))
+  const game=new Chess(raw[0].fenBefore),metadata=createAnalysisMetadata({nodes:200000,multiPv:5,actualEngineId:'Stockfish 19 WASM'}),packets={}
+  for(const e of raw)game.move(e.playedMove)
+  const entries=reclassifyReviewedMoves(raw.map((e,i)=>({...e,ply:i+1,analysisMetadata:metadata,engine:{...e.engine,fen:e.fenBefore,analysisMetadata:metadata},playedEngine:{...e.playedEngine,fen:e.fenAfter,analysisMetadata:metadata}})))
+  for(const area of ['special-completion-evidence-v1','native-wdl-evidence-v1','native-alternative-evidence-v1','native-edge-study-v1']){
+    const collection=JSON.parse(readFileSync(new URL(`./agent-output/${area}/collection.json`,import.meta.url)))
+    for(const r of collection.records){const p=JSON.parse(readFileSync(new URL('./'+r.path,import.meta.url)));packets[p.fen]=p.rawLines}
+  }
+  await openRefinementExample(page,5,{entries,pgn:game.pgn(),packets})
+  const row=page.locator('.analysis-row-button').nth(2)
+  const fields=()=>page.evaluate(async()=>{
+    const {createGameArchive}=await import('/ChessProfessor/src/lib/gameArchive.js')
+    const {reclassifyReviewedMoves}=await import('/ChessProfessor/src/lib/reviewMoves.js')
+    const {selectRefinementView}=await import('/ChessProfessor/src/lib/analysisRefinement.js')
+    const archive=createGameArchive(),r=(await archive.list())[0];await archive.close()
+    return selectRefinementView(reclassifyReviewedMoves(r.analysisEntries),true).map(e=>[e.bestEval,e.bestMate,e.playedEval,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
+  })
+  await expect(row).toContainText('Migliore')
+  const before=await fields(),button=page.getByRole('button',{name:'Verifica le scelte decisive',exact:true})
+  await button.click();await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
+  await expect(row).toContainText('Migliore')
+  expect(await page.evaluate(()=>window.refinementSearches)).toBe(2)
+  await button.click();await expect(row).toContainText('Grande',{timeout:90000})
+  expect(await page.evaluate(()=>window.refinementSearches)).toBe(6)
+  const toggle=page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true})
+  await toggle.uncheck();await expect(row).toContainText('Migliore')
+  await toggle.check();await expect(row).toContainText('Grande')
+  await page.locator('.game-archive').getByRole('button',{name:'Salva partita e analisi'}).click()
+  expect(await fields()).toEqual(before)
+  await page.reload();await page.context().setOffline(true)
+  await openTools(page,'Partita e analisi');await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button',{name:'Apri',exact:true}).click()
+  const reopened=page.locator('.analysis-row-button').nth(2)
+  await expect(reopened).toContainText('Migliore')
+  await page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true}).check()
+  await expect(reopened).toContainText('Grande')
+  expect(await page.evaluate(()=>window.workerCount)).toBe(0)
+})
+
+function decisiveExample(ready=false){
+  const corpus=JSON.parse(readFileSync(new URL('./agent-output/special-completion-v1/cohorts.json',import.meta.url)))
+  const stored=corpus.cases.find(c=>c.id==='personal-01')
+  const cache=JSON.parse(readFileSync(new URL('./tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json',import.meta.url)))
+  expect([cache.engineVersion,cache.searchLimit.value,cache.multiPv,cache.threads,cache.hashMb]).toEqual(['Stockfish 19 WASM',200000,5,1,16])
+  const metadata=createAnalysisMetadata({nodes:cache.searchLimit.value,multiPv:cache.multiPv,actualEngineId:cache.engineVersion}),engines=new Map(),packets={}
+  for(const area of ['native-wdl-evidence-v1','native-alternative-evidence-v1']){
+    const c=JSON.parse(readFileSync(new URL(`./agent-output/${area}/collection.json`,import.meta.url)))
+    for(const r of c.records){const p=JSON.parse(readFileSync(new URL('./'+r.path,import.meta.url)));engines.set(p.fen,p.engine);packets[p.fen]=p.rawLines}
+  }
+  const raw=structuredClone(stored.entries).map(e=>({...e,analysisMetadata:metadata,engine:{...e.engine,fen:e.fenBefore,analysisMetadata:metadata},playedEngine:{...e.playedEngine,fen:e.fenAfter,analysisMetadata:metadata}}))
+  if(ready){
+    const e=raw[44],p=JSON.parse(readFileSync(new URL('./agent-output/native-alternative-evidence-v1/protocol.json',import.meta.url)))
+    e.refinement={version:'optional-refinement-v1',nativeProof:{version:'native-winning-proof-v1',root:engines.get(e.fenBefore),child:engines.get(e.fenAfter),alternatives:[],
+      attempts:[{fen:e.fenBefore,engine:engines.get(e.fenBefore)},{fen:e.fenAfter,engine:engines.get(e.fenAfter)},...p.selected.filter(t=>t.game==='personal-01'&&t.ply===45).map(t=>({uci:t.uci,fen:t.fen,engine:engines.get(t.fen)}))]}}
+  }
+  return{entries:reclassifyReviewedMoves(raw),pgn:cache.pgn,packets}
+}
+
+test('v22 decisive verification checks every alternative and reopens Qxc7 offline without changing scores',async({page})=>{
+  test.setTimeout(240000)
+  await openRefinementExample(page,5,decisiveExample())
+  const row=page.locator('.analysis-row-button').nth(44),control=page.locator('.analysis-row-button').nth(48)
+  await expect(row).toContainText('Migliore');await expect(control).toContainText('Migliore')
+  const fields=()=>page.evaluate(async()=>{
+    const {createGameArchive}=await import('/ChessProfessor/src/lib/gameArchive.js')
+    const {reclassifyReviewedMoves}=await import('/ChessProfessor/src/lib/reviewMoves.js')
+    const {selectRefinementView}=await import('/ChessProfessor/src/lib/analysisRefinement.js')
+    const a=createGameArchive(),r=(await a.list())[0];await a.close()
+    return selectRefinementView(reclassifyReviewedMoves(r.analysisEntries),true).map(e=>[e.bestEval,e.bestMate,e.playedEval,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
+  })
+  const before=await fields(),button=page.getByRole('button',{name:'Verifica le scelte decisive',exact:true})
+  await button.click();await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
+  await expect(row).toContainText('Migliore');expect(await page.evaluate(()=>window.refinementSearches)).toBe(2)
+  await button.click();await expect(row).toContainText('Grande',{timeout:120000})
+  await expect(control).toContainText('Migliore')
+  expect(await page.evaluate(()=>[window.refinementSearches,window.fastSearches,window.sacrificeSearches])).toEqual([6,0,0])
+  const toggle=page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true})
+  await toggle.uncheck();await expect(row).toContainText('Migliore');await toggle.check();await expect(row).toContainText('Grande')
+  await button.click();await expect(page.getByText('Nessuna nuova scelta decisiva da verificare con i dati attuali.')).toBeVisible()
+  await page.locator('.game-archive').getByRole('button',{name:'Salva partita e analisi'}).click()
+  expect(await fields()).toEqual(before)
+  await page.reload();await page.context().setOffline(true)
+  await openTools(page,'Partita e analisi');await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button',{name:'Apri',exact:true}).click()
+  await page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true}).check()
+  await expect(page.locator('.analysis-row-button').nth(44)).toContainText('Grande')
+  await expect(page.locator('.analysis-row-button').nth(48)).toContainText('Migliore')
+  expect(await page.evaluate(()=>window.workerCount)).toBe(0)
+})
+
+test('v22 decisive verification reuses complete attempts offline with zero workers',async({page})=>{
+  test.setTimeout(180000)
+  await openRefinementExample(page,5,decisiveExample(true))
+  await page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true}).check()
+  const row=page.locator('.analysis-row-button').nth(44)
+  await expect(row).toContainText('Migliore')
+  await page.context().setOffline(true)
+  await page.getByRole('button',{name:'Verifica le scelte decisive',exact:true}).click()
+  await expect(row).toContainText('Grande',{timeout:120000})
+  expect(await page.evaluate(()=>[window.workerCount,window.refinementSearches,window.fastSearches,window.sacrificeSearches])).toEqual([0,0,0,0])
+})
+
+test('v20 forced mating sacrifice migrates the historical stored evidence offline', async ({ page }) => {
+  const corpus = JSON.parse(readFileSync(new URL('./agent-output/special-completion-v1/cohorts.json', import.meta.url)))
+  const entries = corpus.cases.find(c => c.id === 'game-1-chigorin-steinitz-1892').entries
+  const pgn = readFileSync(new URL('./Partite/Confermate/Storiche/game-1-chigorin-steinitz-1892/partita.pgn', import.meta.url), 'utf8')
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  const id = await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    const { record } = await archive.save({ pgn, title: 'Sacrificio storico', analysisEntries: entries })
+    await archive.close()
+    return record.id
+  }, { pgn, entries })
+  await page.reload()
+  // Load the modules before disconnecting, while the persisted data survives reload.
+  await page.evaluate(async () => {
+    window.archiveModule = await import('/ChessProfessor/src/lib/gameArchive.js')
+    window.reviewModule = await import('/ChessProfessor/src/lib/reviewMoves.js')
+  })
+  await page.context().setOffline(true)
+  const result = await page.evaluate(async id => {
+    const archive = window.archiveModule.createGameArchive(), record = await archive.get(id)
+    const before = JSON.stringify(record.analysisEntries.map(e => [e.engine, e.playedEngine]))
+    const updated = window.reviewModule.reclassifyReviewedMoves(record.analysisEntries)
+    const { record: saved } = await archive.save({ pgn: record.pgn, analysisEntries: updated })
+    const reopened = await archive.get(saved.id)
+    await archive.close()
+    return {
+      classification: reopened.analysisEntries[60].classification,
+      version: reopened.analysisEntries[60].specialAssessment.version,
+      proof: reopened.analysisEntries[60].specialAssessment.brilliant.offers[0].forcedMatingAcceptance,
+      rb3: reopened.analysisEntries[52].classification,
+      qh5: reopened.analysisEntries[44].classification,
+      re1: reopened.analysisEntries[42].classification,
+      enginesUnchanged: before === JSON.stringify(reopened.analysisEntries.map(e => [e.engine, e.playedEngine])),
+      workers: window.workerCount,
+    }
+  }, id)
+  expect(result).toMatchObject({ classification: 'brilliant', version: 'counterfactual-v24', enginesUnchanged: true, workers: 0,
+    proof: { legalReplies: 1, proofAgainstEveryDefense: false } })
+  expect(result.rb3).toBe('excellent')
+  expect(result.qh5).toBe('great')
+  expect(result.re1).toBe('great')
 })
 
 test('optional refinement cancellation preserves initial scores and an import cannot publish an old game result', async ({ page }) => {
@@ -1300,5 +1816,66 @@ test(`optional refinement ${failure} preserves the baseline and never retries on
   await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
   await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
   await expect(page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })).toBeChecked()
+})
+}
+
+for (const scenario of [
+  { id: '185262315732', title: 'existing offer', index: 52, move: '27. Bxc4', before: 'brilliant', after: 'Migliore', refined: false },
+  { id: '184316313800', title: 'coherent winning chance', index: 18, move: '10. Bf4', before: 'blunder', after: 'Mossa mancata', refined: true },
+  { id: '185262315732', title: 'stored mating continuation', index: 56, move: '29. Bh6', before: 'mistake', after: 'Mossa mancata', refined: false },
+  { id: '184316820266', title: 'verified independent prior', index: 14, move: '8. d5', before: 'blunder', after: 'Mossa mancata', refined: true },
+  { id: '185262315732', title: 'aligned Be7 decision', index: 29, move: '15... Be7', before: 'great', after: 'Migliore', refined: false },
+  { id: '185230271130', title: 'nonforcing Nd6 response', index: 17, move: '9... Nd6', before: 'great', after: 'Migliore', refined: false },
+  { id: '185262315732', title: 'restored winning chance', index: 60, move: '31. Nf6+', before: 'missed', after: 'Errore grave', refined: false },
+  { id: '184316820266', title: 'checking attacker capture', index: 33, move: '17... Rxd6', before: 'best', after: 'Grande', refined: false },
+  { id: '185230271130', title: 'checking major fork', index: 38, move: '20. Qxf6+', before: 'best', after: 'Grande', refined: false },
+  { id: '185262315732', title: 'deferred checking response', index: 36, move: '19. Re1+', before: 'great', after: 'Migliore', refined: false },
+  { id: '184316820266', title: 'deferred material threat', index: 20, move: '11. Bc4', before: 'great', after: 'Migliore', refined: false },
+  { id: '184316820266', title: 'check evasion does not create a mating attack', index: 61, move: '31... Kb6', before: 'best', after: 'Migliore', refined: false },
+]) {
+test(`v20 ${scenario.title} migrates a v11 archive offline without new searches`, async ({ page }) => {
+  const stored = JSON.parse(readFileSync(new URL(`./agent-output/refinement-quality-priority-v2/priority-game-${scenario.id}-round-2.json`, import.meta.url)))
+  const pgn = readFileSync(new URL(`./Partite/Confermate/chesscom-${scenario.id}/partita.pgn`, import.meta.url), 'utf8')
+  expect(stored.view[scenario.index].classification).toBe(scenario.before)
+  await page.addInitScript(() => {
+    window.workerCount = 0
+    window.Worker = class { constructor() { window.workerCount++; throw Error('Unexpected engine search') } }
+  })
+  await page.goto(appUrl)
+  await page.evaluate(async ({ pgn, entries }) => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const archive = createGameArchive()
+    await archive.save({ pgn, title: 'Analisi precedente v11', analysisEntries: entries }); await archive.close()
+  }, { pgn, entries: stored.entries })
+  await page.reload(); await page.context().setOffline(true)
+  await openTools(page, 'Partita e analisi')
+  await page.locator('.game-archive summary').click()
+  await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
+  const row = page.locator('.analysis-row-button').filter({ hasText: scenario.move })
+  if (scenario.refined) {
+    await expect(row).toContainText('Errore grave')
+    await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
+  }
+  await expect(row).toContainText(scenario.after)
+  if (scenario.title === 'restored winning chance') {
+    await expect(page.locator('.analysis-row-button').filter({ hasText: '31... Rxf6' })).toContainText('Mossa mancata')
+  }
+  if (!scenario.refined && scenario.after !== 'Grande') {
+    await expect(row).not.toContainText('Geniale')
+    await expect(row).not.toContainText('Grande')
+    const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
+    await toggle.uncheck(); await expect(row).toContainText(scenario.after)
+    await toggle.check(); await expect(row).not.toContainText('Geniale')
+  }
+  await page.locator('.game-archive').getByRole('button', { name: 'Salva partita e analisi' }).click()
+  const reopened = await page.evaluate(async index => {
+    const { createGameArchive } = await import('/ChessProfessor/src/lib/gameArchive.js')
+    const { selectRefinementView } = await import('/ChessProfessor/src/lib/analysisRefinement.js')
+    const archive = createGameArchive(), record = (await archive.list())[0]; await archive.close()
+    const entry = selectRefinementView(record.analysisEntries, true)[index]
+    return { classification: entry.classification, version: entry.specialAssessment.version }
+  }, scenario.index)
+  expect(reopened).toEqual({ classification: scenario.after === 'Mossa mancata' ? 'missed' : scenario.after === 'Errore grave' ? 'blunder' : scenario.after === 'Grande' ? 'great' : 'best', version: 'counterfactual-v24' })
+  expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 }

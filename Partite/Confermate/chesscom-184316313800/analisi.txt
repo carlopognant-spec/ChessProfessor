@@ -1,0 +1,23 @@
+1. e4 Libro c5 Libro
+2. Nf3 Libro Nc6 Libro
+3. Bb5 Libro Qc7 Libro
+4. c3 Buona Nf6 Ottima
+5. d4 Buona d5 Errore
+6. e5 Buona Ng4 Imprecisione
+7. h3 Migliore a6 Errore
+8. Ba4 Imprecisione b5 Ottima
+9. Bc2 Migliore Ngxe5 Buona
+10. Bf4 Mossa mancata cxd4 Mossa mancata
+11. Bxe5 Errore Nxe5 Migliore
+12. Nxe5 Imprecisione Qxe5+ Migliore
+13. Kf1 Migliore dxc3 Migliore
+14. Nxc3 Migliore e6 Migliore
+15. Bb3 Ottima Bb4 Ottima
+16. Nxd5 Buona exd5 Migliore
+17. Bxd5 Buona O-O Errore grave
+18. a3 Mossa mancata Rd8 Imprecisione
+19. Qf3 Mossa mancata Rxd5 Migliore
+20. Qb3 Imprecisione Be6 Imprecisione
+21. Re1 Errore Bxe1 Mossa mancata
+22. Qe3 Migliore Qxe3 Ottima
+23. fxe3 Migliore Bg3 Migliore

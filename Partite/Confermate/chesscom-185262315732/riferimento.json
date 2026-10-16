@@ -1,0 +1,637 @@
+{
+  "gameId": "185262315732",
+  "status": "user-confirmed",
+  "benchmarkEligible": true,
+  "notes": "Lista completa confermata da Carlo dopo nove correzioni. Le altre mosse sono state esplicitamente confermate. 14.Kf1 e una mossa forzata verificata localmente; il riepilogo Chess.com non la include nei conteggi delle altre categorie.",
+  "summaryCounts": {
+    "white": {
+      "Libro": 3,
+      "Buona": 5,
+      "Migliore": 10,
+      "Imprecisione": 1,
+      "Errore grave": 5,
+      "Forzata": 1,
+      "Mossa mancata": 4,
+      "Errore": 1,
+      "Ottima": 3
+    },
+    "black": {
+      "Libro": 2,
+      "Buona": 6,
+      "Imprecisione": 6,
+      "Ottima": 1,
+      "Migliore": 7,
+      "Mossa mancata": 4,
+      "Errore": 6,
+      "Grande": 1
+    }
+  },
+  "annotations": [
+    {
+      "ply": 1,
+      "san": "e4",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 2,
+      "san": "e5",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 3,
+      "san": "Nf3",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 4,
+      "san": "Nf6",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 5,
+      "san": "Nxe5",
+      "category": "Libro",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 6,
+      "san": "Qe7",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 7,
+      "san": "Nf3",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 8,
+      "san": "d5",
+      "category": "Imprecisione",
+      "evidence": "yellow-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 9,
+      "san": "e5",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 10,
+      "san": "Nfd7",
+      "category": "Imprecisione",
+      "evidence": "yellow-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 11,
+      "san": "d4",
+      "category": "Migliore",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 12,
+      "san": "f6",
+      "category": "Ottima",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 13,
+      "san": "Bb5",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 14,
+      "san": "c6",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 15,
+      "san": "Ba4",
+      "category": "Imprecisione",
+      "evidence": "yellow-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 16,
+      "san": "b5",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 17,
+      "san": "Bb3",
+      "category": "Migliore",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 18,
+      "san": "fxe5",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 19,
+      "san": "dxe5",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 20,
+      "san": "Nxe5",
+      "category": "Migliore",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 21,
+      "san": "Nc3",
+      "category": "Errore grave",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 22,
+      "san": "Bg4",
+      "category": "Mossa mancata",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 23,
+      "san": "h3",
+      "category": "Errore grave",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 24,
+      "san": "Bxf3",
+      "category": "Mossa mancata",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 25,
+      "san": "gxf3",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 26,
+      "san": "Nxf3+",
+      "category": "Imprecisione",
+      "evidence": "yellow-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 27,
+      "san": "Kf1",
+      "category": "Forzata",
+      "evidence": "legal-move-count",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 28,
+      "san": "Qf6",
+      "category": "Errore",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 29,
+      "san": "Qe2+",
+      "category": "Mossa mancata",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 30,
+      "san": "Be7",
+      "category": "Migliore",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 31,
+      "san": "Kg2",
+      "category": "Errore",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 32,
+      "san": "Nd4",
+      "category": "Buona",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 33,
+      "san": "Qh5+",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 34,
+      "san": "g6",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 35,
+      "san": "Qg4",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 36,
+      "san": "Bc5",
+      "category": "Errore",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 37,
+      "san": "Re1+",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 38,
+      "san": "Be7",
+      "category": "Errore",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 39,
+      "san": "Be3",
+      "category": "Mossa mancata",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 40,
+      "san": "h5",
+      "category": "Errore",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 41,
+      "san": "Qxd4",
+      "category": "Buona",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 42,
+      "san": "O-O",
+      "category": "Errore",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 43,
+      "san": "Qxf6",
+      "category": "Ottima",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 44,
+      "san": "Rxf6",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 45,
+      "san": "Bg5",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 46,
+      "san": "Rf7",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 47,
+      "san": "Rxe7",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 48,
+      "san": "Rf8",
+      "category": "Errore",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 49,
+      "san": "Rae1",
+      "category": "Ottima",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 50,
+      "san": "c5",
+      "category": "Imprecisione",
+      "evidence": "yellow-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 51,
+      "san": "Nxd5",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 52,
+      "san": "c4",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 53,
+      "san": "Bxc4",
+      "category": "Ottima",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 54,
+      "san": "Nc6",
+      "category": "Imprecisione",
+      "evidence": "yellow-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 55,
+      "san": "R1e6",
+      "category": "Mossa mancata",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 56,
+      "san": "bxc4",
+      "category": "Imprecisione",
+      "evidence": "yellow-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 57,
+      "san": "Bh6",
+      "category": "Mossa mancata",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 58,
+      "san": "Nxe7",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 59,
+      "san": "Rxg6+",
+      "category": "Errore grave",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 60,
+      "san": "Kh7",
+      "category": "Mossa mancata",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 61,
+      "san": "Nf6+",
+      "category": "Errore grave",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 62,
+      "san": "Rxf6",
+      "category": "Mossa mancata",
+      "evidence": "red-color-and-zero-black-blunders",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 63,
+      "san": "Rxf6",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 64,
+      "san": "Kg8",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 65,
+      "san": "Rf7",
+      "category": "Errore grave",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 66,
+      "san": "Kxf7",
+      "category": "Grande",
+      "evidence": "explicit-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    }
+  ],
+  "userCorrections": [
+    {
+      "ply": 11,
+      "san": "d4",
+      "previousCategory": "Ottima",
+      "category": "Migliore",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 12,
+      "san": "f6",
+      "previousCategory": "Migliore",
+      "category": "Ottima",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 17,
+      "san": "Bb3",
+      "previousCategory": "Buona",
+      "category": "Migliore",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 20,
+      "san": "Nxe5",
+      "previousCategory": "Ottima",
+      "category": "Migliore",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 30,
+      "san": "Be7",
+      "previousCategory": "Buona",
+      "category": "Migliore",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 32,
+      "san": "Nd4",
+      "previousCategory": "Migliore",
+      "category": "Buona",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 41,
+      "san": "Qxd4",
+      "previousCategory": "Ottima",
+      "category": "Buona",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 49,
+      "san": "Rae1",
+      "previousCategory": "Migliore",
+      "category": "Ottima",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 53,
+      "san": "Bxc4",
+      "previousCategory": "Migliore",
+      "category": "Ottima",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    }
+  ],
+  "updatedAt": "2026-10-14",
+  "confirmedAt": "2026-10-14",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.10.13\"]\n[Round \"?\"]\n[White \"BUMCestinait0\"]\n[Black \"Smisiano\"]\n[Result \"0-1\"]\n[WhiteElo \"754\"]\n[BlackElo \"524\"]\n[Link \"https://www.chess.com/analysis/game/live/185262315732/review?move=0\"]\n\n1. e4 e5 2. Nf3 Nf6 3. Nxe5 Qe7 4. Nf3 d5 5. e5 Nfd7 6. d4 f6 7. Bb5 c6 8. Ba4 b5 9. Bb3 fxe5 10. dxe5 Nxe5 11. Nc3 Bg4 12. h3 Bxf3 13. gxf3 Nxf3+ 14. Kf1 Qf6 15. Qe2+ Be7 16. Kg2 Nd4 17. Qh5+ g6 18. Qg4 Bc5 19. Re1+ Be7 20. Be3 h5 21. Qxd4 O-O 22. Qxf6 Rxf6 23. Bg5 Rf7 24. Rxe7 Rf8 25. Rae1 c5 26. Nxd5 c4 27. Bxc4 Nc6 28. R1e6 bxc4 29. Bh6 Nxe7 30. Rxg6+ Kh7 31. Nf6+ Rxf6 32. Rxf6 Kg8 33. Rf7 Kxf7 0-1",
+  "pgnProvenance": "Ricostruito dalle 66 SAN del PGN fornito in chat; tempi e commenti originali non inclusi."
+}

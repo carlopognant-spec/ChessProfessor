@@ -1,0 +1,7 @@
+# Stable source checkout; captured evidence keeps its exact hashed bytes.
+* text=auto eol=lf
+/agent-output/** -text
+# These legacy sources have mixed line endings recorded in frozen manifests.
+/src/lib/classification.js -text whitespace=cr-at-eol
+/src/lib/evaluation.js -text whitespace=cr-at-eol
+/src/lib/engineConfig.js -text whitespace=cr-at-eol

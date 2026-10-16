@@ -57,11 +57,13 @@ describe('partial evidence for critical defense', () => {
 })
 
 describe('mate compensation and independent winning-alternative veto', () => {
-  it('does not let an unplayed material recovery mask a full mating estimate, while keeping the winning-alternative veto', () => {
+  it('keeps a verified forced mating sacrifice and rejects an incomplete mating estimate', () => {
     const e = example('game-1-chigorin-steinitz-1892', 61)
     const result = classify(e)
-    expect(result.classification).toBe('best')
-    expect(result.specialAssessment.brilliant.reason).toBe('winning-alternative-without-new-sacrifice')
+    expect(result.classification).toBe('brilliant')
+    expect(result.specialAssessment.brilliant.offers[0].forcedMatingAcceptance).toMatchObject({
+      legalReplies: 1, proofAgainstEveryDefense: false,
+    })
     const incomplete = example('game-1-chigorin-steinitz-1892', 61)
     incomplete.entry.playedEngine.lines[0].pv.pop()
     expect(classify(incomplete).specialAssessment.brilliant.reason).toBe('unresolved-immediate-recovery')

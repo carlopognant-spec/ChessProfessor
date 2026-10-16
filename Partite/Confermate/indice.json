@@ -1,0 +1,313 @@
+{
+  "updatedAt": "2026-10-14",
+  "counts": {
+    "personalGames": 11,
+    "newConfirmedGames": 5,
+    "historicalGames": 2,
+    "personalPlies": 661,
+    "allPlies": 854
+  },
+  "frozenSourcesVerified": 20,
+  "games": [
+    {
+      "id": "personal-01",
+      "group": "personali",
+      "phase": "gia-confrontata-con-motore",
+      "white": "BUMCestinait0",
+      "black": "boyjonbum",
+      "date": "2026.10.01",
+      "plies": 51,
+      "folder": "Partite/Confermate/personal-01",
+      "pgn": "Partite/Confermate/personal-01/partita.pgn",
+      "reference": "Partite/Confermate/personal-01/riferimento.json",
+      "list": "Partite/Confermate/personal-01/lista.md",
+      "referenceSource": "tests/fixtures/qa/personal-01.json",
+      "pgnSource": "Partite/1/BUMCestinait0_vs_boyjonbum_2026.10.01.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "d6dbf36dd566c3a01c4b6618cfed23dfe9c8b89a11b9e860002dda022a4e3582",
+        "reference": "c96c451405decc38094480767ffef1f03de7fdff6756916f3015c081cff3974f"
+      }
+    },
+    {
+      "id": "personal-02",
+      "group": "personali",
+      "phase": "gia-confrontata-con-motore",
+      "white": "BUMCestinait0",
+      "black": "skui1",
+      "date": "2026.10.03",
+      "plies": 75,
+      "folder": "Partite/Confermate/personal-02",
+      "pgn": "Partite/Confermate/personal-02/partita.pgn",
+      "reference": "Partite/Confermate/personal-02/riferimento.json",
+      "list": "Partite/Confermate/personal-02/lista.md",
+      "referenceSource": "tests/fixtures/qa/personal-02.json",
+      "pgnSource": "Partite/2/BUMCestinait0_vs_skui1_2026.10.03.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "6b278769213288826283a7ade2b31c333d0220d88f703f293d84ce56af090671",
+        "reference": "12e7a695c1f2a2796c536fb9bde983feedac525404467280beda2802c72d751c"
+      }
+    },
+    {
+      "id": "personal-03",
+      "group": "personali",
+      "phase": "gia-confrontata-con-motore",
+      "white": "BUMCestinait0",
+      "black": "ProprioI0",
+      "date": "2026.10.04",
+      "plies": 136,
+      "folder": "Partite/Confermate/personal-03",
+      "pgn": "Partite/Confermate/personal-03/partita.pgn",
+      "reference": "Partite/Confermate/personal-03/riferimento.json",
+      "list": "Partite/Confermate/personal-03/lista.md",
+      "referenceSource": "tests/fixtures/qa/personal-03.json",
+      "pgnSource": "Partite/3/BUMCestinait0_vs_ProprioI0_2026.10.04.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "6a8cfb5b95b0d5a5fef9aad9a8a46bca367eab672a721a4e85e33c8c80f79c47",
+        "reference": "acc9c32708e6cd1b4e0227134ababc16d280b7fceaa0bd2c42ede5c00c51c246"
+      }
+    },
+    {
+      "id": "personal-04",
+      "group": "personali",
+      "phase": "gia-confrontata-con-motore",
+      "white": "ProprioI0",
+      "black": "BUMCestinait0",
+      "date": "2026.10.04",
+      "plies": 55,
+      "folder": "Partite/Confermate/personal-04",
+      "pgn": "Partite/Confermate/personal-04/partita.pgn",
+      "reference": "Partite/Confermate/personal-04/riferimento.json",
+      "list": "Partite/Confermate/personal-04/lista.md",
+      "referenceSource": "tests/fixtures/qa/personal-04.json",
+      "pgnSource": "Partite/4/ProprioI0_vs_BUMCestinait0_2026.10.04.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "2fff9180f9e300b7d3fe7f71cc6d6c5ba2f3dcd87e5b3213fabb1b96718601cd",
+        "reference": "372219d4b2bc7747e277944143d65dfff9a58ff37f28824c7ca21ae0531de594"
+      }
+    },
+    {
+      "id": "personal-05",
+      "group": "personali",
+      "phase": "gia-confrontata-con-motore",
+      "white": "BUMCestinait0",
+      "black": "ProprioI0",
+      "date": "2026.10.04",
+      "plies": 37,
+      "folder": "Partite/Confermate/personal-05",
+      "pgn": "Partite/Confermate/personal-05/partita.pgn",
+      "reference": "Partite/Confermate/personal-05/riferimento.json",
+      "list": "Partite/Confermate/personal-05/lista.md",
+      "referenceSource": "tests/fixtures/qa/personal-05.json",
+      "pgnSource": "Partite/5/BUMCestinait0_vs_ProprioI0_2026.10.04.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "3acba5ffff95895cddebe83687ab47494c50b328358d8d3c33eb0977598a1855",
+        "reference": "8e87f6e8d46c006e85e26969e46645a4f0e6eb67bc0f8af11b73431fb5c1b986"
+      }
+    },
+    {
+      "id": "personal-06",
+      "group": "personali",
+      "phase": "gia-confrontata-con-motore",
+      "white": "BUMCestinait0",
+      "black": "ProprioI0",
+      "date": "2026.10.04",
+      "plies": 45,
+      "folder": "Partite/Confermate/personal-06",
+      "pgn": "Partite/Confermate/personal-06/partita.pgn",
+      "reference": "Partite/Confermate/personal-06/riferimento.json",
+      "list": "Partite/Confermate/personal-06/lista.md",
+      "referenceSource": "tests/fixtures/qa/personal-06.json",
+      "pgnSource": "Partite/6/BUMCestinait0_vs_ProprioI0_2026.10.04.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "5b765e16533f32b5d9c9fadefcfca03bd4ca1c2bd810b878dfa5178bf4a623f9",
+        "reference": "4bc0b8fa71a6bdf1f8c31785881ea7c247f1b5586eab809a582df634a8f98ad4"
+      }
+    },
+    {
+      "id": "chesscom-185262315732",
+      "group": "personali",
+      "phase": "confrontata-200k-2026-10-14",
+      "white": "BUMCestinait0",
+      "black": "Smisiano",
+      "date": "2026.10.13",
+      "plies": 66,
+      "folder": "Partite/Confermate/chesscom-185262315732",
+      "pgn": "Partite/Confermate/chesscom-185262315732/partita.pgn",
+      "reference": "Partite/Confermate/chesscom-185262315732/riferimento.json",
+      "list": "Partite/Confermate/chesscom-185262315732/lista.md",
+      "referenceSource": "agent-output/chesscom-185262315732/reference-confirmed.json",
+      "pgnSource": null,
+      "pgnProvenance": "Ricostruito dalle 66 SAN del PGN fornito in chat; tempi e commenti originali non inclusi.",
+      "sha256": {
+        "pgn": "006ecc7ee76e4e997b44dcb5a79c0a2d5b1a40e662545e501c635ecdeb9bc06d",
+        "reference": "1bf0d96d8b1d45335593ea893ef82e32daa7de281d549af537183dc6f2e3cd6e"
+      },
+      "cohort": "nuovi-riferimenti-2026-10",
+      "comparison": {
+        "report": "agent-output/new-references-200k-v1/report.md",
+        "gameData": "agent-output/new-references-200k-v1/game-185262315732.json",
+        "nodes": 200000,
+        "exact": 36,
+        "total": 66
+      }
+    },
+    {
+      "id": "chesscom-184316820266",
+      "group": "personali",
+      "phase": "confrontata-200k-2026-10-14",
+      "white": "ProprioI0",
+      "black": "Smisiano",
+      "date": "2026.09.24",
+      "plies": 66,
+      "folder": "Partite/Confermate/chesscom-184316820266",
+      "pgn": "Partite/Confermate/chesscom-184316820266/partita.pgn",
+      "reference": "Partite/Confermate/chesscom-184316820266/riferimento.json",
+      "list": "Partite/Confermate/chesscom-184316820266/lista.md",
+      "referenceSource": "agent-output/chesscom-184316820266/reference-confirmed.json",
+      "pgnSource": "agent-output/chesscom-184316820266/source.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "0ec0872b6013222c0d40501aaeb58eab2b72e3154c397a52f2536f9bc7db20b0",
+        "reference": "7ed941b58aa58498f3c43341a3b474ed1c7a932eccd03826b88cce5a4a459250"
+      },
+      "cohort": "nuovi-riferimenti-2026-10",
+      "comparison": {
+        "report": "agent-output/new-references-200k-v1/report.md",
+        "gameData": "agent-output/new-references-200k-v1/game-184316820266.json",
+        "nodes": 200000,
+        "exact": 45,
+        "total": 66
+      }
+    },
+    {
+      "id": "chesscom-184316313800",
+      "group": "personali",
+      "phase": "confrontata-200k-2026-10-14",
+      "white": "Smisiano",
+      "black": "ProprioI0",
+      "date": "2026.09.24",
+      "plies": 46,
+      "folder": "Partite/Confermate/chesscom-184316313800",
+      "pgn": "Partite/Confermate/chesscom-184316313800/partita.pgn",
+      "reference": "Partite/Confermate/chesscom-184316313800/riferimento.json",
+      "list": "Partite/Confermate/chesscom-184316313800/lista.md",
+      "referenceSource": "agent-output/chesscom-184316313800/reference-confirmed.json",
+      "pgnSource": "agent-output/chesscom-184316313800/source.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "8c09cd1ff48d5ed3f705066b8249561cabe918646f19656c75236a749cd72ea0",
+        "reference": "2c3f14e831f2ca780e0397e3d71f839e83aff5c8d8cfed09cb541fdb5bd114f5"
+      },
+      "cohort": "nuovi-riferimenti-2026-10",
+      "comparison": {
+        "report": "agent-output/new-references-200k-v1/report.md",
+        "gameData": "agent-output/new-references-200k-v1/game-184316313800.json",
+        "nodes": 200000,
+        "exact": 28,
+        "total": 46
+      }
+    },
+    {
+      "id": "chesscom-185230271130",
+      "group": "personali",
+      "phase": "confrontata-200k-2026-10-14",
+      "white": "ProprioI0",
+      "black": "BUMCestinait0",
+      "date": "2026.10.12",
+      "plies": 55,
+      "folder": "Partite/Confermate/chesscom-185230271130",
+      "pgn": "Partite/Confermate/chesscom-185230271130/partita.pgn",
+      "reference": "Partite/Confermate/chesscom-185230271130/riferimento.json",
+      "list": "Partite/Confermate/chesscom-185230271130/lista.md",
+      "referenceSource": "agent-output/chesscom-185230271130/reference-confirmed.json",
+      "pgnSource": "agent-output/chesscom-185230271130/source.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "67087ccbc45a86a36a25f9544cb3da308effcb15fc8b98c434db8afec17d2a99",
+        "reference": "33d3c1da5d29a95e5ff060d9dc17d811acbe9f80c5d167a5054fde36e4ce37e7"
+      },
+      "cohort": "nuovi-riferimenti-2026-10",
+      "comparison": {
+        "report": "agent-output/new-references-200k-v1/report.md",
+        "gameData": "agent-output/new-references-200k-v1/game-185230271130.json",
+        "nodes": 200000,
+        "exact": 38,
+        "total": 55
+      }
+    },
+    {
+      "id": "game-1-chigorin-steinitz-1892",
+      "group": "storiche",
+      "phase": "gia-confrontata-con-motore",
+      "white": "Mikhail Chigorin",
+      "black": "Wilhelm Steinitz",
+      "date": "1892.01.01",
+      "plies": 61,
+      "folder": "Partite/Confermate/Storiche/game-1-chigorin-steinitz-1892",
+      "pgn": "Partite/Confermate/Storiche/game-1-chigorin-steinitz-1892/partita.pgn",
+      "reference": "Partite/Confermate/Storiche/game-1-chigorin-steinitz-1892/riferimento.json",
+      "list": "Partite/Confermate/Storiche/game-1-chigorin-steinitz-1892/lista.md",
+      "referenceSource": "tests/fixtures/qa/game-1-chigorin-steinitz-1892.json",
+      "pgnSource": null,
+      "pgnProvenance": "PGN-incluso-nel-riferimento-storico",
+      "sha256": {
+        "pgn": "1b2b980972d327623352722a43e6d67764753c79c82afe192164612238c3ef5d",
+        "reference": "9d51e6ec8f96f7b90505f968739e46f997559f22164ba81099289107db59e607"
+      }
+    },
+    {
+      "id": "game-2-saintamant-staunton-1843",
+      "group": "storiche",
+      "phase": "gia-confrontata-con-motore",
+      "white": "Pierre Charles Fournier de Saint Amant",
+      "black": "Howard Staunton",
+      "date": "1843.12.19",
+      "plies": 132,
+      "folder": "Partite/Confermate/Storiche/game-2-saintamant-staunton-1843",
+      "pgn": "Partite/Confermate/Storiche/game-2-saintamant-staunton-1843/partita.pgn",
+      "reference": "Partite/Confermate/Storiche/game-2-saintamant-staunton-1843/riferimento.json",
+      "list": "Partite/Confermate/Storiche/game-2-saintamant-staunton-1843/lista.md",
+      "referenceSource": "tests/fixtures/qa/game-2-saintamant-staunton-1843.json",
+      "pgnSource": null,
+      "pgnProvenance": "PGN-incluso-nel-riferimento-storico",
+      "sha256": {
+        "pgn": "6b161580ccc972b4b4a6b421f8359fc52f9f60f907c668cf6f9711504d413432",
+        "reference": "af0c33baac84bffd29343e8310e116bbc5ba1947d0ff5c0c393bc9ccb41da6a0"
+      }
+    },
+    {
+      "id": "chesscom-185230000668",
+      "group": "personali",
+      "phase": "confrontata-200k-2026-10-14",
+      "white": "BUMCestinait0",
+      "black": "ProprioI0",
+      "date": "2026.10.12",
+      "plies": 29,
+      "folder": "Partite/Confermate/chesscom-185230000668",
+      "pgn": "Partite/Confermate/chesscom-185230000668/partita.pgn",
+      "reference": "Partite/Confermate/chesscom-185230000668/riferimento.json",
+      "list": "Partite/Confermate/chesscom-185230000668/lista.md",
+      "referenceSource": "Partite/Confermate/chesscom-185230000668/reference-draft.json",
+      "pgnSource": "Partite/Confermate/chesscom-185230000668/partita.pgn",
+      "pgnProvenance": "copia-del-PGN-originale",
+      "sha256": {
+        "pgn": "24ffa07c836d77bd0b39686da92bc7eb50c0bb24a9863de29d30787401773df9",
+        "reference": "345572bc917e372c3ef9ecf0f24505523b71462eb74d53fcd71ff6abe9214479"
+      },
+      "cohort": "nuovi-riferimenti-2026-10",
+      "comparison": {
+        "report": "agent-output/new-references-200k-v1/report.md",
+        "gameData": "agent-output/new-references-200k-v1/game-185230000668.json",
+        "nodes": 200000,
+        "exact": 20,
+        "total": 29
+      }
+    }
+  ]
+}

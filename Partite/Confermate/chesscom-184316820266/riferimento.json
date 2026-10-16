@@ -1,0 +1,650 @@
+{
+  "gameId": "184316820266",
+  "status": "user-confirmed",
+  "benchmarkEligible": true,
+  "date": "2026.09.24",
+  "white": "ProprioI0",
+  "black": "Smisiano",
+  "pgn": "[Event \"Live Chess\"]\r\n[Site \"Chess.com\"]\r\n[Date \"2026.09.24\"]\r\n[Round \"-\"]\r\n[White \"ProprioI0\"]\r\n[Black \"Smisiano\"]\r\n[Result \"0-1\"]\r\n[CurrentPosition \"8/6pp/pk6/1p3Q2/8/5P2/1P4PP/2rq3K w - - 0 34\"]\r\n[Timezone \"UTC\"]\r\n[ECO \"D06\"]\r\n[ECOUrl \"https://www.chess.com/openings/Queens-Gambit-Declined-Marshall-Defense-3.cxd5-Qxd5\"]\r\n[UTCDate \"2026.09.24\"]\r\n[UTCTime \"17:18:50\"]\r\n[WhiteElo \"800\"]\r\n[BlackElo \"493\"]\r\n[TimeControl \"600\"]\r\n[Termination \"Smisiano won by checkmate\"]\r\n[StartTime \"17:18:50\"]\r\n[EndDate \"2026.09.24\"]\r\n[EndTime \"17:32:48\"]\r\n[Link \"https://www.chess.com/analysis/game/live/184316820266/analysis?flip=true&move=0\"]\r\n[WhiteUrl \"https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif\"]\r\n[WhiteCountry \"76\"]\r\n[WhiteTitle \"\"]\r\n[BlackUrl \"https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif\"]\r\n[BlackCountry \"76\"]\r\n[BlackTitle \"\"]\r\n\r\n1. d4 {[%clk 0:10:00][%timestamp 1]} 1... d5 {[%clk 0:10:00][%timestamp 1]} 2.\r\nc4 {[%clk 0:09:57.8][%timestamp 22]} 2... Nf6 {[%clk 0:09:48.5][%timestamp 115]}\r\n3. cxd5 {[%clk 0:09:52.1][%timestamp 57]} 3... Qxd5 {[%clk 0:09:45.3][%timestamp\r\n32]} 4. Nf3 {[%clk 0:09:52][%timestamp 1]} 4... Bg4 $6 {[%clk\r\n0:09:41.9][%timestamp 34][%c_effect\r\ng4;square;g4;type;Inaccuracy;persistent;true]} 5. Nc3 {[%clk\r\n0:09:26.1][%timestamp 259]} 5... Qa5 {[%clk 0:09:31.3][%timestamp 106]} 6. Bd2\r\n{[%clk 0:09:16.2][%timestamp 99]} 6... Nc6 {[%clk 0:09:17.8][%timestamp 135]} 7.\r\ne4 {[%clk 0:09:11.9][%timestamp 43]} 7... e5 $6 {[%clk 0:09:10.8][%timestamp\r\n70][%c_effect e5;square;e5;type;Inaccuracy;persistent;true]} 8. d5 $9 {[%clk\r\n0:08:53.9][%timestamp 180]} 8... Nxe4 $4 {[%clk 0:08:57.4][%timestamp\r\n134][%c_effect e4;square;e4;type;Blunder;persistent;true]} 9. Nxe4 $6 {[%clk\r\n0:08:48.7][%timestamp 52][%c_effect\r\ne4;square;e4;type;Inaccuracy;persistent;true]} 9... Qxd5 {[%clk\r\n0:08:56.1][%timestamp 13]} 10. Qc2 $2 {[%clk 0:08:17.7][%timestamp 310][%c_effect\r\nc2;square;c2;type;Mistake;persistent;true]} 10... O-O-O $9 {[%clk\r\n0:08:25.9][%timestamp 302]} 11. Bc4 {[%clk 0:08:08.6][%timestamp 91]} 11... Nb4\r\n{[%clk 0:08:19.7][%timestamp 62]} 12. Bxb4 {[%clk 0:07:10.2][%timestamp 584]}\r\n12... Bxb4+ {[%clk 0:08:05.6][%timestamp 141]} 13. Nfd2 $4 {[%clk\r\n0:06:46][%timestamp 242][%c_effect d2;square;d2;type;Blunder;persistent;true]}\r\n13... Qa5 $9 {[%clk 0:07:12.9][%timestamp 527]} 14. O-O $4 {[%clk\r\n0:05:09][%timestamp 970][%c_effect g1;square;g1;type;Blunder;persistent;true]}\r\n14... Bxd2 $1 {[%clk 0:06:56.8][%timestamp 161][%c_effect\r\nd2;square;d2;type;GreatFind;persistent;true]} 15. f3 $6 {[%clk\r\n0:04:48.2][%timestamp 208][%c_effect\r\nf3;square;f3;type;Inaccuracy;persistent;true]} 15... Bf5 {[%clk\r\n0:06:52][%timestamp 48]} 16. Rfd1 {[%clk 0:04:44.1][%timestamp 41]} 16... b5 $2\r\n{[%clk 0:06:43][%timestamp 90][%c_effect\r\nb5;square;b5;type;Mistake;persistent;true]} 17. Nd6+ $6 {[%clk\r\n0:04:30.1][%timestamp 140][%c_effect\r\nd6;square;d6;type;Inaccuracy;persistent;true]} 17... Rxd6 $1 {[%clk\r\n0:06:35.7][%timestamp 73][%c_effect\r\nd6;square;d6;type;GreatFind;persistent;true]} 18. Qxf5+ {[%clk\r\n0:04:28.9][%timestamp 12]} 18... Kb8 {[%clk 0:06:23.9][%timestamp 118]} 19. Bxf7\r\n{[%clk 0:04:02.5][%timestamp 264]} 19... Qb6+ {[%clk 0:06:18.7][%timestamp 52]}\r\n20. Kh1 {[%clk 0:03:55.4][%timestamp 71]} 20... Rf8 $2 {[%clk\r\n0:06:11.2][%timestamp 75][%c_effect f8;square;f8;type;Mistake;persistent;true]}\r\n21. Qxe5 $3 {[%clk 0:03:24.5][%timestamp 309][%c_effect\r\ne5;square;e5;type;Brilliant;persistent;true]} 21... Rxf7 $2 {[%clk\r\n0:06:01.8][%timestamp 94][%c_effect f7;square;f7;type;Mistake;persistent;true]}\r\n22. Qe8+ $1 {[%clk 0:03:22.6][%timestamp 19][%c_effect\r\ne8;square;e8;type;GreatFind;persistent;true]} 22... Kb7 {[%clk\r\n0:06:00][%timestamp 18]} 23. Qxf7 {[%clk 0:03:21.6][%timestamp 10]} 23... Qd4\r\n{[%clk 0:05:39.2][%timestamp 208]} 24. Qb3 {[%clk 0:03:03][%timestamp 186]}\r\n24... a6 {[%clk 0:05:19.1][%timestamp 201]} 25. a4 {[%clk 0:03:00.9][%timestamp\r\n21]} 25... c6 $2 {[%clk 0:05:15.7][%timestamp 34][%c_effect\r\nc6;square;c6;type;Mistake;persistent;true]} 26. axb5 {[%clk\r\n0:02:58.8][%timestamp 21]} 26... cxb5 {[%clk 0:05:14.2][%timestamp 15]} 27.\r\nRa4 $4 {[%clk 0:02:52.3][%timestamp 65][%c_effect\r\na4;square;a4;type;Blunder;persistent;true]} 27... Qxa4 $1 {[%clk\r\n0:05:06.3][%timestamp 79][%c_effect\r\na4;square;a4;type;GreatFind;persistent;true]} 28. Qf7+ {[%clk\r\n0:02:43.3][%timestamp 90]} 28... Kc6 {[%clk 0:04:46.9][%timestamp 194]} 29. Qe8+\r\n{[%clk 0:02:36.9][%timestamp 64]} 29... Kc5 $6 {[%clk 0:04:41.5][%timestamp\r\n54][%c_effect c5;square;c5;type;Inaccuracy;persistent;true]} 30. Qc8+ {[%clk\r\n0:02:27.7][%timestamp 92]} 30... Rc6 {[%clk 0:04:38.6][%timestamp 29]} 31. Qf5+ $2\r\n{[%clk 0:02:19.2][%timestamp 85][%c_effect\r\nf5;square;f5;type;Mistake;persistent;true]} 31... Kb6 {[%clk 0:04:31][%timestamp\r\n76]} 32. Rxd2 $2 {[%clk 0:02:16.6][%timestamp 26][%c_effect\r\nd2;square;d2;type;Mistake;persistent;true]} 32... Rc1+ $1 {[%clk\r\n0:04:26.6][%timestamp 44][%c_effect\r\nc1;square;c1;type;GreatFind;persistent;true]} 33. Rd1 {[%clk\r\n0:02:08.5][%timestamp 81]} 33... Qxd1# {[%clk 0:04:24.7][%c_effect\r\nb6;square;b6;type;Winner;animated;true,h1;square;h1;type;CheckmateWhite;animated;true][%timestamp\r\n19]} 0-1",
+  "source": "PGN originale e due screenshot forniti da Carlo il 14 ottobre 2026.",
+  "annotations": [
+    {
+      "ply": 1,
+      "san": "d4",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 2,
+      "san": "d5",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 3,
+      "san": "c4",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 4,
+      "san": "Nf6",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 5,
+      "san": "cxd5",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 6,
+      "san": "Qxd5",
+      "category": "Libro",
+      "evidence": "brown-color",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 7,
+      "san": "Nf3",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 8,
+      "san": "Bg4",
+      "category": "Imprecisione",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 9,
+      "san": "Nc3",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 10,
+      "san": "Qa5",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 11,
+      "san": "Bd2",
+      "category": "Ottima",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 12,
+      "san": "Nc6",
+      "category": "Buona",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 13,
+      "san": "e4",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 14,
+      "san": "e5",
+      "category": "Imprecisione",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 15,
+      "san": "d5",
+      "category": "Mossa mancata",
+      "evidence": "explicit-screenshot-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 16,
+      "san": "Nxe4",
+      "category": "Errore grave",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 17,
+      "san": "Nxe4",
+      "category": "Imprecisione",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 18,
+      "san": "Qxd5",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 19,
+      "san": "Qc2",
+      "category": "Errore",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 20,
+      "san": "O-O-O",
+      "category": "Mossa mancata",
+      "evidence": "explicit-screenshot-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 21,
+      "san": "Bc4",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 22,
+      "san": "Nb4",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 23,
+      "san": "Bxb4",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 24,
+      "san": "Bxb4+",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 25,
+      "san": "Nfd2",
+      "category": "Errore grave",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 26,
+      "san": "Qa5",
+      "category": "Mossa mancata",
+      "evidence": "explicit-screenshot-icon",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 27,
+      "san": "O-O",
+      "category": "Errore grave",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 28,
+      "san": "Bxd2",
+      "category": "Grande",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 29,
+      "san": "f3",
+      "category": "Imprecisione",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 30,
+      "san": "Bf5",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 31,
+      "san": "Rfd1",
+      "category": "Ottima",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 32,
+      "san": "b5",
+      "category": "Errore",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 33,
+      "san": "Nd6+",
+      "category": "Imprecisione",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 34,
+      "san": "Rxd6",
+      "category": "Grande",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 35,
+      "san": "Qxf5+",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 36,
+      "san": "Kb8",
+      "category": "Migliore",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 37,
+      "san": "Bxf7",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 38,
+      "san": "Qb6+",
+      "category": "Buona",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 39,
+      "san": "Kh1",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 40,
+      "san": "Rf8",
+      "category": "Errore",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 41,
+      "san": "Qxe5",
+      "category": "Geniale",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 42,
+      "san": "Rxf7",
+      "category": "Errore",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 43,
+      "san": "Qe8+",
+      "category": "Grande",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 44,
+      "san": "Kb7",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 45,
+      "san": "Qxf7",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 46,
+      "san": "Qd4",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 47,
+      "san": "Qb3",
+      "category": "Ottima",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 48,
+      "san": "a6",
+      "category": "Ottima",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 49,
+      "san": "a4",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 50,
+      "san": "c6",
+      "category": "Errore",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 51,
+      "san": "axb5",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 52,
+      "san": "cxb5",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 53,
+      "san": "Ra4",
+      "category": "Errore grave",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 54,
+      "san": "Qxa4",
+      "category": "Grande",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 55,
+      "san": "Qf7+",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 56,
+      "san": "Kc6",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 57,
+      "san": "Qe8+",
+      "category": "Buona",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 58,
+      "san": "Kc5",
+      "category": "Imprecisione",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 59,
+      "san": "Qc8+",
+      "category": "Migliore",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 60,
+      "san": "Rc6",
+      "category": "Ottima",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 61,
+      "san": "Qf5+",
+      "category": "Errore",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 62,
+      "san": "Kb6",
+      "category": "Migliore",
+      "evidence": "user-correction",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 63,
+      "san": "Rxd2",
+      "category": "Errore",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 64,
+      "san": "Rc1+",
+      "category": "Grande",
+      "evidence": "pgn-explicit-effect-and-screenshot",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 65,
+      "san": "Rd1",
+      "category": "Forzata",
+      "evidence": "legal-move-count",
+      "needsReview": false,
+      "userConfirmed": true
+    },
+    {
+      "ply": 66,
+      "san": "Qxd1#",
+      "category": "Migliore",
+      "evidence": "green-shade-provisional",
+      "needsReview": false,
+      "userConfirmed": true
+    }
+  ],
+  "userCorrections": [
+    {
+      "ply": 11,
+      "san": "Bd2",
+      "previousCategory": "Buona",
+      "category": "Ottima",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 12,
+      "san": "Nc6",
+      "previousCategory": "Migliore",
+      "category": "Buona",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 31,
+      "san": "Rfd1",
+      "previousCategory": "Migliore",
+      "category": "Ottima",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 36,
+      "san": "Kb8",
+      "previousCategory": "Buona",
+      "category": "Migliore",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 38,
+      "san": "Qb6+",
+      "previousCategory": "Migliore",
+      "category": "Buona",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 47,
+      "san": "Qb3",
+      "previousCategory": "Migliore",
+      "category": "Ottima",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 48,
+      "san": "a6",
+      "previousCategory": "Migliore",
+      "category": "Ottima",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 59,
+      "san": "Qc8+",
+      "previousCategory": "Buona",
+      "category": "Migliore",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 60,
+      "san": "Rc6",
+      "previousCategory": "Migliore",
+      "category": "Ottima",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    },
+    {
+      "ply": 62,
+      "san": "Kb6",
+      "previousCategory": "Buona",
+      "category": "Migliore",
+      "source": "Correzione esplicita di Carlo",
+      "date": "2026-10-14"
+    }
+  ],
+  "confirmedAt": "2026-10-14",
+  "notes": "Lista confermata da Carlo secondo il workflow concordato: dieci correzioni esplicite e conferma delle altre mosse. 33.Rd1 e Forzata, verificata localmente.",
+  "summaryCounts": {
+    "white": {
+      "Libro": 3,
+      "Buona": 3,
+      "Migliore": 11,
+      "Ottima": 3,
+      "Mossa mancata": 1,
+      "Imprecisione": 3,
+      "Errore": 3,
+      "Errore grave": 3,
+      "Geniale": 1,
+      "Grande": 1,
+      "Forzata": 1
+    },
+    "black": {
+      "Libro": 3,
+      "Imprecisione": 3,
+      "Migliore": 11,
+      "Buona": 3,
+      "Errore grave": 1,
+      "Mossa mancata": 2,
+      "Grande": 4,
+      "Errore": 4,
+      "Ottima": 2
+    }
+  }
+}

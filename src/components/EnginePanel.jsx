@@ -155,14 +155,14 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
   }, [analysisEnabled, engineGeneration])
 
   useEffect(() => {
-    if (!refinementJob || !engineReady || engineFailed) return
+    if (!refinementJob || (refinementJob.plan.positions.length+refinementJob.plan.extraSearches>0&&(!engineReady||engineFailed))) return
     if (refinementJob.signature !== signatureRef.current) { setRefinementJob(null); return }
     const controller = new AbortController()
     refinementControllerRef.current = controller
     setRefinementWorking(true)
     setRefinementNote('')
     refineGameEntries({ entries: refinementJob.entries, plan: refinementJob.plan, signal: controller.signal,
-      analyzePosition: (positionFen, nodes, multiPv) => engineRef.current.analyze(positionFen, nodes, multiPv),
+      analyzePosition: (positionFen, nodes, multiPv, options) => engineRef.current.analyze(positionFen, nodes, multiPv, options),
       onProgress: value => { if (!controller.signal.aborted) setRefinementProgress(value) },
       onEntries: entries => {
         if (controller.signal.aborted || refinementJob.signature !== signatureRef.current) return
@@ -370,9 +370,45 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
           }}>
           Approfondisci le mosse dubbie{refinementPlan.selectedPlies.length ? ` (${refinementPlan.selectedPlies.length})` : ''}
         </button>
-        <p className="notice">Analisi più lenta, fino a 12 mosse per richiesta. L'analisi iniziale resta disponibile.</p>
+        {experimentalSpecials && hasRefinements && <button type="button"
+          disabled={analyzing || refinementJob !== null || engineFailed}
+          onClick={() => {
+            const plan = buildRefinementPlan(analysisEntriesRef.current, { grandeOnly: true })
+            if (!plan.selectedPlies.length) {
+              setRefinementNote('Nessuna Grande da verificare con i dati attuali.')
+              return
+            }
+            setRefinementJob({ entries: analysisEntriesRef.current, plan, signature: signatureRef.current })
+            setRefinementProgress(null)
+            setRefinementNote('')
+            setAnalysisEnabled(true)
+          }}>Verifica le Grandi</button>}
+        {experimentalSpecials && <button type="button"
+          disabled={analyzing || refinementJob !== null || engineFailed}
+          onClick={() => {
+            const plan = buildRefinementPlan(analysisEntriesRef.current, { sacrificeOnly: true })
+            if (!plan.selectedPlies.length) {
+              setRefinementNote('Nessun sacrificio da verificare con i dati attuali.')
+              return
+            }
+            setRefinementJob({ entries: analysisEntriesRef.current, plan, signature: signatureRef.current })
+            setRefinementProgress(null)
+            setRefinementNote('')
+            setAnalysisEnabled(true)
+          }}>Verifica i sacrifici</button>}
+        {experimentalSpecials && <button type="button"
+          disabled={analyzing || refinementJob !== null || engineFailed}
+          onClick={() => {
+            const plan=buildRefinementPlan(analysisEntriesRef.current,{criticalOnly:true})
+            if(!plan.selectedPlies.length){setRefinementNote('Nessuna nuova scelta decisiva da verificare con i dati attuali.');return}
+            setRefinementJob({entries:analysisEntriesRef.current,plan,signature:signatureRef.current})
+            setRefinementProgress(null)
+            setRefinementNote('')
+            if(plan.positions.length) setAnalysisEnabled(true)
+          }}>Verifica le scelte decisive</button>}
+        <p className="notice">Analisi più lenta, fino a 12 mosse e 4 verifiche dei sacrifici per richiesta. L'analisi iniziale resta disponibile.</p>
         {refinementJob && <p role="status">{refinementWorking
-          ? `Approfondimento: ${refinementProgress?.current ?? 0}/${refinementProgress?.total ?? refinementJob.plan.positions.length} posizioni.`
+          ? `Approfondimento: ${refinementProgress?.current ?? 0}/${refinementProgress?.total ?? refinementJob.plan.positions.length + refinementJob.plan.extraSearches} ricerche.`
           : 'Preparazione dell’approfondimento…'}</p>}
         {refinementJob && <button type="button" onClick={() => {
           refinementControllerRef.current?.abort()

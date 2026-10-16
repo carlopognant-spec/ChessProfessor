@@ -1,0 +1,52 @@
+[Event "Staunton - Saint Amant"]
+[Site "Paris FRA"]
+[Date "1843.12.19"]
+[Round "21"]
+[White "Pierre Charles Fournier de Saint Amant"]
+[Black "Howard Staunton"]
+[Result "0-1"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[ECO "D30"]
+[Link "https://www.chess.com/analysis/collection/the-best-chess-games-of-all-time-annotated-KWuSgD8A/yuu4hdsjk/games?move=0"]
+
+1. d4 d5 2. c4 e6 3. e3 c5 4. Nc3 Nf6 5. Nf3 Be7 6. Bd3 $6 b6 7. O-O O-O 8. b3
+Bb7 9. cxd5 exd5 10. Qc2 Nc6 11. a3 a6 $6 12. Rd1 $6 {Given that Black is now
+basically forced to exchange on d4 and leave White with a pawn there, this rook
+will be misplaced.} (12. dxc5 $1 {This was a last chance for Saint Amant to change
+the structure and saddle Black with hanging pawns as a modern master would
+prefer to do.}) 12... cxd4 13. exd4 h6 14. b4 Bd6 15. Re1 b5 16. h3 Rc8 17. Qb3
+Qc7 18. Bd2 Qb6 {This is a good example of an odd habit of the players in this
+game of shuffling around without any fear of losing tempo. The position is slow
+enough that the tempo loss cannot be brutally punished.} 19. Be3 Ne7 20. Rac1
+Nh5 $6 {For reasons that are very unclear to me, both players choose to place
+their knights on the edge of the board.} 21. Qd1 Nf6 22. Nh4 $2 (22. Ne5 $14) 22...
+Rc7 23. Qd2 Nh7 24. Qc2 $6 Nf6 25. Kh1 Ne8 $6 {A slightly odd move, but I guess
+Black wants to put the knight on d6 and then c4, but it's tricky to get the
+bishop to move away from d6.} 26. Nf5 $6 Nxf5 27. Bxf5 a5 $6 28. Qb3 $2 axb4 $1 29.
+axb4 Rc4 30. Na2 $6 Nf6 31. Bd3 Qc6 $1 {Here's where things finally get spicy  $1 The
+rook simply can't be captured now, but Staunton will soon convert this pretend
+exchange sacrifice into a legitimate exchange sacrifice. In all cases, Staunton
+will have great compensation if the exchange sacrifice is accepted.} 32. Qb2
+(32. Bxc4 $4 dxc4 {and checkmate and the queen are threatened.}) 32... Qd7 33.
+Kg1 (33. Bxc4 {Now the exchange sacrifice can be accepted, but Black's
+compensation is incredible.} 33... dxc4 {threatening ...Qxh3+} 34. Kg1 Nd5 {And
+the amazing knight, bishops, and pawn structure secure Black a major
+advantage.}) 33... Nh5 $2 (33... Bb8 $15 {is one possible improvement.}) 34. Qd2 $2
+(34. Bxc4 dxc4 35. d5 $13 {is much more unclear than before, largely because of
+how unhelpful the knight is on h5, and because of that, White has achieved the
+freeing d5.}) 34... f5 35. f4 $2 {This only makes the Be3 worse and gives Black
+the e4-square and greater potential on the e-file.} (35. f3 $13) 35... Ng3 36.
+Bxc4 {The exchange sacrifice is finally accepted.} 36... dxc4 37. Qb2 $6 Rf6 $6
+38. Nc3 Ne4 $1 39. Re2 $6 Rg6 40. Rd1 $6 Nxc3 $1 41. Qxc3 Bf3 $1 $19 {Even after ...Be4,
+Staunton would have a huge advantage due to the positional compensation, but
+this move wins the material back, and now Staunton simply has a winning
+advantage with a great bishop vs. a terrible one, better access to the open
+e-file, and many weak pawns to attack.} 42. Rde1 $2 Bxe2 43. Rxe2 Qe7 $6 44. Qb2 $6
+Re6 45. Kf2 Re4 46. Qa2 Kf7 47. g3 Qb7 48. Qa3 Re8 49. Qc3 $6 Qh1 50. h4 g5 $1 {An
+excellent move, cracking things open just as Black's pieces are fully activated,
+and White's remain tangled.} 51. Qe1 Qh2+ 52. Kf1 Qh3+ 53. Kg1 Qg4 54. hxg5
+Bxf4 $1 {another nice little tactic} 55. Bxf4 Qxe2 56. Qxe2 Rxe2 57. gxh6 c3 58.
+Kf1 Re4 59. Bc1 Kg6 60. d5 c2 61. Bd2 Rxb4 $1 {a little trick that White could not
+prevent.} 62. d6 Rd4 63. Ke2 Rxd6 64. Ke3 Kxh6 65. Ke2+ Kg6 66. Ke1 b4 {Saint
+Amant finally resigned.} 0-1

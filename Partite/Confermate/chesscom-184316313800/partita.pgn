@@ -1,0 +1,68 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2026.09.24"]
+[Round "-"]
+[White "Smisiano"]
+[Black "ProprioI0"]
+[Result "0-1"]
+[CurrentPosition "r5k1/5ppp/p3b3/1p1r4/8/P3P1bP/1P4P1/5K1R w - - 1 24"]
+[Timezone "UTC"]
+[ECO "B30"]
+[ECOUrl "https://www.chess.com/openings/Sicilian-Defense-Nyezhmetdinov-Rossolimo-Attack-3...Qc7"]
+[UTCDate "2026.09.24"]
+[UTCTime "17:07:59"]
+[WhiteElo "390"]
+[BlackElo "814"]
+[TimeControl "600"]
+[Termination "ProprioI0 won by resignation"]
+[StartTime "17:07:59"]
+[EndDate "2026.09.24"]
+[EndTime "17:17:31"]
+[Link "https://www.chess.com/analysis/game/live/184316313800/analysis?move=0"]
+[WhiteUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[WhiteCountry "76"]
+[WhiteTitle ""]
+[BlackUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[BlackCountry "76"]
+[BlackTitle ""]
+
+1. e4 {[%clk 0:10:00][%timestamp 1]} 1... c5 {[%clk 0:10:00][%timestamp 1]} 2.
+Nf3 {[%clk 0:09:56.3][%timestamp 37]} 2... Nc6 {[%clk 0:09:58.5][%timestamp 15]}
+3. Bb5 {[%clk 0:09:47.8][%timestamp 85]} 3... Qc7 {[%clk 0:09:51.2][%timestamp
+73]} 4. c3 {[%clk 0:09:42.7][%timestamp 51]} 4... Nf6 {[%clk
+0:09:44.8][%timestamp 64]} 5. d4 {[%clk 0:09:31.7][%timestamp 110]} 5... d5 $2
+{[%clk 0:09:39.4][%timestamp 54][%c_effect
+d5;square;d5;type;Mistake;persistent;true]} 6. e5 {[%clk 0:09:04.9][%timestamp
+268]} 6... Ng4 $6 {[%clk 0:09:12][%timestamp 274][%c_effect
+g4;square;g4;type;Inaccuracy;persistent;true]} 7. h3 {[%clk
+0:08:37.3][%timestamp 276]} 7... a6 $2 {[%clk 0:09:05.5][%timestamp 65][%c_effect
+a6;square;a6;type;Mistake;persistent;true]} 8. Ba4 $6 {[%clk
+0:08:31.5][%timestamp 58][%c_effect
+a4;square;a4;type;Inaccuracy;persistent;true]} 8... b5 {[%clk
+0:09:01.1][%timestamp 44]} 9. Bc2 {[%clk 0:07:54.9][%timestamp 366]} 9... Ngxe5
+{[%clk 0:08:26.8][%timestamp 343]} 10. Bf4 $9 {[%clk 0:07:45][%timestamp 99]}
+10... cxd4 $9 {[%clk 0:08:10.4][%timestamp 164]} 11. Bxe5 $2 {[%clk
+0:07:25.8][%timestamp 192][%c_effect e5;square;e5;type;Mistake;persistent;true]}
+11... Nxe5 {[%clk 0:08:09.1][%timestamp 13]} 12. Nxe5 $6 {[%clk
+0:07:24.7][%timestamp 11][%c_effect
+e5;square;e5;type;Inaccuracy;persistent;true]} 12... Qxe5+ {[%clk
+0:08:08.1][%timestamp 10]} 13. Kf1 {[%clk 0:07:10.6][%timestamp 141]} 13... dxc3
+{[%clk 0:08:01.2][%timestamp 69]} 14. Nxc3 {[%clk 0:07:06.8][%timestamp 38]}
+14... e6 {[%clk 0:07:57.9][%timestamp 33]} 15. Bb3 {[%clk 0:06:50.7][%timestamp
+161]} 15... Bb4 {[%clk 0:07:50.8][%timestamp 71]} 16. Nxd5 {[%clk
+0:06:40.3][%timestamp 104]} 16... exd5 {[%clk 0:07:49.1][%timestamp 17]} 17.
+Bxd5 {[%clk 0:06:38.6][%timestamp 17]} 17... O-O $4 {[%clk 0:07:44.5][%timestamp
+46][%c_effect g8;square;g8;type;Blunder;persistent;true]} 18. a3 $9 {[%clk
+0:06:29.5][%timestamp 91]} 18... Rd8 $6 {[%clk 0:07:20][%timestamp 245][%c_effect
+d8;square;d8;type;Inaccuracy;persistent;true]} 19. Qf3 $9 {[%clk
+0:06:20.8][%timestamp 87]} 19... Rxd5 {[%clk 0:07:12.5][%timestamp 75]} 20.
+Qb3 $6 {[%clk 0:06:10.2][%timestamp 106][%c_effect
+b3;square;b3;type;Inaccuracy;persistent;true]} 20... Be6 $6 {[%clk
+0:06:49.1][%timestamp 234][%c_effect
+e6;square;e6;type;Inaccuracy;persistent;true]} 21. Re1 $2 {[%clk
+0:06:08.6][%timestamp 16][%c_effect e1;square;e1;type;Mistake;persistent;true]}
+21... Bxe1 $9 {[%clk 0:06:42.7][%timestamp 64]} 22. Qe3 {[%clk
+0:05:44.4][%timestamp 242]} 22... Qxe3 {[%clk 0:06:29.8][%timestamp 129]} 23.
+fxe3 {[%clk 0:05:42.4][%timestamp 20]} 23... Bg3 {[%clk 0:06:24.5][%c_effect
+g8;square;g8;type;Winner;animated;true,f1;square;f1;type;ResignWhite;animated;true][%timestamp
+53]} 0-1

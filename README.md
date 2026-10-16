@@ -6,6 +6,19 @@ analisi automatica e classificazione delle semimosse.
 
 Stato del lavoro e limiti attuali: [handoff del 9 ottobre](HANDOFF-2026-10-09.md).
 
+Classificatore speciale corrente: **counterfactual-v24**. Sul campione di
+sviluppo riconosce 32/34 Grandi e 4/4 Geniali, senza false attribuzioni di
+queste categorie rispetto ai riferimenti storici registrati. Questi numeri
+non misurano una corrispondenza verificata con la Game Review: Carlo ha
+ricontrollato 14...c6 e non risulta Grande; la categoria precisa non e stata
+comunicata. 38...Ne4 resta da verificare. I vecchi riferimenti sono conservati
+per tracciabilita, senza usarli per forzare nuove regole.
+Il profilo piu completo include le verifiche facoltative.
+[Confronto automatico e casi aperti](agent-output/review-automation/latest.md).
+Eseguire `npm run review:auto` per aggiornare il rapporto usando le prove
+salvate. [Uso e limiti](scripts/qa/REVIEW-AUTOMATION.md).
+[Dati versionati e output locali](docs/DEVELOPMENT-EVIDENCE.md).
+
 ## Setup locale
 
 Da PowerShell, nella cartella del progetto:
@@ -64,6 +77,45 @@ Apri l'indirizzo mostrato da Vite, normalmente
   tutte le mosse legali o soltanto le alternative analizzate. Grande include
   anche la famiglia empirica già verificata delle risposte migliori senza
   presa dopo un errore avversario; questa non prova l'unicità della scelta.
+    Con prove complete, questa famiglia richiede anche uno scacco, una minaccia
+    legale di matto o una nuova minaccia materiale. Un attacco a un pezzo difeso
+    di pari valore non basta. I criteri separati di difesa decisiva restano attivi.
+    Il contesto usa le valutazioni selezionate dal confronto numerico, evitando
+    di mescolarle con iterazioni parziali successive.
+    Questa famiglia conserva la categoria numerica quando uno snapshot completo,
+    coerente e senza matto documenta un'alternativa entro la soglia Ottima già
+    prevista. Il resoconto mostra l'alternativa; prove incomplete o ricerche
+    limitate a mosse specifiche non bastano per questo confronto.
+  Una ripresa immediata di materiale uguale o superiore sulla stessa casa,
+  fuori scacco, conserva la categoria numerica: l'aumento della valutazione
+  non basta a promuoverla a Grande. I casi sotto scacco mantengono il controllo
+  precedente sulle risorse difensive.
+    Nel resoconto, alternative con identico punteggio in uno snapshot completo
+    possono essere entrambe Migliore; lo stesso vale per distanze di matto
+    identiche in un confronto coerente. La prima variante del motore resta
+    indicata dalla freccia e una parità non prova da sola una mossa Grande.
+    Anche l'incasso dopo un attacco scoperto alla donna viene distinto da una
+    nuova scelta decisiva: il controllo richiede una sequenza coerente, attacchi
+    legali e l'assenza di un nuovo grande salto di valutazione. Non basta la
+    sola geometria della posizione.
+  Per Geniale, un recupero materiale solo legalmente possibile viene
+  confrontato con le valutazioni della posizione dopo l'accettazione del
+  sacrificio. Il controllo può superarlo quando la compensazione è
+  corroborata e uno snapshot completo mostra tutti quei recuperi come
+  sfavorevoli. Dati incompleti mantengono il candidato provvisorio;
+  la variante della presa deve essere disponibile separatamente.
+  Le opportunità vincenti da un vantaggio intermedio richiedono un confronto
+  completo sulla risposta e conferme concordi della posizione. Una precedente
+  valutazione separata richiede anche una prima scelta stabile e uno snapshot
+  completo valido. Il matto perso può essere recuperato dalla variante completa
+  della precedente mossa avversaria, con FEN e continuazione verificate.
+  La storia delle tre mosse distingue inoltre una nuova occasione da un
+  vantaggio già proprio, perso per un Errore grave e restituito dall'avversario:
+  con prove concordi conserva Errore grave. Le occasioni di matto e le Mosse
+  mancate consecutive mantengono i rispettivi controlli.
+  Per Geniale, una
+  variante vincente che lascia soltanto offerte già legalmente disponibili
+  non dimostra la necessità di un nuovo sacrificio.
   Le soglie numeriche e la politica originaria Mossa mancata sono in
   `src/lib/engineConfig.js`; non riproducono il modello privato di Chess.com.
   `src/lib/moveOpportunities.js` riconosce inoltre la rinuncia a una variante
@@ -88,12 +140,39 @@ Apri l'indirizzo mostrato da Vite, normalmente
 - **Approfondimento facoltativo**: dopo l'analisi completa premi
   **Approfondisci le mosse dubbie**. Ogni richiesta considera fino a 12 mosse
   con valutazioni indicative, candidati non confermati o perdite vicine a un
-  cambio categoria. Usa un milione di nodi per posizione e riusa i risultati
-  disponibili. Puoi interromperla e confrontare categoria e punteggio iniziali
+  cambio categoria. Dà precedenza ai sacrifici da verificare e agli altri
+  candidati speciali, poi ai confronti ordinari, per raggiungere anche le
+  occasioni nelle fasi successive della partita.
+  Usa un milione di nodi per posizione e riusa i risultati
+  disponibili. Aggiunge fino a quattro verifiche di accettazione dei sacrifici:
+  ciascuna ricerca mirata usa 200.000 nodi e, quando manca, una ricerca della
+  posizione dopo la presa usa altri 200.000 nodi. Le prove restano separate dalle
+  valutazioni generali; una ripresa riusa quelle già completate, dando priorità
+  alle conferme approfondite valide anche quando si riapre o risalva una partita.
+    Se uno snapshot approfondito completo è meno profondo di quello iniziale
+    e contiene la mossa giocata, il confronto iniziale coerente viene conservato.
+    Il resoconto segnala la scelta; entrambe le analisi grezze restano salvate.
+  Le accettazioni
+  vengono scelte prima della richiesta; candidati emersi con l'approfondimento
+  possono essere verificati con una richiesta successiva.
+  Puoi interromperla e confrontare categoria e punteggio iniziali
   con quelli approfonditi tramite **Mostra analisi approfondita**.
   **Salva partita e analisi** conserva entrambe le versioni, riapribili offline
   senza nuove ricerche. Un cambiamento di etichetta non garantisce maggiore
   concordanza con Chess.com; soglie, rating e analisi iniziale restano invariati.
+  Dopo un approfondimento, **Verifica le Grandi** controlla le attribuzioni
+  sperimentali basate sulla migliore risposta dopo un errore. Completa le prove
+  mancanti e riusa quelle salvate; una coppia già approfondita non viene ripetuta.
+  Il comando ha gli stessi limiti per richiesta e conserva il piano normale.
+  **Verifica i sacrifici** controlla separatamente accettazioni e riprese
+  immediate del materiale: fino a quattro offerte e quattro riprese per
+  richiesta, riutilizzando le prove disponibili. Conserva i punteggi ordinari
+  e i risultati parziali; una ricerca completata senza confronto conclusivo
+  resta non confermata e non viene ripetuta automaticamente.
+  **Verifica le scelte decisive** raccoglie prove separate sulla mossa e
+  sulle alternative, fino a 12 mosse e 24 posizioni per richiesta. Una
+  richiesta successiva controlla le alternative emerse dalle prime ricerche.
+  Conserva i punteggi iniziali e riusa le verifiche gia disponibili anche offline.
 - **Precisione**: il resoconto include un valore 0–100 per lato con formula pubblica
   Lichess. È un calcolo distinto dalla classificazione delle mosse; dati mancanti
   o analisi incompleta sono segnalati come parziali.

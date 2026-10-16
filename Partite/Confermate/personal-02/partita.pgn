@@ -1,0 +1,34 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2026.10.03"]
+[Round "-"]
+[White "BUMCestinait0"]
+[Black "skui1"]
+[Result "1-0"]
+[CurrentPosition "R4k2/3R4/7p/1p6/1P4PB/P6r/2b5/6K1 b - - 3 38"]
+[Timezone "UTC"]
+[ECO "B21"]
+[ECOUrl "https://www.chess.com/openings/Sicilian-Defense-Smith-Morra-Gambit-2...cxd4-3.Qxd4"]
+[UTCDate "2026.10.03"]
+[UTCTime "15:07:20"]
+[WhiteElo "738"]
+[BlackElo "580"]
+[TimeControl "600"]
+[Termination "BUMCestinait0 won by checkmate"]
+[StartTime "15:07:20"]
+[EndDate "2026.10.03"]
+[EndTime "15:22:45"]
+[Link "https://www.chess.com/analysis/game/live/184759288916/review?move=0"]
+[WhiteUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[WhiteCountry "76"]
+[WhiteTitle ""]
+[BlackUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[BlackCountry "27"]
+[BlackTitle ""]
+
+1. e4 c5 2. d4 cxd4 3. Qxd4 Na6 4. Qd1 Nf6 5. Nc3 e5 6. Nf3 Bb4 7. Nxe5 O-O 8.
+Bd2 d6 9. Nxf7 Rxf7 10. Bc4 Kf8 11. Bxf7 Kxf7 12. a3 Bc5 13. O-O Bg4 14. Qe1 Qe8
+15. b4 Bxf2+ 16. Rxf2 b5 17. h3 Bh5 18. g4 Bg6 19. Rd1 d5 20. Nxd5 Kf8 21. Nxf6
+gxf6 22. Rxf6+ Kg7 23. Rxa6 Bxe4 24. Bc3+ Kf8 25. Qf2+ Qf7 26. Qxf7+ Kxf7 27.
+Rf1+ Ke7 28. Rf4 Bxc2 29. Rh6 Rc8 30. Bf6+ Kf7 31. Bg5+ Kg7 32. Ra6 h6 33. Rxa7+
+Kg6 34. Bh4 Rc3 35. Ra6+ Kg7 36. Rd4 Rxh3 37. Rd7+ Kf8 38. Ra8# 1-0

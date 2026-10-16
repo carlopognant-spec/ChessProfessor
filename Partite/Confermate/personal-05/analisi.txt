@@ -1,0 +1,19 @@
+1. e4 libro e5 libro
+2. Nf3 libro Nc6 libro
+3. Bb5 libro Nf6 libro
+4. d4 libro Nxe4 libro
+5. dxe5 migliore Bc5 buona
+6. Bxc6 errore Nxf2 mossa mancata
+7. Bxd7+ errore Qxd7 mossa mancata
+8. Qe2 errore grave Nxh1 grande
+9. Qc4 imprecisione b6 buona
+10. Ng5 imprecisione O-O migliore
+11. Nc3 ottima Qe7 imprecisione
+12. Qe4 buona Qxg5 errore grave
+13. Bxg5 migliore Nf2 errore
+14. Qxa8 grande Re8 ottima
+15. Bf4 migliore g5 ottima
+16. Bxg5 ottima Rxe5+ ottima
+17. Kd2 ottima Re8 buona
+18. Re1 migliore Kf8 errore
+19. Bh6+ grande

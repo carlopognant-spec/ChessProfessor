@@ -1,7 +1,7 @@
 import { Chess } from 'chess.js'
 import { classifyAnalysisEntries, moveEvaluationFields } from './classification.js'
 
-export const REVIEW_POLICY_VERSION = 'review-reliability-v1'
+export const REVIEW_POLICY_VERSION = 'review-reliability-v2'
 const uciPattern = /^[a-h][1-8][a-h][1-8][qrbn]?$/
 const primary = engine => engine?.lines?.find(line => line.multipv === 1) ?? engine
 const exactScore = line => line && !line.bound && !line.lowerbound && !line.upperbound
@@ -68,7 +68,15 @@ export function classifyReviewedMove(input) {
     ? child : { evalCp: null, mate: null }
   const fields = moveEvaluationFields({ ...safeBest, lines: sameSearch && rootPositionMatches ? roots : [] },
     safeChild, playedUci, { isCheckmate: game.isCheckmate() })
-  const numerical = classifyAnalysisEntries([{ ...entry, ...fields, isBookMove: false }])[0]
+  const rawNumerical = classifyAnalysisEntries([{ ...entry, ...fields, isBookMove: false }])[0]
+  const equalMate = sourceIsRoot(fields) && Number.isSafeInteger(fields.bestMate)
+    && fields.bestMate !== 0 && fields.bestMate === fields.playedMate
+  const equalCp = sourceIsRoot(fields) && Boolean(completed) && fields.bestMate == null && fields.playedMate == null
+    && Number.isFinite(fields.bestEval) && fields.bestEval === fields.playedEval
+  const equivalentBest = rawNumerical.classification === 'excellent' && fields.isEngineBest === false && (equalMate || equalCp)
+    ? { kind: equalMate ? 'equal-mate' : 'equal-cp', primaryUci: fields.bestUci, playedUci,
+      depth: safeBest.depth, evalCp: equalCp ? fields.bestEval : null, mate: equalMate ? fields.bestMate : null } : null
+  const numerical = equivalentBest ? { ...rawNumerical, classification: 'best' } : rawNumerical
   const source = fields.evaluationSource
   const rawDrop = numerical.bestProbability == null || numerical.playedProbability == null
     ? null : 100 * (numerical.bestProbability - numerical.playedProbability)
@@ -83,8 +91,11 @@ export function classifyReviewedMove(input) {
       source: source === 'root-pv' ? completed ? 'completed-snapshot' : 'legacy-root-pair' : source,
       rootDepth: safeBest.depth ?? null, playedDepth: source === 'root-pv' ? candidates[0]?.depth ?? null : safeChild.depth ?? null,
       unclampedDropPct: rawDrop,
-      snapshotAvailable: Boolean(entry.engine.specialLines?.length), snapshotUsed: Boolean(completed && source === 'root-pv') } }
+      snapshotAvailable: Boolean(entry.engine.specialLines?.length), snapshotUsed: Boolean(completed && source === 'root-pv'),
+      equivalentBest } }
 }
+
+function sourceIsRoot(fields) { return fields.evaluationSource === 'root-pv' }
 
 export function applyMoveFacts(entry) {
   return entry.moveFacts?.forced ? { ...entry, classification: 'forced' } : entry
@@ -95,5 +106,6 @@ export function formatEvaluationEvidence(entry) {
   if (status === 'conflicting') return 'Valutazioni discordanti: classificazione provvisoria.'
   if (status === 'independent') return 'Classificazione indicativa: confronto tra analisi separate.'
   if (status === 'unavailable') return 'Dati insufficienti per valutare la qualità della mossa.'
+  if (!entry.isBookMove && entry.evaluationEvidence?.equivalentBest) return 'Valutazione pari alla prima scelta del motore.'
   return ''
 }

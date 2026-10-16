@@ -1,0 +1,162 @@
+# Posizioni da analizzare insieme
+
+Tutte le 95 discrepanze del confronto sulle cinque nuove partite.
+Ogni link Prima apre la posizione con il giocatore al tratto PRIMA della mossa indicata; Dopo mostra la posizione risultante. Lichess puo avviare un proprio motore: le sue valutazioni non sono quelle del nostro campione congelato.
+Il PGN multiplo posizioni.pgn contiene un caso per partita, con SetUp/FEN e la mossa giocata. CSV e JSON contengono entrambe le FEN. Le etichette sono riferimenti da discutere; le varianti del motore sono stime, non prove contro tutte le difese.
+
+## Cinque casi prioritari
+
+### 185262315732: 15.Qe2+
+
+Chess.com: Mossa mancata. App: Errore.
+[Prima](https://lichess.org/analysis/standard/rn2kb1r/p5pp/2p2q2/1p1p4/8/1BN2n1P/PPP2P2/R1BQ1K1R_w_kq_-_2_15) - [Dopo](https://lichess.org/analysis/standard/rn2kb1r/p5pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QP2/R1B2K1R_b_kq_-_3_15)
+Confrontare Nc3-d5 con Qe2+: quale occasione tattica si perde?
+
+FEN prima:
+```
+rn2kb1r/p5pp/2p2q2/1p1p4/8/1BN2n1P/PPP2P2/R1BQ1K1R w kq - 2 15
+```
+
+### 185262315732: 27.Bxc4
+
+Chess.com: Ottima. App: Geniale.
+[Prima](https://lichess.org/analysis/standard/rn3rk1/p3R3/6p1/1p1N2Bp/2p5/1B5P/PPP2PK1/4R3_w_-_-_0_27) - [Dopo](https://lichess.org/analysis/standard/rn3rk1/p3R3/6p1/1p1N2Bp/2B5/7P/PPP2PK1/4R3_b_-_-_0_27)
+Esaminare ...bxc4 e la compensazione: perche il riferimento e Ottima e non Geniale?
+
+FEN prima:
+```
+rn3rk1/p3R3/6p1/1p1N2Bp/2p5/1B5P/PPP2PK1/4R3 w - - 0 27
+```
+
+### 185262315732: 29.Bh6
+
+Chess.com: Mossa mancata. App: Errore.
+[Prima](https://lichess.org/analysis/standard/r4rk1/p3R3/2n1R1p1/3N2Bp/2p5/7P/PPP2PK1/8_w_-_-_0_29) - [Dopo](https://lichess.org/analysis/standard/r4rk1/p3R3/2n1R1pB/3N3p/2p5/7P/PPP2PK1/8_b_-_-_1_29)
+Confrontare Rxg6+ con Bh6: occasione mancata da posizione gia vantaggiosa.
+
+FEN prima:
+```
+r4rk1/p3R3/2n1R1p1/3N2Bp/2p5/7P/PPP2PK1/8 w - - 0 29
+```
+
+### 184316820266: 21.Qxe5
+
+Chess.com: Geniale. App: Migliore.
+[Prima](https://lichess.org/analysis/standard/1k3r2/p1p2Bpp/1q1r4/1p2pQ2/8/5P2/PP1b2PP/R2R3K_w_-_-_3_21) - [Dopo](https://lichess.org/analysis/standard/1k3r2/p1p2Bpp/1q1r4/1p2Q3/8/5P2/PP1b2PP/R2R3K_b_-_-_0_21)
+Esaminare ...Rxf7 Qe8+ Kb7 Qxf7. Confrontare con Qxd6 e Rxd2: il recupero materiale immediato puo essere ricatturato.
+
+FEN prima:
+```
+1k3r2/p1p2Bpp/1q1r4/1p2pQ2/8/5P2/PP1b2PP/R2R3K w - - 3 21
+```
+
+### 185230271130: 26.Bd8+
+
+Chess.com: Mossa mancata. App: Errore grave.
+[Prima](https://lichess.org/analysis/standard/r3R3/1pkn2Qp/p1pb2p1/6B1/3P4/1B6/PP3q1P/1K1R4_w_-_-_4_26) - [Dopo](https://lichess.org/analysis/standard/r2BR3/1pkn2Qp/p1pb2p1/8/3P4/1B6/PP3q1P/1K1R4_b_-_-_5_26)
+Confrontare Ra8 con Bd8+: quale risorsa concreta viene persa senza nuovo errore avversario?
+
+FEN prima:
+```
+r3R3/1pkn2Qp/p1pb2p1/6B1/3P4/1B6/PP3q1P/1K1R4 w - - 4 26
+```
+
+## Tutte le 95 posizioni
+
+| Partita | Mossa | Chess.com | App | Posizione |
+|---|---|---|---|---|
+| 185262315732 | 3...Qe7 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rnbqkb1r/pppp1ppp/5n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R_b_KQkq_-_0_3) / [Dopo](https://lichess.org/analysis/standard/rnb1kb1r/ppppqppp/5n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R_w_KQkq_-_1_4) |
+| 185262315732 | 4.Nf3 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rnb1kb1r/ppppqppp/5n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R_w_KQkq_-_1_4) / [Dopo](https://lichess.org/analysis/standard/rnb1kb1r/ppppqppp/5n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R_b_KQkq_-_2_4) |
+| 185262315732 | 5...Nfd7 | Imprecisione | Errore | [Prima](https://lichess.org/analysis/standard/rnb1kb1r/ppp1qppp/5n2/3pP3/8/5N2/PPPP1PPP/RNBQKB1R_b_KQkq_-_0_5) / [Dopo](https://lichess.org/analysis/standard/rnb1kb1r/pppnqppp/8/3pP3/8/5N2/PPPP1PPP/RNBQKB1R_w_KQkq_-_1_6) |
+| 185262315732 | 8...b5 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rnb1kb1r/pp1nq1pp/2p2p2/3pP3/B2P4/5N2/PPP2PPP/RNBQK2R_b_KQkq_-_1_8) / [Dopo](https://lichess.org/analysis/standard/rnb1kb1r/p2nq1pp/2p2p2/1p1pP3/B2P4/5N2/PPP2PPP/RNBQK2R_w_KQkq_-_0_9) |
+| 185262315732 | 13.gxf3 | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/rn2kb1r/p3q1pp/2p5/1p1pn3/8/1BN2b1P/PPP2PP1/R1BQK2R_w_KQkq_-_0_13) / [Dopo](https://lichess.org/analysis/standard/rn2kb1r/p3q1pp/2p5/1p1pn3/8/1BN2P1P/PPP2P2/R1BQK2R_b_KQkq_-_0_13) |
+| 185262315732 | 15.Qe2+ | Mossa mancata | Errore | [Prima](https://lichess.org/analysis/standard/rn2kb1r/p5pp/2p2q2/1p1p4/8/1BN2n1P/PPP2P2/R1BQ1K1R_w_kq_-_2_15) / [Dopo](https://lichess.org/analysis/standard/rn2kb1r/p5pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QP2/R1B2K1R_b_kq_-_3_15) |
+| 185262315732 | 15...Be7 | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/rn2kb1r/p5pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QP2/R1B2K1R_b_kq_-_3_15) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p3b1pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QP2/R1B2K1R_w_kq_-_4_16) |
+| 185262315732 | 16.Kg2 | Errore | Errore grave | [Prima](https://lichess.org/analysis/standard/rn2k2r/p3b1pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QP2/R1B2K1R_w_kq_-_4_16) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p3b1pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QPK1/R1B4R_b_kq_-_5_16) |
+| 185262315732 | 16...Nd4 | Buona | Errore | [Prima](https://lichess.org/analysis/standard/rn2k2r/p3b1pp/2p2q2/1p1p4/8/1BN2n1P/PPP1QPK1/R1B4R_b_kq_-_5_16) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p3b1pp/2p2q2/1p1p4/3n4/1BN4P/PPP1QPK1/R1B4R_w_kq_-_6_17) |
+| 185262315732 | 17.Qh5+ | Migliore | Ottima | [Prima](https://lichess.org/analysis/standard/rn2k2r/p3b1pp/2p2q2/1p1p4/3n4/1BN4P/PPP1QPK1/R1B4R_w_kq_-_6_17) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p3b1pp/2p2q2/1p1p3Q/3n4/1BN4P/PPP2PK1/R1B4R_b_kq_-_7_17) |
+| 185262315732 | 18...Bc5 | Errore | Errore grave | [Prima](https://lichess.org/analysis/standard/rn2k2r/p3b2p/2p2qp1/1p1p4/3n2Q1/1BN4P/PPP2PK1/R1B4R_b_kq_-_1_18) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p6p/2p2qp1/1pbp4/3n2Q1/1BN4P/PPP2PK1/R1B4R_w_kq_-_2_19) |
+| 185262315732 | 19.Re1+ | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/rn2k2r/p6p/2p2qp1/1pbp4/3n2Q1/1BN4P/PPP2PK1/R1B4R_w_kq_-_2_19) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p6p/2p2qp1/1pbp4/3n2Q1/1BN4P/PPP2PK1/R1B1R3_b_kq_-_3_19) |
+| 185262315732 | 19...Be7 | Errore | Imprecisione | [Prima](https://lichess.org/analysis/standard/rn2k2r/p6p/2p2qp1/1pbp4/3n2Q1/1BN4P/PPP2PK1/R1B1R3_b_kq_-_3_19) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p3b2p/2p2qp1/1p1p4/3n2Q1/1BN4P/PPP2PK1/R1B1R3_w_kq_-_4_20) |
+| 185262315732 | 20.Be3 | Mossa mancata | Errore | [Prima](https://lichess.org/analysis/standard/rn2k2r/p3b2p/2p2qp1/1p1p4/3n2Q1/1BN4P/PPP2PK1/R1B1R3_w_kq_-_4_20) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p3b2p/2p2qp1/1p1p4/3n2Q1/1BN1B2P/PPP2PK1/R3R3_b_kq_-_5_20) |
+| 185262315732 | 20...h5 | Errore | Imprecisione | [Prima](https://lichess.org/analysis/standard/rn2k2r/p3b2p/2p2qp1/1p1p4/3n2Q1/1BN1B2P/PPP2PK1/R3R3_b_kq_-_5_20) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p3b3/2p2qp1/1p1p3p/3n2Q1/1BN1B2P/PPP2PK1/R3R3_w_kq_-_0_21) |
+| 185262315732 | 21.Qxd4 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rn2k2r/p3b3/2p2qp1/1p1p3p/3n2Q1/1BN1B2P/PPP2PK1/R3R3_w_kq_-_0_21) / [Dopo](https://lichess.org/analysis/standard/rn2k2r/p3b3/2p2qp1/1p1p3p/3Q4/1BN1B2P/PPP2PK1/R3R3_b_kq_-_0_21) |
+| 185262315732 | 21...O-O | Errore | Ottima | [Prima](https://lichess.org/analysis/standard/rn2k2r/p3b3/2p2qp1/1p1p3p/3Q4/1BN1B2P/PPP2PK1/R3R3_b_kq_-_0_21) / [Dopo](https://lichess.org/analysis/standard/rn3rk1/p3b3/2p2qp1/1p1p3p/3Q4/1BN1B2P/PPP2PK1/R3R3_w_-_-_1_22) |
+| 185262315732 | 22.Qxf6 | Ottima | Migliore | [Prima](https://lichess.org/analysis/standard/rn3rk1/p3b3/2p2qp1/1p1p3p/3Q4/1BN1B2P/PPP2PK1/R3R3_w_-_-_1_22) / [Dopo](https://lichess.org/analysis/standard/rn3rk1/p3b3/2p2Qp1/1p1p3p/8/1BN1B2P/PPP2PK1/R3R3_b_-_-_0_22) |
+| 185262315732 | 22...Rxf6 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rn3rk1/p3b3/2p2Qp1/1p1p3p/8/1BN1B2P/PPP2PK1/R3R3_b_-_-_0_22) / [Dopo](https://lichess.org/analysis/standard/rn4k1/p3b3/2p2rp1/1p1p3p/8/1BN1B2P/PPP2PK1/R3R3_w_-_-_0_23) |
+| 185262315732 | 23.Bg5 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rn4k1/p3b3/2p2rp1/1p1p3p/8/1BN1B2P/PPP2PK1/R3R3_w_-_-_0_23) / [Dopo](https://lichess.org/analysis/standard/rn4k1/p3b3/2p2rp1/1p1p2Bp/8/1BN4P/PPP2PK1/R3R3_b_-_-_1_23) |
+| 185262315732 | 23...Rf7 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rn4k1/p3b3/2p2rp1/1p1p2Bp/8/1BN4P/PPP2PK1/R3R3_b_-_-_1_23) / [Dopo](https://lichess.org/analysis/standard/rn4k1/p3br2/2p3p1/1p1p2Bp/8/1BN4P/PPP2PK1/R3R3_w_-_-_2_24) |
+| 185262315732 | 24...Rf8 | Errore | Buona | [Prima](https://lichess.org/analysis/standard/rn4k1/p3Rr2/2p3p1/1p1p2Bp/8/1BN4P/PPP2PK1/R7_b_-_-_0_24) / [Dopo](https://lichess.org/analysis/standard/rn3rk1/p3R3/2p3p1/1p1p2Bp/8/1BN4P/PPP2PK1/R7_w_-_-_1_25) |
+| 185262315732 | 26.Nxd5 | Migliore | Buona | [Prima](https://lichess.org/analysis/standard/rn3rk1/p3R3/6p1/1ppp2Bp/8/1BN4P/PPP2PK1/4R3_w_-_-_0_26) / [Dopo](https://lichess.org/analysis/standard/rn3rk1/p3R3/6p1/1ppN2Bp/8/1B5P/PPP2PK1/4R3_b_-_-_0_26) |
+| 185262315732 | 27.Bxc4 | Ottima | Geniale | [Prima](https://lichess.org/analysis/standard/rn3rk1/p3R3/6p1/1p1N2Bp/2p5/1B5P/PPP2PK1/4R3_w_-_-_0_27) / [Dopo](https://lichess.org/analysis/standard/rn3rk1/p3R3/6p1/1p1N2Bp/2B5/7P/PPP2PK1/4R3_b_-_-_0_27) |
+| 185262315732 | 27...Nc6 | Imprecisione | Ottima | [Prima](https://lichess.org/analysis/standard/rn3rk1/p3R3/6p1/1p1N2Bp/2B5/7P/PPP2PK1/4R3_b_-_-_0_27) / [Dopo](https://lichess.org/analysis/standard/r4rk1/p3R3/2n3p1/1p1N2Bp/2B5/7P/PPP2PK1/4R3_w_-_-_1_28) |
+| 185262315732 | 28...bxc4 | Imprecisione | Errore | [Prima](https://lichess.org/analysis/standard/r4rk1/p3R3/2n1R1p1/1p1N2Bp/2B5/7P/PPP2PK1/8_b_-_-_2_28) / [Dopo](https://lichess.org/analysis/standard/r4rk1/p3R3/2n1R1p1/3N2Bp/2p5/7P/PPP2PK1/8_w_-_-_0_29) |
+| 185262315732 | 29.Bh6 | Mossa mancata | Errore | [Prima](https://lichess.org/analysis/standard/r4rk1/p3R3/2n1R1p1/3N2Bp/2p5/7P/PPP2PK1/8_w_-_-_0_29) / [Dopo](https://lichess.org/analysis/standard/r4rk1/p3R3/2n1R1pB/3N3p/2p5/7P/PPP2PK1/8_b_-_-_1_29) |
+| 185262315732 | 31.Nf6+ | Errore grave | Mossa mancata | [Prima](https://lichess.org/analysis/standard/r4r2/p3n2k/6RB/3N3p/2p5/7P/PPP2PK1/8_w_-_-_1_31) / [Dopo](https://lichess.org/analysis/standard/r4r2/p3n2k/5NRB/7p/2p5/7P/PPP2PK1/8_b_-_-_2_31) |
+| 185262315732 | 32.Rxf6 | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/r7/p3n2k/5rRB/7p/2p5/7P/PPP2PK1/8_w_-_-_0_32) / [Dopo](https://lichess.org/analysis/standard/r7/p3n2k/5R1B/7p/2p5/7P/PPP2PK1/8_b_-_-_0_32) |
+| 185262315732 | 32...Kg8 | Buona | Imprecisione | [Prima](https://lichess.org/analysis/standard/r7/p3n2k/5R1B/7p/2p5/7P/PPP2PK1/8_b_-_-_0_32) / [Dopo](https://lichess.org/analysis/standard/r5k1/p3n3/5R1B/7p/2p5/7P/PPP2PK1/8_w_-_-_1_33) |
+| 184316820266 | 3...Qxd5 | Libro | Buona | [Prima](https://lichess.org/analysis/standard/rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR_b_KQkq_-_0_3) / [Dopo](https://lichess.org/analysis/standard/rnb1kb1r/ppp1pppp/5n2/3q4/3P4/8/PP2PPPP/RNBQKBNR_w_KQkq_-_0_4) |
+| 184316820266 | 4.Nf3 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rnb1kb1r/ppp1pppp/5n2/3q4/3P4/8/PP2PPPP/RNBQKBNR_w_KQkq_-_0_4) / [Dopo](https://lichess.org/analysis/standard/rnb1kb1r/ppp1pppp/5n2/3q4/3P4/5N2/PP2PPPP/RNBQKB1R_b_KQkq_-_1_4) |
+| 184316820266 | 6...Nc6 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/rn2kb1r/ppp1pppp/5n2/q7/3P2b1/2N2N2/PP1BPPPP/R2QKB1R_b_KQkq_-_5_6) / [Dopo](https://lichess.org/analysis/standard/r3kb1r/ppp1pppp/2n2n2/q7/3P2b1/2N2N2/PP1BPPPP/R2QKB1R_w_KQkq_-_6_7) |
+| 184316820266 | 7...e5 | Imprecisione | Errore | [Prima](https://lichess.org/analysis/standard/r3kb1r/ppp1pppp/2n2n2/q7/3PP1b1/2N2N2/PP1B1PPP/R2QKB1R_b_KQkq_-_0_7) / [Dopo](https://lichess.org/analysis/standard/r3kb1r/ppp2ppp/2n2n2/q3p3/3PP1b1/2N2N2/PP1B1PPP/R2QKB1R_w_KQkq_-_0_8) |
+| 184316820266 | 8.d5 | Mossa mancata | Errore grave | [Prima](https://lichess.org/analysis/standard/r3kb1r/ppp2ppp/2n2n2/q3p3/3PP1b1/2N2N2/PP1B1PPP/R2QKB1R_w_KQkq_-_0_8) / [Dopo](https://lichess.org/analysis/standard/r3kb1r/ppp2ppp/2n2n2/q2Pp3/4P1b1/2N2N2/PP1B1PPP/R2QKB1R_b_KQkq_-_0_8) |
+| 184316820266 | 9.Nxe4 | Imprecisione | Errore | [Prima](https://lichess.org/analysis/standard/r3kb1r/ppp2ppp/2n5/q2Pp3/4n1b1/2N2N2/PP1B1PPP/R2QKB1R_w_KQkq_-_0_9) / [Dopo](https://lichess.org/analysis/standard/r3kb1r/ppp2ppp/2n5/q2Pp3/4N1b1/5N2/PP1B1PPP/R2QKB1R_b_KQkq_-_0_9) |
+| 184316820266 | 10...O-O-O | Mossa mancata | Errore | [Prima](https://lichess.org/analysis/standard/r3kb1r/ppp2ppp/2n5/3qp3/4N1b1/5N2/PPQB1PPP/R3KB1R_b_KQkq_-_1_10) / [Dopo](https://lichess.org/analysis/standard/2kr1b1r/ppp2ppp/2n5/3qp3/4N1b1/5N2/PPQB1PPP/R3KB1R_w_KQ_-_2_11) |
+| 184316820266 | 11.Bc4 | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/2kr1b1r/ppp2ppp/2n5/3qp3/4N1b1/5N2/PPQB1PPP/R3KB1R_w_KQ_-_2_11) / [Dopo](https://lichess.org/analysis/standard/2kr1b1r/ppp2ppp/2n5/3qp3/2B1N1b1/5N2/PPQB1PPP/R3K2R_b_KQ_-_3_11) |
+| 184316820266 | 11...Nb4 | Migliore | Ottima | [Prima](https://lichess.org/analysis/standard/2kr1b1r/ppp2ppp/2n5/3qp3/2B1N1b1/5N2/PPQB1PPP/R3K2R_b_KQ_-_3_11) / [Dopo](https://lichess.org/analysis/standard/2kr1b1r/ppp2ppp/8/3qp3/1nB1N1b1/5N2/PPQB1PPP/R3K2R_w_KQ_-_4_12) |
+| 184316820266 | 13...Qa5 | Mossa mancata | Errore grave | [Prima](https://lichess.org/analysis/standard/2kr3r/ppp2ppp/8/3qp3/1bB1N1b1/8/PPQN1PPP/R3K2R_b_KQ_-_1_13) / [Dopo](https://lichess.org/analysis/standard/2kr3r/ppp2ppp/8/q3p3/1bB1N1b1/8/PPQN1PPP/R3K2R_w_KQ_-_2_14) |
+| 184316820266 | 15.f3 | Imprecisione | Errore | [Prima](https://lichess.org/analysis/standard/2kr3r/ppp2ppp/8/q3p3/2B1N1b1/8/PPQb1PPP/R4RK1_w_-_-_0_15) / [Dopo](https://lichess.org/analysis/standard/2kr3r/ppp2ppp/8/q3p3/2B1N1b1/5P2/PPQb2PP/R4RK1_b_-_-_0_15) |
+| 184316820266 | 15...Bf5 | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/2kr3r/ppp2ppp/8/q3p3/2B1N1b1/5P2/PPQb2PP/R4RK1_b_-_-_0_15) / [Dopo](https://lichess.org/analysis/standard/2kr3r/ppp2ppp/8/q3pb2/2B1N3/5P2/PPQb2PP/R4RK1_w_-_-_1_16) |
+| 184316820266 | 16.Rfd1 | Ottima | Buona | [Prima](https://lichess.org/analysis/standard/2kr3r/ppp2ppp/8/q3pb2/2B1N3/5P2/PPQb2PP/R4RK1_w_-_-_1_16) / [Dopo](https://lichess.org/analysis/standard/2kr3r/ppp2ppp/8/q3pb2/2B1N3/5P2/PPQb2PP/R2R2K1_b_-_-_2_16) |
+| 184316820266 | 17...Rxd6 | Grande | Migliore | [Prima](https://lichess.org/analysis/standard/2kr3r/p1p2ppp/3N4/qp2pb2/2B5/5P2/PPQb2PP/R2R2K1_b_-_-_1_17) / [Dopo](https://lichess.org/analysis/standard/2k4r/p1p2ppp/3r4/qp2pb2/2B5/5P2/PPQb2PP/R2R2K1_w_-_-_0_18) |
+| 184316820266 | 19...Qb6+ | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/1k5r/p1p2Bpp/3r4/qp2pQ2/8/5P2/PP1b2PP/R2R2K1_b_-_-_0_19) / [Dopo](https://lichess.org/analysis/standard/1k5r/p1p2Bpp/1q1r4/1p2pQ2/8/5P2/PP1b2PP/R2R2K1_w_-_-_1_20) |
+| 184316820266 | 20...Rf8 | Errore | Imprecisione | [Prima](https://lichess.org/analysis/standard/1k5r/p1p2Bpp/1q1r4/1p2pQ2/8/5P2/PP1b2PP/R2R3K_b_-_-_2_20) / [Dopo](https://lichess.org/analysis/standard/1k3r2/p1p2Bpp/1q1r4/1p2pQ2/8/5P2/PP1b2PP/R2R3K_w_-_-_3_21) |
+| 184316820266 | 21.Qxe5 | Geniale | Migliore | [Prima](https://lichess.org/analysis/standard/1k3r2/p1p2Bpp/1q1r4/1p2pQ2/8/5P2/PP1b2PP/R2R3K_w_-_-_3_21) / [Dopo](https://lichess.org/analysis/standard/1k3r2/p1p2Bpp/1q1r4/1p2Q3/8/5P2/PP1b2PP/R2R3K_b_-_-_0_21) |
+| 184316820266 | 24...a6 | Ottima | Migliore | [Prima](https://lichess.org/analysis/standard/8/pkp3pp/3r4/1p6/3q4/1Q3P2/PP1b2PP/R2R3K_b_-_-_2_24) / [Dopo](https://lichess.org/analysis/standard/8/1kp3pp/p2r4/1p6/3q4/1Q3P2/PP1b2PP/R2R3K_w_-_-_0_25) |
+| 184316820266 | 25.a4 | Buona | Migliore | [Prima](https://lichess.org/analysis/standard/8/1kp3pp/p2r4/1p6/3q4/1Q3P2/PP1b2PP/R2R3K_w_-_-_0_25) / [Dopo](https://lichess.org/analysis/standard/8/1kp3pp/p2r4/1p6/P2q4/1Q3P2/1P1b2PP/R2R3K_b_-_-_0_25) |
+| 184316820266 | 28...Kc6 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/8/1k3Qpp/p2r4/1p6/q7/5P2/1P1b2PP/3R3K_b_-_-_1_28) / [Dopo](https://lichess.org/analysis/standard/8/5Qpp/p1kr4/1p6/q7/5P2/1P1b2PP/3R3K_w_-_-_2_29) |
+| 184316820266 | 31.Qf5+ | Errore | Buona | [Prima](https://lichess.org/analysis/standard/2Q5/6pp/p1r5/1pk5/q7/5P2/1P1b2PP/3R3K_w_-_-_6_31) / [Dopo](https://lichess.org/analysis/standard/8/6pp/p1r5/1pk2Q2/q7/5P2/1P1b2PP/3R3K_b_-_-_7_31) |
+| 184316313800 | 3...Qc7 | Libro | Ottima | [Prima](https://lichess.org/analysis/standard/r1bqkbnr/pp1ppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R_b_KQkq_-_3_3) / [Dopo](https://lichess.org/analysis/standard/r1b1kbnr/ppqppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R_w_KQkq_-_4_4) |
+| 184316313800 | 4.c3 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/r1b1kbnr/ppqppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R_w_KQkq_-_4_4) / [Dopo](https://lichess.org/analysis/standard/r1b1kbnr/ppqppppp/2n5/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQK2R_b_KQkq_-_0_4) |
+| 184316313800 | 4...Nf6 | Ottima | Migliore | [Prima](https://lichess.org/analysis/standard/r1b1kbnr/ppqppppp/2n5/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQK2R_b_KQkq_-_0_4) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/ppqppppp/2n2n2/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQK2R_w_KQkq_-_1_5) |
+| 184316313800 | 5.d4 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/ppqppppp/2n2n2/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQK2R_w_KQkq_-_1_5) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/ppqppppp/2n2n2/1Bp5/3PP3/2P2N2/PP3PPP/RNBQK2R_b_KQkq_-_0_5) |
+| 184316313800 | 6...Ng4 | Imprecisione | Errore | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/ppq1pppp/2n2n2/1BppP3/3P4/2P2N2/PP3PPP/RNBQK2R_b_KQkq_-_0_6) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/ppq1pppp/2n5/1BppP3/3P2n1/2P2N2/PP3PPP/RNBQK2R_w_KQkq_-_1_7) |
+| 184316313800 | 7.h3 | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/ppq1pppp/2n5/1BppP3/3P2n1/2P2N2/PP3PPP/RNBQK2R_w_KQkq_-_1_7) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/ppq1pppp/2n5/1BppP3/3P2n1/2P2N1P/PP3PP1/RNBQK2R_b_KQkq_-_0_7) |
+| 184316313800 | 8.Ba4 | Imprecisione | Errore grave | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/1pq1pppp/p1n5/1BppP3/3P2n1/2P2N1P/PP3PP1/RNBQK2R_w_KQkq_-_0_8) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/1pq1pppp/p1n5/2ppP3/B2P2n1/2P2N1P/PP3PP1/RNBQK2R_b_KQkq_-_1_8) |
+| 184316313800 | 9...Ngxe5 | Buona | Errore | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1pppP3/3P2n1/2P2N1P/PPB2PP1/RNBQK2R_b_KQkq_-_1_9) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1pppn3/3P4/2P2N1P/PPB2PP1/RNBQK2R_w_KQkq_-_0_10) |
+| 184316313800 | 10.Bf4 | Mossa mancata | Errore grave | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1pppn3/3P4/2P2N1P/PPB2PP1/RNBQK2R_w_KQkq_-_0_10) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1pppn3/3P1B2/2P2N1P/PPB2PP1/RN1QK2R_b_KQkq_-_1_10) |
+| 184316313800 | 10...cxd4 | Mossa mancata | Imprecisione | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1pppn3/3P1B2/2P2N1P/PPB2PP1/RN1QK2R_b_KQkq_-_1_10) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1p1pn3/3p1B2/2P2N1P/PPB2PP1/RN1QK2R_w_KQkq_-_0_11) |
+| 184316313800 | 11.Bxe5 | Errore | Errore grave | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1p1pn3/3p1B2/2P2N1P/PPB2PP1/RN1QK2R_w_KQkq_-_0_11) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1p1pB3/3p4/2P2N1P/PPB2PP1/RN1QK2R_b_KQkq_-_0_11) |
+| 184316313800 | 11...Nxe5 | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p1n5/1p1pB3/3p4/2P2N1P/PPB2PP1/RN1QK2R_b_KQkq_-_0_11) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p7/1p1pn3/3p4/2P2N1P/PPB2PP1/RN1QK2R_w_KQkq_-_0_12) |
+| 184316313800 | 12.Nxe5 | Imprecisione | Errore | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p7/1p1pn3/3p4/2P2N1P/PPB2PP1/RN1QK2R_w_KQkq_-_0_12) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/2q1pppp/p7/1p1pN3/3p4/2P4P/PPB2PP1/RN1QK2R_b_KQkq_-_0_12) |
+| 184316313800 | 16.Nxd5 | Buona | Imprecisione | [Prima](https://lichess.org/analysis/standard/r1b1k2r/5ppp/p3p3/1p1pq3/1b6/1BN4P/PP3PP1/R2Q1K1R_w_kq_-_2_16) / [Dopo](https://lichess.org/analysis/standard/r1b1k2r/5ppp/p3p3/1p1Nq3/1b6/1B5P/PP3PP1/R2Q1K1R_b_kq_-_0_16) |
+| 184316313800 | 17.Bxd5 | Buona | Migliore | [Prima](https://lichess.org/analysis/standard/r1b1k2r/5ppp/p7/1p1pq3/1b6/1B5P/PP3PP1/R2Q1K1R_w_kq_-_0_17) / [Dopo](https://lichess.org/analysis/standard/r1b1k2r/5ppp/p7/1p1Bq3/1b6/7P/PP3PP1/R2Q1K1R_b_kq_-_0_17) |
+| 184316313800 | 18.a3 | Mossa mancata | Errore grave | [Prima](https://lichess.org/analysis/standard/r1b2rk1/5ppp/p7/1p1Bq3/1b6/7P/PP3PP1/R2Q1K1R_w_-_-_1_18) / [Dopo](https://lichess.org/analysis/standard/r1b2rk1/5ppp/p7/1p1Bq3/1b6/P6P/1P3PP1/R2Q1K1R_b_-_-_0_18) |
+| 184316313800 | 19.Qf3 | Mossa mancata | Errore | [Prima](https://lichess.org/analysis/standard/r1br2k1/5ppp/p7/1p1Bq3/1b6/P6P/1P3PP1/R2Q1K1R_w_-_-_1_19) / [Dopo](https://lichess.org/analysis/standard/r1br2k1/5ppp/p7/1p1Bq3/1b6/P4Q1P/1P3PP1/R4K1R_b_-_-_2_19) |
+| 184316313800 | 20...Be6 | Imprecisione | Ottima | [Prima](https://lichess.org/analysis/standard/r1b3k1/5ppp/p7/1p1rq3/1b6/PQ5P/1P3PP1/R4K1R_b_-_-_1_20) / [Dopo](https://lichess.org/analysis/standard/r5k1/5ppp/p3b3/1p1rq3/1b6/PQ5P/1P3PP1/R4K1R_w_-_-_2_21) |
+| 185230271130 | 6...Bxf3 | Ottima | Buona | [Prima](https://lichess.org/analysis/standard/rn1qkb1r/pp2pppp/2p2n2/8/2BPP1b1/2N2N2/PP3PPP/R1BQK2R_b_KQkq_-_0_6) / [Dopo](https://lichess.org/analysis/standard/rn1qkb1r/pp2pppp/2p2n2/8/2BPP3/2N2b2/PP3PPP/R1BQK2R_w_KQkq_-_0_7) |
+| 185230271130 | 8...Nxe4 | Grande | Migliore | [Prima](https://lichess.org/analysis/standard/rn2kb1r/pp2pppp/2p2n2/q7/2BPPP2/2N5/PP3P1P/R1BQK2R_b_KQkq_-_0_8) / [Dopo](https://lichess.org/analysis/standard/rn2kb1r/pp2pppp/2p5/q7/2BPnP2/2N5/PP3P1P/R1BQK2R_w_KQkq_-_0_9) |
+| 185230271130 | 9...Nd6 | Migliore | Grande | [Prima](https://lichess.org/analysis/standard/rn2kb1r/pp2pppp/2p5/q7/2BPnP2/2NQ4/PP3P1P/R1B1K2R_b_KQkq_-_1_9) / [Dopo](https://lichess.org/analysis/standard/rn2kb1r/pp2pppp/2pn4/q7/2BP1P2/2NQ4/PP3P1P/R1B1K2R_w_KQkq_-_2_10) |
+| 185230271130 | 14...g6 | Migliore | Ottima | [Prima](https://lichess.org/analysis/standard/r3kb1r/ppqnp1pp/2p2p2/5Q2/3P4/1B6/PP1BNP1P/R3K2R_b_KQkq_-_0_14) / [Dopo](https://lichess.org/analysis/standard/r3kb1r/ppqnp2p/2p2pp1/5Q2/3P4/1B6/PP1BNP1P/R3K2R_w_KQkq_-_0_15) |
+| 185230271130 | 15.Qe6 | Migliore | Ottima | [Prima](https://lichess.org/analysis/standard/r3kb1r/ppqnp2p/2p2pp1/5Q2/3P4/1B6/PP1BNP1P/R3K2R_w_KQkq_-_0_15) / [Dopo](https://lichess.org/analysis/standard/r3kb1r/ppqnp2p/2p1Qpp1/8/3P4/1B6/PP1BNP1P/R3K2R_b_KQkq_-_1_15) |
+| 185230271130 | 15...a6 | Errore | Buona | [Prima](https://lichess.org/analysis/standard/r3kb1r/ppqnp2p/2p1Qpp1/8/3P4/1B6/PP1BNP1P/R3K2R_b_KQkq_-_1_15) / [Dopo](https://lichess.org/analysis/standard/r3kb1r/1pqnp2p/p1p1Qpp1/8/3P4/1B6/PP1BNP1P/R3K2R_w_KQkq_-_0_16) |
+| 185230271130 | 17.O-O-O | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/r2k1b1r/1pqnpQ1p/p1p2pp1/8/3P4/1B6/PP1BNP1P/R3K2R_w_KQ_-_2_17) / [Dopo](https://lichess.org/analysis/standard/r2k1b1r/1pqnpQ1p/p1p2pp1/8/3P4/1B6/PP1BNP1P/2KR3R_b_-_-_3_17) |
+| 185230271130 | 17...e6 | Imprecisione | Ottima | [Prima](https://lichess.org/analysis/standard/r2k1b1r/1pqnpQ1p/p1p2pp1/8/3P4/1B6/PP1BNP1P/2KR3R_b_-_-_3_17) / [Dopo](https://lichess.org/analysis/standard/r2k1b1r/1pqn1Q1p/p1p1ppp1/8/3P4/1B6/PP1BNP1P/2KR3R_w_-_-_0_18) |
+| 185230271130 | 18.Qxe6 | Mossa mancata | Buona | [Prima](https://lichess.org/analysis/standard/r2k1b1r/1pqn1Q1p/p1p1ppp1/8/3P4/1B6/PP1BNP1P/2KR3R_w_-_-_0_18) / [Dopo](https://lichess.org/analysis/standard/r2k1b1r/1pqn3p/p1p1Qpp1/8/3P4/1B6/PP1BNP1P/2KR3R_b_-_-_0_18) |
+| 185230271130 | 19...Nf8 | Errore | Imprecisione | [Prima](https://lichess.org/analysis/standard/r2k3r/1pqn3p/p1pbQpp1/8/3P4/1B6/PP1BNP1P/1K1R3R_b_-_-_2_19) / [Dopo](https://lichess.org/analysis/standard/r2k1n1r/1pq4p/p1pbQpp1/8/3P4/1B6/PP1BNP1P/1K1R3R_w_-_-_3_20) |
+| 185230271130 | 20.Qxf6+ | Grande | Migliore | [Prima](https://lichess.org/analysis/standard/r2k1n1r/1pq4p/p1pbQpp1/8/3P4/1B6/PP1BNP1P/1K1R3R_w_-_-_3_20) / [Dopo](https://lichess.org/analysis/standard/r2k1n1r/1pq4p/p1pb1Qp1/8/3P4/1B6/PP1BNP1P/1K1R3R_b_-_-_0_20) |
+| 185230271130 | 21...Qxe2 | Ottima | Migliore | [Prima](https://lichess.org/analysis/standard/r2k1n1Q/1p2q2p/p1pb2p1/8/3P4/1B6/PP1BNP1P/1K1R3R_b_-_-_0_21) / [Dopo](https://lichess.org/analysis/standard/r2k1n1Q/1p5p/p1pb2p1/8/3P4/1B6/PP1BqP1P/1K1R3R_w_-_-_0_22) |
+| 185230271130 | 22.Bg5+ | Imprecisione | Ottima | [Prima](https://lichess.org/analysis/standard/r2k1n1Q/1p5p/p1pb2p1/8/3P4/1B6/PP1BqP1P/1K1R3R_w_-_-_0_22) / [Dopo](https://lichess.org/analysis/standard/r2k1n1Q/1p5p/p1pb2p1/6B1/3P4/1B6/PP2qP1P/1K1R3R_b_-_-_1_22) |
+| 185230271130 | 22...Kc8 | Errore | Ottima | [Prima](https://lichess.org/analysis/standard/r2k1n1Q/1p5p/p1pb2p1/6B1/3P4/1B6/PP2qP1P/1K1R3R_b_-_-_1_22) / [Dopo](https://lichess.org/analysis/standard/r1k2n1Q/1p5p/p1pb2p1/6B1/3P4/1B6/PP2qP1P/1K1R3R_w_-_-_2_23) |
+| 185230271130 | 25.Qg7+ | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/r3Rn1Q/1pk4p/p1pb2p1/6B1/3P4/1B6/PP3q1P/1K1R4_w_-_-_2_25) / [Dopo](https://lichess.org/analysis/standard/r3Rn2/1pk3Qp/p1pb2p1/6B1/3P4/1B6/PP3q1P/1K1R4_b_-_-_3_25) |
+| 185230271130 | 26.Bd8+ | Mossa mancata | Errore grave | [Prima](https://lichess.org/analysis/standard/r3R3/1pkn2Qp/p1pb2p1/6B1/3P4/1B6/PP3q1P/1K1R4_w_-_-_4_26) / [Dopo](https://lichess.org/analysis/standard/r2BR3/1pkn2Qp/p1pb2p1/8/3P4/1B6/PP3q1P/1K1R4_b_-_-_5_26) |
+| 185230271130 | 28.Bxf2 | Ottima | Migliore | [Prima](https://lichess.org/analysis/standard/r3R3/1pkn2Qp/p1pb2p1/8/3P3B/1B6/PP3q1P/1K1R4_w_-_-_8_28) / [Dopo](https://lichess.org/analysis/standard/r3R3/1pkn2Qp/p1pb2p1/8/3P4/1B6/PP3B1P/1K1R4_b_-_-_0_28) |
+| 185230000668 | 4...Ne5 | Imprecisione | Buona | [Prima](https://lichess.org/analysis/standard/r1b1kbnr/pp1ppppp/2n5/q1pP4/4P3/2P5/PP3PPP/RNBQKBNR_b_KQkq_-_0_4) / [Dopo](https://lichess.org/analysis/standard/r1b1kbnr/pp1ppppp/8/q1pPn3/4P3/2P5/PP3PPP/RNBQKBNR_w_KQkq_-_1_5) |
+| 185230000668 | 5.Nf3 | Errore | Imprecisione | [Prima](https://lichess.org/analysis/standard/r1b1kbnr/pp1ppppp/8/q1pPn3/4P3/2P5/PP3PPP/RNBQKBNR_w_KQkq_-_1_5) / [Dopo](https://lichess.org/analysis/standard/r1b1kbnr/pp1ppppp/8/q1pPn3/4P3/2P2N2/PP3PPP/RNBQKB1R_b_KQkq_-_2_5) |
+| 185230000668 | 8.Bg5 | Buona | Ottima | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/pp2pppp/5n2/q1pPp3/4P3/2PB4/PP3PPP/RNBQK2R_w_KQkq_-_2_8) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/pp2pppp/5n2/q1pPp1B1/4P3/2PB4/PP3PPP/RN1QK2R_b_KQkq_-_3_8) |
+| 185230000668 | 8...Qb6 | Imprecisione | Buona | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/pp2pppp/5n2/q1pPp1B1/4P3/2PB4/PP3PPP/RN1QK2R_b_KQkq_-_3_8) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/pp2pppp/1q3n2/2pPp1B1/4P3/2PB4/PP3PPP/RN1QK2R_w_KQkq_-_4_9) |
+| 185230000668 | 9...h6 | Migliore | Ottima | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/pp2pppp/1q3n2/2pPp1B1/4P3/2PB4/PP2QPPP/RN2K2R_b_KQkq_-_5_9) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/pp2ppp1/1q3n1p/2pPp1B1/4P3/2PB4/PP2QPPP/RN2K2R_w_KQkq_-_0_10) |
+| 185230000668 | 10...Qxf6 | Migliore | Ottima | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/pp2ppp1/1q3B1p/2pPp3/4P3/2PB4/PP2QPPP/RN2K2R_b_KQkq_-_0_10) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/pp2ppp1/5q1p/2pPp3/4P3/2PB4/PP2QPPP/RN2K2R_w_KQkq_-_0_11) |
+| 185230000668 | 11.Nd2 | Ottima | Migliore | [Prima](https://lichess.org/analysis/standard/r1b1kb1r/pp2ppp1/5q1p/2pPp3/4P3/2PB4/PP2QPPP/RN2K2R_w_KQkq_-_0_11) / [Dopo](https://lichess.org/analysis/standard/r1b1kb1r/pp2ppp1/5q1p/2pPp3/4P3/2PB4/PP1NQPPP/R3K2R_b_KQkq_-_1_11) |
+| 185230000668 | 14.Qb5+ | Ottima | Migliore | [Prima](https://lichess.org/analysis/standard/r4b1r/pp1k1pp1/4pq1p/2pPp3/4P3/2P5/PP1NQPPP/R3K2R_w_KQ_-_0_14) / [Dopo](https://lichess.org/analysis/standard/r4b1r/pp1k1pp1/4pq1p/1QpPp3/4P3/2P5/PP1N1PPP/R3K2R_b_KQ_-_1_14) |
+| 185230000668 | 14...Kc8 | Imprecisione | Errore | [Prima](https://lichess.org/analysis/standard/r4b1r/pp1k1pp1/4pq1p/1QpPp3/4P3/2P5/PP1N1PPP/R3K2R_b_KQ_-_1_14) / [Dopo](https://lichess.org/analysis/standard/r1k2b1r/pp3pp1/4pq1p/1QpPp3/4P3/2P5/PP1N1PPP/R3K2R_w_KQ_-_2_15) |

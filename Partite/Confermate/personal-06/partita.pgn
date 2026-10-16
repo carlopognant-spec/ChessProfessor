@@ -1,0 +1,32 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2026.10.04"]
+[Round "-"]
+[White "BUMCestinait0"]
+[Black "ProprioI0"]
+[Result "1-0"]
+[CurrentPosition "r4r2/p4pk1/3p2b1/2p4P/Ppn1PP2/6Q1/1PP3BP/R2R2K1 b - - 0 23"]
+[Timezone "UTC"]
+[ECO "C47"]
+[ECOUrl "https://www.chess.com/openings/Four-Knights-Game"]
+[UTCDate "2026.10.04"]
+[UTCTime "20:45:39"]
+[WhiteElo "738"]
+[BlackElo "791"]
+[TimeControl "600"]
+[Termination "BUMCestinait0 won by resignation"]
+[StartTime "20:45:39"]
+[EndDate "2026.10.04"]
+[EndTime "20:56:28"]
+[Link "https://www.chess.com/analysis/game/live/184823546962/review?move=0"]
+[WhiteUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[WhiteCountry "76"]
+[WhiteTitle ""]
+[BlackUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[BlackCountry "76"]
+[BlackTitle ""]
+
+1. e4 e5 2. Nf3 Nf6 3. Nc3 Nc6 4. g3 Bc5 5. Bg2 O-O 6. Nxe5 Nxe5 7. d4 Bxd4 8.
+Qxd4 d6 9. O-O Bg4 10. f3 Bh5 11. g4 Bg6 12. Bg5 h6 13. Bh4 c5 14. Qf2 b5 15. a4
+b4 16. Nd5 Qd7 17. Bxf6 gxf6 18. Nxf6+ Kg7 19. Nxd7 Nxd7 20. Qg3 Ne5 21. f4 Nc4
+22. Rfd1 h5 23. gxh5 1-0

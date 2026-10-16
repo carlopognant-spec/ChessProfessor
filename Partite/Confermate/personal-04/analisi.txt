@@ -1,0 +1,28 @@
+1. d4 libro c6 libro
+2. c4 libro d5 libro
+3. Nf3 libro dxc4 libro
+4. g3 ottima Bf5 buona
+5. Bf4 buona e6 migliore
+6. Bg2 migliore Bd6 ottima
+7. Bxd6 migliore Qxd6 migliore
+8. Ng5 imprecisione Ne7 ottima
+9. e4 buona Bg6 migliore
+10. O-O migliore h6 ottima
+11. e5 erroe Qb4 grande
+12. Nd2 imprecisione hxg5 migliore
+13. a3 migliore Qxb2 buona
+14. Nxc4 migliore Qb5 errore grave
+15. Nd6+ grande Kf8 migliore
+16. Nxb5 migliroe cxb5 errore
+17. Bxb7 migliore Nbc6 migliore
+18. Bxa8 migliore Nb8 buona
+19. Qb3 ottima Nf5 errore
+20. Qxb5 migliore Nxd4 errore
+21. Qxb8+ migliore Ke7 forzata
+22. Qxh8 buona Ne2+ imprecisione
+23. Kg2 buona Be4+ imprecisione
+24. f3 ottima Nd4 errore
+25. Bxe4 buona Ne2 errore
+26. Qxg7 buona Nc3 ottima
+27. Qxg5+ buona Kd7 errore
+28. Rac1 migliore

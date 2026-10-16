@@ -1,0 +1,100 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2026.10.12"]
+[Round "-"]
+[White "Brishka98"]
+[Black "ProprioI0"]
+[Result "0-1"]
+[CurrentPosition "8/8/8/4N3/4K3/6k1/7p/8 w - - 0 62"]
+[Timezone "UTC"]
+[ECO "B21"]
+[ECOUrl "https://www.chess.com/openings/Sicilian-Defense-Smith-Morra-Gambit"]
+[UTCDate "2026.10.12"]
+[UTCTime "15:15:20"]
+[WhiteElo "809"]
+[BlackElo "830"]
+[TimeControl "600"]
+[Termination "ProprioI0 won on time"]
+[StartTime "15:15:20"]
+[EndDate "2026.10.12"]
+[EndTime "15:31:57"]
+[Link "https://www.chess.com/it/analysis/game/live/185215805284/review?move=121&tab=review&classification=greatfind&autorun=true"]
+[WhiteUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[WhiteCountry "52"]
+[WhiteTitle ""]
+[BlackUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[BlackCountry "76"]
+[BlackTitle ""]
+
+1. e4 {[%clk 0:09:59.5][%timestamp 5]} 1... c5 {[%clk 0:09:57.5][%timestamp 25]}
+2. d4 {[%clk 0:09:59.3][%timestamp 2]} 2... d6 {[%clk 0:09:50.6][%timestamp 69]}
+3. dxc5 {[%clk 0:09:54.5][%timestamp 48]} 3... dxc5 {[%clk 0:09:48.9][%timestamp
+17]} 4. Nd2 {[%clk 0:09:53][%timestamp 15]} 4... Nc6 {[%clk
+0:09:47.2][%timestamp 17]} 5. Ngf3 {[%clk 0:09:49.1][%timestamp 39]} 5... e5
+{[%clk 0:09:44.9][%timestamp 23]} 6. Bc4 {[%clk 0:09:42.3][%timestamp 68]} 6...
+Nf6 {[%clk 0:09:36.7][%timestamp 82]} 7. Ng5 {[%clk 0:09:36.2][%timestamp 61]}
+7... Be6 {[%clk 0:09:27.5][%timestamp 92]} 8. Bxe6 {[%clk 0:08:34.5][%timestamp
+617]} 8... fxe6 {[%clk 0:09:08.3][%timestamp 192]} 9. Nxe6 {[%clk
+0:08:27][%timestamp 75]} 9... Qd7 {[%clk 0:08:57][%timestamp 113]} 10. Nxf8
+{[%clk 0:08:07.8][%timestamp 192]} 10... Rxf8 {[%clk 0:08:54.6][%timestamp 24]}
+11. b3 {[%clk 0:08:03.7][%timestamp 41]} 11... O-O-O {[%clk
+0:08:50.3][%timestamp 43]} 12. Bb2 {[%clk 0:07:48.4][%timestamp 153]} 12... Nxe4
+{[%clk 0:08:48][%timestamp 23]} 13. Nxe4 {[%clk 0:07:40.3][%timestamp 81]} 13...
+Qxd1+ {[%clk 0:08:38.1][%timestamp 99]} 14. Rxd1 {[%clk 0:07:37.7][%timestamp
+26]} 14... Rxd1+ {[%clk 0:08:36.9][%timestamp 12]} 15. Kxd1 {[%clk
+0:07:36.7][%timestamp 10]} 15... b6 {[%clk 0:08:25][%timestamp 119]} 16. Kc1
+{[%clk 0:07:14.3][%timestamp 224]} 16... Rf4 {[%clk 0:08:14.6][%timestamp 104]}
+17. f3 {[%clk 0:06:49.8][%timestamp 245]} 17... Kd7 {[%clk 0:08:08][%timestamp
+66]} 18. Rd1+ {[%clk 0:06:40.6][%timestamp 92]} 18... Ke6 {[%clk
+0:08:06.6][%timestamp 14]} 19. Rd6+ {[%clk 0:06:29.7][%timestamp 109]} 19... Kf5
+{[%clk 0:07:58.6][%timestamp 80]} 20. Rxc6 {[%clk 0:06:21.2][%timestamp 85]}
+20... Rh4 {[%clk 0:07:52.5][%timestamp 61]} 21. h3 {[%clk 0:06:12.9][%timestamp
+83]} 21... Kf4 {[%clk 0:07:48.8][%timestamp 37]} 22. Rc7 {[%clk
+0:05:55.8][%timestamp 171]} 22... g5 {[%clk 0:07:39.1][%timestamp 97]} 23. Re7
+{[%clk 0:05:41.2][%timestamp 146]} 23... a5 {[%clk 0:07:27.9][%timestamp 112]}
+24. Bxe5+ {[%clk 0:05:29.9][%timestamp 113]} 24... Ke3 {[%clk
+0:07:24.3][%timestamp 36]} 25. Bc7 {[%clk 0:05:17][%timestamp 129]} 25... Rh6
+{[%clk 0:07:15.2][%timestamp 91]} 26. Nc3+ {[%clk 0:04:57.6][%timestamp 194]}
+26... Kf2 {[%clk 0:07:10][%timestamp 52]} 27. Ne4+ {[%clk 0:04:51.1][%timestamp
+65]} 27... Kxg2 {[%clk 0:07:08.1][%timestamp 19]} 28. Nxg5 {[%clk
+0:04:38.6][%timestamp 125]} 28... Rg6 {[%clk 0:07:05.4][%timestamp 27]} 29. Re2+
+{[%clk 0:04:27.2][%timestamp 114]} 29... Kf1 {[%clk 0:06:56.5][%timestamp 89]}
+30. Re5 {[%clk 0:03:51.1][%timestamp 361]} 30... h6 {[%clk 0:06:42.5][%timestamp
+140]} 31. Ne4 {[%clk 0:03:37.3][%timestamp 138]} 31... Ke2 {[%clk
+0:06:26][%timestamp 165]} 32. Nc3+ {[%clk 0:03:30.1][%timestamp 72]} 32... Kxf3
+{[%clk 0:06:22.4][%timestamp 36]} 33. Rf5+ {[%clk 0:03:16.2][%timestamp 139]}
+33... Ke3 {[%clk 0:06:10.5][%timestamp 119]} 34. Bf4+ {[%clk
+0:03:09.2][%timestamp 70]} 34... Kd4 {[%clk 0:06:08.7][%timestamp 18]} 35. Kb2
+{[%clk 0:03:00.4][%timestamp 88]} 35... b5 {[%clk 0:06:02.8][%timestamp 59]} 36.
+Nxb5+ {[%clk 0:02:55.3][%timestamp 51]} 36... Ke4 {[%clk 0:06:00.4][%timestamp
+24]} 37. Bg3 {[%clk 0:02:34.8][%timestamp 205]} 37... Kxf5 {[%clk
+0:05:54.2][%timestamp 62]} 38. Nd6+ {[%clk 0:02:28.3][%timestamp 65]} 38... Kf6
+{[%clk 0:05:43.2][%timestamp 110]} 39. Ne4+ {[%clk 0:02:26.3][%timestamp 20]}
+39... Kf5 {[%clk 0:05:32][%timestamp 112]} 40. Nxc5 {[%clk 0:02:24.9][%timestamp
+14]} 40... Rxg3 {[%clk 0:05:29.2][%timestamp 28]} 41. h4 {[%clk
+0:02:19.1][%timestamp 58]} 41... Kg4 {[%clk 0:05:27.3][%timestamp 19]} 42. a4
+{[%clk 0:02:13][%timestamp 61]} 42... Kxh4 {[%clk 0:05:24.2][%timestamp 31]} 43.
+b4 {[%clk 0:02:11.9][%timestamp 11]} 43... axb4 {[%clk 0:05:20.5][%timestamp
+37]} 44. a5 {[%clk 0:02:08.9][%timestamp 30]} 44... Rg8 {[%clk
+0:05:17.1][%timestamp 34]} 45. Kb3 {[%clk 0:02:07.3][%timestamp 16]} 45... Rb8
+{[%clk 0:05:09.2][%timestamp 79]} 46. Ka4 {[%clk 0:02:05.1][%timestamp 22]}
+46... Kg4 {[%clk 0:05:00.2][%timestamp 90]} 47. a6 {[%clk 0:02:03.9][%timestamp
+12]} 47... Kf4 {[%clk 0:04:52.8][%timestamp 74]} 48. Nd7 {[%clk
+0:01:50][%timestamp 139]} 48... Rd8 {[%clk 0:04:42.6][%timestamp 102]} 49. a7
+{[%clk 0:01:43.1][%timestamp 69]} 49... Ke3 {[%clk 0:04:37.5][%timestamp 51]}
+50. Kxb4 {[%clk 0:01:35.3][%timestamp 78]} 50... Kd2 {[%clk
+0:04:28.9][%timestamp 86]} 51. c4 {[%clk 0:01:27.6][%timestamp 77]} 51... Ra8
+{[%clk 0:04:24][%timestamp 49]} 52. c5 {[%clk 0:01:09.1][%timestamp 185]} 52...
+Rxa7 {[%clk 0:04:21.7][%timestamp 23]} 53. c6 {[%clk 0:01:08.2][%timestamp 9]}
+53... h5 {[%clk 0:04:12.6][%timestamp 91]} 54. Kb5 {[%clk 0:01:06.8][%timestamp
+14]} 54... Rc7 {[%clk 0:03:53.5][%timestamp 191]} 55. Kb6 {[%clk
+0:00:58.7][%timestamp 81]} 55... Rxc6+ {[%clk 0:03:52.1][%timestamp 14]} 56.
+Kxc6 {[%clk 0:00:57.5][%timestamp 12]} 56... h4 {[%clk 0:03:52][%timestamp 1]}
+57. Ne5 {[%clk 0:00:56.8][%timestamp 7]} 57... h3 {[%clk 0:03:51.9][%timestamp
+1]} 58. Ng4 {[%clk 0:00:53.3][%timestamp 35]} 58... Ke2 {[%clk
+0:03:47.8][%timestamp 41]} 59. Kd5 {[%clk 0:00:52.5][%timestamp 8]} 59... Kf3
+{[%clk 0:03:46.7][%timestamp 11]} 60. Ne5+ {[%clk 0:00:46.6][%timestamp 59]}
+60... Kg3 {[%clk 0:03:43.6][%timestamp 31]} 61. Ke4 {[%clk 0:00:42.2][%timestamp
+44]} 61... h2 $1 {[%clk 0:03:42.4][%c_effect
+g3;square;g3;type;Winner;animated;true,e4;square;e4;type;TimeoutWhite;animated;true,h2;square;h2;type;GreatFind;size;100%25;animated;true;persistent;true][%timestamp
+12]} 0-1

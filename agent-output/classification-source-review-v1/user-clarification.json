@@ -1,0 +1,32 @@
+{
+  "userClarificationDate": "2026-10-16",
+  "productionChanged": false,
+  "referenceFilesChanged": false,
+  "userFindings": [
+    {
+      "game": "game-1-chigorin-steinitz-1892",
+      "ply": 28,
+      "san": "c6",
+      "source": "User reran the full PGN in Chess.com Game Review",
+      "assertion": {
+        "great": false
+      },
+      "exactReplacementCategory": null
+    },
+    {
+      "game": "game-2-saintamant-staunton-1843",
+      "ply": 76,
+      "san": "Ne4",
+      "source": "User cannot locate the game",
+      "assertion": null,
+      "provenance": "unverified"
+    }
+  ],
+  "methodClarification": "User prioritizes understanding move classifications and discovering justified general rules over matching every stored label. A disagreement is diagnostic evidence, not automatic authorization to fit a new rule. Distinguish source, engine/search budget, expected-points/player-rating context, and legal tactical/decision evidence. Preserve numerical frozen dependencies and held-out references.",
+  "remainingUncertainties": [
+    "Origin of event-viewer annotations not established from initial HTML",
+    "Exact Game Review category of c6 was not specified",
+    "Ne4 label not independently confirmed"
+  ],
+  "nextWork": "Discuss a provenance-aware rule audit with the user before further classifier changes; keep both cases as documented studies. Do not report the previous32/34 as a trustworthy target denominator after a historical expected label has been contradicted."
+}

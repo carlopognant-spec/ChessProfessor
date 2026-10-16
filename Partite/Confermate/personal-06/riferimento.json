@@ -1,0 +1,234 @@
+{
+  "id": "personal-06",
+  "label": "BUMCestinait0 vs ProprioI0, 2026.10.04",
+  "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.10.04\"]\n[Round \"-\"]\n[White \"BUMCestinait0\"]\n[Black \"ProprioI0\"]\n[Result \"1-0\"]\n[CurrentPosition \"r4r2/p4pk1/3p2b1/2p4P/Ppn1PP2/6Q1/1PP3BP/R2R2K1 b - - 0 23\"]\n[Timezone \"UTC\"]\n[ECO \"C47\"]\n[ECOUrl \"https://www.chess.com/openings/Four-Knights-Game\"]\n[UTCDate \"2026.10.04\"]\n[UTCTime \"20:45:39\"]\n[WhiteElo \"738\"]\n[BlackElo \"791\"]\n[TimeControl \"600\"]\n[Termination \"BUMCestinait0 won by resignation\"]\n[StartTime \"20:45:39\"]\n[EndDate \"2026.10.04\"]\n[EndTime \"20:56:28\"]\n[Link \"https://www.chess.com/analysis/game/live/184823546962/review?move=0\"]\n[WhiteUrl \"https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif\"]\n[WhiteCountry \"76\"]\n[WhiteTitle \"\"]\n[BlackUrl \"https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif\"]\n[BlackCountry \"76\"]\n[BlackTitle \"\"]\n\n1. e4 e5 2. Nf3 Nf6 3. Nc3 Nc6 4. g3 Bc5 5. Bg2 O-O 6. Nxe5 Nxe5 7. d4 Bxd4 8.\nQxd4 d6 9. O-O Bg4 10. f3 Bh5 11. g4 Bg6 12. Bg5 h6 13. Bh4 c5 14. Qf2 b5 15. a4\nb4 16. Nd5 Qd7 17. Bxf6 gxf6 18. Nxf6+ Kg7 19. Nxd7 Nxd7 20. Qg3 Ne5 21. f4 Nc4\n22. Rfd1 h5 23. gxh5 1-0",
+  "annotations": [
+    {
+      "ply": 1,
+      "san": "e4",
+      "category": "Libro"
+    },
+    {
+      "ply": 2,
+      "san": "e5",
+      "category": "Libro"
+    },
+    {
+      "ply": 3,
+      "san": "Nf3",
+      "category": "Libro"
+    },
+    {
+      "ply": 4,
+      "san": "Nf6",
+      "category": "Libro"
+    },
+    {
+      "ply": 5,
+      "san": "Nc3",
+      "category": "Libro"
+    },
+    {
+      "ply": 6,
+      "san": "Nc6",
+      "category": "Libro"
+    },
+    {
+      "ply": 7,
+      "san": "g3",
+      "category": "Libro"
+    },
+    {
+      "ply": 8,
+      "san": "Bc5",
+      "category": "Libro"
+    },
+    {
+      "ply": 9,
+      "san": "Bg2",
+      "category": "Libro"
+    },
+    {
+      "ply": 10,
+      "san": "O-O",
+      "category": "Ottima"
+    },
+    {
+      "ply": 11,
+      "san": "Nxe5",
+      "category": "Geniale"
+    },
+    {
+      "ply": 12,
+      "san": "Nxe5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 13,
+      "san": "d4",
+      "category": "Grande"
+    },
+    {
+      "ply": 14,
+      "san": "Bxd4",
+      "category": "Buona"
+    },
+    {
+      "ply": 15,
+      "san": "Qxd4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 16,
+      "san": "d6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 17,
+      "san": "O-O",
+      "category": "Ottima"
+    },
+    {
+      "ply": 18,
+      "san": "Bg4",
+      "category": "Errore"
+    },
+    {
+      "ply": 19,
+      "san": "f3",
+      "category": "Buona"
+    },
+    {
+      "ply": 20,
+      "san": "Bh5",
+      "category": "Buona"
+    },
+    {
+      "ply": 21,
+      "san": "g4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 22,
+      "san": "Bg6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 23,
+      "san": "Bg5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 24,
+      "san": "h6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 25,
+      "san": "Bh4",
+      "category": "Migliore"
+    },
+    {
+      "ply": 26,
+      "san": "c5",
+      "category": "Buona"
+    },
+    {
+      "ply": 27,
+      "san": "Qf2",
+      "category": "Migliore"
+    },
+    {
+      "ply": 28,
+      "san": "b5",
+      "category": "Buona"
+    },
+    {
+      "ply": 29,
+      "san": "a4",
+      "category": "Imprecisione"
+    },
+    {
+      "ply": 30,
+      "san": "b4",
+      "category": "Buona"
+    },
+    {
+      "ply": 31,
+      "san": "Nd5",
+      "category": "Grande"
+    },
+    {
+      "ply": 32,
+      "san": "Qd7",
+      "category": "Buona"
+    },
+    {
+      "ply": 33,
+      "san": "Bxf6",
+      "category": "Migliore"
+    },
+    {
+      "ply": 34,
+      "san": "gxf6",
+      "category": "Errore"
+    },
+    {
+      "ply": 35,
+      "san": "Nxf6+",
+      "category": "Migliore"
+    },
+    {
+      "ply": 36,
+      "san": "Kg7",
+      "category": "Migliore"
+    },
+    {
+      "ply": 37,
+      "san": "Nxd7",
+      "category": "Migliore"
+    },
+    {
+      "ply": 38,
+      "san": "Nxd7",
+      "category": "Migliore"
+    },
+    {
+      "ply": 39,
+      "san": "Qg3",
+      "category": "Ottima"
+    },
+    {
+      "ply": 40,
+      "san": "Ne5",
+      "category": "Migliore"
+    },
+    {
+      "ply": 41,
+      "san": "f4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 42,
+      "san": "Nc4",
+      "category": "Ottima"
+    },
+    {
+      "ply": 43,
+      "san": "Rfd1",
+      "category": "Ottima"
+    },
+    {
+      "ply": 44,
+      "san": "h5",
+      "category": "Buona"
+    },
+    {
+      "ply": 45,
+      "san": "gxh5",
+      "category": "Migliore"
+    }
+  ],
+  "source": "Annotazioni chess.com trascritte da Carlo",
+  "role": "development"
+}

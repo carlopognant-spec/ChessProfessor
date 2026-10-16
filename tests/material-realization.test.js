@@ -22,6 +22,32 @@ function evidence(entry, best = 650, second = -650) {
 
 describe('material realization distinct from new critical decisions', () => {
   it.each([
+    ['white', '4k3/8/8/8/1b6/2N5/1P6/6K1 b - - 0 1', ['Bxc3', 'bxc3']],
+    ['black', '6k1/1p6/2n5/1B6/8/8/8/4K3 w - - 0 1', ['Bxc6', 'bxc6']],
+  ])('does not promote an equal nonchecking recapture for %s just because the score increased', (_, fen, sans) => {
+    const [rawPrevious, raw] = history(fen, sans)
+    const previous = { ...rawPrevious, engine: { depth: 15, evalCp: 0 } }, entry = evidence(raw)
+    expect(new Chess(entry.fenBefore).isCheck()).toBe(false)
+    const result = classifySpecialMove(entry, previous)
+    expect(result.classification).toBe('best')
+    expect(result.specialAssessment.context.createdGain).toBeGreaterThan(0.20)
+    expect(result.specialAssessment.grande).toMatchObject({ status: 'rejected', reason: 'ordinary-material-recovery' })
+    expect(formatSpecialAssessment(result)).toContain('Ripresa materiale')
+    expect(classifySpecialMove(entry).classification).toBe('great')
+    expect(classifySpecialMove(entry, { ...previous, fenAfter: previous.fenBefore }).classification).toBe('great')
+    const migrated = classifySpecialMove({ ...entry, classification: 'great', baseClassification: 'best',
+      specialAssessment: { version: 'counterfactual-v7' } }, previous)
+    expect(migrated.classification).toBe('best')
+    expect(migrated.specialAssessment.version).toBe('counterfactual-v24')
+    expect(reclassifySpecialMoves([previous, entry]).at(-1).classification).toBe('best')
+    expect(reclassifySpecialMoves(reclassifySpecialMoves([previous, entry]))).toEqual(reclassifySpecialMoves([previous, entry]))
+  })
+
+  it('keeps a capture of a previously hanging piece outside the recapture rule', () => {
+    const [previous, raw] = history('4k3/8/8/8/8/2b5/1P6/6K1 b - - 0 1', ['Ke7', 'bxc3'])
+    expect(classifySpecialMove(evidence(raw), { ...previous, engine: { depth: 15, evalCp: 0 } }).classification).toBe('great')
+  })
+  it.each([
     ['white', '4k3/8/8/8/8/8/1r6/RR2K3 b - - 0 1', ['Rxb1+', 'Rxb1']],
     ['black', 'rr2k3/1R6/8/8/8/8/8/4K3 w - - 0 1', ['Rxb8+', 'Rxb8']],
   ])('recognizes an immediate equal material recovery for %s', (_, fen, sans) => {

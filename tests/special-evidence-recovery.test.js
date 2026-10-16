@@ -3,6 +3,7 @@ import { Chess } from 'chess.js'
 import { describe, expect, it } from 'vitest'
 import { classifyAnalysisEntries, moveEvaluationFields } from '../src/lib/classification.js'
 import { classifySpecialMove, formatSpecialAssessment, displaySpecialMoves } from '../src/lib/specialClassification.js'
+import { reclassifyReviewedMoves } from '../src/lib/reviewMoves.js'
 
 const line = (rank, cp, pv, depth = 15) => ({ multipv: rank, depth, evalCp: cp, mate: null, pv })
 function history(moves) {
@@ -25,7 +26,78 @@ function responseExample(capture = false) {
   return { previous, entry }
 }
 
+function responseWithAlternatives(near = true) {
+  const example = responseExample(), { entry } = example
+  const alternatives = new Chess(entry.fenBefore).moves({ verbose: true })
+    .map(m => `${m.from}${m.to}${m.promotion ?? ''}`).filter(uci => uci !== entry.playedUci).slice(0, 4)
+  const lines = [line(1, 500, [entry.playedUci]), ...alternatives.map((uci, i) =>
+    line(i + 2, (near ? 480 : 300) - i * 10, [uci]))]
+  entry.engine = { ...lines[0], lines: structuredClone(lines), specialLines: lines,
+    analysisMetadata: { multiPv: 5 } }
+  return example
+}
+
 describe('recovery of previously validated evidence families', () => {
+  it('keeps a best response ordinary when a complete snapshot proves a similar alternative', () => {
+    const { entry, previous } = responseWithAlternatives()
+    const result = classifySpecialMove(entry, previous)
+    expect(result.classification).toBe('best')
+    expect(result.specialAssessment.grande).toMatchObject({ status: 'rejected',
+      reason: 'near-equivalent-response-alternative' })
+    const alternative = result.specialAssessment.grande.alternative
+    expect(alternative.lossPct).toBeGreaterThanOrEqual(0)
+    expect(alternative.lossPct).toBeLessThanOrEqual(3)
+    expect(new Chess(entry.fenBefore).move(alternative.san[0])).toBeTruthy()
+    expect(formatSpecialAssessment(result)).toContain(alternative.san[0])
+  })
+
+  it('preserves the response family when alternatives are substantially worse', () => {
+    const { entry, previous } = responseWithAlternatives(false)
+    expect(classifySpecialMove(entry, previous).classification).toBe('great')
+  })
+
+  it('does not infer equivalence from incomplete, mixed-depth, bounded or restricted evidence', () => {
+    for (const change of [
+      e => { e.engine.specialLines.pop() },
+      e => { e.engine.specialLines[1].depth-- },
+      e => { e.engine.specialLines[1].bound = true },
+      e => { delete e.engine.specialLines; e.engine.lines[1].depth-- },
+      e => { e.engine.analysisMetadata.searchMoves = [e.playedUci] },
+    ]) {
+      const { entry, previous } = responseWithAlternatives(); change(entry)
+      expect(classifySpecialMove(entry, previous).classification).toBe('great')
+    }
+  })
+
+  it('does not compare a newly found forced mate with an older centipawn snapshot', () => {
+    const { entry, previous } = responseWithAlternatives()
+    entry.engine.specialLines.forEach((l, i) => { l.evalCp = 900 - 20 * i })
+    entry.engine.lines = [{ ...line(1, null, [entry.playedUci]), mate: 2 }]
+    entry.playedEngine.lines = [{ ...line(1, null, ['b8c6']), mate: -1 }]
+    expect(classifySpecialMove(entry, previous).classification).toBe('great')
+  })
+
+  it('preserves the real black Rc1+ response with mating alternatives at different distances', () => {
+    const stored = JSON.parse(readFileSync(new URL('../agent-output/new-refinement-measurement-v1/game-184316820266-round-2.json', import.meta.url)))
+    const entry = reclassifyReviewedMoves(stored.view)[63]
+    expect(entry.playedMove).toBe('Rc1+')
+    expect(entry.engine.specialLines.slice(0, 2).map(l => l.mate)).toEqual([2, 3])
+    expect(entry.classification).toBe('great')
+    expect(entry.specialAssessment.grande.reason).toBe('best-noncapture-after-opponent-error')
+  })
+
+  it('migrates a v8 response without mutating its source and remains stable on reopening', () => {
+    const { entry, previous } = responseWithAlternatives()
+    const stored = { ...entry, classification: 'great', baseClassification: 'best',
+      specialAssessment: { version: 'counterfactual-v8' } }
+    const original = JSON.stringify(stored)
+    const migrated = classifySpecialMove(stored, previous)
+    expect(migrated.classification).toBe('best')
+    expect(migrated.specialAssessment.version).toBe('counterfactual-v24')
+    expect(JSON.stringify(stored)).toBe(original)
+    expect(classifySpecialMove(migrated, previous)).toEqual(migrated)
+  })
+
   it('uses the actual numerical opponent error even when the stored label is book', () => {
     const { previous, entry } = responseExample()
     previous.classification = 'book'; previous.isBookMove = true

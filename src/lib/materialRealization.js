@@ -24,6 +24,33 @@ export function detectMaterialRealization(entry, previous, previousOwn) {
       return { kind: 'immediate-material-recovery', previousPly: previous.ply, target: move.to }
     }
     if (!previousOwn || previousOwn.fenAfter !== previous.fenBefore || previousOwn.ply !== entry.ply - 2) return null
+    const prepared = replay(previousOwn)
+    const setup = prepared.move
+    if (!setup.captured && !setup.promotion && prior.piece === 'q' && !prior.captured && !prior.promotion
+      && setup.color === move.color && setup.to !== move.from) {
+      const earlierBoard = new Chess(previousOwn.fenBefore)
+      const attacker = earlierBoard.get(move.from), victim = prepared.game.get(move.to)
+      const unchangedAttacker = prepared.game.get(move.from)
+      const moverBoard = board => {
+        if (board.turn() === move.color) return board
+        const fields = board.fen().split(' '); fields[1] = move.color; fields[3] = '-'
+        return new Chess(fields.join(' '))
+      }
+      const queenCaptures = board => moverBoard(board).moves({ verbose: true }).filter(m => m.to === prior.from && m.captured === 'q')
+      // New legal attack by a piece whose path was opened by the setup move.
+      const newlyOpened = queenCaptures(prepared.game).some(m => m.from !== setup.to
+        && !earlierBoard.attackers(prior.from, move.color).includes(m.from)
+        && !queenCaptures(earlierBoard).some(old => old.from === m.from))
+      const availableCapture = moverBoard(prepared.game).moves({ verbose: true }).some(m =>
+        m.from === move.from && m.to === move.to && m.captured === move.captured)
+      if (newlyOpened && availableCapture && attacker?.color === move.color && attacker.type === move.piece
+        && unchangedAttacker?.color === move.color && unchangedAttacker.type === move.piece
+        && victim?.color === prior.color && victim.type === move.captured) {
+        return { kind: 'discovered-attack-realization', previousPly: previousOwn.ply,
+          initiatingMove: setup.san, target: move.to, displacedQueen: prior.san }
+      }
+    }
+
     const earlier = replay(previousOwn), first = earlier.move
     if (first.color !== move.color || first.to !== move.from || first.piece !== move.piece || first.promotion) return null
     // The opponent must have moved the king, leaving the previously attacked

@@ -1,0 +1,121 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2026.10.07"]
+[Round "-"]
+[White "ProprioI0"]
+[Black "Pochekin086"]
+[Result "1-0"]
+[CurrentPosition "7Q/8/8/4K2k/8/7p/8/6Q1 b - - 1 61"]
+[Timezone "UTC"]
+[ECO "D02"]
+[ECOUrl "https://www.chess.com/openings/Queens-Pawn-Opening-Symmetrical-Variation-3.c4"]
+[UTCDate "2026.10.07"]
+[UTCTime "16:53:12"]
+[WhiteElo "791"]
+[BlackElo "791"]
+[TimeControl "600"]
+[Termination "ProprioI0 won by checkmate"]
+[StartTime "16:53:12"]
+[EndDate "2026.10.07"]
+[EndTime "17:03:09"]
+[Link "https://www.chess.com/analysis/game/live/184965243670/analysis?move=120"]
+[WhiteUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[WhiteCountry "76"]
+[WhiteTitle ""]
+[BlackUrl "https://www.chess.com/bundles/web/images/noavatar_l.84a92436.gif"]
+[BlackCountry "116"]
+[BlackTitle ""]
+
+1. d4 {[%clk 0:09:59.3][%timestamp 7]} 1... d5 {[%clk 0:09:58.9][%timestamp 11]}
+2. c4 {[%clk 0:09:57.8][%timestamp 15]} 2... Nf6 {[%clk 0:09:56.1][%timestamp
+28]} 3. Nf3 {[%clk 0:09:55.7][%timestamp 21]} 3... Bg4 $6 {[%clk
+0:09:50][%timestamp 61][%c_effect g4;square;g4;type;Inaccuracy;persistent;true]}
+4. e3 $6 {[%clk 0:09:35][%timestamp 207][%c_effect
+e3;square;e3;type;Inaccuracy;persistent;true]} 4... e6 {[%clk
+0:09:47.2][%timestamp 28]} 5. g3 {[%clk 0:09:33.3][%timestamp 17]} 5... Nc6
+{[%clk 0:09:36.4][%timestamp 108]} 6. c5 $6 {[%clk 0:09:30.6][%timestamp
+27][%c_effect c5;square;c5;type;Inaccuracy;persistent;true]} 6... b6 $2 {[%clk
+0:09:27.6][%timestamp 88][%c_effect b6;square;b6;type;Mistake;persistent;true]}
+7. Bg2 $4 {[%clk 0:09:25.7][%timestamp 49][%c_effect
+g2;square;g2;type;Blunder;persistent;true]} 7... bxc5 {[%clk
+0:09:23.8][%timestamp 38]} 8. dxc5 {[%clk 0:09:21.5][%timestamp 42]} 8... Bxc5
+{[%clk 0:09:22.5][%timestamp 13]} 9. Qc2 {[%clk 0:09:13.3][%timestamp 82]} 9...
+Qd6 {[%clk 0:09:13.7][%timestamp 88]} 10. Nc3 {[%clk 0:09:01.1][%timestamp 122]}
+10... O-O {[%clk 0:09:09.4][%timestamp 43]} 11. Nb5 $6 {[%clk
+0:08:59.6][%timestamp 15][%c_effect
+b5;square;b5;type;Inaccuracy;persistent;true]} 11... Bb4+ $6 {[%clk
+0:09:00.5][%timestamp 89][%c_effect
+b4;square;b4;type;Inaccuracy;persistent;true]} 12. Bd2 {[%clk
+0:08:46.8][%timestamp 128]} 12... Bxd2+ {[%clk 0:08:58.2][%timestamp 23]} 13.
+Nxd2 {[%clk 0:08:45.2][%timestamp 16]} 13... Qd7 {[%clk 0:08:54.3][%timestamp
+39]} 14. O-O $6 {[%clk 0:08:36.6][%timestamp 86][%c_effect
+g1;square;g1;type;Inaccuracy;persistent;true]} 14... Bf5 $9 {[%clk
+0:08:51.8][%timestamp 25]} 15. Qc3 {[%clk 0:08:12.4][%timestamp 242]} 15... a6 $6
+{[%clk 0:08:46.1][%timestamp 57][%c_effect
+a6;square;a6;type;Inaccuracy;persistent;true]} 16. Nd4 {[%clk
+0:08:01.1][%timestamp 113]} 16... Nxd4 {[%clk 0:08:40.8][%timestamp 53]} 17.
+Qxd4 {[%clk 0:07:57.7][%timestamp 34]} 17... a5 {[%clk 0:08:28.4][%timestamp
+124]} 18. Rac1 {[%clk 0:07:54.4][%timestamp 33]} 18... Rfc8 {[%clk
+0:08:23.8][%timestamp 46]} 19. Nf3 $6 {[%clk 0:07:49.4][%timestamp 50][%c_effect
+f3;square;f3;type;Inaccuracy;persistent;true]} 19... h6 $2 {[%clk
+0:08:19.8][%timestamp 40][%c_effect h6;square;h6;type;Mistake;persistent;true]}
+20. Nh4 $9 {[%clk 0:07:45.6][%timestamp 38]} 20... g6 $4 {[%clk
+0:07:54.1][%timestamp 257][%c_effect g6;square;g6;type;Blunder;persistent;true]}
+21. Nxf5 $1 {[%clk 0:07:35.4][%timestamp 102][%c_effect
+f5;square;f5;type;GreatFind;persistent;true]} 21... exf5 {[%clk
+0:07:46.6][%timestamp 75]} 22. Qxf6 {[%clk 0:07:32.4][%timestamp 30]} 22... Qe6
+{[%clk 0:07:27.9][%timestamp 187]} 23. Rc6 {[%clk 0:07:12.4][%timestamp 200]}
+23... Qxf6 {[%clk 0:07:23.1][%timestamp 48]} 24. Rxf6 {[%clk
+0:07:11.1][%timestamp 13]} 24... c6 {[%clk 0:07:19.5][%timestamp 36]} 25. Rc1
+{[%clk 0:07:06.7][%timestamp 44]} 25... Ra6 $2 {[%clk 0:07:18][%timestamp
+15][%c_effect a6;square;a6;type;Mistake;persistent;true]} 26. Bxd5 $3 {[%clk
+0:07:03.2][%timestamp 35][%c_effect
+d5;square;d5;type;Brilliant;persistent;true]} 26... Kg7 $2 {[%clk
+0:07:10.4][%timestamp 76][%c_effect g7;square;g7;type;Mistake;persistent;true]}
+27. Rfxc6 {[%clk 0:06:52.5][%timestamp 107]} 27... Rcxc6 {[%clk
+0:07:08.8][%timestamp 16]} 28. Bxc6 {[%clk 0:06:48.3][%timestamp 42]} 28... Rb6
+{[%clk 0:07:05.9][%timestamp 29]} 29. b3 {[%clk 0:06:41.4][%timestamp 69]} 29...
+Rb8 {[%clk 0:06:59][%timestamp 69]} 30. Rc5 {[%clk 0:06:34.4][%timestamp 70]}
+30... Rd8 $6 {[%clk 0:06:51.9][%timestamp 71][%c_effect
+d8;square;d8;type;Inaccuracy;persistent;true]} 31. Kg2 $6 {[%clk
+0:06:32][%timestamp 24][%c_effect g2;square;g2;type;Inaccuracy;persistent;true]}
+31... Rd2 {[%clk 0:06:50.1][%timestamp 18]} 32. a4 {[%clk 0:06:29.3][%timestamp
+27]} 32... Rb2 {[%clk 0:06:43.6][%timestamp 65]} 33. Bd5 {[%clk
+0:06:26.2][%timestamp 31]} 33... Kf6 {[%clk 0:06:34.9][%timestamp 87]} 34. Rxa5
+{[%clk 0:06:24.7][%timestamp 15]} 34... Ke5 {[%clk 0:06:33.1][%timestamp 18]}
+35. Bxf7+ {[%clk 0:06:22.8][%timestamp 19]} 35... Kf6 {[%clk
+0:06:31.3][%timestamp 18]} 36. Bc4 {[%clk 0:06:10.5][%timestamp 123]} 36... Rd2
+{[%clk 0:06:23.6][%timestamp 77]} 37. Kf3 {[%clk 0:06:02][%timestamp 85]} 37...
+Kg5 {[%clk 0:06:20.2][%timestamp 34]} 38. h4+ {[%clk 0:05:58.6][%timestamp 34]}
+38... Kh5 $2 {[%clk 0:06:17.3][%timestamp 29][%c_effect
+h5;square;h5;type;Mistake;persistent;true]} 39. Kf4 $9 {[%clk
+0:05:56.3][%timestamp 23]} 39... Rxf2+ {[%clk 0:06:12][%timestamp 53]} 40. Ke5
+{[%clk 0:05:52][%timestamp 43]} 40... Rf3 $2 {[%clk 0:06:09.7][%timestamp
+23][%c_effect f3;square;f3;type;Mistake;persistent;true]} 41. Be2 $1 {[%clk
+0:05:38.5][%timestamp 135][%c_effect
+e2;square;e2;type;GreatFind;persistent;true]} 41... Kg4 {[%clk
+0:06:02.6][%timestamp 71]} 42. Bxf3+ {[%clk 0:05:37.5][%timestamp 10]} 42...
+Kxf3 {[%clk 0:06:00.8][%timestamp 18]} 43. b4 {[%clk 0:05:36.6][%timestamp 9]}
+43... Kxe3 {[%clk 0:05:59.6][%timestamp 12]} 44. b5 {[%clk 0:05:36][%timestamp
+6]} 44... Kf3 {[%clk 0:05:58.2][%timestamp 14]} 45. b6 {[%clk
+0:05:35.9][%timestamp 1]} 45... Kxg3 {[%clk 0:05:57.3][%timestamp 9]} 46. b7
+{[%clk 0:05:35.7][%timestamp 2]} 46... f4 {[%clk 0:05:56.5][%timestamp 8]} 47.
+b8=Q {[%clk 0:05:35.4][%timestamp 3]} 47... f3 {[%clk 0:05:55.8][%timestamp 7]}
+48. Qb3 {[%clk 0:05:32.8][%timestamp 26]} 48... g5 {[%clk 0:05:53.5][%timestamp
+23]} 49. Rd5 {[%clk 0:05:32.1][%timestamp 7]} 49... gxh4 {[%clk
+0:05:51.6][%timestamp 19]} 50. a5 {[%clk 0:05:28.4][%timestamp 37]} 50... h3
+{[%clk 0:05:50.4][%timestamp 12]} 51. Rd1 {[%clk 0:05:27.1][%timestamp 13]}
+51... h2 {[%clk 0:05:50.1][%timestamp 3]} 52. Rh1 {[%clk 0:05:23.8][%timestamp
+33]} 52... Kg2 {[%clk 0:05:46.7][%timestamp 34]} 53. Qc2+ {[%clk
+0:05:17.4][%timestamp 64]} 53... f2 {[%clk 0:05:45.6][%timestamp 11]} 54. Rxh2+
+{[%clk 0:05:12.4][%timestamp 50]} 54... Kxh2 {[%clk 0:05:44.4][%timestamp 12]}
+55. Qxf2+ {[%clk 0:05:10.8][%timestamp 16]} 55... Kh3 {[%clk
+0:05:42.5][%timestamp 19]} 56. a6 $9 {[%clk 0:05:09.5][%timestamp 13]} 56... Kg4
+{[%clk 0:05:41.4][%timestamp 11]} 57. a7 {[%clk 0:05:09.4][%timestamp 1]} 57...
+h5 {[%clk 0:05:40.1][%timestamp 13]} 58. a8=Q {[%clk 0:05:09.3][%timestamp 1]}
+58... h4 {[%clk 0:05:26.6][%timestamp 135]} 59. Qg8+ {[%clk
+0:05:05.9][%timestamp 34]} 59... Kh5 {[%clk 0:05:24.6][%timestamp 20]} 60. Qfg1
+{[%clk 0:05:00.8][%timestamp 51]} 60... h3 {[%clk 0:05:21.1][%timestamp 35]} 61.
+Qh8# {[%clk 0:04:59.7][%c_effect
+e5;square;e5;type;Winner;animated;true,h5;square;h5;type;CheckmateBlack;animated;true][%timestamp
+11]} 1-0
