@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { GameProvider, useGame } from './context/GameContext.jsx'
 import Board from './components/Board.jsx'
 import OpeningPanel from './components/OpeningPanel.jsx'
@@ -14,7 +14,9 @@ import { archiveAnalysisStatus, describePgn } from './lib/gameArchive.js'
 import { setPieceAtFen } from './lib/positionEditor.js'
 import { getKeyboardNavigationTarget, resolveAnalysisEntryForPosition } from './lib/analysisPresentation.js'
 
-function AppContent() {
+const OpeningLibrary = lazy(() => import('./components/OpeningLibrary.jsx'))
+
+function AppContent({ active = true }) {
   const { fen, moveHistorySan, navigationHistorySan, importPgn, resetGame, loadMoveSequence, exportPgn } = useGame()
   const [opening, setOpening] = useState(null)
   const [engineData, setEngineData] = useState(null)
@@ -35,6 +37,7 @@ function AppContent() {
   }, [fen])
 
   useEffect(() => {
+    if (!active) return
     const handleKeyDown = (event) => {
       const target = event.target
       if (target instanceof HTMLElement && (
@@ -49,7 +52,7 @@ function AppContent() {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [loadMoveSequence, moveHistorySan.length, navigationHistorySan])
+  }, [active, loadMoveSequence, moveHistorySan.length, navigationHistorySan])
 
   const handleEditorSquare = (square, piece = editorPiece) => {
     try {
@@ -164,9 +167,25 @@ function AppContent() {
 }
 
 export default function App() {
+  const [section, setSection] = useState(() => window.location.hash === '#aperture' ? 'openings' : 'analysis')
+  const [libraryVisited, setLibraryVisited] = useState(section === 'openings')
+  useEffect(() => {
+    const navigate = () => {
+      const next = window.location.hash === '#aperture' ? 'openings' : 'analysis'
+      setSection(next)
+      if (next === 'openings') setLibraryVisited(true)
+    }
+    window.addEventListener('hashchange', navigate)
+    return () => window.removeEventListener('hashchange', navigate)
+  }, [])
   return (
     <GameProvider>
-      <AppContent />
+      <nav className="app-navigation" aria-label="Sezioni dell’app">
+        <a href="#partita" aria-current={section === 'analysis' ? 'page' : undefined}>Partita e analisi</a>
+        <a href="#aperture" aria-current={section === 'openings' ? 'page' : undefined}>Biblioteca aperture</a>
+      </nav>
+      <div hidden={section !== 'analysis'}><AppContent active={section === 'analysis'} /></div>
+      {libraryVisited && <div hidden={section !== 'openings'}><Suspense fallback={<p className="notice">Caricamento biblioteca…</p>}><OpeningLibrary /></Suspense></div>}
     </GameProvider>
   )
 }

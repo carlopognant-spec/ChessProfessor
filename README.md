@@ -1,5 +1,11 @@
 # ChessProfessor — studio di aperture e partite
 
+**Biblioteca aperture**: catalogo di 12.377 linee su 500 codici ECO, ricerca,
+scacchiera dedicata, piani in italiano per le famiglie, preferiti e ripasso
+con entrambi i colori. Sei trappole didattiche includono sequenze e indicazioni
+per evitarle. Aprila dalla navigazione principale o con `#aperture`.
+[Contenuti, funzionamento e verifiche](docs/OPENING-LIBRARY.md).
+
 App web di studio delle aperture e delle partite con chatbot esplicativo,
 scacchiera interattiva, motore Stockfish lato client, database Lichess,
 analisi automatica e classificazione delle semimosse.

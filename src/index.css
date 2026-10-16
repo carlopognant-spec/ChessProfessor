@@ -15,6 +15,11 @@
 
 * { box-sizing: border-box; }
 
+.app-navigation { display: flex; justify-content: center; gap: .5rem; padding: .4rem; border-bottom: 1px solid #483b29; background: #211b15; position: sticky; top: 0; z-index: 30; }
+.app-navigation a { display: inline-flex; align-items: center; min-height: 44px; color: var(--bone-dim); text-decoration: none; padding: .55rem .9rem; border-radius: 5px; font-size: .85rem; }
+.app-navigation a[aria-current="page"] { background: #493820; color: #f0d49b; }
+.app-navigation a:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
 html, body, #root {
   height: 100%;
   margin: 0;

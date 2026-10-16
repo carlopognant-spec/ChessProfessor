@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "openings:build": "node scripts/build-opening-catalog.mjs",
     "review:auto": "node scripts/review-automation.mjs",
     "qa:compare": "node scripts/qa-compare.js",
     "dev": "vite",
