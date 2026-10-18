@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test'
 import {Chess} from 'chess.js'
+import {OPENING_JOURNEYS} from './src/lib/openingJourneys.js'
 const url='http://127.0.0.1:4176/ChessProfessor/'
 test.beforeEach(async({page})=>{
   await page.route('https://explorer.lichess.ovh/**',route=>route.fulfill({json:{white:0,black:0,draws:0,moves:[]}}))
@@ -8,6 +9,7 @@ test.beforeEach(async({page})=>{
 test('catalog search, exact continuations and board navigation work without an engine',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message))
   await page.goto(url+'#aperture')
+  await page.getByRole('button',{name:'Esplora',exact:true}).click()
   await expect(page.getByText('12.377',{exact:true})).toBeVisible()
   await expect(page.locator('.opening-line-heading h2')).toHaveText('Partita Italiana')
   const start=await page.locator('.opening-board').getAttribute('data-fen')
@@ -30,6 +32,7 @@ test('catalog search, exact continuations and board navigation work without an e
 })
 test('both colors train, legal alternatives are not chess errors, progress and favorites persist',async({page})=>{
   await page.goto(url+'#aperture')
+  await page.getByRole('button',{name:'Esplora',exact:true}).click()
   await page.getByRole('button',{name:'Salva apertura nei preferiti'}).click()
   await page.getByRole('button',{name:'Allena questa variante',exact:true}).click()
   const input=page.getByRole('textbox',{name:'Mossa in notazione'})
@@ -53,6 +56,7 @@ test('both colors train, legal alternatives are not chess errors, progress and f
   for(const san of ['e5','Nc6'])await play(san)
   await expect(page.locator('.opening-feedback')).toContainText('Linea completata')
   await page.reload()
+  await page.getByRole('button',{name:'Esplora',exact:true}).click()
   await page.getByRole('button',{name:'Preferiti',exact:true}).click()
   await expect(page.locator('.opening-result')).toHaveCount(1)
   await page.getByRole('button',{name:'Allena questa variante',exact:true}).click()
@@ -82,8 +86,84 @@ test('the opening board does not overwrite the current game or its draft',async(
   await page.getByRole('button',{name:'Importa PGN',exact:true}).click()
   const fen=await page.locator('.board-stage').getAttribute('data-fen')
   await page.getByRole('link',{name:'Biblioteca aperture',exact:true}).click()
+  await page.getByRole('button',{name:'Esplora',exact:true}).click()
   await page.getByRole('button',{name:'Ultima posizione apertura',exact:true}).click()
   await page.getByRole('link',{name:'Partita e analisi',exact:true}).click()
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen',fen)
   await expect(page.getByRole('textbox',{name:'PGN da importare'})).toHaveValue('1. d4 d5 2. c4')
+})
+
+test('the instructor guides a whole Italian route, with the player moving into the middlegame',async({page})=>{
+  const errors=[];page.on('pageerror',e=>errors.push(e.message))
+  await page.goto(url+'#aperture')
+  const coach=page.getByRole('region',{name:'Consiglio dell’istruttore'})
+  await expect(coach).toContainText('36 semimosse')
+  await expect(coach).toContainText('e4 occupa il centro')
+  await expect(page.locator('.opening-journey-stages [aria-current="step"]')).toContainText('Le basi')
+  const input=page.getByRole('textbox',{name:'Mossa in notazione'})
+  const play=async san=>{await input.fill(san);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+  const start=await page.locator('.opening-board').getAttribute('data-fen')
+  await play('d4')
+  await expect(page.locator('.opening-feedback')).toContainText('La mossa è legale')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',start)
+  await page.getByRole('button',{name:'Mostra la mossa sulla scacchiera',exact:true}).click()
+  await expect(page.locator('.opening-hint')).toContainText('e4')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',start)
+  await page.locator('.opening-board [data-square="e2"]').click()
+  await page.locator('.opening-board [data-square="e4"]').click()
+  const board=new Chess();board.move('e4');board.move('e5')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+  await expect(page.locator('.opening-reply')).toContainText('e5')
+  const journey=OPENING_JOURNEYS.find(j=>j.id==='italian')
+  for(let i=2;i<journey.moves.length;i+=2){
+    await play(journey.moves[i]);board.move(journey.moves[i]);board.move(journey.moves[i+1])
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    if(i===6)await expect(page.locator('.opening-journey-stages [aria-current="step"]')).toContainText('Sviluppo')
+    if(i===16){
+      await expect(page.locator('.opening-journey-stages [aria-current="step"]')).toContainText('mediogioco')
+      await expect(coach).toContainText('cavallo arriva in f1')
+      await page.screenshot({path:'agent-output/opening-journey-preview/desktop-middlegame.png',fullPage:true})
+    }
+  }
+  await expect(page.locator('.opening-feedback')).toContainText('Percorso completato')
+  await expect(page.locator('.opening-practice-stats')).toContainText('Percorsi completati: 1')
+  await expect(input).toBeDisabled()
+  await expect(page.locator('.opening-recap')).toBeVisible()
+  await page.reload()
+  await expect(page.locator('.opening-practice-stats')).toContainText('Percorsi completati: 1')
+  expect(errors).toEqual([])
+})
+
+test('guided Black play, family changes and the original short drill remain independent on mobile',async({page})=>{
+  await page.setViewportSize({width:360,height:780})
+  await page.goto(url+'#aperture')
+  await page.getByRole('button',{name:'Nero',exact:true}).click()
+  const journey=OPENING_JOURNEYS.find(j=>j.id==='italian'),board=new Chess();board.move('e4')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+  const input=page.getByRole('textbox',{name:'Mossa in notazione'})
+  for(let i=1;i<journey.moves.length;i+=2){
+    await input.fill(journey.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+    board.move(journey.moves[i]);if(journey.moves[i+1])board.move(journey.moves[i+1])
+  }
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+  await expect(page.locator('.opening-feedback')).toContainText('Percorso completato')
+  await page.getByRole('button',{name:'Allenati',exact:true}).click()
+  const initial=new Chess();initial.move('e4')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',initial.fen())
+  await expect(page.getByRole('progressbar')).toHaveAttribute('max','5')
+  await expect(page.locator('.opening-practice-stats')).toContainText('Ripassi completati: 0')
+  await page.getByRole('button',{name:'Partita guidata',exact:true}).click()
+  await page.getByRole('combobox',{name:'Famiglia',exact:true}).selectOption('french')
+  await page.locator('.opening-result').first().click()
+  await expect(page.locator('.opening-line-heading')).toContainText('variante di avanzata')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',initial.fen())
+  await input.fill('e6');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(page.locator('.opening-feedback')).toContainText('Corretto')
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+  await page.screenshot({path:'agent-output/opening-journey-preview/mobile-coach.png',fullPage:true})
+  await page.getByRole('button',{name:'Trappole',exact:true}).click()
+  await page.locator('.opening-trap-list article').first().getByRole('button',{name:'Apri la trappola'}).click()
+  await page.getByRole('button',{name:'Partita guidata',exact:true}).click()
+  await expect(page.locator('.opening-back-link')).toHaveCount(0)
+  await expect(page.locator('.opening-coach')).toContainText('36 semimosse')
 })
