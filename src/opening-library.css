@@ -36,7 +36,9 @@
 .opening-coach { border: 1px solid #78603c; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; background: #292219; }
 .opening-coach h3 { color: #ead5ad; margin: 1rem 0 .6rem; font-size: 1.05rem; }
 .opening-coach p { font-size: .88rem; line-height: 1.6; color: var(--bone-dim); }
-.opening-coach .opening-coach-advice { color: var(--bone); font-size: 1rem; }
+.opening-coach .opening-coach-question { color: var(--bone); font-size: 1rem; font-weight: 600; border-left: 3px solid var(--brass); padding-left: .8rem; }
+.opening-coach .opening-debrief { color: #ead5ad; border: 1px solid #665536; border-radius: 5px; padding: .7rem; background: #30291d; }
+.opening-plan-preview, .opening-notes > summary { cursor: pointer; color: var(--bone-dim); font-size: .85rem; }
 .opening-journey-stages { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0; padding: 0; }
 .opening-journey-stages li { flex: 1; min-width: 125px; font-size: .72rem; padding: .55rem; border-bottom: 2px solid #57452d; color: var(--bone-dim); }
 .opening-journey-stages li[aria-current="step"] { color: #f6d894; border-color: var(--brass); }

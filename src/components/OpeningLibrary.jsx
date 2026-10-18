@@ -21,6 +21,7 @@ export default function OpeningLibrary(){
   const [selectedId,setSelectedId]=useState(null),[mode,setMode]=useState('lesson'),[trapId,setTrapId]=useState(null)
   const [step,setStep]=useState(0),[side,setSide]=useState('w'),[from,setFrom]=useState(null),[sanInput,setSanInput]=useState('')
   const [feedback,setFeedback]=useState(''),[mistakes,setMistakes]=useState(0),[hints,setHints]=useState(0),[hintVisible,setHintVisible]=useState(false)
+  const [hintLevel,setHintLevel]=useState(0)
   const [lastReply,setLastReply]=useState(null)
   const [storageError,setStorageError]=useState(false)
   const [progress,setProgress]=useState(()=>{try{return validOpeningProgress(JSON.parse(localStorage.getItem(OPENING_PROGRESS_KEY)))}catch{return validOpeningProgress(null)}})
@@ -57,7 +58,7 @@ export default function OpeningLibrary(){
   const shown=filtered.slice(page*30,(page+1)*30)
   const guidedCatalog=filter==='fundamentals'&&!query.trim()
   const variantNote=VARIANT_NOTES.find(([match])=>match.test(selected?.name??''))?.[1]
-  function clearExercise(){setFrom(null);setFeedback('');setSanInput('');setMistakes(0);setHints(0);setHintVisible(false);setLastReply(null)}
+  function clearExercise(){setFrom(null);setFeedback('');setSanInput('');setMistakes(0);setHints(0);setHintVisible(false);setHintLevel(0);setLastReply(null)}
   function select(entry){const lesson=filter==='fundamentals'&&!query.trim();setSelectedId(entry.id);setTrapId(null);setMode(lesson?'lesson':'study');setStep(lesson&&side==='b'?1:0);clearExercise();if(lesson&&side==='b')setLastReply(0)}
   function startPractice(color=side){setSide(color);setMode('train');setStep(initialPracticeIndex(moves,color));clearExercise()}
   function startJourney(color=side){setSide(color);setTrapId(null);setMode('lesson');setStep(initialPracticeIndex(journey.moves,color));clearExercise();if(color==='b')setLastReply(0)}
@@ -68,12 +69,12 @@ export default function OpeningLibrary(){
     if(response.status==='illegal'){setFeedback('Questa mossa non è legale nella posizione. Riprova.');return false}
     if(response.status==='different-line'){setMistakes(n=>n+1);setFeedback(guided?'La mossa è legale. In questa partita seguiamo un altro piano: rileggi il consiglio dell’istruttore e riprova. La tua mossa non viene valutata come un errore scacchistico.':'Mossa legale, ma appartiene a un’altra linea. Prova a ricordare la continuazione scelta.');return false}
     if(!['correct','complete'].includes(response.status))return false
-    setStep(response.index);setHintVisible(false)
+    setStep(response.index);setHintVisible(false);setHintLevel(0)
     if(guided)setLastReply(response.reply?step+1:null)
     if(response.status==='complete'){
       setProgress(p=>recordOpeningCompletion(p,drillId,mistakes===0&&hints===0))
-      setFeedback(guided?'Percorso completato: hai giocato dall’apertura al mediogioco. Ripercorri i cambi centrali e confronta i piani dei due colori.':mistakes===0&&hints===0?'Linea completata senza errori e senza indizi!':'Linea completata. Ripetila per consolidare le mosse.')
-    }else setFeedback(response.reply?`Corretto. L’avversario risponde ${response.reply}.`:'Corretto. Continua.')
+      setFeedback(guided?`Percorso completato. ${coach.debrief}`:mistakes===0&&hints===0?'Linea completata senza errori e senza indizi!':'Linea completata. Ripetila per consolidare le mosse.')
+    }else setFeedback(guided?coach.debrief:response.reply?`Corretto. L’avversario risponde ${response.reply}.`:'Corretto. Continua.')
     return true
   }
   function drop({sourceSquare,targetSquare}){
@@ -91,7 +92,7 @@ export default function OpeningLibrary(){
   }
   const squareStyles={}
   if(from){squareStyles[from]={background:'rgba(201,162,75,.7)'};for(const m of new Chess(fen).moves({square:from,verbose:true}))squareStyles[m.to]={background:'radial-gradient(circle, rgba(40,50,35,.4) 24%, transparent 26%)'}}
-  if(hintVisible&&line.parsed[step]){squareStyles[line.parsed[step].uci.slice(0,2)]={background:'rgba(201,162,75,.8)'};if(guided)squareStyles[line.parsed[step].uci.slice(2,4)]={background:'rgba(201,162,75,.6)'}}
+  if(hintVisible&&(!guided||hintLevel===2)&&line.parsed[step]){squareStyles[line.parsed[step].uci.slice(0,2)]={background:'rgba(201,162,75,.8)'};if(guided)squareStyles[line.parsed[step].uci.slice(2,4)]={background:'rgba(201,162,75,.6)'}}
   const chooseFilter=value=>{setFilter(value);setPage(0);setBranch(null)}
   const canTrain=line.parsed.some(m=>m.color===side)
   const continuationCount=useMemo(()=>catalog&&selected?catalog.filter(e=>e.id!==selected.id&&selected.moves.length<e.moves.length&&selected.moves.every((m,i)=>e.moves[i]===m)).length:0,[catalog,selected])
@@ -121,10 +122,11 @@ export default function OpeningLibrary(){
             <ol className="opening-journey-stages">{JOURNEY_STAGES.map(stage=><li key={stage.id} aria-current={stage.id===coach.stage.id?'step':undefined}>{stage.title}</li>)}</ol>
             <p className="opening-small">{moves.length/2} mosse complete · {moves.length} semimosse · Un percorso didattico della famiglia, con risposte preparate fino al mediogioco.</p>
             <div className="opening-color-choice"><span>Gioca con</span><button aria-pressed={side==='w'} onClick={()=>startJourney('w')}>Bianco</button><button aria-pressed={side==='b'} onClick={()=>startJourney('b')}>Nero</button></div>
-            {lastReply!==null&&<div className="opening-reply"><strong>L’avversario ha giocato {journey.moves[lastReply]}.</strong><p>{journeyCoach(journey,lastReply,side==='w'?'b':'w').reason}</p></div>}
+            {feedback&&<p className="opening-feedback opening-debrief" role="status">{feedback}</p>}
+            {lastReply!==null&&<p className="opening-reply">L’avversario ha giocato <strong>{journey.moves[lastReply]}</strong>.</p>}
             <h3>{complete?'Ora sai come nasce questa posizione':`L’istruttore · Tocca a te, ${side==='w'?'Bianco':'Nero'}`}</h3>
-            {!complete&&<><p>{coach.stage.goal}</p><p className="opening-coach-advice">{coach.advice}</p><p>{coach.reason}</p></>}
-            {coach.stage.id==='opening'&&!complete?<details className="opening-plan-preview"><summary>Dove ci porterà questa apertura</summary><p>{coach.plan}</p></details>:<p><strong>Il tuo piano in questo impianto:</strong> {coach.plan}</p>}
+            {!complete&&<><p className="opening-coach-situation">{coach.situation}</p><p className="opening-coach-question">{coach.question}</p></>}
+            <details className="opening-plan-preview"><summary>Rivedi il piano di questo impianto</summary><p>{coach.plan}</p></details>
             {complete&&<div className="opening-recap"><h3>Rifletti sulla partita</h3><p>Quale cambio ha trasformato il centro? Quale pezzo hai migliorato? Dove cercheresti gioco adesso?</p><p>Confronta il tuo piano con quello avversario nelle note qui sotto, poi prova il percorso con l’altro colore.</p></div>}
           </section>}
           <div className="opening-board" data-fen={fen}><Chessboard options={{id:'opening-study-board',position:fen,boardOrientation:side==='b'?'black':'white',allowDragging:interactive&&!complete,onPieceDrop:drop,onSquareClick:click,squareStyles,animationDurationInMs:120,lightSquareStyle:{backgroundColor:'#EDE6D6'},darkSquareStyle:{backgroundColor:'#7C6A53'}}} /></div>
@@ -136,18 +138,18 @@ export default function OpeningLibrary(){
             <p>{!canTrain?'Questa linea non contiene mosse per il colore scelto. Cambia colore o scegli una continuazione più lunga.':complete?guided?'Partita guidata completata':'Ripasso completato':`Tocca a te · ${side==='w'?'Bianco':'Nero'} · ${Math.floor(step/2)+1}${side==='b'?'…':'.'}`}</p>
             <progress aria-label="Avanzamento esercizio" max={moves.length} value={step}/>
             <form onSubmit={e=>{e.preventDefault();if(sanInput.trim())submit(sanInput.trim())}}><label>Mossa in notazione<input value={sanInput} onChange={e=>setSanInput(e.target.value)} placeholder="es. Nf3" disabled={complete||!canTrain} autoComplete="off" /></label><button disabled={complete||!canTrain||!sanInput.trim()}>Gioca</button></form>
-            <div className="opening-training-tools"><button disabled={complete||!canTrain} onClick={()=>{setHints(n=>n+1);setHintVisible(true)}}>{guided?'Mostra la mossa sulla scacchiera':'Mostra un indizio'}</button><button onClick={()=>guided?startJourney():startPractice()}>Ricomincia</button></div>
-            {hintVisible&&!complete&&<p className="opening-hint">Nella linea scelta: <strong>{line.parsed[step]?.san}</strong>. Il pezzo è evidenziato sulla scacchiera.</p>}
-            <p className="opening-feedback" role="status">{feedback}</p><p className="opening-practice-stats">{guided?`Percorsi completati: ${result?.completed??0}`:`Ripassi completati: ${result?.completed??0} · Senza errori o indizi: ${result?.clean??0}`}</p>
+            <div className="opening-training-tools"><button disabled={complete||!canTrain||guided&&hintLevel===2} onClick={()=>{setHints(n=>n+1);setHintVisible(true);if(guided)setHintLevel(n=>Math.min(2,n+1))}}>{guided?hintLevel===0?'Chiedi un indizio':hintLevel===1?'Mostra la soluzione':'Soluzione mostrata':'Mostra un indizio'}</button><button onClick={()=>guided?startJourney():startPractice()}>Ricomincia</button></div>
+            {hintVisible&&!complete&&<p className="opening-hint">{guided&&hintLevel===1?coach.hint:<>Nella linea scelta: <strong>{line.parsed[step]?.san}</strong>. {guided&&`Da ${coach.from} a ${coach.to}. `}Il pezzo è evidenziato sulla scacchiera.</>}</p>}
+            {!guided&&<p className="opening-feedback" role="status">{feedback}</p>}<p className="opening-practice-stats">{guided?`Percorsi completati: ${result?.completed??0}`:`Ripassi completati: ${result?.completed??0} · Senza errori o indizi: ${result?.clean??0}`}</p>
             <p className="opening-small">Puoi trascinare i pezzi, toccare partenza e arrivo oppure scrivere la mossa. Le risposte avversarie seguono la variante scelta.</p>
           </div>}
-          <section className="opening-notes"><h3>{trap?'L’idea della trappola':'Capire la posizione'}</h3><p>{trap?.idea??guide.intro}</p>
+          <details className="opening-notes" open={!guided}><summary>{trap?'L’idea della trappola':'Capire la posizione e rivedere i piani'}</summary><p>{trap?.idea??guide.intro}</p>
             {trap?<><h3>Come evitarla</h3><p>{trap.defense}</p><p className="opening-small">{trap.outcome==='mate'?'La sequenza termina in matto.':'La sequenza termina con un guadagno materiale.'} Puoi ripassarla con entrambi i colori.</p></>:<>
               {!guided&&variantNote&&<div className="opening-variant-note"><h3>Focus sulla variante</h3><p>{variantNote}</p></div>}
               <p className="opening-small">{guided?`Piani del percorso · ${journey.title}`:`Piani generali della famiglia · ${guide.title}`}</p><div className="opening-plan-grid"><div><h3>Il piano del Bianco</h3>{guided?<p>{journey.whitePlan}</p>:<ul>{guide.white.map(p=><li key={p}>{p}</li>)}</ul>}</div><div><h3>Il piano del Nero</h3>{guided?<p>{journey.blackPlan}</p>:<ul>{guide.black.map(p=><li key={p}>{p}</li>)}</ul>}</div></div>
               <h3>Da tenere d’occhio</h3><p>{guide.warning}</p><p className="opening-small">Ogni ordine di mosse può richiedere adattamenti: i piani della famiglia non sostituiscono il calcolo nella posizione concreta.</p>
             </>}
-          </section>
+          </details>
         </>}
       </section>
     </div>
