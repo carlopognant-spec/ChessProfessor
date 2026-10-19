@@ -23,8 +23,15 @@ come uniche mosse corrette né come partite storiche.
 Le linee di base hanno il corpus narrativo già presente; le varianti combinano
 piani specifici, note scritte per i passaggi chiave e spiegazioni dei cambiamenti
 effettivi sulla scacchiera. Non tutte le mosse delle 243 linee hanno un commento
-scritto individualmente. La Caro-Kann ha 16 percorsi; i dodici nuovi hanno
-inoltre 36 note sui passaggi chiave scritte e legate alle esatte sequenze.
+scritto individualmente. Tutti i 151 nuovi percorsi delle 37 famiglie hanno
+almeno due note strategiche individualmente scritte sui passaggi chiave:
+314 note in totale, comprese le 36 dei dodici nuovi percorsi della Caro-Kann.
+Le note collegano la mossa del giocatore alla risposta avversaria e ai cambiamenti
+del centro. Si leggono dopo la mossa; gli aiuti che indicano il pezzo restano facoltativi.
+Le sequenze revisionate sono congelate in `openingReviewedLines.js` e
+`openingCaroNotes.js`: una modifica alle mosse richiede una nuova revisione dei testi.
+Gli altri passaggi mantengono le spiegazioni derivate dalla posizione e il corpus
+narrativo precedente; i commenti individuali non coprono ancora ogni mossa.
 
 L'[inventario di copertura](OPENING-COVERAGE.md) elenca i 160 rami dichiarati
 nell'espansione e distingue percorsi precedenti, nuovi, fonti e verifiche.
@@ -141,7 +148,7 @@ La cache di download e opzionale; il normale build usa il catalogo versionato
 e non scarica dati. Il catalogo viene caricato soltanto aprendo la biblioteca.
 
 ```sh
-npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js
+npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js tests/opening-strategic-notes.test.js
 npx playwright test --config scripts/qa-opening-browser.config.js
 npm run build -- --config scripts/qa-no-env-build.config.js
 ```

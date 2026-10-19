@@ -6,6 +6,7 @@ import {openingChallenge,openingPawnChanges} from './openingChallenge.js'
 import {openingOpponent} from './openingOpponent.js'
 import openingExpansion from '../data/openingExpansion.js'
 import caroNotes from './openingCaroNotes.js'
+import strategicNotes from './openingStrategicNotes.js'
 
 // Authored teaching continuations, not engine recommendations or game records.
 // Each family has one explicitly named route; it does not stand for every variation.
@@ -261,7 +262,7 @@ export function journeyCoach(journey,index,side){
     if(structure)debrief+=' '+structure
     if(pair===4||pair===18)debrief+=' '+journey.contrast
   }
-  const reviewed=caroNotes[journey.id]
+  const reviewed=caroNotes[journey.id]??strategicNotes[journey.id]
   debrief=(reviewed?.line===journey.moves.join(' ')?reviewed.notes[Math.floor(index/2)*2]:null)
     ??journey.editorialNotes?.[Math.floor(index/2)*2]??variantNotes[journey.id]?.[Math.floor(index/2)*2]??debrief
   const before=board.fen(),move=board.move(san)
@@ -271,6 +272,6 @@ export function journeyCoach(journey,index,side){
   return {stage,plan,situation:authored?.situation??challenge.situation,
     question:opponent?.question??(authored&&!explicit?authored.question:challenge.question),
     opponent,guidedQuestion:authored?.question??challenge.question,debrief,
-    hint:`Concentrati ${piece==='donna'?'sulla donna':piece==='alfiere'?'sull’alfiere':`sul ${piece}`} in ${move.from}.`,
+    hint:`Concentrati ${piece==='donna'?'sulla donna':piece==='torre'?'sulla torre':piece==='alfiere'?'sull’alfiere':`sul ${piece}`} in ${move.from}.`,
     san,from:move.from,to:move.to,before}
 }

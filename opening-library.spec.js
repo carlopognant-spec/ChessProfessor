@@ -3,6 +3,7 @@ import {Chess} from 'chess.js'
 import {OPENING_JOURNEYS,familyJourneys} from './src/lib/openingJourneys.js'
 import {OPENING_LESSONS} from './src/lib/openingLessons.js'
 import practicalCases from './src/data/openingPracticalCases.js'
+import strategicNotes from './src/lib/openingStrategicNotes.js'
 const url='http://127.0.0.1:4176/ChessProfessor/'
 const chooseFamily=async(page,family)=>page.locator(`.opening-family-card[data-family="${family}"]`).click()
 async function begin(page,family='italian',course=family){
@@ -24,6 +25,37 @@ test.beforeEach(async({page})=>{
   await page.route('https://explorer.lichess.org/**',route=>route.fulfill({json:{white:0,black:0,draws:0,moves:[]}}))
   await page.addInitScript(()=>{window.Worker=class{constructor(){throw Error('Opening library must not start an engine')}}})
 })
+
+for(const [id,side,mobile] of [['french:classical','w',false],['bird:sicilian','b',false],['owen:guatemala','w',true]]){
+  test(`reviewed ${id} explanations follow board play for ${side} without revealing the solution`,async({page})=>{
+    const errors=[];page.on('pageerror',error=>errors.push(error.message))
+    if(mobile)await page.setViewportSize({width:360,height:780})
+    const family=id.split(':')[0],route=familyJourneys(family).find(row=>row.id===id)
+    await begin(page,family,id)
+    if(side==='b'){
+      await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()
+      await options(page);await page.locator('.opening-lesson-toolbar details > summary').click()
+    }
+    const input=await notation(page)
+    for(let index=Number(side==='b');index<=24+Number(side==='b');index+=2){
+      const pair=Math.floor(index/2)*2,note=strategicNotes[id].notes[pair]
+      if(note)await expect(page.locator('.opening-debrief')).not.toContainText(note)
+      await input.fill(route.moves[index]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+      if(note){
+        await expect(page.locator('.opening-debrief')).toHaveText(note)
+        const sequence=page.locator('.opening-sequence')
+        if(!await sequence.evaluate(element=>element.open))await sequence.locator('summary').click()
+        await expect(page.locator('.opening-debrief')).toBeVisible()
+        await expect(page.locator('.opening-coach-question')).not.toContainText(note)
+      }
+    }
+    const board=new Chess();route.moves.slice(0,side==='w'?26:27).forEach(san=>board.move(san))
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true)
+    expect(errors).toEqual([])
+    if(mobile)await page.screenshot({path:'agent-output/opening-strategic-preview/mobile.png',fullPage:true,animations:'disabled'})
+  })
+}
 test('catalog search, exact continuations and board navigation work without an engine',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message))
   await page.goto(url+'#aperture')

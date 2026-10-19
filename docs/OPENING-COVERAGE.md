@@ -10,7 +10,9 @@ Ogni nuova linea ha una posizione caratteristica collegata a un record del catal
 
 Si preferiscono continuazioni già documentate, fino a 24 semimosse, quando compatibili con il ramo. Il seguito restante fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità delle mosse. Il browser non avvia il motore. Le ricerche e le posizioni sono registrate nel file di verifica; questo motore non è lo Stockfish 19 del browser.
 
-Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. Le spiegazioni delle altre mosse descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa. La Caro-Kann ha inoltre 36 nuove note sui passaggi chiave, legate alle sequenze complete revisionate: se le mosse cambiano, i test chiedono una nuova revisione dei testi.
+Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. Tutti i 151 nuovi percorsi, distribuiti nelle 37 famiglie, hanno inoltre almeno due note strategiche individualmente scritte: 314 note in totale, di cui 36 nella Caro-Kann. Le note collegano la scelta del giocatore alla risposta avversaria, ai bersagli e alla trasformazione del centro; compaiono dopo aver giocato, per lasciare la soluzione negli indizi facoltativi. Sono legate alle sequenze complete revisionate: se le mosse cambiano, i test e questo report richiedono una nuova revisione dei testi.
+
+Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 243 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
 
 Le verifiche automatiche certificano legalità, provenienza della posizione, continuità, assenza di duplicati nella famiglia e corrispondenza delle mosse del seguito ai risultati registrati. Non certificano da sole la correttezza di ogni spiegazione strategica o la completezza della teoria di ogni apertura.
 
@@ -18,45 +20,45 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 
 ## Conteggi per famiglia
 
-| Famiglia | Preesistenti | Nuovi | Totale | Esercizi | Rami da inserire |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Partita Italiana | 3 | 4 | 7 | 7 | 0 |
-| Partita Spagnola | 3 | 4 | 7 | 7 | 0 |
-| Difesa Siciliana | 4 | 6 | 10 | 10 | 0 |
-| Difesa Francese | 4 | 6 | 10 | 10 | 0 |
-| Difesa Caro-Kann | 4 | 12 | 16 | 16 | 0 |
-| Difesa Scandinava | 2 | 4 | 6 | 6 | 0 |
-| Difesa Pirc e Moderna | 2 | 4 | 6 | 6 | 0 |
-| Difesa Alekhine | 2 | 4 | 6 | 6 | 0 |
-| Difesa Petrov | 2 | 4 | 6 | 6 | 0 |
-| Partita Scozzese | 2 | 3 | 5 | 5 | 0 |
-| Partita Viennese | 2 | 3 | 5 | 5 | 0 |
-| Gambetto di Re | 2 | 4 | 6 | 6 | 0 |
-| Difesa Philidor | 2 | 3 | 5 | 5 | 0 |
-| Gambetto di Donna | 4 | 4 | 8 | 8 | 0 |
-| Sistema di Londra | 2 | 3 | 5 | 5 | 0 |
-| Difesa Est-Indiana | 10 | 4 | 14 | 14 | 0 |
-| Difesa Grünfeld | 2 | 3 | 5 | 5 | 0 |
-| Difesa Nimzo-Indiana | 2 | 3 | 5 | 5 | 0 |
-| Difesa Ovest-Indiana | 2 | 3 | 5 | 5 | 0 |
-| Apertura Catalana | 2 | 3 | 5 | 5 | 0 |
-| Difesa Olandese | 2 | 4 | 6 | 6 | 0 |
-| Difesa Benoni e Benko | 2 | 4 | 6 | 6 | 0 |
-| Gambetto di Budapest | 2 | 3 | 5 | 5 | 0 |
-| Apertura Inglese | 2 | 4 | 6 | 6 | 0 |
-| Apertura Réti | 2 | 4 | 6 | 6 | 0 |
-| Partita dei Quattro Cavalli | 2 | 4 | 6 | 6 | 0 |
-| Apertura Larsen | 2 | 4 | 6 | 6 | 0 |
-| Apertura Bird | 2 | 4 | 6 | 6 | 0 |
-| Attacco Trompowsky | 2 | 4 | 6 | 6 | 0 |
-| Sistemi Colle e Torre | 2 | 4 | 6 | 6 | 0 |
-| Difesa Bogo-Indiana | 2 | 4 | 6 | 6 | 0 |
-| Difesa Vecchia Indiana | 2 | 4 | 6 | 6 | 0 |
-| Difesa Nimzowitsch | 2 | 4 | 6 | 6 | 0 |
-| Difesa Owen | 2 | 4 | 6 | 6 | 0 |
-| Altre aperture di Re | 2 | 4 | 6 | 6 | 0 |
-| Aperture di Donna e sistemi | 2 | 4 | 6 | 6 | 0 |
-| Altre aperture e sistemi | 2 | 4 | 6 | 6 | 0 |
+| Famiglia | Preesistenti | Nuovi | Totale | Esercizi | Note revisionate | Rami da inserire |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Partita Italiana | 3 | 4 | 7 | 7 | 8 | 0 |
+| Partita Spagnola | 3 | 4 | 7 | 7 | 8 | 0 |
+| Difesa Siciliana | 4 | 6 | 10 | 10 | 12 | 0 |
+| Difesa Francese | 4 | 6 | 10 | 10 | 12 | 0 |
+| Difesa Caro-Kann | 4 | 12 | 16 | 16 | 36 | 0 |
+| Difesa Scandinava | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Pirc e Moderna | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Alekhine | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Petrov | 2 | 4 | 6 | 6 | 8 | 0 |
+| Partita Scozzese | 2 | 3 | 5 | 5 | 6 | 0 |
+| Partita Viennese | 2 | 3 | 5 | 5 | 6 | 0 |
+| Gambetto di Re | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Philidor | 2 | 3 | 5 | 5 | 6 | 0 |
+| Gambetto di Donna | 4 | 4 | 8 | 8 | 8 | 0 |
+| Sistema di Londra | 2 | 3 | 5 | 5 | 6 | 0 |
+| Difesa Est-Indiana | 10 | 4 | 14 | 14 | 8 | 0 |
+| Difesa Grünfeld | 2 | 3 | 5 | 5 | 6 | 0 |
+| Difesa Nimzo-Indiana | 2 | 3 | 5 | 5 | 6 | 0 |
+| Difesa Ovest-Indiana | 2 | 3 | 5 | 5 | 6 | 0 |
+| Apertura Catalana | 2 | 3 | 5 | 5 | 6 | 0 |
+| Difesa Olandese | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Benoni e Benko | 2 | 4 | 6 | 6 | 8 | 0 |
+| Gambetto di Budapest | 2 | 3 | 5 | 5 | 6 | 0 |
+| Apertura Inglese | 2 | 4 | 6 | 6 | 8 | 0 |
+| Apertura Réti | 2 | 4 | 6 | 6 | 8 | 0 |
+| Partita dei Quattro Cavalli | 2 | 4 | 6 | 6 | 8 | 0 |
+| Apertura Larsen | 2 | 4 | 6 | 6 | 8 | 0 |
+| Apertura Bird | 2 | 4 | 6 | 6 | 8 | 0 |
+| Attacco Trompowsky | 2 | 4 | 6 | 6 | 8 | 0 |
+| Sistemi Colle e Torre | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Bogo-Indiana | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Vecchia Indiana | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Nimzowitsch | 2 | 4 | 6 | 6 | 8 | 0 |
+| Difesa Owen | 2 | 4 | 6 | 6 | 8 | 0 |
+| Altre aperture di Re | 2 | 4 | 6 | 6 | 8 | 0 |
+| Aperture di Donna e sistemi | 2 | 4 | 6 | 6 | 8 | 0 |
+| Altre aperture e sistemi | 2 | 4 | 6 | 6 | 8 | 0 |
 
 ## Rami dichiarati
 

@@ -4,7 +4,8 @@ const names={p:'pedone',n:'cavallo',b:'alfiere',r:'torre',q:'donna',k:'re'}
 const squares=Array.from({length:64},(_,i)=>String.fromCharCode(97+i%8)+(1+Math.floor(i/8)))
 const central=['d4','e4','d5','e5','c4','f4','c5','f5']
 const colorName=color=>color==='w'?'Bianco':'Nero'
-const noun=piece=>piece==='b'?'l’alfiere':piece==='q'?'la donna':`il ${names[piece]}`
+const feminine=piece=>piece==='q'||piece==='r'
+const noun=piece=>piece==='b'?'l’alfiere':feminine(piece)?`la ${names[piece]}`:`il ${names[piece]}`
 const capitalize=text=>text[0].toUpperCase()+text.slice(1)
 const controlled=(board,from,color)=>squares.filter(s=>board.attackers(s,color).includes(from))
 
@@ -12,6 +13,8 @@ const controlled=(board,from,color)=>squares.filter(s=>board.attackers(s,color).
 // A question names the goal; the moving piece and destination belong to the help.
 export function openingChallenge(before,san){
   const after=new Chess(before.fen()),move=after.move(san),enemy=move.color==='w'?'b':'w'
+  const capture=move.isCapture()||move.isEnPassant()
+  const capturedSquare=capture?(move.isEnPassant()?move.to[0]+move.from[1]:move.to):null
   const previous=controlled(before,move.from,move.color),next=controlled(after,move.to,move.color)
   const targets=after.board().flat().filter(p=>p?.color===enemy&&p.type!=='k'&&next.includes(p.square))
   const fresh=targets.filter(p=>!previous.includes(p.square))
@@ -30,14 +33,14 @@ export function openingChallenge(before,san){
     situation='L’ultima spinta ha creato una possibilità che dura un solo turno.'
     question='Come cambi la struttura prima che questa possibilità scompaia?'
   }else if(move.isCapture()){
-    situation=`C’è un contatto concreto con ${noun(move.captured)} avversari${move.captured==='q'?'a':'o'} in ${move.to}.`
+    situation=`C’è un contatto concreto con ${noun(move.captured)} avversari${feminine(move.captured)?'a':'o'} in ${capturedSquare}.`
     question=move.captured==='p'?'Quale cambio chiarisce la tensione e modifica le linee del centro?':`Come risolvi il confronto in ${move.to}, prima di riprendere il tuo piano?`
   }else if(escapes&&move.piece!=='p'){
     situation='Una minaccia concreta rende necessario riconsiderare il piano.'
     question=gained.length?`Come rispondi conservando presenza su ${gained.slice(0,2).join(' e ')}?`:'Come rispondi alla pressione senza rinunciare all’attività?'
   }else if(fresh.length){
     const target=fresh.sort((a,b)=>({q:9,r:5,b:3,n:3,p:1}[b.type]-{q:9,r:5,b:3,n:3,p:1}[a.type]))[0]
-    situation=`${capitalize(noun(target.type))} avversari${target.type==='q'?'a':'o'} in ${target.square} può essere mess${target.type==='q'?'a':'o'} sotto pressione.`
+    situation=`${capitalize(noun(target.type))} avversari${feminine(target.type)?'a':'o'} in ${target.square} può essere mess${feminine(target.type)?'a':'o'} sotto pressione.`
     question=`Come crei una minaccia su ${target.square} continuando a coordinare il tuo gioco?`
   }else if(pressured){
     situation=`Il punto ${pressured.square} richiede sostegno contro la pressione avversaria.`
@@ -56,7 +59,7 @@ export function openingChallenge(before,san){
   }
   let effect
   if(move.isKingsideCastle()||move.isQueensideCastle())effect=`Il ${colorName(move.color)} arrocca ${move.isKingsideCastle()?'corto':'lungo'}, portando il re in ${move.to} e la torre sulla colonna ${move.isKingsideCastle()?'f':'d'}.`
-  else if(move.isCapture())effect=`${move.san} cambia ${noun(move.captured)} in ${move.to}${move.isEnPassant()?' tramite la presa en passant':''}. Il ${colorName(move.color)} deve ora valutare le linee lasciate da questo cambio.`
+  else if(capture)effect=`${move.san} cattura ${noun(move.captured)} in ${capturedSquare}${move.isEnPassant()?` en passant, raggiungendo ${move.to}`:''}. Il ${colorName(move.color)} deve ora valutare le linee lasciate da questo cambio.`
   else if(escapes)effect=`${move.san} risponde alla pressione su ${move.from}, conservando ${noun(move.piece)} in una nuova posizione.`
   else if(move.piece==='p')effect=`${move.san} cambia la struttura: il pedone controlla ${next.join(' e ')}.`
   else{

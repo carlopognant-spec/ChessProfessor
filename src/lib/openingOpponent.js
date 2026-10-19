@@ -3,7 +3,7 @@ import {Chess} from 'chess.js'
 const center=['d4','e4','d5','e5','c4','f4','c5','f5']
 const squares=Array.from({length:64},(_,i)=>String.fromCharCode(97+i%8)+(1+Math.floor(i/8)))
 const names={p:'pedone',n:'cavallo',b:'alfiere',r:'torre',q:'donna',k:'re'}
-const noun=type=>type==='b'?'l’alfiere':type==='q'?'la donna':`il ${names[type]}`
+const noun=type=>type==='b'?'l’alfiere':type==='q'||type==='r'?`la ${names[type]}`:`il ${names[type]}`
 const capital=text=>text[0].toUpperCase()+text.slice(1)
 const controls=(board,from,color)=>squares.filter(square=>board.attackers(square,color).includes(from))
 const list=items=>items.length<2?items[0]:items.slice(0,-1).join(', ')+' e '+items.at(-1)
