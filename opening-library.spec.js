@@ -1,6 +1,8 @@
 import {test,expect} from '@playwright/test'
 import {Chess} from 'chess.js'
 import {OPENING_JOURNEYS,familyJourneys} from './src/lib/openingJourneys.js'
+import {OPENING_LESSONS} from './src/lib/openingLessons.js'
+import practicalCases from './src/data/openingPracticalCases.js'
 const url='http://127.0.0.1:4176/ChessProfessor/'
 const chooseFamily=async(page,family)=>page.locator(`.opening-family-card[data-family="${family}"]`).click()
 async function begin(page,family='italian',course=family){
@@ -224,7 +226,8 @@ test('all families offer alternatives, and a legal Caro-Kann branch can become t
   await page.getByRole('searchbox',{name:'Cerca un’apertura o una variante'}).fill('karo')
   await expect(page.locator('.opening-family-card')).toHaveCount(1)
   await chooseFamily(page,'caro')
-  await expect(page.locator('.opening-course-card')).toHaveCount(4)
+  await expect(page.locator('.opening-course-card')).toHaveCount(familyJourneys('caro').length)
+  expect(familyJourneys('caro').length).toBeGreaterThanOrEqual(16)
   for(const name of ['Avanzata','Cambio','Attacco Panov'])await expect(page.getByRole('heading',{name,exact:true})).toBeVisible()
   await page.screenshot({path:'agent-output/opening-focus-preview/caro-curriculum.png',fullPage:true,animations:'disabled'})
   await page.getByRole('button',{name:'Inizia dalle basi',exact:true}).click()
@@ -326,8 +329,16 @@ test('the automatic curriculum ranks alternatives and returns to nested Caro-Kan
     await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
   }
   await finish(get('caro'),0)
-  for(const [id,index] of [['caro:exchange',4],['caro:panov',6],['caro:advance',4]]){
-    const course=get(id)
+  const completed=[get('caro')]
+  while(completed.length<courses.length){
+    const label=await page.getByRole('button',{name:/^Continua con /}).textContent()
+    const course=courses.find(item=>'Continua con '+item.title===label)
+    expect(course).toBeTruthy()
+    expect(completed.some(item=>item.id===course.id)).toBe(false)
+    const index=Math.max(...completed.map(previous=>{
+      let shared=0;while(shared<Math.min(previous.moves.length,course.moves.length)&&previous.moves[shared]===course.moves[shared])shared++;return shared
+    }))
+    const id=course.id
     await page.getByRole('button',{name:`Continua con ${course.title}`,exact:true}).click()
     const checkpoint=new Chess();course.moves.slice(0,index).forEach(san=>checkpoint.move(san))
     await expect(board).toHaveAttribute('data-fen',checkpoint.fen())
@@ -342,9 +353,11 @@ test('the automatic curriculum ranks alternatives and returns to nested Caro-Kan
     if(id==='caro:panov')await page.screenshot({path:'agent-output/opening-branches-preview/nested-checkpoint.png',fullPage:true,animations:'disabled'})
     await page.getByRole('button',{name:'Inizia questa variante',exact:true}).click()
     await expect(input).toBeEnabled()
-    await finish(course,index)
+    await finish(course,index%2===0?index:index+1)
+    completed.push(course)
   }
-  await expect(page.locator('.opening-curriculum-complete')).toContainText('tutte le 4 linee')
+  expect(completed.findIndex(course=>course.id==='caro:exchange')).toBeLessThan(completed.findIndex(course=>course.id==='caro:advance'))
+  await expect(page.locator('.opening-curriculum-complete')).toContainText(`tutte le ${courses.length} linee`)
   await expect(page.getByRole('button',{name:/^Continua con /})).toHaveCount(0)
   const sessions=await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)
   for(const course of courses)expect(sessions[`journey:v1:${course.id}:w`].completed).toBe(1)
@@ -363,7 +376,8 @@ test('a Black learner sees the exact checkpoint before the opponent starts an al
   await automatic.uncheck()
   await expect(page.getByRole('button',{name:/^Continua con /})).toHaveCount(0)
   await automatic.check()
-  await page.getByRole('button',{name:'Continua con Avanzata',exact:true}).click()
+  await page.locator('.opening-other-routes > summary').click()
+  await page.locator('.opening-other-routes').getByRole('button',{name:'Avanzata',exact:true}).click()
   const checkpoint=new Chess();checkpoint.loadPgn('1. e4 c6 2. d4 d5')
   await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',checkpoint.fen())
   await page.getByRole('button',{name:'Inizia questa variante',exact:true}).click()
@@ -375,7 +389,7 @@ test('a Black learner sees the exact checkpoint before the opponent starts an al
   await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',checkpoint.fen())
 })
 
-test('the branch chooser switches plans at a live fork and King’s Indian exposes ten routes',async({page})=>{
+test('the branch chooser switches plans at a live fork and King’s Indian exposes its expanded routes',async({page})=>{
   await begin(page,'caro')
   const input=await notation(page)
   for(const san of ['e4','d4']){await input.fill(san);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
@@ -390,6 +404,57 @@ test('the branch chooser switches plans at a live fork and King’s Indian expos
   await page.getByRole('button',{name:'← Percorso e varianti',exact:true}).click()
   await page.getByRole('button',{name:'← Tutte le aperture',exact:true}).click()
   await chooseFamily(page,'kings-indian')
-  await expect(page.locator('.opening-course-card')).toHaveCount(10)
+  await expect(page.locator('.opening-course-card')).toHaveCount(familyJourneys('kings-indian').length)
+  expect(familyJourneys('kings-indian').length).toBeGreaterThanOrEqual(14)
   await expect(page.getByRole('heading',{name:'Attacco di Baionetta',exact:true})).toBeVisible()
+})
+
+test('every family exposes its expansion and the Caro-Kann search opens a sourced new route',async({page})=>{
+  test.setTimeout(120000)
+  await page.goto(url+'#aperture')
+  for(const guide of OPENING_LESSONS){
+    await chooseFamily(page,guide.id)
+    const courses=familyJourneys(guide.id),added=courses.find(course=>course.expansion)
+    expect(courses.length,guide.id).toBeGreaterThanOrEqual(5)
+    await expect(page.locator('.opening-course-card')).toHaveCount(courses.length)
+    await expect(page.locator(`.opening-course-card[data-course="${added.id}"]`)).toBeVisible()
+    await page.getByRole('button',{name:'← Tutte le aperture',exact:true}).click()
+  }
+  await chooseFamily(page,'caro')
+  await page.getByRole('searchbox',{name:'Cerca fra le varianti di questa apertura'}).fill('Karpov')
+  await expect(page.locator('.opening-course-card')).toHaveCount(1)
+  await page.getByRole('button',{name:'Studia Classica: sistema Karpov',exact:true}).click()
+  const input=await notation(page),course=familyJourneys('caro').find(course=>course.id==='caro:karpov')
+  for(const san of course.moves.slice(0,8).filter((_,index)=>index%2===0)){
+    await input.fill(san);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  }
+  await expect(page.getByRole('note',{name:'Ultima mossa dell’avversario'})).toContainText('Nd7')
+  await page.locator('.opening-notes > summary').click()
+  await expect(page.locator('.opening-variant-note')).toContainText(course.expansion.sourceName)
+  await page.setViewportSize({width:360,height:780})
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+  await page.screenshot({path:'agent-output/opening-expansion-preview/caro-mobile.png',fullPage:true,animations:'disabled'})
+})
+
+test('a practical deviation starts on its actual position and accepts board play without an engine',async({page})=>{
+  const item=practicalCases.entries.find(item=>item.courseId==='caro')
+  expect(item).toBeTruthy()
+  await page.goto(url+'#aperture');await chooseFamily(page,'caro')
+  await page.locator('.opening-practical-list > summary').click()
+  await page.getByRole('button',{name:item.title,exact:true}).click()
+  const board=new Chess();item.moves.slice(0,item.startIndex).forEach(san=>board.move(san))
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+  await expect(page.getByRole('progressbar')).toHaveAttribute('max','1')
+  await expect(page.getByRole('progressbar')).toHaveAttribute('value','0')
+  const answer=board.move(item.moves[item.startIndex])
+  await page.locator(`.opening-board [data-square="${answer.from}"]`).click()
+  await page.locator(`.opening-board [data-square="${answer.to}"]`).click()
+  await expect(page.getByRole('heading',{name:'Esercizio completato',exact:true})).toBeVisible()
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+  await expect(page.locator('.opening-recap')).toContainText(item.explanation)
+  await expect(page.getByRole('progressbar')).toHaveAttribute('value','1')
+  await expect(page.getByRole('button',{name:/^Continua con /})).toHaveCount(0)
+  await page.screenshot({path:'agent-output/opening-expansion-preview/practical.png',fullPage:true,animations:'disabled'})
+  await page.getByRole('button',{name:'Torna alla variante',exact:true}).click()
+  await expect(page.locator('.opening-line-heading h2')).toHaveText(OPENING_JOURNEYS.find(course=>course.id==='caro').title)
 })

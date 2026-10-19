@@ -35,7 +35,7 @@ describe('branching opening curriculum',()=>{
     }
   })
   it('keeps the main line first, ranks alternatives by measured frequency and visits nested routes together',()=>{
-    const courses=familyJourneys('caro')
+    const courses=familyJourneys('caro').filter(course=>!course.expansion)
     const statistics={'e4 c6 d4 d5':{status:'ready',counts:{Nc3:50,e5:100,exd5:500}}}
     expect(curriculumOrder(courses,statistics).map(c=>c.id)).toEqual(['caro','caro:exchange','caro:panov','caro:advance'])
     expect(nextCurriculumRoute(courses,['caro'],statistics)).toMatchObject({course:{id:'caro:exchange'},index:4})
@@ -43,7 +43,7 @@ describe('branching opening curriculum',()=>{
     expect(curriculumOrder(courses).map(c=>c.id)).toEqual(['caro','caro:advance','caro:exchange','caro:panov'])
   })
   it('keeps ten King’s Indian systems, including an alternative nested inside the Classical route',()=>{
-    const courses=familyJourneys('kings-indian')
+    const courses=familyJourneys('kings-indian').filter(course=>!course.expansion)
     expect(courses).toHaveLength(10)
     const main=courses[0],bayonet=courses.find(c=>c.id.endsWith(':bayonet'))
     expect(commonPrefix(main.moves,bayonet.moves)).toBe(16)

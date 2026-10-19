@@ -1,5 +1,9 @@
 # Espansione della biblioteca: ricerca e proposta
 
+Questa è la fotografia iniziale della ricerca, precedente all'espansione.
+I conteggi e lo stato di implementazione aggiornati sono in
+[OPENING-COVERAGE.md](OPENING-COVERAGE.md).
+
 Verifica del 19 ottobre 2026. Questo documento descrive la ricerca e il progetto;
 non dichiara implementati nuovi percorsi o importate nuove fonti.
 

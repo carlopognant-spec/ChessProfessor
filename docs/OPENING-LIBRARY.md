@@ -13,17 +13,26 @@ enumerare ogni continuazione teorica possibile. Licenza MIT e attribuzione:
 
 ## Percorsi guidati e bivi
 
-La schermata iniziale offre 92 percorsi in 37 famiglie. L'Est-Indiana ha dieci
+La schermata iniziale offre 243 percorsi in 37 famiglie. L'Est-Indiana ha quattordici
 percorsi: centro chiuso classico, Fianchetto, Quattro Pedoni, Averbakh,
-Makogonov, Petrosian, Gligoric-Taimanov, Cambio, Baionetta e Sämisch.
+Makogonov, Petrosian, Gligoric-Taimanov, Cambio, Baionetta, Sämisch,
+Panno nella Sämisch e nel Fianchetto, Smyslov e sistema semiclassico.
 Questi sono percorsi commentati fino al mediogioco; non sono tutte le voci del
 catalogo trasformate in corsi. Le continuazioni didattiche non sono dichiarate
 come uniche mosse corrette né come partite storiche.
 Le linee di base hanno il corpus narrativo già presente; le varianti combinano
 piani specifici, note scritte per i passaggi chiave e spiegazioni dei cambiamenti
-effettivi sulla scacchiera. Non tutte le mosse delle 92 linee hanno un commento
-scritto individualmente. Gli otto nuovi percorsi di Est-Indiana hanno note
-dedicate alle decisioni che li distinguono e alle trasformazioni centrali.
+effettivi sulla scacchiera. Non tutte le mosse delle 243 linee hanno un commento
+scritto individualmente. La Caro-Kann ha 16 percorsi; i dodici nuovi hanno
+inoltre 36 note sui passaggi chiave scritte e legate alle esatte sequenze.
+
+L'[inventario di copertura](OPENING-COVERAGE.md) elenca i 160 rami dichiarati
+nell'espansione e distingue percorsi precedenti, nuovi, fonti e verifiche.
+Le 151 nuove linee partono da posizioni documentate nel catalogo fissato;
+si preferisce proseguire sulla fonte quando contiene una continuazione utile.
+La parte restante fino alla mossa 16 è un modello didattico costruito offline,
+separato dalla teoria documentata. I piani sono specifici della variante;
+non viene attribuita alle risposte del modello una frequenza misurata.
 
 La progressione segue l'albero degli ordini di mosse dei percorsi della famiglia:
 prima la linea principale del corso, poi le alternative, mantenendo vicine le
@@ -95,6 +104,18 @@ Le sequenze piu rare possono ricevere soltanto un orientamento generale.
 
 ## Esercizi e trappole
 
+Ogni famiglia offre anche una sezione richiudibile di deviazioni da riconoscere.
+Questi esercizi partono da posizioni dei percorsi e aggiungono una scelta legale
+che trascura un bersaglio. L'allievo gioca direttamente la risorsa sulla
+scacchiera, senza dover ripetere l'apertura. Dopo la soluzione vengono
+spiegati il bersaglio e una possibile alternativa alla deviazione.
+
+Sono scenari costruiti e verificati, non partite storiche né un campione degli
+errori più frequenti. Il guadagno materiale viene verificato contro tutte le
+repliche legali immediate. I confronti del motore restano
+stime a budget finito: non certificano una vittoria nell'intera partita.
+Conteggi e copertura per percorso sono nell'inventario.
+
 Ogni linea si puo ripassare con il Bianco o il Nero. Le risposte dell'altro
 colore sono quelle della linea selezionata; non vengono scelte da Stockfish.
 Si puo muovere trascinando, selezionando partenza e arrivo, o scrivendo SAN.
@@ -120,7 +141,7 @@ La cache di download e opzionale; il normale build usa il catalogo versionato
 e non scarica dati. Il catalogo viene caricato soltanto aprendo la biblioteca.
 
 ```sh
-npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js
+npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js
 npx playwright test --config scripts/qa-opening-browser.config.js
 npm run build -- --config scripts/qa-no-env-build.config.js
 ```
@@ -131,3 +152,12 @@ ricaricamento, sottopromozioni, layout mobile e conservazione della partita.
 Controllano anche ritorni ai bivi annidati con entrambi i colori, ordine delle
 alternative, assenza di rete e frecce SVG reali. Non avviano Stockfish;
 le risposte dell'esploratore esterno sono simulate con campioni espliciti.
+
+I seguiti sono già versionati: il build normale e i test non li rigenerano.
+Gli script `build-opening-expansion.mjs`, `build-opening-practical-cases.mjs`
+e `verify-opening-evidence.mjs` operano offline sul solo materiale didattico,
+con Stockfish 16 nativo presente nel repository. Conservano le evidenze nei
+file sotto `docs/data/`; non modificano cache di analisi, benchmark congelati,
+soglie o classificazione Libro. Il lettore UCI associa ogni valutazione alla
+PV della mossa selezionata e richiede conferma quando una ricerca interrotta
+non ha stampato una linea completa per quella scelta.

@@ -4,6 +4,8 @@ import {OPENING_STORIES} from './openingStories.js'
 import {OPENING_VARIANTS} from './openingVariants.js'
 import {openingChallenge,openingPawnChanges} from './openingChallenge.js'
 import {openingOpponent} from './openingOpponent.js'
+import openingExpansion from '../data/openingExpansion.js'
+import caroNotes from './openingCaroNotes.js'
 
 // Authored teaching continuations, not engine recommendations or game records.
 // Each family has one explicitly named route; it does not stand for every variation.
@@ -128,7 +130,7 @@ export const OPENING_JOURNEYS = OPENING_LESSONS.map(guide => {
     contrast:'Le basi e un primo impianto completo fino al mediogioco.'}
 })
 
-export const ALL_OPENING_JOURNEYS=[...OPENING_JOURNEYS,...OPENING_VARIANTS]
+export const ALL_OPENING_JOURNEYS=[...OPENING_JOURNEYS,...OPENING_VARIANTS,...openingExpansion.entries]
 export const familyJourneys=family=>ALL_OPENING_JOURNEYS.filter(j=>j.family===family)
 
 const positionKey=board=>board.fen().split(' ').slice(0,4).join(' ')
@@ -214,13 +216,13 @@ function sharedStory(board,journey,index){
       const position=new Chess()
       for(let i=0;i<base.moves.length;i++){
         const pair=Math.floor(i/2)*2
-        sharedStories.set(`${positionKey(position)}|${base.moves.slice(pair,pair+2).join(' ')}`,OPENING_STORIES[base.id][Math.floor(i/2)])
+        sharedStories.set(`${positionKey(position)}|${base.moves.slice(0,pair+2).join(' ')}`,OPENING_STORIES[base.id][Math.floor(i/2)])
         position.move(base.moves[i])
       }
     }
   }
   const pair=Math.floor(index/2)*2
-  return sharedStories.get(`${positionKey(board)}|${journey.moves.slice(pair,pair+2).join(' ')}`)
+  return sharedStories.get(`${positionKey(board)}|${journey.moves.slice(0,pair+2).join(' ')}`)
 }
 
 export const JOURNEY_STAGES = [
@@ -259,7 +261,9 @@ export function journeyCoach(journey,index,side){
     if(structure)debrief+=' '+structure
     if(pair===4||pair===18)debrief+=' '+journey.contrast
   }
-  debrief=variantNotes[journey.id]?.[Math.floor(index/2)*2]??debrief
+  const reviewed=caroNotes[journey.id]
+  debrief=(reviewed?.line===journey.moves.join(' ')?reviewed.notes[Math.floor(index/2)*2]:null)
+    ??journey.editorialNotes?.[Math.floor(index/2)*2]??variantNotes[journey.id]?.[Math.floor(index/2)*2]??debrief
   const before=board.fen(),move=board.move(san)
   const authored=story&&(move.color==='w'?story.white:story.black)
   const explicit=authored&&(/cavall|alfier|torre|pedon|donna|arrocc|riprend|cattur|spinta/i.test(authored.question)||authored.question.includes(move.from)||authored.question.includes(move.to))
