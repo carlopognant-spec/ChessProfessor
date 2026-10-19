@@ -4,6 +4,7 @@ import {OPENING_JOURNEYS,familyJourneys} from './src/lib/openingJourneys.js'
 import {OPENING_LESSONS} from './src/lib/openingLessons.js'
 import practicalCases from './src/data/openingPracticalCases.js'
 import strategicNotes from './src/lib/openingStrategicNotes.js'
+import fullNotes from './src/lib/openingFullNotes.js'
 const url='http://127.0.0.1:4176/ChessProfessor/'
 const chooseFamily=async(page,family)=>page.locator(`.opening-family-card[data-family="${family}"]`).click()
 async function begin(page,family='italian',course=family){
@@ -25,6 +26,30 @@ test.beforeEach(async({page})=>{
   await page.route('https://explorer.lichess.org/**',route=>route.fulfill({json:{white:0,black:0,draws:0,moves:[]}}))
   await page.addInitScript(()=>{window.Worker=class{constructor(){throw Error('Opening library must not start an engine')}}})
 })
+
+for(const id of ['london:queen-pressure','catalan:check'])for(const side of ['w','b']){
+  test(`complete written ${id} commentary follows board play for ${side}`,async({page})=>{
+    await page.setViewportSize({width:360,height:780})
+    const family=id.split(':')[0],course=familyJourneys(family).find(row=>row.id===id)
+    await begin(page,family,id)
+    if(side==='b'){await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()}
+    const input=await notation(page),note=fullNotes[id].notes[30]
+    await expect(page.locator('.opening-sequence')).toHaveCount(0)
+    await expect(page.locator('.opening-coach')).not.toContainText(note)
+    const board=new Chess();course.moves.slice(0,Number(side==='b')).forEach(san=>board.move(san))
+    for(let index=Number(side==='b');index<course.moves.length;index+=2){
+      await input.fill(course.moves[index]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+      board.move(course.moves[index]);if(course.moves[index+1])board.move(course.moves[index+1])
+      await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    }
+    await expect(page.locator('.opening-debrief')).toContainText(note)
+    const review=page.getByLabel('Spiegazione delle mosse giocate')
+    await expect(review.locator('section')).toHaveCount(side==='w'?2:1)
+    await expect(review.locator('section').last()).toHaveAttribute('data-fen-after',board.fen())
+    await expect(review).toContainText(side==='b'?'La tua mossa · 16…':'Risposta del Nero · 16…')
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true)
+  })
+}
 
 test('a Black learner reviews the actual next White reply and resets the explanation with the lesson',async({page})=>{
   await begin(page,'italian')

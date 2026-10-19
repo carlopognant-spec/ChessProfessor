@@ -22,6 +22,7 @@
   "addedCourses": 188,
   "reviewedCourses": 188,
   "reviewedNotes": 388,
+  "additionalPairNotes": 91,
   "practicalCases": 280,
   "practicalUncovered": [],
   "pending": [],
@@ -35,6 +36,7 @@
       "practicalCases": 11,
       "reviewedCourses": 8,
       "additionalReviewedNotes": 16,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "italian:hungarian",
@@ -135,6 +137,7 @@
       "practicalCases": 14,
       "reviewedCourses": 11,
       "additionalReviewedNotes": 22,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "spanish:marshall",
@@ -268,6 +271,7 @@
       "practicalCases": 19,
       "reviewedCourses": 15,
       "additionalReviewedNotes": 30,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "sicilian:sveshnikov",
@@ -445,6 +449,7 @@
       "practicalCases": 14,
       "reviewedCourses": 10,
       "additionalReviewedNotes": 20,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "french:classical",
@@ -567,6 +572,7 @@
       "practicalCases": 16,
       "reviewedCourses": 12,
       "additionalReviewedNotes": 36,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "caro:karpov",
@@ -711,6 +717,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "scandinavian:qd6",
@@ -767,6 +774,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "pirc:classical",
@@ -823,6 +831,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "alekhine:exchange",
@@ -879,6 +888,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "petrov:cochrane",
@@ -935,6 +945,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "scotch:mieses",
@@ -991,6 +1002,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "vienna:gambit",
@@ -1047,6 +1059,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "kings-gambit:fischer",
@@ -1103,6 +1116,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "philidor:exchange",
@@ -1159,6 +1173,7 @@
       "practicalCases": 17,
       "reviewedCourses": 13,
       "additionalReviewedNotes": 26,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "queens-gambit:tarrasch",
@@ -1314,6 +1329,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 51,
       "branches": [
         {
           "id": "london:early-c5",
@@ -1370,6 +1386,7 @@
       "practicalCases": 14,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "kings-indian:panno",
@@ -1426,6 +1443,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "grunfeld:russian",
@@ -1482,6 +1500,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "nimzo:rubinstein",
@@ -1538,6 +1557,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "queens-indian:petrosian",
@@ -1594,6 +1614,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 40,
       "branches": [
         {
           "id": "catalan:open",
@@ -1650,6 +1671,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "dutch:classical",
@@ -1706,6 +1728,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "benoni:modern",
@@ -1762,6 +1785,7 @@
       "practicalCases": 5,
       "reviewedCourses": 3,
       "additionalReviewedNotes": 6,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "budapest:fajarowicz",
@@ -1818,6 +1842,7 @@
       "practicalCases": 10,
       "reviewedCourses": 8,
       "additionalReviewedNotes": 16,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "english:four-knights",
@@ -1918,6 +1943,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "reti:accepted",
@@ -1974,6 +2000,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "four-knights:rubinstein",
@@ -2030,6 +2057,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "larsen:indian",
@@ -2086,6 +2114,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "bird:symmetrical",
@@ -2142,6 +2171,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "trompowsky:d5",
@@ -2198,6 +2228,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "colle:torre-indian",
@@ -2254,6 +2285,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "bogo:qe7",
@@ -2310,6 +2342,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "old-indian:janowski",
@@ -2366,6 +2399,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "nimzowitsch:e5",
@@ -2422,6 +2456,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "owen:classical",
@@ -2478,6 +2513,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "open-games:danish",
@@ -2534,6 +2570,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "queens-pawn:blackmar-diemer",
@@ -2590,6 +2627,7 @@
       "practicalCases": 6,
       "reviewedCourses": 4,
       "additionalReviewedNotes": 8,
+      "additionalPairNotes": 0,
       "branches": [
         {
           "id": "other:sokolsky",

@@ -33,6 +33,14 @@ Le sequenze revisionate sono congelate in `openingReviewedLines.js` e
 Gli altri passaggi mantengono le spiegazioni derivate dalla posizione e il corpus
 narrativo precedente; i commenti individuali non coprono ancora ogni mossa.
 
+Londra e Catalana hanno inoltre 91 note scritte nei passaggi ancora scoperti:
+tutti e cinque i percorsi di ciascuna famiglia hanno ora una nota per ogni coppia
+di mosse. Le sequenze complete sono fissate in `openingFullReviewedLines.js`;
+le note aggiuntive non sostituiscono quelle sui passaggi chiave già presenti.
+La copertura complessiva è di 1.835 coppie con testo scritto su 4.492,
+con 45 percorsi interamente commentati per coppia. Gli altri percorsi non
+vengono dichiarati interamente revisionati sulla base delle spiegazioni automatiche.
+
 Ogni mossa giocata ha ora un riepilogo distinto da quello della risposta avversaria,
 anche quando l'allievo usa il Nero. La sezione richiudibile «La sequenza appena giocata»
 mostra gli effetti della propria mossa e poi quelli della risposta effettiva,
@@ -166,7 +174,7 @@ La cache di download e opzionale; il normale build usa il catalogo versionato
 e non scarica dati. Il catalogo viene caricato soltanto aprendo la biblioteca.
 
 ```sh
-npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js tests/opening-strategic-notes.test.js tests/opening-scope.test.js tests/opening-teaching-checkpoint.test.js tests/opening-move-review.test.js
+npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js tests/opening-strategic-notes.test.js tests/opening-scope.test.js tests/opening-teaching-checkpoint.test.js tests/opening-move-review.test.js tests/opening-full-notes.test.js
 npx playwright test --config scripts/qa-opening-browser.config.js
 npm run build -- --config scripts/qa-no-env-build.config.js
 ```

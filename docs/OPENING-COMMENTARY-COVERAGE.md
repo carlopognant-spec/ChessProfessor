@@ -2,7 +2,9 @@
 
 I 280 percorsi contengono 8930 semimosse. Ogni semimossa giocata ha una spiegazione dei suoi effetti, distinta dalla risposta realmente eseguita dall’avversario. I testi sono calcolati sulla posizione: non vengono dichiarati commenti strategici individualmente scritti.
 
-I passaggi con una nota scritta sono 1744 su 4492 coppie di mosse; 37 percorsi hanno una nota scritta per ogni coppia. Questi sono utilizzi nel corso: lo stesso testo può essere riusato su prefissi esattamente uguali. Non sono conteggi di testi unici.
+I passaggi con una nota scritta sono 1835 su 4492 coppie di mosse; 45 percorsi hanno una nota scritta per ogni coppia. Questi sono utilizzi nel corso: lo stesso testo può essere riusato su prefissi esattamente uguali. Non sono conteggi di testi unici.
+
+Famiglie interamente commentate per coppia: **Sistema di Londra, Apertura Catalana**. Sono state aggiunte 91 note individuali ai passaggi precedentemente scoperti di queste famiglie. Anche gli altri percorsi conservano le note già presenti e le spiegazioni posizionali di ogni mossa.
 
 Le note strategiche scritte restano un approfondimento. Il riepilogo del turno descrive prima la mossa dell’allievo e poi l’effettiva risposta avversaria: giocando con il Nero, questa è la successiva mossa del Bianco. Le spiegazioni non compaiono prima di aver giocato.
 
@@ -24,12 +26,12 @@ Le frecce includono gli attacchi scoperti con origine nel pezzo che controlla da
 | Gambetto di Re | 6 | 191 | 35/96 | 1 |
 | Difesa Philidor | 5 | 159 | 33/80 | 1 |
 | Gambetto di Donna | 17 | 545 | 82/274 | 1 |
-| Sistema di Londra | 5 | 159 | 29/80 | 1 |
+| Sistema di Londra | 5 | 159 | 80/80 | 5 |
 | Difesa Est-Indiana | 14 | 439 | 126/224 | 1 |
 | Difesa Grünfeld | 5 | 161 | 37/81 | 1 |
 | Difesa Nimzo-Indiana | 5 | 161 | 38/81 | 1 |
 | Difesa Ovest-Indiana | 5 | 159 | 37/80 | 1 |
-| Apertura Catalana | 5 | 159 | 40/80 | 1 |
+| Apertura Catalana | 5 | 159 | 80/80 | 5 |
 | Difesa Olandese | 6 | 191 | 39/96 | 1 |
 | Difesa Benoni e Benko | 6 | 191 | 39/96 | 1 |
 | Gambetto di Budapest | 5 | 159 | 40/80 | 1 |

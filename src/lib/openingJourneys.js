@@ -7,6 +7,7 @@ import {openingOpponent} from './openingOpponent.js'
 import openingExpansion from '../data/openingExpansion.js'
 import caroNotes from './openingCaroNotes.js'
 import strategicNotes from './openingStrategicNotes.js'
+import fullNotes from './openingFullNotes.js'
 
 // Authored teaching continuations, not engine recommendations or game records.
 // Each family has one explicitly named route; it does not stand for every variation.
@@ -229,7 +230,8 @@ export function openingWrittenContext(journey,index){
   const story=OPENING_STORIES[journey.id]?.[pair/2]??(journey.variant?sharedStory(journey,index):null)
   const reviewed=caroNotes[journey.id]??strategicNotes[journey.id]
   const debrief=(reviewed?.line===journey.moves.join(' ')?reviewed.notes[pair]:null)
-    ??journey.editorialNotes?.[pair]??variantNotes[journey.id]?.[pair]??story?.debrief
+    ??journey.editorialNotes?.[pair]??variantNotes[journey.id]?.[pair]
+    ??(fullNotes[journey.id]?.line===journey.moves.join(' ')?fullNotes[journey.id].notes[pair]:null)??story?.debrief
   return {story,debrief,debriefOrigin:debrief?'written':'position-effects'}
 }
 

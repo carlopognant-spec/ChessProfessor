@@ -6,9 +6,10 @@ import expansion from '../src/data/openingExpansion.js'
 import practical from '../src/data/openingPracticalCases.js'
 import caroNotes from '../src/lib/openingCaroNotes.js'
 import strategicNotes from '../src/lib/openingStrategicNotes.js'
+import fullNotes from '../src/lib/openingFullNotes.js'
 
 const reviewedNotes={...strategicNotes,...caroNotes}
-for(const [id,row] of Object.entries(reviewedNotes)){
+for(const [id,row] of [...Object.entries(reviewedNotes),...Object.entries(fullNotes)]){
   const course=ALL_OPENING_JOURNEYS.find(course=>course.id===id)
   if(!course||row.line!==course.moves.join(' '))throw Error(`Review required before reporting opening notes: ${id}`)
 }
@@ -20,6 +21,7 @@ const families=OPENING_LESSONS.map(guide=>{
     added:courses.filter(course=>course.expansion).length,total:courses.length,practicalCases:practical.entries.filter(item=>item.family===guide.id).length,
     reviewedCourses:courses.filter(course=>reviewedNotes[course.id]).length,
     additionalReviewedNotes:courses.reduce((sum,course)=>sum+Object.keys(reviewedNotes[course.id]?.notes??{}).length,0),
+    additionalPairNotes:courses.reduce((sum,course)=>sum+Object.keys(fullNotes[course.id]?.notes??{}).length,0),
     branches:planned.map(row=>{
       const course=courses.find(course=>course.id===row.id),proof=evidence.evidence.find(item=>item.id===row.id)
       return {id:row.id,title:row.title,status:!course?'pending':course.expansion&&proof?'source-legal-model-checked':'legacy-playable',
@@ -34,6 +36,7 @@ const report={schema:1,scope:`37 families; explicit ${OPENING_EXPANSION_PLAN.len
   source:expansion.source,engine:expansion.policy,totalCourses:ALL_OPENING_JOURNEYS.length,
   addedCourses:expansion.entries.length,reviewedCourses:Object.keys(reviewedNotes).length,
   reviewedNotes:Object.values(reviewedNotes).reduce((sum,row)=>sum+Object.keys(row.notes).length,0),
+  additionalPairNotes:Object.values(fullNotes).reduce((sum,row)=>sum+Object.keys(row.notes).length,0),
   practicalCases:practical.entries.length,practicalUncovered:practical.uncovered,pending,families}
 await fs.writeFile('docs/data/opening-coverage.json',JSON.stringify(report,null,2)+'\n')
 const lines=['# Inventario e avanzamento delle aperture','',
@@ -45,13 +48,14 @@ const lines=['# Inventario e avanzamento delle aperture','',
   '', `Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. Tutti i ${report.reviewedCourses} nuovi percorsi, distribuiti nelle 37 famiglie, hanno inoltre almeno due note strategiche individualmente scritte: ${report.reviewedNotes} note in totale, di cui 36 nella Caro-Kann. Le note collegano la scelta del giocatore alla risposta avversaria, ai bersagli e alla trasformazione del centro; compaiono dopo aver giocato, per lasciare la soluzione negli indizi facoltativi. Sono legate alle sequenze complete revisionate: se le mosse cambiano, i test e questo report richiedono una nuova revisione dei testi.`,
   '', `Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle ${report.totalCourses} linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.`,
   '', 'Il riepilogo del turno distingue la propria mossa dalla risposta realmente giocata dall’avversario. Ogni semimossa dispone di una spiegazione posizionale; le note strategiche individuali restano un conteggio distinto. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md) mostra i passaggi ancora da scrivere per ogni famiglia.',
+  '', `Un ulteriore blocco di ${report.additionalPairNotes} note completa i passaggi scoperti di Londra e Catalana: tutti e cinque i percorsi di ciascuna famiglia hanno ora una nota scritta per ogni coppia. Queste note aggiuntive sono distinte dalle ${report.reviewedNotes} note sui passaggi chiave già conteggiate. Le sequenze sono fissate in openingFullReviewedLines.js; il controllo della linea completa impedisce il riuso dopo una modifica delle mosse.`,
   '', 'Le verifiche automatiche certificano legalità, provenienza della posizione, continuità, assenza di duplicati nella famiglia e corrispondenza delle mosse del seguito ai risultati registrati. Non certificano da sole la correttezza di ogni spiegazione strategica o la completezza della teoria di ogni apertura.',
   '', `Esercizi sulle deviazioni: **${practical.entries.length}**. Percorsi senza un esercizio costruito validato: **${practical.uncovered.length}**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.`,
   '', '## Perché i conteggi sono diversi','',
   'I conteggi misurano i percorsi insegnati nel sito, non il numero totale di varianti teoriche di un’apertura. Caro-Kann ed Est-Indiana hanno ricevuto approfondimenti dedicati prima dell’ampliamento generale: il loro numero inizialmente maggiore rifletteva la sequenza del lavoro. Gli ampliamenti successivi cercano decisioni mancanti, strutture e risposte avversarie distinte; non impongono lo stesso numero a tutte le famiglie e non usano la quantità di alias ECO come misura di completezza.',
   '', 'La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggiunti nel secondo ampliamento e le linee già coperte che non sono state ricontate con un altro nome.',
-  '', '## Conteggi per famiglia','', '| Famiglia | Preesistenti | Nuovi | Totale | Esercizi | Note revisionate | Rami da inserire |','| --- | ---: | ---: | ---: | ---: | ---: | ---: |',
-  ...families.map(family=>`| ${family.title} | ${family.legacy} | ${family.added} | ${family.total} | ${family.practicalCases} | ${family.additionalReviewedNotes} | ${family.branches.filter(branch=>branch.status==='pending').length} |`),
+  '', '## Conteggi per famiglia','', '| Famiglia | Preesistenti | Nuovi | Totale | Esercizi | Note sui passaggi chiave | Ulteriori note per coppia | Rami da inserire |','| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
+  ...families.map(family=>`| ${family.title} | ${family.legacy} | ${family.added} | ${family.total} | ${family.practicalCases} | ${family.additionalReviewedNotes} | ${family.additionalPairNotes} | ${family.branches.filter(branch=>branch.status==='pending').length} |`),
   '', '## Rami dichiarati','',
   ...families.flatMap(family=>[`### ${family.title}`,'',...family.branches.map(branch=>`- ${branch.status==='pending'?'[ ]':'[x]'} ${branch.title} — ${branch.status==='legacy-playable'?'percorso preesistente':branch.status==='pending'?'da inserire':`fonte ${branch.sourceId}; ${branch.documentedPlies} semimosse documentate, ${branch.engineCheckedPlies} semimosse del seguito controllate`}${branch.practicalCase?'; esercizio disponibile':''}`),'']),
   '## Evidenze','', '- [Inventario leggibile dalla macchina](data/opening-coverage.json)', '- [Posizioni e risultati del controllo offline](data/opening-expansion-verification.json)',

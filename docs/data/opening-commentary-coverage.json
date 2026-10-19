@@ -5,8 +5,13 @@
   "families": 37,
   "explainedHalfMoves": 8930,
   "pairs": 4492,
-  "writtenPairs": 1744,
-  "fullyWrittenCourses": 37,
+  "writtenPairs": 1835,
+  "fullyWrittenCourses": 45,
+  "additionalPairNotes": 91,
+  "fullyWrittenFamilies": [
+    "london",
+    "catalan"
+  ],
   "policy": "Single-move explanations are derived from the actual board. Written pair notes are counted separately; shared exact prefixes count as uses, not unique authored texts.",
   "familyRows": [
     {
@@ -2746,8 +2751,8 @@
       "courses": 5,
       "halfMoves": 159,
       "pairs": 80,
-      "writtenPairs": 29,
-      "fullyWrittenCourses": 1,
+      "writtenPairs": 80,
+      "fullyWrittenCourses": 5,
       "rows": [
         {
           "id": "london",
@@ -2761,88 +2766,33 @@
           "id": "london:indian",
           "halfMoves": 31,
           "pairs": 16,
-          "writtenPairs": 1,
-          "positionOnly": [
-            2,
-            4,
-            6,
-            8,
-            10,
-            12,
-            14,
-            16,
-            18,
-            20,
-            22,
-            24,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "london:early-c5",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 4,
-          "positionOnly": [
-            4,
-            6,
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "london:jobava",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 4,
-          "positionOnly": [
-            2,
-            6,
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "london:queen-pressure",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 4,
-          "positionOnly": [
-            2,
-            4,
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         }
       ]
     },
@@ -3381,8 +3331,8 @@
       "courses": 5,
       "halfMoves": 159,
       "pairs": 80,
-      "writtenPairs": 40,
-      "fullyWrittenCourses": 1,
+      "writtenPairs": 80,
+      "fullyWrittenCourses": 5,
       "rows": [
         {
           "id": "catalan",
@@ -3396,77 +3346,33 @@
           "id": "catalan:open",
           "halfMoves": 31,
           "pairs": 16,
-          "writtenPairs": 3,
-          "positionOnly": [
-            6,
-            8,
-            10,
-            12,
-            14,
-            16,
-            18,
-            20,
-            22,
-            24,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "catalan:closed",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 10,
-          "positionOnly": [
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "catalan:check",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 5,
-          "positionOnly": [
-            6,
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "catalan:early-c5",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         }
       ]
     },
