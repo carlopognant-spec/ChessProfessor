@@ -26,7 +26,11 @@ test.beforeEach(async({page})=>{
   await page.addInitScript(()=>{window.Worker=class{constructor(){throw Error('Opening library must not start an engine')}}})
 })
 
-for(const [id,side,mobile] of [['french:classical','w',false],['bird:sicilian','b',false],['owen:guatemala','w',true]]){
+for(const [id,side,mobile] of [
+  ['french:classical','w',false],['bird:sicilian','b',false],['owen:guatemala','w',true],
+  ['sicilian:morra','w',false],['queens-gambit:lasker','b',false],['spanish:breyer','w',false],
+  ['french:monte-carlo','w',false],['italian:fegatello','w',false],['english:neo-catalan','w',true],
+]){
   test(`reviewed ${id} explanations follow board play for ${side} without revealing the solution`,async({page})=>{
     const errors=[];page.on('pageerror',error=>errors.push(error.message))
     if(mobile)await page.setViewportSize({width:360,height:780})
@@ -53,7 +57,7 @@ for(const [id,side,mobile] of [['french:classical','w',false],['bird:sicilian','
     await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true)
     expect(errors).toEqual([])
-    if(mobile)await page.screenshot({path:'agent-output/opening-strategic-preview/mobile.png',fullPage:true,animations:'disabled'})
+    if(mobile)await page.screenshot({path:`agent-output/opening-strategic-preview/${family}-mobile.png`,fullPage:true,animations:'disabled'})
   })
 }
 test('catalog search, exact continuations and board navigation work without an engine',async({page})=>{

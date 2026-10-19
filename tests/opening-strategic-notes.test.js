@@ -17,8 +17,8 @@ const boardAt=(id,plies)=>{
 describe('individually reviewed strategic explanations',()=>{
   it('covers the new routes of all 37 families with additional exact-line notes',()=>{
     expect(Object.keys(reviewed).sort()).toEqual(expansion.entries.map(row=>row.id).sort())
-    expect(Object.keys(strategicNotes)).toHaveLength(139)
-    expect(Object.values(reviewed).reduce((n,row)=>n+Object.keys(row.notes).length,0)).toBe(314)
+    expect(Object.keys(strategicNotes)).toHaveLength(176)
+    expect(Object.values(reviewed).reduce((n,row)=>n+Object.keys(row.notes).length,0)).toBe(388)
     for(const family of OPENING_LESSONS){
       const routes=expansion.entries.filter(row=>row.family===family.id)
       expect(routes.length,family.id).toBeGreaterThan(0)

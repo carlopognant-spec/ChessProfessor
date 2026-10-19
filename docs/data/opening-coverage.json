@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "37 families; explicit 160-branch expansion inventory, not all possible theoretical moves",
+  "scope": "37 families; explicit 197-branch expansion inventory, not all possible theoretical moves",
   "source": {
     "url": "https://github.com/JeffML/eco.json",
     "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
@@ -18,11 +18,11 @@
     "sourceExtension": "prefer-documented-continuation-up-to-24-plies",
     "repetitionPolicy": "exclude-immediate-draw-when-alternatives-exist"
   },
-  "totalCourses": 243,
-  "addedCourses": 151,
-  "reviewedCourses": 151,
-  "reviewedNotes": 314,
-  "practicalCases": 243,
+  "totalCourses": 280,
+  "addedCourses": 188,
+  "reviewedCourses": 188,
+  "reviewedNotes": 388,
+  "practicalCases": 280,
   "practicalUncovered": [],
   "pending": [],
   "families": [
@@ -30,11 +30,11 @@
       "id": "italian",
       "title": "Partita Italiana",
       "legacy": 3,
-      "added": 4,
-      "total": 7,
-      "practicalCases": 7,
-      "reviewedCourses": 4,
-      "additionalReviewedNotes": 8,
+      "added": 8,
+      "total": 11,
+      "practicalCases": 11,
+      "reviewedCourses": 8,
+      "additionalReviewedNotes": 16,
       "branches": [
         {
           "id": "italian:hungarian",
@@ -79,6 +79,50 @@
           "engineCheckedPlies": 9,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:giuoco-center"
+        },
+        {
+          "id": "italian:evans-declined",
+          "title": "Gambetto Evans Rifiutato",
+          "status": "source-legal-model-checked",
+          "sourceId": "60382f6d917dcc53",
+          "sourceName": "Italian Game: Evans Gambit Declined, Pavlov Variation",
+          "documentedPlies": 23,
+          "engineCheckedPlies": 9,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:italian:evans-declined"
+        },
+        {
+          "id": "italian:traxler",
+          "title": "Due Cavalli: contrattacco Traxler",
+          "status": "source-legal-model-checked",
+          "sourceId": "4bfdd92f563a5874",
+          "sourceName": "Two Knights Defence, Traxler Counterattack",
+          "documentedPlies": 21,
+          "engineCheckedPlies": 11,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:italian:traxler"
+        },
+        {
+          "id": "italian:ulvestad",
+          "title": "Due Cavalli: variante Ulvestad",
+          "status": "source-legal-model-checked",
+          "sourceId": "5bcf4cd5e35c8853",
+          "sourceName": "Two Knights Defense, Ulvestad Variation",
+          "documentedPlies": 14,
+          "engineCheckedPlies": 18,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:italian:ulvestad"
+        },
+        {
+          "id": "italian:fegatello",
+          "title": "Due Cavalli: attacco Fegatello",
+          "status": "source-legal-model-checked",
+          "sourceId": "f0da3612cfc06321",
+          "sourceName": "Italian Game: Two Knights Defense, Fegatello Attack, Leonhardt Variation",
+          "documentedPlies": 22,
+          "engineCheckedPlies": 10,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:italian:fegatello"
         }
       ]
     },
@@ -86,11 +130,11 @@
       "id": "spanish",
       "title": "Partita Spagnola",
       "legacy": 3,
-      "added": 4,
-      "total": 7,
-      "practicalCases": 7,
-      "reviewedCourses": 4,
-      "additionalReviewedNotes": 8,
+      "added": 11,
+      "total": 14,
+      "practicalCases": 14,
+      "reviewedCourses": 11,
+      "additionalReviewedNotes": 22,
       "branches": [
         {
           "id": "spanish:marshall",
@@ -135,6 +179,83 @@
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:steinitz"
+        },
+        {
+          "id": "spanish:breyer",
+          "title": "Chiusa: sistema Breyer",
+          "status": "source-legal-model-checked",
+          "sourceId": "cfd005a363b278db",
+          "sourceName": "Spanish: Closed, Breyer, Main Line",
+          "documentedPlies": 24,
+          "engineCheckedPlies": 8,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:spanish:breyer"
+        },
+        {
+          "id": "spanish:zaitsev",
+          "title": "Chiusa: sistema Zaitsev",
+          "status": "source-legal-model-checked",
+          "sourceId": "158084458dee739b",
+          "sourceName": "Spanish: Closed, Zaitsev, 11.Nbd2 Bf8 12.d5 Nb8",
+          "documentedPlies": 24,
+          "engineCheckedPlies": 8,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:spanish:zaitsev"
+        },
+        {
+          "id": "spanish:chigorin",
+          "title": "Chiusa: sistema Chigorin",
+          "status": "source-legal-model-checked",
+          "sourceId": "738af975f669ca03",
+          "sourceName": "Spanish: Closed, Chigorin, Keres, 11.Nbd2 cxd4",
+          "documentedPlies": 24,
+          "engineCheckedPlies": 8,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:spanish:chigorin"
+        },
+        {
+          "id": "spanish:archangel",
+          "title": "Difesa Arcangelo",
+          "status": "source-legal-model-checked",
+          "sourceId": "a753cd482fd02b56",
+          "sourceName": "Spanish: Archangelsk, Main Line, 10.a4",
+          "documentedPlies": 19,
+          "engineCheckedPlies": 13,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:spanish:archangel"
+        },
+        {
+          "id": "spanish:anti-marshall",
+          "title": "Anti-Marshall con a4",
+          "status": "source-legal-model-checked",
+          "sourceId": "42c5326955598b61",
+          "sourceName": "Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6 10.c3",
+          "documentedPlies": 19,
+          "engineCheckedPlies": 13,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:spanish:anti-marshall"
+        },
+        {
+          "id": "spanish:classical-bc5",
+          "title": "Difesa Classica con Ac5",
+          "status": "source-legal-model-checked",
+          "sourceId": "30447d88b0e97ec0",
+          "sourceName": "Benelux Variation, Ruy Lopez",
+          "documentedPlies": 12,
+          "engineCheckedPlies": 20,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:spanish:classical-bc5"
+        },
+        {
+          "id": "spanish:anti-berlin",
+          "title": "Anti-Berlinese con d3",
+          "status": "source-legal-model-checked",
+          "sourceId": "9e782e17ca0b9b71",
+          "sourceName": "Ruy Lopez: Berlin Defense, Kaufmann Variation",
+          "documentedPlies": 9,
+          "engineCheckedPlies": 23,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:spanish:anti-berlin"
         }
       ]
     },
@@ -142,11 +263,11 @@
       "id": "sicilian",
       "title": "Difesa Siciliana",
       "legacy": 4,
-      "added": 6,
-      "total": 10,
-      "practicalCases": 10,
-      "reviewedCourses": 6,
-      "additionalReviewedNotes": 12,
+      "added": 15,
+      "total": 19,
+      "practicalCases": 19,
+      "reviewedCourses": 15,
+      "additionalReviewedNotes": 30,
       "branches": [
         {
           "id": "sicilian:sveshnikov",
@@ -213,6 +334,105 @@
           "engineCheckedPlies": 12,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:closed"
+        },
+        {
+          "id": "sicilian:kalashnikov",
+          "title": "Kalashnikov",
+          "status": "source-legal-model-checked",
+          "sourceId": "aa61eeab3c03aae8",
+          "sourceName": "Sicilian: Loewenthal, Kalashnikov, Main Line, 9.Be2",
+          "documentedPlies": 17,
+          "engineCheckedPlies": 15,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:kalashnikov"
+        },
+        {
+          "id": "sicilian:richter-rauzer",
+          "title": "Classica: attacco Richter-Rauzer",
+          "status": "source-legal-model-checked",
+          "sourceId": "51cda5086337dacf",
+          "sourceName": "Sicilian: Richter-Rauzer, 7...Be7, 9.f4 Nxd4 10.Qxd4 Qa5 11.Bc4 Bd7 12.e5",
+          "documentedPlies": 23,
+          "engineCheckedPlies": 9,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:richter-rauzer"
+        },
+        {
+          "id": "sicilian:sozin",
+          "title": "Classica: attacco Sozin",
+          "status": "source-legal-model-checked",
+          "sourceId": "e7fb08bc9a535843",
+          "sourceName": "Sicilian Defense: Sozin Attack, Main Line, Sherbakov Variation",
+          "documentedPlies": 20,
+          "engineCheckedPlies": 12,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:sozin"
+        },
+        {
+          "id": "sicilian:morra",
+          "title": "Gambetto Smith-Morra Accettato",
+          "status": "source-legal-model-checked",
+          "sourceId": "433ce895a1903a25",
+          "sourceName": "Sicilian: Smith-Morra, 5.Nf3 d6 6.Bc4 e6 7.O-O Nf6 8.Qe2 Be7",
+          "documentedPlies": 16,
+          "engineCheckedPlies": 16,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:morra"
+        },
+        {
+          "id": "sicilian:grand-prix",
+          "title": "Attacco Grand Prix",
+          "status": "source-legal-model-checked",
+          "sourceId": "aaaf6d7c0eac71ed",
+          "sourceName": "Sicilian Defense: Grand Prix Attack, Schofman Variation",
+          "documentedPlies": 11,
+          "engineCheckedPlies": 21,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:grand-prix"
+        },
+        {
+          "id": "sicilian:moscow",
+          "title": "Variante di Mosca",
+          "status": "source-legal-model-checked",
+          "sourceId": "64c852f5774f3a65",
+          "sourceName": "Sicilian Defense: Moscow Variation, Haag Gambit",
+          "documentedPlies": 13,
+          "engineCheckedPlies": 19,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:moscow"
+        },
+        {
+          "id": "sicilian:four-knights",
+          "title": "Siciliana dei Quattro Cavalli",
+          "status": "source-legal-model-checked",
+          "sourceId": "36c15ba89add8145",
+          "sourceName": "Sicilian Defense, Four Knights Variation",
+          "documentedPlies": 12,
+          "engineCheckedPlies": 20,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:four-knights"
+        },
+        {
+          "id": "sicilian:okelly",
+          "title": "Variante O’Kelly",
+          "status": "source-legal-model-checked",
+          "sourceId": "2dce191bd2481628",
+          "sourceName": "Sicilian Defense: O'Kelly Variation, Normal System, Taimanov Line",
+          "documentedPlies": 8,
+          "engineCheckedPlies": 24,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:okelly"
+        },
+        {
+          "id": "sicilian:keres",
+          "title": "Scheveningen: attacco Keres",
+          "status": "source-legal-model-checked",
+          "sourceId": "429ab453a210df60",
+          "sourceName": "Sicilian Defense: Scheveningen Variation, Keres Attack",
+          "documentedPlies": 11,
+          "engineCheckedPlies": 21,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:sicilian:keres"
         }
       ]
     },
@@ -220,11 +440,11 @@
       "id": "french",
       "title": "Difesa Francese",
       "legacy": 4,
-      "added": 6,
-      "total": 10,
-      "practicalCases": 10,
-      "reviewedCourses": 6,
-      "additionalReviewedNotes": 12,
+      "added": 10,
+      "total": 14,
+      "practicalCases": 14,
+      "reviewedCourses": 10,
+      "additionalReviewedNotes": 20,
       "branches": [
         {
           "id": "french:classical",
@@ -291,6 +511,50 @@
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:winawer-poisoned"
+        },
+        {
+          "id": "french:burn",
+          "title": "Classica: variante Burn",
+          "status": "source-legal-model-checked",
+          "sourceId": "e25186ba94fdd82a",
+          "sourceName": "French: Burn, 6.Bxf6 gxf6 7.Nf3 b6 8.Bc4",
+          "documentedPlies": 15,
+          "engineCheckedPlies": 17,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:french:burn"
+        },
+        {
+          "id": "french:monte-carlo",
+          "title": "Cambio: sistema Monte Carlo",
+          "status": "source-legal-model-checked",
+          "sourceId": "49d41f66f0817b9b",
+          "sourceName": "French: Exchange, 4.c4 Nf6 5.Nc3 Bb4",
+          "documentedPlies": 11,
+          "engineCheckedPlies": 21,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:french:monte-carlo"
+        },
+        {
+          "id": "french:winawer-a3",
+          "title": "Winawer: sfida immediata con a3",
+          "status": "source-legal-model-checked",
+          "sourceId": "318df04944d6269f",
+          "sourceName": "French: Winawer, Winkelmann-Reimer Gambit Accepted",
+          "documentedPlies": 12,
+          "engineCheckedPlies": 20,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:french:winawer-a3"
+        },
+        {
+          "id": "french:milner-barry",
+          "title": "Avanzata: gambetto Milner-Barry",
+          "status": "source-legal-model-checked",
+          "sourceId": "11eb7a6aa6ba189d",
+          "sourceName": "French Defense: Advance Variation, Milner-Barry Gambit, Sørensen Variation",
+          "documentedPlies": 17,
+          "engineCheckedPlies": 15,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:french:milner-barry"
         }
       ]
     },
@@ -890,11 +1154,11 @@
       "id": "queens-gambit",
       "title": "Gambetto di Donna",
       "legacy": 4,
-      "added": 4,
-      "total": 8,
-      "practicalCases": 8,
-      "reviewedCourses": 4,
-      "additionalReviewedNotes": 8,
+      "added": 13,
+      "total": 17,
+      "practicalCases": 17,
+      "reviewedCourses": 13,
+      "additionalReviewedNotes": 26,
       "branches": [
         {
           "id": "queens-gambit:tarrasch",
@@ -939,6 +1203,105 @@
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:slav-chebanenko"
+        },
+        {
+          "id": "queens-gambit:anti-meran",
+          "title": "Semislava: Anti-Merano con Dc2",
+          "status": "source-legal-model-checked",
+          "sourceId": "6eb5f80f386a1dbc",
+          "sourceName": "Semi-Slav Defense: Stoltz Variation, Center Variation, Mikhalchishin Line",
+          "documentedPlies": 19,
+          "engineCheckedPlies": 13,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:anti-meran"
+        },
+        {
+          "id": "queens-gambit:botvinnik",
+          "title": "Semislava: sistema Botvinnik",
+          "status": "source-legal-model-checked",
+          "sourceId": "995753084e5f4c07",
+          "sourceName": "Semi-Slav Defense: Botvinnik Variation, Lilienthal Variation",
+          "documentedPlies": 21,
+          "engineCheckedPlies": 11,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:botvinnik"
+        },
+        {
+          "id": "queens-gambit:moscow",
+          "title": "Semislava: variante di Mosca",
+          "status": "source-legal-model-checked",
+          "sourceId": "427561ac79357e94",
+          "sourceName": "Queen's Gambit Declined: Hastings Variation",
+          "documentedPlies": 12,
+          "engineCheckedPlies": 19,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:moscow"
+        },
+        {
+          "id": "queens-gambit:cambridge-springs",
+          "title": "Difesa Cambridge Springs",
+          "status": "source-legal-model-checked",
+          "sourceId": "ad6b7d0dc3a6b3eb",
+          "sourceName": "QGD: Cambridge Springs, 8.Qc2 O-O 9.Be2 e5",
+          "documentedPlies": 18,
+          "engineCheckedPlies": 14,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:cambridge-springs"
+        },
+        {
+          "id": "queens-gambit:tartakower",
+          "title": "Rifiutato: sistema Tartakower",
+          "status": "source-legal-model-checked",
+          "sourceId": "4688297e6f980cd7",
+          "sourceName": "QGD: Tartakower, Main Line, 12.Qa4 c5",
+          "documentedPlies": 24,
+          "engineCheckedPlies": 8,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:tartakower"
+        },
+        {
+          "id": "queens-gambit:lasker",
+          "title": "Rifiutato: difesa Lasker",
+          "status": "source-legal-model-checked",
+          "sourceId": "3d7e2fa2b9bd217e",
+          "sourceName": "Queen's Gambit Declined: Lasker Defense, Bernstein Variation, Mar del Plata Gambit",
+          "documentedPlies": 24,
+          "engineCheckedPlies": 8,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:lasker"
+        },
+        {
+          "id": "queens-gambit:ragozin",
+          "title": "Difesa Ragozin",
+          "status": "source-legal-model-checked",
+          "sourceId": "89108cd07fd742b8",
+          "sourceName": "QGD: Ragozin, Vienna, 6.e4 c5 7.Bxc4, 8...Bxc3+, 10.Bb5+",
+          "documentedPlies": 19,
+          "engineCheckedPlies": 13,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:ragozin"
+        },
+        {
+          "id": "queens-gambit:slav-exchange",
+          "title": "Slava: variante di Cambio",
+          "status": "source-legal-model-checked",
+          "sourceId": "dda896388d655da4",
+          "sourceName": "Slav: Exchange, 4.Nc3 Nf6 5.Bf4 Nc6 6.e3 a6",
+          "documentedPlies": 12,
+          "engineCheckedPlies": 20,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:slav-exchange"
+        },
+        {
+          "id": "queens-gambit:accepted-e4",
+          "title": "Accettato: centro immediato con e4",
+          "status": "source-legal-model-checked",
+          "sourceId": "1b3b88351ffc8f63",
+          "sourceName": "QGA: 3.e4 Nf6 4.e5 Nd5 5.Bxc4 Nb6 6.Bb3 Nc6 7.Ne2",
+          "documentedPlies": 13,
+          "engineCheckedPlies": 19,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:queens-gambit:accepted-e4"
         }
       ]
     },
@@ -1450,11 +1813,11 @@
       "id": "english",
       "title": "Apertura Inglese",
       "legacy": 2,
-      "added": 4,
-      "total": 6,
-      "practicalCases": 6,
-      "reviewedCourses": 4,
-      "additionalReviewedNotes": 8,
+      "added": 8,
+      "total": 10,
+      "practicalCases": 10,
+      "reviewedCourses": 8,
+      "additionalReviewedNotes": 16,
       "branches": [
         {
           "id": "english:four-knights",
@@ -1499,6 +1862,50 @@
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:anglo-indian"
+        },
+        {
+          "id": "english:hedgehog",
+          "title": "Inglese simmetrica: struttura Riccio",
+          "status": "source-legal-model-checked",
+          "sourceId": "181ffcbfe9b4be08",
+          "sourceName": "English: Symmetrical, Hedgehog, Flexible Formation, 11.e4 O-O",
+          "documentedPlies": 22,
+          "engineCheckedPlies": 10,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:english:hedgehog"
+        },
+        {
+          "id": "english:neo-catalan",
+          "title": "Neo-Catalana contro la formazione Semislava",
+          "status": "source-legal-model-checked",
+          "sourceId": "e3f1a7dfaed14dcb",
+          "sourceName": "English: Neo-Catalan, 4...c6 5.b3",
+          "documentedPlies": 8,
+          "engineCheckedPlies": 23,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:english:neo-catalan"
+        },
+        {
+          "id": "english:anglo-dutch",
+          "title": "Inglese contro la Difesa Olandese",
+          "status": "source-legal-model-checked",
+          "sourceId": "b317081218a481a2",
+          "sourceName": "English: Anglo-Dutch",
+          "documentedPlies": 6,
+          "engineCheckedPlies": 26,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:english:anglo-dutch"
+        },
+        {
+          "id": "english:bremen-smyslov",
+          "title": "Bremen: sistema Smyslov con Ab4",
+          "status": "source-legal-model-checked",
+          "sourceId": "fafa61bc33a2584e",
+          "sourceName": "English Opening: King's English Variation, Four Knights Variation, Fianchetto Line, Delayed .. Nc6",
+          "documentedPlies": 14,
+          "engineCheckedPlies": 18,
+          "reviewedNotes": 2,
+          "practicalCase": "practice:english:bremen-smyslov"
         }
       ]
     },

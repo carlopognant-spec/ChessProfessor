@@ -4,6 +4,7 @@ import {Chess} from 'chess.js'
 import {ALL_OPENING_JOURNEYS} from '../src/lib/openingJourneys.js'
 import previous from '../src/data/openingPracticalCases.js'
 import {startOpeningEngine} from './opening-expansion-engine.mjs'
+import {teachingCheckpoint} from './opening-teaching-checkpoint.mjs'
 
 const executable='tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe'
 const engineHash=createHash('sha256').update(await fs.readFile(executable)).digest('hex')
@@ -12,6 +13,7 @@ const value={p:1,n:3,b:3,r:5,q:9,k:0},uci=move=>move.from+move.to+(move.promotio
 const material=(board,side)=>board.board().flat().filter(Boolean).reduce((sum,piece)=>sum+(piece.color===side?1:-1)*value[piece.type],0)
 const entries=[],evidence=[],uncovered=[]
 const policy={engine:engine.name,engineHash,nodes:200000,threads:1,hashMb:32,minimumCpChange:200,minimumImmediateMaterial:2,kind:'constructed-deviation-v1'}
+const signatureOf=course=>createHash('sha256').update(JSON.stringify({id:course.id,moves:course.moves,policy})).digest('hex')
 const analyses=new Map()
 async function analyze(fen){
   if(!analyses.has(fen))analyses.set(fen,await engine.analyze(fen,policy.nodes))
@@ -22,14 +24,20 @@ try{oldEvidence=JSON.parse(await fs.readFile('docs/data/opening-practical-verifi
 async function save(){
   await fs.mkdir('docs/data',{recursive:true})
   const methods={'constructed-deviation-v1':'Material gain verified after every legal immediate opponent reply'}
-  await fs.writeFile('src/data/openingPracticalCases.js','// Constructed legal deviations, not frequency claims or historical games.\nexport default '+JSON.stringify({schema:1,policy,methods,entries,uncovered},null,2)+'\n')
-  await fs.writeFile('docs/data/opening-practical-verification.json',JSON.stringify({schema:1,policy,evidence,uncovered},null,2)+'\n')
+  const saved=teachingCheckpoint({entries,evidence,previousEntries:previous.entries,previousEvidence:oldEvidence,retain:item=>{
+    const course=ALL_OPENING_JOURNEYS.find(course=>course.id===item.courseId)
+    return !uncovered.includes(item.courseId)&&course&&item.signature===signatureOf(course)
+  }})
+  const savedEntries=saved.entries.map(item=>({...item,explanation:item.explanation
+    .replace('il torre esposto','la torre esposta').replace('la donna esposto','la donna esposta')}))
+  await fs.writeFile('src/data/openingPracticalCases.js','// Constructed legal deviations, not frequency claims or historical games.\nexport default '+JSON.stringify({schema:1,policy,methods,entries:savedEntries,uncovered},null,2)+'\n')
+  await fs.writeFile('docs/data/opening-practical-verification.json',JSON.stringify({schema:1,policy,evidence:saved.evidence,uncovered},null,2)+'\n')
 }
 try{
   for(const course of ALL_OPENING_JOURNEYS){
-    const signature=createHash('sha256').update(JSON.stringify({id:course.id,moves:course.moves,policy})).digest('hex')
+    const signature=signatureOf(course)
     const old=previous.entries.find(item=>item.signature===signature),proof=old&&oldEvidence.find(item=>item.id===old.id)
-    if(old&&proof){entries.push(old);evidence.push(proof);continue}
+    if(old&&proof){entries.push({...old,whitePlan:course.whitePlan,blackPlan:course.blackPlan});evidence.push(proof);continue}
     let found=false
     const start=Math.min(Math.max(course.expansion?.sourceSeedPlies??8,6),20)
     for(let index=start;index<Math.min(course.moves.length-1,28)&&!found;index++){
@@ -68,7 +76,7 @@ try{
           contrast:'Una deviazione costruita per allenare il riconoscimento dei bersagli. Non è presentata come un errore frequente o una partita storica.',
           whitePlan:course.whitePlan,blackPlan:course.blackPlan,
           prevention:`Prima della deviazione, ${prevention} è la risposta proposta dall’analisi di controllo. Confrontala con ${mistake.san}: quali bersagli restano protetti?`,
-          explanation:`La risposta sfrutta ${name==='alfiere'?'l’alfiere':name==='donna'?'la donna':`il ${name}`} esposto in ${answer.to}. Prima di scegliere un piano, controlla catture, scacchi e difese dei pezzi.`,
+          explanation:`La risposta sfrutta ${name==='alfiere'?'l’alfiere':name==='donna'||name==='torre'?`la ${name}`:`il ${name}`} ${name==='donna'||name==='torre'?'esposta':'esposto'} in ${answer.to}. Prima di scegliere un piano, controlla catture, scacchi e difese dei pezzi.`,
           kind:policy.kind}
         entries.push(item);evidence.push({id:item.id,signature,before,mistake:mistake.san,after,answer:answer.san,answerFen,
           baseline,search,minimumImmediateMaterialGain:minimum,legalImmediateReplies:board.moves().length})

@@ -13,7 +13,7 @@ enumerare ogni continuazione teorica possibile. Licenza MIT e attribuzione:
 
 ## Percorsi guidati e bivi
 
-La schermata iniziale offre 243 percorsi in 37 famiglie. L'Est-Indiana ha quattordici
+La schermata iniziale offre 280 percorsi in 37 famiglie. L'Est-Indiana ha quattordici
 percorsi: centro chiuso classico, Fianchetto, Quattro Pedoni, Averbakh,
 Makogonov, Petrosian, Gligoric-Taimanov, Cambio, Baionetta, Sämisch,
 Panno nella Sämisch e nel Fianchetto, Smyslov e sistema semiclassico.
@@ -22,10 +22,10 @@ catalogo trasformate in corsi. Le continuazioni didattiche non sono dichiarate
 come uniche mosse corrette né come partite storiche.
 Le linee di base hanno il corpus narrativo già presente; le varianti combinano
 piani specifici, note scritte per i passaggi chiave e spiegazioni dei cambiamenti
-effettivi sulla scacchiera. Non tutte le mosse delle 243 linee hanno un commento
-scritto individualmente. Tutti i 151 nuovi percorsi delle 37 famiglie hanno
+effettivi sulla scacchiera. Non tutte le mosse delle 280 linee hanno un commento
+scritto individualmente. Tutti i 188 nuovi percorsi delle 37 famiglie hanno
 almeno due note strategiche individualmente scritte sui passaggi chiave:
-314 note in totale, comprese le 36 dei dodici nuovi percorsi della Caro-Kann.
+388 note in totale, comprese le 36 dei dodici nuovi percorsi della Caro-Kann.
 Le note collegano la mossa del giocatore alla risposta avversaria e ai cambiamenti
 del centro. Si leggono dopo la mossa; gli aiuti che indicano il pezzo restano facoltativi.
 Le sequenze revisionate sono congelate in `openingReviewedLines.js` e
@@ -33,13 +33,19 @@ Le sequenze revisionate sono congelate in `openingReviewedLines.js` e
 Gli altri passaggi mantengono le spiegazioni derivate dalla posizione e il corpus
 narrativo precedente; i commenti individuali non coprono ancora ogni mossa.
 
-L'[inventario di copertura](OPENING-COVERAGE.md) elenca i 160 rami dichiarati
+L'[inventario di copertura](OPENING-COVERAGE.md) elenca i 197 rami dichiarati
 nell'espansione e distingue percorsi precedenti, nuovi, fonti e verifiche.
-Le 151 nuove linee partono da posizioni documentate nel catalogo fissato;
+Le 188 nuove linee partono da posizioni documentate nel catalogo fissato;
 si preferisce proseguire sulla fonte quando contiene una continuazione utile.
 La parte restante fino alla mossa 16 è un modello didattico costruito offline,
 separato dalla teoria documentata. I piani sono specifici della variante;
 non viene attribuita alle risposte del modello una frequenza misurata.
+
+I conteggi per famiglia indicano i percorsi presenti, non la quantità di teoria
+esistente. Caro-Kann ed Est-Indiana hanno avuto approfondimenti dedicati prima
+delle altre famiglie. La [seconda revisione delle lacune](OPENING-EXPANSION-AUDIT.md)
+aggiunge 37 rami distinti a Siciliana, Gambetto di Donna, Spagnola, Francese,
+Italiana e Inglese, senza duplicare come nuove lezioni i sinonimi dei sistemi già coperti.
 
 La progressione segue l'albero degli ordini di mosse dei percorsi della famiglia:
 prima la linea principale del corso, poi le alternative, mantenendo vicine le
@@ -148,7 +154,7 @@ La cache di download e opzionale; il normale build usa il catalogo versionato
 e non scarica dati. Il catalogo viene caricato soltanto aprendo la biblioteca.
 
 ```sh
-npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js tests/opening-strategic-notes.test.js
+npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js tests/opening-strategic-notes.test.js tests/opening-scope.test.js tests/opening-teaching-checkpoint.test.js
 npx playwright test --config scripts/qa-opening-browser.config.js
 npm run build -- --config scripts/qa-no-env-build.config.js
 ```
@@ -168,3 +174,5 @@ file sotto `docs/data/`; non modificano cache di analisi, benchmark congelati,
 soglie o classificazione Libro. Il lettore UCI associa ogni valutazione alla
 PV della mossa selezionata e richiede conferma quando una ricerca interrotta
 non ha stampato una linea completa per quella scelta.
+I checkpoint conservano i corsi e gli esercizi compatibili delle famiglie non
+ancora visitate; un errore su una nuova linea non cancella il materiale successivo.

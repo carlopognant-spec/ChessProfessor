@@ -4,6 +4,7 @@ import {Chess} from 'chess.js'
 import {OPENING_EXPANSION_PLAN} from '../src/lib/openingExpansionPlan.js'
 import {ALL_OPENING_JOURNEYS} from '../src/lib/openingJourneys.js'
 import {startOpeningEngine} from './opening-expansion-engine.mjs'
+import {teachingCheckpoint} from './opening-teaching-checkpoint.mjs'
 
 const target='src/data/openingExpansion.js'
 const sourceText=await fs.readFile('src/data/openingCatalog.json','utf8'),catalog=JSON.parse(sourceText)
@@ -23,9 +24,15 @@ const policy={engine:engine.name,engineHash,threads:1,hashMb:32,nodesPerMove:200
   sourceExtension:'prefer-documented-continuation-up-to-24-plies',repetitionPolicy:'exclude-immediate-draw-when-alternatives-exist'}
 async function save(){
   const source={url:catalog.source,revision:catalog.revision,sha256:sourceHash,license:catalog.license}
-  const payload={schema:1,source,policy,entries}
+  // Keep compatible, not-yet-visited courses in each checkpoint. A failed new
+  // source binding must not discard the frozen courses of later families.
+  const saved=teachingCheckpoint({entries,evidence,previousEntries:previous.entries,previousEvidence,retain:course=>{
+    const row=OPENING_EXPANSION_PLAN.find(row=>row.id===course.id)
+    return row&&course.expansion.signature===hash({row,sourceId:course.expansion.sourceId,sourceHash,policy})
+  }})
+  const payload={schema:1,source,policy,entries:saved.entries}
   await fs.mkdir('docs/data',{recursive:true})
-  await fs.writeFile('docs/data/opening-expansion-verification.json',JSON.stringify({schema:1,source,policy,evidence},null,2)+'\n')
+  await fs.writeFile('docs/data/opening-expansion-verification.json',JSON.stringify({schema:1,source,policy,evidence:saved.evidence},null,2)+'\n')
   await fs.writeFile(target,'// Generated offline. Named source prefix + explicitly separate model continuation.\nexport default '+JSON.stringify(payload,null,2)+'\n')
 }
 try{

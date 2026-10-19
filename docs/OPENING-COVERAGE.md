@@ -1,8 +1,8 @@
 # Inventario e avanzamento delle aperture
 
-Ambito esplicito: tutte le 37 famiglie della biblioteca. I 160 rami elencati sotto comprendono anche alcuni percorsi già presenti; non sono 160 nuovi sistemi. Le trasposizioni e i sinonimi non vengono contati come nuove aperture.
+Ambito esplicito: tutte le 37 famiglie della biblioteca. I 197 rami elencati sotto comprendono anche alcuni percorsi già presenti; non sono 197 nuovi sistemi. Le trasposizioni e i sinonimi non vengono contati come nuove aperture.
 
-Percorsi giocabili: **243**, di cui **151 aggiunti**. Rami dell’inventario ancora da inserire: **0**.
+Percorsi giocabili: **280**, di cui **188 aggiunti**. Rami dell’inventario ancora da inserire: **0**.
 
 ## Metodo e limiti
 
@@ -10,22 +10,28 @@ Ogni nuova linea ha una posizione caratteristica collegata a un record del catal
 
 Si preferiscono continuazioni già documentate, fino a 24 semimosse, quando compatibili con il ramo. Il seguito restante fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità delle mosse. Il browser non avvia il motore. Le ricerche e le posizioni sono registrate nel file di verifica; questo motore non è lo Stockfish 19 del browser.
 
-Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. Tutti i 151 nuovi percorsi, distribuiti nelle 37 famiglie, hanno inoltre almeno due note strategiche individualmente scritte: 314 note in totale, di cui 36 nella Caro-Kann. Le note collegano la scelta del giocatore alla risposta avversaria, ai bersagli e alla trasformazione del centro; compaiono dopo aver giocato, per lasciare la soluzione negli indizi facoltativi. Sono legate alle sequenze complete revisionate: se le mosse cambiano, i test e questo report richiedono una nuova revisione dei testi.
+Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. Tutti i 188 nuovi percorsi, distribuiti nelle 37 famiglie, hanno inoltre almeno due note strategiche individualmente scritte: 388 note in totale, di cui 36 nella Caro-Kann. Le note collegano la scelta del giocatore alla risposta avversaria, ai bersagli e alla trasformazione del centro; compaiono dopo aver giocato, per lasciare la soluzione negli indizi facoltativi. Sono legate alle sequenze complete revisionate: se le mosse cambiano, i test e questo report richiedono una nuova revisione dei testi.
 
-Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 243 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
+Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 280 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
 
 Le verifiche automatiche certificano legalità, provenienza della posizione, continuità, assenza di duplicati nella famiglia e corrispondenza delle mosse del seguito ai risultati registrati. Non certificano da sole la correttezza di ogni spiegazione strategica o la completezza della teoria di ogni apertura.
 
-Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito validato: **0**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.
+Esercizi sulle deviazioni: **280**. Percorsi senza un esercizio costruito validato: **0**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.
+
+## Perché i conteggi sono diversi
+
+I conteggi misurano i percorsi insegnati nel sito, non il numero totale di varianti teoriche di un’apertura. Caro-Kann ed Est-Indiana hanno ricevuto approfondimenti dedicati prima dell’ampliamento generale: il loro numero inizialmente maggiore rifletteva la sequenza del lavoro. Gli ampliamenti successivi cercano decisioni mancanti, strutture e risposte avversarie distinte; non impongono lo stesso numero a tutte le famiglie e non usano la quantità di alias ECO come misura di completezza.
+
+La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggiunti nel secondo ampliamento e le linee già coperte che non sono state ricontate con un altro nome.
 
 ## Conteggi per famiglia
 
 | Famiglia | Preesistenti | Nuovi | Totale | Esercizi | Note revisionate | Rami da inserire |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Partita Italiana | 3 | 4 | 7 | 7 | 8 | 0 |
-| Partita Spagnola | 3 | 4 | 7 | 7 | 8 | 0 |
-| Difesa Siciliana | 4 | 6 | 10 | 10 | 12 | 0 |
-| Difesa Francese | 4 | 6 | 10 | 10 | 12 | 0 |
+| Partita Italiana | 3 | 8 | 11 | 11 | 16 | 0 |
+| Partita Spagnola | 3 | 11 | 14 | 14 | 22 | 0 |
+| Difesa Siciliana | 4 | 15 | 19 | 19 | 30 | 0 |
+| Difesa Francese | 4 | 10 | 14 | 14 | 20 | 0 |
 | Difesa Caro-Kann | 4 | 12 | 16 | 16 | 36 | 0 |
 | Difesa Scandinava | 2 | 4 | 6 | 6 | 8 | 0 |
 | Difesa Pirc e Moderna | 2 | 4 | 6 | 6 | 8 | 0 |
@@ -35,7 +41,7 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 | Partita Viennese | 2 | 3 | 5 | 5 | 6 | 0 |
 | Gambetto di Re | 2 | 4 | 6 | 6 | 8 | 0 |
 | Difesa Philidor | 2 | 3 | 5 | 5 | 6 | 0 |
-| Gambetto di Donna | 4 | 4 | 8 | 8 | 8 | 0 |
+| Gambetto di Donna | 4 | 13 | 17 | 17 | 26 | 0 |
 | Sistema di Londra | 2 | 3 | 5 | 5 | 6 | 0 |
 | Difesa Est-Indiana | 10 | 4 | 14 | 14 | 8 | 0 |
 | Difesa Grünfeld | 2 | 3 | 5 | 5 | 6 | 0 |
@@ -45,7 +51,7 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 | Difesa Olandese | 2 | 4 | 6 | 6 | 8 | 0 |
 | Difesa Benoni e Benko | 2 | 4 | 6 | 6 | 8 | 0 |
 | Gambetto di Budapest | 2 | 3 | 5 | 5 | 6 | 0 |
-| Apertura Inglese | 2 | 4 | 6 | 6 | 8 | 0 |
+| Apertura Inglese | 2 | 8 | 10 | 10 | 16 | 0 |
 | Apertura Réti | 2 | 4 | 6 | 6 | 8 | 0 |
 | Partita dei Quattro Cavalli | 2 | 4 | 6 | 6 | 8 | 0 |
 | Apertura Larsen | 2 | 4 | 6 | 6 | 8 | 0 |
@@ -68,6 +74,10 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 - [x] Due Cavalli: attacco a f7 — fonte da0a54c45c2769b6; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
 - [x] Due Cavalli: gambetto con d4 — fonte 8cab70f7974b246c; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
 - [x] Giuoco Piano: centro con d4 — fonte d824a0ee4f9040bc; 23 semimosse documentate, 9 semimosse del seguito controllate; esercizio disponibile
+- [x] Gambetto Evans Rifiutato — fonte 60382f6d917dcc53; 23 semimosse documentate, 9 semimosse del seguito controllate; esercizio disponibile
+- [x] Due Cavalli: contrattacco Traxler — fonte 4bfdd92f563a5874; 21 semimosse documentate, 11 semimosse del seguito controllate; esercizio disponibile
+- [x] Due Cavalli: variante Ulvestad — fonte 5bcf4cd5e35c8853; 14 semimosse documentate, 18 semimosse del seguito controllate; esercizio disponibile
+- [x] Due Cavalli: attacco Fegatello — fonte f0da3612cfc06321; 22 semimosse documentate, 10 semimosse del seguito controllate; esercizio disponibile
 
 ### Partita Spagnola
 
@@ -75,6 +85,13 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 - [x] Spagnola Aperta — fonte 9db6da9195bb1215; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
 - [x] Schliemann — fonte 290094f5b04ee6d9; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
 - [x] Difesa Steinitz — fonte 25f1a3fa9bef87b3; 14 semimosse documentate, 18 semimosse del seguito controllate; esercizio disponibile
+- [x] Chiusa: sistema Breyer — fonte cfd005a363b278db; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
+- [x] Chiusa: sistema Zaitsev — fonte 158084458dee739b; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
+- [x] Chiusa: sistema Chigorin — fonte 738af975f669ca03; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
+- [x] Difesa Arcangelo — fonte a753cd482fd02b56; 19 semimosse documentate, 13 semimosse del seguito controllate; esercizio disponibile
+- [x] Anti-Marshall con a4 — fonte 42c5326955598b61; 19 semimosse documentate, 13 semimosse del seguito controllate; esercizio disponibile
+- [x] Difesa Classica con Ac5 — fonte 30447d88b0e97ec0; 12 semimosse documentate, 20 semimosse del seguito controllate; esercizio disponibile
+- [x] Anti-Berlinese con d3 — fonte 9e782e17ca0b9b71; 9 semimosse documentate, 23 semimosse del seguito controllate; esercizio disponibile
 
 ### Difesa Siciliana
 
@@ -84,6 +101,15 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 - [x] Dragone accelerato — fonte 8f38b356900a7cb1; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
 - [x] Rossolimo — fonte 65d192b2fc3431e3; 13 semimosse documentate, 19 semimosse del seguito controllate; esercizio disponibile
 - [x] Siciliana Chiusa — fonte 18d9323d2ab9d138; 20 semimosse documentate, 12 semimosse del seguito controllate; esercizio disponibile
+- [x] Kalashnikov — fonte aa61eeab3c03aae8; 17 semimosse documentate, 15 semimosse del seguito controllate; esercizio disponibile
+- [x] Classica: attacco Richter-Rauzer — fonte 51cda5086337dacf; 23 semimosse documentate, 9 semimosse del seguito controllate; esercizio disponibile
+- [x] Classica: attacco Sozin — fonte e7fb08bc9a535843; 20 semimosse documentate, 12 semimosse del seguito controllate; esercizio disponibile
+- [x] Gambetto Smith-Morra Accettato — fonte 433ce895a1903a25; 16 semimosse documentate, 16 semimosse del seguito controllate; esercizio disponibile
+- [x] Attacco Grand Prix — fonte aaaf6d7c0eac71ed; 11 semimosse documentate, 21 semimosse del seguito controllate; esercizio disponibile
+- [x] Variante di Mosca — fonte 64c852f5774f3a65; 13 semimosse documentate, 19 semimosse del seguito controllate; esercizio disponibile
+- [x] Siciliana dei Quattro Cavalli — fonte 36c15ba89add8145; 12 semimosse documentate, 20 semimosse del seguito controllate; esercizio disponibile
+- [x] Variante O’Kelly — fonte 2dce191bd2481628; 8 semimosse documentate, 24 semimosse del seguito controllate; esercizio disponibile
+- [x] Scheveningen: attacco Keres — fonte 429ab453a210df60; 11 semimosse documentate, 21 semimosse del seguito controllate; esercizio disponibile
 
 ### Difesa Francese
 
@@ -93,6 +119,10 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 - [x] MacCutcheon — fonte 0668ece1cbb95393; 22 semimosse documentate, 10 semimosse del seguito controllate; esercizio disponibile
 - [x] Tarrasch: centro chiuso — fonte 359b3fa4d9793316; 23 semimosse documentate, 9 semimosse del seguito controllate; esercizio disponibile
 - [x] Winawer: pedone avvelenato — fonte 0ddc4621f16c7750; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
+- [x] Classica: variante Burn — fonte e25186ba94fdd82a; 15 semimosse documentate, 17 semimosse del seguito controllate; esercizio disponibile
+- [x] Cambio: sistema Monte Carlo — fonte 49d41f66f0817b9b; 11 semimosse documentate, 21 semimosse del seguito controllate; esercizio disponibile
+- [x] Winawer: sfida immediata con a3 — fonte 318df04944d6269f; 12 semimosse documentate, 20 semimosse del seguito controllate; esercizio disponibile
+- [x] Avanzata: gambetto Milner-Barry — fonte 11eb7a6aa6ba189d; 17 semimosse documentate, 15 semimosse del seguito controllate; esercizio disponibile
 
 ### Difesa Caro-Kann
 
@@ -171,6 +201,15 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 - [x] Difesa Chigorin — fonte 77f15aff8cb2c77e; 15 semimosse documentate, 17 semimosse del seguito controllate; esercizio disponibile
 - [x] Controgambetto Albin — fonte 714beea5694fd1f3; 16 semimosse documentate, 16 semimosse del seguito controllate; esercizio disponibile
 - [x] Slava: sistema Chebanenko — fonte d05aad39e429504a; 11 semimosse documentate, 21 semimosse del seguito controllate; esercizio disponibile
+- [x] Semislava: Anti-Merano con Dc2 — fonte 6eb5f80f386a1dbc; 19 semimosse documentate, 13 semimosse del seguito controllate; esercizio disponibile
+- [x] Semislava: sistema Botvinnik — fonte 995753084e5f4c07; 21 semimosse documentate, 11 semimosse del seguito controllate; esercizio disponibile
+- [x] Semislava: variante di Mosca — fonte 427561ac79357e94; 12 semimosse documentate, 19 semimosse del seguito controllate; esercizio disponibile
+- [x] Difesa Cambridge Springs — fonte ad6b7d0dc3a6b3eb; 18 semimosse documentate, 14 semimosse del seguito controllate; esercizio disponibile
+- [x] Rifiutato: sistema Tartakower — fonte 4688297e6f980cd7; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
+- [x] Rifiutato: difesa Lasker — fonte 3d7e2fa2b9bd217e; 24 semimosse documentate, 8 semimosse del seguito controllate; esercizio disponibile
+- [x] Difesa Ragozin — fonte 89108cd07fd742b8; 19 semimosse documentate, 13 semimosse del seguito controllate; esercizio disponibile
+- [x] Slava: variante di Cambio — fonte dda896388d655da4; 12 semimosse documentate, 20 semimosse del seguito controllate; esercizio disponibile
+- [x] Accettato: centro immediato con e4 — fonte 1b3b88351ffc8f63; 13 semimosse documentate, 19 semimosse del seguito controllate; esercizio disponibile
 
 ### Sistema di Londra
 
@@ -241,6 +280,10 @@ Esercizi sulle deviazioni: **243**. Percorsi senza un esercizio costruito valida
 - [x] Siciliana a colori invertiti — fonte e9767da1fb99a0f7; 18 semimosse documentate, 14 semimosse del seguito controllate; esercizio disponibile
 - [x] Sistema Botvinnik — fonte 2808f1d40d726e48; 9 semimosse documentate, 23 semimosse del seguito controllate; esercizio disponibile
 - [x] Sistema Anglo-Indiano — fonte 137a51405b1cd107; 14 semimosse documentate, 18 semimosse del seguito controllate; esercizio disponibile
+- [x] Inglese simmetrica: struttura Riccio — fonte 181ffcbfe9b4be08; 22 semimosse documentate, 10 semimosse del seguito controllate; esercizio disponibile
+- [x] Neo-Catalana contro la formazione Semislava — fonte e3f1a7dfaed14dcb; 8 semimosse documentate, 23 semimosse del seguito controllate; esercizio disponibile
+- [x] Inglese contro la Difesa Olandese — fonte b317081218a481a2; 6 semimosse documentate, 26 semimosse del seguito controllate; esercizio disponibile
+- [x] Bremen: sistema Smyslov con Ab4 — fonte fafa61bc33a2584e; 14 semimosse documentate, 18 semimosse del seguito controllate; esercizio disponibile
 
 ### Apertura Réti
 
