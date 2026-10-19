@@ -1,6 +1,8 @@
 import {Chess} from 'chess.js'
 import {OPENING_LESSONS} from './openingLessons.js'
 import {OPENING_STORIES} from './openingStories.js'
+import {OPENING_VARIANTS} from './openingVariants.js'
+import {openingChallenge,openingPawnChanges} from './openingChallenge.js'
 
 // Authored teaching continuations, not engine recommendations or game records.
 // Each family has one explicitly named route; it does not stand for every variation.
@@ -121,8 +123,47 @@ const routes = {
 export const OPENING_JOURNEYS = OPENING_LESSONS.map(guide => {
   const [title,pgn,whitePlan,blackPlan]=routes[guide.id]
   const board=new Chess();board.loadPgn(pgn)
-  return {id:guide.id,title,moves:board.history(),whitePlan,blackPlan}
+  return {id:guide.id,family:guide.id,title,moves:board.history(),whitePlan,blackPlan,
+    contrast:'Le basi e un primo impianto completo fino al mediogioco.'}
 })
+
+export const ALL_OPENING_JOURNEYS=[...OPENING_JOURNEYS,...OPENING_VARIANTS]
+export const familyJourneys=family=>ALL_OPENING_JOURNEYS.filter(j=>j.family===family)
+
+const positionKey=board=>board.fen().split(' ').slice(0,4).join(' ')
+let sharedStories
+const variantNotes={
+  'caro:advance':{
+    4:'e5 guadagna spazio e chiude la tensione centrale. Il Nero sviluppa l’alfiere prima di e6: l’attacco alla catena dovrà arrivare con c5 o f6, non inseguendo il pedone avanzato senza preparazione.',
+    14:'Il cambio in d4 apre la colonna c e obbliga il Bianco a ricostruire il centro. La manovra del cavallo nero prepara il gioco contro d4: non basta aver guadagnato spazio con e5.',
+    28:'La rottura f6 mette alla prova la punta della catena. Il Bianco deve scegliere come sostenerla o trasformarla: i cambi sulla colonna f modificheranno anche la copertura dei re.',
+  },
+  'caro:exchange':{
+    4:'Il cambio elimina i pedoni e bianco e d nero. La colonna e è semiaperta per il Bianco, la colonna c per il Nero: una struttura apparentemente tranquilla suggerisce già piani diversi alle torri.',
+    18:'Il cambio degli alfieri attiva la donna nera. Prima di cercare un attacco, il Bianco deve completare la sicurezza del re e coordinare i pezzi sulla colonna e.',
+    24:'Ce5 usa l’appoggio di d4. Il Nero conserva l’alfiere e il Bianco prepara attività sulla terza traversa: lo sviluppo iniziale si trasforma in manovra.',
+  },
+  'caro:panov':{
+    6:'c4 contesta d5 e trasforma la Variante di Cambio nel Panov. Il Nero sviluppa il cavallo invece di cercare subito materiale: la futura struttura del centro guiderà i cambi.',
+    12:'Dopo cxd5 e Cxd5 il pedone d4 è isolato. Il Bianco ha spazio e linee per i pezzi; il Nero cercherà pressione sul pedone e controllo della casa davanti ad esso.',
+    24:'Ae3 sostiene d4, mentre Ab7 mette i pezzi neri sulla grande diagonale. Prima di semplificare, entrambi devono chiedersi quale effetto avrà il cambio sull’attività attorno al pedone isolato.',
+  },
+}
+function sharedStory(board,journey,index){
+  if(!sharedStories){
+    sharedStories=new Map()
+    for(const base of OPENING_JOURNEYS){
+      const position=new Chess()
+      for(let i=0;i<base.moves.length;i++){
+        const pair=Math.floor(i/2)*2
+        sharedStories.set(`${positionKey(position)}|${base.moves.slice(pair,pair+2).join(' ')}`,OPENING_STORIES[base.id][Math.floor(i/2)])
+        position.move(base.moves[i])
+      }
+    }
+  }
+  const pair=Math.floor(index/2)*2
+  return sharedStories.get(`${positionKey(board)}|${journey.moves.slice(pair,pair+2).join(' ')}`)
+}
 
 export const JOURNEY_STAGES = [
   {id:'opening',title:'1 · Le basi dell’apertura',goal:'Occupa il centro, sviluppa i primi pezzi e osserva la risposta avversaria.'},
@@ -139,12 +180,31 @@ export function journeyCoach(journey,index,side){
   const plan=side==='w'?journey.whitePlan:journey.blackPlan
   const san=journey.moves[index]
   if(!san)return {stage,plan}
-  const story=OPENING_STORIES[journey.id]?.[Math.floor(index/2)]
-  if(!story)throw new Error(`Missing opening story: ${journey.id}:${index}`)
+  let story=OPENING_STORIES[journey.id]?.[Math.floor(index/2)]
+  if(!story&&journey.variant)story=sharedStory(board,journey,index)
+  if(!story&&!journey.variant)throw new Error(`Missing opening story: ${journey.id}:${index}`)
+  const challenge=openingChallenge(board,san)
+  let debrief=story?.debrief
+  if(!debrief){
+    const pair=Math.floor(index/2)*2,position=new Chess()
+    for(const played of journey.moves.slice(0,pair))position.move(played)
+    const oldPosition=new Chess(position.fen())
+    const effects=[]
+    for(const played of journey.moves.slice(pair,pair+2)){
+      effects.push(openingChallenge(position,played).effect);position.move(played)
+    }
+    debrief=effects.join(' ')
+    const structure=openingPawnChanges(oldPosition,position)
+    if(structure)debrief+=' '+structure
+    if(pair===4||pair===18)debrief+=' '+journey.contrast
+  }
+  debrief=variantNotes[journey.id]?.[Math.floor(index/2)*2]??debrief
   const before=board.fen(),move=board.move(san)
-  const {situation,question}=move.color==='w'?story.white:story.black
+  const authored=story&&(move.color==='w'?story.white:story.black)
+  const explicit=authored&&(/cavall|alfier|torre|pedon|donna|arrocc|riprend|cattur|spinta/i.test(authored.question)||authored.question.includes(move.from)||authored.question.includes(move.to))
   const piece={p:'pedone',n:'cavallo',b:'alfiere',r:'torre',q:'donna',k:'re'}[move.piece]
-  return {stage,plan,situation,question,debrief:story.debrief,
-    hint:`Concentrati ${piece==='donna'?'sulla donna':`sul ${piece}`} in ${move.from}.`,
+  return {stage,plan,situation:authored?.situation??challenge.situation,
+    question:authored&&!explicit?authored.question:challenge.question,guidedQuestion:authored?.question??challenge.question,debrief,
+    hint:`Concentrati ${piece==='donna'?'sulla donna':piece==='alfiere'?'sull’alfiere':`sul ${piece}`} in ${move.from}.`,
     san,from:move.from,to:move.to,before}
 }

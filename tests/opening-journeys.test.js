@@ -46,7 +46,7 @@ describe('partite guidate dall’apertura al mediogioco',()=>{
     expect(journeyCoach(italian,16,'w')).toMatchObject({from:'b1',to:'d2'})
     expect(journeyCoach(italian,18,'w').situation).toContain('f1')
     expect(journeyCoach(italian,20,'w').debrief).toContain('Cg3')
-    expect(journeyCoach(italian,23,'b').question).toContain('contesta e4')
+    expect(journeyCoach(italian,23,'b').guidedQuestion).toContain('contesta e4')
     const start=journeyCoach(italian,0,'w').before
     expect(practiceMove(italian.moves,0,'w','d4')).toMatchObject({status:'different-line',index:0})
     expect(journeyCoach(italian,0,'w').before).toBe(start)
@@ -70,10 +70,10 @@ describe('partite guidate dall’apertura al mediogioco',()=>{
   it('asks about the King’s Gambit before revealing the answer and explains its concrete danger',()=>{
     const journey=OPENING_JOURNEYS.find(j=>j.id==='kings-gambit')
     const offer=journeyCoach(journey,2,'w'),knight=journeyCoach(journey,4,'w')
-    expect(offer.question).toContain('attacca e5')
+    expect(offer.guidedQuestion).toContain('attacca e5')
     expect(offer.situation+' '+offer.question).not.toContain('f4')
     expect(knight.situation).toContain('Dh4+')
-    expect(knight.question).toContain('controllare h4')
+    expect(knight.guidedQuestion).toContain('controllare h4')
     expect(knight.question).not.toContain('f3')
     const board=new Chess(knight.before)
     const material=color=>board.board().flat().filter(p=>p?.color===color).reduce((sum,p)=>sum+({p:1,n:3,b:3,r:5,q:9,k:0}[p.type]),0)
@@ -103,7 +103,7 @@ describe('partite guidate dall’apertura al mediogioco',()=>{
   it('grounds the French and Catalan bishop questions in their actual queen attacks',()=>{
     for(const [id,index,from]of [['french',29,'b5'],['catalan',27,'a6']]){
       const journey=OPENING_JOURNEYS.find(j=>j.id===id),coach=journeyCoach(journey,index,'b')
-      expect(coach.question).toContain('donna d3')
+      expect(coach.guidedQuestion).toContain('donna d3')
       const board=new Chess(coach.before);board.move(coach.san)
       expect(board.get('d3')).toMatchObject({type:'q',color:'w'})
       expect(board.attackers('d3','b')).toContain(from)

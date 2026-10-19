@@ -77,6 +77,37 @@
 .opening-source details { margin-top: .6rem; }
 .opening-source summary { cursor: pointer; }
 .opening-source pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .68rem; }
+.opening-course-header { display: flex; justify-content: space-between; align-items: start; gap: 1.5rem; margin: 1rem 0 2rem; }
+.opening-course-header h1 { font-size: clamp(1.7rem,3vw,2.4rem); margin: .3rem 0 .6rem; }
+.opening-course-header p { color: var(--bone-dim); }
+.opening-course-header button { flex-shrink: 0; }
+.opening-course-search { display: grid; gap: .5rem; max-width: 500px; margin-bottom: 1.5rem; font-size: .85rem; color: var(--bone-dim); }
+.opening-family-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .7rem; }
+.opening-library .opening-family-card { display: grid; gap: .7rem; text-align: left; padding: 1.2rem; background: var(--panel); }
+.opening-family-card span { color: var(--bone-dim); font-size: .8rem; }
+.opening-course-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.opening-course-card { padding: 1.4rem; border: 1px solid #51432f; background: var(--panel); border-radius: 9px; display: flex; flex-direction: column; align-items: start; }
+.opening-course-card h2 { font-size: 1.35rem; margin: .3rem 0 .7rem; }
+.opening-course-card p:not(.opening-eyebrow) { color: var(--bone-dim); font-size: .9rem; line-height: 1.6; }
+.opening-course-card button { margin-top: auto; }
+.opening-focus .opening-layout { display: block; }
+.opening-focus .opening-workbench { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(280px,.85fr); gap: 1.25rem 1.6rem; border: 0; background: transparent; padding: 0; }
+.opening-focus .opening-line-heading { grid-column: 1 / -1; margin-bottom: 0; }
+.opening-lesson-toolbar { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem; padding-bottom: 1rem; border-bottom: 1px solid #51432f; }
+.opening-lesson-toolbar > span { font-size: .78rem; color: var(--bone-dim); }
+.opening-lesson-toolbar details { position: relative; font-size: .85rem; }
+.opening-lesson-toolbar summary, .opening-sequence summary, .opening-notation summary { cursor: pointer; color: var(--bone-dim); padding: .5rem 0; font-size: .85rem; }
+.opening-lesson-toolbar details[open] { flex-basis: 100%; padding: .8rem; border: 1px solid #51432f; border-radius: 6px; }
+.opening-lesson-toolbar details button { margin: .4rem .5rem .2rem 0; }
+.opening-focus .opening-board { grid-column: 1; grid-row: 3 / span 2; max-width: 620px; align-self: start; }
+.opening-focus .opening-coach { grid-column: 2; grid-row: 3; border: 0; padding: 0; background: transparent; margin: 0; }
+.opening-focus .opening-coach h3 { margin-top: .3rem; font-size: .95rem; color: var(--bone-dim); }
+.opening-focus .opening-coach-question { line-height: 1.7; font-size: 1.12rem; border: 0; padding: 0; }
+.opening-focus .opening-training { grid-column: 2; grid-row: 4; padding: 0; align-self: start; }
+.opening-focus .opening-notes { grid-column: 1 / -1; margin-top: .2rem; }
+.opening-focus .opening-reply { border: 0; background: transparent; padding: 0; font-size: .8rem; color: var(--bone-dim); }
+.opening-focus .opening-recap { border-left-width: 2px; }
+.opening-notation { margin: .7rem 0; }
 @media(max-width:760px){
   .opening-library { padding: .75rem; }
   .opening-hero { gap: 1rem; }
@@ -90,4 +121,17 @@
   .opening-hero p:last-child { font-size: .8rem; }
   .opening-line-heading h2 { font-size: 1.2rem; }
   .opening-plan-grid { grid-template-columns: 1fr; gap: .5rem; }
+  .opening-course-header { display: block; margin-bottom: 1.2rem; }
+  .opening-course-header button { margin-top: .7rem; }
+  .opening-family-grid, .opening-course-grid { grid-template-columns: 1fr; }
+  .opening-course-card { padding: 1.1rem; }
+  .opening-focus .opening-workbench { display: flex; flex-direction: column; gap: .75rem; }
+  .opening-focus .opening-line-heading { order: 0; }
+  .opening-focus .opening-lesson-toolbar { order: 1; }
+  .opening-focus .opening-coach { order: 2; }
+  .opening-focus .opening-board { order: 3; }
+  .opening-focus .opening-training { order: 4; }
+  .opening-focus .opening-notes { order: 5; }
+  .opening-lesson-toolbar > span { flex-basis: 100%; order: 3; }
+  .opening-focus .opening-coach-question { font-size: 1rem; margin: .4rem 0; }
 }
