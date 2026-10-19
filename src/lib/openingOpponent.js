@@ -1,4 +1,5 @@
 import {Chess} from 'chess.js'
+import {uncoveredOpeningAttacks} from './openingMoveReview.js'
 
 const center=['d4','e4','d5','e5','c4','f4','c5','f5']
 const squares=Array.from({length:64},(_,i)=>String.fromCharCode(97+i%8)+(1+Math.floor(i/8)))
@@ -22,6 +23,7 @@ export function openingOpponent(beforeFen,san,responseSan){
   const attackedPieces=current.board().flat().filter(p=>p?.color===player&&p.type!=='k'&&controlledSquares.includes(p.square))
     .sort((a,b)=>value[b.type]-value[a.type]||Number(center.includes(b.square))-Number(center.includes(a.square)))
   const defendedPieces=current.board().flat().filter(p=>p?.color===move.color&&p.square!==move.to&&controlledSquares.includes(p.square))
+  const uncovered=uncoveredOpeningAttacks(before,current,move.color,[move.to])
   const defended=defendedPieces.filter(p=>center.includes(p.square)).slice(0,1)
   const empty=centralSquares.filter(square=>!current.get(square)).slice(0,2)
   const arrowTargets=[]
@@ -54,6 +56,11 @@ export function openingOpponent(beforeFen,san,responseSan){
     const king=current.board().flat().find(p=>p?.color===player&&p.type==='k')
     for(const from of current.attackers(king.square,move.color))arrowTargets.push({from,to:king.square,kind:'attack'})
   }
+  if(uncovered.length){
+    const first=uncovered[0],same=uncovered.filter(attack=>attack.from===first.from).slice(0,2)
+    text+=` Si libera anche ${noun(first.piece)} in ${first.from}, che ora attacca ${list(same.map(attack=>`${noun(attack.target)} in ${attack.to}`))}.`
+    for(const attack of same)arrowTargets.push({from:attack.from,to:attack.to,kind:'attack'})
+  }
 
   let question=null,relatedSquares=[]
   if(responseSan){
@@ -68,9 +75,14 @@ export function openingOpponent(beforeFen,san,responseSan){
       else if(support.length)question=`Come rinforzi ${list(support)} contro questa pressione?`
       else question=`Come contendi ${list(contest)} al controllo avversario?`
     }
+    if(!current.isCheck()&&uncovered.length){
+      const addressed=uncovered.filter(attack=>response.from===attack.to||response.to===attack.from
+        ||current.get(attack.to)?.color===player&&responseBoard.get(attack.to)?.color===player&&!responseBoard.attackers(attack.to,move.color).includes(attack.from))
+      if(addressed.length&&!responseBoard.isCheck())question=`Come affronti la pressione su ${list([...new Set(addressed.map(attack=>attack.to))].slice(0,2))} senza perdere coordinazione?`
+    }
   }
   return {san:move.san,color:move.color,from:move.from,to:move.to,piece:piece.type,
-    controlledSquares,centralSquares,attackedPieces,defendedPieces,relatedSquares,arrowTargets,
+    controlledSquares,centralSquares,attackedPieces,defendedPieces,uncovered,relatedSquares,arrowTargets,
     captured:move.captured??null,capturedSquare,
     check:current.isCheck(),question,text,before:before.fen(),after:current.fen()}
 }

@@ -26,6 +26,43 @@ test.beforeEach(async({page})=>{
   await page.addInitScript(()=>{window.Worker=class{constructor(){throw Error('Opening library must not start an engine')}}})
 })
 
+test('a Black learner reviews the actual next White reply and resets the explanation with the lesson',async({page})=>{
+  await begin(page,'italian')
+  await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()
+  await expect(page.getByLabel('Spiegazione delle mosse giocate')).toHaveCount(0)
+  const input=await notation(page)
+  await input.fill('e5');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await page.locator('.opening-sequence > summary').click()
+  const review=page.getByLabel('Spiegazione delle mosse giocate')
+  await expect(review.getByRole('heading',{name:'La tua mossa · 1… e5',exact:true})).toBeVisible()
+  await expect(review.getByRole('heading',{name:'Risposta del Bianco · 2. Nf3',exact:true})).toBeVisible()
+  await expect(review.locator('[data-review-index="2"]')).toHaveAttribute('data-fen-after',await page.locator('.opening-board').getAttribute('data-fen'))
+  await expect(review).toContainText('pedone in e5')
+  await options(page);await page.getByRole('button',{name:'Ricomincia',exact:true}).click()
+  await expect(review).toHaveCount(0)
+  await expect(page.locator('.opening-sequence')).toHaveCount(0)
+  await page.getByRole('button',{name:'Bianco',exact:true}).click()
+  await expect(review).toHaveCount(0)
+})
+
+test('the Lasker discovered bishop attack has its own arrow and question on mobile',async({page})=>{
+  await page.setViewportSize({width:360,height:780})
+  const route=familyJourneys('queens-gambit').find(row=>row.id==='queens-gambit:lasker')
+  await begin(page,'queens-gambit',route.id)
+  const input=await notation(page)
+  for(let index=0;index<14;index+=2){await input.fill(route.moves[index]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+  await expect(page.getByLabel('Ultima mossa dell’avversario')).toContainText('alfiere in e7')
+  await expect(page.getByLabel('Ultima mossa dell’avversario')).toContainText('alfiere in h4')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-opponent-arrows',/e7-h4:attack/)
+  await expect(page.locator('.opening-board')).not.toHaveAttribute('data-opponent-arrows',/e4-h4:attack/)
+  await expect(page.locator('.opening-coach-question')).toContainText('pressione su h4')
+  await expect(page.locator('.opening-coach-question')).not.toContainText('Bxe7')
+  await page.locator('.opening-sequence > summary').click()
+  await expect(page.getByLabel('Spiegazione delle mosse giocate')).toContainText('e7–h4')
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true)
+  await page.screenshot({path:'agent-output/opening-turn-review/lasker-mobile.png',fullPage:true,animations:'disabled'})
+})
+
 for(const [id,side,mobile] of [
   ['french:classical','w',false],['bird:sicilian','b',false],['owen:guatemala','w',true],
   ['sicilian:morra','w',false],['queens-gambit:lasker','b',false],['spanish:breyer','w',false],
@@ -43,7 +80,7 @@ for(const [id,side,mobile] of [
     const input=await notation(page)
     for(let index=Number(side==='b');index<=24+Number(side==='b');index+=2){
       const pair=Math.floor(index/2)*2,note=strategicNotes[id].notes[pair]
-      if(note)await expect(page.locator('.opening-debrief')).not.toContainText(note)
+      if(note)await expect(page.locator('.opening-sequence')).not.toContainText(note)
       await input.fill(route.moves[index]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
       if(note){
         await expect(page.locator('.opening-debrief')).toHaveText(note)

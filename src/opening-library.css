@@ -125,6 +125,10 @@
 .opening-arrow-key span:nth-child(1) { color: #f38c82; }
 .opening-arrow-key span:nth-child(2) { color: #e8c36a; }
 .opening-arrow-key span:nth-child(3) { color: #74c8b3; }
+.opening-turn-review { display: grid; gap: .8rem; padding: .5rem 0; }
+.opening-turn-review section { border-left: 2px solid var(--brass); padding-left: .75rem; }
+.opening-turn-review h4 { margin: 0 0 .35rem; color: var(--brass); font-size: .85rem; }
+.opening-turn-review p { margin: .35rem 0; font-size: .85rem; line-height: 1.5; }
 @media(max-width:760px){
   .opening-library { padding: .75rem; }
   .opening-hero { gap: 1rem; }

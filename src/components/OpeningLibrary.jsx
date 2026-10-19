@@ -5,6 +5,8 @@ import {OPENING_LESSONS,OPENING_TRAPS,VARIANT_NOTES} from '../lib/openingLessons
 import {OPENING_JOURNEYS,ALL_OPENING_JOURNEYS,familyJourneys,journeyCoach} from '../lib/openingJourneys.js'
 import OpeningCourses from './OpeningCourses.jsx'
 import OpeningBranchPanel from './OpeningBranchPanel.jsx'
+import OpeningTurnReview from './OpeningTurnReview.jsx'
+import {openingTurnReview} from '../lib/openingMoveReview.js'
 import practicalCases from '../data/openingPracticalCases.js'
 import {curriculumFork,nextCurriculumRoute,curriculumReturnIndex,prefixKey,openingFrequencies} from '../lib/openingCurriculum.js'
 import {prepareOpeningCatalog,normalizeOpeningQuery,linePositions,initialPracticeIndex,practiceMove,
@@ -28,6 +30,7 @@ export default function OpeningLibrary(){
   const [hintLevel,setHintLevel]=useState(0)
   const [screen,setScreen]=useState('courses'),[courseFamily,setCourseFamily]=useState(null),[journeyId,setJourneyId]=useState('italian')
   const [lastMoveCorrect,setLastMoveCorrect]=useState(false)
+  const [turnReview,setTurnReview]=useState(null)
   const [suggestedRoute,setSuggestedRoute]=useState(null)
   const [curriculum,setCurriculum]=useState({completed:[],automatic:true,resumeIndex:0})
   const [revisit,setRevisit]=useState(null),[statistics,setStatistics]=useState({})
@@ -82,7 +85,7 @@ export default function OpeningLibrary(){
   const shown=filtered.slice(page*30,(page+1)*30)
   const guidedCatalog=filter==='fundamentals'&&!query.trim()
   const variantNote=VARIANT_NOTES.find(([match])=>match.test(selected?.name??''))?.[1]
-  function clearExercise(){setFrom(null);setFeedback('');setSanInput('');setMistakes(0);setHints(0);setHintVisible(false);setHintLevel(0);setLastMoveCorrect(false);setSuggestedRoute(null);setRevisit(null)}
+  function clearExercise(){setFrom(null);setFeedback('');setSanInput('');setMistakes(0);setHints(0);setHintVisible(false);setHintLevel(0);setLastMoveCorrect(false);setTurnReview(null);setSuggestedRoute(null);setRevisit(null)}
   function select(entry){const lesson=filter==='fundamentals'&&!query.trim();setSelectedId(entry.id);setTrapId(null);if(lesson){setJourneyId(entry.family);setScreen('lesson')}setMode(lesson?'lesson':'study');setStep(lesson&&side==='b'?1:0);clearExercise()}
   function startPractice(color=side){setSide(color);setMode('train');setStep(initialPracticeIndex(moves,color));clearExercise()}
   function startJourney(color=side,course=guided?journey:OPENING_JOURNEYS.find(j=>j.family===selected.family)){
@@ -118,6 +121,7 @@ export default function OpeningLibrary(){
     const response=practiceMove(moves,step,side,move)
     setFrom(null);setSanInput('')
     setLastMoveCorrect(false)
+    setTurnReview(null)
     setSuggestedRoute(null)
     if(response.status==='illegal'){setFeedback('Questa mossa non è legale nella posizione. Riprova.');return false}
     if(response.status==='different-line'){
@@ -127,19 +131,21 @@ export default function OpeningLibrary(){
     }
     if(!['correct','complete'].includes(response.status))return false
     setLastMoveCorrect(true)
+    if(guided)setTurnReview(openingTurnReview(moves,step,side))
     setStep(response.index);setHintVisible(false);setHintLevel(0)
     if(response.status==='complete'){
       if(guided)finishRoute(journey,mistakes===0&&hints===0)
       else setProgress(p=>recordOpeningCompletion(p,drillId,mistakes===0&&hints===0))
-      setFeedback(guided?`Percorso completato. ${coach.debrief}`:mistakes===0&&hints===0?'Linea completata senza errori e senza indizi!':'Linea completata. Ripetila per consolidare le mosse.')
-    }else setFeedback(guided?coach.debrief:response.reply?`Corretto. L’avversario risponde ${response.reply}.`:'Corretto. Continua.')
+      setFeedback(guided?`${journey.practice?'Esercizio':'Percorso'} completato.${coach.debriefOrigin==='written'?' '+coach.debrief:''}`:mistakes===0&&hints===0?'Linea completata senza errori e senza indizi!':'Linea completata. Ripetila per consolidare le mosse.')
+    }else setFeedback(guided?coach.debriefOrigin==='written'?coach.debrief:'':response.reply?`Corretto. L’avversario risponde ${response.reply}.`:'Corretto. Continua.')
     return true
   }
   function followAlternative(){
     if(!suggestedRoute)return
     const {course,move}=suggestedRoute,response=practiceMove(course.moves,step,side,move)
     if(!['correct','complete'].includes(response.status))return
-    const note=journeyCoach(course,step,side).debrief
+    const nextCoach=journeyCoach(course,step,side),note=nextCoach.debriefOrigin==='written'?nextCoach.debrief:''
+    setTurnReview(openingTurnReview(course.moves,step,side))
     setJourneyId(course.id);setStep(response.index);setSuggestedRoute(null);setLastMoveCorrect(true)
     setHintVisible(false);setHintLevel(0);setFeedback(note)
     setCurriculum(previous=>({...previous,resumeIndex:Math.max(previous.resumeIndex,step)}))
@@ -190,7 +196,7 @@ export default function OpeningLibrary(){
         {mode==='traps'?<div className="opening-trap-list"><p>Queste combinazioni funzionano con le risposte mostrate. Studia anche come evitarle.</p>{traps.map(t=><article key={t.id}><p className="opening-eyebrow">{OPENING_LESSONS.find(g=>g.id===t.family)?.title}</p><h3>{t.title}</h3><p>{t.idea}</p><button onClick={()=>{setTrapId(t.id);setSide(t.side);setMode('study');setStep(0);clearExercise()}}>Apri la trappola</button></article>)}</div>:<>
           {trap&&<button className="opening-back-link" onClick={()=>{setTrapId(null);setStep(0);setMode('study');clearExercise()}}>← Torna all’apertura selezionata</button>}
           {guided&&<section className="opening-coach" aria-label="Consiglio dell’istruttore">
-            {feedback&&(lastMoveCorrect?<details className="opening-sequence" open={complete}><summary>La sequenza appena giocata</summary><p className="opening-feedback opening-debrief" role="status">{feedback}</p></details>:<p className="opening-feedback" role="status">{feedback}</p>)}
+            {(feedback||turnReview)&&(lastMoveCorrect?<details className="opening-sequence" open={complete}><summary>La sequenza appena giocata</summary><OpeningTurnReview review={turnReview}/>{feedback&&<p className="opening-feedback opening-debrief" role="status">{feedback}</p>}</details>:<p className="opening-feedback" role="status">{feedback}</p>)}
             {suggestedRoute&&<button className="opening-primary" onClick={followAlternative}>Segui {suggestedRoute.course.title}</button>}
             {!revisit&&coach.opponent&&<p className="opening-opponent" role="note" aria-label="Ultima mossa dell’avversario">{coach.opponent.text}</p>}
             <h3>{revisit?'Torniamo al bivio':complete?(journey.practice?'Esercizio completato':'Percorso completato'):`Tocca a te · ${side==='w'?'Bianco':'Nero'}`}</h3>

@@ -1,0 +1,5651 @@
+{
+  "schema": 1,
+  "courseDigest": "970539cb2a926899f0ad6b48caf64f042f983f6fba100187fe458e4c7e2afd72",
+  "courses": 280,
+  "families": 37,
+  "explainedHalfMoves": 8930,
+  "pairs": 4492,
+  "writtenPairs": 1744,
+  "fullyWrittenCourses": 37,
+  "policy": "Single-move explanations are derived from the actual board. Written pair notes are counted separately; shared exact prefixes count as uses, not unique authored texts.",
+  "familyRows": [
+    {
+      "id": "italian",
+      "title": "Partita Italiana",
+      "courses": 11,
+      "halfMoves": 354,
+      "pairs": 178,
+      "writtenPairs": 66,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "italian",
+          "halfMoves": 36,
+          "pairs": 18,
+          "writtenPairs": 18,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "italian:evans",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:two-knights",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:hungarian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:fried-liver",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:scotch-gambit",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:giuoco-center",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:evans-declined",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:traxler",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:ulvestad",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "italian:fegatello",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "spanish",
+      "title": "Partita Spagnola",
+      "courses": 14,
+      "halfMoves": 446,
+      "pairs": 224,
+      "writtenPairs": 99,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "spanish",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "spanish:berlin",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:exchange",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:marshall",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 9,
+          "positionOnly": [
+            12,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:open",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:schliemann",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:steinitz",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:breyer",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 8,
+          "positionOnly": [
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:zaitsev",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 9,
+          "positionOnly": [
+            12,
+            14,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:chigorin",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 9,
+          "positionOnly": [
+            12,
+            14,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:archangel",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            8,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:anti-marshall",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 9,
+          "positionOnly": [
+            12,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:classical-bc5",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "spanish:anti-berlin",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "sicilian",
+      "title": "Difesa Siciliana",
+      "courses": 19,
+      "halfMoves": 606,
+      "pairs": 304,
+      "writtenPairs": 92,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "sicilian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "sicilian:najdorf",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:dragon",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:alapin",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:sveshnikov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:kan",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:accelerated-dragon",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:rossolimo",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:closed",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:kalashnikov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:richter-rauzer",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            8,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:sozin",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            8,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:morra",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:grand-prix",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:moscow",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:four-knights",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:okelly",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:keres",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "french",
+      "title": "Difesa Francese",
+      "courses": 14,
+      "halfMoves": 449,
+      "pairs": 226,
+      "writtenPairs": 77,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "french",
+          "halfMoves": 36,
+          "pairs": 18,
+          "writtenPairs": 18,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "french:winawer",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:exchange",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:tarrasch",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:classical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:rubinstein",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:steinitz",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:maccutcheon",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:tarrasch-closed",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:winawer-poisoned",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:burn",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:monte-carlo",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:winawer-a3",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "french:milner-barry",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 8,
+          "positionOnly": [
+            10,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "caro",
+      "title": "Difesa Caro-Kann",
+      "courses": 16,
+      "halfMoves": 511,
+      "pairs": 257,
+      "writtenPairs": 103,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "caro",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "caro:advance",
+          "halfMoves": 33,
+          "pairs": 17,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            30,
+            32
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:exchange",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:panov",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            14,
+            16,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:karpov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:tartakower",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            6,
+            10,
+            14,
+            16,
+            20,
+            22,
+            24,
+            26,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:bronstein-larsen",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            6,
+            10,
+            12,
+            16,
+            18,
+            22,
+            24,
+            26,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:two-knights",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            2,
+            8,
+            10,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:fantasy",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            16,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:gurgenidze",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:tal",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            4,
+            10,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:advance-bayonet",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            18,
+            20,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:botvinnik-carls",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            10,
+            12,
+            14,
+            16,
+            18,
+            22,
+            24,
+            26,
+            28
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:panov-nc6",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            14,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:accelerated-panov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            2,
+            4,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "caro:hillbilly",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "scandinavian",
+      "title": "Difesa Scandinava",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 35,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "scandinavian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "scandinavian:knight",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "scandinavian:qd6",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "scandinavian:qd8",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "scandinavian:portuguese",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "scandinavian:icelandic",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "pirc",
+      "title": "Difesa Pirc e Moderna",
+      "courses": 6,
+      "halfMoves": 193,
+      "pairs": 97,
+      "writtenPairs": 42,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "pirc",
+          "halfMoves": 34,
+          "pairs": 17,
+          "writtenPairs": 17,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "pirc:austrian",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "pirc:classical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "pirc:150-attack",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "pirc:modern",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "pirc:fianchetto",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "alekhine",
+      "title": "Difesa Alekhine",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 43,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "alekhine",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "alekhine:four-pawns",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "alekhine:exchange",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "alekhine:modern",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 9,
+          "positionOnly": [
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "alekhine:two-pawns",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "alekhine:scandinavian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "petrov",
+      "title": "Difesa Petrov",
+      "courses": 6,
+      "halfMoves": 193,
+      "pairs": 97,
+      "writtenPairs": 42,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "petrov",
+          "halfMoves": 34,
+          "pairs": 17,
+          "writtenPairs": 17,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "petrov:steinitz",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "petrov:cochrane",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "petrov:three-knights",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "petrov:modern-nc3",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "petrov:italian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "scotch",
+      "title": "Partita Scozzese",
+      "courses": 5,
+      "halfMoves": 159,
+      "pairs": 80,
+      "writtenPairs": 37,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "scotch",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "scotch:gambit",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "scotch:mieses",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "scotch:goering",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "scotch:steinitz",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "vienna",
+      "title": "Partita Viennese",
+      "courses": 5,
+      "halfMoves": 159,
+      "pairs": 80,
+      "writtenPairs": 32,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "vienna",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "vienna:gambit",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "vienna:fianchetto",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "vienna:bishop",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "vienna:falkbeer",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "kings-gambit",
+      "title": "Gambetto di Re",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 35,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "kings-gambit",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "kings-gambit:declined",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-gambit:fischer",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-gambit:bishops",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-gambit:falkbeer",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-gambit:declined-bc5",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "philidor",
+      "title": "Difesa Philidor",
+      "courses": 5,
+      "halfMoves": 159,
+      "pairs": 80,
+      "writtenPairs": 33,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "philidor",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "philidor:exchange",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "philidor:hanham",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "philidor:lion",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "philidor:countergambit",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "queens-gambit",
+      "title": "Gambetto di Donna",
+      "courses": 17,
+      "halfMoves": 545,
+      "pairs": 274,
+      "writtenPairs": 82,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "queens-gambit",
+          "halfMoves": 36,
+          "pairs": 18,
+          "writtenPairs": 18,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "queens-gambit:semi-slav",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:accepted",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:slav",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:tarrasch",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:chigorin",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:albin",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:slav-chebanenko",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:anti-meran",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:botvinnik",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:moscow",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:cambridge-springs",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            8,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:tartakower",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:lasker",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:ragozin",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:slav-exchange",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-gambit:accepted-e4",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "london",
+      "title": "Sistema di Londra",
+      "courses": 5,
+      "halfMoves": 159,
+      "pairs": 80,
+      "writtenPairs": 29,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "london",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "london:indian",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "london:early-c5",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "london:jobava",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "london:queen-pressure",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "kings-indian",
+      "title": "Difesa Est-Indiana",
+      "courses": 14,
+      "halfMoves": 439,
+      "pairs": 224,
+      "writtenPairs": 126,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "kings-indian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "kings-indian:fianchetto",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 8,
+          "positionOnly": [
+            6,
+            10,
+            14,
+            16,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:four-pawns",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 10,
+          "positionOnly": [
+            10,
+            14,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:averbakh",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 8,
+          "positionOnly": [
+            8,
+            12,
+            16,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:makogonov",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 9,
+          "positionOnly": [
+            10,
+            16,
+            20,
+            22,
+            24,
+            26,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:petrosian",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 11,
+          "positionOnly": [
+            16,
+            18,
+            22,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:gligoric",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 11,
+          "positionOnly": [
+            18,
+            20,
+            24,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:exchange",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 11,
+          "positionOnly": [
+            16,
+            22,
+            24,
+            26,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:bayonet",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 14,
+          "positionOnly": [
+            24,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:samisch",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:panno",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            8,
+            10,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:fianchetto-panno",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:smyslov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "kings-indian:semi-classical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "grunfeld",
+      "title": "Difesa Grünfeld",
+      "courses": 5,
+      "halfMoves": 161,
+      "pairs": 81,
+      "writtenPairs": 37,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "grunfeld",
+          "halfMoves": 34,
+          "pairs": 17,
+          "writtenPairs": 17,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "grunfeld:russian",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "grunfeld:fianchetto",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "grunfeld:brinckmann",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "grunfeld:stockholm",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "nimzo",
+      "title": "Difesa Nimzo-Indiana",
+      "courses": 5,
+      "halfMoves": 161,
+      "pairs": 81,
+      "writtenPairs": 38,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "nimzo",
+          "halfMoves": 34,
+          "pairs": 17,
+          "writtenPairs": 17,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "nimzo:classical",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "nimzo:rubinstein",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "nimzo:samisch",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "nimzo:leningrad",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "queens-indian",
+      "title": "Difesa Ovest-Indiana",
+      "courses": 5,
+      "halfMoves": 159,
+      "pairs": 80,
+      "writtenPairs": 37,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "queens-indian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "queens-indian:petrosian",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-indian:ba6",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-indian:e3",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-indian:kasparov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "catalan",
+      "title": "Apertura Catalana",
+      "courses": 5,
+      "halfMoves": 159,
+      "pairs": 80,
+      "writtenPairs": 40,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "catalan",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "catalan:open",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "catalan:closed",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 10,
+          "positionOnly": [
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "catalan:check",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "catalan:early-c5",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "dutch",
+      "title": "Difesa Olandese",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 39,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "dutch",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "dutch:stonewall",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "dutch:classical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "dutch:leningrad",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 8,
+          "positionOnly": [
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "dutch:staunton",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "dutch:hopton",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "benoni",
+      "title": "Difesa Benoni e Benko",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 39,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "benoni",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "benoni:benko",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "benoni:modern",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 8,
+          "positionOnly": [
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "benoni:benko-accepted",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "benoni:czech",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "benoni:old",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "budapest",
+      "title": "Gambetto di Budapest",
+      "courses": 5,
+      "halfMoves": 159,
+      "pairs": 80,
+      "writtenPairs": 40,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "budapest",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "budapest:fajarowicz",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "budapest:adler",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "budapest:alekhine",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "budapest:rubinstein",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 10,
+          "positionOnly": [
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "title": "Apertura Inglese",
+      "courses": 10,
+      "halfMoves": 319,
+      "pairs": 160,
+      "writtenPairs": 46,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "english",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "english:symmetrical",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 0,
+          "positionOnly": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "english:four-knights",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "english:reversed-sicilian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "english:botvinnik",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "english:anglo-indian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "english:hedgehog",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            2,
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "english:neo-catalan",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            2,
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "english:anglo-dutch",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "english:bremen-smyslov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "reti",
+      "title": "Apertura Réti",
+      "courses": 6,
+      "halfMoves": 193,
+      "pairs": 97,
+      "writtenPairs": 32,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "reti",
+          "halfMoves": 34,
+          "pairs": 17,
+          "writtenPairs": 17,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "reti:advance",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "reti:accepted",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "reti:kings-indian-attack",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "reti:symmetrical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "reti:new-york",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            2,
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "four-knights",
+      "title": "Partita dei Quattro Cavalli",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 44,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "four-knights",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "four-knights:spanish",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "four-knights:rubinstein",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "four-knights:italian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "four-knights:glek",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "four-knights:belgrade",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "larsen",
+      "title": "Apertura Larsen",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 28,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "larsen",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "larsen:classical",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 0,
+          "positionOnly": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "larsen:indian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "larsen:sicilian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "larsen:symmetrical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "larsen:dutch",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "bird",
+      "title": "Apertura Bird",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 30,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "bird",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "bird:from",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 0,
+          "positionOnly": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "bird:symmetrical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "bird:indian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "bird:sicilian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "bird:fianchetto",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "trompowsky",
+      "title": "Attacco Trompowsky",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 36,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "trompowsky",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "trompowsky:ne4",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "trompowsky:d5",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "trompowsky:c5",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "trompowsky:e6",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "trompowsky:raptor",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "colle",
+      "title": "Sistemi Colle e Torre",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 38,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "colle",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "colle:zukertort",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "colle:torre-indian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "colle:stonewall",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "colle:koltanowski",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "colle:torre-classical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "bogo",
+      "title": "Difesa Bogo-Indiana",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 43,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "bogo",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "bogo:knight",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "bogo:qe7",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "bogo:be7",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "bogo:a5",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "bogo:nc6",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 6,
+          "positionOnly": [
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "old-indian",
+      "title": "Difesa Vecchia Indiana",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 41,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "old-indian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "old-indian:exchange",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "old-indian:janowski",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "old-indian:fianchetto",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "old-indian:ukrainian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "old-indian:classical-e4",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 7,
+          "positionOnly": [
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "nimzowitsch",
+      "title": "Difesa Nimzowitsch",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 36,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "nimzowitsch",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "nimzowitsch:exchange",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 2,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "nimzowitsch:e5",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "nimzowitsch:scandinavian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "nimzowitsch:two-knights",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "nimzowitsch:advance",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "owen",
+      "title": "Difesa Owen",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 33,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "owen",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "owen:english-defense",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 0,
+          "positionOnly": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "owen:classical",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "owen:knight",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "owen:english-e4",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "owen:guatemala",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "open-games",
+      "title": "Altre aperture di Re",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 34,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "open-games",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "open-games:center",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "open-games:danish",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "open-games:ponziani",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "open-games:latvian",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "open-games:elephant",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "queens-pawn",
+      "title": "Aperture di Donna e sistemi",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 32,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "queens-pawn",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "queens-pawn:torre",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 1,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-pawn:blackmar-diemer",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-pawn:veresov",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-pawn:richter",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "queens-pawn:englund",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Altre aperture e sistemi",
+      "courses": 6,
+      "halfMoves": 191,
+      "pairs": 96,
+      "writtenPairs": 28,
+      "fullyWrittenCourses": 1,
+      "rows": [
+        {
+          "id": "other",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "other:polish",
+          "halfMoves": 31,
+          "pairs": 16,
+          "writtenPairs": 0,
+          "positionOnly": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "other:sokolsky",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            0,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "other:grob",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "other:sodium",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "other:dunst",
+          "halfMoves": 32,
+          "pairs": 16,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            18,
+            20,
+            22,
+            26,
+            28,
+            30
+          ],
+          "fullyWritten": false
+        }
+      ]
+    }
+  ]
+}

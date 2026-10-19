@@ -134,7 +134,6 @@ export const OPENING_JOURNEYS = OPENING_LESSONS.map(guide => {
 export const ALL_OPENING_JOURNEYS=[...OPENING_JOURNEYS,...OPENING_VARIANTS,...openingExpansion.entries]
 export const familyJourneys=family=>ALL_OPENING_JOURNEYS.filter(j=>j.family===family)
 
-const positionKey=board=>board.fen().split(' ').slice(0,4).join(' ')
 let sharedStories
 const variantNotes={
   'kings-indian:fianchetto':{
@@ -210,20 +209,28 @@ const variantNotes={
     24:'Ae3 sostiene d4, mentre Ab7 mette i pezzi neri sulla grande diagonale. Prima di semplificare, entrambi devono chiedersi quale effetto avrà il cambio sull’attività attorno al pedone isolato.',
   },
 }
-function sharedStory(board,journey,index){
+function sharedStory(journey,index){
   if(!sharedStories){
     sharedStories=new Map()
     for(const base of OPENING_JOURNEYS){
-      const position=new Chess()
-      for(let i=0;i<base.moves.length;i++){
-        const pair=Math.floor(i/2)*2
-        sharedStories.set(`${positionKey(position)}|${base.moves.slice(0,pair+2).join(' ')}`,OPENING_STORIES[base.id][Math.floor(i/2)])
-        position.move(base.moves[i])
+      for(let i=0;i<base.moves.length;i+=2){
+        // The entire legal SAN prefix determines the position and its history.
+        // Pair notes are shared only after both corresponding moves match.
+        sharedStories.set(base.moves.slice(0,i+2).join(' '),OPENING_STORIES[base.id][i/2])
       }
     }
   }
   const pair=Math.floor(index/2)*2
-  return sharedStories.get(`${positionKey(board)}|${journey.moves.slice(0,pair+2).join(' ')}`)
+  return sharedStories.get(journey.moves.slice(0,pair+2).join(' '))
+}
+
+export function openingWrittenContext(journey,index){
+  const pair=Math.floor(index/2)*2
+  const story=OPENING_STORIES[journey.id]?.[pair/2]??(journey.variant?sharedStory(journey,index):null)
+  const reviewed=caroNotes[journey.id]??strategicNotes[journey.id]
+  const debrief=(reviewed?.line===journey.moves.join(' ')?reviewed.notes[pair]:null)
+    ??journey.editorialNotes?.[pair]??variantNotes[journey.id]?.[pair]??story?.debrief
+  return {story,debrief,debriefOrigin:debrief?'written':'position-effects'}
 }
 
 export const JOURNEY_STAGES = [
@@ -242,13 +249,13 @@ export function journeyCoach(journey,index,side){
   const plan=side==='w'?journey.whitePlan:journey.blackPlan
   const san=journey.moves[index]
   if(!san)return {stage,plan}
-  let story=OPENING_STORIES[journey.id]?.[Math.floor(index/2)]
-  if(!story&&journey.variant)story=sharedStory(board,journey,index)
+  const context=openingWrittenContext(journey,index),story=context.story
   if(!story&&!journey.variant)throw new Error(`Missing opening story: ${journey.id}:${index}`)
   const challenge=openingChallenge(board,san)
   const opponent=previousPosition&&new Chess(previousPosition).turn()!==side
     ?openingOpponent(previousPosition,journey.moves[index-1],san):null
-  let debrief=story?.debrief
+  let debrief=context.debrief
+  const debriefOrigin=context.debriefOrigin
   if(!debrief){
     const pair=Math.floor(index/2)*2,position=new Chess()
     for(const played of journey.moves.slice(0,pair))position.move(played)
@@ -262,16 +269,13 @@ export function journeyCoach(journey,index,side){
     if(structure)debrief+=' '+structure
     if(pair===4||pair===18)debrief+=' '+journey.contrast
   }
-  const reviewed=caroNotes[journey.id]??strategicNotes[journey.id]
-  debrief=(reviewed?.line===journey.moves.join(' ')?reviewed.notes[Math.floor(index/2)*2]:null)
-    ??journey.editorialNotes?.[Math.floor(index/2)*2]??variantNotes[journey.id]?.[Math.floor(index/2)*2]??debrief
   const before=board.fen(),move=board.move(san)
   const authored=story&&(move.color==='w'?story.white:story.black)
   const explicit=authored&&(/cavall|alfier|torre|pedon|donna|arrocc|riprend|cattur|spinta/i.test(authored.question)||authored.question.includes(move.from)||authored.question.includes(move.to))
   const piece={p:'pedone',n:'cavallo',b:'alfiere',r:'torre',q:'donna',k:'re'}[move.piece]
   return {stage,plan,situation:authored?.situation??challenge.situation,
     question:opponent?.question??(authored&&!explicit?authored.question:challenge.question),
-    opponent,guidedQuestion:authored?.question??challenge.question,debrief,
+    opponent,guidedQuestion:authored?.question??challenge.question,debrief,debriefOrigin,
     hint:`Concentrati ${piece==='donna'?'sulla donna':piece==='torre'?'sulla torre':piece==='alfiere'?'sull’alfiere':`sul ${piece}`} in ${move.from}.`,
     san,from:move.from,to:move.to,before}
 }

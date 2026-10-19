@@ -33,6 +33,15 @@ Le sequenze revisionate sono congelate in `openingReviewedLines.js` e
 Gli altri passaggi mantengono le spiegazioni derivate dalla posizione e il corpus
 narrativo precedente; i commenti individuali non coprono ancora ogni mossa.
 
+Ogni mossa giocata ha ora un riepilogo distinto da quello della risposta avversaria,
+anche quando l'allievo usa il Nero. La sezione richiudibile «La sequenza appena giocata»
+mostra gli effetti della propria mossa e poi quelli della risposta effettiva,
+con al massimo due osservazioni per mossa: bersagli, sostegni, colonne e trasformazioni
+dei pedoni. Le note scritte restano un approfondimento separato; i vecchi paragrafi
+generici non vengono ripetuti insieme a queste spiegazioni. Nulla viene anticipato
+prima di giocare. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md)
+distingue le 8.930 semimosse spiegate dai passaggi con una nota individuale.
+
 L'[inventario di copertura](OPENING-COVERAGE.md) elenca i 197 rami dichiarati
 nell'espansione e distingue percorsi precedenti, nuovi, fonti e verifiche.
 Le 188 nuove linee partono da posizioni documentate nel catalogo fissato;
@@ -90,6 +99,9 @@ un pezzo difeso da uno attaccato; uno scacco di scoperta può avere origine
 dal pezzo che effettivamente attacca il re. Non anticipano la mossa richiesta
 all'allievo. Sono controlli geometrici, non una certificazione che una cattura
 futura sia legalmente possibile o vantaggiosa.
+Anche gli attacchi scoperti contro altri pezzi partono dall'attaccante effettivo:
+nella Lasker, ...Ce4 può liberare l'alfiere e7 contro h4; quella freccia parte
+da e7, mentre il cavallo e4 esercita una pressione distinta sul cavallo c3.
 
 Cambiano con la posizione, scompaiono al completamento e durante il ritorno al
 bivio e si possono nascondere nelle opzioni. Il testo rimane disponibile anche
@@ -154,7 +166,7 @@ La cache di download e opzionale; il normale build usa il catalogo versionato
 e non scarica dati. Il catalogo viene caricato soltanto aprendo la biblioteca.
 
 ```sh
-npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js tests/opening-strategic-notes.test.js tests/opening-scope.test.js tests/opening-teaching-checkpoint.test.js
+npm test -- --config scripts/qa-no-env-test.config.js tests/opening-library.test.js tests/opening-journeys.test.js tests/opening-variants.test.js tests/opening-opponent.test.js tests/opening-curriculum.test.js tests/opening-expansion.test.js tests/opening-engine-evidence.test.js tests/opening-strategic-notes.test.js tests/opening-scope.test.js tests/opening-teaching-checkpoint.test.js tests/opening-move-review.test.js
 npx playwright test --config scripts/qa-opening-browser.config.js
 npm run build -- --config scripts/qa-no-env-build.config.js
 ```
