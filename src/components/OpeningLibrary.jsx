@@ -4,6 +4,8 @@ import {Chessboard} from 'react-chessboard'
 import {OPENING_LESSONS,OPENING_TRAPS,VARIANT_NOTES} from '../lib/openingLessons.js'
 import {OPENING_JOURNEYS,ALL_OPENING_JOURNEYS,familyJourneys,journeyCoach} from '../lib/openingJourneys.js'
 import OpeningCourses from './OpeningCourses.jsx'
+import OpeningBranchPanel from './OpeningBranchPanel.jsx'
+import {curriculumFork,nextCurriculumRoute,curriculumReturnIndex,prefixKey,openingFrequencies} from '../lib/openingCurriculum.js'
 import {prepareOpeningCatalog,normalizeOpeningQuery,linePositions,initialPracticeIndex,practiceMove,
   OPENING_PROGRESS_KEY,validOpeningProgress,recordOpeningCompletion} from '../lib/openingLibrary.js'
 import '../opening-library.css'
@@ -26,7 +28,9 @@ export default function OpeningLibrary(){
   const [screen,setScreen]=useState('courses'),[courseFamily,setCourseFamily]=useState(null),[journeyId,setJourneyId]=useState('italian')
   const [lastMoveCorrect,setLastMoveCorrect]=useState(false)
   const [suggestedRoute,setSuggestedRoute]=useState(null)
-  const [lastReply,setLastReply]=useState(null)
+  const [curriculum,setCurriculum]=useState({completed:[],automatic:true,resumeIndex:0})
+  const [revisit,setRevisit]=useState(null),[statistics,setStatistics]=useState({})
+  const [showArrows,setShowArrows]=useState(true)
   const [storageError,setStorageError]=useState(false)
   const [progress,setProgress]=useState(()=>{try{return validOpeningProgress(JSON.parse(localStorage.getItem(OPENING_PROGRESS_KEY)))}catch{return validOpeningProgress(null)}})
   useEffect(()=>{let live=true;loadCatalog().then(rows=>{if(live){setCatalog(rows);setLoadError('')}}).catch(()=>{if(live)setLoadError('Il catalogo non è disponibile. Controlla la connessione e riprova.')});return()=>{live=false}},[])
@@ -51,6 +55,20 @@ export default function OpeningLibrary(){
   const fen=line.positions[Math.min(step,moves.length)]
   const result=progress.sessions[drillId]
   const coach=guided?journeyCoach(journey,step,side):null
+  const courses=useMemo(()=>familyJourneys(journey.family),[journey.family])
+  // Also announce an opponent fork just before our move triggers its reply.
+  const fork=useMemo(()=>guided&&!complete&&!revisit?(curriculumFork(courses,moves,step)??curriculumFork(courses,moves,step+1)):null,[guided,complete,revisit,courses,moves,step])
+  const forkKey=fork?prefixKey(fork.prefix):null
+  useEffect(()=>{
+    if(forkKey===null)return
+    let live=true
+    const board=new Chess();for(const san of forkKey.split(' ').filter(Boolean))board.move(san)
+    openingFrequencies(board.fen()).then(row=>{if(live)setStatistics(previous=>({...previous,[forkKey]:row}))})
+    return()=>{live=false}
+  },[forkKey])
+  const nextRoute=guided&&complete&&curriculum.automatic?nextCurriculumRoute(courses,curriculum.completed,statistics):null
+  const arrowTargets=guided&&!revisit&&!complete&&showArrows?coach.opponent?.arrowTargets??[]:[]
+  const opponentArrows=arrowTargets.map(target=>({startSquare:target.from,endSquare:target.to,color:{attack:'#d94d45',control:'#ddab38',defense:'#3c9b85'}[target.kind]}))
   const filtered=useMemo(()=>{
     const tokens=normalizeOpeningQuery(query).split(' ').filter(Boolean)
     // Searching always covers the complete catalog, including on the start view.
@@ -63,17 +81,38 @@ export default function OpeningLibrary(){
   const shown=filtered.slice(page*30,(page+1)*30)
   const guidedCatalog=filter==='fundamentals'&&!query.trim()
   const variantNote=VARIANT_NOTES.find(([match])=>match.test(selected?.name??''))?.[1]
-  function clearExercise(){setFrom(null);setFeedback('');setSanInput('');setMistakes(0);setHints(0);setHintVisible(false);setHintLevel(0);setLastReply(null);setLastMoveCorrect(false);setSuggestedRoute(null)}
-  function select(entry){const lesson=filter==='fundamentals'&&!query.trim();setSelectedId(entry.id);setTrapId(null);if(lesson){setJourneyId(entry.family);setScreen('lesson')}setMode(lesson?'lesson':'study');setStep(lesson&&side==='b'?1:0);clearExercise();if(lesson&&side==='b')setLastReply(0)}
+  function clearExercise(){setFrom(null);setFeedback('');setSanInput('');setMistakes(0);setHints(0);setHintVisible(false);setHintLevel(0);setLastMoveCorrect(false);setSuggestedRoute(null);setRevisit(null)}
+  function select(entry){const lesson=filter==='fundamentals'&&!query.trim();setSelectedId(entry.id);setTrapId(null);if(lesson){setJourneyId(entry.family);setScreen('lesson')}setMode(lesson?'lesson':'study');setStep(lesson&&side==='b'?1:0);clearExercise()}
   function startPractice(color=side){setSide(color);setMode('train');setStep(initialPracticeIndex(moves,color));clearExercise()}
   function startJourney(color=side,course=guided?journey:OPENING_JOURNEYS.find(j=>j.family===selected.family)){
     setJourneyId(course.id);setSelectedId(foundations.find(e=>e.family===course.family)?.id??selected.id)
     setSide(color);setTrapId(null);setMode('lesson');setScreen('lesson');setCourseFamily(course.family)
-    setStep(initialPracticeIndex(course.moves,color));clearExercise();if(color==='b')setLastReply(0)
+    setStep(initialPracticeIndex(course.moves,color));clearExercise();setRevisit(null)
+    setCurriculum(previous=>({...previous,completed:[],resumeIndex:0}))
+  }
+  function finishRoute(course,clean){
+    setProgress(p=>recordOpeningCompletion(p,`journey:v1:${course.id}:${side}`,clean&&curriculum.resumeIndex===0))
+    setCurriculum(previous=>({...previous,completed:[...new Set([...previous.completed,course.id])]}))
+  }
+  function returnToBranch(course,index){
+    const previousTitle=journey.title
+    setJourneyId(course.id);setStep(index);clearExercise()
+    setRevisit({index,previousTitle});setCurriculum(previous=>({...previous,resumeIndex:index}))
+  }
+  function beginBranch(){
+    if(!revisit)return
+    // Show the exact checkpoint first; only then play the opponent's choice.
+    setStep(index=>index<moves.length&&line.parsed[index].color!==side?index+1:index)
+    setRevisit(null)
+  }
+  function chooseBranch(course){
+    if(course.id===journey.id)return
+    setJourneyId(course.id);clearExercise()
+    setCurriculum(previous=>({...previous,resumeIndex:Math.max(previous.resumeIndex,step)}))
   }
   function openCatalog(){setScreen('catalog');setMode('study');setTrapId(null);setStep(0);setFilter('all');setQuery('');setFamily('all');setBranch(null);setPage(0);clearExercise()}
   function submit(move){
-    if(!interactive||complete)return false
+    if(!interactive||complete||revisit)return false
     const response=practiceMove(moves,step,side,move)
     setFrom(null);setSanInput('')
     setLastMoveCorrect(false)
@@ -87,9 +126,9 @@ export default function OpeningLibrary(){
     if(!['correct','complete'].includes(response.status))return false
     setLastMoveCorrect(true)
     setStep(response.index);setHintVisible(false);setHintLevel(0)
-    if(guided)setLastReply(response.reply?step+1:null)
     if(response.status==='complete'){
-      setProgress(p=>recordOpeningCompletion(p,drillId,mistakes===0&&hints===0))
+      if(guided)finishRoute(journey,mistakes===0&&hints===0)
+      else setProgress(p=>recordOpeningCompletion(p,drillId,mistakes===0&&hints===0))
       setFeedback(guided?`Percorso completato. ${coach.debrief}`:mistakes===0&&hints===0?'Linea completata senza errori e senza indizi!':'Linea completata. Ripetila per consolidare le mosse.')
     }else setFeedback(guided?coach.debrief:response.reply?`Corretto. L’avversario risponde ${response.reply}.`:'Corretto. Continua.')
     return true
@@ -100,8 +139,9 @@ export default function OpeningLibrary(){
     if(!['correct','complete'].includes(response.status))return
     const note=journeyCoach(course,step,side).debrief
     setJourneyId(course.id);setStep(response.index);setSuggestedRoute(null);setLastMoveCorrect(true)
-    setHintVisible(false);setHintLevel(0);setLastReply(response.reply?step+1:null);setFeedback(note)
-    if(response.status==='complete')setProgress(p=>recordOpeningCompletion(p,`journey:v1:${course.id}:${side}`,mistakes===0&&hints===0))
+    setHintVisible(false);setHintLevel(0);setFeedback(note)
+    setCurriculum(previous=>({...previous,resumeIndex:Math.max(previous.resumeIndex,step)}))
+    if(response.status==='complete')finishRoute(course,false)
   }
   function drop({sourceSquare,targetSquare}){
     if(!targetSquare)return false
@@ -111,7 +151,7 @@ export default function OpeningLibrary(){
     return submit({from:sourceSquare,to:targetSquare,...(promotion?{promotion}:{})})
   }
   function click({square}){
-    if(!interactive||complete)return
+    if(!interactive||complete||revisit)return
     if(from&&square!==from){if(drop({sourceSquare:from,targetSquare:square}))return}
     const board=new Chess(fen)
     setFrom(board.get(square)?.color===side?square:null)
@@ -125,7 +165,7 @@ export default function OpeningLibrary(){
   if(loadError)return <main className="opening-library"><h1>Biblioteca delle aperture</h1><p role="alert">{loadError}</p><button onClick={()=>{setLoadError('');loadCatalog().then(setCatalog).catch(()=>setLoadError('Catalogo non disponibile. Riprova.'))}}>Riprova</button></main>
   if(!catalog||!selected)return <main className="opening-library" aria-busy="true"><h1>Biblioteca delle aperture</h1><p>Caricamento delle aperture e delle varianti…</p></main>
   if(screen==='courses')return <OpeningCourses family={courseFamily} onFamily={setCourseFamily} onStart={course=>startJourney(side,course)} onCatalog={openCatalog} progress={progress}/>
-  const notationForm=<form onSubmit={e=>{e.preventDefault();if(sanInput.trim())submit(sanInput.trim())}}><label>Mossa in notazione<input value={sanInput} onChange={e=>setSanInput(e.target.value)} placeholder="es. Nf3" disabled={complete||!canTrain} autoComplete="off" /></label><button disabled={complete||!canTrain||!sanInput.trim()}>Gioca</button></form>
+  const notationForm=<form onSubmit={e=>{e.preventDefault();if(sanInput.trim())submit(sanInput.trim())}}><label>Mossa in notazione<input value={sanInput} onChange={e=>setSanInput(e.target.value)} placeholder="es. Nf3" disabled={complete||!!revisit||!canTrain} autoComplete="off" /></label><button disabled={complete||!!revisit||!canTrain||!sanInput.trim()}>Gioca</button></form>
   return <main className={`opening-library${guided?' opening-focus':''}`}>
     {!guided&&<header className="opening-hero"><div><p className="opening-eyebrow">CATALOGO DELLE APERTURE</p><h1>Esplora le linee.</h1><button onClick={()=>setScreen('courses')}>Torna ai percorsi</button></div>
       <div className="opening-totals"><strong>{catalog.length.toLocaleString('it-IT')}</strong><span>linee · 500 codici ECO</span></div></header>
@@ -144,18 +184,23 @@ export default function OpeningLibrary(){
       </aside>}
       <section className="opening-workbench" aria-label="Studio dell’apertura">
         <div className="opening-line-heading"><div><p className="opening-eyebrow">{guided?guide.title:trap?'TRAPPOLA DIDATTICA':`${selected.eco} · ${guide.title}`}</p><h2>{title}</h2></div>{!guided&&<button className="opening-favorite" aria-label="Salva apertura nei preferiti" aria-pressed={progress.favorites.includes(selected.id)} onClick={()=>setProgress(p=>({...p,favorites:p.favorites.includes(selected.id)?p.favorites.filter(id=>id!==selected.id):[...p.favorites,selected.id]}))}>{progress.favorites.includes(selected.id)?'★':'☆'}</button>}</div>
-        {guided?<div className="opening-lesson-toolbar"><button onClick={()=>{setCourseFamily(journey.family);setScreen('courses')}}>← Percorso e varianti</button><span>{coach.stage.title} · {Math.min(Math.floor(step/2),Math.ceil(moves.length/2))}/{Math.ceil(moves.length/2)}</span><details><summary>Opzioni</summary><div className="opening-color-choice"><span>Gioca con</span><button aria-pressed={side==='w'} onClick={()=>startJourney('w')}>Bianco</button><button aria-pressed={side==='b'} onClick={()=>startJourney('b')}>Nero</button></div><button onClick={()=>startJourney()}>Ricomincia</button><button onClick={openCatalog}>Catalogo completo</button></details></div>:<div className="opening-modes" aria-label="Modalità apertura">{[['lesson','Partita guidata'],['study','Esplora'],['train','Allenati'],['traps','Trappole']].map(([value,label])=><button key={value} aria-pressed={mode===value} onClick={()=>{if(value==='lesson')startJourney();else if(value==='train'){const practiceMoves=trap?.moves??selected.moves;setMode('train');setStep(initialPracticeIndex(practiceMoves,side));clearExercise()}else{setMode(value);setStep(0);clearExercise()}}}>{label}</button>)}</div>}
+        {guided?<div className="opening-lesson-toolbar"><button onClick={()=>{setCourseFamily(journey.family);setScreen('courses')}}>← Percorso e varianti</button><span>{coach.stage.title} · {Math.min(Math.floor(step/2),Math.ceil(moves.length/2))}/{Math.ceil(moves.length/2)}</span><details><summary>Opzioni</summary><div className="opening-color-choice"><span>Gioca con</span><button aria-pressed={side==='w'} onClick={()=>startJourney('w')}>Bianco</button><button aria-pressed={side==='b'} onClick={()=>startJourney('b')}>Nero</button></div><label className="opening-option"><input type="checkbox" checked={curriculum.automatic} onChange={e=>setCurriculum(p=>({...p,automatic:e.target.checked}))}/>Continua automaticamente con le varianti</label><label className="opening-option"><input type="checkbox" checked={showArrows} onChange={e=>setShowArrows(e.target.checked)}/>Mostra le frecce avversarie</label><button onClick={()=>startJourney()}>Ricomincia</button><button onClick={openCatalog}>Catalogo completo</button></details></div>:<div className="opening-modes" aria-label="Modalità apertura">{[['lesson','Partita guidata'],['study','Esplora'],['train','Allenati'],['traps','Trappole']].map(([value,label])=><button key={value} aria-pressed={mode===value} onClick={()=>{if(value==='lesson')startJourney();else if(value==='train'){const practiceMoves=trap?.moves??selected.moves;setMode('train');setStep(initialPracticeIndex(practiceMoves,side));clearExercise()}else{setMode(value);setStep(0);clearExercise()}}}>{label}</button>)}</div>}
         {mode==='traps'?<div className="opening-trap-list"><p>Queste combinazioni funzionano con le risposte mostrate. Studia anche come evitarle.</p>{traps.map(t=><article key={t.id}><p className="opening-eyebrow">{OPENING_LESSONS.find(g=>g.id===t.family)?.title}</p><h3>{t.title}</h3><p>{t.idea}</p><button onClick={()=>{setTrapId(t.id);setSide(t.side);setMode('study');setStep(0);clearExercise()}}>Apri la trappola</button></article>)}</div>:<>
           {trap&&<button className="opening-back-link" onClick={()=>{setTrapId(null);setStep(0);setMode('study');clearExercise()}}>← Torna all’apertura selezionata</button>}
           {guided&&<section className="opening-coach" aria-label="Consiglio dell’istruttore">
             {feedback&&(lastMoveCorrect?<details className="opening-sequence" open={complete}><summary>La sequenza appena giocata</summary><p className="opening-feedback opening-debrief" role="status">{feedback}</p></details>:<p className="opening-feedback" role="status">{feedback}</p>)}
             {suggestedRoute&&<button className="opening-primary" onClick={followAlternative}>Segui {suggestedRoute.course.title}</button>}
-            {lastReply!==null&&<p className="opening-reply">L’avversario ha giocato <strong>{journey.moves[lastReply]}</strong>.</p>}
-            <h3>{complete?'Percorso completato':`Tocca a te · ${side==='w'?'Bianco':'Nero'}`}</h3>
-            {!complete&&<>{!coach.situation.includes(coach.from)&&!coach.situation.includes(coach.to)&&<p className="opening-coach-situation">{coach.situation}</p>}<p className="opening-coach-question">{coach.question}</p></>}
-            {complete&&<div className="opening-recap"><h3>Rifletti sulla partita</h3><p>Quale cambio ha trasformato il centro? Quale pezzo hai migliorato? Dove cercheresti gioco adesso?</p><p>Confronta il tuo piano con quello avversario nelle note qui sotto, poi prova il percorso con l’altro colore.</p></div>}
+            {!revisit&&coach.opponent&&<p className="opening-opponent" role="note" aria-label="Ultima mossa dell’avversario">{coach.opponent.text}</p>}
+            <h3>{revisit?'Torniamo al bivio':complete?'Percorso completato':`Tocca a te · ${side==='w'?'Bianco':'Nero'}`}</h3>
+            {!complete&&!revisit&&<>{!coach.opponent&&!coach.situation.includes(coach.from)&&!coach.situation.includes(coach.to)&&<p className="opening-coach-situation">{coach.situation}</p>}<p className="opening-coach-question">{coach.question}</p></>}
+            {revisit&&<div className="opening-checkpoint" role="status"><p>Riprendiamo dalla posizione comune, prima della scelta che distingue <strong>{journey.title}</strong>. Non occorre rigiocare le mosse già studiate.</p><p>Osserva come cambiano la struttura e le possibilità dell’avversario rispetto alla linea precedente.</p><button className="opening-primary" onClick={beginBranch}>Inizia questa variante</button></div>}
+            {fork&&<OpeningBranchPanel fork={fork} statistics={statistics} main={courses[0]} active={journey} completed={curriculum.completed} onChoose={chooseBranch}/>}
+            {complete&&<div className="opening-recap"><h3>Rifletti sulla partita</h3><p>Quale cambio ha trasformato il centro? Quale pezzo hai migliorato? Dove cercheresti gioco adesso?</p><p>Confronta il tuo piano con quello avversario nelle note qui sotto.</p>
+              {nextRoute?<button className="opening-primary" onClick={()=>returnToBranch(nextRoute.course,nextRoute.index)}>Continua con {nextRoute.course.title}</button>:curriculum.automatic&&<p className="opening-curriculum-complete" role="status">Hai affrontato tutte le {courses.length} linee guidate di questa apertura nella sessione.</p>}
+              <details className="opening-other-routes"><summary>Scegli un’altra variante</summary>{courses.filter(course=>course.id!==journey.id).map(course=><button key={course.id} onClick={()=>returnToBranch(course,curriculumReturnIndex(courses,curriculum.completed.filter(id=>id!==course.id),course))}>{course.title}</button>)}</details>
+            </div>}
           </section>}
-          <div className="opening-board" data-fen={fen}><Chessboard options={{id:'opening-study-board',position:fen,boardOrientation:side==='b'?'black':'white',allowDragging:interactive&&!complete,onPieceDrop:drop,onSquareClick:click,squareStyles,animationDurationInMs:120,lightSquareStyle:{backgroundColor:'#EDE6D6'},darkSquareStyle:{backgroundColor:'#7C6A53'}}} /></div>
+          <div className="opening-board" data-fen={fen} data-opponent-arrows={arrowTargets.map(a=>a.from+'-'+a.to+':'+a.kind).join(',')}><Chessboard key={guided?`${journeyId}:${revisit?'checkpoint':'play'}`:'catalog-board'} options={{id:'opening-study-board',position:fen,boardOrientation:side==='b'?'black':'white',allowDragging:interactive&&!complete&&!revisit,showAnimations:!revisit,arrows:opponentArrows,allowDrawingArrows:false,onPieceDrop:drop,onSquareClick:click,squareStyles,animationDurationInMs:120,lightSquareStyle:{backgroundColor:'#EDE6D6'},darkSquareStyle:{backgroundColor:'#7C6A53'}}} /></div>
           {mode==='study'?<><div className="opening-board-controls"><button aria-label="Posizione iniziale apertura" disabled={!step} onClick={()=>setStep(0)}>⏮</button><button aria-label="Mossa precedente apertura" disabled={!step} onClick={()=>setStep(s=>s-1)}>←</button><span>{step} / {moves.length}</span><button aria-label="Mossa successiva apertura" disabled={complete} onClick={()=>setStep(s=>s+1)}>→</button><button aria-label="Ultima posizione apertura" disabled={complete} onClick={()=>setStep(moves.length)}>⏭</button><button aria-label="Ruota scacchiera apertura" onClick={()=>setSide(s=>s==='w'?'b':'w')}>Ruota</button></div>
             <div className="opening-move-strip" aria-label="Mosse della variante">{moves.map((san,i)=><button key={i} aria-current={step===i+1?'step':undefined} onClick={()=>setStep(i+1)}>{i%2===0?`${Math.floor(i/2)+1}. `:''}{san}</button>)}</div>
             <div className="opening-study-actions"><button className="opening-primary" onClick={()=>startPractice()}>Allena questa {trap?'trappola':'variante'}</button>{!trap&&continuationCount>0&&<button onClick={()=>{setQuery('');setBranch(selected.moves);setFilter('all');setFamily('all');setPage(0)}}>Esplora le continuazioni ({continuationCount})</button>}</div>
@@ -163,9 +208,10 @@ export default function OpeningLibrary(){
             {trap&&side!==trap.side&&<p className="opening-small">Stai ripassando il lato che subisce la trappola, per riconoscere il pericolo. Per giocare la combinazione scegli il {trap.side==='w'?'Bianco':'Nero'}.</p>}
             {!guided&&<p>{!canTrain?'Questa linea non contiene mosse per il colore scelto. Cambia colore o scegli una continuazione più lunga.':complete?'Ripasso completato':`Tocca a te · ${side==='w'?'Bianco':'Nero'} · ${Math.floor(step/2)+1}${side==='b'?'…':'.'}`}</p>}
             <progress aria-label="Avanzamento esercizio" max={moves.length} value={step}/>
+            {guided&&arrowTargets.length>0&&<p className="opening-arrow-key" aria-label="Legenda frecce"><span>Rosso: attacco</span><span>Oro: controllo</span><span>Verde: difesa</span></p>}
             {guided?<details className="opening-notation"><summary>Scrivi la mossa</summary>{notationForm}</details>:notationForm}
-            <div className="opening-training-tools"><button disabled={complete||!canTrain||guided&&hintLevel===2} onClick={()=>{setHints(n=>n+1);setHintVisible(true);if(guided)setHintLevel(n=>Math.min(2,n+1))}}>{guided?hintLevel===0?'Chiedi un indizio':hintLevel===1?'Mostra la soluzione':'Soluzione mostrata':'Mostra un indizio'}</button>{!guided&&<button onClick={()=>startPractice()}>Ricomincia</button>}</div>
-            {hintVisible&&!complete&&<div className="opening-hint">{guided&&hintLevel===1?<><p className="opening-coach-situation">{coach.situation}</p><p>{coach.guidedQuestion}</p><p>{coach.hint}</p></>:<p>Nella linea scelta: <strong>{line.parsed[step]?.san}</strong>. {guided&&`Da ${coach.from} a ${coach.to}. `}Il pezzo è evidenziato sulla scacchiera.</p>}</div>}
+            <div className="opening-training-tools"><button disabled={complete||!!revisit||!canTrain||guided&&hintLevel===2} onClick={()=>{setHints(n=>n+1);setHintVisible(true);if(guided)setHintLevel(n=>Math.min(2,n+1))}}>{guided?hintLevel===0?'Chiedi un indizio':hintLevel===1?'Mostra la soluzione':'Soluzione mostrata':'Mostra un indizio'}</button>{!guided&&<button onClick={()=>startPractice()}>Ricomincia</button>}</div>
+            {hintVisible&&!complete&&!revisit&&<div className="opening-hint">{guided&&hintLevel===1?<><p className="opening-coach-situation">{coach.situation}</p><p>{coach.guidedQuestion}</p><p>{coach.hint}</p></>:<p>Nella linea scelta: <strong>{line.parsed[step]?.san}</strong>. {guided&&`Da ${coach.from} a ${coach.to}. `}Il pezzo è evidenziato sulla scacchiera.</p>}</div>}
             {!guided&&<p className="opening-feedback" role="status">{feedback}</p>}{(!guided||complete)&&<p className="opening-practice-stats">{guided?`Percorsi completati: ${result?.completed??0}`:`Ripassi completati: ${result?.completed??0} · Senza errori o indizi: ${result?.clean??0}`}</p>}
             {!guided&&<p className="opening-small">Puoi trascinare i pezzi, toccare partenza e arrivo oppure scrivere la mossa. Le risposte avversarie seguono la variante scelta.</p>}
           </div>}

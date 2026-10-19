@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test'
 import {Chess} from 'chess.js'
-import {OPENING_JOURNEYS} from './src/lib/openingJourneys.js'
+import {OPENING_JOURNEYS,familyJourneys} from './src/lib/openingJourneys.js'
 const url='http://127.0.0.1:4176/ChessProfessor/'
 const chooseFamily=async(page,family)=>page.locator(`.opening-family-card[data-family="${family}"]`).click()
 async function begin(page,family='italian',course=family){
@@ -19,6 +19,7 @@ async function options(page){
 async function lessonCatalog(page){await options(page);await page.getByRole('button',{name:'Catalogo completo',exact:true}).click()}
 test.beforeEach(async({page})=>{
   await page.route('https://explorer.lichess.ovh/**',route=>route.fulfill({json:{white:0,black:0,draws:0,moves:[]}}))
+  await page.route('https://explorer.lichess.org/**',route=>route.fulfill({json:{white:0,black:0,draws:0,moves:[]}}))
   await page.addInitScript(()=>{window.Worker=class{constructor(){throw Error('Opening library must not start an engine')}}})
 })
 test('catalog search, exact continuations and board navigation work without an engine',async({page})=>{
@@ -241,4 +242,154 @@ test('all families offer alternatives, and a legal Caro-Kann branch can become t
   await page.getByRole('button',{name:'Studia Attacco Panov',exact:true}).click()
   await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',new Chess().fen())
   await expect(page.getByRole('progressbar')).toHaveAttribute('max','31')
+})
+
+test('the visible opponent explanation leads into the question for either color',async({page})=>{
+  await begin(page)
+  await expect(page.getByRole('note',{name:'Ultima mossa dell’avversario'})).toHaveCount(0)
+  await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()
+  const context=page.getByRole('note',{name:'Ultima mossa dell’avversario'})
+  await expect(context).toContainText('Il Bianco ha giocato e4')
+  await expect(context).toContainText('controlla d5 e f5')
+  const input=await notation(page)
+  await input.fill('e5');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(context).toContainText('cavallo in f3 controlla d4')
+  await expect(context).toContainText('attacca il pedone in e5')
+  await expect(page.locator('.opening-coach-question')).toHaveText('Come sostieni e5 e contendi d4?')
+  await expect(page.locator('.opening-coach-question')).not.toContainText('c6')
+  await expect(page.locator('.opening-hint')).toHaveCount(0)
+  await page.evaluate(()=>window.scrollTo(0,0))
+  await page.screenshot({path:'agent-output/opening-opponent-preview/desktop.png',fullPage:true,animations:'disabled'})
+  await input.fill('Nc6');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(context).toContainText('Il Bianco ha giocato Bc4')
+  await expect(context).not.toContainText('Il Bianco ha giocato Nf3')
+  await options(page);await page.getByRole('button',{name:'Bianco',exact:true}).click()
+  await expect(context).toHaveCount(0)
+  await input.fill('e4');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await input.fill('Nf3');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(context).toContainText('Il Nero ha giocato Nc6')
+  await expect(context).toContainText('sostiene il pedone in e5')
+  await page.setViewportSize({width:360,height:780})
+  await page.evaluate(()=>window.scrollTo(0,0))
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+  await page.screenshot({path:'agent-output/opening-opponent-preview/mobile.png',fullPage:true,animations:'disabled'})
+  await page.getByRole('button',{name:'← Percorso e varianti',exact:true}).click()
+  await page.getByRole('button',{name:'Studia Gambetto Evans',exact:true}).click()
+  await expect(context).toHaveCount(0)
+})
+
+test('arrows show actual opponent targets, survive piece selection and clear on restart and color change',async({page})=>{
+  await begin(page)
+  const board=page.locator('.opening-board'),paths=board.locator('path[marker-end]')
+  await expect(paths).toHaveCount(0)
+  await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()
+  await expect(board).toHaveAttribute('data-opponent-arrows','e4-d5:control,e4-f5:control')
+  await expect(paths).toHaveCount(2)
+  const input=await notation(page)
+  await input.fill('e5');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(board).toHaveAttribute('data-opponent-arrows','f3-d4:control,f3-e5:attack')
+  await expect(board.locator('marker[id$="f3-e5"] polygon')).toHaveAttribute('fill','#d94d45')
+  await expect(board.locator('marker[id$="f3-d4"] polygon')).toHaveAttribute('fill','#ddab38')
+  await board.locator('[data-square="b8"]').click()
+  await expect(paths).toHaveCount(2)
+  await options(page)
+  await page.getByRole('checkbox',{name:'Mostra le frecce avversarie'}).uncheck()
+  await expect(paths).toHaveCount(0)
+  await page.getByRole('checkbox',{name:'Mostra le frecce avversarie'}).check()
+  await expect(paths).toHaveCount(2)
+  await page.locator('.opening-lesson-toolbar details > summary').click()
+  await page.evaluate(()=>window.scrollTo(0,0))
+  await page.screenshot({path:'agent-output/opening-branches-preview/arrows-desktop.png',fullPage:true,animations:'disabled'})
+  await page.setViewportSize({width:360,height:780})
+  await expect(paths).toHaveCount(2)
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+  await page.screenshot({path:'agent-output/opening-branches-preview/arrows-mobile.png',fullPage:true,animations:'disabled'})
+  await options(page);await page.getByRole('button',{name:'Bianco',exact:true}).click()
+  await expect(paths).toHaveCount(0)
+  await input.fill('e4');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(paths).toHaveCount(2)
+  await page.getByRole('button',{name:'Ricomincia',exact:true}).click()
+  await expect(paths).toHaveCount(0)
+})
+
+test('the automatic curriculum ranks alternatives and returns to nested Caro-Kann checkpoints',async({page})=>{
+  test.setTimeout(120000)
+  const errors=[];page.on('pageerror',error=>errors.push(error.message))
+  await page.route('https://explorer.lichess.org/**',route=>route.fulfill({json:{white:200,draws:20,black:100,moves:[
+    {san:'Nc3',white:1,draws:1,black:1},{san:'e5',white:20,draws:5,black:5},{san:'exd5',white:100,draws:10,black:70},
+  ]}}))
+  await begin(page,'caro')
+  const input=await notation(page),board=page.locator('.opening-board')
+  const courses=familyJourneys('caro'),get=id=>courses.find(c=>c.id===id)
+  async function finish(course,index){
+    for(let i=index;i<course.moves.length;i+=2){await input.fill(course.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+    await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+  }
+  await finish(get('caro'),0)
+  for(const [id,index] of [['caro:exchange',4],['caro:panov',6],['caro:advance',4]]){
+    const course=get(id)
+    await page.getByRole('button',{name:`Continua con ${course.title}`,exact:true}).click()
+    const checkpoint=new Chess();course.moves.slice(0,index).forEach(san=>checkpoint.move(san))
+    await expect(board).toHaveAttribute('data-fen',checkpoint.fen())
+    const pieces=await board.locator('[data-square]').evaluateAll(squares=>squares.flatMap(square=>{
+      const piece=square.querySelector('[data-piece]')
+      return piece?[`${square.dataset.square}:${piece.dataset.piece}`]:[]
+    }))
+    expect(pieces.sort()).toEqual(checkpoint.board().flat().filter(Boolean).map(piece=>`${piece.square}:${piece.color}${piece.type.toUpperCase()}`).sort())
+    await expect(input).toBeDisabled()
+    await expect(board).toHaveAttribute('data-opponent-arrows','')
+    await expect(page.getByRole('heading',{name:'Torniamo al bivio',exact:true})).toBeVisible()
+    if(id==='caro:panov')await page.screenshot({path:'agent-output/opening-branches-preview/nested-checkpoint.png',fullPage:true,animations:'disabled'})
+    await page.getByRole('button',{name:'Inizia questa variante',exact:true}).click()
+    await expect(input).toBeEnabled()
+    await finish(course,index)
+  }
+  await expect(page.locator('.opening-curriculum-complete')).toContainText('tutte le 4 linee')
+  await expect(page.getByRole('button',{name:/^Continua con /})).toHaveCount(0)
+  const sessions=await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)
+  for(const course of courses)expect(sessions[`journey:v1:${course.id}:w`].completed).toBe(1)
+  expect(sessions['journey:v1:caro:panov:w'].clean).toBe(0)
+  expect(errors).toEqual([])
+})
+
+test('a Black learner sees the exact checkpoint before the opponent starts an alternative, with offline fallback',async({page})=>{
+  await page.route('https://explorer.lichess.org/**',route=>route.fulfill({status:503,body:'offline'}))
+  await begin(page,'caro')
+  await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()
+  const input=await notation(page),courses=familyJourneys('caro'),main=courses[0]
+  for(let index=1;index<main.moves.length;index+=2){await input.fill(main.moves[index]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+  await options(page)
+  const automatic=page.getByRole('checkbox',{name:'Continua automaticamente con le varianti'})
+  await automatic.uncheck()
+  await expect(page.getByRole('button',{name:/^Continua con /})).toHaveCount(0)
+  await automatic.check()
+  await page.getByRole('button',{name:'Continua con Avanzata',exact:true}).click()
+  const checkpoint=new Chess();checkpoint.loadPgn('1. e4 c6 2. d4 d5')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',checkpoint.fen())
+  await page.getByRole('button',{name:'Inizia questa variante',exact:true}).click()
+  checkpoint.move('e5')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',checkpoint.fen())
+  await expect(page.getByRole('note',{name:'Ultima mossa dell’avversario'})).toContainText('Il Bianco ha giocato e5')
+  await input.fill('Bf5');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  checkpoint.move('Bf5');checkpoint.move('Nf3')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',checkpoint.fen())
+})
+
+test('the branch chooser switches plans at a live fork and King’s Indian exposes ten routes',async({page})=>{
+  await begin(page,'caro')
+  const input=await notation(page)
+  for(const san of ['e4','d4']){await input.fill(san);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+  await page.locator('.opening-branches > summary').click()
+  await page.locator('.opening-branch-options button').filter({hasText:'Avanzata'}).click()
+  await expect(page.locator('.opening-line-heading h2')).toHaveText('Avanzata')
+  const checkpoint=new Chess();checkpoint.loadPgn('1. e4 c6 2. d4 d5')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',checkpoint.fen())
+  await input.fill('e5');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  checkpoint.move('e5');checkpoint.move('Bf5')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',checkpoint.fen())
+  await page.getByRole('button',{name:'← Percorso e varianti',exact:true}).click()
+  await page.getByRole('button',{name:'← Tutte le aperture',exact:true}).click()
+  await chooseFamily(page,'kings-indian')
+  await expect(page.locator('.opening-course-card')).toHaveCount(10)
+  await expect(page.getByRole('heading',{name:'Attacco di Baionetta',exact:true})).toBeVisible()
 })

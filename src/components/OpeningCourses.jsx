@@ -12,6 +12,7 @@ export default function OpeningCourses({family,onFamily,onStart,onCatalog,progre
     <header className="opening-course-header"><div><p className="opening-eyebrow">PERCORSI DI APERTURA</p><h1>{guide?guide.title:'Quale apertura vuoi studiare?'}</h1><p>{guide?'Parti dalle basi, poi affronta le risposte alternative.':'Un’apertura, più strutture da riconoscere e giocare.'}</p></div><button onClick={onCatalog}>Catalogo completo</button></header>
     {guide?<>
       <button className="opening-back-link" onClick={()=>onFamily(null)}>← Tutte le aperture</button>
+      <p className="opening-small">Inizia dalla linea principale: al termine il corso ti riporta ai bivi per affrontare le altre varianti. Puoi anche scegliere direttamente un percorso qui sotto.</p>
       <div className="opening-course-grid">{familyJourneys(guide.id).map((journey,i)=>{
         const completed=['w','b'].reduce((n,side)=>n+(progress.sessions[`journey:v1:${journey.id}:${side}`]?.completed??0),0)
         return <article className="opening-course-card" data-course={journey.id} key={journey.id}>

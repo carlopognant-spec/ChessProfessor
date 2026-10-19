@@ -106,8 +106,22 @@
 .opening-focus .opening-training { grid-column: 2; grid-row: 4; padding: 0; align-self: start; }
 .opening-focus .opening-notes { grid-column: 1 / -1; margin-top: .2rem; }
 .opening-focus .opening-reply { border: 0; background: transparent; padding: 0; font-size: .8rem; color: var(--bone-dim); }
+.opening-focus .opening-opponent { border-left: 2px solid #78603c; padding: .1rem 0 .1rem .8rem; margin: .5rem 0 1rem; font-size: .88rem; line-height: 1.65; color: var(--bone-dim); }
 .opening-focus .opening-recap { border-left-width: 2px; }
 .opening-notation { margin: .7rem 0; }
+.opening-option { display: flex; align-items: center; gap: .6rem; margin: .6rem 0; }
+.opening-library .opening-option input { width: auto; accent-color: var(--brass); }
+.opening-branches { margin: 1rem 0; padding-top: .6rem; border-top: 1px solid #51432f; }
+.opening-branches summary, .opening-other-routes summary { cursor: pointer; color: var(--brass); font-size: .85rem; padding: .5rem 0; }
+.opening-branch-options { display: grid; gap: .5rem; }
+.opening-branch-options button { display: grid; gap: .4rem; text-align: left; }
+.opening-branch-options span { font-size: .73rem; color: var(--bone-dim); }
+.opening-other-routes { margin-top: 1rem; }
+.opening-other-routes button { display: block; width: 100%; margin: .5rem 0; text-align: left; }
+.opening-arrow-key { display: flex; flex-wrap: wrap; gap: .4rem .8rem; font-size: .7rem; margin: .2rem 0; }
+.opening-arrow-key span:nth-child(1) { color: #f38c82; }
+.opening-arrow-key span:nth-child(2) { color: #e8c36a; }
+.opening-arrow-key span:nth-child(3) { color: #74c8b3; }
 @media(max-width:760px){
   .opening-library { padding: .75rem; }
   .opening-hero { gap: 1rem; }

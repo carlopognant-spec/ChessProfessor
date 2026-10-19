@@ -3,6 +3,7 @@ import {OPENING_LESSONS} from './openingLessons.js'
 import {OPENING_STORIES} from './openingStories.js'
 import {OPENING_VARIANTS} from './openingVariants.js'
 import {openingChallenge,openingPawnChanges} from './openingChallenge.js'
+import {openingOpponent} from './openingOpponent.js'
 
 // Authored teaching continuations, not engine recommendations or game records.
 // Each family has one explicitly named route; it does not stand for every variation.
@@ -133,6 +134,63 @@ export const familyJourneys=family=>ALL_OPENING_JOURNEYS.filter(j=>j.family===fa
 const positionKey=board=>board.fen().split(' ').slice(0,4).join(' ')
 let sharedStories
 const variantNotes={
+  'kings-indian:fianchetto':{
+    8:'g3 prepara un alfiere sulla grande diagonale, mentre il Nero mette al sicuro il re. Rispetto alla Classica, il Bianco non destina l’alfiere a e2: questo cambia le possibilità di pressione sul centro e sul lato di donna.',
+    12:'Dopo l’arrocco bianco, e5 contesta d4. Il Nero non lascia al Bianco un centro indisturbato: prima di scegliere un piano sul fianco bisogna decidere come gestire questa tensione.',
+    18:'La torre bianca sostiene e4 dalla colonna e. Con exd4 il Nero cambia la struttura: dopo la ricattura il cavallo bianco può occupare d4, ma diventa anche un pezzo da attaccare guadagnando tempi.',
+    20:'Cxd4 centralizza il cavallo; ...Cc5 sviluppa pressione su e4. Il Bianco deve coordinare i pezzi attorno al centro, invece di considerare il fianchetto un attacco già pronto.',
+    24:'La donna si collega ai pezzi sviluppati, ma ...Ch5 attacca l’alfiere in f4. Il Nero usa un tempo sul pezzo per disturbare la coordinazione: prima del piano strategico viene la risposta alla minaccia concreta.',
+  },
+  'kings-indian:four-pawns':{
+    8:'f4 completa il fronte di quattro pedoni: il Bianco guadagna spazio, ma ha ancora molti pezzi da sviluppare. Il Nero arrocca e può colpire il centro con c5: lo spazio ha valore solo se può essere sostenuto.',
+    12:'d5 chiude la tensione con c5, ma ...e6 attacca subito la base avanzata del centro. Il Nero cerca di aprire linee prima che il vantaggio di spazio si trasformi in un vantaggio di coordinazione.',
+    16:'cxd5 ricostruisce il centro con il pedone c; la torre nera entra in e8. La colonna e non è ancora libera: la torre aumenta la pressione sul pedone e4 e sulle eventuali aperture del centro.',
+    18:'La spinta e5 entra nel calcolo concreto. Dopo ...dxe5, la ricattura bianca cambia i difensori del centro e libera la colonna d: non basta contare i pedoni avanzati, bisogna contare anche le risposte con tempo.',
+    20:'fxe5 mantiene un pedone avanzato, ma ...Cg4 lo attacca. La torre in e8 partecipa alla pressione lungo la colonna: l’arrocco e i cambi successivi richiedono attenzione alle ricatture su e5.',
+    24:'I cambi su e5 hanno eliminato la massa di pedoni che occupava il centro. Il Bianco deve ora valorizzare sviluppo e attività dei pezzi; il Nero ha ottenuto il tipo di trasformazione che cercava attaccando il centro.',
+  },
+  'kings-indian:averbakh':{
+    10:'Ag5 mette pressione sul cavallo f6 prima che il cavallo g1 si sviluppi. Il Nero risponde con c5: invece di inseguire l’alfiere, mette alla prova il centro e lascia aperta una trasformazione verso una struttura Benoni.',
+    14:'La donna bianca si sviluppa mentre ...exd5 modifica il centro. Dopo la ricattura con il pedone e, il Bianco avrà spazio in d5 e il Nero potrà cercare attività sulle colonne centrali.',
+    18:'Cf3 completa un altro pezzo, ma ...Ag4 lo attacca. Osserva i due alfieri: entrambi i colori stanno usando lo sviluppo per creare pressione sui cavalli e influenzare i cambi.',
+    24:'h3 chiede all’alfiere nero di decidere. Con ...Axf3 il Nero cede un alfiere per il cavallo: la ricattura e l’attività sulla colonna e contano più di un automatismo sulla coppia degli alfieri.',
+  },
+  'kings-indian:makogonov':{
+    8:'h3 controlla g4 e conserva più possibilità per i pezzi bianchi. Il Nero arrocca: il Bianco deve ancora scegliere come combinare sviluppo, centro e possibile espansione sul lato di re.',
+    12:'d5 chiude il centro; il cavallo nero passa da a6 con l’idea di raggiungere c5. Un centro chiuso permette manovre più lunghe, ma occorre riconoscere le case verso cui si dirigono i pezzi avversari.',
+    14:'g4 guadagna spazio sul lato di re e controlla f5. Il Nero occupa c5 con il cavallo: i due colori migliorano settori diversi e dovranno collegarli alle rotture centrali.',
+    18:'Cge2 sviluppa senza chiudere la strada al pedone f. La risposta ...c6 attacca d5: prima di continuare le manovre sul lato di re, il Bianco deve considerare la trasformazione della catena centrale.',
+    28:'La donna bianca collega i pezzi, ma ...f5 mette in discussione e4. La spinta apre possibilità tattiche proprio sul lato dove il Bianco ha avanzato i pedoni: la scelta della cattura decide quali linee si apriranno.',
+  },
+  'kings-indian:petrosian':{
+    12:'Il Bianco chiude con d5 prima di arroccare. Il Nero risponde con a5 e frena l’espansione b4: anche con il centro chiuso, le spinte sui fianchi dipendono dalle case controllate dall’avversario.',
+    14:'Ag5 attacca il cavallo f6. Con ...h6 il Nero attacca a sua volta l’alfiere: il Bianco deve scegliere dove conservarlo e quale influenza potrà avere sulle future spinte centrali.',
+    20:'Cd2 riorganizza il cavallo bianco. ...Ch7 libera f6, rendendo possibile il passaggio del pedone f da f7 a f5: una ritirata può preparare un’azione, non soltanto cedere spazio.',
+    24:'b3 sostiene c4, mentre ...f5 mette sotto pressione e4. I due fronti non sono indipendenti: un cambio nel centro può aprire linee contro il re prima che l’espansione sul lato di donna produca risultati.',
+    26:'exf5 e ...gxf5 eliminano i pedoni e bianco e f nero. La colonna g diventa semiaperta per il Nero e il pedone g arriva in f5: sono cambiate insieme le possibilità d’attacco e la copertura del re nero.',
+  },
+  'kings-indian:gligoric':{
+    12:'Ae3 sviluppa l’alfiere mantenendo la tensione d4-e5. ...Cg4 lo attacca subito: il Nero guadagna un tempo, ma deve poi giustificare la posizione avanzata del cavallo con un seguito coerente.',
+    14:'Ag5 conserva l’alfiere e mette pressione sul pedone e7 lungo la diagonale. ...f6 sostiene e5 e attacca l’alfiere in g5, ma sposta un pedone vicino al re: ogni tempo guadagnato sull’alfiere modifica anche la struttura difensiva.',
+    16:'Ah4 evita l’attacco del pedone f6. Con ...g5 il Nero continua l’inseguimento: il Bianco perde tempi di sviluppo, mentre il Nero avanza altri pedoni della copertura del re.',
+    22:'d5 chiude il centro; ...Ce7 riorganizza il cavallo c6. Le manovre dei cavalli e la rottura f5 acquistano importanza perché le colonne centrali non si aprono da sole.',
+    26:'Il cambio exf5 permette ...Cexf5: il cavallo da e7 raggiunge una casa attiva. Osserva come una rottura di pedone possa servire soprattutto a migliorare i pezzi.',
+  },
+  'kings-indian:exchange':{
+    12:'dxe5 e ...dxe5 sciolgono la tensione centrale e liberano la colonna d. Le donne possono ora incontrarsi su quella colonna: il tipo di partita cambia già con la scelta di questo cambio.',
+    14:'Dxd8 e ...Txd8 eliminano le donne e attivano una torre nera. Con meno possibilità di attacco diretto al re diventano centrali sviluppo, case d’appoggio e attività sulle colonne.',
+    18:'Cd5 occupa una casa attiva, ma il Nero cambia con ...Cxd5. La ricattura del pedone c sposterà il centro: prima di cercare un avamposto bisogna considerare anche quale struttura resta dopo il cambio.',
+    20:'cxd5 porta il pedone c in d5; ...c6 lo attacca immediatamente. Il Nero non accetta un pedone avanzato indisturbato e cerca di liberare altre case per i propri pezzi.',
+    28:'Il cambio degli alfieri in e6 attiva la torre nera. Anche senza donne, una ricattura può creare un pezzo attivo: il Bianco deve coordinare le torri invece di limitarsi a contare i cambi.',
+  },
+  'kings-indian:bayonet':{
+    16:'b4 avvia l’espansione sul lato di donna nella Classica. ...Ch5 prepara il gioco con f5 e attacca case sul lato di re: il Bianco deve collegare la propria iniziativa al controllo del centro.',
+    18:'Te1 sostiene e4; ...f5 mette quel pedone sotto pressione. Entrambi hanno mosso per il centro, anche se l’espansione iniziale del Bianco era sul lato di donna.',
+    20:'Cg5 aumenta la pressione su e6 e f7. ...Cf6 riporta il cavallo verso il centro e attacca e4: una risposta difensiva può conservare anche un bersaglio da attaccare.',
+    22:'Af3 sostiene e4, ma ...c6 attacca d5. Il Nero mette sotto pressione due elementi del centro con risorse diverse: il Bianco deve valutare le tensioni insieme.',
+    26:'Ce6 invade il campo nero, ma ...Axe6 cambia l’alfiere per il cavallo. La successiva ricattura trasformerà il pedone d5 in un pedone avanzato in e6: attività e possibili debolezze vanno valutate insieme.',
+    28:'dxe6 crea il pedone avanzato in e6; ...fxe4 elimina il pedone e4. Il Bianco deve rispondere alla nuova situazione centrale, senza continuare automaticamente il piano iniziato con b4.',
+  },
   'caro:advance':{
     4:'e5 guadagna spazio e chiude la tensione centrale. Il Nero sviluppa l’alfiere prima di e6: l’attacco alla catena dovrà arrivare con c5 o f6, non inseguendo il pedone avanzato senza preparazione.',
     14:'Il cambio in d4 apre la colonna c e obbliga il Bianco a ricostruire il centro. La manovra del cavallo nero prepara il gioco contro d4: non basta aver guadagnato spazio con e5.',
@@ -176,7 +234,8 @@ export const JOURNEY_STAGES = [
 export function journeyCoach(journey,index,side){
   const stage=JOURNEY_STAGES[index<8?0:index<18?1:2]
   const board=new Chess()
-  for(const san of journey.moves.slice(0,index))board.move(san)
+  let previousPosition
+  for(const san of journey.moves.slice(0,index)){previousPosition=board.fen();board.move(san)}
   const plan=side==='w'?journey.whitePlan:journey.blackPlan
   const san=journey.moves[index]
   if(!san)return {stage,plan}
@@ -184,6 +243,8 @@ export function journeyCoach(journey,index,side){
   if(!story&&journey.variant)story=sharedStory(board,journey,index)
   if(!story&&!journey.variant)throw new Error(`Missing opening story: ${journey.id}:${index}`)
   const challenge=openingChallenge(board,san)
+  const opponent=previousPosition&&new Chess(previousPosition).turn()!==side
+    ?openingOpponent(previousPosition,journey.moves[index-1],san):null
   let debrief=story?.debrief
   if(!debrief){
     const pair=Math.floor(index/2)*2,position=new Chess()
@@ -204,7 +265,8 @@ export function journeyCoach(journey,index,side){
   const explicit=authored&&(/cavall|alfier|torre|pedon|donna|arrocc|riprend|cattur|spinta/i.test(authored.question)||authored.question.includes(move.from)||authored.question.includes(move.to))
   const piece={p:'pedone',n:'cavallo',b:'alfiere',r:'torre',q:'donna',k:'re'}[move.piece]
   return {stage,plan,situation:authored?.situation??challenge.situation,
-    question:authored&&!explicit?authored.question:challenge.question,guidedQuestion:authored?.question??challenge.question,debrief,
+    question:opponent?.question??(authored&&!explicit?authored.question:challenge.question),
+    opponent,guidedQuestion:authored?.question??challenge.question,debrief,
     hint:`Concentrati ${piece==='donna'?'sulla donna':piece==='alfiere'?'sull’alfiere':`sul ${piece}`} in ${move.from}.`,
     san,from:move.from,to:move.to,before}
 }
