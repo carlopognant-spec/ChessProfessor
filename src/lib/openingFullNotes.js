@@ -1,8 +1,10 @@
 import reviewedLines from '../data/openingFullReviewedLines.js'
+import indianNotes from './openingIndianFullNotes.js'
 
 // Additional strategic notes for pairs previously covered only by board-derived
 // facts. Existing key-position notes retain precedence and remain unchanged.
 const notes={
+  ...indianNotes,
   'london:indian':{
     2:'Cf3 sostiene d4 e controlla e5; ...g6 prepara il fianchetto. Il Bianco deve scegliere lo sviluppo considerando la futura pressione dell’alfiere g7 sul centro.',
     4:'Af4 sviluppa verso c7; ...Ag7 completa il fianchetto. La diagonale nera è ancora schermata dal cavallo f6: non è già un attacco aperto a d4.',

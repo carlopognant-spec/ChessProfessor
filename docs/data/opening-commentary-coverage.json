@@ -5,12 +5,15 @@
   "families": 37,
   "explainedHalfMoves": 8930,
   "pairs": 4492,
-  "writtenPairs": 1835,
-  "fullyWrittenCourses": 45,
-  "additionalPairNotes": 91,
+  "writtenPairs": 1974,
+  "fullyWrittenCourses": 58,
+  "additionalPairNotes": 230,
   "fullyWrittenFamilies": [
     "london",
-    "catalan"
+    "nimzo",
+    "queens-indian",
+    "catalan",
+    "bogo"
   ],
   "policy": "Single-move explanations are derived from the actual board. Written pair notes are counted separately; shared exact prefixes count as uses, not unique authored texts.",
   "familyRows": [
@@ -3135,8 +3138,8 @@
       "courses": 5,
       "halfMoves": 161,
       "pairs": 81,
-      "writtenPairs": 38,
-      "fullyWrittenCourses": 1,
+      "writtenPairs": 81,
+      "fullyWrittenCourses": 5,
       "rows": [
         {
           "id": "nimzo",
@@ -3150,80 +3153,33 @@
           "id": "nimzo:classical",
           "halfMoves": 31,
           "pairs": 16,
-          "writtenPairs": 3,
-          "positionOnly": [
-            6,
-            8,
-            10,
-            12,
-            14,
-            16,
-            18,
-            20,
-            22,
-            24,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "nimzo:rubinstein",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "nimzo:samisch",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            6,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "nimzo:leningrad",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         }
       ]
     },
@@ -3233,8 +3189,8 @@
       "courses": 5,
       "halfMoves": 159,
       "pairs": 80,
-      "writtenPairs": 37,
-      "fullyWrittenCourses": 1,
+      "writtenPairs": 80,
+      "fullyWrittenCourses": 5,
       "rows": [
         {
           "id": "queens-indian",
@@ -3248,80 +3204,33 @@
           "id": "queens-indian:petrosian",
           "halfMoves": 31,
           "pairs": 16,
-          "writtenPairs": 3,
-          "positionOnly": [
-            6,
-            8,
-            10,
-            12,
-            14,
-            16,
-            18,
-            20,
-            22,
-            24,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "queens-indian:ba6",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "queens-indian:e3",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "queens-indian:kasparov",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         }
       ]
     },
@@ -4686,8 +4595,8 @@
       "courses": 6,
       "halfMoves": 191,
       "pairs": 96,
-      "writtenPairs": 43,
-      "fullyWrittenCourses": 1,
+      "writtenPairs": 96,
+      "fullyWrittenCourses": 6,
       "rows": [
         {
           "id": "bogo",
@@ -4701,99 +4610,41 @@
           "id": "bogo:knight",
           "halfMoves": 31,
           "pairs": 16,
-          "writtenPairs": 3,
-          "positionOnly": [
-            6,
-            8,
-            10,
-            12,
-            14,
-            16,
-            18,
-            20,
-            22,
-            24,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "bogo:qe7",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "bogo:be7",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "bogo:a5",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         },
         {
           "id": "bogo:nc6",
           "halfMoves": 32,
           "pairs": 16,
-          "writtenPairs": 6,
-          "positionOnly": [
-            8,
-            10,
-            12,
-            14,
-            18,
-            20,
-            22,
-            26,
-            28,
-            30
-          ],
-          "fullyWritten": false
+          "writtenPairs": 16,
+          "positionOnly": [],
+          "fullyWritten": true
         }
       ]
     },

@@ -16,7 +16,7 @@ Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusan
 
 Il riepilogo del turno distingue la propria mossa dalla risposta realmente giocata dall’avversario. Ogni semimossa dispone di una spiegazione posizionale; le note strategiche individuali restano un conteggio distinto. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md) mostra i passaggi ancora da scrivere per ogni famiglia.
 
-Un ulteriore blocco di 91 note completa i passaggi scoperti di Londra e Catalana: tutti e cinque i percorsi di ciascuna famiglia hanno ora una nota scritta per ogni coppia. Queste note aggiuntive sono distinte dalle 388 note sui passaggi chiave già conteggiate. Le sequenze sono fissate in openingFullReviewedLines.js; il controllo della linea completa impedisce il riuso dopo una modifica delle mosse.
+Il corpus aggiuntivo di 230 note completa i passaggi scoperti nelle famiglie Sistema di Londra, Difesa Nimzo-Indiana, Difesa Ovest-Indiana, Apertura Catalana, Difesa Bogo-Indiana: tutti i loro percorsi hanno ora una nota scritta per ogni coppia. Queste note aggiuntive sono distinte dalle 388 note sui passaggi chiave già conteggiate. Le sequenze sono fissate in openingFullReviewedLines.js; il controllo della linea completa impedisce il riuso dopo una modifica delle mosse.
 
 Le verifiche automatiche certificano legalità, provenienza della posizione, continuità, assenza di duplicati nella famiglia e corrispondenza delle mosse del seguito ai risultati registrati. Non certificano da sole la correttezza di ogni spiegazione strategica o la completezza della teoria di ogni apertura.
 
@@ -49,8 +49,8 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 | Sistema di Londra | 2 | 3 | 5 | 5 | 6 | 51 | 0 |
 | Difesa Est-Indiana | 10 | 4 | 14 | 14 | 8 | 0 | 0 |
 | Difesa Grünfeld | 2 | 3 | 5 | 5 | 6 | 0 | 0 |
-| Difesa Nimzo-Indiana | 2 | 3 | 5 | 5 | 6 | 0 | 0 |
-| Difesa Ovest-Indiana | 2 | 3 | 5 | 5 | 6 | 0 | 0 |
+| Difesa Nimzo-Indiana | 2 | 3 | 5 | 5 | 6 | 43 | 0 |
+| Difesa Ovest-Indiana | 2 | 3 | 5 | 5 | 6 | 43 | 0 |
 | Apertura Catalana | 2 | 3 | 5 | 5 | 6 | 40 | 0 |
 | Difesa Olandese | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
 | Difesa Benoni e Benko | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
@@ -62,7 +62,7 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 | Apertura Bird | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
 | Attacco Trompowsky | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
 | Sistemi Colle e Torre | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
-| Difesa Bogo-Indiana | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
+| Difesa Bogo-Indiana | 2 | 4 | 6 | 6 | 8 | 53 | 0 |
 | Difesa Vecchia Indiana | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
 | Difesa Nimzowitsch | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
 | Difesa Owen | 2 | 4 | 6 | 6 | 8 | 0 | 0 |

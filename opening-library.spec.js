@@ -27,7 +27,7 @@ test.beforeEach(async({page})=>{
   await page.addInitScript(()=>{window.Worker=class{constructor(){throw Error('Opening library must not start an engine')}}})
 })
 
-for(const id of ['london:queen-pressure','catalan:check'])for(const side of ['w','b']){
+for(const id of ['london:queen-pressure','catalan:check','nimzo:leningrad','queens-indian:ba6','bogo:nc6'])for(const side of ['w','b']){
   test(`complete written ${id} commentary follows board play for ${side}`,async({page})=>{
     await page.setViewportSize({width:360,height:780})
     const family=id.split(':')[0],course=familyJourneys(family).find(row=>row.id===id)
@@ -41,6 +41,8 @@ for(const id of ['london:queen-pressure','catalan:check'])for(const side of ['w'
       await input.fill(course.moves[index]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
       board.move(course.moves[index]);if(course.moves[index+1])board.move(course.moves[index+1])
       await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+      const written=fullNotes[id].notes[Math.floor(index/2)*2]
+      if(written)await expect(page.locator('.opening-debrief')).toContainText(written)
     }
     await expect(page.locator('.opening-debrief')).toContainText(note)
     const review=page.getByLabel('Spiegazione delle mosse giocate')
@@ -48,6 +50,7 @@ for(const id of ['london:queen-pressure','catalan:check'])for(const side of ['w'
     await expect(review.locator('section').last()).toHaveAttribute('data-fen-after',board.fen())
     await expect(review).toContainText(side==='b'?'La tua mossa · 16…':'Risposta del Nero · 16…')
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true)
+    if(id==='bogo:nc6'&&side==='w')await page.screenshot({path:'agent-output/opening-indian-commentary/bogo-mobile.png',fullPage:true,animations:'disabled'})
   })
 }
 

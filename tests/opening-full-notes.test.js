@@ -12,9 +12,11 @@ const boardAt=(id,index)=>{
 }
 const pawns=(board,color,file)=>board.board().flat().filter(piece=>piece?.type==='p'&&piece.color===color&&piece.square[0]===file)
 
-describe('complete written pair commentary for London and Catalan courses',()=>{
-  it('fills 91 previously uncovered pairs without replacing key-position notes',()=>{
-    expect(Object.keys(notes)).toHaveLength(8)
+const completedFamilies={london:5,catalan:5,nimzo:5,'queens-indian':5,bogo:6}
+
+describe('complete written pair commentary',()=>{
+  it('fills 230 previously uncovered pairs without replacing key-position notes',()=>{
+    expect(Object.keys(notes)).toHaveLength(21)
     const texts=[]
     for(const [id,row] of Object.entries(notes)){
       expect(row.line,id).toBe(course(id).moves.join(' '))
@@ -30,27 +32,29 @@ describe('complete written pair commentary for London and Catalan courses',()=>{
         texts.push(text)
       }
     }
-    expect(texts).toHaveLength(91)
+    expect(texts).toHaveLength(230)
     expect(new Set(texts).size).toBe(texts.length)
   })
 
-  it('has written commentary at every pair of all five courses in each family',()=>{
-    for(const family of ['london','catalan']){
-      expect(familyJourneys(family)).toHaveLength(5)
+  it('has written commentary at every pair of every course in the five completed families',()=>{
+    for(const [family,count] of Object.entries(completedFamilies)){
+      expect(familyJourneys(family)).toHaveLength(count)
       for(const row of familyJourneys(family))for(let index=0;index<row.moves.length;index++){
         expect(openingWrittenContext(row,index).debriefOrigin,`${row.id}:${index}`).toBe('written')
         expect(journeyCoach(row,index,index%2?'b':'w').debrief).toBe(openingWrittenContext(row,index).debrief)
       }
     }
-    expect(coverage.fullyWrittenCourses).toBe(45)
-    expect(coverage.writtenPairs).toBe(1835)
+    expect(coverage.fullyWrittenCourses).toBe(58)
+    expect(coverage.writtenPairs).toBe(1974)
     expect(coverage.pairs).toBe(4492)
+    expect(coverage.additionalPairNotes).toBe(230)
+    expect(coverage.fullyWrittenFamilies.sort()).toEqual(Object.keys(completedFamilies).sort())
     const digest=createHash('sha256').update(JSON.stringify(ALL_OPENING_JOURNEYS.map(row=>({id:row.id,moves:row.moves})))).digest('hex')
     expect(coverage.courseDigest).toBe(digest)
-    for(const family of ['london','catalan']){
+    for(const [family,count] of Object.entries(completedFamilies)){
       const report=coverage.familyRows.find(row=>row.id===family)
       expect(report.writtenPairs).toBe(report.pairs)
-      expect(report.fullyWrittenCourses).toBe(5)
+      expect(report.fullyWrittenCourses).toBe(count)
       expect(report.rows.every(row=>row.positionOnly.length===0)).toBe(true)
     }
   })
@@ -66,7 +70,7 @@ describe('complete written pair commentary for London and Catalan courses',()=>{
   })
 
   it('keeps a next White reply distinct from the strategic pair and the last solo White move',()=>{
-    for(const id of ['london:indian','catalan:open']){
+    for(const id of ['london:indian','catalan:open','nimzo:classical','queens-indian:petrosian','bogo:knight']){
       const row=course(id)
       expect(row.moves).toHaveLength(31)
       const black=openingTurnReview(row.moves,29,'b')

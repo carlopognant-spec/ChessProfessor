@@ -2,9 +2,9 @@
 
 I 280 percorsi contengono 8930 semimosse. Ogni semimossa giocata ha una spiegazione dei suoi effetti, distinta dalla risposta realmente eseguita dall’avversario. I testi sono calcolati sulla posizione: non vengono dichiarati commenti strategici individualmente scritti.
 
-I passaggi con una nota scritta sono 1835 su 4492 coppie di mosse; 45 percorsi hanno una nota scritta per ogni coppia. Questi sono utilizzi nel corso: lo stesso testo può essere riusato su prefissi esattamente uguali. Non sono conteggi di testi unici.
+I passaggi con una nota scritta sono 1974 su 4492 coppie di mosse; 58 percorsi hanno una nota scritta per ogni coppia. Questi sono utilizzi nel corso: lo stesso testo può essere riusato su prefissi esattamente uguali. Non sono conteggi di testi unici.
 
-Famiglie interamente commentate per coppia: **Sistema di Londra, Apertura Catalana**. Sono state aggiunte 91 note individuali ai passaggi precedentemente scoperti di queste famiglie. Anche gli altri percorsi conservano le note già presenti e le spiegazioni posizionali di ogni mossa.
+Famiglie interamente commentate per coppia: **Sistema di Londra, Difesa Nimzo-Indiana, Difesa Ovest-Indiana, Apertura Catalana, Difesa Bogo-Indiana**. Sono state aggiunte 230 note individuali ai passaggi precedentemente scoperti di queste famiglie. Anche gli altri percorsi conservano le note già presenti e le spiegazioni posizionali di ogni mossa.
 
 Le note strategiche scritte restano un approfondimento. Il riepilogo del turno descrive prima la mossa dell’allievo e poi l’effettiva risposta avversaria: giocando con il Nero, questa è la successiva mossa del Bianco. Le spiegazioni non compaiono prima di aver giocato.
 
@@ -29,8 +29,8 @@ Le frecce includono gli attacchi scoperti con origine nel pezzo che controlla da
 | Sistema di Londra | 5 | 159 | 80/80 | 5 |
 | Difesa Est-Indiana | 14 | 439 | 126/224 | 1 |
 | Difesa Grünfeld | 5 | 161 | 37/81 | 1 |
-| Difesa Nimzo-Indiana | 5 | 161 | 38/81 | 1 |
-| Difesa Ovest-Indiana | 5 | 159 | 37/80 | 1 |
+| Difesa Nimzo-Indiana | 5 | 161 | 81/81 | 5 |
+| Difesa Ovest-Indiana | 5 | 159 | 80/80 | 5 |
 | Apertura Catalana | 5 | 159 | 80/80 | 5 |
 | Difesa Olandese | 6 | 191 | 39/96 | 1 |
 | Difesa Benoni e Benko | 6 | 191 | 39/96 | 1 |
@@ -42,7 +42,7 @@ Le frecce includono gli attacchi scoperti con origine nel pezzo che controlla da
 | Apertura Bird | 6 | 191 | 30/96 | 1 |
 | Attacco Trompowsky | 6 | 191 | 36/96 | 1 |
 | Sistemi Colle e Torre | 6 | 191 | 38/96 | 1 |
-| Difesa Bogo-Indiana | 6 | 191 | 43/96 | 1 |
+| Difesa Bogo-Indiana | 6 | 191 | 96/96 | 6 |
 | Difesa Vecchia Indiana | 6 | 191 | 41/96 | 1 |
 | Difesa Nimzowitsch | 6 | 191 | 36/96 | 1 |
 | Difesa Owen | 6 | 191 | 33/96 | 1 |
