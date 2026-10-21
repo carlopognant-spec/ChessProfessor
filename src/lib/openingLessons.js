@@ -1,3 +1,5 @@
+import {resolveOpeningFamily} from './openingFamily.js'
+
 // Family-level lessons are deliberately separate from the named source lines.
 // They describe plans, not an engine verdict on every continuation.
 const lesson = (id, title, match, intro, white, black, warning, line) =>
@@ -192,6 +194,12 @@ export const OPENING_LESSONS = [
 ]
 
 export function openingFamily(name, eco='') {
+  return OPENING_LESSONS.find(lesson=>lesson.id===resolveOpeningFamily(name,eco).id)??OPENING_LESSONS.at(-1)
+}
+
+// Preserve the original source snapshot and its hashes used by course evidence.
+// Runtime navigation uses openingFamily instead of these historical assignments.
+export function openingCatalogSourceFamily(name, eco='') {
   const named=OPENING_LESSONS.slice(0,-1).find(l=>l.match.test(name))
   if(named)return named
   const number=Number(eco.slice(1)),letter=eco[0]

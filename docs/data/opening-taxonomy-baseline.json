@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "createdOn": "2026-10-20",
+  "scope": "P02.1: source catalog, authored courses and analysis behavior preserved",
+  "sourceCatalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+  "courseDigest": "79d6708390feb9050091ea2f921eb8b711ac34f73b4ef0145ef697370bd6ce54",
+  "hashes": {
+    "src/data/openingPositions.json": "0b96012fd9330e01ff3eb85600cb678f997bf5f2ed7e6054828fa6f97c236b5a",
+    "src/data/openingSupplements.json": "fa8e375154baec5c1a4eef47110034840a63b6e52eeef6829674e20e44ec4b87",
+    "src/lib/openingBook.js": "7a0187a755c4c566e8aeb541b81477a2fa98708621256135624bd06b2655513c",
+    "src/lib/classification.js": "2bdd4f56ad53f36d29d051a98debd66faeab5e396ad6a78b7d7d54a38f41c262",
+    "src/lib/engineConfig.js": "506890191d0d9a9837c0f0ec6571c6cb4bac055d47265fc329040f08d8af787a",
+    "src/lib/specialClassification.js": "45ade3128fae0b8459823dca005639164dc26ced0c414af13fcd2185a8dd913a",
+    "src/data/openingExpansion.js": "4f4364e6f592e9d9755eefa6dfb1d28651b333694ae4cb7706f4b2506385ae01",
+    "src/data/openingPracticalCases.js": "4847fbe684873cb070f098198f08515d4442a408c11f6688b7db37e2cb81e77f"
+  }
+}

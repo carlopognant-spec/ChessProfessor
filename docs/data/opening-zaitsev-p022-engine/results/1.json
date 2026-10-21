@@ -1,0 +1,29 @@
+{
+  "signature": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+  "jobId": "zaitsev:root-control",
+  "status": "complete",
+  "attemptIds": [
+    "01"
+  ],
+  "result": {
+    "bestmove": "d4e3",
+    "searchmoves": [],
+    "depth": 17,
+    "nodes": 200223,
+    "cp": 62,
+    "mate": null,
+    "pv": [
+      "d4e3",
+      "a7a6",
+      "b5e2",
+      "d7c7",
+      "e1g1",
+      "g8f6",
+      "b2b3",
+      "c8g4",
+      "c1b2",
+      "g4f3"
+    ],
+    "attempt": "01"
+  }
+}

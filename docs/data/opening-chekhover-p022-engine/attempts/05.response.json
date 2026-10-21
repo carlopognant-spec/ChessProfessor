@@ -1,0 +1,25 @@
+{
+  "signature": "224a6e3df49b39c738224e68bf0f7e3466117a9f44fea1f337bc7336512e8987",
+  "jobId": "chekhover-qd3:exercise-baseline",
+  "status": "complete",
+  "nodesActual": 200024,
+  "lines": [
+    "info string NNUE evaluation using nn-5af11540bbfe.nnue enabled",
+    "info depth 1 seldepth 1 multipv 1 score cp 1 nodes 50 nps 50000 hashfull 0 tbhits 0 time 1 pv f3d4",
+    "info depth 2 seldepth 2 multipv 1 score cp 1 nodes 95 nps 47500 hashfull 0 tbhits 0 time 2 pv f3d4",
+    "info depth 3 seldepth 2 multipv 1 score cp 6 nodes 178 nps 89000 hashfull 0 tbhits 0 time 2 pv h1e1",
+    "info depth 4 seldepth 2 multipv 1 score cp 35 nodes 237 nps 118500 hashfull 0 tbhits 0 time 2 pv f3d4",
+    "info depth 5 seldepth 3 multipv 1 score cp 90 nodes 289 nps 144500 hashfull 0 tbhits 0 time 2 pv f3d4",
+    "info depth 6 seldepth 5 multipv 1 score cp 25 nodes 1523 nps 380750 hashfull 0 tbhits 0 time 4 pv h1e1 d8a5",
+    "info depth 7 seldepth 6 multipv 1 score cp -14 nodes 3805 nps 475625 hashfull 0 tbhits 0 time 8 pv h1e1 h7h6",
+    "info depth 8 seldepth 7 multipv 1 score cp 0 nodes 5221 nps 474636 hashfull 1 tbhits 0 time 11 pv f3d4 a8c8 f2f4 h7h6 g5f6 e7f6",
+    "info depth 9 seldepth 9 multipv 1 score cp 7 nodes 8498 nps 472111 hashfull 2 tbhits 0 time 18 pv f3d4 d8a5 f2f4 h7h6 g5h4",
+    "info depth 10 seldepth 14 multipv 1 score cp 16 nodes 19642 nps 491050 hashfull 4 tbhits 0 time 40 pv f3d4 d8a5 f2f4 f8c8 h1e1 c6e8",
+    "info depth 11 seldepth 10 multipv 1 score cp 24 nodes 28715 nps 512767 hashfull 6 tbhits 0 time 56 pv f3d4 a8c8 f2f4 f8e8 h1e1 h7h6 g5h4 d8c7",
+    "info depth 12 seldepth 17 multipv 1 score cp 5 nodes 82446 nps 482140 hashfull 18 tbhits 0 time 171 pv f3d4 d8a5 f2f4 f8c8 a2a3 b7b5",
+    "info depth 13 seldepth 15 multipv 1 score cp 9 nodes 98030 nps 478195 hashfull 21 tbhits 0 time 205 pv f3d4 h7h6 g5h4 d8a5 f2f4 a5h5 h4f2 f8c8 d4c6",
+    "info depth 14 seldepth 18 multipv 1 score cp 8 nodes 113590 nps 483361 hashfull 26 tbhits 0 time 235 pv f3d4 a8c8 f2f4 a7a6 d4c6 c8c6 e4e5 d6e5 f4e5 f6d5 g5e7 d8e7 c3d5 e6d5 d3d5 c6c5 d5d6 c5e5 d6e7",
+    "info depth 15 seldepth 21 multipv 1 score cp 2 upperbound nodes 200024 nps 476247 hashfull 45 tbhits 0 time 420 pv f3d4 d8a5",
+    "bestmove f3d4 ponder d8a5"
+  ]
+}

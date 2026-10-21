@@ -1,0 +1,1710 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-01",
+  "status": "design-verified-not-published",
+  "inputHashes": {
+    "docs/data/opening-sicilian-p022-plan.json": "49ac5ed376c116ff931a63b990891657711dbe03f0ca81742acd5b8030280680",
+    "docs/data/opening-scope-audit.json": "f7f42a8ae999085516d691a87c4df9fdf084075fce0c177c7e3275fe96d7ba49",
+    "docs/data/opening-taxonomy-baseline.json": "6609a981f1d2d2502e94f993c7102670cfc360bdf2a12f4019881fff27b0e192",
+    "src/lib/openingJourneys.js": "90acd7b7643a87f7eec1e0ce21e2f3dd97ba8b861a8d962da24a584ac2d32fab",
+    "src/lib/openingCurriculum.js": "7fb18158fb5c66ef77da8afb99883581ea8c058e50a5f0b865c0accdb59551f5",
+    "src/lib/openingLibrary.js": "42d2900b821ae3b9219e3cfb2004d9c97a2da45844145dfb1db7821d1bcd80f4",
+    "scripts/verify-opening-sicilian-design.mjs": "d453851c8e64c34874b17aadfef5244032bf9458d513c3237ce0daf34d96ab41"
+  },
+  "baselineCourses": 280,
+  "baselineSicilianCourses": 19,
+  "plannedCourses": 2,
+  "plannedDocumentedPlies": 42,
+  "engineSearchesExecuted": 0,
+  "legalExerciseReplies": 65,
+  "coverage": {
+    "baseline": {
+      "exact": 1919,
+      "transposition-only": 201,
+      "absent": 10202
+    },
+    "projected": {
+      "exact": 1939,
+      "transposition-only": 201,
+      "absent": 10182
+    },
+    "newlyReached": [
+      {
+        "id": "position:00e320f8355c07c4",
+        "name": "Sicilian Defense: Chekhover Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:6e6563bb8fd3ca21"
+        ]
+      },
+      {
+        "id": "position:98208ef8a532de4c",
+        "name": "Sicilian, Chekhover, 4...Nc6",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:479f4ef8759ff46e",
+        "name": "Sicilian, Chekhover, 4...Nc6 5.Bb5 Bd7",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:328690c82438e111",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:5ed53d21e057e81c"
+        ]
+      },
+      {
+        "id": "position:73baa263331ac97d",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:cfd40b227e32c8ca"
+        ]
+      },
+      {
+        "id": "position:2d32217604eef6d1",
+        "name": "Sicilian, Chekhover, 4...Nc6 5.Bb5 Bd7 6.Bxc6 Bxc6",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:64773546bc50f266",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:1d7ff236e11c5e67"
+        ]
+      },
+      {
+        "id": "position:540751dd8875d833",
+        "name": "Sicilian, Chekhover, 7.Nc3",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:d795bd432a0e6e7c",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:2b37091c5188aced"
+        ]
+      },
+      {
+        "id": "position:9a3a2ceb549dddd8",
+        "name": "Sicilian, Chekhover, 7.Nc3 Nf6 8.Bg5",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:5487b35ec0db9ff0",
+        "name": "Sicilian: Najdorf, 7...Be7 8.Qf3",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:bb2f64b0b468088c",
+        "name": "Sicilian Defense: Najdorf Variation, Traditional Line",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:e753847f299175ba",
+        "name": "Sicilian, Chekhover, 7.Nc3 Nf6 8.Bg5 e6",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:f2b3e0ea1c90492d",
+        "name": "Sicilian: Najdorf, 8...Qc7 9.O-O-O",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:103b5133c479c0ef",
+        "name": "Sicilian Defense: Najdorf Variation, Main Line",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:38a0995bf2f7dcb9"
+        ]
+      },
+      {
+        "id": "position:a52258b5eaf48387",
+        "name": "Sicilian, Chekhover, Main Line, 10.Rhe1",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:72e7eeeb122bf710",
+        "name": "Sicilian: Najdorf, Main Line, 10.Bd3",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:9ab1cbe51445096d",
+        "name": "Sicilian, Chekhover, Main Line, 10.Rhe1 O-O",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:4d9569a0e098585d",
+        "name": "Sicilian: Najdorf, Main Line, 10.Bd3 b5",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:3416cd497d842c56",
+        "name": "Sicilian: Najdorf, Main Line, 10.Bd3 b5 11.Rhe1 Bb7",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": []
+      }
+    ],
+    "newEcoAnchors": [
+      {
+        "id": "position:00e320f8355c07c4",
+        "name": "Sicilian Defense: Chekhover Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:6e6563bb8fd3ca21"
+        ]
+      },
+      {
+        "id": "position:328690c82438e111",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:5ed53d21e057e81c"
+        ]
+      },
+      {
+        "id": "position:73baa263331ac97d",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:cfd40b227e32c8ca"
+        ]
+      },
+      {
+        "id": "position:64773546bc50f266",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:1d7ff236e11c5e67"
+        ]
+      },
+      {
+        "id": "position:d795bd432a0e6e7c",
+        "name": "Sicilian Defense: Najdorf Variation",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:2b37091c5188aced"
+        ]
+      },
+      {
+        "id": "position:103b5133c479c0ef",
+        "name": "Sicilian Defense: Najdorf Variation, Main Line",
+        "before": "absent",
+        "projected": "exact",
+        "ecoRoots": [
+          "eco:38a0995bf2f7dcb9"
+        ]
+      }
+    ]
+  },
+  "courses": [
+    {
+      "id": "sicilian:najdorf-bg5-classical",
+      "sourceId": "55f893191e905f8a",
+      "sourceName": "Sicilian: Najdorf, Main Line, 10.Bd3 b5 11.Rhe1 Bb7",
+      "sourceEco": "B99",
+      "rootPositionId": "position:328690c82438e111",
+      "rootFen": "rnbqkb1r/1p2pppp/p2p1n2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R b KQkq - 1 6",
+      "endpointFen": "r3k2r/1bqnbppp/p2ppn2/1p4B1/3NPP2/2NB1Q2/PPP3PP/2KRR3 w kq - 2 12",
+      "documentedPlies": 22,
+      "sharedPrefixPlies": 10,
+      "training": {
+        "w": {
+          "turns": 11,
+          "endpointReached": true
+        },
+        "b": {
+          "turns": 11,
+          "endpointReached": true
+        }
+      },
+      "exercise": {
+        "id": "practice:sicilian:najdorf-bg5-classical",
+        "before": "rnbqkb1r/1p3ppp/p2ppn2/6B1/3NPP2/2N5/PPP3PP/R2QKB1R b KQkq - 0 7",
+        "after": "rnbqkb1r/1p3ppp/p2pp3/6B1/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 8",
+        "answer": "Bxd8",
+        "answerFen": "rnbBkb1r/1p3ppp/p2pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R b KQkq - 0 8",
+        "immediateQueenCaptures": [
+          "Bxd8"
+        ],
+        "minimumImmediateMaterialGain": 5,
+        "legalImmediateReplies": 26,
+        "replies": [
+          {
+            "san": "Ra7",
+            "fen": "1nbBkb1r/rp3ppp/p2pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQk - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Nd7",
+            "fen": "r1bBkb1r/1p1n1ppp/p2pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Nc6",
+            "fen": "r1bBkb1r/1p3ppp/p1npp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd7",
+            "fen": "rn1Bkb1r/1p1b1ppp/p2pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Kd7",
+            "fen": "rnbB1b1r/1p1k1ppp/p2pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQ - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Kxd8",
+            "fen": "rnbk1b1r/1p3ppp/p2pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQ - 0 9",
+            "materialGain": 5
+          },
+          {
+            "san": "Be7",
+            "fen": "rnbBk2r/1p2bppp/p2pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Rg8",
+            "fen": "rnbBkbr1/1p3ppp/p2pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "b6",
+            "fen": "rnbBkb1r/5ppp/pp1pp3/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "b5",
+            "fen": "rnbBkb1r/5ppp/p2pp3/1p6/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "f6",
+            "fen": "rnbBkb1r/1p4pp/p2ppp2/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "f5",
+            "fen": "rnbBkb1r/1p4pp/p2pp3/5p2/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "g6",
+            "fen": "rnbBkb1r/1p3p1p/p2pp1p1/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "rnbBkb1r/1p3p1p/p2pp3/6p1/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "rnbBkb1r/1p3pp1/p2pp2p/8/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "rnbBkb1r/1p3pp1/p2pp3/7p/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "rnbBkb1r/1p3ppp/3pp3/p7/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "rnbBkb1r/1p3ppp/p3p3/3p4/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "rnbBkb1r/1p3ppp/p2p4/4p3/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Nc5",
+            "fen": "rnbBkb1r/1p3ppp/p2pp3/2n5/3N1P2/2N5/PPP3PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Nf6",
+            "fen": "rnbBkb1r/1p3ppp/p2ppn2/8/3N1P2/2N5/PPP3PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng5",
+            "fen": "rnbBkb1r/1p3ppp/p2pp3/6n1/3N1P2/2N5/PPP3PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng3",
+            "fen": "rnbBkb1r/1p3ppp/p2pp3/8/3N1P2/2N3n1/PPP3PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Nf2",
+            "fen": "rnbBkb1r/1p3ppp/p2pp3/8/3N1P2/2N5/PPP2nPP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Nd2",
+            "fen": "rnbBkb1r/1p3ppp/p2pp3/8/3N1P2/2N5/PPPn2PP/R2QKB1R w KQkq - 1 9",
+            "materialGain": 8
+          },
+          {
+            "san": "Nxc3",
+            "fen": "rnbBkb1r/1p3ppp/p2pp3/8/3N1P2/2n5/PPP3PP/R2QKB1R w KQkq - 0 9",
+            "materialGain": 5
+          }
+        ],
+        "engineStatus": "not-run"
+      }
+    },
+    {
+      "id": "sicilian:chekhover-bd7",
+      "sourceId": "df54a8ff7bf70e37",
+      "sourceName": "Sicilian, Chekhover, Main Line, 10.Rhe1 O-O",
+      "sourceEco": "B53",
+      "rootPositionId": "position:00e320f8355c07c4",
+      "rootFen": "rnbqkbnr/pp2pppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R b KQkq - 0 4",
+      "endpointFen": "r2q1rk1/pp2bppp/2bppn2/6B1/3QP3/2N2N2/PPP2PPP/2KRR3 w - - 4 11",
+      "documentedPlies": 20,
+      "sharedPrefixPlies": 6,
+      "training": {
+        "w": {
+          "turns": 10,
+          "endpointReached": true
+        },
+        "b": {
+          "turns": 10,
+          "endpointReached": true
+        }
+      },
+      "exercise": {
+        "id": "practice:sicilian:chekhover-bd7",
+        "before": "r1bqkbnr/pp2pppp/2np4/8/3QP3/5N2/PPP2PPP/RNB1KB1R w KQkq - 1 5",
+        "after": "r1bqkbnr/pp2pppp/2np4/8/2BQP3/5N2/PPP2PPP/RNB1K2R b KQkq - 2 5",
+        "answer": "Nxd4",
+        "answerFen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPP2PPP/RNB1K2R w KQkq - 0 6",
+        "immediateQueenCaptures": [
+          "Nxd4"
+        ],
+        "minimumImmediateMaterialGain": 6,
+        "legalImmediateReplies": 39,
+        "replies": [
+          {
+            "san": "Bb5+",
+            "fen": "r1bqkbnr/pp2pppp/3p4/1B6/3nP3/5N2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Ba6",
+            "fen": "r1bqkbnr/pp2pppp/B2p4/8/3nP3/5N2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Bd5",
+            "fen": "r1bqkbnr/pp2pppp/3p4/3B4/3nP3/5N2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Be6",
+            "fen": "r1bqkbnr/pp2pppp/3pB3/8/3nP3/5N2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Bxf7+",
+            "fen": "r1bqkbnr/pp2pBpp/3p4/8/3nP3/5N2/PPP2PPP/RNB1K2R b KQkq - 0 6",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/3nP3/3B1N2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Be2",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/3nP3/5N2/PPP1BPPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Bf1",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/3nP3/5N2/PPP2PPP/RNB1KB1R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Bb3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/3nP3/1B3N2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "e5",
+            "fen": "r1bqkbnr/pp2pppp/3p4/4P3/2Bn4/5N2/PPP2PPP/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Nxd4",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BNP3/8/PPP2PPP/RNB1K2R b KQkq - 0 6",
+            "materialGain": 6
+          },
+          {
+            "san": "Ne5",
+            "fen": "r1bqkbnr/pp2pppp/3p4/4N3/2BnP3/8/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Ng5",
+            "fen": "r1bqkbnr/pp2pppp/3p4/6N1/2BnP3/8/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Nh4",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP2N/8/PPP2PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Ng1",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/8/PPP2PPP/RNB1K1NR b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Nfd2",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/8/PPPN1PPP/RNB1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "a3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/P4N2/1PP2PPP/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "a4",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/P1BnP3/5N2/1PP2PPP/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "b3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/1P3N2/P1P2PPP/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "b4",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/1PBnP3/5N2/P1P2PPP/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "c3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/2P2N2/PP3PPP/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "g3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5NP1/PPP2P1P/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "g4",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP1P1/5N2/PPP2P1P/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "h3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N1P/PPP2PP1/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "h4",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP2P/5N2/PPP2PP1/RNB1K2R b KQkq - 0 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Na3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/N4N2/PPP2PPP/R1B1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Nc3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/2N2N2/PPP2PPP/R1B1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Nbd2",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPPN1PPP/R1B1K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Bd2",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPPB1PPP/RN2K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Be3",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/4BN2/PPP2PPP/RN2K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Bf4",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnPB2/5N2/PPP2PPP/RN2K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Bg5",
+            "fen": "r1bqkbnr/pp2pppp/3p4/6B1/2BnP3/5N2/PPP2PPP/RN2K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Bh6",
+            "fen": "r1bqkbnr/pp2pppp/3p3B/8/2BnP3/5N2/PPP2PPP/RN2K2R b KQkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Kd2",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPPK1PPP/RNB4R b kq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Kf1",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPP2PPP/RNB2K1R b kq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Kd1",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPP2PPP/RNBK3R b kq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Rg1",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPP2PPP/RNB1K1R1 b Qkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "Rf1",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPP2PPP/RNB1KR2 b Qkq - 1 6",
+            "materialGain": 9
+          },
+          {
+            "san": "O-O",
+            "fen": "r1bqkbnr/pp2pppp/3p4/8/2BnP3/5N2/PPP2PPP/RNB2RK1 b kq - 1 6",
+            "materialGain": 9
+          }
+        ],
+        "engineStatus": "not-run"
+      }
+    }
+  ],
+  "subtrees": [
+    {
+      "courseId": "sicilian:najdorf-bg5-classical",
+      "rootPositionId": "position:328690c82438e111",
+      "directReferences": 170,
+      "directOrders": 156,
+      "positionGroups": 156,
+      "allReferencesIncludingOtherOrders": 170,
+      "allOrdersIncludingTranspositions": 156,
+      "newlyReached": [
+        "position:328690c82438e111",
+        "position:73baa263331ac97d",
+        "position:64773546bc50f266",
+        "position:d795bd432a0e6e7c",
+        "position:5487b35ec0db9ff0",
+        "position:bb2f64b0b468088c",
+        "position:f2b3e0ea1c90492d",
+        "position:103b5133c479c0ef",
+        "position:72e7eeeb122bf710",
+        "position:4d9569a0e098585d",
+        "position:3416cd497d842c56"
+      ],
+      "remainingAbsent": [
+        {
+          "id": "position:b2c3dc3be3ed1402",
+          "name": "Sicilian: Najdorf, 6.Bg5 b5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:d8e769251baad6ca",
+          "name": "Sicilian: Najdorf, 6.Bg5 e5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:2edf41005832eab2",
+          "name": "Sicilian: Najdorf, 6.Bg5 Nbd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:02caa5cdf01a2e7e",
+          "name": "Sicilian: Najdorf, 6...e6 7.Bd3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f10b38869f86bbda",
+          "name": "Sicilian: Najdorf, 6...e6 7.Be2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:ead501301c57f217",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qd2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:a680daa9257d3121",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qd3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:7ed89af45106c8fe",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qe2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:502b7fd6498d3c74",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qf3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:6935c080a26558c0",
+          "name": "Sicilian: Najdorf, 6.Bg5 Nbd7 7.Bc4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c0f95f3775be7cba",
+          "name": "Sicilian: Najdorf, 6.Bg5 Nbd7 7.f4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:235abeedc8b4244c",
+          "name": "Sicilian Defense: Najdorf Variation, Neo-Classical Defense",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:40708f0796ae71d9",
+          "name": "Sicilian Defense: Najdorf Variation, Poisoned Pawn Variation",
+          "ecoRoots": [
+            "eco:7c299888695a2158"
+          ]
+        },
+        {
+          "id": "position:1e493eea180b4802",
+          "name": "Sicilian Defense: Najdorf Variation, Polugaevsky Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:d71c4c8cc7220717",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qd2 Be7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:447a743bf9583e68",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qd3 Nc6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f0d02ced58086a62",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qf3 Be7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f527ab8e019732ec",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qf3 h6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:b255dfa17a2e6bce",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qf3 Nbd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:8c4897f3bfdaa27a",
+          "name": "Sicilian: Najdorf, 6.Bg5 Nbd7 7.Bc4 e6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:a8a059262f362d03",
+          "name": "Sicilian: Najdorf, 6.Bg5 Nbd7 7.Bc4 Qa5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:2d45517fd4db4a19",
+          "name": "Sicilian: Najdorf, 6.Bg5 Nbd7 7.f4 b5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:4153fffe260a0005",
+          "name": "Sicilian: Najdorf, 7.f4 Bd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:717ac975d9048b28",
+          "name": "Sicilian: Najdorf, 7.f4 h6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:4005fc24597f2a72",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f98dc42b39bf6221",
+          "name": "Sicilian: Najdorf, 7.f4 Qc7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:dc77fbbc06fc556f",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qd2 Be7 8.O-O-O",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:58d019ac9f852047",
+          "name": "Sicilian: Najdorf, 6.Bg5 Nbd7 7.Bc4 e6 8.O-O",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:3f442a4bb48feeec",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7 8.Bc4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:18d9056b978e7d71",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7 8.Qe2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:30d60e715b3bdcd6",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7 8.Qf3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1516b11a6f8ab085",
+          "name": "Sicilian: Najdorf, 7.f4 Nc6 8.e5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1e34c2494c9d756d",
+          "name": "Sicilian: Najdorf, 7.f4 Nc6 8.Nxc6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c48c55a6619225cc",
+          "name": "Sicilian: Najdorf, 7.f4 Qc7 8.Bxf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:2d3e66a13004cfc3",
+          "name": "Sicilian: Najdorf, 7.f4 Qc7 8.Qf3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:e44887c8cca1ec53",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 8.a3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:7f8d77aef3fd69c0",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 8.Bxf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5cd92ed89f61c9c3",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 8.Nb3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f55221361c58ce1d",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 8.Qd2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:0058d2604e538f0f",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 8.Qd3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:fbdba49b908d69e5",
+          "name": "Sicilian: Najdorf, Polugaevsky, 8.e5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:8722fed5066c0860",
+          "name": "Polugaevsky Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:63d4528171ec025f",
+          "name": "Sicilian: Najdorf, 6...e6 7.Qf3 Be7 8.O-O-O Nbd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f9ea6806fe596c2c",
+          "name": "Sicilian: Najdorf, 7...Be7 8.Qf3 h6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:a9e440eb251fd250",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7 8.Qe2 Qc7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:204e679da19fe5b0",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7 8.Qf3 Qc7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:7a4ed0acc2660943",
+          "name": "Sicilian: Najdorf, 7.f4 Qc7 8.Qf3 b5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:477b46e69989dcb2",
+          "name": "Sicilian: Najdorf, Danner Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:fda1dc558ce33715",
+          "name": "Sicilian: Najdorf, Delayed Poisoned Pawn",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5c7b5061dda0a800",
+          "name": "Sicilian: Najdorf, Poisoned Pawn Accepted",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:4268fa8bafdb4f13",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 8.Nb3 Be7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:7ba97d9885eae772",
+          "name": "Polugaevsky Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f304f3edd4af66a0",
+          "name": "Sicilian: Najdorf, 6.Bg5 Nbd7 7.Bc4 Qa5 8.Qd2 e6 9.O-O-O",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1be35fa0a1b377a7",
+          "name": "Sicilian: Najdorf, 7.f4 Qc7 8.Qf3 b5 9.Bxf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:047967a84e0d0d3c",
+          "name": "Sicilian: Najdorf, 7.f4 Qc7 8.Qf3 b5 9.f5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:3f731b1af7117e5d",
+          "name": "Sicilian: Najdorf, 7.f4 Qc7 8.Qf3 b5 9.O-O-O",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:337e315c98b27135",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 8.Nb3 Nbd7 9.Qf3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:0de1b92a1b1e3005",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 9.Nb3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:cbd548b33050a913",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 9.Rb1",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:64d60bdc55509c06",
+          "name": "Sicilian Defense: Najdorf Variation, Browne Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:ec849d27a884d6ff",
+          "name": "Sicilian Defense: Najdorf Variation, Goteborg Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:d50566948d615d38",
+          "name": "Sicilian Defense: Najdorf Variation, Poisoned Pawn Accepted",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c07179395ae7035d",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7 8.Qf3 Qc7 9.O-O-O b5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:21b993ece6e15e9e",
+          "name": "Sicilian: Najdorf, 8...Qc7 9.O-O-O b5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:e50d1d58db418f29",
+          "name": "Sicilian: Najdorf, 8...Qc7 9.O-O-O Nc6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:7a04433163317b9b",
+          "name": "Sicilian: Najdorf, Danner, 9.O-O-O Bd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:410bd757e4ce623b",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 8.Nb3 Nbd7 9.Qf3 Be7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5be7683845deddbf",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 9.Nb3 Nc6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:91e32de013272cf2",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 9.Nb3 Qa3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f47878dfdf11aaaa",
+          "name": "Sicilian: Najdorf, Polugaevsky, 9.fxe5 Qc7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:b4fa19a813117616",
+          "name": "Sicilian Defense: Najdorf Variation, Polugaevsky Variation, Simagin Line",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1b872fc0c21db208",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7 8.Qf3 Qc7 9.O-O-O b5 10.Bd3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c1a1c983e85baecd",
+          "name": "Sicilian: Najdorf, 7.f4 Nbd7 8.Qf3 Qc7 9.O-O-O b5 10.e5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:ffa6450e45e77919",
+          "name": "Sicilian: Najdorf, 8...Qc7 9.O-O-O Nc6 10.Nxc6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:4ba34087f13d1539",
+          "name": "Sicilian: Najdorf, Danner, 9.O-O-O Bd7 10.e5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:55f895902e167c53",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:6a02ea856ee4c1dd",
+          "name": "Sicilian: Najdorf, Main Line, 10.Qg3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:e10e4143e5999aa6",
+          "name": "Sicilian: Najdorf, Main Line, Keres Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:e22d73e7bb185967",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.Be2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:010337b54a6d47a2",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.Bxf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:834be5a725e0be00",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.e5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:b2b584827258eb31",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.f5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:75cde768071c2117",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 9.Nb3 Qa3 10.Bxf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:9488c85de23cb32c",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.Bxb5+",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1aa63cc58dc5adf6",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.exf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:b5906b1f510c9f07",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.Nf3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:25b2c867c6750981",
+          "name": "Polugaevsky Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:8d70ed4d5e00e992",
+          "name": "Sicilian: Najdorf, Browne, 10.O-O-O Nbd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:b669c5ecd481f6e9",
+          "name": "Sicilian: Najdorf, Main Line, 10.Bd3 h6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5b33b6bac9be28e8",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:55f0d03605d49b8d",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 h6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:d90edf0afc528235",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.e5 dxe5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:b1be57dfbf765de2",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.f5 Nc6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:121c9159a2fd388a",
+          "name": "Sicilian: Najdorf, Browne, 10.O-O-O Nbd7 11.Be2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c239a40a01e6834f",
+          "name": "Sicilian: Najdorf, Browne, 10.O-O-O Nbd7 11.Qg3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:ada4c07571af6924",
+          "name": "Sicilian: Najdorf, Gothenburg, 11.Nxe6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:df8d3756ea3edd33",
+          "name": "Sicilian: Najdorf, Gothenburg, 11.Qh5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:ef4bcf2d07c013df",
+          "name": "Sicilian: Najdorf, Main Line, 10.Bd3 h6 11.Bh4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:aa0c0144bfe87f14",
+          "name": "Sicilian: Najdorf, Main Line, 10.Bd3 h6 11.Qh3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:6fc0b4822d2ec1a5",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.a3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:600582f777f82c14",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.Bd3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:e22aebca60d4068b",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.Bxf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:6270e8d57675d314",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.Be2 Be7 11.O-O",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:4df0c753a132c3ef",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.exf6 Qe5+ 11.Be2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:033fa53236bfeeb7",
+          "name": "Sicilian: Najdorf, Main Line, 10.Bd3 h6 11.Bh4 g5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c01a2d0843dfb11b",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.Bd3 Bb7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:8565289d71183e26",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.Bxf6 gxf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:8e3222762de78147",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.Bxf6 Nxf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f1921cfcc789503e",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.Be2 Be7 11.O-O Nbd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:9e7045c22c9622ba",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.Bxf6 gxf6 11.Be2 Bg7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5ea3544b8d346a13",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.Bxf6 gxf6 11.Be2 Nc6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:6f1a3325eaed903a",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.Qe2 Nfd7 11.O-O-O Bb7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:8a8133956f098a91",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.Qe2 Nfd7 11.O-O-O Nc6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:e0ad70784968992c",
+          "name": "Sicilian Defense: Najdorf Variation, Ivkov Variation",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:97181b713c74be37",
+          "name": "Sicilian: Najdorf, Main Line, 10.Bd3 b5 11.Rhe1 Bb7 12.Nd5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:499ba0508446e162",
+          "name": "Sicilian: Najdorf, Main Line, 10.Bd3 b5 11.Rhe1 Bb7 12.Qg3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:27fc14c0e1e84ed0",
+          "name": "Sicilian: Najdorf, Main Line, 10.Bd3 h6 11.Bh4 g5 12.fxg5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:606c06183a2b3210",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.Bxf6 Nxf6 12.g5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:cf1f36c673ab5297",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.e5 dxe5 11.fxe5 Nfd7 12.Bc4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1d811134fa4c17f8",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.exf6 Qe5+ 11.Be2 Qxg5 12.Qd3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:142d537012e824eb",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.Qe2 Nfd7 11.O-O-O Bb7 12.Qg4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:ab6f7bc4702ab1cb",
+          "name": "Sicilian: Najdorf, Main Line, Keres 10...b5 11.Bxf6 Nxf6 12.e5 Bb7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:f84c67ab0e42cf6b",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, 10.e5 dxe5 11.fxe5 Nfd7 12.Bc4 Bb4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:685b3f56468abdd9",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:96409a23f2a231e6",
+          "name": "Sicilian: Najdorf, Polugaevsky, 10.Qe2 Nfd7 11.O-O-O Bb7 12.Qg4 Qxe5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:35f956e58acdf898",
+          "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.Bxf6 Nxf6 12.g5 Nd7 13.a3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:819b6c6400376174",
+          "name": "Sicilian: Najdorf, Main Line, Keres, 13.Qg3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:70ea30ab3bdfd2f6",
+          "name": "Sicilian: Najdorf, Main Line, Keres, Queen Sacrifice Line",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:53812514649d3291",
+          "name": "Sicilian: Najdorf, Modern Main Line 13.f5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:fab7c9c5071275bc",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, 13.e5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5e5364527b9bde6b",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, Timman's 13.Be2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:bd31050431484ce4",
+          "name": "Sicilian: Najdorf, Modern Main Line 13.f5 Bxg5+",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:fb3c4b5424c69316",
+          "name": "Sicilian: Najdorf, Modern Main Line 13.f5 Nc5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:2736f1c4e0b2c887",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, 13.e5 dxe5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:712cf112bb700e33",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, 13.e5 Nd5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5ea370b1ff41d8e3",
+          "name": "Sicilian: Najdorf, Modern Main Line 13.f5 Nc5 14.f6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:a4f3489af0106a8d",
+          "name": "Sicilian: Najdorf, Modern Main Line 13.f5 Nc5 14.h4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5d35ab9da4b139e2",
+          "name": "Sicilian: Najdorf, Modern Main Line 13.f5 Bxg5+ 14.Kb1 Ne5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:500c44735483cdcb",
+          "name": "Sicilian: Najdorf, Main Line, Keres, 13.Qg3 dxe5 14.fxe5 Nd7 15.Bxb5",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:b21dccad18549db7",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, 13.e5 dxe5: 15.Ne4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:ea7cc3b4a8f3c165",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, 13.e5 dxe5: 15.Ne4 Be7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:03bc6deddb7de857",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, 13.e5 dxe5: 15.Ne4 Qxa2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:b12804819cf08571",
+          "name": "Sicilian: Najdorf, Modern Main Line 13.f5 Nc5 14.f6: Perenyi's 16.Rg1",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:5ee961e9182433a4",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, 13.e5 dxe5 with 18.c4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:cd59e1c8d700179a",
+          "name": "Sicilian: Najdorf, Poisoned Pawn, Main Line, 13.e5 dxe5 with 18.Nxf6+",
+          "ecoRoots": []
+        }
+      ],
+      "recordIds": [
+        "eco:5ed53d21e057e81c",
+        "eco:a45564614c2002ec",
+        "eco:6864b1ece7e13ba5",
+        "eco:d78f51f77f4f9b59",
+        "eco:cf5f153a09afbf51",
+        "eco:9e669dc8fe872142",
+        "eco:dd885c9565976158",
+        "eco:06178a9e498df937",
+        "eco:13e4f390c5233502",
+        "eco:dfa7ab8e16bb3d09",
+        "eco:cc885d6a7881b54f",
+        "eco:19930f292b6ddb22",
+        "eco:cfd40b227e32c8ca",
+        "eco:52409075c8873f4c",
+        "eco:112f83e16bbba3fa",
+        "eco:ecc35aa7cfd5449c",
+        "eco:30c9370464d95483",
+        "eco:0ab1ca5dd4079799",
+        "eco:35673896dd99480e",
+        "eco:77e355b3562d3821",
+        "eco:fa5fee86dce00c71",
+        "eco:94cc44f74235b422",
+        "eco:363f44d0c5fe69b7",
+        "eco:de15120c4e0577ce",
+        "eco:5bc18db360072c4d",
+        "eco:6b7e36b5b158b535",
+        "eco:1d7ff236e11c5e67",
+        "eco:36f9788742f99e31",
+        "eco:5686ede8e4c19ca0",
+        "eco:13c5839e0dabd765",
+        "eco:127117f5d1cdbbe7",
+        "eco:b0df4b3f7fb60fcf",
+        "eco:7e971885ac078387",
+        "eco:f7cd07f4ea51210d",
+        "eco:c3cce1f77c4adec1",
+        "eco:5be885f9e0aa8df8",
+        "eco:e1c93857a9779a95",
+        "eco:6815a7f7cc8d8873",
+        "eco:fdcf3e6dfe13965c",
+        "eco:f86452e5757c7b7b",
+        "eco:7d344de8e56bd421",
+        "eco:b987633c4c278639",
+        "eco:34e2df2fb4f5facf",
+        "eco:91a904de8c8bd2cb",
+        "eco:2f82a01945e735cc",
+        "eco:06fb41f795011d93",
+        "eco:319576a729778b32",
+        "eco:4c9746c5df8b7cb9",
+        "eco:70820f9ece6fab29",
+        "eco:a7d7e2ec7f0471aa",
+        "eco:877386df89d44948",
+        "eco:db5390d2ef248fb9",
+        "eco:247a260826a7e876",
+        "eco:7da927eeb9da3419",
+        "eco:66162daf85036f92",
+        "eco:b9ed32e8b09a31c8",
+        "eco:74f0968497adf072",
+        "eco:58303e3f9847f4e0",
+        "eco:ce362ab914d72b6b",
+        "eco:ad38b6d9f0ac7d24",
+        "eco:484e908576bb804c",
+        "eco:d1a8c75bded6fa42",
+        "eco:99590aaca88e0655",
+        "eco:e567dfb2a4731bf6",
+        "eco:21d84105134ac7ef",
+        "eco:7c299888695a2158",
+        "eco:cfaadde6642d536a",
+        "eco:542a454e80fb2845",
+        "eco:61181c7799c8a93d",
+        "eco:8f8383577db0a011",
+        "eco:c4ca09d0b6b7ff3a",
+        "eco:0586d760db32aa76",
+        "eco:97cd8f06ae2736b0",
+        "eco:681453a6918f9ae7",
+        "eco:f4c5117381423b3b",
+        "eco:ff332b037c7ae567",
+        "eco:eacb895c7c251e35",
+        "eco:42d0201987fbc372",
+        "eco:4d3ca9f577cca537",
+        "eco:712bc9676c466583",
+        "eco:fcff20ba7c0169db",
+        "eco:eeb39bba3bc464a2",
+        "eco:9dfc43e42c6e058c",
+        "eco:6866139daeaedea6",
+        "eco:1a786fa1d7e81f7b",
+        "eco:478d0d273ebc4e17",
+        "eco:83210e5df89959b6",
+        "eco:2d07fc7be3c7678f",
+        "eco:68c7cc9132d01778",
+        "eco:1fe9f5edaf9a44c8",
+        "eco:0d679098535bb5d4",
+        "eco:fb376b734628f745",
+        "eco:bd5d30ba07543eab",
+        "eco:5de31cc314eb5ea3",
+        "eco:d4fce996dea52c43",
+        "eco:b1c195cf7e92b670",
+        "eco:8f6fa76631ccaf7b",
+        "eco:deb634262079c999",
+        "eco:3bf7254e41b872f6",
+        "eco:5bc5cb1b0bc229a7",
+        "eco:ce8320eb4aaa551a",
+        "eco:714f5c146e94a64a",
+        "eco:ddf48d97574b51e5",
+        "eco:2b37091c5188aced",
+        "eco:ea7be127c7542315",
+        "eco:00dd2d80210466b2",
+        "eco:2731d795dec3858f",
+        "eco:91dc317fe4816fb2",
+        "eco:7d648cafe201746a",
+        "eco:11be24cd1224cabc",
+        "eco:dd82d2023493e1d1",
+        "eco:316720035fca63f3",
+        "eco:2db9a8243f2de711",
+        "eco:232daf31d13f1595",
+        "eco:7e0a7f2dbb01d47c",
+        "eco:2b67c442b1f12a16",
+        "eco:429628013368b766",
+        "eco:6e8177c5227e447c",
+        "eco:99457458b5005b77",
+        "eco:17aadf4e0bd1bf8e",
+        "eco:010e2d64842fa890",
+        "eco:38a0995bf2f7dcb9",
+        "eco:8908659943ce10d0",
+        "eco:1481559f1da64993",
+        "eco:401a486c49012147",
+        "eco:1c49680491a28d59",
+        "eco:d3f646486454542b",
+        "eco:148835178359806a",
+        "eco:1be73877bf768334",
+        "eco:158fb491c5cc2294",
+        "eco:2b5d3ca239cbfcd2",
+        "eco:968f128cad3fa5f6",
+        "eco:2f0577007d86a865",
+        "eco:474c5d995d6bf492",
+        "eco:c93cd663c21b8b91",
+        "eco:55f893191e905f8a",
+        "eco:53dcad6794066f41",
+        "eco:a53aac74b4db849c",
+        "eco:d4cfd636dd91843b",
+        "eco:9b900d2014e71069",
+        "eco:ce9485d0395f51bd",
+        "eco:d6245cc0247750bd",
+        "eco:549711ca52f4661f",
+        "eco:8a6023cb365e851d",
+        "eco:ffacb2f0305dc09a",
+        "eco:c799c64928312b11",
+        "eco:e4f0b765289dc4e0",
+        "eco:e5b801af9ba38a67",
+        "eco:f32fac5c18511bb2",
+        "eco:b01f550fedca283a",
+        "eco:99b14861704b95ab",
+        "eco:275cb38fae3e0b10",
+        "eco:fb33f5372ef0802f",
+        "eco:2fecf6592c7347dd",
+        "eco:a7ce6d75e819f6de",
+        "eco:97026f7b5c51a5e8",
+        "lichess:b.tsv:769",
+        "lichess:b.tsv:770",
+        "lichess:b.tsv:771",
+        "lichess:b.tsv:772",
+        "lichess:b.tsv:773",
+        "lichess:b.tsv:774",
+        "lichess:b.tsv:775",
+        "lichess:b.tsv:776",
+        "lichess:b.tsv:777",
+        "lichess:b.tsv:778",
+        "lichess:b.tsv:779",
+        "lichess:b.tsv:780",
+        "lichess:b.tsv:781",
+        "lichess:b.tsv:782"
+      ]
+    },
+    {
+      "courseId": "sicilian:chekhover-bd7",
+      "rootPositionId": "position:00e320f8355c07c4",
+      "directReferences": 24,
+      "directOrders": 22,
+      "positionGroups": 22,
+      "allReferencesIncludingOtherOrders": 24,
+      "allOrdersIncludingTranspositions": 22,
+      "newlyReached": [
+        "position:00e320f8355c07c4",
+        "position:98208ef8a532de4c",
+        "position:479f4ef8759ff46e",
+        "position:2d32217604eef6d1",
+        "position:540751dd8875d833",
+        "position:9a3a2ceb549dddd8",
+        "position:e753847f299175ba",
+        "position:a52258b5eaf48387",
+        "position:9ab1cbe51445096d"
+      ],
+      "remainingAbsent": [
+        {
+          "id": "position:f2e47e14c999e271",
+          "name": "Sicilian, Chekhover, 4...a6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c9c6ddc7d60aa2cf",
+          "name": "Sicilian, Chekhover, 4...Bd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:7161d5217d6da902",
+          "name": "Sicilian, Chekhover, 4...Nf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:361cee22134b6e85",
+          "name": "Sicilian, Chekhover, 4...a6 5.Be3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:9c7d8bc61708b20b",
+          "name": "Sicilian, Chekhover, 4...a6 5.c4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:2b356881d43ce8ce",
+          "name": "Sicilian, Chekhover, 4...Nf6 5.Nc3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c2707909c4c54697",
+          "name": "Sicilian Defense: Chekhover Variation, Zaitsev Defense",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1c190014685b03ee",
+          "name": "Sicilian, Chekhover, 4...a6 5.c4 Nc6 6.Qd2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:8d835bf138067435",
+          "name": "Sicilian, Chekhover, 4...a6 5.c4 Nc6 6.Qd2 g6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:65a7a0f0faa6092b",
+          "name": "Sicilian, Chekhover, 7.c4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:559d29741ab02c1f",
+          "name": "Sicilian, Chekhover, 7.c4 Nf6 8.Nc3 g6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:cb47b173ef24af42",
+          "name": "Sicilian, Chekhover, Main Line, 10.Qd3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1e26b7829d87dc1e",
+          "name": "Sicilian, Chekhover, Main Line, 11.Qd2",
+          "ecoRoots": []
+        }
+      ],
+      "recordIds": [
+        "eco:6e6563bb8fd3ca21",
+        "eco:24be9805605f8f1b",
+        "eco:7cd29665e2cfcb77",
+        "eco:25ffbaf5a10e264e",
+        "eco:db3b24f2c8f7bcc1",
+        "eco:9e4633e9957e3be8",
+        "eco:cb682ad7bfde697e",
+        "eco:2e1f03274972c77b",
+        "eco:77915f5f49601838",
+        "eco:6f3d2a87173750c4",
+        "eco:8afdf35a92cd2b0c",
+        "eco:f80ad3ed0fd0919e",
+        "eco:e4f616998f7358a5",
+        "eco:e3db46f894b3eb7c",
+        "eco:64713e7d95d253c3",
+        "eco:aced263e5256fe55",
+        "eco:cab3a0b1cf0331d6",
+        "eco:ff3a998988848c0c",
+        "eco:ce70dab23d629d53",
+        "eco:bd9bf950c2eac95a",
+        "eco:df54a8ff7bf70e37",
+        "eco:aed1668deddb6fa8",
+        "lichess:b.tsv:641",
+        "lichess:b.tsv:642"
+      ]
+    }
+  ],
+  "engineJobs": [
+    {
+      "id": "practice:sicilian:najdorf-bg5-classical:baseline",
+      "fen": "rnbqkb1r/1p3ppp/p2ppn2/6B1/3NPP2/2N5/PPP3PP/R2QKB1R b KQkq - 0 7",
+      "roots": []
+    },
+    {
+      "id": "practice:sicilian:najdorf-bg5-classical:deviation",
+      "fen": "rnbqkb1r/1p3ppp/p2pp3/6B1/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 8",
+      "roots": [],
+      "expectedAnswer": "Bxd8"
+    },
+    {
+      "id": "practice:sicilian:chekhover-bd7:baseline",
+      "fen": "r1bqkbnr/pp2pppp/2np4/8/3QP3/5N2/PPP2PPP/RNB1KB1R w KQkq - 1 5",
+      "roots": []
+    },
+    {
+      "id": "practice:sicilian:chekhover-bd7:deviation",
+      "fen": "r1bqkbnr/pp2pppp/2np4/8/2BQP3/5N2/PPP2PPP/RNB1K2R b KQkq - 2 5",
+      "roots": [],
+      "expectedAnswer": "Nxd4"
+    }
+  ],
+  "limitations": [
+    "Projection only: no published course was added.",
+    "Position coverage does not imply editorial completeness or coverage of every move order.",
+    "Material checks cover one legal opponent reply, not the full game.",
+    "The unique immediate queen capture is not a proof of a unique winning move.",
+    "Engine validation is pending and may prevent exercise publication."
+  ]
+}

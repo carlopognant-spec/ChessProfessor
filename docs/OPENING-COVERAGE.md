@@ -1,18 +1,18 @@
 # Inventario e avanzamento delle aperture
 
-Ambito esplicito: tutte le 37 famiglie della biblioteca. I 197 rami elencati sotto comprendono anche alcuni percorsi già presenti; non sono 197 nuovi sistemi. Le trasposizioni e i sinonimi non vengono contati come nuove aperture.
+Perimetro completo A approvato: le 12.322 posizioni delle fonti fissate in P01, ancora in corso di copertura. L'elenco sotto comprende i 197 rami storici e 6 nuovi percorsi della roadmap; alcuni rami storici corrispondono a corsi già presenti. Alias, posizioni e corsi sono conteggi distinti.
 
-Percorsi giocabili: **280**, di cui **188 aggiunti**. Rami dell’inventario ancora da inserire: **0**.
+Percorsi giocabili: **286**, di cui **188 dell'espansione storica**, **3 nuove linee integralmente documentate** e **3 con prefisso documentato e seguito didattico scritto**. Rami di questo elenco ancora da inserire: **0**; questo numero non misura le posizioni mancanti nel perimetro A. La [verifica attuale Chekhover](OPENING-CHEKHOVER-P022-RESULTS.md) riporta copertura e residui effettivi.
 
 ## Metodo e limiti
 
 Ogni nuova linea ha una posizione caratteristica collegata a un record del catalogo eco.json già fissato nel progetto. Un collegamento per trasposizione richiede la stessa posizione, turno, diritti di arrocco e possibilità di en passant. Gli eventuali passi redazionali successivi sono separati dalla parte documentata.
 
-Si preferiscono continuazioni già documentate, fino a 24 semimosse, quando compatibili con il ramo. Il seguito restante fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità delle mosse. Il browser non avvia il motore. Le ricerche e le posizioni sono registrate nel file di verifica; questo motore non è lo Stockfish 19 del browser.
+Nell’espansione storica si preferiscono continuazioni già documentate fino a 24 semimosse; il seguito fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità. Le prime due linee P02.2 hanno 22 e 20 semimosse interamente documentate. La Zaitsev ha dieci semimosse documentate e due didattiche scritte. Il lotto Chekhover successivo aggiunge 56 semimosse documentate e due didattiche scritte in tre percorsi. I seguiti scritti sono verificati con confronti alla stessa radice e budget fissato; nessuna mossa dei sei percorsi della roadmap è generata dal motore. Il browser non avvia il motore. Stockfish 16 nativo non è lo Stockfish 19 del browser.
 
-Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. Tutti i 188 nuovi percorsi, distribuiti nelle 37 famiglie, hanno inoltre almeno due note strategiche individualmente scritte: 388 note in totale, di cui 36 nella Caro-Kann. Le note collegano la scelta del giocatore alla risposta avversaria, ai bersagli e alla trasformazione del centro; compaiono dopo aver giocato, per lasciare la soluzione negli indizi facoltativi. Sono legate alle sequenze complete revisionate: se le mosse cambiano, i test e questo report richiedono una nuova revisione dei testi.
+Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. I 188 percorsi dell'espansione storica hanno almeno due note strategiche individualmente scritte: 388 note, di cui 36 nella Caro-Kann. I 6 percorsi della roadmap aggiungono 19 note minime specifiche, conteggiate separatamente. Le note compaiono dopo aver giocato e sono legate alle sequenze complete revisionate. La revisione integrale dei commenti resta P03.
 
-Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 280 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
+Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 286 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
 
 Il riepilogo del turno distingue la propria mossa dalla risposta realmente giocata dall’avversario. Ogni semimossa dispone di una spiegazione posizionale; le note strategiche individuali restano un conteggio distinto. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md) mostra i passaggi ancora da scrivere per ogni famiglia.
 
@@ -20,7 +20,7 @@ Il corpus aggiuntivo di 230 note completa i passaggi scoperti nelle famiglie Sis
 
 Le verifiche automatiche certificano legalità, provenienza della posizione, continuità, assenza di duplicati nella famiglia e corrispondenza delle mosse del seguito ai risultati registrati. Non certificano da sole la correttezza di ogni spiegazione strategica o la completezza della teoria di ogni apertura.
 
-Esercizi sulle deviazioni: **280**. Percorsi senza un esercizio costruito validato: **0**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.
+Esercizi sulle deviazioni: **286**. Percorsi senza un esercizio costruito validato: **0**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.
 
 ## Perché i conteggi sono diversi
 
@@ -34,7 +34,7 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Partita Italiana | 3 | 8 | 11 | 11 | 16 | 0 | 0 |
 | Partita Spagnola | 3 | 11 | 14 | 14 | 22 | 0 | 0 |
-| Difesa Siciliana | 4 | 15 | 19 | 19 | 30 | 0 | 0 |
+| Difesa Siciliana | 4 | 21 | 25 | 25 | 30 | 0 | 0 |
 | Difesa Francese | 4 | 10 | 14 | 14 | 20 | 0 | 0 |
 | Difesa Caro-Kann | 4 | 12 | 16 | 16 | 36 | 0 | 0 |
 | Difesa Scandinava | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
@@ -114,6 +114,12 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 - [x] Siciliana dei Quattro Cavalli — fonte 36c15ba89add8145; 12 semimosse documentate, 20 semimosse del seguito controllate; esercizio disponibile
 - [x] Variante O’Kelly — fonte 2dce191bd2481628; 8 semimosse documentate, 24 semimosse del seguito controllate; esercizio disponibile
 - [x] Scheveningen: attacco Keres — fonte 429ab453a210df60; 11 semimosse documentate, 21 semimosse del seguito controllate; esercizio disponibile
+- [x] Najdorf con 6.Ag5: sviluppo classico — fonte 55f893191e905f8a; 22 semimosse documentate, 0 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover: 4.Dxd4 e risposta ...Ad7 — fonte df54a8ff7bf70e37; 20 semimosse documentate, 0 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover Zaitsev: 5...Dd7 e cambio in c6 — fonte 77915f5f49601838; 10 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover: 7.c4 e preparazione del fianchetto — fonte cab3a0b1cf0331d6; 16 semimosse documentate, 0 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover: 10.Dd3 e arrocco del Nero — fonte ce70dab23d629d53; 19 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover: 11.Dd2 e coordinazione delle torri — fonte aed1668deddb6fa8; 21 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
 
 ### Difesa Francese
 
@@ -384,8 +390,11 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 
 - [Inventario leggibile dalla macchina](data/opening-coverage.json)
 - [Posizioni e risultati del controllo offline](data/opening-expansion-verification.json)
-- [Controlli degli esercizi pratici](data/opening-practical-verification.json)
+- [Controlli degli esercizi pratici storici](data/opening-practical-verification.json)
+- [Controlli dei due esercizi Siciliana](data/opening-sicilian-p022-practical-verification.json)
+- [Controlli del seguito e dell’esercizio Zaitsev](data/opening-zaitsev-p022-practical-verification.json)
+- [Controlli dei tre percorsi e degli esercizi Chekhover](data/opening-chekhover-p022-practical-verification.json)
 - [Fonte del catalogo](https://github.com/JeffML/eco.json)
 - [Nomi e convenzioni Lichess](https://github.com/lichess-org/chess-openings)
 
-Rigenerazione: `node scripts/build-opening-expansion.mjs` conserva i checkpoint compatibili con la stessa fonte, contenuto e configurazione; `node scripts/report-opening-coverage.mjs` ricostruisce questo inventario. Nessuna rigenerazione dei benchmark o delle cache di analisi delle partite è necessaria.
+Aggiornamento del solo inventario: `node scripts/report-opening-coverage.mjs`. Non rilanciare i generatori storici o gli studi congelati per aggiornare un rapporto. Per il lotto Siciliana usare il verificatore offline e le prove separate indicate nel relativo rapporto.

@@ -4,7 +4,7 @@ import {openingMoveReview,openingTurnReview} from '../src/lib/openingMoveReview.
 import {openingOpponent} from '../src/lib/openingOpponent.js'
 import {ALL_OPENING_JOURNEYS,familyJourneys,journeyCoach} from '../src/lib/openingJourneys.js'
 import {practiceMove,linePositions} from '../src/lib/openingLibrary.js'
-import practical from '../src/data/openingPracticalCases.js'
+import practical from '../src/lib/openingPracticalLibrary.js'
 
 const course=id=>ALL_OPENING_JOURNEYS.find(row=>row.id===id)
 const before=(id,index)=>{const b=new Chess();course(id).moves.slice(0,index).forEach(san=>b.move(san));return b}
@@ -100,8 +100,8 @@ describe('concrete single-move effects',()=>{
     expect(promotion.facts).toContainEqual(expect.objectContaining({kind:'promotion',piece:'n',to:'b8'}))
   })
 
-  it('binds every explanation and highlighted target to the played board throughout all 280 courses',()=>{
-    expect(ALL_OPENING_JOURNEYS).toHaveLength(280)
+  it('binds every explanation and highlighted target to the played board throughout all 286 courses',()=>{
+    expect(ALL_OPENING_JOURNEYS).toHaveLength(286)
     expect(new Set(ALL_OPENING_JOURNEYS.map(row=>row.family))).toHaveLength(37)
     for(const course of ALL_OPENING_JOURNEYS){
       const board=new Chess()

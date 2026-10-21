@@ -1,6 +1,6 @@
 {
-  "schema": 1,
-  "scope": "37 families; explicit 197-branch expansion inventory, not all possible theoretical moves",
+  "schema": 2,
+  "scope": "Full fixed P01 corpus A accepted: 12,322 source positions. This route inventory contains 197 historic branch declarations and 6 roadmap routes; it is not the complete source corpus.",
   "source": {
     "url": "https://github.com/JeffML/eco.json",
     "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
@@ -18,8 +18,12 @@
     "sourceExtension": "prefer-documented-continuation-up-to-24-plies",
     "repetitionPolicy": "exclude-immediate-draw-when-alternatives-exist"
   },
-  "totalCourses": 280,
-  "addedCourses": 188,
+  "totalCourses": 286,
+  "addedCourses": 194,
+  "historicalAddedCourses": 188,
+  "documentedCourses": 3,
+  "authoredContinuationCourses": 3,
+  "roadmapNotes": 19,
   "reviewedCourses": 188,
   "reviewedNotes": 388,
   "additionalPairNotes": 230,
@@ -30,7 +34,7 @@
     "catalan",
     "bogo"
   ],
-  "practicalCases": 280,
+  "practicalCases": 286,
   "practicalUncovered": [],
   "pending": [],
   "families": [
@@ -39,6 +43,8 @@
       "title": "Partita Italiana",
       "legacy": 3,
       "added": 8,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 11,
       "practicalCases": 11,
       "reviewedCourses": 8,
@@ -53,6 +59,7 @@
           "sourceId": "03273dbdf84f9af4",
           "sourceName": "Italian Game: Hungarian Defense, Tartakower Variation",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:hungarian"
@@ -64,6 +71,7 @@
           "sourceId": "da0a54c45c2769b6",
           "sourceName": "Two Knights: Main Line, 11.d4 exd3 12.Nxd3 Qc7",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:fried-liver"
@@ -75,6 +83,7 @@
           "sourceId": "8cab70f7974b246c",
           "sourceName": "Two Knights: Classical, Moller, 10.Neg5 O-O-O 11.Nxe6 fxe6 12.Rxe6 Bd6",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:scotch-gambit"
@@ -86,6 +95,7 @@
           "sourceId": "d824a0ee4f9040bc",
           "sourceName": "Italian Game: Classical Variation, Greco Gambit, Moeller-Bayonet Attack",
           "documentedPlies": 23,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 9,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:giuoco-center"
@@ -97,6 +107,7 @@
           "sourceId": "60382f6d917dcc53",
           "sourceName": "Italian Game: Evans Gambit Declined, Pavlov Variation",
           "documentedPlies": 23,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 9,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:evans-declined"
@@ -108,6 +119,7 @@
           "sourceId": "4bfdd92f563a5874",
           "sourceName": "Two Knights Defence, Traxler Counterattack",
           "documentedPlies": 21,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 11,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:traxler"
@@ -119,6 +131,7 @@
           "sourceId": "5bcf4cd5e35c8853",
           "sourceName": "Two Knights Defense, Ulvestad Variation",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:ulvestad"
@@ -130,6 +143,7 @@
           "sourceId": "f0da3612cfc06321",
           "sourceName": "Italian Game: Two Knights Defense, Fegatello Attack, Leonhardt Variation",
           "documentedPlies": 22,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 10,
           "reviewedNotes": 2,
           "practicalCase": "practice:italian:fegatello"
@@ -141,6 +155,8 @@
       "title": "Partita Spagnola",
       "legacy": 3,
       "added": 11,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 14,
       "practicalCases": 14,
       "reviewedCourses": 11,
@@ -155,6 +171,7 @@
           "sourceId": "f52099fd9b54c35c",
           "sourceName": "Spanish: Marshall, Main Line (12.d4 Bd6)",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:marshall"
@@ -166,6 +183,7 @@
           "sourceId": "9db6da9195bb1215",
           "sourceName": "Ruy Lopez, Riga Variation, Main Line",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:open"
@@ -177,6 +195,7 @@
           "sourceId": "290094f5b04ee6d9",
           "sourceName": "Ruy Lopez: Schliemann Defense, Classical Variation",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:schliemann"
@@ -188,6 +207,7 @@
           "sourceId": "25f1a3fa9bef87b3",
           "sourceName": "Ruy Lopez: Berlin Defense, Tarrasch Trap",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:steinitz"
@@ -199,6 +219,7 @@
           "sourceId": "cfd005a363b278db",
           "sourceName": "Spanish: Closed, Breyer, Main Line",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:breyer"
@@ -210,6 +231,7 @@
           "sourceId": "158084458dee739b",
           "sourceName": "Spanish: Closed, Zaitsev, 11.Nbd2 Bf8 12.d5 Nb8",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:zaitsev"
@@ -221,6 +243,7 @@
           "sourceId": "738af975f669ca03",
           "sourceName": "Spanish: Closed, Chigorin, Keres, 11.Nbd2 cxd4",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:chigorin"
@@ -232,6 +255,7 @@
           "sourceId": "a753cd482fd02b56",
           "sourceName": "Spanish: Archangelsk, Main Line, 10.a4",
           "documentedPlies": 19,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 13,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:archangel"
@@ -243,6 +267,7 @@
           "sourceId": "42c5326955598b61",
           "sourceName": "Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6 10.c3",
           "documentedPlies": 19,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 13,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:anti-marshall"
@@ -254,6 +279,7 @@
           "sourceId": "30447d88b0e97ec0",
           "sourceName": "Benelux Variation, Ruy Lopez",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:classical-bc5"
@@ -265,6 +291,7 @@
           "sourceId": "9e782e17ca0b9b71",
           "sourceName": "Ruy Lopez: Berlin Defense, Kaufmann Variation",
           "documentedPlies": 9,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:spanish:anti-berlin"
@@ -275,13 +302,15 @@
       "id": "sicilian",
       "title": "Difesa Siciliana",
       "legacy": 4,
-      "added": 15,
-      "total": 19,
-      "practicalCases": 19,
+      "added": 21,
+      "documentedCourses": 3,
+      "authoredContinuationCourses": 3,
+      "total": 25,
+      "practicalCases": 25,
       "reviewedCourses": 15,
       "additionalReviewedNotes": 30,
       "additionalPairNotes": 0,
-      "fullyWrittenCourses": 1,
+      "fullyWrittenCourses": 2,
       "branches": [
         {
           "id": "sicilian:sveshnikov",
@@ -290,6 +319,7 @@
           "sourceId": "4c0eb791055bad68",
           "sourceName": "Sicilian: Pelikan, Chelyabinsk, 9.Nd5 Be7, 11.c3 O-O 12.Nc2 Bg5",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:sveshnikov"
@@ -301,6 +331,7 @@
           "sourceId": "f8da1bcf6982e548",
           "sourceName": "Sicilian: Taimanov, Szen, Hedgehog, 11.Be3 Bb7 12.Qb3",
           "documentedPlies": 23,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 9,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:taimanov"
@@ -312,6 +343,7 @@
           "sourceId": "22b0fb818817a75f",
           "sourceName": "Sicilian Defense: Kan Variation, Maróczy Bind, Bronstein Variation",
           "documentedPlies": 15,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 17,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:kan"
@@ -323,6 +355,7 @@
           "sourceId": "8f38b356900a7cb1",
           "sourceName": "Sicilian: Maroczy Bind, 7.Nc3 O-O 8.Be2 d6 9.O-O Bd7 10.Qd2 Nxd4, 12.f3 a5",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:accelerated-dragon"
@@ -334,6 +367,7 @@
           "sourceId": "65d192b2fc3431e3",
           "sourceName": "Sicilian: Rossolimo, 3...g6 4.O-O Bg7 5.Re1 Nf6 6.c3 O-O 7.d4",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:rossolimo"
@@ -345,6 +379,7 @@
           "sourceId": "18d9323d2ab9d138",
           "sourceName": "Sicilian: Closed, 6.f4 e6: 9.Be3 Nd4 10.e5 Nef5",
           "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 12,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:closed"
@@ -356,6 +391,7 @@
           "sourceId": "aa61eeab3c03aae8",
           "sourceName": "Sicilian: Loewenthal, Kalashnikov, Main Line, 9.Be2",
           "documentedPlies": 17,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 15,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:kalashnikov"
@@ -367,6 +403,7 @@
           "sourceId": "51cda5086337dacf",
           "sourceName": "Sicilian: Richter-Rauzer, 7...Be7, 9.f4 Nxd4 10.Qxd4 Qa5 11.Bc4 Bd7 12.e5",
           "documentedPlies": 23,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 9,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:richter-rauzer"
@@ -378,6 +415,7 @@
           "sourceId": "e7fb08bc9a535843",
           "sourceName": "Sicilian Defense: Sozin Attack, Main Line, Sherbakov Variation",
           "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 12,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:sozin"
@@ -389,6 +427,7 @@
           "sourceId": "433ce895a1903a25",
           "sourceName": "Sicilian: Smith-Morra, 5.Nf3 d6 6.Bc4 e6 7.O-O Nf6 8.Qe2 Be7",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:morra"
@@ -400,6 +439,7 @@
           "sourceId": "aaaf6d7c0eac71ed",
           "sourceName": "Sicilian Defense: Grand Prix Attack, Schofman Variation",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:grand-prix"
@@ -411,6 +451,7 @@
           "sourceId": "64c852f5774f3a65",
           "sourceName": "Sicilian Defense: Moscow Variation, Haag Gambit",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:moscow"
@@ -422,6 +463,7 @@
           "sourceId": "36c15ba89add8145",
           "sourceName": "Sicilian Defense, Four Knights Variation",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:four-knights"
@@ -433,6 +475,7 @@
           "sourceId": "2dce191bd2481628",
           "sourceName": "Sicilian Defense: O'Kelly Variation, Normal System, Taimanov Line",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:okelly"
@@ -444,9 +487,82 @@
           "sourceId": "429ab453a210df60",
           "sourceName": "Sicilian Defense: Scheveningen Variation, Keres Attack",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:sicilian:keres"
+        },
+        {
+          "id": "sicilian:najdorf-bg5-classical",
+          "title": "Najdorf con 6.Ag5: sviluppo classico",
+          "status": "documented-line",
+          "sourceId": "55f893191e905f8a",
+          "sourceName": "Sicilian: Najdorf, Main Line, 10.Bd3 b5 11.Rhe1 Bb7",
+          "documentedPlies": 22,
+          "authoredContinuationPlies": 0,
+          "engineCheckedPlies": 0,
+          "reviewedNotes": 0,
+          "practicalCase": "practice:sicilian:najdorf-bg5-classical"
+        },
+        {
+          "id": "sicilian:chekhover-bd7",
+          "title": "Chekhover: 4.Dxd4 e risposta ...Ad7",
+          "status": "documented-line",
+          "sourceId": "df54a8ff7bf70e37",
+          "sourceName": "Sicilian, Chekhover, Main Line, 10.Rhe1 O-O",
+          "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
+          "engineCheckedPlies": 0,
+          "reviewedNotes": 0,
+          "practicalCase": "practice:sicilian:chekhover-bd7"
+        },
+        {
+          "id": "sicilian:chekhover-zaitsev",
+          "title": "Chekhover Zaitsev: 5...Dd7 e cambio in c6",
+          "status": "documented-prefix-authored-continuation",
+          "sourceId": "77915f5f49601838",
+          "sourceName": "Sicilian Defense: Chekhover Variation, Zaitsev Defense",
+          "documentedPlies": 10,
+          "authoredContinuationPlies": 2,
+          "engineCheckedPlies": 2,
+          "reviewedNotes": 0,
+          "practicalCase": "practice:sicilian:chekhover-zaitsev"
+        },
+        {
+          "id": "sicilian:chekhover-c4-g6",
+          "title": "Chekhover: 7.c4 e preparazione del fianchetto",
+          "status": "documented-line",
+          "sourceId": "cab3a0b1cf0331d6",
+          "sourceName": "Sicilian, Chekhover, 7.c4 Nf6 8.Nc3 g6",
+          "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
+          "engineCheckedPlies": 0,
+          "reviewedNotes": 0,
+          "practicalCase": "practice:sicilian:chekhover-c4-g6"
+        },
+        {
+          "id": "sicilian:chekhover-qd3",
+          "title": "Chekhover: 10.Dd3 e arrocco del Nero",
+          "status": "documented-prefix-authored-continuation",
+          "sourceId": "ce70dab23d629d53",
+          "sourceName": "Sicilian, Chekhover, Main Line, 10.Qd3",
+          "documentedPlies": 19,
+          "authoredContinuationPlies": 1,
+          "engineCheckedPlies": 1,
+          "reviewedNotes": 0,
+          "practicalCase": "practice:sicilian:chekhover-qd3"
+        },
+        {
+          "id": "sicilian:chekhover-qd2",
+          "title": "Chekhover: 11.Dd2 e coordinazione delle torri",
+          "status": "documented-prefix-authored-continuation",
+          "sourceId": "aed1668deddb6fa8",
+          "sourceName": "Sicilian, Chekhover, Main Line, 11.Qd2",
+          "documentedPlies": 21,
+          "authoredContinuationPlies": 1,
+          "engineCheckedPlies": 1,
+          "reviewedNotes": 0,
+          "practicalCase": "practice:sicilian:chekhover-qd2"
         }
       ]
     },
@@ -455,6 +571,8 @@
       "title": "Difesa Francese",
       "legacy": 4,
       "added": 10,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 14,
       "practicalCases": 14,
       "reviewedCourses": 10,
@@ -469,6 +587,7 @@
           "sourceId": "ff7a0ea904f1e15e",
           "sourceName": "French Defense: Classical Variation, Stahlberg Variation",
           "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 12,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:classical"
@@ -480,6 +599,7 @@
           "sourceId": "4754ebff2bcc8a14",
           "sourceName": "French: Rubinstein, 4...Bd7 5.Nf3 Bc6 6.Bd3 Nd7 7.O-O Ngf6 8.Ng3",
           "documentedPlies": 15,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 17,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:rubinstein"
@@ -491,6 +611,7 @@
           "sourceId": "6bfe1e35658ddefa",
           "sourceName": "French Defense: Steinitz Variation, Brodsky-Jones Variation",
           "documentedPlies": 18,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 14,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:steinitz"
@@ -502,6 +623,7 @@
           "sourceId": "0668ece1cbb95393",
           "sourceName": "French: MacCutcheon, Main Line, 11.Nf3 Nc6",
           "documentedPlies": 22,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 10,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:maccutcheon"
@@ -513,6 +635,7 @@
           "sourceId": "359b3fa4d9793316",
           "sourceName": "French: Tarrasch, Closed, 8...f6 9.exf6, 11...O-O 12.Bf4",
           "documentedPlies": 23,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 9,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:tarrasch-closed"
@@ -524,6 +647,7 @@
           "sourceId": "0ddc4621f16c7750",
           "sourceName": "French: Winawer, Poisoned Pawn, Main Line",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:winawer-poisoned"
@@ -535,6 +659,7 @@
           "sourceId": "e25186ba94fdd82a",
           "sourceName": "French: Burn, 6.Bxf6 gxf6 7.Nf3 b6 8.Bc4",
           "documentedPlies": 15,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 17,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:burn"
@@ -546,6 +671,7 @@
           "sourceId": "49d41f66f0817b9b",
           "sourceName": "French: Exchange, 4.c4 Nf6 5.Nc3 Bb4",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:monte-carlo"
@@ -557,6 +683,7 @@
           "sourceId": "318df04944d6269f",
           "sourceName": "French: Winawer, Winkelmann-Reimer Gambit Accepted",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:winawer-a3"
@@ -568,6 +695,7 @@
           "sourceId": "11eb7a6aa6ba189d",
           "sourceName": "French Defense: Advance Variation, Milner-Barry Gambit, Sørensen Variation",
           "documentedPlies": 17,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 15,
           "reviewedNotes": 2,
           "practicalCase": "practice:french:milner-barry"
@@ -579,6 +707,8 @@
       "title": "Difesa Caro-Kann",
       "legacy": 4,
       "added": 12,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 16,
       "practicalCases": 16,
       "reviewedCourses": 12,
@@ -593,6 +723,7 @@
           "sourceId": "78c6c96a3b1383a5",
           "sourceName": "Caro-Kann: Steinitz, 5.Ng5 Ngf6 6.Bd3, Main Line 10.Qxe4 Nf6",
           "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 12,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:karpov"
@@ -604,6 +735,7 @@
           "sourceId": "54fe319bc5b4a348",
           "sourceName": "Caro-Kann Defense: Forgacs Variation",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:tartakower"
@@ -615,6 +747,7 @@
           "sourceId": "fa2e53511ef484df",
           "sourceName": "Caro-Kann: Bronstein-Larsen, 6.c3 Bf5 7.Nf3 e6",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:bronstein-larsen"
@@ -626,6 +759,7 @@
           "sourceId": "40fec2de9580ba47",
           "sourceName": "Caro-Kann: Two Knights, 3...Bg4 4.h3 Bh5, 7.g4 Bg6",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:two-knights"
@@ -637,6 +771,7 @@
           "sourceId": "8f6aba4781cfcb57",
           "sourceName": "Caro-Kann Defense: Maróczy Variation, Maróczy Gambit",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:fantasy"
@@ -648,6 +783,7 @@
           "sourceId": "e35f85d83112683f",
           "sourceName": "Caro-Kann: Gurgenidze: 4.e5 Bg7 5.f4 h5 6.Nf3",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:gurgenidze"
@@ -659,6 +795,7 @@
           "sourceId": "c275dd554bdfc404",
           "sourceName": "Caro-Kann Defense: Advance Variation, Tal Variation",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:tal"
@@ -670,6 +807,7 @@
           "sourceId": "b9e21a2b90094ef7",
           "sourceName": "Caro-Kann Defense: Advance Variation, Bayonet Attack",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:advance-bayonet"
@@ -681,6 +819,7 @@
           "sourceId": "e272b862c9432e9a",
           "sourceName": "Caro-Kann - Botvinnik-Carls Defense - 4. c3 cxd4",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:botvinnik-carls"
@@ -692,6 +831,7 @@
           "sourceId": "8c90b24b207afda1",
           "sourceName": "Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Nc6",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:panov-nc6"
@@ -703,6 +843,7 @@
           "sourceId": "e7f6d44965e56d4b",
           "sourceName": "Caro-Kann: English, Exchange, 4...Nf6 5.Nc3 Nxd5",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:accelerated-panov"
@@ -714,6 +855,7 @@
           "sourceId": "f5d763e58e5ab0cb",
           "sourceName": "Caro-Kann Defense: Hillbilly Attack, Schaeffer Gambit",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 3,
           "practicalCase": "practice:caro:hillbilly"
@@ -725,6 +867,8 @@
       "title": "Difesa Scandinava",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -739,6 +883,7 @@
           "sourceId": "2efb1083f339c3fe",
           "sourceName": "Scandinavian Defense, Schiller-Pytel Variation",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:scandinavian:qd6"
@@ -750,6 +895,7 @@
           "sourceId": "e4e4be0b1ad842d6",
           "sourceName": "Scandinavian Defense: Valencian Variation, Main Line",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 2,
           "practicalCase": "practice:scandinavian:qd8"
@@ -761,6 +907,7 @@
           "sourceId": "cdb42b0b0904b0a8",
           "sourceName": "Scandinavian Defense: Portuguese Gambit, Jadoul Variation",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:scandinavian:portuguese"
@@ -772,6 +919,7 @@
           "sourceId": "4e0a58afd15e4973",
           "sourceName": "Scandinavian: Icelandic Gambit, 5.d4",
           "documentedPlies": 9,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:scandinavian:icelandic"
@@ -783,6 +931,8 @@
       "title": "Difesa Pirc e Moderna",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -797,6 +947,7 @@
           "sourceId": "5a3c8f01c2309bb7",
           "sourceName": "Pirc: Classical, 5.Be2 O-O 6.O-O Bg4 7.Be3 Nc6 8.Qd2 e5",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:pirc:classical"
@@ -808,6 +959,7 @@
           "sourceId": "50cefd3630e8fead",
           "sourceName": "Pirc: 4.Be3, 150 Attack",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:pirc:150-attack"
@@ -819,6 +971,7 @@
           "sourceId": "a2ffc059bcc8755a",
           "sourceName": "Modern Defense: Two Knights Variation, Suttles Variation, Tal Gambit",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:pirc:modern"
@@ -830,6 +983,7 @@
           "sourceId": "baf8b94c94c64dcb",
           "sourceName": "Pirc: Sveshnikov (4.g3)",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 2,
           "practicalCase": "practice:pirc:fianchetto"
@@ -841,6 +995,8 @@
       "title": "Difesa Alekhine",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -855,6 +1011,7 @@
           "sourceId": "777a177711196683",
           "sourceName": "Alekhine Defense, Exchange Variation",
           "documentedPlies": 21,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 11,
           "reviewedNotes": 2,
           "practicalCase": "practice:alekhine:exchange"
@@ -866,6 +1023,7 @@
           "sourceId": "b408f039df768f75",
           "sourceName": "Alekhine: Modern, Main Line, 8.h3 Bh5 9.Nc3 O-O 10.Be3 d5",
           "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 12,
           "reviewedNotes": 2,
           "practicalCase": "practice:alekhine:modern"
@@ -877,6 +1035,7 @@
           "sourceId": "1168607c0c30d7be",
           "sourceName": "Alekhine Defense: Hunt Variation, Mikenas Gambit",
           "documentedPlies": 15,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 17,
           "reviewedNotes": 2,
           "practicalCase": "practice:alekhine:two-pawns"
@@ -888,6 +1047,7 @@
           "sourceId": "7d1a2bbdfceb4053",
           "sourceName": "Alekhine: Scandinavian, Exchange, 4.Bc4 e6",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:alekhine:scandinavian"
@@ -899,6 +1059,8 @@
       "title": "Difesa Petrov",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -913,6 +1075,7 @@
           "sourceId": "e6242084c6e4cd02",
           "sourceName": "Petrov Defense: Cochrane Gambit, Center Variation",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 2,
           "practicalCase": "practice:petrov:cochrane"
@@ -924,6 +1087,7 @@
           "sourceId": "3fcf396cfb54b474",
           "sourceName": "Four Knights Game: Spanish Variation, Gunsberg Counterattack",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:petrov:three-knights"
@@ -935,6 +1099,7 @@
           "sourceId": "2353e642fb5e9812",
           "sourceName": "Petrov's Defense: Nimzowitsch Attack",
           "documentedPlies": 9,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:petrov:modern-nc3"
@@ -946,6 +1111,7 @@
           "sourceId": "0c06c7a6879bc0ac",
           "sourceName": "Bishop's Opening: Boden-Kieseritzky Gambit, Lichtenhein Defense",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:petrov:italian"
@@ -957,6 +1123,8 @@
       "title": "Partita Scozzese",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -971,6 +1139,7 @@
           "sourceId": "df11ef6394dad9e0",
           "sourceName": "Scotch: Mieses, 8.c4 Ba6 9.b3",
           "documentedPlies": 17,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 15,
           "reviewedNotes": 2,
           "practicalCase": "practice:scotch:mieses"
@@ -982,6 +1151,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:scotch:gambit"
@@ -993,6 +1163,7 @@
           "sourceId": "dfb57947a07e80ac",
           "sourceName": "Scotch: Goring Gambit, 4...dxc3 5.Nxc3 Bb4 6.Bc4 d6 7.O-O",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:scotch:goering"
@@ -1004,6 +1175,7 @@
           "sourceId": "4c7b6c56397f56bd",
           "sourceName": "Scotch: Steinitz, Berger Variation",
           "documentedPlies": 21,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 11,
           "reviewedNotes": 2,
           "practicalCase": "practice:scotch:steinitz"
@@ -1015,6 +1187,8 @@
       "title": "Partita Viennese",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -1029,6 +1203,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:vienna:gambit"
@@ -1040,6 +1215,7 @@
           "sourceId": "3e5e35702be9d1fa",
           "sourceName": "Pollock Gambit",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:vienna:fianchetto"
@@ -1051,6 +1227,7 @@
           "sourceId": "e20bcea80a115c9f",
           "sourceName": "Vienna: Frankenstein-Dracula, 11.d3",
           "documentedPlies": 21,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 11,
           "reviewedNotes": 2,
           "practicalCase": "practice:vienna:bishop"
@@ -1062,6 +1239,7 @@
           "sourceId": "3fcf396cfb54b474",
           "sourceName": "Four Knights Game: Spanish Variation, Gunsberg Counterattack",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:vienna:falkbeer"
@@ -1073,6 +1251,8 @@
       "title": "Gambetto di Re",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -1087,6 +1267,7 @@
           "sourceId": "5ecea8eb1b989bec",
           "sourceName": "King's Gambit Accepted: Greco Gambit",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:kings-gambit:fischer"
@@ -1098,6 +1279,7 @@
           "sourceId": "88787ea719a8270d",
           "sourceName": "King's Gambit Accepted: Bishop's Gambit, Fraser Variation",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:kings-gambit:bishops"
@@ -1109,6 +1291,7 @@
           "sourceId": "e072f884fa6b9764",
           "sourceName": "King's Gambit Declined: Falkbeer Countergambit, Alapin Variation",
           "documentedPlies": 17,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 15,
           "reviewedNotes": 2,
           "practicalCase": "practice:kings-gambit:falkbeer"
@@ -1120,6 +1303,7 @@
           "sourceId": "87c8697008c30fe9",
           "sourceName": "King's Gambit Declined: Classical, Réti Variation",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:kings-gambit:declined-bc5"
@@ -1131,6 +1315,8 @@
       "title": "Difesa Philidor",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -1145,6 +1331,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:philidor:exchange"
@@ -1156,6 +1343,7 @@
           "sourceId": "8208a48434ed0fb4",
           "sourceName": "Philidor: Hanham, Berger Variation",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:philidor:hanham"
@@ -1167,6 +1355,7 @@
           "sourceId": "69d64e8e3ff3c8d8",
           "sourceName": "Philidor Defense: Lion Variation, Sozin Variation",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:philidor:lion"
@@ -1178,6 +1367,7 @@
           "sourceId": "3acbee466a5573dd",
           "sourceName": "Philidor Defense: Philidor Countergambit, Berger Variation",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:philidor:countergambit"
@@ -1189,6 +1379,8 @@
       "title": "Gambetto di Donna",
       "legacy": 4,
       "added": 13,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 17,
       "practicalCases": 17,
       "reviewedCourses": 13,
@@ -1203,6 +1395,7 @@
           "sourceId": "3b0020b505812a1a",
           "sourceName": "Tarrasch Defense: Classical Variation, Chandler Variation",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:tarrasch"
@@ -1214,6 +1407,7 @@
           "sourceId": "77f15aff8cb2c77e",
           "sourceName": "Queen's Gambit Declined: Chigorin Defense, Exchange Variation, Costa's Line",
           "documentedPlies": 15,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 17,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:chigorin"
@@ -1225,6 +1419,7 @@
           "sourceId": "714beea5694fd1f3",
           "sourceName": "Queen's Gambit Declined: Albin Countergambit, Krenosz Variation",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:albin"
@@ -1236,6 +1431,7 @@
           "sourceId": "d05aad39e429504a",
           "sourceName": "Slav: Chameleon, 5.a4 e6 6.Bg5",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:slav-chebanenko"
@@ -1247,6 +1443,7 @@
           "sourceId": "6eb5f80f386a1dbc",
           "sourceName": "Semi-Slav Defense: Stoltz Variation, Center Variation, Mikhalchishin Line",
           "documentedPlies": 19,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 13,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:anti-meran"
@@ -1258,6 +1455,7 @@
           "sourceId": "995753084e5f4c07",
           "sourceName": "Semi-Slav Defense: Botvinnik Variation, Lilienthal Variation",
           "documentedPlies": 21,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 11,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:botvinnik"
@@ -1269,6 +1467,7 @@
           "sourceId": "427561ac79357e94",
           "sourceName": "Queen's Gambit Declined: Hastings Variation",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:moscow"
@@ -1280,6 +1479,7 @@
           "sourceId": "ad6b7d0dc3a6b3eb",
           "sourceName": "QGD: Cambridge Springs, 8.Qc2 O-O 9.Be2 e5",
           "documentedPlies": 18,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 14,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:cambridge-springs"
@@ -1291,6 +1491,7 @@
           "sourceId": "4688297e6f980cd7",
           "sourceName": "QGD: Tartakower, Main Line, 12.Qa4 c5",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:tartakower"
@@ -1302,6 +1503,7 @@
           "sourceId": "3d7e2fa2b9bd217e",
           "sourceName": "Queen's Gambit Declined: Lasker Defense, Bernstein Variation, Mar del Plata Gambit",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:lasker"
@@ -1313,6 +1515,7 @@
           "sourceId": "89108cd07fd742b8",
           "sourceName": "QGD: Ragozin, Vienna, 6.e4 c5 7.Bxc4, 8...Bxc3+, 10.Bb5+",
           "documentedPlies": 19,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 13,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:ragozin"
@@ -1324,6 +1527,7 @@
           "sourceId": "dda896388d655da4",
           "sourceName": "Slav: Exchange, 4.Nc3 Nf6 5.Bf4 Nc6 6.e3 a6",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:slav-exchange"
@@ -1335,6 +1539,7 @@
           "sourceId": "1b3b88351ffc8f63",
           "sourceName": "QGA: 3.e4 Nf6 4.e5 Nd5 5.Bxc4 Nb6 6.Bb3 Nc6 7.Ne2",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-gambit:accepted-e4"
@@ -1346,6 +1551,8 @@
       "title": "Sistema di Londra",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -1360,6 +1567,7 @@
           "sourceId": "08afba8abe785edc",
           "sourceName": "Queen's Pawn Game: Accelerated London System, Steinitz Countergambit, Morris Countergambit Accepted",
           "documentedPlies": 6,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 26,
           "reviewedNotes": 2,
           "practicalCase": "practice:london:early-c5"
@@ -1371,6 +1579,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:london:indian"
@@ -1382,6 +1591,7 @@
           "sourceId": "4d6f8789aa401845",
           "sourceName": "Rapport-Jobava System",
           "documentedPlies": 6,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 26,
           "reviewedNotes": 2,
           "practicalCase": "practice:london:jobava"
@@ -1393,6 +1603,7 @@
           "sourceId": "208985e882da9e72",
           "sourceName": "London System: Poisoned Pawn Variation",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:london:queen-pressure"
@@ -1404,6 +1615,8 @@
       "title": "Difesa Est-Indiana",
       "legacy": 10,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 14,
       "practicalCases": 14,
       "reviewedCourses": 4,
@@ -1418,6 +1631,7 @@
           "sourceId": "d7cc10fd180e6b90",
           "sourceName": "King's Indian: Saemisch, Panno Main Line, 9.h4 h5 10.O-O-O b5 11.Bh6",
           "documentedPlies": 21,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 11,
           "reviewedNotes": 2,
           "practicalCase": "practice:kings-indian:panno"
@@ -1429,6 +1643,7 @@
           "sourceId": "281fa5767f5379d1",
           "sourceName": "King's Indian Defense: Fianchetto Variation, Panno Variation, Blockade Line",
           "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 12,
           "reviewedNotes": 2,
           "practicalCase": "practice:kings-indian:fianchetto-panno"
@@ -1440,6 +1655,7 @@
           "sourceId": "3b060912ece6852f",
           "sourceName": "King's Indian: Smyslov System",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 2,
           "practicalCase": "practice:kings-indian:smyslov"
@@ -1451,6 +1667,7 @@
           "sourceId": "1de3d41f3b4f6064",
           "sourceName": "King's Indian Defense: Semi-Classical Variation, Exchange Variation",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:kings-indian:semi-classical"
@@ -1462,6 +1679,8 @@
       "title": "Difesa Grünfeld",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -1476,6 +1695,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:grunfeld:russian"
@@ -1487,6 +1707,7 @@
           "sourceId": "abe4429b3579e502",
           "sourceName": "Neo-Gruenfeld, Main Line, 10.f4 Nc6 11.Be3 Nb6 12.Bf2",
           "documentedPlies": 23,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 9,
           "reviewedNotes": 2,
           "practicalCase": "practice:grunfeld:fianchetto"
@@ -1498,6 +1719,7 @@
           "sourceId": "642adf7a23d76b81",
           "sourceName": "Gruenfeld: Gruenfeld Gambit Accepted, 8...Na6 9.Bxa6 Qxg2",
           "documentedPlies": 18,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 14,
           "reviewedNotes": 2,
           "practicalCase": "practice:grunfeld:brinckmann"
@@ -1509,6 +1731,7 @@
           "sourceId": "9b02e238f44231aa",
           "sourceName": "Gruenfeld: Stockholm, Taimanov, 5...Nxc3 6.bxc3 Bg7",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:grunfeld:stockholm"
@@ -1520,6 +1743,8 @@
       "title": "Difesa Nimzo-Indiana",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -1534,6 +1759,7 @@
           "sourceId": "479cec09b206944b",
           "sourceName": "Nimzo-Indian: Main Line, 9.bxc3 dxc4 10.Bxc4 Qc7 11.Bd3 e5 12.Qc2 Re8",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:nimzo:rubinstein"
@@ -1545,6 +1771,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:nimzo:classical"
@@ -1556,6 +1783,7 @@
           "sourceId": "e65a9bc60632839a",
           "sourceName": "Nimzo-Indian: Saemisch, Capablanca, 10.O-O",
           "documentedPlies": 19,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 13,
           "reviewedNotes": 2,
           "practicalCase": "practice:nimzo:samisch"
@@ -1567,6 +1795,7 @@
           "sourceId": "7bd004d3e1a28bb7",
           "sourceName": "Nimzo-Indian: Leningrad, Main Line, 8...e5 9.f3 Nbd7",
           "documentedPlies": 18,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 14,
           "reviewedNotes": 2,
           "practicalCase": "practice:nimzo:leningrad"
@@ -1578,6 +1807,8 @@
       "title": "Difesa Ovest-Indiana",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -1592,6 +1823,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:queens-indian:petrosian"
@@ -1603,6 +1835,7 @@
           "sourceId": "702773ac5e81be74",
           "sourceName": "Queen's Indian: Nimzowitsch, 5.b3 Bb4+, Main Line, 9.Ne5 Nfd7",
           "documentedPlies": 18,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 14,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-indian:ba6"
@@ -1614,6 +1847,7 @@
           "sourceId": "8c2dd63ae88ec8cf",
           "sourceName": "Queen's Indian: 4.e3 Bb7 5.Bd3 c5 6.O-O Be7 7.b3 O-O 8.Bb2 cxd4 9.exd4 d5",
           "documentedPlies": 18,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 14,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-indian:e3"
@@ -1625,6 +1859,7 @@
           "sourceId": "ca24626e1c1b4423",
           "sourceName": "Queen's Indian: 5.Bg5 h6 6.Bh4 Bb4 7.e3 g5 8.Bg3 Ne4 9.Qc2 Bxc3+ 10.bxc3 d6 11.Bd3 f5",
           "documentedPlies": 22,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 10,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-indian:kasparov"
@@ -1636,6 +1871,8 @@
       "title": "Apertura Catalana",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -1650,6 +1887,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:catalan:open"
@@ -1661,6 +1899,7 @@
           "sourceId": "7953ef274cc78ae2",
           "sourceName": "Catalan: Closed, Main Line, 9.e4 Bb7 10.b3 Rc8 11.Bb2 c5",
           "documentedPlies": 22,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 10,
           "reviewedNotes": 2,
           "practicalCase": "practice:catalan:closed"
@@ -1672,6 +1911,7 @@
           "sourceId": "bab02c739d344a32",
           "sourceName": "Bogo-Indian Defense: Retreat Variation",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:catalan:check"
@@ -1683,6 +1923,7 @@
           "sourceId": "9f9c7a4541454b57",
           "sourceName": "Catalan Opening: Open Defense, Tarrasch Defense",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 2,
           "practicalCase": "practice:catalan:early-c5"
@@ -1694,6 +1935,8 @@
       "title": "Difesa Olandese",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -1708,6 +1951,7 @@
           "sourceId": "091fd778264f728a",
           "sourceName": "Dutch Defense: Blackburne Variation",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 2,
           "practicalCase": "practice:dutch:classical"
@@ -1719,6 +1963,7 @@
           "sourceId": "5aa58adefbef7249",
           "sourceName": "Dutch Defense: Leningrad Variation, Warsaw Variation",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:dutch:leningrad"
@@ -1730,6 +1975,7 @@
           "sourceId": "89351af4942a7d3c",
           "sourceName": "Dutch: Staunton Gambit, 4.Bg5 e6 5.Nxe4",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:dutch:staunton"
@@ -1741,6 +1987,7 @@
           "sourceId": "796cf5458c1de198",
           "sourceName": "Dutch Defense: 2. Bg5",
           "documentedPlies": 5,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 27,
           "reviewedNotes": 2,
           "practicalCase": "practice:dutch:hopton"
@@ -1752,6 +1999,8 @@
       "title": "Difesa Benoni e Benko",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -1766,6 +2015,7 @@
           "sourceId": "2838460141025af9",
           "sourceName": "Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 f6",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:benoni:modern"
@@ -1777,6 +2027,7 @@
           "sourceId": "705da3dd0ffd5a03",
           "sourceName": "Benko Gambit: 7.e4, Main Line, 11...Nbd7 12.h3 Qa5",
           "documentedPlies": 24,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 8,
           "reviewedNotes": 2,
           "practicalCase": "practice:benoni:benko-accepted"
@@ -1788,6 +2039,7 @@
           "sourceId": "3b1bc747b308a308",
           "sourceName": "Benoni: Czech, 5.e4 Be7 6.g3 O-O 7.Bg2 Ne8",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:benoni:czech"
@@ -1799,6 +2051,7 @@
           "sourceId": "d68cafc990872469",
           "sourceName": "Old Benoni: Schmidt, 6.Be2 O-O 7.O-O Na6 8.h3",
           "documentedPlies": 15,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 17,
           "reviewedNotes": 2,
           "practicalCase": "practice:benoni:old"
@@ -1810,6 +2063,8 @@
       "title": "Gambetto di Budapest",
       "legacy": 2,
       "added": 3,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 5,
       "practicalCases": 5,
       "reviewedCourses": 3,
@@ -1824,6 +2079,7 @@
           "sourceId": null,
           "sourceName": null,
           "documentedPlies": null,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 0,
           "reviewedNotes": 0,
           "practicalCase": "practice:budapest:fajarowicz"
@@ -1835,6 +2091,7 @@
           "sourceId": "af17f94acd4e7258",
           "sourceName": "Budapest: Adler, 4...Bc5 5.e3 Nc6 6.Be2",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:budapest:adler"
@@ -1846,6 +2103,7 @@
           "sourceId": "25b1d772dd21256d",
           "sourceName": "Barmina Gambit, Budapest",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 2,
           "practicalCase": "practice:budapest:alekhine"
@@ -1857,6 +2115,7 @@
           "sourceId": "2faabcc8e4c9889f",
           "sourceName": "Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3",
           "documentedPlies": 17,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 15,
           "reviewedNotes": 2,
           "practicalCase": "practice:budapest:rubinstein"
@@ -1868,6 +2127,8 @@
       "title": "Apertura Inglese",
       "legacy": 2,
       "added": 8,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 10,
       "practicalCases": 10,
       "reviewedCourses": 8,
@@ -1882,6 +2143,7 @@
           "sourceId": "b5d2d203e2c2ac1a",
           "sourceName": "English Opening: King's English Variation, Four Knights Variation",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:four-knights"
@@ -1893,6 +2155,7 @@
           "sourceId": "e9767da1fb99a0f7",
           "sourceName": "English: Closed, 5.d3 d6 6.Nf3 Nf6 7.O-O O-O 8.Rb1 a5 9.a3 h6",
           "documentedPlies": 18,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 14,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:reversed-sicilian"
@@ -1904,6 +2167,7 @@
           "sourceId": "2808f1d40d726e48",
           "sourceName": "English: Closed, 5.e4",
           "documentedPlies": 9,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:botvinnik"
@@ -1915,6 +2179,7 @@
           "sourceId": "137a51405b1cd107",
           "sourceName": "English: Mikenas, Flohr, 7.d4 c5",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:anglo-indian"
@@ -1926,6 +2191,7 @@
           "sourceId": "181ffcbfe9b4be08",
           "sourceName": "English: Symmetrical, Hedgehog, Flexible Formation, 11.e4 O-O",
           "documentedPlies": 22,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 10,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:hedgehog"
@@ -1937,6 +2203,7 @@
           "sourceId": "e3f1a7dfaed14dcb",
           "sourceName": "English: Neo-Catalan, 4...c6 5.b3",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:neo-catalan"
@@ -1948,6 +2215,7 @@
           "sourceId": "b317081218a481a2",
           "sourceName": "English: Anglo-Dutch",
           "documentedPlies": 6,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 26,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:anglo-dutch"
@@ -1959,6 +2227,7 @@
           "sourceId": "fafa61bc33a2584e",
           "sourceName": "English Opening: King's English Variation, Four Knights Variation, Fianchetto Line, Delayed .. Nc6",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:english:bremen-smyslov"
@@ -1970,6 +2239,8 @@
       "title": "Apertura Réti",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -1984,6 +2255,7 @@
           "sourceId": "c0a7b1aadc149e05",
           "sourceName": "Reti: Accepted, 3.e3 Nf6 4.Bxc4 e6",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:reti:accepted"
@@ -1995,6 +2267,7 @@
           "sourceId": "c2e2f83020d773a2",
           "sourceName": "Reti: KIA, French Variation",
           "documentedPlies": 15,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 17,
           "reviewedNotes": 2,
           "practicalCase": "practice:reti:kings-indian-attack"
@@ -2006,6 +2279,7 @@
           "sourceId": "8272d11d47661857",
           "sourceName": "English Opening: Symmetrical Variation, Mecking Variation",
           "documentedPlies": 13,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 19,
           "reviewedNotes": 2,
           "practicalCase": "practice:reti:symmetrical"
@@ -2017,6 +2291,7 @@
           "sourceId": "660483eabfce01f3",
           "sourceName": "Réti Opening: Anglo-Slav Variation, New York System",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:reti:new-york"
@@ -2028,6 +2303,8 @@
       "title": "Partita dei Quattro Cavalli",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2042,6 +2319,7 @@
           "sourceId": "f930d81865ce072b",
           "sourceName": "Four Knights Game: Spanish Variation, Rubinstein Variation, Maróczy Variation",
           "documentedPlies": 18,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 14,
           "reviewedNotes": 2,
           "practicalCase": "practice:four-knights:rubinstein"
@@ -2053,6 +2331,7 @@
           "sourceId": "b243bfcd590867de",
           "sourceName": "Four Knights Game: Italian Variation, Noa Gambit",
           "documentedPlies": 9,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:four-knights:italian"
@@ -2064,6 +2343,7 @@
           "sourceId": "fa49669d25d8c5d1",
           "sourceName": "Four Knights: Glek, Main Line",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:four-knights:glek"
@@ -2075,6 +2355,7 @@
           "sourceId": "1770eba5c1c99956",
           "sourceName": "Four Knights Game: Scotch Variation, Belgrade Gambit, Modern Defense",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:four-knights:belgrade"
@@ -2086,6 +2367,8 @@
       "title": "Apertura Larsen",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2100,6 +2383,7 @@
           "sourceId": "89f16258f04b14dc",
           "sourceName": "Nimzo-Larsen Attack: Spike Variation",
           "documentedPlies": 5,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 27,
           "reviewedNotes": 2,
           "practicalCase": "practice:larsen:indian"
@@ -2111,6 +2395,7 @@
           "sourceId": "89a90a186076548e",
           "sourceName": "Nimzo-Larsen Attack: English Variation",
           "documentedPlies": 2,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 30,
           "reviewedNotes": 2,
           "practicalCase": "practice:larsen:sicilian"
@@ -2122,6 +2407,7 @@
           "sourceId": "dbb329cb10fb3020",
           "sourceName": "Nimzo-Larsen Attack: Symmetrical Variation",
           "documentedPlies": 2,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 30,
           "reviewedNotes": 2,
           "practicalCase": "practice:larsen:symmetrical"
@@ -2133,6 +2419,7 @@
           "sourceId": "e5b8d6924871816e",
           "sourceName": "Nimzo-Larsen Attack: Ringelbach Gambit",
           "documentedPlies": 3,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 27,
           "reviewedNotes": 2,
           "practicalCase": "practice:larsen:dutch"
@@ -2144,6 +2431,8 @@
       "title": "Apertura Bird",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2158,6 +2447,7 @@
           "sourceId": "5fbb3865d190cfd7",
           "sourceName": "Bird Opening: Swiss Gambit",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 2,
           "practicalCase": "practice:bird:symmetrical"
@@ -2169,6 +2459,7 @@
           "sourceId": "b0f1a12ae79d7899",
           "sourceName": "Bird: 1..Nf6 2.Nf3 g6 3.g3",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:bird:indian"
@@ -2180,6 +2471,7 @@
           "sourceId": "d7f6bacb8cf88ff1",
           "sourceName": "Bird: 1..c5 2.Nf3 Nc6",
           "documentedPlies": 4,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 28,
           "reviewedNotes": 2,
           "practicalCase": "practice:bird:sicilian"
@@ -2191,6 +2483,7 @@
           "sourceId": "aed04ad21a492a83",
           "sourceName": "Bird: 1...d5 2.Nf3 Nf6 3.g3 g6: 6.d3 c5",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:bird:fianchetto"
@@ -2202,6 +2495,8 @@
       "title": "Attacco Trompowsky",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2216,6 +2511,7 @@
           "sourceId": "0ecdfcc7cfe33958",
           "sourceName": "Trompowsky: 2...d5 3.Bxf6 exf6 4.e3 Bd6",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:trompowsky:d5"
@@ -2227,6 +2523,7 @@
           "sourceId": "a9ef89087288dd95",
           "sourceName": "Trompowsky: 2...c5 3.Bxf6 gxf6 4.d5 Qb6 5.Qc1 f5 6.e3 Bg7",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:trompowsky:c5"
@@ -2238,6 +2535,7 @@
           "sourceId": "facdd89288bb44d3",
           "sourceName": "Trompowsky: 2...e6 3.e4 h6 4.Bxf6 Qxf6 5.Nc3 d6 6.Qd2 g5",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:trompowsky:e6"
@@ -2249,6 +2547,7 @@
           "sourceId": "0bd85216fc8755b4",
           "sourceName": "Trompowsky Attack: Raptor Variation, Hergert Gambit",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:trompowsky:raptor"
@@ -2260,6 +2559,8 @@
       "title": "Sistemi Colle e Torre",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2274,6 +2575,7 @@
           "sourceId": "085977651c3eea1c",
           "sourceName": "Neo-King's Indian: Torre Attack",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:colle:torre-indian"
@@ -2285,6 +2587,7 @@
           "sourceId": "c86bc75da679ce02",
           "sourceName": "Stonewall Attack",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:colle:stonewall"
@@ -2296,6 +2599,7 @@
           "sourceId": "ef2224c8ef60ec23",
           "sourceName": "Colle: 3...c5 4.c3 Nbd7",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:colle:koltanowski"
@@ -2307,6 +2611,7 @@
           "sourceId": "72e0e612b958bbbc",
           "sourceName": "Torre Attack: 3...g6 4.e3 Bg7 5.Nbd2 O-O 6.Bd3 c5 7.c3 Nbd7",
           "documentedPlies": 14,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 18,
           "reviewedNotes": 2,
           "practicalCase": "practice:colle:torre-classical"
@@ -2318,6 +2623,8 @@
       "title": "Difesa Bogo-Indiana",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2332,6 +2639,7 @@
           "sourceId": "44f31631cfd4b92b",
           "sourceName": "Bogo-Indian: Nimzowitsch, 5.g3 Nc6 Main Line, 8...a5 9.e4 e5 10.d5 Nb8",
           "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 12,
           "reviewedNotes": 2,
           "practicalCase": "practice:bogo:qe7"
@@ -2343,6 +2651,7 @@
           "sourceId": "a750b9f7eedcc80f",
           "sourceName": "Bogo-Indian: 4.Bd2 Be7 5.g3 d5 6.Bg2 O-O 7.O-O c6 8.Qc2 b6 9.Bf4",
           "documentedPlies": 17,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 15,
           "reviewedNotes": 2,
           "practicalCase": "practice:bogo:be7"
@@ -2354,6 +2663,7 @@
           "sourceId": "e9aecc1a4ac6e7a8",
           "sourceName": "Queen's Indian Defense: Yates Variation",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:bogo:a5"
@@ -2365,6 +2675,7 @@
           "sourceId": "fedf1177f943baac",
           "sourceName": "Bogo-Indian Defense: Haiti Variation",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:bogo:nc6"
@@ -2376,6 +2687,8 @@
       "title": "Difesa Vecchia Indiana",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2390,6 +2703,7 @@
           "sourceId": "5be35046547ed7fa",
           "sourceName": "Old Indian Defense: Janowski Variation, Fianchetto Variation, 3. Nc3 Bf5 4. Nf3",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 2,
           "practicalCase": "practice:old-indian:janowski"
@@ -2401,6 +2715,7 @@
           "sourceId": "b465d9de80605e7c",
           "sourceName": "Old Indian Defense: Janowski Variation, Fianchetto Variation",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 2,
           "practicalCase": "practice:old-indian:fianchetto"
@@ -2412,6 +2727,7 @@
           "sourceId": "59b1f167bdff85c6",
           "sourceName": "Old Indian: 3.Nf3 Bg4 4.Nc3",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 2,
           "practicalCase": "practice:old-indian:ukrainian"
@@ -2423,6 +2739,7 @@
           "sourceId": "ba3d5b5c8aaafd7a",
           "sourceName": "Old Indian: Main Line, 8.Re1 a6 9.Bf1",
           "documentedPlies": 17,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 15,
           "reviewedNotes": 2,
           "practicalCase": "practice:old-indian:classical-e4"
@@ -2434,6 +2751,8 @@
       "title": "Difesa Nimzowitsch",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2448,6 +2767,7 @@
           "sourceId": "8b54e92ef398c147",
           "sourceName": "Nimzowitsch Defense: Kennedy Variation, Main Line",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:nimzowitsch:e5"
@@ -2459,6 +2779,7 @@
           "sourceId": "5197878b1a4dfaa9",
           "sourceName": "Nimzowitsch Defense: Scandinavian Variation, Aachen Gambit",
           "documentedPlies": 6,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 26,
           "reviewedNotes": 2,
           "practicalCase": "practice:nimzowitsch:scandinavian"
@@ -2470,6 +2791,7 @@
           "sourceId": "ab9ff382475434e8",
           "sourceName": "Nimzowitsch Defense: El Columpio Defense, El Columpio Gambit",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:nimzowitsch:two-knights"
@@ -2481,6 +2803,7 @@
           "sourceId": "08c6bad35a112e0f",
           "sourceName": "Nimzowitsch Defence: 2.d4 d5 3.e5 Bf5 4.c3",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 2,
           "practicalCase": "practice:nimzowitsch:advance"
@@ -2492,6 +2815,8 @@
       "title": "Difesa Owen",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2506,6 +2831,7 @@
           "sourceId": "b8a8d2d79607e349",
           "sourceName": "Owen Defense: Matovinsky Gambit Accepted",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:owen:classical"
@@ -2517,6 +2843,7 @@
           "sourceId": "340a18ecb86cabe4",
           "sourceName": "Owen Defense: Smith Gambit",
           "documentedPlies": 5,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 27,
           "reviewedNotes": 2,
           "practicalCase": "practice:owen:knight"
@@ -2528,6 +2855,7 @@
           "sourceId": "b038bcca28f68996",
           "sourceName": "English Defense: Poli Gambit",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 2,
           "practicalCase": "practice:owen:english-e4"
@@ -2539,6 +2867,7 @@
           "sourceId": "3f48eb68e0169f2b",
           "sourceName": "Owen Defense: Guatemala Defense",
           "documentedPlies": 4,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 28,
           "reviewedNotes": 2,
           "practicalCase": "practice:owen:guatemala"
@@ -2550,6 +2879,8 @@
       "title": "Altre aperture di Re",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2564,6 +2895,7 @@
           "sourceId": "07cfbe6b93c24942",
           "sourceName": "Danish Gambit Accepted, Classical Defence",
           "documentedPlies": 20,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 12,
           "reviewedNotes": 2,
           "practicalCase": "practice:open-games:danish"
@@ -2575,6 +2907,7 @@
           "sourceId": "68ff05a318aeaa4b",
           "sourceName": "Ponziani Countergambit, Cordel Variation",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:open-games:ponziani"
@@ -2586,6 +2919,7 @@
           "sourceId": "4e8ce6a76af18de8",
           "sourceName": "Duke of Courland Variation, Latvian",
           "documentedPlies": 16,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 16,
           "reviewedNotes": 2,
           "practicalCase": "practice:open-games:latvian"
@@ -2597,6 +2931,7 @@
           "sourceId": "7c6dc7a630bf4d8c",
           "sourceName": "Elephant Gambit: Wasp Variation",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:open-games:elephant"
@@ -2608,6 +2943,8 @@
       "title": "Aperture di Donna e sistemi",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2622,6 +2959,7 @@
           "sourceId": "d40a494bc9f74761",
           "sourceName": "Tejler Gambit, BDG",
           "documentedPlies": 19,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 13,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-pawn:blackmar-diemer"
@@ -2633,6 +2971,7 @@
           "sourceId": "97b5fd0a15e0a9e8",
           "sourceName": "Richter-Veresov: 3...Bf5 4.Nf3",
           "documentedPlies": 7,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 25,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-pawn:veresov"
@@ -2644,6 +2983,7 @@
           "sourceId": "5fabd331416b8c61",
           "sourceName": "Richter-Veresov: 3...Nbd7 4.Nf3 h6",
           "documentedPlies": 8,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 24,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-pawn:richter"
@@ -2655,6 +2995,7 @@
           "sourceId": "779b3b6f12377bdb",
           "sourceName": "Queen's Pawn Game: Englund Gambit",
           "documentedPlies": 10,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 22,
           "reviewedNotes": 2,
           "practicalCase": "practice:queens-pawn:englund"
@@ -2666,6 +3007,8 @@
       "title": "Altre aperture e sistemi",
       "legacy": 2,
       "added": 4,
+      "documentedCourses": 0,
+      "authoredContinuationCourses": 0,
       "total": 6,
       "practicalCases": 6,
       "reviewedCourses": 4,
@@ -2680,6 +3023,7 @@
           "sourceId": "08c57d7b6ec3eda8",
           "sourceName": "Polish Opening: Orangutan-Diemer Gambit",
           "documentedPlies": 9,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:other:sokolsky"
@@ -2691,6 +3035,7 @@
           "sourceId": "cfa8e3e699f523bd",
           "sourceName": "Grob Opening: Keene Defense, Main Line",
           "documentedPlies": 12,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 20,
           "reviewedNotes": 2,
           "practicalCase": "practice:other:grob"
@@ -2702,6 +3047,7 @@
           "sourceId": "5c4da68052a34cde",
           "sourceName": "Sodium Attack: Celadon Variation",
           "documentedPlies": 9,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 23,
           "reviewedNotes": 2,
           "practicalCase": "practice:other:sodium"
@@ -2713,6 +3059,7 @@
           "sourceId": "9720cb9bb3626619",
           "sourceName": "Van Geet Opening: Jendrossek Gambit",
           "documentedPlies": 11,
+          "authoredContinuationPlies": 0,
           "engineCheckedPlies": 21,
           "reviewedNotes": 2,
           "practicalCase": "practice:other:dunst"

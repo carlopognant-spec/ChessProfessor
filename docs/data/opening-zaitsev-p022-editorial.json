@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-02",
+  "purpose": "Restore non-ASCII characters lost in the frozen design text; SAN, FEN, candidates and engine inputs are unchanged.",
+  "course": {
+    "contrast": "Dopo 5.Ab5 il Nero interpone la donna in d7 invece dell’alfiere. Il cavallo c6 non è più inchiodato al re, ma sulla diagonale b5-c6-d7 si trova la donna: una cattura in d4 va calcolata insieme all’eventuale cambio delle donne.",
+    "whitePlan": "Nel seguito dimostrativo, cambia l’alfiere per il cavallo c6 e togli il pezzo che attacca d4. Dopo ...Dxc6 controlla la pressione su e4, sviluppa i pezzi rimasti e prepara la sicurezza del re. Non dare per obbligatorio il cambio in c6.",
+    "blackPlan": "Interponi la donna in d7; dopo Axc6, riprendi con la donna senza doppiare i pedoni. Conservi i due alfieri, entrambi ancora sulle case iniziali: completa lo sviluppo e controlla i tempi che il Bianco può guadagnare attaccando la donna.",
+    "endpointReason": "Il percorso termina dopo 6...Dxc6, quando è visibile la differenza rispetto a ...Ad7 e ...Axc6. È un modulo breve sul cambio in c6: lo sviluppo non è completo, entrambi i re sono ancora al centro ed e4 richiede attenzione.",
+    "sourceDisclosure": "La fonte identifica la variante fino a 5...Dd7. Il seguito 6.Axc6 Dxc6 è un esempio didattico scelto per confrontare le riprese in c6; non è una continuazione attribuita al catalogo né l’unica linea valida.",
+    "editorialNotes": {
+      "8": "Ab5 inchioda il cavallo c6 al re. Con ...Dd7 la donna si interpone: spostare il cavallo diventa legalmente possibile, ma può lasciare la donna sulla diagonale dell’alfiere. Questo è diverso dal guadagno gratuito di una donna.",
+      "10": "Nel seguito didattico, Axc6 elimina il cavallo che attacca d4; ...Dxc6 riprende con la donna, non con l’alfiere come nel ramo ...Ad7. I pedoni neri non vengono doppiati. La donna c6 guarda e4 lungo c6-d5-e4, ma e4 è difeso dalla donna d4: la pressione non dimostra un guadagno di pedone."
+    }
+  },
+  "exercise": {
+    "objective": "Trova la cattura della donna dopo il ritiro dell’alfiere.",
+    "explanation": "Dopo 6.Ad3 l’alfiere non si trova più sulla diagonale verso d7. ...Cxd4 cattura la donna bianca e non espone la donna nera alla risposta Axd7. Il Bianco può riprendere con Cxd4: il guadagno immediato minimo è di sei punti materiali, non di nove."
+  }
+}

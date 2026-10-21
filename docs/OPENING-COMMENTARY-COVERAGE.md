@@ -1,8 +1,8 @@
 # Copertura dei commenti mossa per mossa
 
-I 280 percorsi contengono 8930 semimosse. Ogni semimossa giocata ha una spiegazione dei suoi effetti, distinta dalla risposta realmente eseguita dall’avversario. I testi sono calcolati sulla posizione: non vengono dichiarati commenti strategici individualmente scritti.
+I 286 percorsi contengono 9042 semimosse. Ogni semimossa giocata ha una spiegazione dei suoi effetti, distinta dalla risposta realmente eseguita dall’avversario. I testi sono calcolati sulla posizione: non vengono dichiarati commenti strategici individualmente scritti.
 
-I passaggi con una nota scritta sono 1974 su 4492 coppie di mosse; 58 percorsi hanno una nota scritta per ogni coppia. Questi sono utilizzi nel corso: lo stesso testo può essere riusato su prefissi esattamente uguali. Non sono conteggi di testi unici.
+I passaggi con una nota scritta sono 2012 su 4548 coppie di mosse; 59 percorsi hanno una nota scritta per ogni coppia. Questi sono utilizzi nel corso: lo stesso testo può essere riusato su prefissi esattamente uguali. Non sono conteggi di testi unici.
 
 Famiglie interamente commentate per coppia: **Sistema di Londra, Difesa Nimzo-Indiana, Difesa Ovest-Indiana, Apertura Catalana, Difesa Bogo-Indiana**. Sono state aggiunte 230 note individuali ai passaggi precedentemente scoperti di queste famiglie. Anche gli altri percorsi conservano le note già presenti e le spiegazioni posizionali di ogni mossa.
 
@@ -14,7 +14,7 @@ Le frecce includono gli attacchi scoperti con origine nel pezzo che controlla da
 | --- | ---: | ---: | ---: | ---: |
 | Partita Italiana | 11 | 354 | 66/178 | 1 |
 | Partita Spagnola | 14 | 446 | 99/224 | 1 |
-| Difesa Siciliana | 19 | 606 | 92/304 | 1 |
+| Difesa Siciliana | 25 | 718 | 130/360 | 2 |
 | Difesa Francese | 14 | 449 | 77/226 | 1 |
 | Difesa Caro-Kann | 16 | 511 | 103/257 | 1 |
 | Difesa Scandinava | 6 | 191 | 35/96 | 1 |
@@ -52,4 +52,4 @@ Le frecce includono gli attacchi scoperti con origine nel pezzo che controlla da
 
 I passaggi ancora privi di nota scritta sono elencati per percorso in [formato leggibile dalla macchina](data/opening-commentary-coverage.json). La scrittura individuale integrale resta un lavoro aperto; le spiegazioni posizionali non vengono contate come revisione editoriale.
 
-Rigenerazione: `node scripts/report-opening-commentary.mjs`. I test riproducono tutte le mosse dei 280 percorsi e controllano i fatti dichiarati sulla scacchiera, oltre alle transizioni dei turni e ai casi di en passant, arrocco, promozione e attacco scoperto.
+Rigenerazione: `node scripts/report-opening-commentary.mjs`. I test riproducono tutte le mosse dei 286 percorsi e controllano i fatti dichiarati sulla scacchiera, oltre alle transizioni dei turni e ai casi di en passant, arrocco, promozione e attacco scoperto.

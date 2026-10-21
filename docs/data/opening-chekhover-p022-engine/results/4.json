@@ -1,0 +1,29 @@
+{
+  "signature": "224a6e3df49b39c738224e68bf0f7e3466117a9f44fea1f337bc7336512e8987",
+  "jobId": "chekhover-qd3:authored",
+  "status": "complete",
+  "attemptIds": [
+    "04"
+  ],
+  "result": {
+    "bestmove": "e8g8",
+    "searchmoves": [
+      "e8g8"
+    ],
+    "depth": 14,
+    "nodes": 106958,
+    "cp": -3,
+    "mate": null,
+    "pv": [
+      "e8g8",
+      "f3d4",
+      "h7h6",
+      "h2h4",
+      "a8c8",
+      "c1b1",
+      "c6d7",
+      "g5c1"
+    ],
+    "attempt": "04"
+  }
+}

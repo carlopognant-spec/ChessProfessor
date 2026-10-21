@@ -44,9 +44,13 @@ describe('complete written pair commentary',()=>{
         expect(journeyCoach(row,index,index%2?'b':'w').debrief).toBe(openingWrittenContext(row,index).debrief)
       }
     }
-    expect(coverage.fullyWrittenCourses).toBe(58)
-    expect(coverage.writtenPairs).toBe(1974)
-    expect(coverage.pairs).toBe(4492)
+    expect(coverage.fullyWrittenCourses).toBe(59)
+    expect(coverage.writtenPairs).toBe(2012)
+    expect(coverage.pairs).toBe(4548)
+    const historic=ALL_OPENING_JOURNEYS.filter(row=>!row.roadmapLot)
+    expect(historic.filter(row=>row.moves.every((_,index)=>index%2||openingWrittenContext(row,index).debriefOrigin==='written'))).toHaveLength(58)
+    const chekhover=coverage.familyRows.find(row=>row.id==='sicilian').rows.find(row=>row.id==='sicilian:chekhover-bd7')
+    expect(chekhover).toMatchObject({fullyWritten:true,pairs:10,writtenPairs:10})
     expect(coverage.additionalPairNotes).toBe(230)
     expect(coverage.fullyWrittenFamilies.sort()).toEqual(Object.keys(completedFamilies).sort())
     const digest=createHash('sha256').update(JSON.stringify(ALL_OPENING_JOURNEYS.map(row=>({id:row.id,moves:row.moves})))).digest('hex')

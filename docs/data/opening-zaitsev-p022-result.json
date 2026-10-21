@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-02",
+  "status": "implemented-offline-verified",
+  "inputHashes": {
+    "docs/data/opening-zaitsev-p022-plan.json": "70cbc53fee9d6ce33d2809098b81816c66a74e1d5df8ab83485e9fae1dd9de19",
+    "docs/data/opening-zaitsev-p022-design-verification.json": "d7f0d9fbbeac224186ed1e40f2ddeb1b0a9e8e2aebe7c79f72f887c4478e35b4",
+    "docs/data/opening-zaitsev-p022-practical-verification.json": "7fdae7f2702bcdea95c030653d7152dded5f1a9d10b582c9447bc303511395ea",
+    "docs/data/opening-zaitsev-p022-editorial.json": "6171bf753fe36c088af44654630c7121f3b42e23d8a877cdf31e64581aba02e6",
+    "scripts/build-opening-zaitsev-content.mjs": "2798b2854aa5060b34a5a64110a96a069fc16d7be77ea7b561315d789e602626",
+    "scripts/report-opening-zaitsev-result.mjs": "b15d2a7e7b94515b30bf6ffc7828f7d0b7bc712617df0a4a43175a38881c5203",
+    "src/data/openingZaitsevCourses.js": "38de6ca7473c48cc9283facb82f176a4a2d5ae5bff79746d2f1fb3ec6acbcff7",
+    "src/data/openingZaitsevPracticalCases.js": "28185d8ad482385979cb29fe404f466356319ae832f863fc636cd25d20afe761",
+    "src/lib/openingJourneys.js": "16e7c965be0390ed67bcd484ca8d912fbfb5fc432898461f4254be8c5fdc4b31",
+    "src/lib/openingPracticalLibrary.js": "c509a4f86bf937deb48684cf3d34f1753f4427522289bce4a0f0c4123d28fd0e",
+    "src/components/OpeningLibrary.jsx": "37220538f89329ef0ee6f496ce352064e85635a37a1c2e23e121de9832d49878"
+  },
+  "preservedBaselineCourses": 282,
+  "preservedBaselineExercises": 282,
+  "courseCount": 283,
+  "sicilianCourseCount": 22,
+  "practicalCases": 283,
+  "added": [
+    {
+      "id": "sicilian:chekhover-zaitsev",
+      "plies": 12,
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 10,
+        "authoredContinuationPlies": 2,
+        "generatedPlies": 0,
+        "continuationStatus": "bounded-engine-checked",
+        "source": "https://github.com/JeffML/eco.json",
+        "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+        "sourceCatalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+        "sourceId": "77915f5f49601838",
+        "sourceName": "Sicilian Defense: Chekhover Variation, Zaitsev Defense",
+        "sourceEco": "B53",
+        "rootPositionId": "position:c2707909c4c54697",
+        "engineSignature": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13"
+      }
+    }
+  ],
+  "documentedPlies": 10,
+  "authoredContinuationPlies": 2,
+  "generatedPlies": 0,
+  "newPairNotes": 2,
+  "scope": {
+    "positions": 12322,
+    "coverage": {
+      "exact": 1940,
+      "transposition-only": 201,
+      "absent": 10181
+    },
+    "newlyReached": [
+      "position:c2707909c4c54697"
+    ],
+    "newEcoAnchors": 0,
+    "chekhover": {
+      "positions": 22,
+      "remainingAbsent": [
+        {
+          "id": "position:f2e47e14c999e271",
+          "name": "Sicilian, Chekhover, 4...a6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:c9c6ddc7d60aa2cf",
+          "name": "Sicilian, Chekhover, 4...Bd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:7161d5217d6da902",
+          "name": "Sicilian, Chekhover, 4...Nf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:361cee22134b6e85",
+          "name": "Sicilian, Chekhover, 4...a6 5.Be3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:9c7d8bc61708b20b",
+          "name": "Sicilian, Chekhover, 4...a6 5.c4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:2b356881d43ce8ce",
+          "name": "Sicilian, Chekhover, 4...Nf6 5.Nc3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1c190014685b03ee",
+          "name": "Sicilian, Chekhover, 4...a6 5.c4 Nc6 6.Qd2",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:8d835bf138067435",
+          "name": "Sicilian, Chekhover, 4...a6 5.c4 Nc6 6.Qd2 g6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:65a7a0f0faa6092b",
+          "name": "Sicilian, Chekhover, 7.c4",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:559d29741ab02c1f",
+          "name": "Sicilian, Chekhover, 7.c4 Nf6 8.Nc3 g6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:cb47b173ef24af42",
+          "name": "Sicilian, Chekhover, Main Line, 10.Qd3",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:1e26b7829d87dc1e",
+          "name": "Sicilian, Chekhover, Main Line, 11.Qd2",
+          "ecoRoots": []
+        }
+      ]
+    }
+  },
+  "engine": {
+    "signature": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+    "goCommands": 5,
+    "nodesRequested": 1000000,
+    "nodesActual": 1000864,
+    "continuation": [
+      {
+        "san": "Bxc6",
+        "signedCpDifference": 74,
+        "acceptanceLoss": 74
+      },
+      {
+        "san": "Qxc6",
+        "signedCpDifference": -20,
+        "acceptanceLoss": 0
+      }
+    ],
+    "exerciseCpChange": 640,
+    "legalImmediateReplies": 36,
+    "minimumImmediateMaterialGain": 6
+  },
+  "checks": {
+    "baselineCourses": "PASS",
+    "baselineExercises": "PASS",
+    "protectedAndFrozenHashes": "PASS",
+    "legalSan": "PASS",
+    "courseExerciseCorrespondence": "PASS",
+    "projectedCoverageMatchesActual": "PASS"
+  },
+  "limitations": [
+    "Coverage measures reached source positions, not complete theory or editorial review.",
+    "Engine comparisons are finite-budget controls; the authored pair is not attributed to the source catalog.",
+    "A negative signed difference between independent searches is not proof that a restricted move is objectively superior.",
+    "Browser, build and full test outcomes are recorded separately in the results document."
+  ]
+}

@@ -1,12 +1,15 @@
 import {Chess} from 'chess.js'
-import {OPENING_LESSONS,italianOpeningName} from './openingLessons.js'
+import {OPENING_LESSONS,italianOpeningName,openingFamily} from './openingLessons.js'
 
 export const normalizeOpeningQuery = text => String(text).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()
 const uciOf = m => m.from+m.to+(m.promotion??'')
 export function prepareOpeningCatalog(entries){
-  return entries.map(e=>({...e,displayName:italianOpeningName(e.name),
+  return entries.map(e=>{
+    const family=openingFamily(e.name,e.eco).id
+    return {...e,family,displayName:italianOpeningName(e.name),
     search:normalizeOpeningQuery([e.name,italianOpeningName(e.name),e.eco,...e.aliases,
-      OPENING_LESSONS.find(l=>l.id===e.family)?.title,e.moves.join(' ')].join(' '))}))
+      OPENING_LESSONS.find(l=>l.id===family)?.title,e.moves.join(' ')].join(' '))}
+  })
 }
 export function linePositions(moves){
   const game=new Chess(),positions=[game.fen()],parsed=[]

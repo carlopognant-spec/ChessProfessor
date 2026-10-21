@@ -1,0 +1,10 @@
+{
+  "signature": "b868aede16ebe80892c31fedb69e25c0bbdd3bc5caa5a85dbfb7419cfc1219df",
+  "jobId": "practice:sicilian:chekhover-bd7:deviation",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "r1bqkbnr/pp2pppp/2np4/8/2BQP3/5N2/PPP2PPP/RNB1K2R b KQkq - 2 5",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

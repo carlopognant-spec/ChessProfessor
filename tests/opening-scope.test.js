@@ -1,10 +1,11 @@
 import {describe,it,expect} from 'vitest'
+import fs from 'node:fs'
 import {Chess} from 'chess.js'
 import {familyJourneys,journeyCoach} from '../src/lib/openingJourneys.js'
 import {commonPrefix,curriculumFork} from '../src/lib/openingCurriculum.js'
 import {OPENING_EXPANSION_PLAN} from '../src/lib/openingExpansionPlan.js'
 import reviewed from '../src/lib/openingStrategicNotes.js'
-import practical from '../src/data/openingPracticalCases.js'
+import practical from '../src/lib/openingPracticalLibrary.js'
 
 const additions={
   sicilian:['kalashnikov','richter-rauzer','sozin','morra','grand-prix','moscow','four-knights','okelly','keres'],
@@ -29,9 +30,12 @@ describe('second audit of missing opening decisions',()=>{
       expect(reviewed[id].notes).toHaveProperty('24')
       expect(practical.entries.find(item=>item.courseId===id),id).toBeTruthy()
     }
-    for(const [family,count] of Object.entries({sicilian:19,'queens-gambit':17,spanish:14,french:14,italian:11,english:10})){
+    for(const [family,count] of Object.entries({sicilian:25,'queens-gambit':17,spanish:14,french:14,italian:11,english:10})){
       expect(familyJourneys(family),family).toHaveLength(count)
     }
+    const original=JSON.parse(fs.readFileSync('docs/data/opening-scope-audit.json','utf8')).courses.filter(row=>row.family==='sicilian').map(row=>row.id)
+    expect(original).toHaveLength(19)
+    expect(new Set(familyJourneys('sicilian').map(row=>row.id))).toEqual(new Set([...original,'sicilian:najdorf-bg5-classical','sicilian:chekhover-bd7','sicilian:chekhover-zaitsev','sicilian:chekhover-c4-g6','sicilian:chekhover-qd3','sicilian:chekhover-qd2']))
     expect(familyJourneys('caro')).toHaveLength(16)
     expect(familyJourneys('kings-indian')).toHaveLength(14)
   })

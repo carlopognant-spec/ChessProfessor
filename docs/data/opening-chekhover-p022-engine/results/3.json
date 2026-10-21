@@ -1,0 +1,26 @@
+{
+  "signature": "224a6e3df49b39c738224e68bf0f7e3466117a9f44fea1f337bc7336512e8987",
+  "jobId": "chekhover-qd3:continuation-control",
+  "status": "complete",
+  "attemptIds": [
+    "03"
+  ],
+  "result": {
+    "bestmove": "d8a5",
+    "searchmoves": [],
+    "depth": 14,
+    "nodes": 87870,
+    "cp": 0,
+    "mate": null,
+    "pv": [
+      "d8a5",
+      "h2h4",
+      "h7h6",
+      "g5d2",
+      "f6g4",
+      "d2e1",
+      "c6d7"
+    ],
+    "attempt": "03"
+  }
+}

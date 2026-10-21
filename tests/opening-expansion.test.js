@@ -7,12 +7,17 @@ import {OPENING_EXPANSION_PLAN} from '../src/lib/openingExpansionPlan.js'
 import {ALL_OPENING_JOURNEYS,familyJourneys,journeyCoach} from '../src/lib/openingJourneys.js'
 import {initialPracticeIndex,practiceMove} from '../src/lib/openingLibrary.js'
 import expansion from '../src/data/openingExpansion.js'
-import practical from '../src/data/openingPracticalCases.js'
+import practical from '../src/lib/openingPracticalLibrary.js'
 import caroNotes from '../src/lib/openingCaroNotes.js'
 
 const catalogText=fs.readFileSync('src/data/openingCatalog.json','utf8'),catalog=JSON.parse(catalogText)
 const evidence=JSON.parse(fs.readFileSync('docs/data/opening-expansion-verification.json','utf8'))
-const practicalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-practical-verification.json','utf8'))
+const historicalPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-practical-verification.json','utf8'))
+const roadmapPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-sicilian-p022-practical-verification.json','utf8'))
+const zaitsevPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-zaitsev-p022-practical-verification.json','utf8'))
+const chekhoverPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-chekhover-p022-practical-verification.json','utf8'))
+const practicalEvidence={evidence:[...historicalPracticalEvidence.evidence,...roadmapPracticalEvidence.evidence,...zaitsevPracticalEvidence.evidence,...chekhoverPracticalEvidence.evidence],
+  uncovered:[...historicalPracticalEvidence.uncovered,...roadmapPracticalEvidence.uncovered,...zaitsevPracticalEvidence.uncovered,...chekhoverPracticalEvidence.uncovered]}
 const key=board=>board.fen().split(' ').slice(0,4).join(' ')
 const uci=move=>move.from+move.to+(move.promotion??'')
 const replay=moves=>{const board=new Chess();moves.forEach(san=>board.move(san));return board}

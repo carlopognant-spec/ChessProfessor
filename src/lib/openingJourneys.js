@@ -5,6 +5,9 @@ import {OPENING_VARIANTS} from './openingVariants.js'
 import {openingChallenge,openingPawnChanges} from './openingChallenge.js'
 import {openingOpponent} from './openingOpponent.js'
 import openingExpansion from '../data/openingExpansion.js'
+import openingRoadmap from '../data/openingRoadmapCourses.js'
+import openingZaitsev from '../data/openingZaitsevCourses.js'
+import openingChekhover from '../data/openingChekhoverCourses.js'
 import caroNotes from './openingCaroNotes.js'
 import strategicNotes from './openingStrategicNotes.js'
 import fullNotes from './openingFullNotes.js'
@@ -132,7 +135,7 @@ export const OPENING_JOURNEYS = OPENING_LESSONS.map(guide => {
     contrast:'Le basi e un primo impianto completo fino al mediogioco.'}
 })
 
-export const ALL_OPENING_JOURNEYS=[...OPENING_JOURNEYS,...OPENING_VARIANTS,...openingExpansion.entries]
+export const ALL_OPENING_JOURNEYS=[...OPENING_JOURNEYS,...OPENING_VARIANTS,...openingExpansion.entries,...openingRoadmap.entries,...openingZaitsev.entries,...openingChekhover.entries]
 export const familyJourneys=family=>ALL_OPENING_JOURNEYS.filter(j=>j.family===family)
 
 let sharedStories
@@ -230,7 +233,7 @@ export function openingWrittenContext(journey,index){
   const story=OPENING_STORIES[journey.id]?.[pair/2]??(journey.variant?sharedStory(journey,index):null)
   const reviewed=caroNotes[journey.id]??strategicNotes[journey.id]
   const debrief=(reviewed?.line===journey.moves.join(' ')?reviewed.notes[pair]:null)
-    ??journey.editorialNotes?.[pair]??variantNotes[journey.id]?.[pair]
+    ??(!journey.editorialLine||journey.editorialLine===journey.moves.join(' ')?journey.editorialNotes?.[pair]:null)??variantNotes[journey.id]?.[pair]
     ??(fullNotes[journey.id]?.line===journey.moves.join(' ')?fullNotes[journey.id].notes[pair]:null)??story?.debrief
   return {story,debrief,debriefOrigin:debrief?'written':'position-effects'}
 }

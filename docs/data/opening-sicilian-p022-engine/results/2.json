@@ -1,0 +1,34 @@
+{
+  "signature": "b868aede16ebe80892c31fedb69e25c0bbdd3bc5caa5a85dbfb7419cfc1219df",
+  "jobId": "practice:sicilian:najdorf-bg5-classical:deviation",
+  "status": "complete",
+  "attemptIds": [
+    "02"
+  ],
+  "result": {
+    "bestmove": "g5d8",
+    "searchmoves": [],
+    "depth": 20,
+    "nodes": 200053,
+    "cp": 581,
+    "mate": null,
+    "pv": [
+      "g5d8",
+      "e4c3",
+      "d1f3",
+      "e8d8",
+      "f3c3",
+      "d6d5",
+      "c3g3",
+      "d8e8",
+      "f1d3",
+      "b8c6",
+      "d4c6",
+      "b7c6",
+      "a1b1",
+      "c6c5",
+      "b2b3"
+    ],
+    "attempt": "02"
+  }
+}

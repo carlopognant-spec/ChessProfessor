@@ -7,8 +7,8 @@ import OpeningCourses from './OpeningCourses.jsx'
 import OpeningBranchPanel from './OpeningBranchPanel.jsx'
 import OpeningTurnReview from './OpeningTurnReview.jsx'
 import {openingTurnReview} from '../lib/openingMoveReview.js'
-import practicalCases from '../data/openingPracticalCases.js'
-import {curriculumFork,nextCurriculumRoute,curriculumReturnIndex,prefixKey,openingFrequencies} from '../lib/openingCurriculum.js'
+import practicalCases from '../lib/openingPracticalLibrary.js'
+import {curriculumFork,nextCurriculumRoute,curriculumReturnIndex,curriculumCheckpoint,prefixKey,openingFrequencies} from '../lib/openingCurriculum.js'
 import {prepareOpeningCatalog,normalizeOpeningQuery,linePositions,initialPracticeIndex,practiceMove,
   OPENING_PROGRESS_KEY,validOpeningProgress,recordOpeningCompletion} from '../lib/openingLibrary.js'
 import '../opening-library.css'
@@ -101,8 +101,9 @@ export default function OpeningLibrary(){
   }
   function returnToBranch(course,index){
     const previousTitle=journey.title
-    setJourneyId(course.id);setStep(index);clearExercise()
-    setRevisit({index,previousTitle});setCurriculum(previous=>({...previous,resumeIndex:index}))
+    const checkpoint=curriculumCheckpoint(courses,course,index)
+    setJourneyId(course.id);setStep(checkpoint.index);clearExercise()
+    setRevisit({...checkpoint,previousTitle});setCurriculum(previous=>({...previous,resumeIndex:checkpoint.index}))
   }
   function beginBranch(){
     if(!revisit)return
@@ -199,9 +200,9 @@ export default function OpeningLibrary(){
             {(feedback||turnReview)&&(lastMoveCorrect?<details className="opening-sequence" open={complete}><summary>La sequenza appena giocata</summary><OpeningTurnReview review={turnReview}/>{feedback&&<p className="opening-feedback opening-debrief" role="status">{feedback}</p>}</details>:<p className="opening-feedback" role="status">{feedback}</p>)}
             {suggestedRoute&&<button className="opening-primary" onClick={followAlternative}>Segui {suggestedRoute.course.title}</button>}
             {!revisit&&coach.opponent&&<p className="opening-opponent" role="note" aria-label="Ultima mossa dell’avversario">{coach.opponent.text}</p>}
-            <h3>{revisit?'Torniamo al bivio':complete?(journey.practice?'Esercizio completato':'Percorso completato'):`Tocca a te · ${side==='w'?'Bianco':'Nero'}`}</h3>
+            <h3>{revisit?(revisit.reason==='contained-route'?'Ripassiamo dall’inizio':revisit.reason==='continuation'?'Proseguiamo il percorso':'Torniamo al bivio'):complete?(journey.practice?'Esercizio completato':'Percorso completato'):`Tocca a te · ${side==='w'?'Bianco':'Nero'}`}</h3>
             {!complete&&!revisit&&<>{!coach.opponent&&!coach.situation.includes(coach.from)&&!coach.situation.includes(coach.to)&&<p className="opening-coach-situation">{coach.situation}</p>}<p className="opening-coach-question">{coach.question}</p></>}
-            {revisit&&<div className="opening-checkpoint" role="status"><p>Riprendiamo dalla posizione comune, prima della scelta che distingue <strong>{journey.title}</strong>. Non occorre rigiocare le mosse già studiate.</p><p>Osserva come cambiano la struttura e le possibilità dell’avversario rispetto alla linea precedente.</p><button className="opening-primary" onClick={beginBranch}>Inizia questa variante</button></div>}
+            {revisit&&<div className="opening-checkpoint" role="status">{revisit.reason==='contained-route'?<p>Le mosse di <strong>{journey.title}</strong> sono già contenute nel percorso studiato. Puoi ripassarle dall’inizio: il completamento verrà registrato dopo averle giocate.</p>:revisit.reason==='continuation'?<p>Riprendiamo dalla posizione comune per proseguire con <strong>{journey.title}</strong>. Non occorre rigiocare le mosse già studiate.</p>:<><p>Riprendiamo dalla posizione comune, prima della scelta che distingue <strong>{journey.title}</strong>. Non occorre rigiocare le mosse già studiate.</p><p>Osserva come cambiano la struttura e le possibilità dell’avversario rispetto alla linea precedente.</p></>}<button className="opening-primary" onClick={beginBranch}>{revisit.reason==='contained-route'?'Ripassa questo percorso dall’inizio':revisit.reason==='continuation'?'Prosegui da questa posizione':'Inizia questa variante'}</button></div>}
             {fork&&<OpeningBranchPanel fork={fork} statistics={statistics} main={courses[0]} active={journey} completed={curriculum.completed} onChoose={chooseBranch}/>}
             {complete&&journey.practice&&<div className="opening-recap"><h3>La risorsa nella posizione</h3><p>{journey.explanation}</p><h3>Come evitare questa deviazione</h3><p>{journey.prevention}</p><button onClick={()=>startJourney(side,ALL_OPENING_JOURNEYS.find(course=>course.id===journey.courseId))}>Torna alla variante</button></div>}
             {complete&&!journey.practice&&<div className="opening-recap"><h3>Rifletti sulla partita</h3><p>Quale cambio ha trasformato il centro? Quale pezzo hai migliorato? Dove cercheresti gioco adesso?</p><p>Confronta il tuo piano con quello avversario nelle note qui sotto.</p>
@@ -226,6 +227,8 @@ export default function OpeningLibrary(){
           </div>}
           <details className="opening-notes" open={!guided}><summary>{trap?'L’idea della trappola':'Capire la posizione e rivedere i piani'}</summary><p>{trap?.idea??guide.intro}</p>
             {guided&&journey.expansion&&<div className="opening-variant-note"><h3>La scelta che distingue questa variante</h3><p>{journey.contrast}</p><p className="opening-small">La posizione caratteristica è documentata nella fonte «{journey.expansion.sourceName}» ({journey.expansion.sourceEco}). Da lì studiamo una possibile continuazione fino al mediogioco: le mosse del seguito non sono tutte risposte obbligate.</p></div>}
+            {guided&&journey.provenance?.kind==='documented-line'&&<div className="opening-variant-note"><h3>La scelta che distingue questa variante</h3><p>{journey.contrast}</p><p className="opening-small">La linea completa è documentata nella fonte «{journey.provenance.sourceName}» ({journey.provenance.sourceEco}). Studiamo una possibilità: le mosse non sono tutte obbligate.</p><p>{journey.endpointReason}</p></div>}
+            {guided&&journey.provenance?.kind==='documented-prefix-with-authored-continuation'&&<div className="opening-variant-note"><h3>La scelta che distingue questa variante</h3><p>{journey.contrast}</p><p className="opening-small">Fonte: «{journey.provenance.sourceName}» ({journey.provenance.sourceEco}). {journey.sourceDisclosure}</p><p>{journey.endpointReason}</p></div>}
             {trap?<><h3>Come evitarla</h3><p>{trap.defense}</p><p className="opening-small">{trap.outcome==='mate'?'La sequenza termina in matto.':'La sequenza termina con un guadagno materiale.'} Puoi ripassarla con entrambi i colori.</p></>:<>
               {!guided&&variantNote&&<div className="opening-variant-note"><h3>Focus sulla variante</h3><p>{variantNote}</p></div>}
               <p className="opening-small">{guided?`Piani del percorso · ${journey.title}`:`Piani generali della famiglia · ${guide.title}`}</p><div className="opening-plan-grid"><div><h3>Il piano del Bianco</h3>{guided?<p>{journey.whitePlan}</p>:<ul>{guide.white.map(p=><li key={p}>{p}</li>)}</ul>}</div><div><h3>Il piano del Nero</h3>{guided?<p>{journey.blackPlan}</p>:<ul>{guide.black.map(p=><li key={p}>{p}</li>)}</ul>}</div></div>

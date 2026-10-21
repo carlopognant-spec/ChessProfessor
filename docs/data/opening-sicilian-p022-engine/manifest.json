@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-01",
+  "inputHashes": {
+    "docs/data/opening-sicilian-p022-plan.json": "49ac5ed376c116ff931a63b990891657711dbe03f0ca81742acd5b8030280680",
+    "docs/data/opening-sicilian-p022-design-verification.json": "9d1c10470635bfca400afb21a94c9bd611eea35177e0d8da4efdc2343c3ac4bb",
+    "scripts/collect-opening-sicilian-evidence.mjs": "63278a9416f5a90fffb716e2906339e72859fd0ac763808098582c84eea0e253",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8"
+  },
+  "engineSha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+  "policy": {
+    "status": "not-run",
+    "purpose": "Check only the two frozen constructed deviations; generate no course continuation.",
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "engine": "Stockfish 16",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHash": true,
+    "nodesPerGo": 200000,
+    "primaryJobs": 4,
+    "maximumConfirmationJobs": 4,
+    "maximumGoCommands": 8,
+    "maximumRequestedNodes": 1600000,
+    "timeoutPerCommandMs": 30000,
+    "minimumCpChange": 200,
+    "minimumImmediateMaterial": 2,
+    "onFailure": "Save completed jobs, leave the affected exercise unpublished; no candidate sweep or automatic budget escalation.",
+    "resume": "Exact signature of plan, executable, driver, FEN, options and roots; reuse completed jobs. Interrupted jobs are recorded and are not silently retried."
+  },
+  "jobs": [
+    {
+      "id": "practice:sicilian:najdorf-bg5-classical:baseline",
+      "fen": "rnbqkb1r/1p3ppp/p2ppn2/6B1/3NPP2/2N5/PPP3PP/R2QKB1R b KQkq - 0 7",
+      "roots": []
+    },
+    {
+      "id": "practice:sicilian:najdorf-bg5-classical:deviation",
+      "fen": "rnbqkb1r/1p3ppp/p2pp3/6B1/3NnP2/2N5/PPP3PP/R2QKB1R w KQkq - 0 8",
+      "roots": [],
+      "expectedAnswer": "Bxd8"
+    },
+    {
+      "id": "practice:sicilian:chekhover-bd7:baseline",
+      "fen": "r1bqkbnr/pp2pppp/2np4/8/3QP3/5N2/PPP2PPP/RNB1KB1R w KQkq - 1 5",
+      "roots": []
+    },
+    {
+      "id": "practice:sicilian:chekhover-bd7:deviation",
+      "fen": "r1bqkbnr/pp2pppp/2np4/8/2BQP3/5N2/PPP2PPP/RNB1K2R b KQkq - 2 5",
+      "roots": [],
+      "expectedAnswer": "Nxd4"
+    }
+  ]
+}

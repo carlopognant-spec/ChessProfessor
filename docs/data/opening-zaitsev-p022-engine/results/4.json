@@ -1,0 +1,41 @@
+{
+  "signature": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+  "jobId": "zaitsev:authored-Qxc6",
+  "status": "complete",
+  "attemptIds": [
+    "04"
+  ],
+  "result": {
+    "bestmove": "d7c6",
+    "searchmoves": [
+      "d7c6"
+    ],
+    "depth": 17,
+    "nodes": 176162,
+    "cp": 21,
+    "mate": null,
+    "pv": [
+      "d7c6",
+      "e1g1",
+      "e7e5",
+      "d4d3",
+      "c8e6",
+      "b2b3",
+      "g8f6",
+      "f1e1",
+      "a8c8",
+      "c2c4",
+      "b7b5",
+      "b1a3",
+      "b5c4",
+      "a3c4",
+      "e6c4",
+      "b3c4",
+      "c6c4",
+      "d3a3",
+      "f6e4",
+      "a3a7"
+    ],
+    "attempt": "04"
+  }
+}

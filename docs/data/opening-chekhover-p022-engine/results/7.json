@@ -1,0 +1,30 @@
+{
+  "signature": "224a6e3df49b39c738224e68bf0f7e3466117a9f44fea1f337bc7336512e8987",
+  "jobId": "chekhover-qd2:continuation-control",
+  "status": "complete",
+  "attemptIds": [
+    "07"
+  ],
+  "result": {
+    "bestmove": "h7h6",
+    "searchmoves": [],
+    "depth": 15,
+    "nodes": 151185,
+    "cp": 64,
+    "mate": null,
+    "pv": [
+      "h7h6",
+      "g5f6",
+      "e7f6",
+      "f3d4",
+      "d8b6",
+      "c1b1",
+      "f8d8",
+      "f2f4",
+      "b6c5",
+      "e1e3",
+      "b7b5"
+    ],
+    "attempt": "07"
+  }
+}

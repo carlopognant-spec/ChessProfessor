@@ -1,0 +1,28 @@
+{
+  "signature": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+  "jobId": "zaitsev:authored-Bxc6",
+  "status": "complete",
+  "nodesActual": 200015,
+  "lines": [
+    "info string NNUE evaluation using nn-5af11540bbfe.nnue enabled",
+    "info depth 1 seldepth 1 multipv 1 score cp 4 nodes 3 nps 3000 hashfull 0 tbhits 0 time 1 pv b5c6 d7c6",
+    "info depth 2 seldepth 2 multipv 1 score cp 4 nodes 7 nps 7000 hashfull 0 tbhits 0 time 1 pv b5c6 d7c6",
+    "info depth 3 seldepth 3 multipv 1 score cp 4 nodes 9 nps 9000 hashfull 0 tbhits 0 time 1 pv b5c6 d7c6",
+    "info depth 4 seldepth 3 multipv 1 score cp 4 nodes 11 nps 11000 hashfull 0 tbhits 0 time 1 pv b5c6 d7c6",
+    "info depth 5 seldepth 3 multipv 1 score cp -25 nodes 20 nps 20000 hashfull 0 tbhits 0 time 1 pv b5c6 d7c6 a2a3",
+    "info depth 6 seldepth 4 multipv 1 score cp -2 nodes 135 nps 67500 hashfull 0 tbhits 0 time 2 pv b5c6 d7c6 a2a3",
+    "info depth 7 seldepth 5 multipv 1 score cp 28 nodes 284 nps 142000 hashfull 0 tbhits 0 time 2 pv b5c6 b7c6 b1c3",
+    "info depth 8 seldepth 6 multipv 1 score cp 28 nodes 546 nps 182000 hashfull 0 tbhits 0 time 3 pv b5c6 b7c6 e4e5 d7g4",
+    "info depth 9 seldepth 10 multipv 1 score cp 13 nodes 3944 nps 358545 hashfull 2 tbhits 0 time 11 pv b5c6 d7c6 b1c3 e7e5 d4d3 c8e6",
+    "info depth 10 seldepth 7 multipv 1 score cp 13 nodes 4123 nps 374818 hashfull 2 tbhits 0 time 11 pv b5c6 d7c6 b1c3 e7e5 d4d3 c8e6",
+    "info depth 11 seldepth 11 multipv 1 score cp -29 nodes 10375 nps 451086 hashfull 4 tbhits 0 time 23 pv b5c6 d7c6 b1c3 e7e5 d4d3 c8e6 c1g5 h7h6",
+    "info depth 12 seldepth 14 multipv 1 score cp -11 nodes 24694 nps 484196 hashfull 5 tbhits 0 time 51 pv b5c6 d7c6 d4d3 e7e5 b2b3 c8e6 c2c4 b7b5",
+    "info depth 13 seldepth 16 multipv 1 score cp 2 nodes 35274 nps 470320 hashfull 9 tbhits 0 time 75 pv b5c6 d7c6 b1c3 e7e5 d4d3 c8e6 b2b3 g8f6 c1b2 f8e7 e1c1 e8g8 f3g5",
+    "info depth 14 seldepth 16 multipv 1 score cp 0 nodes 50552 nps 435793 hashfull 10 tbhits 0 time 116 pv b5c6 d7c6 b1c3 e7e5 d4d3 c8e6 b2b3 g8f6 f3g5 a8c8 c1b2 f8e7 e1c1 e8g8",
+    "info depth 15 seldepth 21 multipv 1 score cp -6 nodes 97576 nps 451740 hashfull 19 tbhits 0 time 216 pv b5c6 d7c6 d4d3 e7e5 e1g1 c8e6 b2b3 a8c8 c2c4 b7b5 b1a3 b5c4 a3c4 e6c4 b3c4 g8f6 f3d2 f8e7 c1a3 e8g8",
+    "info depth 16 seldepth 22 multipv 1 score cp -13 nodes 142312 nps 463557 hashfull 29 tbhits 0 time 307 pv b5c6 d7c6 d4d3 e7e5 e1g1 g8f6 f1e1 c8e6 b2b3 a8c8 c2c4 b7b5 b1d2 b5c4 d2c4 e6c4 b3c4 f8e7 f3d2 c8c7",
+    "info depth 17 seldepth 27 multipv 1 score cp -12 nodes 161141 nps 467075 hashfull 30 tbhits 0 time 345 pv b5c6 d7c6 d4d3 e7e5 e1g1 g8f6 f1e1 c8e6 b2b3 a8c8 c2c4 b7b5 b1d2 b5c4 d2c4 e6c4 b3c4 f6d7 c1g5 d7c5",
+    "info depth 18 seldepth 26 multipv 1 score cp -14 upperbound nodes 200015 nps 466235 hashfull 36 tbhits 0 time 429 pv b5c6 d7c6",
+    "bestmove b5c6 ponder d7c6"
+  ]
+}

@@ -1,0 +1,118 @@
+// Documented source lines; no engine-generated course moves.
+export default {
+  "schema": 1,
+  "lot": "P02.2-SIC-01",
+  "entries": [
+    {
+      "id": "sicilian:najdorf-bg5-classical",
+      "family": "sicilian",
+      "title": "Najdorf con 6.Ag5: sviluppo classico",
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "a6",
+        "Bg5",
+        "e6",
+        "f4",
+        "Be7",
+        "Qf3",
+        "Qc7",
+        "O-O-O",
+        "Nbd7",
+        "Bd3",
+        "b5",
+        "Rhe1",
+        "Bb7"
+      ],
+      "variant": true,
+      "roadmapLot": "P02.2-SIC-01",
+      "contrast": "Dopo 5...a6, il Bianco sceglie 6.Ag5 invece di 6.Ae3. Dopo ...e6, l'alfiere guarda la donna attraverso il cavallo f6. Il corso segue ...Ae7, Df3 e arrocco lungo: le alternative del Nero restano rami distinti.",
+      "whitePlan": "Sostieni e4 con i pezzi e collega f4 alla pressione centrale. Df3 libera d1 per l'arrocco lungo; Ad3 e The1 completano il sostegno di e4. Prima di avanzare sul lato di re, controlla l'attività nera contro c3 ed e4.",
+      "blackPlan": "Sviluppa l'alfiere in e7 e il cavallo b8 in d7, mantenendo d6 ed e6. La coppia ...b5 e ...Ab7 attiva l'alfiere sulla diagonale verso e4. Il re è ancora in e8: valuta la sicurezza e la rottura ...d5 prima di aprire il centro.",
+      "endpointReason": "Dopo 11...Ab7 sono visibili sostegno di e4, arrocco lungo bianco e controgioco nero. Il Nero deve ancora decidere la sistemazione del re: non fingere che entrambi abbiano già arroccato.",
+      "editorialLine": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 a6 Bg5 e6 f4 Be7 Qf3 Qc7 O-O-O Nbd7 Bd3 b5 Rhe1 Bb7",
+      "editorialNotes": {
+        "10": "Ag5 sviluppa l'alfiere. Dopo ...e6, la diagonale g5-f6-e7-d8 collega alfiere, cavallo e donna: il cavallo non è inchiodato al re e può legalmente muoversi, ma deve considerare la perdita della donna.",
+        "12": "f4 guadagna spazio e sostiene una futura spinta e5; ...Ae7 sviluppa un pezzo e interpone l'alfiere tra il cavallo f6 e la donna. La situazione tattica non è più quella dopo la sola ...e6.",
+        "14": "Df3 libera d1 per l'arrocco lungo. ...Dc7 coordina la donna con il centro e libera d8; non dimostra che una spinta di pedone sia già forzata.",
+        "16": "Il Bianco porta il re in c1 e la torre in d1; ...Cbd7 sviluppa l'altro cavallo e sostiene f6. Il Nero conserva ancora entrambi i diritti d'arrocco.",
+        "18": "Ad3 aggiunge un difensore a e4. ...b5 guadagna spazio sul lato di donna e libera b7 per l'alfiere: l'espansione nera richiede attenzione al centro.",
+        "20": "The1 porta la torre h1 dietro e4, mentre ...Ab7 crea pressione sulla diagonale b7-c6-d5-e4. e4 resta difeso: pressione non significa guadagno immediato."
+      },
+      "provenance": {
+        "kind": "documented-line",
+        "source": "https://github.com/JeffML/eco.json",
+        "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+        "sourceCatalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+        "sourceId": "55f893191e905f8a",
+        "sourceName": "Sicilian: Najdorf, Main Line, 10.Bd3 b5 11.Rhe1 Bb7",
+        "sourceEco": "B99",
+        "rootPositionId": "position:328690c82438e111",
+        "documentedPlies": 22,
+        "generatedPlies": 0
+      }
+    },
+    {
+      "id": "sicilian:chekhover-bd7",
+      "family": "sicilian",
+      "title": "Chekhover: 4.Dxd4 e risposta ...Ad7",
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Qxd4",
+        "Nc6",
+        "Bb5",
+        "Bd7",
+        "Bxc6",
+        "Bxc6",
+        "Nc3",
+        "Nf6",
+        "Bg5",
+        "e6",
+        "O-O-O",
+        "Be7",
+        "Rhe1",
+        "O-O"
+      ],
+      "variant": true,
+      "roadmapLot": "P02.2-SIC-01",
+      "contrast": "Il Bianco riprende in d4 con la donna invece del cavallo. ...Cc6 la attacca; Ab5 inchioda il cavallo al re. Dopo ...Ad7 e Axc6, la ripresa d'alfiere conserva i pedoni neri e cambia la coppia dei pezzi minori.",
+      "whitePlan": "Gestisci i tempi sulla donna e completa lo sviluppo. Il cambio in c6 elimina il cavallo che attaccava d4, ma cede uno dei due alfieri. Con Cc3, Ag5, arrocco lungo e The1 sostieni e4 e coordina i pezzi prima di aprire nuove linee.",
+      "blackPlan": "Attacca la donna con lo sviluppo del cavallo e rispondi all'inchiodatura interponendo l'alfiere. Dopo ...Axc6 mantieni la coppia degli alfieri, sviluppa il lato di re e arrocca. Cerca attività contro e4 e sulla colonna c semiaperta, senza presumere che la donna esposta sia già perduta.",
+      "endpointReason": "Dopo 10...O-O i re sono su lati opposti, la struttura e il cambio alfiere-cavallo sono definiti e le torri bianche sono coordinate in d1/e1. Le prossime scelte restano aperte, senza un seguito artificiale fino alla mossa 16.",
+      "editorialLine": "e4 c5 Nf3 d6 d4 cxd4 Qxd4 Nc6 Bb5 Bd7 Bxc6 Bxc6 Nc3 Nf6 Bg5 e6 O-O-O Be7 Rhe1 O-O",
+      "editorialNotes": {
+        "6": "Dxd4 sceglie una struttura diversa dalla ricattura di cavallo. ...Cc6 sviluppa un pezzo attaccando la donna: occorre considerare la minaccia prima del piano generale.",
+        "8": "Ab5 inchioda il cavallo c6 al re e rende illegale l'immediata ...Cxd4. ...Ad7 interpone l'alfiere in d7 e rimuove quel vincolo; il Bianco deve affrontare di nuovo la pressione sulla donna.",
+        "10": "Axc6 elimina il cavallo che attaccava d4. ...Axc6 riprende con l'alfiere: i pedoni neri non vengono doppiati e il Nero conserva i due alfieri.",
+        "12": "Cc3 difende e4 e sviluppa il cavallo rimasto sul lato di donna. ...Cf6 aggiunge pressione a e4: entrambi preparano lo sviluppo restante.",
+        "14": "Ag5 sviluppa l'alfiere rimasto; dopo ...e6, il cavallo f6 si trova sulla diagonale verso la donna d8. È un vincolo relativo alla donna, diverso dall'inchiodatura al re incontrata in c6.",
+        "16": "L'arrocco lungo mette il re bianco in c1 e la torre in d1. ...Ae7 completa lo sviluppo dell'alfiere e permette al Nero di preparare l'arrocco corto.",
+        "18": "The1 sostiene e4; ...O-O mette il re nero in g8. Gli arrocchi sono opposti, ma un attacco di pedoni richiede prima il controllo delle minacce centrali."
+      },
+      "provenance": {
+        "kind": "documented-line",
+        "source": "https://github.com/JeffML/eco.json",
+        "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+        "sourceCatalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+        "sourceId": "df54a8ff7bf70e37",
+        "sourceName": "Sicilian, Chekhover, Main Line, 10.Rhe1 O-O",
+        "sourceEco": "B53",
+        "rootPositionId": "position:00e320f8355c07c4",
+        "documentedPlies": 20,
+        "generatedPlies": 0
+      }
+    }
+  ]
+}

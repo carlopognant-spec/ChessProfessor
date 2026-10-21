@@ -5,3 +5,5 @@
 /src/lib/classification.js -text whitespace=cr-at-eol
 /src/lib/evaluation.js -text whitespace=cr-at-eol
 /src/lib/engineConfig.js -text whitespace=cr-at-eol
+# The current opening report binds this source's exact mixed line endings.
+/src/lib/openingJourneys.js -text whitespace=cr-at-eol

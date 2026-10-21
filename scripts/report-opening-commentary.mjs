@@ -39,6 +39,6 @@ const lines=['# Copertura dei commenti mossa per mossa','',
   '| --- | ---: | ---: | ---: | ---: |',
   ...families.map(row=>`| ${row.title} | ${row.courses} | ${row.halfMoves} | ${row.writtenPairs}/${row.pairs} | ${row.fullyWrittenCourses} |`),
   '', 'I passaggi ancora privi di nota scritta sono elencati per percorso in [formato leggibile dalla macchina](data/opening-commentary-coverage.json). La scrittura individuale integrale resta un lavoro aperto; le spiegazioni posizionali non vengono contate come revisione editoriale.',
-  '', 'Rigenerazione: `node scripts/report-opening-commentary.mjs`. I test riproducono tutte le mosse dei 280 percorsi e controllano i fatti dichiarati sulla scacchiera, oltre alle transizioni dei turni e ai casi di en passant, arrocco, promozione e attacco scoperto.','']
+  '', `Rigenerazione: \`node scripts/report-opening-commentary.mjs\`. I test riproducono tutte le mosse dei ${report.courses} percorsi e controllano i fatti dichiarati sulla scacchiera, oltre alle transizioni dei turni e ai casi di en passant, arrocco, promozione e attacco scoperto.`,'']
 await fs.writeFile('docs/OPENING-COMMENTARY-COVERAGE.md',lines.join('\n'))
 console.log(JSON.stringify({courses:report.courses,explainedHalfMoves:report.explainedHalfMoves,writtenPairs:report.writtenPairs,pairs:report.pairs,fullyWrittenCourses:report.fullyWrittenCourses},null,2))

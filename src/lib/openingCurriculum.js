@@ -59,6 +59,13 @@ export function nextCurriculumRoute(courses,completed,statistics={}){
 export const curriculumReturnIndex=(courses,completed,course)=>courses.filter(previous=>completed.includes(previous.id))
   .reduce((best,previous)=>Math.max(best,commonPrefix(previous.moves,course.moves)),0)
 
+// A studied longer route may contain every move of the destination. Offer an
+// explicit replay instead of opening a checkpoint with no learner move left.
+export function curriculumCheckpoint(courses,course,index){
+  if(index>=course.moves.length)return {index:0,reason:'contained-route'}
+  return {index,reason:curriculumFork(courses,course.moves,index)?'fork':'continuation'}
+}
+
 const cache=new Map()
 let blockedUntil=0
 export const OPENING_FREQUENCY_SAMPLE='Lichess · rapid e classical · Elo sotto 1600'

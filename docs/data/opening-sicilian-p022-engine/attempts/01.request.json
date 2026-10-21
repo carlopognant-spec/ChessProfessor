@@ -1,0 +1,10 @@
+{
+  "signature": "b868aede16ebe80892c31fedb69e25c0bbdd3bc5caa5a85dbfb7419cfc1219df",
+  "jobId": "practice:sicilian:najdorf-bg5-classical:baseline",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "rnbqkb1r/1p3ppp/p2ppn2/6B1/3NPP2/2N5/PPP3PP/R2QKB1R b KQkq - 0 7",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

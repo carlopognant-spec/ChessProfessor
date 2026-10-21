@@ -26,3 +26,41 @@ Annotations for games 7–9 were not used. The earlier ECOUrl predictions remain
 This repertoire is finite. An unknown continuation means absent from this repertoire,
 not proof that it has never appeared in opening theory. Names and prose from the sources
 are not bundled as the full opening database; the runtime index contains positions only.
+
+`openingCatalog.json` is a separate consultation source snapshot. Its bytes are
+also bound to the recorded course evidence. Its `family` field retains the original
+generation policy (`openingCatalogSourceFamily`); `prepareOpeningCatalog` resolves
+the current navigation group from the primary name using `openingFamily`.
+This preserves source hashes and stable favorite/practice IDs while correcting
+catalog filters and guide selection. See `docs/OPENING-TAXONOMY.md`.
+
+`openingRoadmapCourses.js` contains the separately versioned P02.2 documented
+courses. `openingRoadmapPracticalCases.js` contains their constructed exercises;
+`openingPracticalLibrary.js` combines them with the unmodified historical cases.
+Their source lines, full UCI transcripts and bounded checks are described in
+`docs/OPENING-SICILIAN-P022-RESULTS.md`. The offline publication gate is
+`node scripts/build-opening-sicilian-content.mjs --check`; it never launches an
+engine or rebuilds the historical expansion/practical datasets.
+
+
+`openingZaitsevCourses.js` adds P02.2-SIC-02 as a separate module, preserving
+the earlier roadmap modules byte for byte. Its source documents only the first
+10 plies; the final two are an authored demonstration with a bounded engine
+check. `openingZaitsevPracticalCases.js` holds its constructed deviation; the
+practical aggregator includes the later lots as well. Provenance records the documented,
+authored and generated plies separately. See `docs/OPENING-ZAITSEV-P022-RESULTS.md`.
+The offline check is `node scripts/build-opening-zaitsev-content.mjs --check`.
+Do not rerun the frozen collector to update inventories or overwrite older
+coverage/design snapshots. Its 283-course result remains a historical snapshot.
+
+`openingChekhoverCourses.js` adds P02.2-SIC-03: three routes, 56 documented
+plies and two authored continuation plies, with four new pair notes. Its three
+constructed cases live in `openingChekhoverPracticalCases.js`; the practical
+aggregator now contains 286 entries. Bishop targets and a deviation from the
+course endpoint use the same bounded policy, without changing older datasets.
+The append-only ledger contains nine searches; one control is shared with an
+exercise baseline. Run `node scripts/build-opening-chekhover-content.mjs --check`
+for offline evidence verification and `node scripts/report-opening-chekhover-result.mjs --check`
+for current coverage and preservation of all 283 previous courses/exercises.
+See `docs/OPENING-CHEKHOVER-P022-RESULTS.md`. Earlier design verifiers and
+coverage reporters keep their historical counts and must not overwrite snapshots.

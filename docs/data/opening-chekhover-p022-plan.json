@@ -1,0 +1,345 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-03",
+  "status": "designed-not-published",
+  "checkedOn": "2026-10-21",
+  "scope": "Tre percorsi Chekhover dopo 5...Bd7; quattro posizioni del corpus A. Solo progettazione, senza ricerche motore o modifiche applicative.",
+  "baseline": {
+    "courseCount": 283,
+    "courseDigest": "7967549bfd6eac16f7b539e5235ebbc9599427eb7ba158a8f8b520ca74a566b3",
+    "practicalCount": 283,
+    "practicalDigest": "97f39726284160623be7dcfb5c378fd481c4c023dafbbd2172ad180db964bdcd",
+    "coverage": {
+      "exact": 1940,
+      "transposition-only": 201,
+      "absent": 10181
+    }
+  },
+  "preserveFiles": {
+    "src/data/openingCatalog.json": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+    "src/data/openingExpansion.js": "4f4364e6f592e9d9755eefa6dfb1d28651b333694ae4cb7706f4b2506385ae01",
+    "src/data/openingPracticalCases.js": "4847fbe684873cb070f098198f08515d4442a408c11f6688b7db37e2cb81e77f",
+    "docs/data/opening-expansion-verification.json": "719c67bbf71fab5e0da82759bcadb30a6beca951006837d41d02d8f49f804c4a",
+    "docs/data/opening-practical-verification.json": "8859def8c2c8ff2f0f0511ad2c82706ff29037a7fa445d2d4dd7a976bc385e46",
+    "src/data/openingRoadmapCourses.js": "c0331aca9357989242b055b60f44dca3aed7cc0cbc7ead43f5b297164f4900d5",
+    "src/data/openingRoadmapPracticalCases.js": "11f32e6a0e1ee814d69ac4e8848f2083b5bf195a5dcd2bab428d1365d677ab40",
+    "docs/data/opening-sicilian-p022-plan.json": "49ac5ed376c116ff931a63b990891657711dbe03f0ca81742acd5b8030280680",
+    "docs/data/opening-sicilian-p022-design-verification.json": "9d1c10470635bfca400afb21a94c9bd611eea35177e0d8da4efdc2343c3ac4bb",
+    "docs/data/opening-sicilian-p022-result.json": "42d8925d8dd3318a1832135847d6a112e5633ace5e9b26b6dcbc81087c13289b",
+    "docs/data/opening-sicilian-p022-practical-verification.json": "0d500f798d47879fcdf1e1d2290cfbc0d84a2ac1735e0fce2dc3efd87938eb13",
+    "scripts/collect-opening-sicilian-evidence.mjs": "63278a9416f5a90fffb716e2906339e72859fd0ac763808098582c84eea0e253",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8",
+    "scripts/build-opening-sicilian-content.mjs": "b0eaf65e8c331b52b79fe103d027236ecb18a94ce25768ae415309fbe7f5fc19",
+    "scripts/report-opening-sicilian-result.mjs": "7ae876972e84fe6ee342fbe2cb04ab081e88f9094523d33546f3726a65cbfac0",
+    "scripts/verify-opening-sicilian-design.mjs": "d453851c8e64c34874b17aadfef5244032bf9458d513c3237ce0daf34d96ab41",
+    "docs/data/opening-sicilian-p022-engine/attempts/01.request.json": "39b5c3a8ef70099fccee6b4c3c2ff6493c6854b3f78a579ab4cca2570bfe0145",
+    "docs/data/opening-sicilian-p022-engine/attempts/01.response.json": "ec1c68bbcb99403a808760c6ac1f503e1675c4747380fc520bc405fcab33f0b8",
+    "docs/data/opening-sicilian-p022-engine/attempts/02.request.json": "9c3fd8880f1fff34350d9528d0f75e628548972632410dffda9a77f1270fe321",
+    "docs/data/opening-sicilian-p022-engine/attempts/02.response.json": "d3535ebdfe130d48a85c36ff77ace7d1658b84746f8a231fddec075a4106705f",
+    "docs/data/opening-sicilian-p022-engine/attempts/03.request.json": "64cb1d6b4b89249584ca9aabe6b59d4d92011d4521c0cb7cdb8ed24196fda979",
+    "docs/data/opening-sicilian-p022-engine/attempts/03.response.json": "b82913f5c423e250115787c6d18bbc0e6eb07808eb7170c420f26dedf8ccbbe2",
+    "docs/data/opening-sicilian-p022-engine/attempts/04.request.json": "6144377243b696927f62e7051e072653e8d959ce1bc50a330da1d5409e611384",
+    "docs/data/opening-sicilian-p022-engine/attempts/04.response.json": "a1e7b5dc44592fcf49a0b29ed9ab54c8620e7b77d2683237d1a0f6ff154d176c",
+    "docs/data/opening-sicilian-p022-engine/manifest.json": "b868aede16ebe80892c31fedb69e25c0bbdd3bc5caa5a85dbfb7419cfc1219df",
+    "docs/data/opening-sicilian-p022-engine/results/1.json": "7a510ce36e871aef96a3674459d8c4ce6bec1e64712f9e3e8e11a2e1caa6ef48",
+    "docs/data/opening-sicilian-p022-engine/results/2.json": "52a7eff4c2f2b3f743941c4618c2a5e4d754eed8a08fe6926d887a671a63df94",
+    "docs/data/opening-sicilian-p022-engine/results/3.json": "e35923a76eeb6c85e6e08f2ed1304dd68e05ee46dc2145d2951b4a0734cc84c4",
+    "docs/data/opening-sicilian-p022-engine/results/4.json": "5197d2d374b506d88ed15086c3979117514a40bbf7e666c2fdc25d2b1136184d",
+    "src/data/openingZaitsevCourses.js": "38de6ca7473c48cc9283facb82f176a4a2d5ae5bff79746d2f1fb3ec6acbcff7",
+    "src/data/openingZaitsevPracticalCases.js": "28185d8ad482385979cb29fe404f466356319ae832f863fc636cd25d20afe761",
+    "docs/data/opening-zaitsev-p022-plan.json": "70cbc53fee9d6ce33d2809098b81816c66a74e1d5df8ab83485e9fae1dd9de19",
+    "docs/data/opening-zaitsev-p022-editorial.json": "6171bf753fe36c088af44654630c7121f3b42e23d8a877cdf31e64581aba02e6",
+    "docs/data/opening-zaitsev-p022-design-verification.json": "d7f0d9fbbeac224186ed1e40f2ddeb1b0a9e8e2aebe7c79f72f887c4478e35b4",
+    "docs/data/opening-zaitsev-p022-practical-verification.json": "7fdae7f2702bcdea95c030653d7152dded5f1a9d10b582c9447bc303511395ea",
+    "docs/data/opening-zaitsev-p022-result.json": "a222c548b5600d26668952f11e6221ab5ac86c1bf0f2492e9b92c3e09d3da43a",
+    "scripts/verify-opening-zaitsev-design.mjs": "17b3145c21d6d6d26633775fad63be801da790d79fbfcd3696ed4e0851ce93ba",
+    "scripts/collect-opening-zaitsev-evidence.mjs": "90bec00bb5ee522503b678592b6cee1806cb924475ea7e7d05666809dea7a0e5",
+    "scripts/build-opening-zaitsev-content.mjs": "2798b2854aa5060b34a5a64110a96a069fc16d7be77ea7b561315d789e602626",
+    "scripts/report-opening-zaitsev-result.mjs": "b15d2a7e7b94515b30bf6ffc7828f7d0b7bc712617df0a4a43175a38881c5203",
+    "docs/data/opening-scope-audit.json": "f7f42a8ae999085516d691a87c4df9fdf084075fce0c177c7e3275fe96d7ba49",
+    "docs/data/opening-scope-verification.json": "dc64f60e982d8c9e1425badcfda6da3e61acefbb7eb23bb0a44c2243dabb926d",
+    "docs/data/opening-taxonomy-baseline.json": "6609a981f1d2d2502e94f993c7102670cfc360bdf2a12f4019881fff27b0e192",
+    "docs/data/opening-taxonomy.json": "ea7e4822e37e98cb4737268db1a1b4dbbeb337496236aee9a0ab7f9af58d7beb",
+    "docs/data/opening-zaitsev-p022-engine/attempts/01.request.json": "2ee7f15da2bbe6f0b8c15018e99f7e3d15655c1bd3ca8d615f06a83337e7a712",
+    "docs/data/opening-zaitsev-p022-engine/attempts/01.response.json": "b1f844d798558dd4346c5b879af7b8f997f38b10402d330813f65965056c5913",
+    "docs/data/opening-zaitsev-p022-engine/attempts/02.request.json": "d607bebb9d9d562f0d972a131ba6c2a5d61edea833d736b7a27081e8bc544192",
+    "docs/data/opening-zaitsev-p022-engine/attempts/02.response.json": "9df7389667b49011120cfd113bb0bdb852004676d0d5283a400d31e95f1222ec",
+    "docs/data/opening-zaitsev-p022-engine/attempts/03.request.json": "c405437fe70a776e49405a037edc1c2a688d91837c1487f30056164c927a3f3b",
+    "docs/data/opening-zaitsev-p022-engine/attempts/03.response.json": "28b7dd919c681934d84b79daa0e86799bb909ec1541ca2854986b6198da4b9a3",
+    "docs/data/opening-zaitsev-p022-engine/attempts/04.request.json": "64d017458eb0ffa2448f6c7e56c227857624ca93ce4d1182469cae18201b0d7f",
+    "docs/data/opening-zaitsev-p022-engine/attempts/04.response.json": "cc1afe968197b679c8733388ef53a7640da045ffe8ed4f3e9f198c9023029cb1",
+    "docs/data/opening-zaitsev-p022-engine/attempts/05.request.json": "8483a8ab2d189947e09ade409319a1a200e4bf3ccee441ee4753b9f7a5cde3b3",
+    "docs/data/opening-zaitsev-p022-engine/attempts/05.response.json": "c1129dc53e7b9d823e4eebfaecd922c269d60f8d8eded8cdb50ba319d8fc032e",
+    "docs/data/opening-zaitsev-p022-engine/manifest.json": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+    "docs/data/opening-zaitsev-p022-engine/results/1.json": "dd06a0ba86ec40472032c492398c9a17b2e1e7a95511c4248ce05127c98e063e",
+    "docs/data/opening-zaitsev-p022-engine/results/2.json": "11945bdb5ac611849bd23a8f0d271a5c4832e4fe5ee1bb506921c598f66d4b46",
+    "docs/data/opening-zaitsev-p022-engine/results/3.json": "a7247cf849d7b20be900d64269e682b4873ca7f7f76e7762f93a524a3f4bb866",
+    "docs/data/opening-zaitsev-p022-engine/results/4.json": "f82eeb97379103e323db793fa94a50c83a977722175644dea65a1a18dcce3cdc",
+    "docs/data/opening-zaitsev-p022-engine/results/5.json": "de53b1c2fd45058d2a687ebf38ce621cc9789ee7eddf850a8389e6dd47d271a8",
+    "docs/data/opening-audit-sources/a.tsv": "3282e4c9155289a29224f9a85fba0decb46efa35c2fa5e39662d2ac48fb0f793",
+    "docs/data/opening-audit-sources/b.tsv": "1d5ed134ebbd87915ead5683416e37583bb3e5ae3582b4d8cb5cb4aa7ef4f623",
+    "docs/data/opening-audit-sources/c.tsv": "45e843c7b7e79a0d04d5bda879c9bd23f5a10974488bd8615e4f4c5d0749986f",
+    "docs/data/opening-audit-sources/COPYING.txt": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "docs/data/opening-audit-sources/d.tsv": "1cf4057a8aece94f27bb3f278ad410ee2844831a642364eeceaafa091dbcceda",
+    "docs/data/opening-audit-sources/e.tsv": "48c6f6645b031a5937c8386839debab0e2e48837251687ba1afb6369677f8546",
+    "docs/data/opening-audit-sources/eco-roots.json": "8297086487dd6c2afebf5fda9909e722a326e8c28360459e18fef4ac132cd9ea",
+    "docs/data/opening-audit-sources/manifest.json": "5eed2545973ad94e6676c63ff92cb3637d756aefec9eed55275ab44062b8caec",
+    "docs/data/opening-audit-sources/README.md": "c0bedd93a117f318a3bd087a3af640652f4369ca461429d4dfbeee4614dc5eae"
+  },
+  "source": {
+    "url": "https://github.com/JeffML/eco.json",
+    "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+    "license": "MIT",
+    "catalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+    "independentWitnesses": false,
+    "lichessReferencesForSelectedPositions": 0
+  },
+  "courses": [
+    {
+      "id": "sicilian:chekhover-c4-g6",
+      "family": "sicilian",
+      "title": "Chekhover: 7.c4 e preparazione del fianchetto",
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Qxd4",
+        "Nc6",
+        "Bb5",
+        "Bd7",
+        "Bxc6",
+        "Bxc6",
+        "c4",
+        "Nf6",
+        "Nc3",
+        "g6"
+      ],
+      "sourceRecords": [
+        {
+          "id": "eco:e3db46f894b3eb7c",
+          "positionId": "position:65a7a0f0faa6092b",
+          "plies": 13
+        },
+        {
+          "id": "eco:cab3a0b1cf0331d6",
+          "positionId": "position:559d29741ab02c1f",
+          "plies": 16
+        }
+      ],
+      "provenance": {
+        "kind": "documented-line",
+        "documentedPlies": 16,
+        "authoredContinuationPlies": 0,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:chekhover-bd7",
+      "sharedPrefixPlies": 12,
+      "relationship": "fork",
+      "contrast": "Dopo il cambio in c6 il Bianco gioca c4 prima di Cc3. Il pedone c4 controlla d5; nel ramo già disponibile il Bianco sviluppa subito il cavallo.",
+      "whitePlan": "Sostieni il centro con c4 e sviluppa Cc3, che difende e4. Completa poi lo sviluppo e prepara la sicurezza del re: il percorso non ha ancora raggiunto una posizione con sviluppo concluso.",
+      "blackPlan": "Sviluppa Cf6 con pressione su e4 e prepara il fianchetto con g6. L’alfiere è ancora in f8: Ag7 resta una possibilità successiva, da valutare nella posizione concreta.",
+      "endpointReason": "La fonte termina dopo 8...g6. Sono visibili il controllo di d5 con c4 e la preparazione del fianchetto; entrambi i re sono ancora al centro. È un modulo di confronto, non una partita completa verso il mediogioco.",
+      "sourceDisclosure": "Tutte le 16 semimosse del percorso sono presenti nella sequenza del catalogo; il passaggio intermedio dopo 7.c4 corrisponde a un secondo record della stessa fonte.",
+      "editorialNotes": {
+        "12": "Con c4 il Bianco controlla d5 con un pedone prima di sviluppare il cavallo b1. Il Nero risponde Cf6, sviluppando un pezzo che attacca e4. La donna d4 difende già quel pedone: pressione e guadagno di materiale non sono la stessa cosa.",
+        "14": "Cc3 aggiunge una difesa a e4. Con g6 il Nero prepara Ag7, ma l’alfiere si trova ancora in f8. Entrambi i re restano al centro: il confronto delle strutture prosegue con lo sviluppo e la scelta dell’arrocco, non con un attacco già pronto."
+      },
+      "exercise": {
+        "id": "practice:sicilian:chekhover-c4-g6",
+        "beforeIndex": 13,
+        "mistake": "Bxe4",
+        "answer": "Qxe4",
+        "exerciseSide": "w",
+        "capturedType": "b",
+        "expectedLegalImmediateReplies": 24,
+        "expectedMinimumImmediateMaterialGain": 2,
+        "title": "La presa prematura in e4",
+        "objective": "Il Nero ha preso il pedone e4 con l’alfiere. Individua come rispondere sfruttando la difesa del centro.",
+        "explanation": "Dxe4 cattura l’alfiere che ha preso il pedone. Rispetto alla posizione prima dell’errore il saldo materiale minimo, dopo ogni replica immediata legale, è +2: alfiere guadagnato e pedone perso. Non è una dimostrazione di vittoria della partita."
+      }
+    },
+    {
+      "id": "sicilian:chekhover-qd3",
+      "family": "sicilian",
+      "title": "Chekhover: 10.Dd3 e arrocco del Nero",
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Qxd4",
+        "Nc6",
+        "Bb5",
+        "Bd7",
+        "Bxc6",
+        "Bxc6",
+        "Nc3",
+        "Nf6",
+        "Bg5",
+        "e6",
+        "O-O-O",
+        "Be7",
+        "Qd3",
+        "O-O"
+      ],
+      "sourceRecords": [
+        {
+          "id": "eco:ce70dab23d629d53",
+          "positionId": "position:cb47b173ef24af42",
+          "plies": 19
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 19,
+        "authoredContinuationPlies": 1,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:chekhover-bd7",
+      "sharedPrefixPlies": 18,
+      "relationship": "fork",
+      "authoredMove": {
+        "index": 19,
+        "san": "O-O",
+        "uci": "e8g8"
+      },
+      "contrast": "Al decimo tratto il Bianco sposta la donna in d3 invece di portare la torre h1 in e1. La differenza resta visibile dopo l’arrocco nero scelto come seguito didattico.",
+      "whitePlan": "Conserva il sostegno a e4 dalla donna d3 e coordina i pezzi dopo l’arrocco lungo. La torre h1 non è ancora entrata in e1: valuta il suo sviluppo senza trattarlo come già avvenuto.",
+      "blackPlan": "Nell’esempio, arrocca corto e porta la torre in f8. Controlla il centro e la sicurezza del re prima di iniziare operazioni sulle ali; gli arrocchi opposti da soli non dimostrano un attacco vincente.",
+      "endpointReason": "Dopo il seguito didattico 10...O-O i re sono su ali opposte e si può confrontare la posizione della donna con il ramo 10.The1. La fonte termina una semimossa prima, a 10.Dd3.",
+      "sourceDisclosure": "La fonte documenta le prime 19 semimosse, fino a 10.Dd3. L’arrocco 10...O-O è una continuazione didattica scelta separatamente e soggetta a controllo motore limitato; non viene attribuita a questo record del catalogo.",
+      "editorialNotes": {
+        "18": "Dd3 mantiene la difesa di e4 lungo la diagonale d3-e4. Nel seguito didattico ...O-O porta il re nero in g8 e la torre in f8. Le torri bianche sono in d1 e h1: a differenza del ramo 10.The1, la torre di re deve ancora essere coordinata."
+      },
+      "exercise": {
+        "id": "practice:sicilian:chekhover-qd3",
+        "beforeIndex": 20,
+        "mistake": "Qb5",
+        "answer": "Bxb5",
+        "exerciseSide": "b",
+        "capturedType": "q",
+        "expectedLegalImmediateReplies": 39,
+        "expectedMinimumImmediateMaterialGain": 6,
+        "title": "La donna sulla diagonale dell’alfiere",
+        "objective": "Il Bianco ha spostato la donna in b5. Cerca la risposta che sfrutta la disposizione dei pezzi neri.",
+        "explanation": "Axb5 cattura la donna con l’alfiere c6. Il Bianco può recuperare un pezzo minore, anche con Cxb5 oppure Axf6; dopo tutte le repliche immediate legali il saldo minimo rispetto a prima dell’errore è +6 per il Nero."
+      }
+    },
+    {
+      "id": "sicilian:chekhover-qd2",
+      "family": "sicilian",
+      "title": "Chekhover: 11.Dd2 e coordinazione delle torri",
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Qxd4",
+        "Nc6",
+        "Bb5",
+        "Bd7",
+        "Bxc6",
+        "Bxc6",
+        "Nc3",
+        "Nf6",
+        "Bg5",
+        "e6",
+        "O-O-O",
+        "Be7",
+        "Rhe1",
+        "O-O",
+        "Qd2",
+        "Qc7"
+      ],
+      "sourceRecords": [
+        {
+          "id": "eco:aed1668deddb6fa8",
+          "positionId": "position:1e26b7829d87dc1e",
+          "plies": 21
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 21,
+        "authoredContinuationPlies": 1,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:chekhover-bd7",
+      "sharedPrefixPlies": 20,
+      "relationship": "strict-continuation",
+      "authoredMove": {
+        "index": 21,
+        "san": "Qc7",
+        "uci": "d8c7"
+      },
+      "contrast": "Il percorso continua il corso con ...Ad7 oltre la sua posizione finale: 11.Dd2 è un nuovo tratto, non una scelta alternativa a una mossa già presente in quel corso.",
+      "whitePlan": "Riposiziona la donna in d2 dopo aver portato la torre h1 in e1. Le torri sono in d1 ed e1; e4 resta sostenuto anche dal cavallo c3 e dalla torre e1.",
+      "blackPlan": "Nel seguito didattico Dc7 libera d8 e collega le torri a8 e f8. L’alfiere c6 interrompe la colonna davanti alla donna: non attribuirle un attacco diretto al pedone c2.",
+      "endpointReason": "La fonte arriva a 11.Dd2; il seguito dimostrativo ...Dc7 rende visibile il collegamento delle torri nere. È una prosecuzione breve del percorso già disponibile, con una mossa attiva per ciascun colore dopo il punto di ripresa.",
+      "sourceDisclosure": "La fonte documenta 21 semimosse, fino a 11.Dd2. La risposta 11...Dc7 è una continuazione didattica scelta separatamente e soggetta a controllo motore limitato, non una mossa attribuita a questo record del catalogo.",
+      "editorialNotes": {
+        "20": "Dd2 sposta la donna dalla sua casa centrale senza cambiare la disposizione delle torri bianche in d1 ed e1. Nel seguito scelto ...Dc7 libera d8: le torri nere a8 e f8 sono ora collegate. L’alfiere nero in c6 blocca la colonna c davanti alla donna, che non attacca direttamente c2."
+      },
+      "exercise": {
+        "id": "practice:sicilian:chekhover-qd2",
+        "beforeIndex": 21,
+        "mistake": "Ba4",
+        "answer": "Nxa4",
+        "exerciseSide": "w",
+        "capturedType": "b",
+        "expectedLegalImmediateReplies": 26,
+        "expectedMinimumImmediateMaterialGain": 2,
+        "title": "L’alfiere fuori dal centro",
+        "objective": "Il Nero ha portato l’alfiere in a4. Individua una cattura utile prima di proseguire il tuo piano.",
+        "explanation": "Cxa4 cattura l’alfiere con il cavallo c3. Il Nero può rispondere Cxe4 e prendere un pedone: il saldo materiale minimo, considerando tutte le repliche immediate legali, resta +2 rispetto alla posizione prima dell’errore."
+      }
+    }
+  ],
+  "enginePlan": {
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHashBeforeEachGo": true,
+    "nodesPerGo": 200000,
+    "timeoutPerCommandMs": 30000,
+    "primaryJobs": 9,
+    "maximumGoCommands": 18,
+    "maximumRequestedNodes": 3600000,
+    "minimumExerciseSwingCp": 200,
+    "maximumAuthoredMoveLossCp": 100,
+    "confirmationPolicy": "At most one confirmation per job only when bestmove lacks matching full cp/PV evidence. Count failed or interrupted requests. No automatic retry of failed persisted jobs, candidate sweep, budget increase or mate-score auto-acceptance.",
+    "publicationPolicy": "Publish the three courses and exercises together only after every declared gate passes. Otherwise preserve evidence and stop for design review; do not silently change moves, thresholds or expected counts.",
+    "engine": "Stockfish 16",
+    "minimumImmediateMaterial": 2
+  },
+  "navigation": {
+    "forkPrefixes": [
+      12,
+      18
+    ],
+    "continuationPrefix": 20,
+    "containedRoutePolicy": "When curriculumReturnIndex is at or beyond target length, offer explicit restart at index 0 with truthful contained-route text; do not record completion from shared-prefix coverage alone.",
+    "browserVerification": "Pending implementation: both colors, real forks, strict continuation, reverse contained-route restart, legal uncovered alternatives, storage persistence."
+  },
+  "plannedFiles": {
+    "courseModule": "src/data/openingChekhoverCourses.js",
+    "practicalModule": "src/data/openingChekhoverPracticalCases.js",
+    "collector": "scripts/collect-opening-chekhover-evidence.mjs",
+    "builder": "scripts/build-opening-chekhover-content.mjs",
+    "reporter": "scripts/report-opening-chekhover-result.mjs",
+    "engineDirectory": "docs/data/opening-chekhover-p022-engine",
+    "practicalVerification": "docs/data/opening-chekhover-p022-practical-verification.json",
+    "result": "docs/data/opening-chekhover-p022-result.json",
+    "resultDocument": "docs/OPENING-CHEKHOVER-P022-RESULTS.md"
+  }
+}

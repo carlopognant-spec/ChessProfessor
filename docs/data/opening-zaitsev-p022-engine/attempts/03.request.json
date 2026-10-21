@@ -1,0 +1,10 @@
+{
+  "signature": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+  "jobId": "zaitsev:recapture-control",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "r1b1kbnr/pp1qpppp/2Bp4/8/3QP3/5N2/PPP2PPP/RNB1K2R b KQkq - 0 6",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

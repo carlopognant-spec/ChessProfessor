@@ -1,0 +1,36 @@
+{
+  "signature": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+  "jobId": "zaitsev:recapture-control",
+  "status": "complete",
+  "attemptIds": [
+    "03"
+  ],
+  "result": {
+    "bestmove": "b7c6",
+    "searchmoves": [],
+    "depth": 17,
+    "nodes": 200203,
+    "cp": 1,
+    "mate": null,
+    "pv": [
+      "b7c6",
+      "d4d3",
+      "e7e5",
+      "e1g1",
+      "f8e7",
+      "f1d1",
+      "g8f6",
+      "c1g5",
+      "d7e6",
+      "c2c4",
+      "e8g8",
+      "b1c3",
+      "a7a5",
+      "c3a4",
+      "a8b8",
+      "b2b3",
+      "f8d8"
+    ],
+    "attempt": "03"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "signature": "b868aede16ebe80892c31fedb69e25c0bbdd3bc5caa5a85dbfb7419cfc1219df",
+  "jobId": "practice:sicilian:chekhover-bd7:baseline",
+  "status": "complete",
+  "attemptIds": [
+    "03"
+  ],
+  "result": {
+    "bestmove": "d4d3",
+    "searchmoves": [],
+    "depth": 16,
+    "nodes": 200138,
+    "cp": 9,
+    "mate": null,
+    "pv": [
+      "d4d3",
+      "g7g6",
+      "f1e2",
+      "f8g7",
+      "h2h3",
+      "g8f6",
+      "e1g1",
+      "e8g8",
+      "c2c4",
+      "f6d7",
+      "b1c3",
+      "d7c5",
+      "d3e3",
+      "g7c3",
+      "e3c3",
+      "c5e4"
+    ],
+    "attempt": "03"
+  }
+}

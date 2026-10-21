@@ -13,7 +13,12 @@ describe('opening curricula and alternative structures',()=>{
       expect(courses.length,guide.id).toBeGreaterThanOrEqual(2)
       expect(new Set(courses.map(j=>j.moves.join(' '))).size,guide.id).toBe(courses.length)
       for(const j of courses){
-        expect(j.moves.length,j.id).toBeGreaterThanOrEqual(30)
+        if(j.roadmapLot){
+          expect(j.moves.length,j.id).toBe({'sicilian:najdorf-bg5-classical':22,'sicilian:chekhover-bd7':20,'sicilian:chekhover-zaitsev':12,'sicilian:chekhover-c4-g6':16,'sicilian:chekhover-qd3':20,'sicilian:chekhover-qd2':22}[j.id])
+          const mixed={'sicilian:chekhover-zaitsev':[10,2],'sicilian:chekhover-qd3':[19,1],'sicilian:chekhover-qd2':[21,1]}[j.id]
+          if(mixed)expect(j.provenance).toMatchObject({kind:'documented-prefix-with-authored-continuation',documentedPlies:mixed[0],authoredContinuationPlies:mixed[1],generatedPlies:0})
+          else expect(j.provenance).toMatchObject({kind:'documented-line',documentedPlies:j.moves.length,generatedPlies:0})
+        }else expect(j.moves.length,j.id).toBeGreaterThanOrEqual(30)
         const board=new Chess();for(const san of j.moves)board.move(san)
         expect(board.isGameOver(),j.id).toBe(false)
       }

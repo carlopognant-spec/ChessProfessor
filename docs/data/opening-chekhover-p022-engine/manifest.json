@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-03",
+  "inputHashes": {
+    "docs/data/opening-chekhover-p022-plan.json": "243bd68a4df4c52646ed1e142674751d5acd0eedd9845a6ab829e6df59ebc504",
+    "docs/data/opening-chekhover-p022-design-verification.json": "4e095fd2d0ecb6c0f89629a882e66be092e6e94c120d6ee5340d7eb2290e1631",
+    "scripts/collect-opening-chekhover-evidence.mjs": "44cca1ec522f893215223f587ae034abab807e92668077756fef58d16cc0a5e2",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8"
+  },
+  "engineSha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+  "policy": {
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHashBeforeEachGo": true,
+    "nodesPerGo": 200000,
+    "timeoutPerCommandMs": 30000,
+    "primaryJobs": 9,
+    "maximumGoCommands": 18,
+    "maximumRequestedNodes": 3600000,
+    "minimumExerciseSwingCp": 200,
+    "maximumAuthoredMoveLossCp": 100,
+    "confirmationPolicy": "At most one confirmation per job only when bestmove lacks matching full cp/PV evidence. Count failed or interrupted requests. No automatic retry of failed persisted jobs, candidate sweep, budget increase or mate-score auto-acceptance.",
+    "publicationPolicy": "Publish the three courses and exercises together only after every declared gate passes. Otherwise preserve evidence and stop for design review; do not silently change moves, thresholds or expected counts.",
+    "engine": "Stockfish 16",
+    "minimumImmediateMaterial": 2
+  },
+  "jobs": [
+    {
+      "id": "chekhover-c4-g6:exercise-baseline",
+      "fen": "r2qkbnr/pp2pppp/2bp4/8/2PQP3/5N2/PP3PPP/RNB1K2R b KQkq - 0 7",
+      "roots": [],
+      "uses": [
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "chekhover-c4-g6:deviation",
+      "fen": "r2qkbnr/pp2pppp/3p4/8/2PQb3/5N2/PP3PPP/RNB1K2R w KQkq - 0 8",
+      "roots": [],
+      "expectedAnswer": "Qxe4",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "chekhover-qd3:continuation-control",
+      "fen": "r2qk2r/pp2bppp/2bppn2/6B1/4P3/2NQ1N2/PPP2PPP/2KR3R b kq - 3 10",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "chekhover-qd3:authored",
+      "fen": "r2qk2r/pp2bppp/2bppn2/6B1/4P3/2NQ1N2/PPP2PPP/2KR3R b kq - 3 10",
+      "roots": [
+        "e8g8"
+      ],
+      "expectedAnswer": "O-O",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "chekhover-qd3:exercise-baseline",
+      "fen": "r2q1rk1/pp2bppp/2bppn2/6B1/4P3/2NQ1N2/PPP2PPP/2KR3R w - - 4 11",
+      "roots": [],
+      "uses": [
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "chekhover-qd3:deviation",
+      "fen": "r2q1rk1/pp2bppp/2bppn2/1Q4B1/4P3/2N2N2/PPP2PPP/2KR3R b - - 5 11",
+      "roots": [],
+      "expectedAnswer": "Bxb5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "chekhover-qd2:continuation-control",
+      "fen": "r2q1rk1/pp2bppp/2bppn2/6B1/4P3/2N2N2/PPPQ1PPP/2KRR3 b - - 5 11",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "chekhover-qd2:authored",
+      "fen": "r2q1rk1/pp2bppp/2bppn2/6B1/4P3/2N2N2/PPPQ1PPP/2KRR3 b - - 5 11",
+      "roots": [
+        "d8c7"
+      ],
+      "expectedAnswer": "Qc7",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "chekhover-qd2:deviation",
+      "fen": "r2q1rk1/pp2bppp/3ppn2/6B1/b3P3/2N2N2/PPPQ1PPP/2KRR3 w - - 6 12",
+      "roots": [],
+      "expectedAnswer": "Nxa4",
+      "uses": [
+        "exercise-answer"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "signature": "224a6e3df49b39c738224e68bf0f7e3466117a9f44fea1f337bc7336512e8987",
+  "jobId": "chekhover-qd3:exercise-baseline",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "r2q1rk1/pp2bppp/2bppn2/6B1/4P3/2NQ1N2/PPP2PPP/2KR3R w - - 4 11",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

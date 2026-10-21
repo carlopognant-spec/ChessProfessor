@@ -21,7 +21,10 @@ describe('branching opening curriculum',()=>{
           course.moves.slice(0,index).forEach(san=>after.move(san))
           expect(before.fen()).toBe(after.fen())
           expect(previous.moves[index]).not.toBe(course.moves[index])
-          expect(curriculumFork(courses,course.moves,index)?.children.size).toBeGreaterThan(1)
+          if(index===previous.moves.length){
+            expect(course.moves.length).toBeGreaterThan(index)
+            expect(curriculumFork(courses,course.moves,index)).toBeNull()
+          }else expect(curriculumFork(courses,course.moves,index)?.children.size).toBeGreaterThan(1)
           // A black or white learner can resume without playing for the opponent.
           for(const side of ['w','b']){
             if(after.turn()!==side)after.move(course.moves[index])

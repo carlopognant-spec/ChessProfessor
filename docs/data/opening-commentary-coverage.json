@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "courseDigest": "970539cb2a926899f0ad6b48caf64f042f983f6fba100187fe458e4c7e2afd72",
-  "courses": 280,
+  "courseDigest": "d24e716d71bff15107cf18ade67d6ff51005fb5b1dff4d2d7c7ef6e37379b755",
+  "courses": 286,
   "families": 37,
-  "explainedHalfMoves": 8930,
-  "pairs": 4492,
-  "writtenPairs": 1974,
-  "fullyWrittenCourses": 58,
+  "explainedHalfMoves": 9042,
+  "pairs": 4548,
+  "writtenPairs": 2012,
+  "fullyWrittenCourses": 59,
   "additionalPairNotes": 230,
   "fullyWrittenFamilies": [
     "london",
@@ -502,11 +502,11 @@
     {
       "id": "sicilian",
       "title": "Difesa Siciliana",
-      "courses": 19,
-      "halfMoves": 606,
-      "pairs": 304,
-      "writtenPairs": 92,
-      "fullyWrittenCourses": 1,
+      "courses": 25,
+      "halfMoves": 718,
+      "pairs": 360,
+      "writtenPairs": 130,
+      "fullyWrittenCourses": 2,
       "rows": [
         {
           "id": "sicilian",
@@ -887,6 +887,77 @@
             26,
             28,
             30
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:najdorf-bg5-classical",
+          "halfMoves": 22,
+          "pairs": 11,
+          "writtenPairs": 10,
+          "positionOnly": [
+            8
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:chekhover-bd7",
+          "halfMoves": 20,
+          "pairs": 10,
+          "writtenPairs": 10,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "sicilian:chekhover-zaitsev",
+          "halfMoves": 12,
+          "pairs": 6,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:chekhover-c4-g6",
+          "halfMoves": 16,
+          "pairs": 8,
+          "writtenPairs": 5,
+          "positionOnly": [
+            6,
+            8,
+            10
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:chekhover-qd3",
+          "halfMoves": 20,
+          "pairs": 10,
+          "writtenPairs": 4,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:chekhover-qd2",
+          "halfMoves": 22,
+          "pairs": 11,
+          "writtenPairs": 4,
+          "positionOnly": [
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18
           ],
           "fullyWritten": false
         }

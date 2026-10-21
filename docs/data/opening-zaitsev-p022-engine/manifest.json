@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-02",
+  "inputHashes": {
+    "docs/data/opening-zaitsev-p022-plan.json": "70cbc53fee9d6ce33d2809098b81816c66a74e1d5df8ab83485e9fae1dd9de19",
+    "docs/data/opening-zaitsev-p022-design-verification.json": "d7f0d9fbbeac224186ed1e40f2ddeb1b0a9e8e2aebe7c79f72f887c4478e35b4",
+    "scripts/collect-opening-zaitsev-evidence.mjs": "90bec00bb5ee522503b678592b6cee1806cb924475ea7e7d05666809dea7a0e5",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8"
+  },
+  "engineSha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+  "policy": {
+    "status": "not-run",
+    "purpose": "Check the fixed two-ply authored continuation and one constructed deviation; generate no continuation and sweep no candidates.",
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "engine": "Stockfish 16",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHash": true,
+    "nodesPerGo": 200000,
+    "primaryJobs": 5,
+    "maximumConfirmationJobs": 5,
+    "maximumGoCommands": 10,
+    "maximumRequestedNodes": 2000000,
+    "timeoutPerCommandMs": 30000,
+    "minimumCpChange": 200,
+    "minimumImmediateMaterial": 2,
+    "onFailure": "Keep immutable results; do not publish the new course or exercise if any required check fails, is incomplete or returns mate rather than a comparable cp score. Do not alter candidates or raise budgets. Return to design with Astra / High.",
+    "resume": "Exact signature of plan, executable, driver, FEN, options and roots; reuse completed jobs. Interrupted jobs are recorded and are not silently retried.",
+    "maximumAuthoredMoveCpLoss": 100,
+    "comparison": "Same-position unrestricted cp minus restricted cp, each relative to the same side to move; report signed difference and clamp only the acceptance loss at zero.",
+    "exerciseComparison": "Reuse unrestricted root cp. Deviation delta = cp_after + cp_root because sides to move differ."
+  },
+  "jobs": [
+    {
+      "id": "zaitsev:root-control",
+      "fen": "r1b1kbnr/pp1qpppp/2np4/1B6/3QP3/5N2/PPP2PPP/RNB1K2R w KQkq - 3 6",
+      "roots": [],
+      "uses": [
+        "continuation-white-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "zaitsev:authored-Bxc6",
+      "fen": "r1b1kbnr/pp1qpppp/2np4/1B6/3QP3/5N2/PPP2PPP/RNB1K2R w KQkq - 3 6",
+      "roots": [
+        "b5c6"
+      ],
+      "expectedAnswer": "Bxc6"
+    },
+    {
+      "id": "zaitsev:recapture-control",
+      "fen": "r1b1kbnr/pp1qpppp/2Bp4/8/3QP3/5N2/PPP2PPP/RNB1K2R b KQkq - 0 6",
+      "roots": []
+    },
+    {
+      "id": "zaitsev:authored-Qxc6",
+      "fen": "r1b1kbnr/pp1qpppp/2Bp4/8/3QP3/5N2/PPP2PPP/RNB1K2R b KQkq - 0 6",
+      "roots": [
+        "d7c6"
+      ],
+      "expectedAnswer": "Qxc6"
+    },
+    {
+      "id": "zaitsev:deviation",
+      "fen": "r1b1kbnr/pp1qpppp/2np4/8/3QP3/3B1N2/PPP2PPP/RNB1K2R b KQkq - 4 6",
+      "roots": [],
+      "expectedAnswer": "Nxd4"
+    }
+  ]
+}

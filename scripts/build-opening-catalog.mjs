@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import {createHash} from 'node:crypto'
 import {Chess} from 'chess.js'
-import {openingFamily} from '../src/lib/openingLessons.js'
+import {openingCatalogSourceFamily} from '../src/lib/openingLessons.js'
 
 const metadata=JSON.parse(await fs.readFile('src/data/openingPositions.json','utf8'))
 const entries=[]
@@ -21,7 +21,7 @@ for(const file of metadata.sourceFiles){
     if(!moves.length||!/^[A-E]\d{2}$/.test(record.eco))throw Error(`Record non valido: ${key}`)
     const aliases=[...new Set(Object.values(record.aliases??{}))]
     entries.push({id:createHash('sha256').update(`${file.name}:${key}`).digest('hex').slice(0,16),
-      eco:record.eco,name:record.name,moves,aliases,family:openingFamily(record.name,record.eco).id})
+      eco:record.eco,name:record.name,moves,aliases,family:openingCatalogSourceFamily(record.name,record.eco).id})
   }
   console.log(`Validate ${file.name}`)
 }

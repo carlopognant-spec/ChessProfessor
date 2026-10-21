@@ -11,19 +11,29 @@ contenere nomi diversi per la stessa sequenza. Il catalogo non pretende di
 enumerare ogni continuazione teorica possibile. Licenza MIT e attribuzione:
 `src/data/openingBook.LICENSE.txt`.
 
+## Famiglie del catalogo
+
+Le famiglie usate dalla biblioteca sono risolte dal nome principale dell'apertura:
+una sottovariante come «Francese: Due Cavalli» resta nella Francese.
+La correzione del 20 ottobre riassegna 807 voci e conserva ID, preferiti e ripassi.
+Il catalogo sorgente mantiene i byte e le associazioni storiche necessarie alle
+prove dei corsi; la biblioteca ricalcola i gruppi durante la preparazione dei dati.
+Le 497 assegnazioni da revisionare sono elencate nel
+[rapporto della tassonomia](OPENING-TAXONOMY.md).
+
 ## Percorsi guidati e bivi
 
-La schermata iniziale offre 280 percorsi in 37 famiglie. L'Est-Indiana ha quattordici
+La schermata iniziale offre 286 percorsi in 37 famiglie. L'Est-Indiana ha quattordici
 percorsi: centro chiuso classico, Fianchetto, Quattro Pedoni, Averbakh,
 Makogonov, Petrosian, Gligoric-Taimanov, Cambio, Baionetta, Sämisch,
 Panno nella Sämisch e nel Fianchetto, Smyslov e sistema semiclassico.
-Questi sono percorsi commentati fino al mediogioco; non sono tutte le voci del
+Molti percorsi arrivano al mediogioco; alcuni moduli brevi terminano dopo una decisione caratteristica. Non sono tutte le voci del
 catalogo trasformate in corsi. Le continuazioni didattiche non sono dichiarate
 come uniche mosse corrette né come partite storiche.
 Le linee di base hanno il corpus narrativo già presente; le varianti combinano
 piani specifici, note scritte per i passaggi chiave e spiegazioni dei cambiamenti
-effettivi sulla scacchiera. Non tutte le mosse delle 280 linee hanno un commento
-scritto individualmente. Tutti i 188 nuovi percorsi delle 37 famiglie hanno
+effettivi sulla scacchiera. Non tutte le mosse delle 286 linee hanno un commento
+scritto individualmente. I 188 percorsi dell'espansione storica delle 37 famiglie hanno
 almeno due note strategiche individualmente scritte sui passaggi chiave:
 388 note in totale, comprese le 36 dei dodici nuovi percorsi della Caro-Kann.
 Le note collegano la mossa del giocatore alla risposta avversaria e ai cambiamenti
@@ -40,8 +50,8 @@ sono fissate in `openingFullReviewedLines.js`; le note aggiuntive non sostituisc
 quelle sui passaggi chiave già presenti. Le nuove note indiane distinguono anche
 pressione attuale e preparazione, colonne aperte e semiaperte, pezzi che bloccano
 le proprie torri e minacce scoperte dopo un cambio o una ritirata.
-La copertura complessiva è di 1.974 coppie con testo scritto su 4.492,
-con 58 percorsi interamente commentati per coppia. Gli altri percorsi non
+La copertura complessiva è di 2.012 coppie con testo scritto su 4.548,
+con 59 percorsi interamente commentati per coppia. Gli altri percorsi non
 vengono dichiarati interamente revisionati sulla base delle spiegazioni automatiche.
 
 Ogni mossa giocata ha ora un riepilogo distinto da quello della risposta avversaria,
@@ -51,15 +61,40 @@ con al massimo due osservazioni per mossa: bersagli, sostegni, colonne e trasfor
 dei pedoni. Le note scritte restano un approfondimento separato; i vecchi paragrafi
 generici non vengono ripetuti insieme a queste spiegazioni. Nulla viene anticipato
 prima di giocare. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md)
-distingue le 8.930 semimosse spiegate dai passaggi con una nota individuale.
+distingue le 9.042 semimosse spiegate dai passaggi con una nota individuale.
 
 L'[inventario di copertura](OPENING-COVERAGE.md) elenca i 197 rami dichiarati
-nell'espansione e distingue percorsi precedenti, nuovi, fonti e verifiche.
-Le 188 nuove linee partono da posizioni documentate nel catalogo fissato;
+nell'espansione storica e i sei nuovi percorsi della roadmap, distinguendo fonti e verifiche.
+Le 188 linee dell'espansione storica partono da posizioni documentate nel catalogo fissato;
 si preferisce proseguire sulla fonte quando contiene una continuazione utile.
 La parte restante fino alla mossa 16 è un modello didattico costruito offline,
 separato dalla teoria documentata. I piani sono specifici della variante;
 non viene attribuita alle risposte del modello una frequenza misurata.
+
+Il lotto P02.2-SIC-01 aggiunge Najdorf con 6.Ag5 e Chekhover con ...Ad7:
+22 e 20 semimosse integralmente documentate, 13 note specifiche e due esercizi
+costruiti verificati separatamente. I vecchi corsi e le prove storiche sono conservati.
+Il [rapporto del lotto](OPENING-SICILIAN-P022-RESULTS.md) conserva i risultati di quella tranche.
+
+Il lotto P02.2-SIC-02 aggiunge la Chekhover Zaitsev con 5...Dd7: dieci semimosse
+documentate e due didattiche scritte, 6.Axc6 Dxc6, verificate separatamente.
+Il confine della fonte è visibile nel corso. Il nuovo esercizio parte dopo ...Dd7
+e tratta il ritiro 6.Ad3 che lascia la donna in presa. Il bivio ...Ad7/...Dd7 è
+disponibile per entrambi i colori; una continuazione legale non coperta resta distinta
+da un errore scacchistico. Tutti i 282 corsi/esercizi precedenti sono preservati.
+Il [rapporto Zaitsev](OPENING-ZAITSEV-P022-RESULTS.md) conserva i risultati di quel lotto.
+
+Il lotto P02.2-SIC-03 aggiunge tre percorsi Chekhover dopo ...Ad7: 7.c4 fino a
+8...g6, 10.Dd3 e la prosecuzione 11.Dd2. Le 56 semimosse documentate sono distinte
+dai seguiti didattici ...O-O e ...Dc7, controllati separatamente. Comprende quattro
+note specifiche e tre esercizi costruiti, con bersagli donna e alfiere.
+Quando una linea prosegue un corso già studiato, la ripresa presenta la posizione
+comune come prosecuzione. Tornando a un corso più breve già contenuto nel precedente,
+si può ripartire esplicitamente dall'inizio; il prefisso comune non dà credito automatico.
+I corsi siciliani sono ora 25; i percorsi e gli esercizi complessivi 286.
+La copertura del perimetro A rimane parziale: 10.177 posizioni delle fonti sono
+ancora assenti, comprese otto su 22 del sottoalbero Chekhover. Prove, limiti e punto
+di ripresa sono nel [rapporto Chekhover](OPENING-CHEKHOVER-P022-RESULTS.md).
 
 I conteggi per famiglia indicano i percorsi presenti, non la quantità di teoria
 esistente. Caro-Kann ed Est-Indiana hanno avuto approfondimenti dedicati prima

@@ -1,0 +1,36 @@
+{
+  "signature": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+  "jobId": "zaitsev:deviation",
+  "status": "complete",
+  "attemptIds": [
+    "05"
+  ],
+  "result": {
+    "bestmove": "c6d4",
+    "searchmoves": [],
+    "depth": 19,
+    "nodes": 200262,
+    "cp": 578,
+    "mate": null,
+    "pv": [
+      "c6d4",
+      "f3d4",
+      "a7a6",
+      "b1c3",
+      "e7e6",
+      "d4b5",
+      "d7d8",
+      "c1f4",
+      "a6b5",
+      "d3b5",
+      "c8d7",
+      "e1c1",
+      "d7b5",
+      "c3b5",
+      "a8a2",
+      "b5d6",
+      "f8d6"
+    ],
+    "attempt": "05"
+  }
+}

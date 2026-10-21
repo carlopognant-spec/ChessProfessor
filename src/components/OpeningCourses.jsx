@@ -2,7 +2,7 @@ import {useEffect,useState} from 'react'
 import {OPENING_LESSONS} from '../lib/openingLessons.js'
 import {familyJourneys} from '../lib/openingJourneys.js'
 import {normalizeOpeningQuery} from '../lib/openingLibrary.js'
-import practicalCases from '../data/openingPracticalCases.js'
+import practicalCases from '../lib/openingPracticalLibrary.js'
 
 export default function OpeningCourses({family,onFamily,onStart,onCatalog,progress}){
   const [query,setQuery]=useState('')

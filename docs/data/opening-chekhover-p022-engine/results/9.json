@@ -1,0 +1,39 @@
+{
+  "signature": "224a6e3df49b39c738224e68bf0f7e3466117a9f44fea1f337bc7336512e8987",
+  "jobId": "chekhover-qd2:deviation",
+  "status": "complete",
+  "attemptIds": [
+    "09"
+  ],
+  "result": {
+    "bestmove": "c3a4",
+    "searchmoves": [],
+    "depth": 20,
+    "nodes": 200149,
+    "cp": 427,
+    "mate": null,
+    "pv": [
+      "c3a4",
+      "b7b5",
+      "g5f6",
+      "e7f6",
+      "e4e5",
+      "d6e5",
+      "d2d8",
+      "f6d8",
+      "a4c3",
+      "b5b4",
+      "c3a4",
+      "f7f6",
+      "b2b3",
+      "d8e7",
+      "a4b2",
+      "g8f7",
+      "b2c4",
+      "a8d8",
+      "f3d2",
+      "d8c8"
+    ],
+    "attempt": "09"
+  }
+}
