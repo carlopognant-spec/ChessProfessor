@@ -1,0 +1,10 @@
+{
+  "signature": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b",
+  "jobId": "chekhover-nf6:deviation",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "rn1qkb1r/pp2pppp/3p1n2/5b2/3QP3/2N2N2/PPP2PPP/R1B1KB1R w KQkq - 3 6",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

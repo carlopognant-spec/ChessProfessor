@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "activeLot": "sic-07",
+  "lots": {
+    "sic-05": {
+      "lot": "P02.2-SIC-05",
+      "plan": "docs/data/opening-chekhover-early-p022-plan.json",
+      "design": "docs/data/opening-chekhover-early-p022-design-verification.json",
+      "designDocument": "docs/OPENING-CHEKHOVER-EARLY-P022-DESIGN.md",
+      "historical": true,
+      "implementationModel": "GPT-6.1 Sol / High"
+    },
+    "sic-06": {
+      "lot": "P02.2-SIC-06",
+      "plan": "docs/data/opening-sicilian-early-p022-plan.json",
+      "design": "docs/data/opening-sicilian-early-p022-design-verification.json",
+      "designDocument": "docs/OPENING-SICILIAN-EARLY-P022-DESIGN.md",
+      "historical": false,
+      "implementationModel": "GPT-6.1 Sol / High",
+      "qa": {
+        "tests": [
+          "tests/opening-sicilian-early-roadmap.test.js",
+          "tests/opening-chekhover-early-roadmap.test.js",
+          "tests/opening-chekhover-a6-roadmap.test.js",
+          "tests/opening-chekhover-roadmap.test.js",
+          "tests/opening-zaitsev-roadmap.test.js",
+          "tests/opening-sicilian-roadmap.test.js",
+          "tests/opening-scope.test.js",
+          "tests/opening-full-notes.test.js",
+          "tests/opening-move-review.test.js"
+        ],
+        "browserGrep": "roadmap Sicilian (open early|course.*sicilian:early-|exercise.*sicilian:early-|strict continuation|contained route|Zaitsev checkpoint|a6 live fork 8)",
+        "aggregationEdits": [
+          {
+            "file": "src/lib/openingJourneys.js",
+            "importLines": [
+              "import openingSicilianEarly from '../data/openingSicilianEarlyCourses.js'"
+            ],
+            "tokens": [
+              ",...openingSicilianEarly.entries"
+            ]
+          },
+          {
+            "file": "src/lib/openingPracticalLibrary.js",
+            "importLines": [
+              "import sicilianEarly from '../data/openingSicilianEarlyPracticalCases.js'"
+            ],
+            "tokens": [
+              ",sicilianEarly.policy",
+              ",...sicilianEarly.entries",
+              ",...sicilianEarly.uncovered"
+            ]
+          }
+        ],
+        "review": "Data-only integration: reverse the declared imports/spreads and require the exact SIC-06 design baseline hashes. Keep all 141 browser scenarios available; run the 54 new cases plus 8 existing state regressions (62). Full fallback for any other runtime edit."
+      }
+    },
+    "sic-07": {
+      "lot": "P02.2-SIC-07",
+      "plan": "docs/data/opening-taimanov-be2-p022-plan.json",
+      "design": "docs/data/opening-taimanov-be2-p022-design-verification.json",
+      "designDocument": "docs/OPENING-TAIMANOV-BE2-P022-DESIGN.md",
+      "historical": false,
+      "implementationModel": "GPT-6.1 Sol / High",
+      "qa": {
+        "tests": [
+          "tests/opening-taimanov-be2-roadmap.test.js",
+          "tests/opening-sicilian-early-roadmap.test.js",
+          "tests/opening-chekhover-early-roadmap.test.js",
+          "tests/opening-chekhover-a6-roadmap.test.js",
+          "tests/opening-chekhover-roadmap.test.js",
+          "tests/opening-zaitsev-roadmap.test.js",
+          "tests/opening-sicilian-roadmap.test.js",
+          "tests/opening-scope.test.js",
+          "tests/opening-full-notes.test.js",
+          "tests/opening-move-review.test.js"
+        ],
+        "browserGrep": "roadmap Sicilian (Taimanov Ae2|course.*sicilian:taimanov-be2-|exercise.*sicilian:taimanov-be2-|strict continuation|contained route|Zaitsev checkpoint|a6 live fork 8)",
+        "aggregationEdits": [
+          {
+            "file": "src/lib/openingJourneys.js",
+            "importLines": [
+              "import openingTaimanovBe2 from '../data/openingTaimanovBe2Courses.js'"
+            ],
+            "tokens": [
+              ",...openingTaimanovBe2.entries"
+            ]
+          },
+          {
+            "file": "src/lib/openingPracticalLibrary.js",
+            "importLines": [
+              "import taimanovBe2 from '../data/openingTaimanovBe2PracticalCases.js'"
+            ],
+            "tokens": [
+              ",taimanovBe2.policy",
+              ",...taimanovBe2.entries",
+              ",...taimanovBe2.uncovered"
+            ]
+          }
+        ],
+        "review": "Design selection, not executed: 82 new browser cases (18 courses, 9 exercises, 18 directed live forks, 36 two-color checkpoints, 1 uncovered choice) plus 8 existing regressions. Retain 141 historical cases, yielding 223 available. Derive the nine spanning fork pairs from design.navigation.browserPairs; assert selected count 90 before execution. Full fallback for any other runtime edit."
+      }
+    }
+  }
+}

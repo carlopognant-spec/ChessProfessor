@@ -1,0 +1,185 @@
+{
+  "schema": 2,
+  "lot": "P02.2-SIC-06",
+  "inputHashes": {
+    "docs/data/opening-sicilian-early-p022-design-verification.json": "2937b6ace3c3f39ffe42ed31b90557d3edd82bf09e103d2da1cbecc56cb6c15d",
+    "docs/data/opening-sicilian-early-p022-plan.json": "053557b56af137eec9310884819032370cdca904c96c73567712f4ba9434c232",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8",
+    "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings-lot.mjs.txt": "99fc151b0265186df32acef6ba14d7686d792902e6c27a12981455879607bf93",
+    "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings__common.mjs.txt": "99f98ba524ff6cc1cd5c508feb6ac9e5a42af10ec5256bda31ea55c98b4138ab",
+    "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings__artifacts.mjs.txt": "a478dd70c93e2eb67bd17e08a279ca30c96d2d463976690f770e807b94b99d8a"
+  },
+  "engineSha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+  "toolingSources": [
+    {
+      "source": "scripts/openings-lot.mjs",
+      "snapshot": "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings-lot.mjs.txt",
+      "sha256": "99fc151b0265186df32acef6ba14d7686d792902e6c27a12981455879607bf93"
+    },
+    {
+      "source": "scripts/openings/common.mjs",
+      "snapshot": "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings__common.mjs.txt",
+      "sha256": "99f98ba524ff6cc1cd5c508feb6ac9e5a42af10ec5256bda31ea55c98b4138ab"
+    },
+    {
+      "source": "scripts/openings/artifacts.mjs",
+      "snapshot": "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings__artifacts.mjs.txt",
+      "sha256": "a478dd70c93e2eb67bd17e08a279ca30c96d2d463976690f770e807b94b99d8a"
+    }
+  ],
+  "policy": {
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHashBeforeEachGo": true,
+    "nodesPerGo": 200000,
+    "timeoutPerCommandMs": 30000,
+    "primaryJobs": 12,
+    "maximumGoCommands": 24,
+    "maximumRequestedNodes": 4800000,
+    "minimumExerciseSwingCp": 200,
+    "maximumAuthoredMoveLossCp": 100,
+    "confirmationPolicy": "At most one confirmation per job only when bestmove lacks matching full cp/PV evidence. Count failed or interrupted requests. No automatic retry of failed persisted jobs, candidate sweep, budget increase or mate-score auto-acceptance.",
+    "publicationPolicy": "Publish all three courses and exercises only if all four authored-move comparisons and all three exercises pass. Otherwise preserve evidence and stop for design review; no candidate sweep or changed budget.",
+    "engine": "Stockfish 16",
+    "minimumImmediateMaterial": 2
+  },
+  "jobs": [
+    {
+      "id": "early-g6-bc4:exercise-baseline",
+      "courseId": "sicilian:early-g6-bc4",
+      "fen": "rnbqk2r/pp2ppbp/3p1np1/8/2BNP3/2N1B3/PPP2PPP/R2QK2R b KQkq - 5 7",
+      "roots": [],
+      "uses": [
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "early-g6-bc4:deviation",
+      "courseId": "sicilian:early-g6-bc4",
+      "fen": "rn1qk2r/pp2ppbp/3p1np1/8/2BNP3/2N1B2b/PPP2PPP/R2QK2R w KQkq - 6 8",
+      "roots": [],
+      "expectedAnswer": "gxh3",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "early-a6:continuation-control:8",
+      "courseId": "sicilian:early-a6",
+      "authoredIndex": 8,
+      "fen": "rnbqkbnr/1p2pppp/p2p4/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "early-a6:authored:8",
+      "courseId": "sicilian:early-a6",
+      "authoredIndex": 8,
+      "fen": "rnbqkbnr/1p2pppp/p2p4/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "roots": [
+        "b1c3"
+      ],
+      "expectedAnswer": "Nc3",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "early-a6:continuation-control:9",
+      "courseId": "sicilian:early-a6",
+      "authoredIndex": 9,
+      "fen": "rnbqkbnr/1p2pppp/p2p4/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 1 5",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "early-a6:authored:9",
+      "courseId": "sicilian:early-a6",
+      "authoredIndex": 9,
+      "fen": "rnbqkbnr/1p2pppp/p2p4/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 1 5",
+      "roots": [
+        "g8f6"
+      ],
+      "expectedAnswer": "Nf6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "early-a6:deviation",
+      "courseId": "sicilian:early-a6",
+      "fen": "rnbqkbnr/1p2pppp/p2p4/1B6/3NP3/8/PPP2PPP/RNBQK2R b KQkq - 1 5",
+      "roots": [],
+      "expectedAnswer": "axb5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "early-e5:continuation-control:8",
+      "courseId": "sicilian:early-e5",
+      "authoredIndex": 8,
+      "fen": "rnbqkbnr/pp3ppp/3p4/4p3/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "early-e5:authored:8",
+      "courseId": "sicilian:early-e5",
+      "authoredIndex": 8,
+      "fen": "rnbqkbnr/pp3ppp/3p4/4p3/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "roots": [
+        "d4b3"
+      ],
+      "expectedAnswer": "Nb3",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "early-e5:continuation-control:9",
+      "courseId": "sicilian:early-e5",
+      "authoredIndex": 9,
+      "fen": "rnbqkbnr/pp3ppp/3p4/4p3/4P3/1N6/PPP2PPP/RNBQKB1R b KQkq - 1 5",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "early-e5:authored:9",
+      "courseId": "sicilian:early-e5",
+      "authoredIndex": 9,
+      "fen": "rnbqkbnr/pp3ppp/3p4/4p3/4P3/1N6/PPP2PPP/RNBQKB1R b KQkq - 1 5",
+      "roots": [
+        "g8f6"
+      ],
+      "expectedAnswer": "Nf6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "early-e5:deviation",
+      "courseId": "sicilian:early-e5",
+      "fen": "rnbqkbnr/pp3ppp/3p4/4p3/2BNP3/8/PPP2PPP/RNBQK2R b KQkq - 1 5",
+      "roots": [],
+      "expectedAnswer": "exd4",
+      "uses": [
+        "exercise-answer"
+      ]
+    }
+  ]
+}

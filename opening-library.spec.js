@@ -28,7 +28,10 @@ test.beforeEach(async({page})=>{
 })
 
 const sicilianAdditions=['sicilian:najdorf-bg5-classical','sicilian:chekhover-bd7','sicilian:chekhover-zaitsev',
-  'sicilian:chekhover-c4-g6','sicilian:chekhover-qd3','sicilian:chekhover-qd2']
+  'sicilian:chekhover-c4-g6','sicilian:chekhover-qd3','sicilian:chekhover-qd2',
+  'sicilian:chekhover-a6-be3','sicilian:chekhover-a6-c4',
+  'sicilian:chekhover-nf6','sicilian:chekhover-early-bd7',
+  'sicilian:early-g6-bc4','sicilian:early-a6','sicilian:early-e5']
 for(const id of sicilianAdditions)for(const side of ['w','b']){
   test(`roadmap Sicilian course completes and persists ${id} ${side}`,async({page})=>{
     const errors=[];page.on('pageerror',error=>errors.push(error.message))
@@ -232,6 +235,264 @@ for(const side of ['w','b']){
     expect(saved.sessions[`journey:v1:${child.id}:${side}`].completed).toBe(1)
   })
 }
+
+const a6Forks=[
+  ['sicilian:chekhover-bd7','sicilian:chekhover-a6-be3',7,'b'],
+  ['sicilian:chekhover-bd7','sicilian:chekhover-a6-c4',7,'b'],
+  ['sicilian:chekhover-a6-be3','sicilian:chekhover-a6-c4',8,'w'],
+]
+// At the shared Black choice ...a6 the first matching representative is Ae3.
+for(const [parentId,childId,prefix,side] of [a6Forks[0],a6Forks[2]])for(const reverse of [false,true]){
+  test(`roadmap Sicilian a6 live fork ${prefix} reverse=${reverse}`,async({page})=>{
+    const courses=familyJourneys('sicilian'),from=courses.find(c=>c.id===(reverse?childId:parentId)),to=courses.find(c=>c.id===(reverse?parentId:childId))
+    await begin(page,'sicilian',from.id)
+    if(side==='b'){await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()}
+    const input=await notation(page)
+    for(let i=Number(side==='b');i<prefix;i+=2){await input.fill(from.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+    const before=await page.locator('.opening-board').getAttribute('data-fen')
+    await input.fill(to.moves[prefix]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+    await expect(page.locator('.opening-feedback')).toContainText('apre un altro percorso')
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',before)
+    expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)).toEqual({})
+    await page.getByRole('button',{name:'Segui '+to.title,exact:true}).click()
+    await expect(page.locator('.opening-line-heading h2')).toHaveText(to.title)
+    const board=new Chess();to.moves.slice(0,Math.min(prefix+2,to.moves.length)).forEach(san=>board.move(san))
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)
+    if(prefix+2===to.moves.length){
+      await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+      expect(saved).toMatchObject({[`journey:v1:${to.id}:${side}`]:{completed:1,clean:0}})
+      expect(Object.keys(saved)).toHaveLength(1)
+    }else expect(saved).toEqual({})
+  })
+}
+for(const [parentId,childId,prefix] of a6Forks)for(const reverse of [false,true])for(const side of ['w','b']){
+  test(`roadmap Sicilian a6 checkpoint ${parentId} to ${childId} reverse=${reverse} ${side}`,async({page})=>{
+    const courses=familyJourneys('sicilian'),from=courses.find(c=>c.id===(reverse?childId:parentId)),to=courses.find(c=>c.id===(reverse?parentId:childId))
+    await page.setViewportSize({width:side==='b'?360:1280,height:800})
+    await begin(page,'sicilian',from.id)
+    if(side==='b'){await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()}
+    const input=await notation(page)
+    for(let i=Number(side==='b');i<from.moves.length;i+=2){await input.fill(from.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+    await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+    await page.locator('.opening-other-routes > summary').click()
+    await page.locator('.opening-other-routes').getByRole('button',{name:to.title,exact:true}).click()
+    const board=new Chess();to.moves.slice(0,prefix).forEach(san=>board.move(san))
+    await expect(page.getByRole('heading',{name:'Torniamo al bivio',exact:true})).toBeVisible()
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    await expect(input).toBeDisabled()
+    const key=`journey:v1:${to.id}:${side}`,oldKey=`journey:v1:${from.id}:${side}`
+    expect(await page.evaluate(key=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions[key],key)).toBeUndefined()
+    await page.getByRole('button',{name:'Inizia questa variante',exact:true}).click()
+    let start=prefix
+    if(board.turn()!==side){board.move(to.moves[start]);start++}
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    await expect(input).toBeEnabled()
+    expect(await page.evaluate(key=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions[key],key)).toBeUndefined()
+    expect(start).toBeLessThan(to.moves.length)
+    for(let i=start;i<to.moves.length;i+=2){
+      await input.fill(to.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+      board.move(to.moves[i]);if(to.moves[i+1])board.move(to.moves[i+1])
+      await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    }
+    await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+    const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')))
+    expect(saved.sessions[key]).toMatchObject({completed:1,clean:0})
+    expect(saved.sessions[oldKey]).toMatchObject({completed:1,clean:1})
+    await page.reload()
+    expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')))).toEqual(saved)
+  })
+}
+test('roadmap Sicilian a6 uncovered Qd3 stays legal and does not select the different Qd3 course',async({page})=>{
+  const course=familyJourneys('sicilian').find(c=>c.id==='sicilian:chekhover-a6-c4')
+  await begin(page,'sicilian',course.id)
+  const input=await notation(page)
+  for(let i=0;i<10;i+=2){await input.fill(course.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+  const before=await page.locator('.opening-board').getAttribute('data-fen')
+  await input.fill('Qd3');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(page.locator('.opening-feedback')).toContainText('non viene valutata come un errore scacchistico')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',before)
+  await expect(page.getByRole('button',{name:/^Segui /})).toHaveCount(0)
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)).toEqual({})
+})
+
+const earlyForks=[
+  ['sicilian:chekhover-bd7','sicilian:chekhover-nf6',7,'b'],
+  ['sicilian:chekhover-bd7','sicilian:chekhover-early-bd7',7,'b'],
+  ['sicilian:chekhover-nf6','sicilian:chekhover-early-bd7',7,'b'],
+]
+for(const [parentId,childId,prefix,side] of earlyForks)for(const reverse of [false,true]){
+  test(`roadmap Sicilian early live fork ${parentId} to ${childId} Black ${prefix} reverse=${reverse}`,async({page})=>{
+    const courses=familyJourneys('sicilian'),from=courses.find(c=>c.id===(reverse?childId:parentId)),to=courses.find(c=>c.id===(reverse?parentId:childId))
+    await begin(page,'sicilian',from.id)
+    if(side==='b'){await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()}
+    const input=await notation(page)
+    for(let i=Number(side==='b');i<prefix;i+=2){await input.fill(from.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+    const before=await page.locator('.opening-board').getAttribute('data-fen')
+    await input.fill(to.moves[prefix]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+    await expect(page.locator('.opening-feedback')).toContainText('apre un altro percorso')
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',before)
+    expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)).toEqual({})
+    await page.getByRole('button',{name:'Segui '+to.title,exact:true}).click()
+    await expect(page.locator('.opening-line-heading h2')).toHaveText(to.title)
+    const board=new Chess();to.moves.slice(0,Math.min(prefix+2,to.moves.length)).forEach(san=>board.move(san))
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)
+    if(prefix+2===to.moves.length){
+      await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+      expect(saved).toMatchObject({[`journey:v1:${to.id}:${side}`]:{completed:1,clean:0}})
+      expect(Object.keys(saved)).toHaveLength(1)
+    }else {expect(saved).toEqual({});await expect(input).toBeEnabled();await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toHaveCount(0)}
+  })
+}
+for(const [parentId,childId,prefix] of earlyForks)for(const reverse of [false,true])for(const side of ['w','b']){
+  test(`roadmap Sicilian early checkpoint ${parentId} to ${childId} reverse=${reverse} ${side}`,async({page})=>{
+    const courses=familyJourneys('sicilian'),from=courses.find(c=>c.id===(reverse?childId:parentId)),to=courses.find(c=>c.id===(reverse?parentId:childId))
+    await page.setViewportSize({width:side==='b'?360:1280,height:800})
+    await begin(page,'sicilian',from.id)
+    if(side==='b'){await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()}
+    const input=await notation(page)
+    for(let i=Number(side==='b');i<from.moves.length;i+=2){await input.fill(from.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+    await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+    if(from.id!=='sicilian:chekhover-bd7'&&to.id!=='sicilian:chekhover-bd7'){
+      const end=new Chess();to.moves.forEach(san=>end.move(san))
+      await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',end.fen())
+      expect(from.moves).not.toEqual(to.moves)
+    }
+    const destinationKey=`journey:v1:${to.id}:${side}`
+    expect(await page.evaluate(key=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions[key],destinationKey)).toBeUndefined()
+    await page.locator('.opening-other-routes > summary').click()
+    await page.locator('.opening-other-routes').getByRole('button',{name:to.title,exact:true}).click()
+    const board=new Chess();to.moves.slice(0,prefix).forEach(san=>board.move(san))
+    await expect(page.getByRole('heading',{name:'Torniamo al bivio',exact:true})).toBeVisible()
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    await expect(input).toBeDisabled()
+    const key=`journey:v1:${to.id}:${side}`,oldKey=`journey:v1:${from.id}:${side}`
+    expect(await page.evaluate(key=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions[key],key)).toBeUndefined()
+    await page.getByRole('button',{name:'Inizia questa variante',exact:true}).click()
+    let start=prefix
+    if(board.turn()!==side){board.move(to.moves[start]);start++}
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    await expect(input).toBeEnabled()
+    expect(await page.evaluate(key=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions[key],key)).toBeUndefined()
+    expect(start).toBeLessThan(to.moves.length)
+    for(let i=start;i<to.moves.length;i+=2){
+      await input.fill(to.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+      board.move(to.moves[i]);if(to.moves[i+1])board.move(to.moves[i+1])
+      await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    }
+    await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+    const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')))
+    expect(saved.sessions[key]).toMatchObject({completed:1,clean:0})
+    expect(saved.sessions[oldKey]).toMatchObject({completed:1,clean:1})
+    await page.reload()
+    expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')))).toEqual(saved)
+  })
+}
+test('roadmap Sicilian early uncovered Be3 stays legal and does not select the a6 Be3 course',async({page})=>{
+  const course=familyJourneys('sicilian').find(c=>c.id==='sicilian:chekhover-nf6')
+  await begin(page,'sicilian',course.id)
+  const input=await notation(page)
+  for(let i=0;i<8;i+=2){await input.fill(course.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+  const before=await page.locator('.opening-board').getAttribute('data-fen')
+  await input.fill('Be3');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(page.locator('.opening-feedback')).toContainText('non viene valutata come un errore scacchistico')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',before)
+  await expect(page.getByRole('button',{name:/^Segui /})).toHaveCount(0)
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)).toEqual({})
+})
+
+const openEarlyForks=[
+  ['sicilian','sicilian:early-g6-bc4',7,'b'],
+  ['sicilian','sicilian:early-a6',7,'b'],
+  ['sicilian','sicilian:early-e5',7,'b'],
+  ['sicilian:early-g6-bc4','sicilian:early-a6',7,'b'],
+  ['sicilian:early-g6-bc4','sicilian:early-e5',7,'b'],
+  ['sicilian:early-a6','sicilian:early-e5',7,'b'],
+]
+const openComparisons=[['sicilian:early-g6-bc4','sicilian:dragon',7],['sicilian:early-a6','sicilian:najdorf',7]]
+for(const [parentId,childId,prefix,side] of openEarlyForks)for(const reverse of [false,true]){
+  test(`roadmap Sicilian open early live fork ${parentId} to ${childId} Black ${prefix} reverse=${reverse}`,async({page})=>{
+    const courses=familyJourneys('sicilian'),from=courses.find(c=>c.id===(reverse?childId:parentId)),to=courses.find(c=>c.id===(reverse?parentId:childId))
+    await begin(page,'sicilian',from.id)
+    if(side==='b'){await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()}
+    const input=await notation(page)
+    for(let i=Number(side==='b');i<prefix;i+=2){await input.fill(from.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+    const before=await page.locator('.opening-board').getAttribute('data-fen')
+    await input.fill(to.moves[prefix]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+    await expect(page.locator('.opening-feedback')).toContainText('apre un altro percorso')
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',before)
+    expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)).toEqual({})
+    await page.getByRole('button',{name:'Segui '+to.title,exact:true}).click()
+    await expect(page.locator('.opening-line-heading h2')).toHaveText(to.title)
+    const board=new Chess();to.moves.slice(0,Math.min(prefix+2,to.moves.length)).forEach(san=>board.move(san))
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)
+    if(prefix+2===to.moves.length){
+      await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+      expect(saved).toMatchObject({[`journey:v1:${to.id}:${side}`]:{completed:1,clean:0}})
+      expect(Object.keys(saved)).toHaveLength(1)
+    }else {expect(saved).toEqual({});await expect(input).toBeEnabled();await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toHaveCount(0)}
+  })
+}
+for(const [parentId,childId,prefix] of [...openEarlyForks,...openComparisons])for(const reverse of [false,true])for(const side of ['w','b']){
+  test(`roadmap Sicilian open early checkpoint ${parentId} to ${childId} reverse=${reverse} ${side}`,async({page})=>{
+    const courses=familyJourneys('sicilian'),from=courses.find(c=>c.id===(reverse?childId:parentId)),to=courses.find(c=>c.id===(reverse?parentId:childId))
+    await page.setViewportSize({width:side==='b'?360:1280,height:800})
+    await begin(page,'sicilian',from.id)
+    if(side==='b'){await options(page);await page.getByRole('button',{name:'Nero',exact:true}).click()}
+    const input=await notation(page)
+    for(let i=Number(side==='b');i<from.moves.length;i+=2){await input.fill(from.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+    await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+    if([from.id,to.id].sort().join('|')==='sicilian:early-a6|sicilian:najdorf'){
+      const a=new Chess(),b=new Chess()
+      courses.find(c=>c.id==='sicilian:early-a6').moves.forEach(san=>a.move(san))
+      courses.find(c=>c.id==='sicilian:najdorf').moves.slice(0,10).forEach(san=>b.move(san))
+      expect(a.fen().split(' ').slice(0,4)).toEqual(b.fen().split(' ').slice(0,4))
+      expect(a.fen()).not.toBe(b.fen())
+    }
+    const destinationKey=`journey:v1:${to.id}:${side}`
+    expect(await page.evaluate(key=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions[key],destinationKey)).toBeUndefined()
+    await page.locator('.opening-other-routes > summary').click()
+    await page.locator('.opening-other-routes').getByRole('button',{name:to.title,exact:true}).click()
+    const board=new Chess();to.moves.slice(0,prefix).forEach(san=>board.move(san))
+    await expect(page.getByRole('heading',{name:'Torniamo al bivio',exact:true})).toBeVisible()
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    await expect(input).toBeDisabled()
+    const key=`journey:v1:${to.id}:${side}`,oldKey=`journey:v1:${from.id}:${side}`
+    expect(await page.evaluate(key=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions[key],key)).toBeUndefined()
+    await page.getByRole('button',{name:'Inizia questa variante',exact:true}).click()
+    let start=prefix
+    if(board.turn()!==side){board.move(to.moves[start]);start++}
+    await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    await expect(input).toBeEnabled()
+    expect(await page.evaluate(key=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions[key],key)).toBeUndefined()
+    expect(start).toBeLessThan(to.moves.length)
+    for(let i=start;i<to.moves.length;i+=2){
+      await input.fill(to.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()
+      board.move(to.moves[i]);if(to.moves[i+1])board.move(to.moves[i+1])
+      await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',board.fen())
+    }
+    await expect(page.getByRole('heading',{name:'Percorso completato',exact:true})).toBeVisible()
+    const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')))
+    expect(saved.sessions[key]).toMatchObject({completed:1,clean:0})
+    expect(saved.sessions[oldKey]).toMatchObject({completed:1,clean:1})
+    await page.reload()
+    expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')))).toEqual(saved)
+  })
+}
+test('roadmap Sicilian open early uncovered c4 stays legal and does not select accelerated Dragon',async({page})=>{
+  const course=familyJourneys('sicilian').find(c=>c.id==='sicilian:early-g6-bc4')
+  await begin(page,'sicilian',course.id)
+  const input=await notation(page)
+  for(let i=0;i<8;i+=2){await input.fill(course.moves[i]);await page.getByRole('button',{name:'Gioca',exact:true}).click()}
+  const before=await page.locator('.opening-board').getAttribute('data-fen')
+  await input.fill('c4');await page.getByRole('button',{name:'Gioca',exact:true}).click()
+  await expect(page.locator('.opening-feedback')).toContainText('non viene valutata come un errore scacchistico')
+  await expect(page.locator('.opening-board')).toHaveAttribute('data-fen',before)
+  await expect(page.getByRole('button',{name:/^Segui /})).toHaveCount(0)
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('chessprofessor.openings.v1')).sessions)).toEqual({})
+})
 
 for(const id of ['london:queen-pressure','catalan:check','nimzo:leningrad','queens-indian:ba6','bogo:nc6'])for(const side of ['w','b']){
   test(`complete written ${id} commentary follows board play for ${side}`,async({page})=>{

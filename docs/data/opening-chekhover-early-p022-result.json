@@ -1,0 +1,211 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-05",
+  "status": "implemented-offline-verified",
+  "inputHashes": {
+    "docs/data/opening-chekhover-early-p022-plan.json": "a2f29d22efccbd20420862a82c08d203bd95afd2df357bc44cdd83d3d549fb37",
+    "docs/data/opening-chekhover-early-p022-design-verification.json": "2be640cde3780cb302ea8b089611f666ef846d400e02adbdd9109de0322571da",
+    "docs/data/opening-chekhover-early-p022-practical-verification.json": "98fd3fb526d6d97da4b03253b9ab8c23c218a128753f263f9e279fa7361f0e36",
+    "scripts/collect-opening-chekhover-early-evidence.mjs": "c2b702172470c61d9f7f5c322e2e51679baf30598e2b1a7a4c6999ab5869693c",
+    "scripts/build-opening-chekhover-early-content.mjs": "c63b20c135dca0f72b6f328596a99c3ebc9ecd9169ba407a89210142b74494ae",
+    "scripts/report-opening-chekhover-early-result.mjs": "fd88473dcd25b0175936381b7a461a27251e5d3c74e4f9c5de3bbe7a2b2ce5b4",
+    "src/data/openingChekhoverEarlyCourses.js": "6cdbf0ccafbe23051e62e146551df1daa611bfa8ddbc1077a19bb9b112917dc3",
+    "src/data/openingChekhoverEarlyPracticalCases.js": "dfc2e27214f705f0dcb99d8fe3847c317b0b8e2885be97b4296ac9f86c19f354",
+    "src/lib/openingJourneys.js": "163c2c5c6a793ac8ac0f09b2b56c5d44533e4cc48aeea1ba3cf3c033ff05a825",
+    "src/lib/openingCurriculum.js": "46fa9935b965af47cdde35621dba6fc6a8dbfb0ef07feefde60ee7194f872f24",
+    "src/lib/openingPracticalLibrary.js": "84f932a971c063e7b6a6454ccf7279b504858fb737cceeb7e97dfc9651143f7f",
+    "src/components/OpeningLibrary.jsx": "3b24756958cc8adceb0772dbd11833327d4fa7654cbc16c39c8a84fd51c04ac8"
+  },
+  "preservedBaselineCourses": 288,
+  "preservedBaselineExercises": 288,
+  "courseCount": 290,
+  "sicilianCourseCount": 29,
+  "practicalCases": 290,
+  "added": [
+    {
+      "id": "sicilian:chekhover-nf6",
+      "plies": 10,
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 9,
+        "authoredContinuationPlies": 1,
+        "generatedPlies": 0,
+        "continuationStatus": "bounded-engine-checked",
+        "source": "https://github.com/JeffML/eco.json",
+        "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+        "sourceCatalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+        "sourceId": "2e1f03274972c77b",
+        "sourceName": "Sicilian, Chekhover, 4...Nf6 5.Nc3",
+        "sourceEco": "B53",
+        "sourceRecords": [
+          {
+            "id": "eco:db3b24f2c8f7bcc1",
+            "positionId": "position:7161d5217d6da902",
+            "plies": 8
+          },
+          {
+            "id": "eco:2e1f03274972c77b",
+            "positionId": "position:2b356881d43ce8ce",
+            "plies": 9
+          }
+        ],
+        "rootPositionId": "position:7161d5217d6da902",
+        "engineSignature": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b"
+      }
+    },
+    {
+      "id": "sicilian:chekhover-early-bd7",
+      "plies": 10,
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 8,
+        "authoredContinuationPlies": 2,
+        "generatedPlies": 0,
+        "continuationStatus": "bounded-engine-checked",
+        "source": "https://github.com/JeffML/eco.json",
+        "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+        "sourceCatalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+        "sourceId": "7cd29665e2cfcb77",
+        "sourceName": "Sicilian, Chekhover, 4...Bd7",
+        "sourceEco": "B53",
+        "sourceRecords": [
+          {
+            "id": "eco:7cd29665e2cfcb77",
+            "positionId": "position:c9c6ddc7d60aa2cf",
+            "plies": 8
+          }
+        ],
+        "rootPositionId": "position:c9c6ddc7d60aa2cf",
+        "engineSignature": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b"
+      }
+    }
+  ],
+  "documentedPlies": 17,
+  "authoredContinuationPlies": 3,
+  "generatedPlies": 0,
+  "newPairNotes": 4,
+  "commentary": {
+    "explainedHalfMoves": 9084,
+    "pairs": 4569,
+    "writtenPairs": 2033,
+    "fullyWrittenCourses": 63
+  },
+  "scope": {
+    "positions": 12322,
+    "coverage": {
+      "exact": 1952,
+      "transposition-only": 201,
+      "absent": 10169
+    },
+    "newlyReached": [
+      "position:c9c6ddc7d60aa2cf",
+      "position:7161d5217d6da902",
+      "position:2b356881d43ce8ce"
+    ],
+    "newEcoAnchors": 0,
+    "chekhover": {
+      "positions": 22,
+      "remainingAbsent": []
+    }
+  },
+  "sharedAuthoredEndpoint": "rn1qkb1r/pp1bpppp/3p1n2/8/3QP3/2N2N2/PPP2PPP/R1B1KB1R w KQkq - 3 6",
+  "nextDesign": {
+    "scope": "Alternative precoci della Siciliana aperta dopo 4.Cxd4: 4...g6, 4...a6 e 4...e5, con i discendenti fissati e confronto con il Dragone esistente.",
+    "sourcePrefixes": [
+      "e4 c5 Nf3 d6 d4 cxd4 Nxd4 g6",
+      "e4 c5 Nf3 d6 d4 cxd4 Nxd4 a6",
+      "e4 c5 Nf3 d6 d4 cxd4 Nxd4 e5"
+    ],
+    "expectedSourcePositions": 4,
+    "model": "GPT-6 Astra",
+    "reasoning": "High",
+    "status": "Solo punto di ripresa; nessun percorso o seguito di questo gruppo progettato nel lotto corrente.",
+    "positions": [
+      {
+        "id": "position:37ad4d193ecfba38",
+        "name": "Sicilian Defense: Dragon Variation, Accelerated Dragon",
+        "before": "absent",
+        "projected": "absent",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:1c0c85c09af4e9e7",
+        "name": "Sicilian: Open, 2...d6, 4...a6",
+        "before": "absent",
+        "projected": "absent",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:90d2577b74c0d2da",
+        "name": "Sicilian: Open, 2...d6, 4...e5",
+        "before": "absent",
+        "projected": "absent",
+        "ecoRoots": []
+      },
+      {
+        "id": "position:138f2afb197c959e",
+        "name": "Sicilian Defense: Dragon Variation, Modern Bc4 Variation",
+        "before": "absent",
+        "projected": "absent",
+        "ecoRoots": []
+      }
+    ]
+  },
+  "engine": {
+    "signature": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b",
+    "goCommands": 8,
+    "nodesRequested": 1600000,
+    "nodesActual": 1601397,
+    "continuation": [
+      {
+        "courseId": "sicilian:chekhover-nf6",
+        "authoredIndex": 9,
+        "san": "Bd7",
+        "signedCpDifference": 46,
+        "acceptanceLoss": 46
+      },
+      {
+        "courseId": "sicilian:chekhover-early-bd7",
+        "authoredIndex": 8,
+        "san": "Nc3",
+        "signedCpDifference": 19,
+        "acceptanceLoss": 19
+      },
+      {
+        "courseId": "sicilian:chekhover-early-bd7",
+        "authoredIndex": 9,
+        "san": "Nf6",
+        "signedCpDifference": 24,
+        "acceptanceLoss": 24
+      }
+    ],
+    "exercises": [
+      {
+        "id": "practice:sicilian:chekhover-nf6",
+        "cpChange": 561,
+        "legalImmediateReplies": 27,
+        "minimumImmediateMaterialGain": 3
+      },
+      {
+        "id": "practice:sicilian:chekhover-early-bd7",
+        "cpChange": 719,
+        "legalImmediateReplies": 33,
+        "minimumImmediateMaterialGain": 9
+      }
+    ]
+  },
+  "checks": {
+    "baselineCourses": "PASS",
+    "baselineExercises": "PASS",
+    "protectedAndFrozenHashes": "PASS",
+    "legalSan": "PASS",
+    "courseExerciseCorrespondence": "PASS",
+    "projectedCoverageMatchesActual": "PASS"
+  },
+  "limitations": [
+    "Reached source positions do not establish complete theory, full commentary or learned skill.",
+    "Native Stockfish 16 finite-budget controls are not browser Stockfish 19 evidence or full-game proofs.",
+    "Authored continuations are separate from the documented source sequences.",
+    "Browser, build and full-test outcomes are recorded in the results document."
+  ]
+}

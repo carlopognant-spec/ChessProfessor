@@ -1,4 +1,8 @@
 import fs from 'node:fs/promises'
+import assert from 'node:assert/strict'
+const check=process.argv.includes('--check')
+assert(process.argv.slice(2).every(a=>a==='--check'))
+async function emit(file,text){if(check)assert.equal(await fs.readFile(file,'utf8'),text,`Inventory differs: ${file}`);else await fs.writeFile(file,text)}
 import {createHash} from 'node:crypto'
 import {ALL_OPENING_JOURNEYS,openingWrittenContext} from '../src/lib/openingJourneys.js'
 import {OPENING_LESSONS} from '../src/lib/openingLessons.js'
@@ -28,7 +32,7 @@ const report={schema:1,courseDigest:createHash('sha256').update(JSON.stringify(A
   additionalPairNotes:Object.values(fullNotes).reduce((n,row)=>n+Object.keys(row.notes).length,0),
   fullyWrittenFamilies:families.filter(row=>row.fullyWrittenCourses===row.courses).map(row=>row.id),
   policy:'Single-move explanations are derived from the actual board. Written pair notes are counted separately; shared exact prefixes count as uses, not unique authored texts.',familyRows:families}
-await fs.writeFile('docs/data/opening-commentary-coverage.json',JSON.stringify(report,null,2)+'\n')
+await emit('docs/data/opening-commentary-coverage.json',JSON.stringify(report,null,2)+'\n')
 const lines=['# Copertura dei commenti mossa per mossa','',
   `I ${report.courses} percorsi contengono ${report.explainedHalfMoves} semimosse. Ogni semimossa giocata ha una spiegazione dei suoi effetti, distinta dalla risposta realmente eseguita dall’avversario. I testi sono calcolati sulla posizione: non vengono dichiarati commenti strategici individualmente scritti.`,
   '',`I passaggi con una nota scritta sono ${report.writtenPairs} su ${report.pairs} coppie di mosse; ${report.fullyWrittenCourses} percorsi hanno una nota scritta per ogni coppia. Questi sono utilizzi nel corso: lo stesso testo può essere riusato su prefissi esattamente uguali. Non sono conteggi di testi unici.`,
@@ -40,5 +44,5 @@ const lines=['# Copertura dei commenti mossa per mossa','',
   ...families.map(row=>`| ${row.title} | ${row.courses} | ${row.halfMoves} | ${row.writtenPairs}/${row.pairs} | ${row.fullyWrittenCourses} |`),
   '', 'I passaggi ancora privi di nota scritta sono elencati per percorso in [formato leggibile dalla macchina](data/opening-commentary-coverage.json). La scrittura individuale integrale resta un lavoro aperto; le spiegazioni posizionali non vengono contate come revisione editoriale.',
   '', `Rigenerazione: \`node scripts/report-opening-commentary.mjs\`. I test riproducono tutte le mosse dei ${report.courses} percorsi e controllano i fatti dichiarati sulla scacchiera, oltre alle transizioni dei turni e ai casi di en passant, arrocco, promozione e attacco scoperto.`,'']
-await fs.writeFile('docs/OPENING-COMMENTARY-COVERAGE.md',lines.join('\n'))
+await emit('docs/OPENING-COMMENTARY-COVERAGE.md',lines.join('\n'))
 console.log(JSON.stringify({courses:report.courses,explainedHalfMoves:report.explainedHalfMoves,writtenPairs:report.writtenPairs,pairs:report.pairs,fullyWrittenCourses:report.fullyWrittenCourses},null,2))

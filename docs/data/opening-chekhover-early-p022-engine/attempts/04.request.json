@@ -1,0 +1,10 @@
+{
+  "signature": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b",
+  "jobId": "chekhover-early-bd7:continuation-control:8",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "rn1qkbnr/pp1bpppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R w KQkq - 1 5",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

@@ -16,8 +16,11 @@ const historicalPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-
 const roadmapPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-sicilian-p022-practical-verification.json','utf8'))
 const zaitsevPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-zaitsev-p022-practical-verification.json','utf8'))
 const chekhoverPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-chekhover-p022-practical-verification.json','utf8'))
-const practicalEvidence={evidence:[...historicalPracticalEvidence.evidence,...roadmapPracticalEvidence.evidence,...zaitsevPracticalEvidence.evidence,...chekhoverPracticalEvidence.evidence],
-  uncovered:[...historicalPracticalEvidence.uncovered,...roadmapPracticalEvidence.uncovered,...zaitsevPracticalEvidence.uncovered,...chekhoverPracticalEvidence.uncovered]}
+const chekhoverA6PracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-chekhover-a6-p022-practical-verification.json','utf8'))
+const chekhoverEarlyPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-chekhover-early-p022-practical-verification.json','utf8'))
+const sicilianEarlyPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-sicilian-early-p022-practical-verification.json','utf8'))
+const practicalEvidence={evidence:[...historicalPracticalEvidence.evidence,...roadmapPracticalEvidence.evidence,...zaitsevPracticalEvidence.evidence,...chekhoverPracticalEvidence.evidence,...chekhoverA6PracticalEvidence.evidence,...chekhoverEarlyPracticalEvidence.evidence,...sicilianEarlyPracticalEvidence.evidence],
+  uncovered:[...historicalPracticalEvidence.uncovered,...roadmapPracticalEvidence.uncovered,...zaitsevPracticalEvidence.uncovered,...chekhoverPracticalEvidence.uncovered,...chekhoverA6PracticalEvidence.uncovered,...chekhoverEarlyPracticalEvidence.uncovered,...sicilianEarlyPracticalEvidence.uncovered]}
 const key=board=>board.fen().split(' ').slice(0,4).join(' ')
 const uci=move=>move.from+move.to+(move.promotion??'')
 const replay=moves=>{const board=new Chess();moves.forEach(san=>board.move(san));return board}

@@ -5,6 +5,10 @@
   "type": "module",
   "scripts": {
     "openings:build": "node scripts/build-opening-catalog.mjs",
+    "openings:lot": "node scripts/openings-lot.mjs",
+    "openings:backlog": "node scripts/openings-backlog.mjs",
+    "openings:qa": "node scripts/openings-qa.mjs",
+    "openings:docs": "node scripts/openings-docs.mjs",
     "review:auto": "node scripts/review-automation.mjs",
     "qa:compare": "node scripts/qa-compare.js",
     "dev": "vite",

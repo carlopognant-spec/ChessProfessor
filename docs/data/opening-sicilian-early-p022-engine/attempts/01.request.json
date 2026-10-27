@@ -1,0 +1,10 @@
+{
+  "signature": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+  "jobId": "early-g6-bc4:exercise-baseline",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "rnbqk2r/pp2ppbp/3p1np1/8/2BNP3/2N1B3/PPP2PPP/R2QK2R b KQkq - 5 7",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

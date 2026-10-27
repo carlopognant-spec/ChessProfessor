@@ -1,0 +1,32 @@
+{
+  "signature": "407c3fd1f1a542931899ee3e387e70c764d352379ee8cc9ff40fb8e969dde27a",
+  "jobId": "chekhover-a6-c4:exercise-baseline",
+  "status": "complete",
+  "attemptIds": [
+    "04"
+  ],
+  "result": {
+    "bestmove": "d4d3",
+    "searchmoves": [],
+    "depth": 16,
+    "nodes": 139481,
+    "cp": 34,
+    "mate": null,
+    "pv": [
+      "d4d3",
+      "g7g6",
+      "b1c3",
+      "f8g7",
+      "f1e2",
+      "c8g4",
+      "e1g1",
+      "g8f6",
+      "c1e3",
+      "e8g8",
+      "a1c1",
+      "g4f3",
+      "e2f3"
+    ],
+    "attempt": "04"
+  }
+}

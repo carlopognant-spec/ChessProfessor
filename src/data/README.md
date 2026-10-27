@@ -56,11 +56,50 @@ coverage/design snapshots. Its 283-course result remains a historical snapshot.
 `openingChekhoverCourses.js` adds P02.2-SIC-03: three routes, 56 documented
 plies and two authored continuation plies, with four new pair notes. Its three
 constructed cases live in `openingChekhoverPracticalCases.js`; the practical
-aggregator now contains 286 entries. Bishop targets and a deviation from the
+aggregator also includes the following lots. Bishop targets and a deviation from the
 course endpoint use the same bounded policy, without changing older datasets.
 The append-only ledger contains nine searches; one control is shared with an
 exercise baseline. Run `node scripts/build-opening-chekhover-content.mjs --check`
-for offline evidence verification and `node scripts/report-opening-chekhover-result.mjs --check`
-for current coverage and preservation of all 283 previous courses/exercises.
+for isolated offline evidence verification. Its 286-course result preserves
+all 283 preceding courses/exercises and remains a historical snapshot.
 See `docs/OPENING-CHEKHOVER-P022-RESULTS.md`. Earlier design verifiers and
 coverage reporters keep their historical counts and must not overwrite snapshots.
+
+`openingChekhoverA6Courses.js` adds P02.2-SIC-04: two short routes after 4...a6,
+with 21 documented plies and one authored ...Nf6 reply, summed across both routes.
+The shared source node is counted once among the five newly reached positions.
+Five pair-note entries contain four distinct new texts; all notes bind the exact line.
+`openingChekhoverA6PracticalCases.js` contains the two constructed queen captures.
+That lot reached 288 courses and 288 exercises. The append-only ledger has
+five primary searches with one reused control and no confirmations. Offline check:
+`node scripts/build-opening-chekhover-a6-content.mjs --check`.
+Its 288-course reporter is now a historical snapshot and must not be regenerated.
+That reporter checked preservation of all 286 preceding courses/exercises and
+108 frozen artifacts. See `docs/OPENING-CHEKHOVER-A6-P022-RESULTS.md`.
+
+`openingChekhoverEarlyCourses.js` adds P02.2-SIC-05: two ten-ply routes with
+17 documented plies and three authored choices, individually compared at their
+own roots. Their different move orders reach the same full endpoint FEN but
+retain separate course IDs and progress. Four new pair notes bind the exact lines.
+`openingChekhoverEarlyPracticalCases.js` contains a bishop capture by the e4 pawn
+and a queen capture along the d7-a4 diagonal. All 60 immediate replies are checked.
+The aggregator has 290 courses and 290 exercises. Eight primary searches,
+zero confirmations, two reused exercise baselines; no historical collectors rerun.
+Offline checks: `node scripts/build-opening-chekhover-early-content.mjs --check`
+and `node scripts/report-opening-chekhover-early-result.mjs --check`.
+The current reporter preserves 288 previous courses/exercises and 134 frozen
+artifacts. All 22 Chekhover source positions have an exact represented order;
+10,169 source positions remain absent across the full fixed corpus A.
+See `docs/OPENING-CHEKHOVER-EARLY-P022-RESULTS.md`. Older builders remain isolated
+offline checks; older design verifiers and global reporters retain their snapshots.
+
+P02.2-SIC-06 adds `openingSicilianEarlyCourses.js` and
+`openingSicilianEarlyPracticalCases.js` through the shared pipeline. Three routes:
+14 fully documented plies after early ...g6, plus two eight-ply prefixes with
+separately checked Nc3/Nf6 and Nb3/Nf6 continuations. Four exact source positions
+and one additional transposed position are newly reached; 293 courses/exercises
+are installed. Twelve primary searches, four comparisons, 113 immediate replies;
+all gates pass. The source plans and historical 169 preserved files are unchanged.
+Use `npm run openings:lot -- build --check`, `report --check` and
+`inventories --check`. The report and projection are distinct. Do not rerun
+historical global reporters at the new total. See `docs/OPENING-PIPELINE.md`.

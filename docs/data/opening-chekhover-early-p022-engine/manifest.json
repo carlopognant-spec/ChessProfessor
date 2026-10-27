@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-05",
+  "inputHashes": {
+    "docs/data/opening-chekhover-early-p022-plan.json": "a2f29d22efccbd20420862a82c08d203bd95afd2df357bc44cdd83d3d549fb37",
+    "docs/data/opening-chekhover-early-p022-design-verification.json": "2be640cde3780cb302ea8b089611f666ef846d400e02adbdd9109de0322571da",
+    "scripts/collect-opening-chekhover-early-evidence.mjs": "c2b702172470c61d9f7f5c322e2e51679baf30598e2b1a7a4c6999ab5869693c",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8"
+  },
+  "engineSha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+  "policy": {
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHashBeforeEachGo": true,
+    "nodesPerGo": 200000,
+    "timeoutPerCommandMs": 30000,
+    "primaryJobs": 8,
+    "maximumGoCommands": 16,
+    "maximumRequestedNodes": 3200000,
+    "minimumExerciseSwingCp": 200,
+    "maximumAuthoredMoveLossCp": 100,
+    "confirmationPolicy": "At most one confirmation per job only when bestmove lacks matching full cp/PV evidence. Count failed or interrupted requests. No automatic retry of failed persisted jobs, candidate sweep, budget increase or mate-score auto-acceptance.",
+    "publicationPolicy": "Publish both courses and exercises together only after every declared gate passes. Otherwise preserve evidence and stop for design review; no automatic change to moves, thresholds or counts.",
+    "engine": "Stockfish 16",
+    "minimumImmediateMaterial": 2
+  },
+  "jobs": [
+    {
+      "id": "chekhover-nf6:continuation-control:9",
+      "courseId": "sicilian:chekhover-nf6",
+      "authoredIndex": 9,
+      "fen": "rnbqkb1r/pp2pppp/3p1n2/8/3QP3/2N2N2/PPP2PPP/R1B1KB1R b KQkq - 2 5",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "chekhover-nf6:authored:9",
+      "courseId": "sicilian:chekhover-nf6",
+      "authoredIndex": 9,
+      "fen": "rnbqkb1r/pp2pppp/3p1n2/8/3QP3/2N2N2/PPP2PPP/R1B1KB1R b KQkq - 2 5",
+      "roots": [
+        "c8d7"
+      ],
+      "expectedAnswer": "Bd7",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "chekhover-nf6:deviation",
+      "courseId": "sicilian:chekhover-nf6",
+      "fen": "rn1qkb1r/pp2pppp/3p1n2/5b2/3QP3/2N2N2/PPP2PPP/R1B1KB1R w KQkq - 3 6",
+      "roots": [],
+      "expectedAnswer": "exf5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "chekhover-early-bd7:continuation-control:8",
+      "courseId": "sicilian:chekhover-early-bd7",
+      "authoredIndex": 8,
+      "fen": "rn1qkbnr/pp1bpppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R w KQkq - 1 5",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "chekhover-early-bd7:authored:8",
+      "courseId": "sicilian:chekhover-early-bd7",
+      "authoredIndex": 8,
+      "fen": "rn1qkbnr/pp1bpppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R w KQkq - 1 5",
+      "roots": [
+        "b1c3"
+      ],
+      "expectedAnswer": "Nc3",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "chekhover-early-bd7:continuation-control:9",
+      "courseId": "sicilian:chekhover-early-bd7",
+      "authoredIndex": 9,
+      "fen": "rn1qkbnr/pp1bpppp/3p4/8/3QP3/2N2N2/PPP2PPP/R1B1KB1R b KQkq - 2 5",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "chekhover-early-bd7:authored:9",
+      "courseId": "sicilian:chekhover-early-bd7",
+      "authoredIndex": 9,
+      "fen": "rn1qkbnr/pp1bpppp/3p4/8/3QP3/2N2N2/PPP2PPP/R1B1KB1R b KQkq - 2 5",
+      "roots": [
+        "g8f6"
+      ],
+      "expectedAnswer": "Nf6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "chekhover-early-bd7:deviation",
+      "courseId": "sicilian:chekhover-early-bd7",
+      "fen": "rn1qkbnr/pp1bpppp/3p4/8/Q3P3/5N2/PPP2PPP/RNB1KB1R b KQkq - 2 5",
+      "roots": [],
+      "expectedAnswer": "Bxa4",
+      "uses": [
+        "exercise-answer"
+      ]
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "courseDigest": "d24e716d71bff15107cf18ade67d6ff51005fb5b1dff4d2d7c7ef6e37379b755",
-  "courses": 286,
+  "courseDigest": "75c3a6397aa3d862102b08d62ba99c1d1fa1594a8977028252d73f20f2c28f92",
+  "courses": 293,
   "families": 37,
-  "explainedHalfMoves": 9042,
-  "pairs": 4548,
-  "writtenPairs": 2012,
-  "fullyWrittenCourses": 59,
+  "explainedHalfMoves": 9118,
+  "pairs": 4586,
+  "writtenPairs": 2050,
+  "fullyWrittenCourses": 66,
   "additionalPairNotes": 230,
   "fullyWrittenFamilies": [
     "london",
@@ -502,11 +502,11 @@
     {
       "id": "sicilian",
       "title": "Difesa Siciliana",
-      "courses": 25,
-      "halfMoves": 718,
-      "pairs": 360,
-      "writtenPairs": 130,
-      "fullyWrittenCourses": 2,
+      "courses": 32,
+      "halfMoves": 794,
+      "pairs": 398,
+      "writtenPairs": 168,
+      "fullyWrittenCourses": 9,
       "rows": [
         {
           "id": "sicilian",
@@ -960,6 +960,62 @@
             18
           ],
           "fullyWritten": false
+        },
+        {
+          "id": "sicilian:chekhover-a6-be3",
+          "halfMoves": 10,
+          "pairs": 5,
+          "writtenPairs": 5,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "sicilian:chekhover-a6-c4",
+          "halfMoves": 12,
+          "pairs": 6,
+          "writtenPairs": 6,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "sicilian:chekhover-nf6",
+          "halfMoves": 10,
+          "pairs": 5,
+          "writtenPairs": 5,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "sicilian:chekhover-early-bd7",
+          "halfMoves": 10,
+          "pairs": 5,
+          "writtenPairs": 5,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "sicilian:early-g6-bc4",
+          "halfMoves": 14,
+          "pairs": 7,
+          "writtenPairs": 7,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "sicilian:early-a6",
+          "halfMoves": 10,
+          "pairs": 5,
+          "writtenPairs": 5,
+          "positionOnly": [],
+          "fullyWritten": true
+        },
+        {
+          "id": "sicilian:early-e5",
+          "halfMoves": 10,
+          "pairs": 5,
+          "writtenPairs": 5,
+          "positionOnly": [],
+          "fullyWritten": true
         }
       ]
     },

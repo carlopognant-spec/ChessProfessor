@@ -1,0 +1,148 @@
+{
+  "schema": 2,
+  "lot": "P02.2-SIC-07",
+  "status": "projection-not-publication",
+  "baselineCourses": 293,
+  "currentCourses": 293,
+  "currentExercises": 293,
+  "plannedCourses": 9,
+  "projectedCourses": 302,
+  "installed": false,
+  "sourcePositions": 12322,
+  "coverage": {
+    "exact": 1956,
+    "transposition-only": 202,
+    "absent": 10164
+  },
+  "projectedCoverage": {
+    "exact": 1980,
+    "transposition-only": 203,
+    "absent": 10139
+  },
+  "newlyReached": [
+    {
+      "id": "position:8606330399dc4846",
+      "state": "exact"
+    },
+    {
+      "id": "position:bea6f8408d28ecad",
+      "state": "exact"
+    },
+    {
+      "id": "position:1343e205a8522649",
+      "state": "exact"
+    },
+    {
+      "id": "position:223a6838d381f647",
+      "state": "exact"
+    },
+    {
+      "id": "position:99fcc357230bd2d6",
+      "state": "exact"
+    },
+    {
+      "id": "position:0ca064f03e8469de",
+      "state": "exact"
+    },
+    {
+      "id": "position:9ee021ddbb96e219",
+      "state": "exact"
+    },
+    {
+      "id": "position:42206e72c955aa0f",
+      "state": "exact"
+    },
+    {
+      "id": "position:c49be5af38afe582",
+      "state": "exact"
+    },
+    {
+      "id": "position:3d10d353f01bf468",
+      "state": "exact"
+    },
+    {
+      "id": "position:6abda0b861ac7286",
+      "state": "exact"
+    },
+    {
+      "id": "position:ad672acd7604866c",
+      "state": "exact"
+    },
+    {
+      "id": "position:1ad35067f9b38801",
+      "state": "exact"
+    },
+    {
+      "id": "position:c07e238f7ea92314",
+      "state": "exact"
+    },
+    {
+      "id": "position:dce89c48813f710b",
+      "state": "exact"
+    },
+    {
+      "id": "position:db6b9ec921f1cabf",
+      "state": "exact"
+    },
+    {
+      "id": "position:0d012ad36dd36f84",
+      "state": "exact"
+    },
+    {
+      "id": "position:08a4201e5f13e7d3",
+      "state": "exact"
+    },
+    {
+      "id": "position:9b1c663bf4facd65",
+      "state": "exact"
+    },
+    {
+      "id": "position:c3a720339912c99f",
+      "state": "transposition-only"
+    },
+    {
+      "id": "position:3f37f98db751ed20",
+      "state": "exact"
+    },
+    {
+      "id": "position:f9602df42aff8c61",
+      "state": "exact"
+    },
+    {
+      "id": "position:8054637aafb33bf4",
+      "state": "exact"
+    },
+    {
+      "id": "position:bfb2f92844a025bf",
+      "state": "exact"
+    },
+    {
+      "id": "position:361fa341771148c2",
+      "state": "exact"
+    }
+  ],
+  "newExactPositions": 24,
+  "newTransposedPositions": 1,
+  "documentedPlies": 150,
+  "authoredPlies": 14,
+  "currentCommentary": {
+    "explainedHalfMoves": 9118,
+    "pairs": 4586,
+    "writtenPairs": 2050,
+    "fullyWrittenCourses": 66
+  },
+  "engine": null,
+  "engineEvidenceStatus": "not-checked-by-this-report",
+  "preservedFiles": 216,
+  "nextDesign": {
+    "status": "backlog retained; not a second implementation dependency",
+    "scope": "Other Taimanov orders under 5.Nc3 remain in corpus A; prioritize the remaining Qc7/Be3 branches as the next coherent design group. The old Sicilian Ac4, Ad3 and f3 entries are also retained.",
+    "model": "GPT-6 Astra",
+    "reasoning": "High"
+  },
+  "limitations": [
+    "Source-position coverage is not complete theory or evidence of learned skill.",
+    "Projection is never counted as installed content. Engine requests require explicit collect.",
+    "Test and browser outcomes belong to the QA record, not inferred from generated files."
+  ]
+}

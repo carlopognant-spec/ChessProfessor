@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "checkedOn": "2026-10-27",
+  "status": "PASS",
+  "lot": "P02.2-SIC-06",
+  "application": {
+    "courses": 293,
+    "exercises": 293,
+    "exact": 1956,
+    "transpositionOnly": 202,
+    "absent": 10164
+  },
+  "unit": {
+    "files": 82,
+    "passed": 771,
+    "todo": 1,
+    "durationSeconds": 249.47,
+    "inputsUnchanged": true,
+    "fingerprint": "57b70fd785b1d66a84329d9f388db3663f6f72b08cec70f65c7146b3c0edd7be"
+  },
+  "pipelineContractTests": 15,
+  "build": {
+    "status": "PASS",
+    "modules": 142,
+    "durationSeconds": 4.93,
+    "existingChunkWarning": true
+  },
+  "browser": {
+    "available": 141,
+    "selectedDistinctCases": 62,
+    "newCases": 54,
+    "existingRegressions": 8,
+    "firstRun": {
+      "passed": 61,
+      "failed": 1,
+      "durationMinutes": 6.9,
+      "reason": "Initial catalog/family selector timeout before entering course"
+    },
+    "retry": {
+      "command": "npx.cmd playwright test --config scripts/qa-opening-browser.config.js --last-failed",
+      "passed": 1,
+      "durationSeconds": 29.9,
+      "originalInputsVerifiedBeforeRetry": true,
+      "codeOrTimeoutChanged": false
+    },
+    "distinctCasesPassed": 62,
+    "unexecutedAvailableCases": 79,
+    "initialRecordFingerprint": "22e8ef9f3bcaa48031ae5aed17dad007cb9f317722a970984bd7a4dd91c428e7"
+  },
+  "offline": {
+    "legacyParity": "three SIC-05 artifacts byte-identical",
+    "preservedFiles": 169,
+    "engineSearches": 12,
+    "confirmations": 0,
+    "nodesRequested": 2400000,
+    "nodesReported": 2401653
+  },
+  "reuseDemonstration": {
+    "stepsReused": 5,
+    "durationSeconds": 1.43,
+    "repeatedTests": 0,
+    "engineSearches": 0
+  },
+  "sourceReportSha256": "111a7a9ce1f2ca485c5c8dd23c7dead4730becd2db7b1895b948e426c268b690",
+  "next": {
+    "model": "GPT-6 Astra",
+    "reasoning": "High",
+    "task": "Review a larger coherent group from the backlog; candidate Taimanov group has 122 absent source positions. Preserve the full corpus A."
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-04",
+  "status": "implemented-offline-verified",
+  "inputHashes": {
+    "docs/data/opening-chekhover-a6-p022-plan.json": "2b467d0eddf492cc9c1e4a3334142a66db070a89ba8d91621932e628b3eac283",
+    "docs/data/opening-chekhover-a6-p022-design-verification.json": "2e22d6e7bf80ea04fa012a7cb205816d9dfbcaa81dbbaa22bbeec72b714cee16",
+    "docs/data/opening-chekhover-a6-p022-practical-verification.json": "04832701e2036485c1175b01b99624922caf83591b3fc585c8bccee47578791e",
+    "scripts/collect-opening-chekhover-a6-evidence.mjs": "495d05ee8b1eb2400c5dcb021b0b103b5d8e2ab5f1872d3659a0151f58e72dec",
+    "scripts/build-opening-chekhover-a6-content.mjs": "60c8e76f4171e0edac2675ff3fab0da12c6f4d8655bd63561b22ac341241794f",
+    "scripts/report-opening-chekhover-a6-result.mjs": "eb38ebd5f923e50612ac472aaf1d795a466c8774055e07372e608c11e7346c0a",
+    "src/data/openingChekhoverA6Courses.js": "491de9e2ffb588f49285bec6197000b95681d40f169841c34c1ed6c20c069ebc",
+    "src/data/openingChekhoverA6PracticalCases.js": "cd1c6ffeb8fcbbf2ea50b906ab6d5531328e8b17ec7260e6e20e41969a0aa719",
+    "src/lib/openingJourneys.js": "5a3fffa579e3ef27a78b84328dc8d2dc08b140951ffa7ebf2537f012d20b090a",
+    "src/lib/openingCurriculum.js": "46fa9935b965af47cdde35621dba6fc6a8dbfb0ef07feefde60ee7194f872f24",
+    "src/lib/openingPracticalLibrary.js": "abf7cad22850943ec482e7b79062ee1e73d39db6330c05f8d01011063ad51480",
+    "src/components/OpeningLibrary.jsx": "3b24756958cc8adceb0772dbd11833327d4fa7654cbc16c39c8a84fd51c04ac8"
+  },
+  "preservedBaselineCourses": 286,
+  "preservedBaselineExercises": 286,
+  "courseCount": 288,
+  "sicilianCourseCount": 27,
+  "practicalCases": 288,
+  "added": [
+    {
+      "id": "sicilian:chekhover-a6-be3",
+      "plies": 10,
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 9,
+        "authoredContinuationPlies": 1,
+        "generatedPlies": 0,
+        "continuationStatus": "bounded-engine-checked",
+        "source": "https://github.com/JeffML/eco.json",
+        "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+        "sourceCatalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+        "sourceId": "9e4633e9957e3be8",
+        "sourceName": "Sicilian, Chekhover, 4...a6 5.Be3",
+        "sourceEco": "B53",
+        "sourceRecords": [
+          {
+            "id": "eco:24be9805605f8f1b",
+            "positionId": "position:f2e47e14c999e271",
+            "plies": 8
+          },
+          {
+            "id": "eco:9e4633e9957e3be8",
+            "positionId": "position:361cee22134b6e85",
+            "plies": 9
+          }
+        ],
+        "rootPositionId": "position:f2e47e14c999e271",
+        "engineSignature": "407c3fd1f1a542931899ee3e387e70c764d352379ee8cc9ff40fb8e969dde27a"
+      }
+    },
+    {
+      "id": "sicilian:chekhover-a6-c4",
+      "plies": 12,
+      "provenance": {
+        "kind": "documented-line",
+        "documentedPlies": 12,
+        "authoredContinuationPlies": 0,
+        "generatedPlies": 0,
+        "source": "https://github.com/JeffML/eco.json",
+        "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+        "sourceCatalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+        "sourceId": "f80ad3ed0fd0919e",
+        "sourceName": "Sicilian, Chekhover, 4...a6 5.c4 Nc6 6.Qd2 g6",
+        "sourceEco": "B53",
+        "sourceRecords": [
+          {
+            "id": "eco:24be9805605f8f1b",
+            "positionId": "position:f2e47e14c999e271",
+            "plies": 8
+          },
+          {
+            "id": "eco:cb682ad7bfde697e",
+            "positionId": "position:9c7d8bc61708b20b",
+            "plies": 9
+          },
+          {
+            "id": "eco:8afdf35a92cd2b0c",
+            "positionId": "position:1c190014685b03ee",
+            "plies": 11
+          },
+          {
+            "id": "eco:f80ad3ed0fd0919e",
+            "positionId": "position:8d835bf138067435",
+            "plies": 12
+          }
+        ],
+        "rootPositionId": "position:f2e47e14c999e271",
+        "engineSignature": "407c3fd1f1a542931899ee3e387e70c764d352379ee8cc9ff40fb8e969dde27a"
+      }
+    }
+  ],
+  "documentedPlies": 21,
+  "authoredContinuationPlies": 1,
+  "generatedPlies": 0,
+  "newPairNotes": 5,
+  "commentary": {
+    "explainedHalfMoves": 9064,
+    "pairs": 4559,
+    "writtenPairs": 2023,
+    "fullyWrittenCourses": 61
+  },
+  "scope": {
+    "positions": 12322,
+    "coverage": {
+      "exact": 1949,
+      "transposition-only": 201,
+      "absent": 10172
+    },
+    "newlyReached": [
+      "position:f2e47e14c999e271",
+      "position:361cee22134b6e85",
+      "position:9c7d8bc61708b20b",
+      "position:1c190014685b03ee",
+      "position:8d835bf138067435"
+    ],
+    "newEcoAnchors": 0,
+    "chekhover": {
+      "positions": 22,
+      "remainingAbsent": [
+        {
+          "id": "position:c9c6ddc7d60aa2cf",
+          "name": "Sicilian, Chekhover, 4...Bd7",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:7161d5217d6da902",
+          "name": "Sicilian, Chekhover, 4...Nf6",
+          "ecoRoots": []
+        },
+        {
+          "id": "position:2b356881d43ce8ce",
+          "name": "Sicilian, Chekhover, 4...Nf6 5.Nc3",
+          "ecoRoots": []
+        }
+      ]
+    }
+  },
+  "engine": {
+    "signature": "407c3fd1f1a542931899ee3e387e70c764d352379ee8cc9ff40fb8e969dde27a",
+    "goCommands": 5,
+    "nodesRequested": 1000000,
+    "nodesActual": 1000653,
+    "continuation": [
+      {
+        "courseId": "sicilian:chekhover-a6-be3",
+        "san": "Nf6",
+        "signedCpDifference": 14,
+        "acceptanceLoss": 14
+      }
+    ],
+    "exercises": [
+      {
+        "id": "practice:sicilian:chekhover-a6-be3",
+        "cpChange": 762,
+        "legalImmediateReplies": 21,
+        "minimumImmediateMaterialGain": 9
+      },
+      {
+        "id": "practice:sicilian:chekhover-a6-c4",
+        "cpChange": 617,
+        "legalImmediateReplies": 33,
+        "minimumImmediateMaterialGain": 6
+      }
+    ]
+  },
+  "checks": {
+    "baselineCourses": "PASS",
+    "baselineExercises": "PASS",
+    "protectedAndFrozenHashes": "PASS",
+    "legalSan": "PASS",
+    "courseExerciseCorrespondence": "PASS",
+    "projectedCoverageMatchesActual": "PASS"
+  },
+  "limitations": [
+    "Reached source positions do not establish complete theory, full commentary or learned skill.",
+    "Native Stockfish 16 finite-budget controls are not browser Stockfish 19 evidence or full-game proofs.",
+    "Authored continuations are separate from the documented source sequences.",
+    "Browser, build and full-test outcomes are recorded in the results document."
+  ]
+}

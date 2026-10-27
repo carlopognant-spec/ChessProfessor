@@ -1,18 +1,18 @@
 # Inventario e avanzamento delle aperture
 
-Perimetro completo A approvato: le 12.322 posizioni delle fonti fissate in P01, ancora in corso di copertura. L'elenco sotto comprende i 197 rami storici e 6 nuovi percorsi della roadmap; alcuni rami storici corrispondono a corsi già presenti. Alias, posizioni e corsi sono conteggi distinti.
+Perimetro completo A approvato: le 12.322 posizioni delle fonti fissate in P01, ancora in corso di copertura. L'elenco sotto comprende i 197 rami storici e 13 nuovi percorsi della roadmap; alcuni rami storici corrispondono a corsi già presenti. Alias, posizioni e corsi sono conteggi distinti.
 
-Percorsi giocabili: **286**, di cui **188 dell'espansione storica**, **3 nuove linee integralmente documentate** e **3 con prefisso documentato e seguito didattico scritto**. Rami di questo elenco ancora da inserire: **0**; questo numero non misura le posizioni mancanti nel perimetro A. La [verifica attuale Chekhover](OPENING-CHEKHOVER-P022-RESULTS.md) riporta copertura e residui effettivi.
+Percorsi giocabili: **293**, di cui **188 dell'espansione storica**, **5 nuove linee integralmente documentate** e **8 con prefisso documentato e seguito didattico scritto**. Rami di questo elenco ancora da inserire: **0**; questo numero non misura le posizioni mancanti nel perimetro A. La [verifica attuale Chekhover con 4...Cf6 e 4...Ad7](OPENING-CHEKHOVER-EARLY-P022-RESULTS.md) riporta copertura e residui effettivi.
 
 ## Metodo e limiti
 
 Ogni nuova linea ha una posizione caratteristica collegata a un record del catalogo eco.json già fissato nel progetto. Un collegamento per trasposizione richiede la stessa posizione, turno, diritti di arrocco e possibilità di en passant. Gli eventuali passi redazionali successivi sono separati dalla parte documentata.
 
-Nell’espansione storica si preferiscono continuazioni già documentate fino a 24 semimosse; il seguito fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità. Le prime due linee P02.2 hanno 22 e 20 semimosse interamente documentate. La Zaitsev ha dieci semimosse documentate e due didattiche scritte. Il lotto Chekhover successivo aggiunge 56 semimosse documentate e due didattiche scritte in tre percorsi. I seguiti scritti sono verificati con confronti alla stessa radice e budget fissato; nessuna mossa dei sei percorsi della roadmap è generata dal motore. Il browser non avvia il motore. Stockfish 16 nativo non è lo Stockfish 19 del browser.
+Nell’espansione storica si preferiscono continuazioni già documentate fino a 24 semimosse; il seguito fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità. Le prime due linee P02.2 hanno 22 e 20 semimosse interamente documentate. La Zaitsev ha dieci semimosse documentate e due didattiche scritte. Il lotto Chekhover successivo aggiunge 56 semimosse documentate e due didattiche scritte in tre percorsi. Il lotto con 4...a6 aggiunge due moduli brevi, di dieci e dodici semimosse: 21 documentate e una didattica, sommate con i prefissi ripetuti. I seguiti scritti sono verificati con confronti alla stessa radice e budget fissato. Il lotto precoce con 4...Cf6 e 4...Ad7 aggiunge due moduli di dieci semimosse, 17 documentate e tre didattiche, con ordini distinti che convergono alla stessa posizione. Nessuna mossa dei percorsi della roadmap è generata dal motore. Il browser non avvia il motore. Stockfish 16 nativo non è lo Stockfish 19 del browser.
 
-Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. I 188 percorsi dell'espansione storica hanno almeno due note strategiche individualmente scritte: 388 note, di cui 36 nella Caro-Kann. I 6 percorsi della roadmap aggiungono 19 note minime specifiche, conteggiate separatamente. Le note compaiono dopo aver giocato e sono legate alle sequenze complete revisionate. La revisione integrale dei commenti resta P03.
+Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. I 188 percorsi dell'espansione storica hanno almeno due note strategiche individualmente scritte: 388 note, di cui 36 nella Caro-Kann. I 13 percorsi della roadmap aggiungono 36 note minime specifiche, conteggiate separatamente. Le note compaiono dopo aver giocato e sono legate alle sequenze complete revisionate. La revisione integrale dei commenti resta P03.
 
-Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 286 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
+Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 293 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
 
 Il riepilogo del turno distingue la propria mossa dalla risposta realmente giocata dall’avversario. Ogni semimossa dispone di una spiegazione posizionale; le note strategiche individuali restano un conteggio distinto. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md) mostra i passaggi ancora da scrivere per ogni famiglia.
 
@@ -20,7 +20,7 @@ Il corpus aggiuntivo di 230 note completa i passaggi scoperti nelle famiglie Sis
 
 Le verifiche automatiche certificano legalità, provenienza della posizione, continuità, assenza di duplicati nella famiglia e corrispondenza delle mosse del seguito ai risultati registrati. Non certificano da sole la correttezza di ogni spiegazione strategica o la completezza della teoria di ogni apertura.
 
-Esercizi sulle deviazioni: **286**. Percorsi senza un esercizio costruito validato: **0**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.
+Esercizi sulle deviazioni: **293**. Percorsi senza un esercizio costruito validato: **0**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.
 
 ## Perché i conteggi sono diversi
 
@@ -34,7 +34,7 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Partita Italiana | 3 | 8 | 11 | 11 | 16 | 0 | 0 |
 | Partita Spagnola | 3 | 11 | 14 | 14 | 22 | 0 | 0 |
-| Difesa Siciliana | 4 | 21 | 25 | 25 | 30 | 0 | 0 |
+| Difesa Siciliana | 4 | 28 | 32 | 32 | 30 | 0 | 0 |
 | Difesa Francese | 4 | 10 | 14 | 14 | 20 | 0 | 0 |
 | Difesa Caro-Kann | 4 | 12 | 16 | 16 | 36 | 0 | 0 |
 | Difesa Scandinava | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
@@ -120,6 +120,13 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 - [x] Chekhover: 7.c4 e preparazione del fianchetto — fonte cab3a0b1cf0331d6; 16 semimosse documentate, 0 semimosse del seguito controllate; esercizio disponibile
 - [x] Chekhover: 10.Dd3 e arrocco del Nero — fonte ce70dab23d629d53; 19 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
 - [x] Chekhover: 11.Dd2 e coordinazione delle torri — fonte aed1668deddb6fa8; 21 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover: 4...a6 e sviluppo con 5.Ae3 — fonte 9e4633e9957e3be8; 9 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover: 4...a6, 5.c4 e ritirata Dd2 — fonte f80ad3ed0fd0919e; 12 semimosse documentate, 0 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover: 4...Cf6 e sostegno con 5.Cc3 — fonte 2e1f03274972c77b; 9 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Chekhover: 4...Ad7 prima dello sviluppo dei cavalli — fonte 7cd29665e2cfcb77; 8 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Siciliana: 4...g6 e sviluppo con Ac4 — fonte fc2ae42fb689cbe2; 14 semimosse documentate, 0 semimosse del seguito controllate; esercizio disponibile
+- [x] Siciliana: 4...a6 prima di Cf6 — fonte 8d1d21aff6e14300; 8 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Siciliana: 4...e5 e ritirata Cb3 — fonte 5b821d81f6456cf4; 8 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
 
 ### Difesa Francese
 
@@ -394,6 +401,8 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 - [Controlli dei due esercizi Siciliana](data/opening-sicilian-p022-practical-verification.json)
 - [Controlli del seguito e dell’esercizio Zaitsev](data/opening-zaitsev-p022-practical-verification.json)
 - [Controlli dei tre percorsi e degli esercizi Chekhover](data/opening-chekhover-p022-practical-verification.json)
+- [Controlli dei due percorsi e degli esercizi Chekhover con 4...a6](data/opening-chekhover-a6-p022-practical-verification.json)
+- [Controlli degli ordini Chekhover con 4...Cf6 e 4...Ad7](data/opening-chekhover-early-p022-practical-verification.json)
 - [Fonte del catalogo](https://github.com/JeffML/eco.json)
 - [Nomi e convenzioni Lichess](https://github.com/lichess-org/chess-openings)
 

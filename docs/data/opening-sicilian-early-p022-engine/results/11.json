@@ -1,0 +1,41 @@
+{
+  "signature": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+  "jobId": "early-e5:authored:9",
+  "status": "complete",
+  "attemptIds": [
+    "11"
+  ],
+  "result": {
+    "bestmove": "g8f6",
+    "searchmoves": [
+      "g8f6"
+    ],
+    "depth": 18,
+    "nodes": 200104,
+    "cp": -22,
+    "mate": null,
+    "pv": [
+      "g8f6",
+      "f1c4",
+      "f8e7",
+      "b1c3",
+      "c8e6",
+      "d1e2",
+      "e8g8",
+      "c1e3",
+      "d8c8",
+      "c4e6",
+      "f7e6",
+      "e1c1",
+      "c8c6",
+      "e3d2",
+      "a7a6",
+      "g2g4",
+      "b7b5",
+      "g4g5",
+      "f6d7",
+      "e2g4"
+    ],
+    "attempt": "11"
+  }
+}

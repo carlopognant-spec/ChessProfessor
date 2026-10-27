@@ -23,7 +23,7 @@ Le 497 assegnazioni da revisionare sono elencate nel
 
 ## Percorsi guidati e bivi
 
-La schermata iniziale offre 286 percorsi in 37 famiglie. L'Est-Indiana ha quattordici
+La schermata iniziale offre 293 percorsi in 37 famiglie. L'Est-Indiana ha quattordici
 percorsi: centro chiuso classico, Fianchetto, Quattro Pedoni, Averbakh,
 Makogonov, Petrosian, Gligoric-Taimanov, Cambio, Baionetta, Sämisch,
 Panno nella Sämisch e nel Fianchetto, Smyslov e sistema semiclassico.
@@ -32,7 +32,7 @@ catalogo trasformate in corsi. Le continuazioni didattiche non sono dichiarate
 come uniche mosse corrette né come partite storiche.
 Le linee di base hanno il corpus narrativo già presente; le varianti combinano
 piani specifici, note scritte per i passaggi chiave e spiegazioni dei cambiamenti
-effettivi sulla scacchiera. Non tutte le mosse delle 286 linee hanno un commento
+effettivi sulla scacchiera. Non tutte le mosse delle 293 linee hanno un commento
 scritto individualmente. I 188 percorsi dell'espansione storica delle 37 famiglie hanno
 almeno due note strategiche individualmente scritte sui passaggi chiave:
 388 note in totale, comprese le 36 dei dodici nuovi percorsi della Caro-Kann.
@@ -50,8 +50,8 @@ sono fissate in `openingFullReviewedLines.js`; le note aggiuntive non sostituisc
 quelle sui passaggi chiave già presenti. Le nuove note indiane distinguono anche
 pressione attuale e preparazione, colonne aperte e semiaperte, pezzi che bloccano
 le proprie torri e minacce scoperte dopo un cambio o una ritirata.
-La copertura complessiva è di 2.012 coppie con testo scritto su 4.548,
-con 59 percorsi interamente commentati per coppia. Gli altri percorsi non
+La copertura complessiva è di 2.050 coppie con testo scritto su 4.586,
+con 66 percorsi interamente commentati per coppia. Gli altri percorsi non
 vengono dichiarati interamente revisionati sulla base delle spiegazioni automatiche.
 
 Ogni mossa giocata ha ora un riepilogo distinto da quello della risposta avversaria,
@@ -61,10 +61,10 @@ con al massimo due osservazioni per mossa: bersagli, sostegni, colonne e trasfor
 dei pedoni. Le note scritte restano un approfondimento separato; i vecchi paragrafi
 generici non vengono ripetuti insieme a queste spiegazioni. Nulla viene anticipato
 prima di giocare. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md)
-distingue le 9.042 semimosse spiegate dai passaggi con una nota individuale.
+distingue le 9.118 semimosse spiegate dai passaggi con una nota individuale.
 
 L'[inventario di copertura](OPENING-COVERAGE.md) elenca i 197 rami dichiarati
-nell'espansione storica e i sei nuovi percorsi della roadmap, distinguendo fonti e verifiche.
+nell'espansione storica e i tredici nuovi percorsi della roadmap, distinguendo fonti e verifiche.
 Le 188 linee dell'espansione storica partono da posizioni documentate nel catalogo fissato;
 si preferisce proseguire sulla fonte quando contiene una continuazione utile.
 La parte restante fino alla mossa 16 è un modello didattico costruito offline,
@@ -91,10 +91,36 @@ note specifiche e tre esercizi costruiti, con bersagli donna e alfiere.
 Quando una linea prosegue un corso già studiato, la ripresa presenta la posizione
 comune come prosecuzione. Tornando a un corso più breve già contenuto nel precedente,
 si può ripartire esplicitamente dall'inizio; il prefisso comune non dà credito automatico.
-I corsi siciliani sono ora 25; i percorsi e gli esercizi complessivi 286.
-La copertura del perimetro A rimane parziale: 10.177 posizioni delle fonti sono
-ancora assenti, comprese otto su 22 del sottoalbero Chekhover. Prove, limiti e punto
-di ripresa sono nel [rapporto Chekhover](OPENING-CHEKHOVER-P022-RESULTS.md).
+Il [rapporto Chekhover](OPENING-CHEKHOVER-P022-RESULTS.md) conserva le prove di quel lotto.
+
+Il lotto P02.2-SIC-04 aggiunge due moduli dopo 4...a6: 5.Ae3 con la risposta
+didattica ...Cf6 e 5.c4 Cc6 6.Dd2 g6 interamente documentato. Cinque posizioni
+distinte della fonte diventano raggiungibili; il nodo comune ...a6 si conta una volta.
+I due esercizi costruiti riguardano la donna b6 non più protetta dal pedone a7 e
+la donna d4 lasciata in presa al cavallo c6. I checkpoint riprendono i bivi nero
+e bianco con entrambi i colori; il primo rappresentante di ...a6 è Ae3, mentre
+c4 resta disponibile nel bivio successivo o selezionando il corso.
+Il [rapporto Chekhover con 4...a6](OPENING-CHEKHOVER-A6-P022-RESULTS.md) conserva le prove di quel lotto.
+
+Il lotto P02.2-SIC-05 aggiunge gli ordini 4...Cf6 5.Cc3 Ad7 e 4...Ad7 5.Cc3 Cf6:
+17 semimosse documentate e tre scelte didattiche controllate separatamente,
+quattro note specifiche e due esercizi costruiti. I due ordini raggiungono la
+stessa posizione finale ma conservano corsi e progressi distinti: il checkpoint
+torna al bivio dopo Dxd4 e richiede l'avvio e le mosse residue. L'esercizio con
+...Af5 riguarda un alfiere esposto al pedone e4; quello con Da4 usa la diagonale
+libera dell'alfiere d7. Da4 non è scacco. Nessuna modifica alla navigazione è stata necessaria.
+Il [rapporto Chekhover precoce](OPENING-CHEKHOVER-EARLY-P022-RESULTS.md) conserva le prove di quel lotto.
+
+SIC-06 aggiunge tre moduli della Siciliana aperta con 4...g6, 4...a6 e 4...e5:
+30 semimosse documentate, quattro scelte didattiche controllate e tre esercizi.
+L'ordine con g6 termina dopo Ac4/Cc6; quello con a6 converge nella disposizione
+della Najdorf mantenendo un diverso ordine di mosse. I corsi e i progressi restano distinti.
+I corsi siciliani sono ora 32; i percorsi e gli esercizi complessivi 293.
+Le 22 posizioni Chekhover del corpus fissato hanno almeno un ordine sorgente esatto
+raggiungibile; questo non dimostra la completezza teorica dell'apertura.
+La copertura del perimetro A rimane parziale. Il risultato attuale è di 1.956 posizioni esatte,
+202 solo per trasposizione e 10.164 assenti. Prove e limiti sono nel
+[rapporto Siciliana precoce](OPENING-SICILIAN-EARLY-P022-RESULTS.md).
 
 I conteggi per famiglia indicano i percorsi presenti, non la quantità di teoria
 esistente. Caro-Kann ed Est-Indiana hanno avuto approfondimenti dedicati prima

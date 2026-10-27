@@ -30,12 +30,12 @@ describe('second audit of missing opening decisions',()=>{
       expect(reviewed[id].notes).toHaveProperty('24')
       expect(practical.entries.find(item=>item.courseId===id),id).toBeTruthy()
     }
-    for(const [family,count] of Object.entries({sicilian:25,'queens-gambit':17,spanish:14,french:14,italian:11,english:10})){
+    for(const [family,count] of Object.entries({sicilian:32,'queens-gambit':17,spanish:14,french:14,italian:11,english:10})){
       expect(familyJourneys(family),family).toHaveLength(count)
     }
     const original=JSON.parse(fs.readFileSync('docs/data/opening-scope-audit.json','utf8')).courses.filter(row=>row.family==='sicilian').map(row=>row.id)
     expect(original).toHaveLength(19)
-    expect(new Set(familyJourneys('sicilian').map(row=>row.id))).toEqual(new Set([...original,'sicilian:najdorf-bg5-classical','sicilian:chekhover-bd7','sicilian:chekhover-zaitsev','sicilian:chekhover-c4-g6','sicilian:chekhover-qd3','sicilian:chekhover-qd2']))
+    expect(new Set(familyJourneys('sicilian').map(row=>row.id))).toEqual(new Set([...original,'sicilian:najdorf-bg5-classical','sicilian:chekhover-bd7','sicilian:chekhover-zaitsev','sicilian:chekhover-c4-g6','sicilian:chekhover-qd3','sicilian:chekhover-qd2','sicilian:chekhover-a6-be3','sicilian:chekhover-a6-c4','sicilian:chekhover-nf6','sicilian:chekhover-early-bd7','sicilian:early-g6-bc4','sicilian:early-a6','sicilian:early-e5']))
     expect(familyJourneys('caro')).toHaveLength(16)
     expect(familyJourneys('kings-indian')).toHaveLength(14)
   })

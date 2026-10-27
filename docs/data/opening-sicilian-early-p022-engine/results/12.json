@@ -1,0 +1,40 @@
+{
+  "signature": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+  "jobId": "early-e5:deviation",
+  "status": "complete",
+  "attemptIds": [
+    "12"
+  ],
+  "result": {
+    "bestmove": "e5d4",
+    "searchmoves": [],
+    "depth": 18,
+    "nodes": 200080,
+    "cp": 296,
+    "mate": null,
+    "pv": [
+      "e5d4",
+      "c2c3",
+      "g8f6",
+      "c3d4",
+      "d6d5",
+      "e4d5",
+      "f8b4",
+      "b1c3",
+      "e8g8",
+      "e1g1",
+      "c8f5",
+      "d1b3",
+      "b4d6",
+      "c3b5",
+      "h7h6",
+      "h2h3",
+      "a7a6",
+      "b5d6",
+      "d8d6",
+      "b3b7",
+      "b8d7"
+    ],
+    "attempt": "12"
+  }
+}

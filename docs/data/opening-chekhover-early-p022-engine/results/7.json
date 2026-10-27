@@ -1,0 +1,34 @@
+{
+  "signature": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b",
+  "jobId": "chekhover-early-bd7:authored:9",
+  "status": "complete",
+  "attemptIds": [
+    "07"
+  ],
+  "result": {
+    "bestmove": "g8f6",
+    "searchmoves": [
+      "g8f6"
+    ],
+    "depth": 16,
+    "nodes": 175023,
+    "cp": -35,
+    "mate": null,
+    "pv": [
+      "g8f6",
+      "c1g5",
+      "b8c6",
+      "d4d2",
+      "h7h6",
+      "g5f6",
+      "g7f6",
+      "f3h4",
+      "e7e6",
+      "e1c1",
+      "d8a5",
+      "a2a3",
+      "e8c8"
+    ],
+    "attempt": "07"
+  }
+}

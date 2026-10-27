@@ -18,7 +18,7 @@ describe('documented Sicilian routes added by the roadmap',()=>{
     const ids=new Set(scope.courses.map(row=>row.id))
     const original=ALL_OPENING_JOURNEYS.filter(row=>ids.has(row.id)).map(({id,family,title,moves})=>({id,family,title,moves}))
     expect(original).toHaveLength(280);expect(hash(JSON.stringify(original))).toBe(baseline.courseDigest)
-    expect(ALL_OPENING_JOURNEYS.filter(row=>!ids.has(row.id)).map(row=>row.id)).toEqual([...plan.courses.map(row=>row.id),'sicilian:chekhover-zaitsev','sicilian:chekhover-c4-g6','sicilian:chekhover-qd3','sicilian:chekhover-qd2'])
+    expect(ALL_OPENING_JOURNEYS.filter(row=>!ids.has(row.id)).map(row=>row.id)).toEqual([...plan.courses.map(row=>row.id),'sicilian:chekhover-zaitsev','sicilian:chekhover-c4-g6','sicilian:chekhover-qd3','sicilian:chekhover-qd2','sicilian:chekhover-a6-be3','sicilian:chekhover-a6-c4','sicilian:chekhover-nf6','sicilian:chekhover-early-bd7','sicilian:early-g6-bc4','sicilian:early-a6','sicilian:early-e5'])
     for(const [file,sha]of Object.entries({...baseline.hashes,...plan.preserveFiles}))expect(hash(fs.readFileSync(file)),file).toBe(sha)
   })
   it('binds the full new routes to fixed sources and lets both colors reach the real endpoint',()=>{
@@ -69,7 +69,7 @@ describe('documented Sicilian routes added by the roadmap',()=>{
     }
   })
   it('publishes the two additional exercises alongside every historical course without duplicate IDs',()=>{
-    expect(practical.entries).toHaveLength(286);expect(new Set(practical.entries.map(row=>row.id)).size).toBe(286)
+    expect(practical.entries).toHaveLength(293);expect(new Set(practical.entries.map(row=>row.id)).size).toBe(293)
     for(const course of roadmap.entries){
       const item=practical.entries.find(row=>row.courseId===course.id)
       expect(item.startIndex).toBe(item.moves.length-1)

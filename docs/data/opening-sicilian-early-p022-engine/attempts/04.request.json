@@ -1,0 +1,12 @@
+{
+  "signature": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+  "jobId": "early-a6:authored:8",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "rnbqkbnr/1p2pppp/p2p4/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+  "roots": [
+    "b1c3"
+  ],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000 searchmoves b1c3"
+}

@@ -1,12 +1,13 @@
 import fs from 'node:fs/promises'
+import assert from 'node:assert/strict'
+const check=process.argv.includes('--check')
+assert(process.argv.slice(2).every(a=>a==='--check'))
+async function emit(file,text){if(check)assert.equal(await fs.readFile(file,'utf8'),text,`Inventory differs: ${file}`);else await fs.writeFile(file,text)}
 import {OPENING_LESSONS} from '../src/lib/openingLessons.js'
 import {OPENING_EXPANSION_PLAN} from '../src/lib/openingExpansionPlan.js'
 import {ALL_OPENING_JOURNEYS,familyJourneys,openingWrittenContext} from '../src/lib/openingJourneys.js'
 import expansion from '../src/data/openingExpansion.js'
 import practical from '../src/lib/openingPracticalLibrary.js'
-import roadmap from '../src/data/openingRoadmapCourses.js'
-import zaitsev from '../src/data/openingZaitsevCourses.js'
-import chekhover from '../src/data/openingChekhoverCourses.js'
 import caroNotes from '../src/lib/openingCaroNotes.js'
 import strategicNotes from '../src/lib/openingStrategicNotes.js'
 import fullNotes from '../src/lib/openingFullNotes.js'
@@ -18,7 +19,7 @@ for(const [id,row] of [...Object.entries(reviewedNotes),...Object.entries(fullNo
 }
 
 const evidence=JSON.parse(await fs.readFile('docs/data/opening-expansion-verification.json','utf8'))
-const roadmapEntries=[...roadmap.entries,...zaitsev.entries,...chekhover.entries]
+const roadmapEntries=ALL_OPENING_JOURNEYS.filter(course=>course.roadmapLot)
 const families=OPENING_LESSONS.map(guide=>{
   const courses=familyJourneys(guide.id),planned=[...OPENING_EXPANSION_PLAN,...roadmapEntries].filter(row=>row.family===guide.id)
   return {id:guide.id,title:guide.title,legacy:courses.filter(course=>!course.expansion&&!course.provenance).length,
@@ -54,13 +55,13 @@ const report={schema:2,scope:`Full fixed P01 corpus A accepted: 12,322 source po
   additionalPairNotes:Object.values(fullNotes).reduce((sum,row)=>sum+Object.keys(row.notes).length,0),
   fullyWrittenFamilies:families.filter(family=>family.fullyWrittenCourses===family.total).map(family=>family.id),
   practicalCases:practical.entries.length,practicalUncovered:practical.uncovered,pending,families}
-await fs.writeFile('docs/data/opening-coverage.json',JSON.stringify(report,null,2)+'\n')
+await emit('docs/data/opening-coverage.json',JSON.stringify(report,null,2)+'\n')
 const lines=['# Inventario e avanzamento delle aperture','',
   `Perimetro completo A approvato: le 12.322 posizioni delle fonti fissate in P01, ancora in corso di copertura. L'elenco sotto comprende i ${OPENING_EXPANSION_PLAN.length} rami storici e ${roadmapEntries.length} nuovi percorsi della roadmap; alcuni rami storici corrispondono a corsi già presenti. Alias, posizioni e corsi sono conteggi distinti.`,
-  '',`Percorsi giocabili: **${report.totalCourses}**, di cui **${report.historicalAddedCourses} dell'espansione storica**, **${report.documentedCourses} nuove linee integralmente documentate** e **${report.authoredContinuationCourses} con prefisso documentato e seguito didattico scritto**. Rami di questo elenco ancora da inserire: **${pending.length}**; questo numero non misura le posizioni mancanti nel perimetro A. La [verifica attuale Chekhover](OPENING-CHEKHOVER-P022-RESULTS.md) riporta copertura e residui effettivi.`,
+  '',`Percorsi giocabili: **${report.totalCourses}**, di cui **${report.historicalAddedCourses} dell'espansione storica**, **${report.documentedCourses} nuove linee integralmente documentate** e **${report.authoredContinuationCourses} con prefisso documentato e seguito didattico scritto**. Rami di questo elenco ancora da inserire: **${pending.length}**; questo numero non misura le posizioni mancanti nel perimetro A. La [verifica attuale Chekhover con 4...Cf6 e 4...Ad7](OPENING-CHEKHOVER-EARLY-P022-RESULTS.md) riporta copertura e residui effettivi.`,
   '', '## Metodo e limiti','',
   'Ogni nuova linea ha una posizione caratteristica collegata a un record del catalogo eco.json già fissato nel progetto. Un collegamento per trasposizione richiede la stessa posizione, turno, diritti di arrocco e possibilità di en passant. Gli eventuali passi redazionali successivi sono separati dalla parte documentata.',
-  '', 'Nell’espansione storica si preferiscono continuazioni già documentate fino a 24 semimosse; il seguito fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità. Le prime due linee P02.2 hanno 22 e 20 semimosse interamente documentate. La Zaitsev ha dieci semimosse documentate e due didattiche scritte. Il lotto Chekhover successivo aggiunge 56 semimosse documentate e due didattiche scritte in tre percorsi. I seguiti scritti sono verificati con confronti alla stessa radice e budget fissato; nessuna mossa dei sei percorsi della roadmap è generata dal motore. Il browser non avvia il motore. Stockfish 16 nativo non è lo Stockfish 19 del browser.',
+  '', 'Nell’espansione storica si preferiscono continuazioni già documentate fino a 24 semimosse; il seguito fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità. Le prime due linee P02.2 hanno 22 e 20 semimosse interamente documentate. La Zaitsev ha dieci semimosse documentate e due didattiche scritte. Il lotto Chekhover successivo aggiunge 56 semimosse documentate e due didattiche scritte in tre percorsi. Il lotto con 4...a6 aggiunge due moduli brevi, di dieci e dodici semimosse: 21 documentate e una didattica, sommate con i prefissi ripetuti. I seguiti scritti sono verificati con confronti alla stessa radice e budget fissato. Il lotto precoce con 4...Cf6 e 4...Ad7 aggiunge due moduli di dieci semimosse, 17 documentate e tre didattiche, con ordini distinti che convergono alla stessa posizione. Nessuna mossa dei percorsi della roadmap è generata dal motore. Il browser non avvia il motore. Stockfish 16 nativo non è lo Stockfish 19 del browser.',
   '', `Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. I ${report.reviewedCourses} percorsi dell'espansione storica hanno almeno due note strategiche individualmente scritte: ${report.reviewedNotes} note, di cui 36 nella Caro-Kann. I ${roadmapEntries.length} percorsi della roadmap aggiungono ${report.roadmapNotes} note minime specifiche, conteggiate separatamente. Le note compaiono dopo aver giocato e sono legate alle sequenze complete revisionate. La revisione integrale dei commenti resta P03.`,
   '', `Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle ${report.totalCourses} linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.`,
   '', 'Il riepilogo del turno distingue la propria mossa dalla risposta realmente giocata dall’avversario. Ogni semimossa dispone di una spiegazione posizionale; le note strategiche individuali restano un conteggio distinto. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md) mostra i passaggi ancora da scrivere per ogni famiglia.',
@@ -79,7 +80,9 @@ const lines=['# Inventario e avanzamento delle aperture','',
   '- [Controlli dei due esercizi Siciliana](data/opening-sicilian-p022-practical-verification.json)',
   '- [Controlli del seguito e dell’esercizio Zaitsev](data/opening-zaitsev-p022-practical-verification.json)',
   '- [Controlli dei tre percorsi e degli esercizi Chekhover](data/opening-chekhover-p022-practical-verification.json)',
+  '- [Controlli dei due percorsi e degli esercizi Chekhover con 4...a6](data/opening-chekhover-a6-p022-practical-verification.json)',
+  '- [Controlli degli ordini Chekhover con 4...Cf6 e 4...Ad7](data/opening-chekhover-early-p022-practical-verification.json)',
   '- [Fonte del catalogo](https://github.com/JeffML/eco.json)', '- [Nomi e convenzioni Lichess](https://github.com/lichess-org/chess-openings)',
   '', 'Aggiornamento del solo inventario: `node scripts/report-opening-coverage.mjs`. Non rilanciare i generatori storici o gli studi congelati per aggiornare un rapporto. Per il lotto Siciliana usare il verificatore offline e le prove separate indicate nel relativo rapporto.','']
-await fs.writeFile('docs/OPENING-COVERAGE.md',lines.join('\n'))
+await emit('docs/OPENING-COVERAGE.md',lines.join('\n'))
 console.log(JSON.stringify({families:families.length,totalCourses:report.totalCourses,added:report.addedCourses,reviewedCourses:report.reviewedCourses,reviewedNotes:report.reviewedNotes,pending:pending.length},null,2))

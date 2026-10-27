@@ -1,0 +1,73 @@
+{
+  "schema": 2,
+  "lot": "P02.2-SIC-06",
+  "status": "projection-not-publication",
+  "baselineCourses": 290,
+  "currentCourses": 290,
+  "currentExercises": 290,
+  "plannedCourses": 3,
+  "projectedCourses": 293,
+  "installed": false,
+  "sourcePositions": 12322,
+  "coverage": {
+    "exact": 1952,
+    "transposition-only": 201,
+    "absent": 10169
+  },
+  "projectedCoverage": {
+    "exact": 1956,
+    "transposition-only": 202,
+    "absent": 10164
+  },
+  "newlyReached": [
+    {
+      "id": "position:37ad4d193ecfba38",
+      "state": "exact"
+    },
+    {
+      "id": "position:1c0c85c09af4e9e7",
+      "state": "exact"
+    },
+    {
+      "id": "position:90d2577b74c0d2da",
+      "state": "exact"
+    },
+    {
+      "id": "position:07f8c6027781d867",
+      "state": "transposition-only"
+    },
+    {
+      "id": "position:138f2afb197c959e",
+      "state": "exact"
+    }
+  ],
+  "newExactPositions": 4,
+  "newTransposedPositions": 1,
+  "documentedPlies": 30,
+  "authoredPlies": 4,
+  "currentCommentary": {
+    "explainedHalfMoves": 9084,
+    "pairs": 4569,
+    "writtenPairs": 2033,
+    "fullyWrittenCourses": 63
+  },
+  "engine": null,
+  "engineEvidenceStatus": "not-checked-by-this-report",
+  "preservedFiles": 169,
+  "nextDesign": {
+    "scope": "Alternative del Bianco 5.Ac4 e 5.Ad3 dopo 4...Cf6 nella Siciliana aperta; due posizioni sorgenti da progettare, mantenendo 5.f3 nel resto del perimetro A.",
+    "sourcePrefixes": [
+      "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Bc4",
+      "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Bd3"
+    ],
+    "expectedSourcePositions": 2,
+    "model": "GPT-6 Astra",
+    "reasoning": "High",
+    "status": "Punto di ripresa, nessun nuovo percorso progettato qui."
+  },
+  "limitations": [
+    "Source-position coverage is not complete theory or evidence of learned skill.",
+    "Projection is never counted as installed content. Engine requests require explicit collect.",
+    "Test and browser outcomes belong to the QA record, not inferred from generated files."
+  ]
+}

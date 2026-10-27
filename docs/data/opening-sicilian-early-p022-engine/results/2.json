@@ -1,0 +1,35 @@
+{
+  "signature": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+  "jobId": "early-g6-bc4:deviation",
+  "status": "complete",
+  "attemptIds": [
+    "02"
+  ],
+  "result": {
+    "bestmove": "g2h3",
+    "searchmoves": [],
+    "depth": 19,
+    "nodes": 200296,
+    "cp": 432,
+    "mate": null,
+    "pv": [
+      "g2h3",
+      "e8g8",
+      "c4b3",
+      "d8c8",
+      "d1f3",
+      "b8c6",
+      "d4c6",
+      "b7c6",
+      "e1g1",
+      "f6d7",
+      "g1h1",
+      "a7a5",
+      "a2a4",
+      "a8b8",
+      "a1b1",
+      "g7c3"
+    ],
+    "attempt": "02"
+  }
+}

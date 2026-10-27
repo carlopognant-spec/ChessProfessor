@@ -24,8 +24,8 @@ describe('Chekhover documented branches and strict continuation',()=>{
     const old=practical.entries.filter(c=>ids.has(c.courseId))
     expect(old).toHaveLength(283);expect(hash(JSON.stringify(old))).toBe(plan.baseline.practicalDigest)
     for(const [file,sha] of Object.entries(plan.preserveFiles))expect(hash(fs.readFileSync(file)),file).toBe(sha)
-    expect(ALL_OPENING_JOURNEYS).toHaveLength(286);expect(practical.entries).toHaveLength(286)
-    expect(siblings).toHaveLength(25)
+    expect(ALL_OPENING_JOURNEYS).toHaveLength(293);expect(practical.entries).toHaveLength(293)
+    expect(siblings).toHaveLength(32)
   })
   it('binds four source records and four new notes to their exact sequences',()=>{
     for(const [i,course] of additions.entries.entries()){

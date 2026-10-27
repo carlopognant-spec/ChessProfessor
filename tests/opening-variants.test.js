@@ -14,8 +14,8 @@ describe('opening curricula and alternative structures',()=>{
       expect(new Set(courses.map(j=>j.moves.join(' '))).size,guide.id).toBe(courses.length)
       for(const j of courses){
         if(j.roadmapLot){
-          expect(j.moves.length,j.id).toBe({'sicilian:najdorf-bg5-classical':22,'sicilian:chekhover-bd7':20,'sicilian:chekhover-zaitsev':12,'sicilian:chekhover-c4-g6':16,'sicilian:chekhover-qd3':20,'sicilian:chekhover-qd2':22}[j.id])
-          const mixed={'sicilian:chekhover-zaitsev':[10,2],'sicilian:chekhover-qd3':[19,1],'sicilian:chekhover-qd2':[21,1]}[j.id]
+          expect(j.moves.length,j.id).toBe({'sicilian:najdorf-bg5-classical':22,'sicilian:chekhover-bd7':20,'sicilian:chekhover-zaitsev':12,'sicilian:chekhover-c4-g6':16,'sicilian:chekhover-qd3':20,'sicilian:chekhover-qd2':22,'sicilian:chekhover-a6-be3':10,'sicilian:chekhover-a6-c4':12,'sicilian:chekhover-nf6':10,'sicilian:chekhover-early-bd7':10,'sicilian:early-g6-bc4':14,'sicilian:early-a6':10,'sicilian:early-e5':10}[j.id])
+          const mixed={'sicilian:chekhover-zaitsev':[10,2],'sicilian:chekhover-qd3':[19,1],'sicilian:chekhover-qd2':[21,1],'sicilian:chekhover-a6-be3':[9,1],'sicilian:chekhover-nf6':[9,1],'sicilian:chekhover-early-bd7':[8,2],'sicilian:early-a6':[8,2],'sicilian:early-e5':[8,2]}[j.id]
           if(mixed)expect(j.provenance).toMatchObject({kind:'documented-prefix-with-authored-continuation',documentedPlies:mixed[0],authoredContinuationPlies:mixed[1],generatedPlies:0})
           else expect(j.provenance).toMatchObject({kind:'documented-line',documentedPlies:j.moves.length,generatedPlies:0})
         }else expect(j.moves.length,j.id).toBeGreaterThanOrEqual(30)

@@ -1,0 +1,39 @@
+{
+  "signature": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+  "jobId": "early-a6:deviation",
+  "status": "complete",
+  "attemptIds": [
+    "07"
+  ],
+  "result": {
+    "bestmove": "a6b5",
+    "searchmoves": [],
+    "depth": 19,
+    "nodes": 200050,
+    "cp": 348,
+    "mate": null,
+    "pv": [
+      "a6b5",
+      "d4b5",
+      "c8d7",
+      "b1c3",
+      "d7b5",
+      "c3b5",
+      "d8a5",
+      "b5c3",
+      "g8f6",
+      "e1g1",
+      "g7g6",
+      "a2a4",
+      "f8g7",
+      "a1a3",
+      "a5d8",
+      "a3b3",
+      "d8c8",
+      "c1g5",
+      "b8d7",
+      "c3d5"
+    ],
+    "attempt": "07"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "signature": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b",
+  "jobId": "chekhover-nf6:authored:9",
+  "status": "complete",
+  "attemptIds": [
+    "02"
+  ],
+  "result": {
+    "bestmove": "c8d7",
+    "searchmoves": [
+      "c8d7"
+    ],
+    "depth": 16,
+    "nodes": 165727,
+    "cp": -50,
+    "mate": null,
+    "pv": [
+      "c8d7",
+      "c1g5",
+      "b8c6",
+      "d4d2",
+      "h7h6",
+      "g5f6",
+      "g7f6",
+      "e1c1",
+      "f8g7",
+      "f3h4",
+      "d8a5",
+      "c1b1",
+      "e8c8",
+      "f1e2",
+      "f6f5",
+      "h4f5",
+      "d7f5",
+      "e4f5"
+    ],
+    "attempt": "02"
+  }
+}

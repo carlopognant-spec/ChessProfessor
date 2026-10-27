@@ -1,0 +1,39 @@
+{
+  "signature": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+  "jobId": "early-a6:continuation-control:9",
+  "status": "complete",
+  "attemptIds": [
+    "05"
+  ],
+  "result": {
+    "bestmove": "g8f6",
+    "searchmoves": [],
+    "depth": 17,
+    "nodes": 200185,
+    "cp": -53,
+    "mate": null,
+    "pv": [
+      "g8f6",
+      "c1e3",
+      "f6g4",
+      "e3g5",
+      "h7h6",
+      "g5h4",
+      "g7g5",
+      "h4g3",
+      "f8g7",
+      "f1e2",
+      "h6h5",
+      "h2h4",
+      "b8c6",
+      "d4b3",
+      "g7c3",
+      "b2c3",
+      "g4f6",
+      "h4g5",
+      "f6e4",
+      "d1d3"
+    ],
+    "attempt": "05"
+  }
+}

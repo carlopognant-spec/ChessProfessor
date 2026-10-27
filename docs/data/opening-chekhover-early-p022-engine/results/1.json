@@ -1,0 +1,33 @@
+{
+  "signature": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b",
+  "jobId": "chekhover-nf6:continuation-control:9",
+  "status": "complete",
+  "attemptIds": [
+    "01"
+  ],
+  "result": {
+    "bestmove": "b8c6",
+    "searchmoves": [],
+    "depth": 17,
+    "nodes": 169577,
+    "cp": -4,
+    "mate": null,
+    "pv": [
+      "b8c6",
+      "d4e3",
+      "g7g6",
+      "f1c4",
+      "f8g7",
+      "e1g1",
+      "e8g8",
+      "h2h3",
+      "c8e6",
+      "c4e6",
+      "f7e6",
+      "e3e2",
+      "d8d7",
+      "e4e5"
+    ],
+    "attempt": "01"
+  }
+}

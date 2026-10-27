@@ -1,0 +1,37 @@
+{
+  "signature": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+  "jobId": "early-g6-bc4:exercise-baseline",
+  "status": "complete",
+  "attemptIds": [
+    "01"
+  ],
+  "result": {
+    "bestmove": "f6g4",
+    "searchmoves": [],
+    "depth": 15,
+    "nodes": 152397,
+    "cp": 5,
+    "mate": null,
+    "pv": [
+      "f6g4",
+      "c4b5",
+      "e8f8",
+      "d1d2",
+      "g4e3",
+      "d2e3",
+      "d8b6",
+      "e1c1",
+      "b8c6",
+      "d4c6",
+      "b6e3",
+      "f2e3",
+      "b7c6",
+      "b5c6",
+      "a8b8",
+      "h2h3",
+      "g7c3",
+      "b2c3"
+    ],
+    "attempt": "01"
+  }
+}

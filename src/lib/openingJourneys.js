@@ -8,6 +8,9 @@ import openingExpansion from '../data/openingExpansion.js'
 import openingRoadmap from '../data/openingRoadmapCourses.js'
 import openingZaitsev from '../data/openingZaitsevCourses.js'
 import openingChekhover from '../data/openingChekhoverCourses.js'
+import openingChekhoverA6 from '../data/openingChekhoverA6Courses.js'
+import openingChekhoverEarly from '../data/openingChekhoverEarlyCourses.js'
+import openingSicilianEarly from '../data/openingSicilianEarlyCourses.js'
 import caroNotes from './openingCaroNotes.js'
 import strategicNotes from './openingStrategicNotes.js'
 import fullNotes from './openingFullNotes.js'
@@ -135,7 +138,7 @@ export const OPENING_JOURNEYS = OPENING_LESSONS.map(guide => {
     contrast:'Le basi e un primo impianto completo fino al mediogioco.'}
 })
 
-export const ALL_OPENING_JOURNEYS=[...OPENING_JOURNEYS,...OPENING_VARIANTS,...openingExpansion.entries,...openingRoadmap.entries,...openingZaitsev.entries,...openingChekhover.entries]
+export const ALL_OPENING_JOURNEYS=[...OPENING_JOURNEYS,...OPENING_VARIANTS,...openingExpansion.entries,...openingRoadmap.entries,...openingZaitsev.entries,...openingChekhover.entries,...openingChekhoverA6.entries,...openingChekhoverEarly.entries,...openingSicilianEarly.entries]
 export const familyJourneys=family=>ALL_OPENING_JOURNEYS.filter(j=>j.family===family)
 
 let sharedStories
