@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useMemo, useRef, useState } fro
 import { Chess } from 'chess.js'
 import { parseAndValidateFen } from '../lib/positionEditor.js'
 import { captureGameSnapshot, replayGame, restoreGameSnapshot } from '../lib/gameNavigation.js'
+import { detectPlayerOrientation, readBoardView, saveBoardView } from '../lib/boardOrientation.js'
 
 const GameContext = createContext(null)
 
@@ -20,6 +21,15 @@ export function GameProvider({ children }) {
   const [navigationHistorySan, setNavigationHistorySan] = useState([])
   // Chat undo restores the displayed prefix AND the continuation before its move.
   const [undoStack, setUndoStack] = useState([])
+  const [boardView, setBoardView] = useState(readBoardView)
+  const [boardViewError, setBoardViewError] = useState('')
+  const updateBoardView = useCallback(patch => {
+    const next = { ...boardView, ...patch }
+    setBoardView(next)
+    setBoardViewError(saveBoardView(next) ? '' : 'Il browser non permette di salvare la preferenza. La vista resta utilizzabile.')
+  }, [boardView])
+  const detectedOrientation = detectPlayerOrientation(importedPgnRef.current?.headers, boardView.playerName)
+  const boardOrientation = boardView.mode === 'auto' ? detectedOrientation ?? 'white' : boardView.mode
 
   const updateTimeline = useCallback((timeline) => {
     timelineRef.current = [...timeline]
@@ -116,6 +126,10 @@ export function GameProvider({ children }) {
   }, [undoStack, updateTimeline])
 
   const value = useMemo(() => ({
+    boardView,
+    boardOrientation,
+    updateBoardView,
+    boardViewError,
     fen,
     moveHistorySan,
     navigationHistorySan,
@@ -129,7 +143,7 @@ export function GameProvider({ children }) {
     loadFen,
     loadMoveSequence,
     canUndo: undoStack.length > 0,
-  }), [fen, moveHistorySan, navigationHistorySan, exportPgn, applyMove, applyMoveFromChat, undo, undoStack, resetGame, importPgn, loadFen, loadMoveSequence])
+  }), [boardView, boardOrientation, updateBoardView, boardViewError, fen, moveHistorySan, navigationHistorySan, exportPgn, applyMove, applyMoveFromChat, undo, undoStack, resetGame, importPgn, loadFen, loadMoveSequence])
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>
 }

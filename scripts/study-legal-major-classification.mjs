@@ -1,7 +1,6 @@
 import {readFile,writeFile} from 'node:fs/promises'
 import {createHash} from 'node:crypto'
 import assert from 'node:assert/strict'
-import {Chess} from 'chess.js'
 import {reclassifyReviewedMoves} from '../src/lib/reviewMoves.js'
 import {selectRefinementView,REFINEMENT_POLICY} from '../src/lib/analysisRefinement.js'
 import {validGrandeSearch} from '../src/lib/grandeProofs.js'

@@ -4,14 +4,18 @@ import { Chessboard } from 'react-chessboard'
 import { playUci } from '../lib/analysisHistory.js'
 import { createPracticeAnalyzer, practiceExplanation, practiceExplanationEntry, practiceHint } from '../lib/reviewPractice.js'
 import MoveExplanation from './MoveExplanation.jsx'
+import BoardOrientationControls from './BoardOrientationControls.jsx'
+import { useGame } from '../context/GameContext.jsx'
 import { createPracticeProgressStore } from '../lib/reviewPracticeProgress.js'
 import './ReviewPracticePanel.css'
 
 export default function ReviewPracticePanel({ candidates, engine, onClose }) {
+  const { boardView, boardOrientation } = useGame()
   engine = engine ?? { ready: false, loading: false, error: '' }
   const [exercises] = useState(() => candidates.slice(0, 5))
   const [index, setIndex] = useState(0)
   const candidate = exercises[index]
+  const practiceOrientation = boardView.mode === 'auto' ? candidate?.side === 'b' ? 'black' : 'white' : boardOrientation
   const engineRef = useRef(engine)
   engineRef.current = engine
   const analyzer = useMemo(() => createPracticeAnalyzer({
@@ -218,19 +222,20 @@ export default function ReviewPracticePanel({ candidates, engine, onClose }) {
       <button onClick={close}>Chiudi pratica</button>
     </div>
     <p>Mossa {candidate.moveNumber}, giocano {candidate.side === 'w' ? 'i Bianchi' : 'i Neri'}. Scegli tu la continuazione.</p>
+    <BoardOrientationControls orientation={practiceOrientation} />
     {engine.loading && <p role="status">{engine.message || 'Caricamento del motore…'} Al primo avvio il download è di circa 100 MB.</p>}
     {engine.error && <div role="alert"><p>{String(engine.error)}</p><button onClick={() => {
       interrupt(); preparedRef.current = null; setPrepared(null)
       engineRef.current.restart()
     }}>Riavvia motore</button></div>}
     <div className="practice-layout">
-      <div className="practice-board" data-fen={fen} aria-label="Scacchiera della pratica">
+      <section className="practice-board" data-fen={fen} data-orientation={practiceOrientation} aria-label="Scacchiera della pratica">
         <Chessboard options={{ id: 'review-practice-board', position: fen,
-          boardOrientation: candidate.side === 'b' ? 'black' : 'white', allowDragging: canMove,
+          boardOrientation: practiceOrientation, allowDragging: canMove,
           onPieceDrop: drop, onSquareClick: click, squareStyles, arrows, allowDrawingArrows: false,
           lightSquareStyle: { backgroundColor: '#EDE6D6' }, darkSquareStyle: { backgroundColor: '#7C6A53' },
           animationDurationInMs: 120 }} />
-      </div>
+      </section>
       <div className="practice-controls">
         <p role="status" aria-live="polite" aria-atomic="true">{message || (engine.ready ? 'Preparazione della posizione…' : 'In attesa del motore…')}</p>
         <form onSubmit={event => { event.preventDefault(); tryMove(input.trim()) }}>

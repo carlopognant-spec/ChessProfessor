@@ -404,6 +404,12 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
     }
   }
 
+  function startRefinement(plan) {
+    setRefinementJob({ entries: analysisEntriesRef.current, plan, signature: signatureRef.current })
+    setRefinementProgress(null)
+    setRefinementNote('')
+  }
+
   const displayedData = evalData?.fen === fen ? evalData : null
   const availableLines = displayedData?.mate === 0 ? 0
     : new Set((displayedData?.lines ?? []).map(line => line.pv?.[0]).filter(Boolean)).size
@@ -458,9 +464,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
       {refinementPlan && <div className="analysis-refinement">
         <button type="button" disabled={analyzing || refinementJob !== null || engineFailed || !refinementPlan.selectedPlies.length}
           onClick={() => {
-            setRefinementJob({ entries: analysisEntriesRef.current, plan: refinementPlan, signature: signatureRef.current })
-            setRefinementProgress(null)
-            setRefinementNote('')
+            startRefinement(refinementPlan)
             setAnalysisEnabled(true)
           }}>
           Approfondisci le mosse dubbie{refinementPlan.selectedPlies.length ? ` (${refinementPlan.selectedPlies.length})` : ''}
@@ -473,9 +477,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
               setRefinementNote('Nessuna Grande da verificare con i dati attuali.')
               return
             }
-            setRefinementJob({ entries: analysisEntriesRef.current, plan, signature: signatureRef.current })
-            setRefinementProgress(null)
-            setRefinementNote('')
+            startRefinement(plan)
             setAnalysisEnabled(true)
           }}>Verifica le Grandi</button>}
         {experimentalSpecials && <button type="button"
@@ -486,9 +488,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
               setRefinementNote('Nessun sacrificio da verificare con i dati attuali.')
               return
             }
-            setRefinementJob({ entries: analysisEntriesRef.current, plan, signature: signatureRef.current })
-            setRefinementProgress(null)
-            setRefinementNote('')
+            startRefinement(plan)
             setAnalysisEnabled(true)
           }}>Verifica i sacrifici</button>}
         {experimentalSpecials && <button type="button"
@@ -496,9 +496,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
           onClick={() => {
             const plan=buildRefinementPlan(analysisEntriesRef.current,{criticalOnly:true})
             if(!plan.selectedPlies.length){setRefinementNote('Nessuna nuova scelta decisiva da verificare con i dati attuali.');return}
-            setRefinementJob({entries:analysisEntriesRef.current,plan,signature:signatureRef.current})
-            setRefinementProgress(null)
-            setRefinementNote('')
+            startRefinement(plan)
             if(plan.positions.length) setAnalysisEnabled(true)
           }}>Verifica le scelte decisive</button>}
         <p className="notice">Analisi più lenta, fino a 12 mosse e 4 verifiche dei sacrifici per richiesta. L'analisi iniziale resta disponibile.</p>

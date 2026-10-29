@@ -5,6 +5,13 @@ import MoveClassificationBadge from '../src/components/MoveClassificationBadge.j
 import { getReviewSquareStyles } from '../src/lib/moveReviewPresentation.js'
 
 describe('move classification badge', () => {
+  it('keeps the badge upright at the mirrored destination when viewing from Black', () => {
+    const markup = renderToStaticMarkup(React.createElement(MoveClassificationBadge, {
+      orientation: 'black', entry: { fenBefore: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1', playedMove: 'Nf3', classification: 'best' },
+    }))
+    expect(markup).toContain('data-move-square="f3"')
+    expect(markup).toContain('translate(34.75 27.75)')
+  })
   it.each([
     ['r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1', 'O-O', 'g1', 'e1'],
     ['7k/P7/8/8/8/8/8/7K w - - 0 1', 'a8=Q+', 'a8', 'a7'],

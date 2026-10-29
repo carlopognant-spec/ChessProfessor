@@ -14,12 +14,14 @@ function ClassificationIcon({ icon }) {
   </g>
 }
 
-export default function MoveClassificationBadge({ entry, move }) {
+export default function MoveClassificationBadge({ entry, move, orientation = 'white' }) {
   const square = useMemo(() => (move ?? getReviewedMove(entry))?.to ?? null, [entry, move])
   const style = MOVE_APPEARANCE[entry?.classification]
   if (!square || !style) return null
-  const x = (square.charCodeAt(0) - 97 + 0.5) * 12.5 + 3.5
-  const y = (8.5 - Number(square[1])) * 12.5 - 3.5
+  const baseX = (square.charCodeAt(0) - 97 + 0.5) * 12.5
+  const baseY = (8.5 - Number(square[1])) * 12.5
+  const x = (orientation === 'black' ? 100 - baseX : baseX) + 3.5
+  const y = (orientation === 'black' ? 100 - baseY : baseY) - 3.5
   const label = `${entry.playedMove}: ${style.label}`
   return (
     <svg className="move-classification-overlay" viewBox="0 0 100 100" role="img"

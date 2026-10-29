@@ -3,7 +3,7 @@ import { CLASSIFICATION_SCORE_MODEL } from './evaluation.js'
 import { REVIEW_POLICY_VERSION } from './reviewEvaluation.js'
 import { SPECIAL_POLICY } from './specialPolicy.js'
 
-export const CLASSIFICATION_POLICY_VERSION = 'classification-policy-v1'
+const CLASSIFICATION_POLICY_VERSION = 'classification-policy-v1'
 
 export function createClassificationPolicy() {
   return {

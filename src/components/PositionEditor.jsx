@@ -67,15 +67,15 @@ export default function PositionEditor({ draft, onDraftChange, selectedPiece, on
           <input value={fields[3] ?? '-'} onChange={(event) => updateField(3, event.target.value || '-')} />
         </label>
       </div>
-      <div className="castling-controls" aria-label="Arrocchi">
+      <fieldset className="castling-controls" aria-label="Arrocchi">
         {CASTLING_FLAGS.map((flag) => (
           <label key={flag}>
             <input type="checkbox" checked={castling.includes(flag)} onChange={() => toggleCastling(flag)} />
             {flag}
           </label>
         ))}
-      </div>
-      <div className="piece-palette" aria-label="Palette pezzi">
+      </fieldset>
+      <fieldset className="piece-palette" aria-label="Palette pezzi">
         {PIECES.map((piece) => (
           <button
             type="button"
@@ -90,7 +90,7 @@ export default function PositionEditor({ draft, onDraftChange, selectedPiece, on
         <button type="button" className={selectedPiece === '' ? 'selected-piece' : ''} onClick={() => onPieceSelect?.('')}>
           Cancella
         </button>
-      </div>
+      </fieldset>
       <button type="button" onClick={applyPosition}>Applica posizione</button>
       {error && <p className="notice">{error}</p>}
     </section>

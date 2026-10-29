@@ -3,6 +3,7 @@ import { Chessboard } from 'react-chessboard'
 import { Chess } from 'chess.js'
 import { useGame } from '../context/GameContext.jsx'
 import MoveClassificationBadge from './MoveClassificationBadge.jsx'
+import BoardOrientationControls from './BoardOrientationControls.jsx'
 import { getReviewedMove, getReviewSquareStyles } from '../lib/moveReviewPresentation.js'
 import { buildEngineArrowSegments, buildEngineArrows, resolveEngineForFen, resolveMoveReview } from '../lib/analysisPresentation.js'
 
@@ -10,6 +11,15 @@ const LIGHT_SQUARE = '#EDE6D6'
 const DARK_SQUARE = '#7C6A53'
 
 function Arrow({ arrow }) {
+  if (arrow.bend) {
+    const dx = Math.sign(arrow.x2 - arrow.bend.x), dy = Math.sign(arrow.y2 - arrow.bend.y)
+    const nx = arrow.x2 - dx * 4.2, ny = arrow.y2 - dy * 4.2
+    return <g className="engine-arrow" data-from={arrow.startSquare} data-to={arrow.endSquare} data-kind="knight" opacity="0.88" fill="#81B64C">
+      <path data-arrow-shaft="knight" d={`M${arrow.x1},${arrow.y1} L${arrow.bend.x},${arrow.bend.y} L${nx},${ny}`}
+        fill="none" stroke="#81B64C" strokeWidth="2.6" strokeLinejoin="miter" strokeLinecap="round" />
+      <path d={`M${arrow.x2},${arrow.y2} L${nx - dy * 3.3},${ny + dx * 3.3} L${nx + dy * 3.3},${ny - dx * 3.3} Z`} />
+    </g>
+  }
   const length = Math.hypot(arrow.x2 - arrow.x1, arrow.y2 - arrow.y1)
   const angle = Math.atan2(arrow.y2 - arrow.y1, arrow.x2 - arrow.x1) * 180 / Math.PI
   const neck = length - 4.2
@@ -20,7 +30,7 @@ function Arrow({ arrow }) {
 }
 
 export default function Board({ id = 'study-board', editorPiece = null, displayFen, onEditorSquare, analysisEntries = [], engineData = null }) {
-  const { fen, moveHistorySan, navigationHistorySan, applyMove } = useGame()
+  const { fen, moveHistorySan, navigationHistorySan, applyMove, boardOrientation } = useGame()
   const [moveFrom, setMoveFrom] = useState(null)
   const [optionSquares, setOptionSquares] = useState({})
   const [userArrows, setUserArrows] = useState([])
@@ -45,7 +55,8 @@ export default function Board({ id = 'study-board', editorPiece = null, displayF
     const primary = analysisEngine?.lines?.find(line => (line.multipv ?? 1) === 1)
     return buildEngineArrows(primary ? [primary] : [])
   }, [analysisEngine, review, reviewingGame, editorPiece])
-  const engineArrowSegments = useMemo(() => buildEngineArrowSegments(engineArrows), [engineArrows])
+  const arrowFen = reviewingGame ? review?.entry.fenBefore : boardFen
+  const engineArrowSegments = useMemo(() => buildEngineArrowSegments(engineArrows, arrowFen, boardOrientation), [engineArrows, arrowFen, boardOrientation])
 
   const game = useMemo(() => {
     try {
@@ -129,7 +140,7 @@ export default function Board({ id = 'study-board', editorPiece = null, displayF
     onArrowsChange,
     allowDrawingArrows: true,
     clearArrowsOnPositionChange: false,
-    boardOrientation: 'white',
+    boardOrientation,
     animationDurationInMs: 120,
     id,
     lightSquareStyle: { backgroundColor: LIGHT_SQUARE },
@@ -139,20 +150,24 @@ export default function Board({ id = 'study-board', editorPiece = null, displayF
 
   return (
     <>
-    <div className="board-stage" data-fen={boardFen}>
+    <BoardOrientationControls />
+    <div className="board-stage" data-fen={boardFen} data-orientation={boardOrientation}>
       <Chessboard options={chessboardOptions} />
       {engineArrowSegments.length > 0 && (
-        <svg className="engine-arrow-overlay" data-fen={reviewingGame ? review.entry.fenBefore : boardFen} viewBox="0 0 100 100" aria-label={reviewingGame ? 'Migliore mossa possibile prima della mossa giocata' : 'Migliore mossa di Stockfish'}>
+        <svg className="engine-arrow-overlay" data-fen={reviewingGame ? review.entry.fenBefore : boardFen} viewBox="0 0 100 100" aria-label={reviewingGame ? review.better ? 'Migliore mossa possibile prima della mossa giocata' : 'Mossa di riferimento Stockfish prima della mossa giocata' : 'Migliore mossa di Stockfish'}>
           {engineArrowSegments.map(arrow => <Arrow key={arrow.markerId} arrow={arrow} />)}
         </svg>
       )}
-      {review && <MoveClassificationBadge entry={review.entry} move={reviewedMove} />}
+      {review && <MoveClassificationBadge entry={review.entry} move={reviewedMove} orientation={boardOrientation} />}
     </div>
     {engineArrowSegments.length > 0 && (
       <p className="engine-arrow-status" aria-live="polite">
-        {reviewingGame ? 'Migliore alternativa alla mossa giocata' : 'Migliore mossa Stockfish'}
+        {reviewingGame ? review.better ? 'Migliore alternativa alla mossa giocata' : 'Mossa di riferimento Stockfish prima della mossa giocata' : 'Migliore mossa Stockfish'}
       </p>
     )}
+    {review?.playedBest && <p className="engine-arrow-status" role="status">La mossa giocata era la migliore di Stockfish.</p>}
+    {!review?.playedBest && review?.referencePlayed && <p className="engine-arrow-status" role="status">La mossa giocata coincide con il riferimento; manca una valutazione verificabile.</p>}
+    {!review?.playedBest && review?.equivalentBest && <p className="engine-arrow-status" role="status">La mossa giocata ha la stessa valutazione della migliore di Stockfish.</p>}
     </>
   )
 }

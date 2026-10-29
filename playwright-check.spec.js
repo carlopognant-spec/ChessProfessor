@@ -192,6 +192,35 @@ for (const width of [360, 1280]) {
   })
 }
 
+test('position editor exposes named native groups and preserves keyboard controls on desktop and mobile', async ({ page }) => {
+  for (const width of [1280, 390]) {
+    await page.setViewportSize({ width, height: 844 })
+    await page.goto(appUrl)
+    await openTools(page, 'Editor scacchiera')
+    const editor = page.getByRole('region', { name: 'Editor posizione FEN', exact: true })
+    const castling = editor.getByRole('group', { name: 'Arrocchi', exact: true })
+    const palette = editor.getByRole('group', { name: 'Palette pezzi', exact: true })
+    await expect(castling).toHaveJSProperty('tagName', 'FIELDSET')
+    await expect(palette).toHaveJSProperty('tagName', 'FIELDSET')
+    const kingSide = castling.getByRole('checkbox', { name: 'K', exact: true })
+    await kingSide.focus()
+    await page.keyboard.press('Space')
+    await expect(kingSide).not.toBeChecked()
+    const queen = palette.getByRole('button', { name: 'Q', exact: true })
+    await queen.focus()
+    await page.keyboard.press('Enter')
+    await expect(queen).toHaveClass('selected-piece')
+    await editor.getByRole('button', { name: 'Applica posizione', exact: true }).click()
+    const expected = new Chess().fen().replace(' KQkq ', ' Qkq ')
+    await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', expected)
+    for (const group of [castling, palette]) {
+      const box = await group.boundingBox()
+      expect(box.x).toBeGreaterThanOrEqual(0)
+      expect(box.x + box.width).toBeLessThanOrEqual(width)
+    }
+  }
+})
+
 test('local archive preserves the full PGN across navigation and reload, imports, exports, renames and deletes', async ({ page }) => {
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
@@ -275,6 +304,14 @@ test('saved analysis opens offline without a worker and obsolete analysis is pre
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(2)
   await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  const table = page.getByRole('table', { name: 'Conteggi classificazioni', exact: true })
+  await expect(table).toHaveJSProperty('tagName', 'TABLE')
+  await expect(table.getByRole('columnheader')).toHaveText(['Categoria', 'Bianco', 'Nero'])
+  await expect(table.getByRole('rowheader', { name: 'Errore grave', exact: true })).toBeVisible()
+  await expect(page.getByRole('region', { name: 'Semimosse analizzate', exact: true })).toBeVisible()
+  const tableBox = await table.boundingBox()
+  expect(tableBox.x).toBeGreaterThanOrEqual(0)
+  expect(tableBox.x + tableBox.width).toBeLessThanOrEqual(360)
   const precision = page.locator('.accuracy-summary')
   await expect(precision).toContainText('Precisione 0–100')
   await expect(precision).toContainText('Bianco:')

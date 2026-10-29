@@ -110,6 +110,8 @@ async function play(panel, san) {
 test('legacy errors are freshly verified, played on the board, and never change the original game', async ({ page }) => {
   const { panel, originalFen, originalPgn } = await openPractice(page)
   await ready(panel)
+  await expect(panel.getByRole('region', { name: 'Scacchiera della pratica', exact: true })).toHaveClass('practice-board')
+  await panel.getByRole('combobox', { name: 'Orientamento scacchiera', exact: true }).selectOption('black')
   await expect(panel).not.toContainText('In partita hai giocato')
   await expect(page.locator('.engine-eval-label')).toBeHidden()
   await expect(panel.locator('.practice-explanation')).toHaveCount(0)
@@ -250,6 +252,29 @@ test('an old false error is excluded after fresh verification without a penalty'
   await expect(panel).toHaveAttribute('data-practice-status', 'not-applicable')
   await expect(panel).toContainText('non conferma un errore utile')
   await expect(panel.locator('.practice-progress')).toContainText('0 errori')
+})
+
+test('knight solution hints remain L-shaped after rotating a mobile practice board without changing progress', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  const { panel } = await openPractice(page, { allErrors: true,
+    pgn: '[SetUp "1"]\n[FEN "7k/8/7p/8/3N4/8/7P/K7 w - - 0 1"]\n\n1. Ka2 Kh7 *' })
+  await ready(panel)
+  await panel.getByRole('button', { name: 'Mostra soluzione', exact: true }).click()
+  const board = panel.locator('.practice-board'), fen = await board.getAttribute('data-fen')
+  const arrow = board.locator('path[marker-end]')
+  await expect(arrow).toHaveCount(1)
+  expect((await arrow.getAttribute('d')).match(/L/g)).toHaveLength(2)
+  const color = await arrow.getAttribute('stroke')
+  const progress = await panel.locator('.practice-progress').innerText()
+  const searches = await page.evaluate(() => window.practiceCommands.filter(command => command.startsWith('go ')).length)
+  await panel.getByRole('button', { name: 'Ruota scacchiera', exact: true }).click()
+  await expect(board).toHaveAttribute('data-orientation', 'black')
+  await expect(board).toHaveAttribute('data-fen', fen)
+  expect((await arrow.getAttribute('d')).match(/L/g)).toHaveLength(2)
+  await expect(arrow).toHaveAttribute('stroke', color)
+  await expect(panel.locator('.practice-progress')).toHaveText(progress, { useInnerText: true })
+  expect(await page.evaluate(() => window.practiceCommands.filter(command => command.startsWith('go ')).length)).toBe(searches)
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
 })
 
 test('underpromotion can be selected when making a move on the practice board', async ({ page }) => {

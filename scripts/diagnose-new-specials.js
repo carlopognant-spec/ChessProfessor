@@ -2,7 +2,6 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
 import assert from 'node:assert/strict'
-import { Chess } from 'chess.js'
 import { classifyReviewedMove, applyMoveFacts } from '../src/lib/reviewEvaluation.js'
 import { reclassifyReviewedMoves } from '../src/lib/reviewMoves.js'
 import { analyzeGame } from '../src/lib/gameAnalysis.js'

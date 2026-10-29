@@ -2,8 +2,6 @@ import {readFile,writeFile,mkdir,access} from 'node:fs/promises'
 import {createHash} from 'node:crypto'
 import {fileURLToPath} from 'node:url'
 import assert from 'node:assert/strict'
-import {nativeWdlInterval} from '../src/lib/nativeWdl.js'
-import {validGrandeSearch} from '../src/lib/grandeProofs.js'
 import {capturedNodeSearch} from './qa/captured-node-search.js'
 import {verifyCapturedSearch} from './qa/verify-captured-search.mjs'
 const area='agent-output/depth-stability-v1',mode=process.argv[2],nodes=10000000
