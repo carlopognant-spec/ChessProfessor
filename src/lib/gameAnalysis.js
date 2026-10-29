@@ -2,8 +2,11 @@ import { ENGINE_CONFIG } from './engineConfig.js'
 import { Chess } from 'chess.js'
 import { MOVE_CLASSIFICATION } from './classification.js'
 import { classifyReviewedMove, applyMoveFacts } from './reviewEvaluation.js'
-import { loadOpeningBook } from './openingBook.js'
-import { classifySpecialMove, refreshPreviousSacrifice } from './specialClassification.js'
+import { loadAnalysisBook } from './analysisBookMetadata.js'
+import { classifySpecialMove, refreshPreviousSacrifice } from './analysisSpecialClassification.js'
+import { appendHistory, historyKey, uciOf } from './analysisHistory.js'
+import { annotateClassification } from './classificationDecision.js'
+import { createClassificationPolicy } from './classificationPolicy.js'
 
 const CLASSIFICATION_ORDER = [
   MOVE_CLASSIFICATION.brilliant,
@@ -97,6 +100,8 @@ export async function analyzeGame({
   explorerThreshold = ENGINE_CONFIG.explorerThreshold,
   openingBook,
   analysisKey = '',
+  // Offline replay callbacks keep their original FEN-only contract.
+  historyAware = false,
   signal,
   onProgress,
   onEntry,
@@ -106,8 +111,10 @@ export async function analyzeGame({
   }
 
   const game = new Chess(baseFen)
+  let positionHistory = { initialFen: game.fen(), moves: [] }
   throwIfAborted(signal)
-  const book = openingBook ?? await loadOpeningBook()
+  const book = openingBook ?? await loadAnalysisBook()
+  const classificationPolicy = createClassificationPolicy()
   throwIfAborted(signal)
   const results = []
   const history = []
@@ -120,7 +127,8 @@ export async function analyzeGame({
     const moveNumber = Number(fenBefore.split(' ')[5])
     const moveHistorySan = [...history]
     const side = game.turn()
-    const cacheKey = `analysis:${analysisKey ? analysisKey + ':' : ''}${fenBefore}:${san}`
+    const contextKey = historyAware ? `history:${historyKey(positionHistory)}:` : ''
+    const cacheKey = `analysis:${analysisKey ? analysisKey + ':' : ''}${contextKey}${fenBefore}:${san}`
     let entry = session.get(cacheKey)
     let move
 
@@ -129,7 +137,11 @@ export async function analyzeGame({
       // The UI uses the same search profile before and after each move.
       const reusable = analyzePosition === analyzePlayedPosition
         && previousEntry?.fenAfter === fenBefore && previousEntry.playedEngine
-      const engine = reusable || await analyzePosition(fenBefore)
+        && (!historyAware || historyKey(previousEntry.playedEngine.history) === historyKey(positionHistory))
+        && previousEntry.playedEngine
+      const engine = reusable || await (historyAware
+        ? analyzePosition(fenBefore, { history: positionHistory }) : analyzePosition(fenBefore))
+      if (historyAware && historyKey(engine.history) !== historyKey(positionHistory)) throw Error('Risultato senza storico coerente')
       throwIfAborted(signal)
 
       let explorer = null
@@ -145,7 +157,7 @@ export async function analyzeGame({
         }
       }
 
-      // Cache position/move data only; book flags and history belong to this game.
+      // Cache raw searches; book flags and SAN display history belong to this game.
       entry = {
         fenBefore,
         playedMove: san,
@@ -157,7 +169,10 @@ export async function analyzeGame({
       entry.fenAfter = game.fen()
 
       if (typeof analyzePlayedPosition === 'function') {
-        const playedEngine = await analyzePlayedPosition(game.fen())
+        const childHistory = appendHistory(positionHistory, uciOf(move))
+        const playedEngine = await (historyAware
+          ? analyzePlayedPosition(game.fen(), { history: childHistory }) : analyzePlayedPosition(game.fen()))
+        if (historyAware && historyKey(playedEngine.history) !== historyKey(childHistory)) throw Error('Risultato senza storico coerente')
         throwIfAborted(signal)
         entry = {
           ...entry,
@@ -172,6 +187,7 @@ export async function analyzeGame({
     }
 
     move ??= game.move(san)
+    positionHistory = appendHistory(positionHistory, uciOf(move))
     history.push(move.san)
     // Preserve the existing final-mate classification even for named mating traps.
     const isBookMove = bookPathActive && !game.isCheckmate() && book.hasPosition(entry.fenAfter)
@@ -185,6 +201,7 @@ export async function analyzeGame({
       moveHistorySan,
       isBookMove,
       isFirstBookDeviation,
+      openingBookMetadata: book.metadata ?? null,
     }
     if (entry.playedEngine) {
       entry = classifyReviewedMove({
@@ -195,9 +212,10 @@ export async function analyzeGame({
       entry = applyMoveFacts(entry)
     }
 
+    if (entry.classification) entry = annotateClassification(entry, undefined, classificationPolicy)
     results.push(entry)
     const refreshed = refreshPreviousSacrifice(results)
-    if (refreshed !== results) results[results.length - 2] = refreshed[refreshed.length - 2]
+    if (refreshed !== results) results[results.length - 2] = annotateClassification(refreshed[refreshed.length - 2], undefined, classificationPolicy)
     onEntry?.(entry, [...results])
     onProgress?.({ current: index + 1, total: moves.length })
   }

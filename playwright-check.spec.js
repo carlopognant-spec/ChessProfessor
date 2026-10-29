@@ -65,7 +65,7 @@ async function openRefinementExample(page, delay = 5, example = null) {
           else this.onmessage?.({ data: 'uciok' })
         })
         if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
-        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('position fen ')) this.fen = window.decodePositionCommand(command)
         if (command.startsWith('go nodes ')) {
           const deep = command === 'go nodes 1000000'
           const root = command.match(/ searchmoves (\S+)/)?.[1]
@@ -106,6 +106,12 @@ async function openRefinementExample(page, delay = 5, example = null) {
 }
 
 async function openTools(page, section) {
+  await page.evaluate(async () => {
+    if (!window.decodePositionCommand) {
+      const { decodePositionCommand } = await import('/ChessProfessor/src/lib/analysisHistory.js')
+      window.decodePositionCommand = decodePositionCommand
+    }
+  })
   const menu = page.locator('.tools-menu')
   if (!await menu.evaluate(element => element.open)) await menu.locator(':scope > summary').click()
   const panel = menu.locator('.tools-section').filter({ has: page.locator('summary').filter({ hasText: new RegExp(`^${section}$`) }) })
@@ -252,7 +258,7 @@ test('saved analysis opens offline without a worker and obsolete analysis is pre
       postMessage(command) {
         if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
         if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
-        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('position fen ')) this.fen = window.decodePositionCommand(command)
         if (command.startsWith('go ')) queueMicrotask(() => {
           const move = this.fen.split(' ')[1] === 'b' ? 'b8c6' : 'g1f3'
           this.onmessage?.({ data: `info depth 12 multipv 1 score cp 25 pv ${move}` })
@@ -502,7 +508,7 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
           this.messages.push(command)
           if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
           if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
-          if (command.startsWith('position fen ')) this.fen = command.slice(13)
+          if (command.startsWith('position fen ')) this.fen = window.decodePositionCommand(command)
           if (command.startsWith('go nodes') && !window.holdEngineSearch) {
             const move = this.fen.split(' ')[1] === 'b' ? 'b8c6' : 'b1c3'
             queueMicrotask(() => {
@@ -593,7 +599,7 @@ test('partial MultiPV duplicate roots never leave old arrows after a position ch
       postMessage(command) {
         if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
         if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
-        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('position fen ')) this.fen = window.decodePositionCommand(command)
         if (command.startsWith('go nodes')) {
           const moves = this.fen.split(' ')[1] === 'b' ? ['g8f6', 'g8f6', 'e7e5', 'd7d5', 'b8c6'] : ['g1f3', 'g1f3', 'e2e4', 'd2d4', 'b1c3']
           queueMicrotask(() => {
@@ -645,7 +651,7 @@ test('completed analysis navigation stays fast without new engine searches', asy
       postMessage(command) {
         if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
         if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
-        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('position fen ')) this.fen = window.decodePositionCommand(command)
         if (command.startsWith('go nodes')) {
           window.engineSearchCount++
           const moves = this.fen.split(' ')[1] === 'b'
@@ -867,7 +873,7 @@ test('clears previous arrows while a newly imported position is waiting for anal
       postMessage(command) {
         if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
         if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
-        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('position fen ')) this.fen = window.decodePositionCommand(command)
         if (command.startsWith('go nodes')) {
           const black = this.fen.split(' ')[1] === 'b'
           setTimeout(() => {
@@ -902,7 +908,7 @@ test('rapid imports and reset stop the old search before another go command', as
         if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
         if (command.startsWith('position fen ')) {
           if (this.active) throw new Error('position changed during a search')
-          this.fen = command.slice(13)
+          this.fen = window.decodePositionCommand(command)
         }
         if (command.startsWith('go nodes')) {
           if (this.active) throw new Error('overlapping go commands')
@@ -951,18 +957,177 @@ test('rapid imports and reset stop the old search before another go command', as
   expect(errors).toEqual([])
 })
 
-test('real mating game shows mate given instead of a missing evaluation', async ({ page }) => {
+async function installControlledAnalysisWorker(page) {
+  await page.addInitScript(() => {
+    window.analysisWorkers = []
+    window.analysisAutoFinish = false
+    window.analysisRejections = []
+    window.addEventListener('unhandledrejection', event => window.analysisRejections.push(String(event.reason)))
+    window.Worker = class {
+      constructor() { this.messages = []; window.analysisWorkers.push(this) }
+      postMessage(command) {
+        this.messages.push(command)
+        if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
+        if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
+        if (command.startsWith('position fen ')) {
+          if (this.active) throw Error('position changed during a search')
+          this.fen = window.decodePositionCommand(command)
+        }
+        if (command.startsWith('go ')) {
+          if (this.active) throw Error('overlapping searches')
+          this.active = true
+          if (window.analysisAutoFinish) queueMicrotask(() => this.finish())
+        }
+        // Tests explicitly deliver the stop acknowledgement, including late scores.
+      }
+      finish(score = 20) {
+        if (!this.active) throw Error('no active search')
+        this.active = false
+        const move = this.fen.split(' ')[1] === 'b' ? 'g8f6' : 'b1c3'
+        this.onmessage?.({ data: `info depth 12 multipv 1 score cp ${score} pv ${move}` })
+        this.onmessage?.({ data: `bestmove ${move}` })
+      }
+      terminate() { this.terminated = true }
+    }
+  })
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. f3 e5 2. g4 Qh4# 0-1')
+  await page.getByRole('textbox', { name: 'PGN da importare' }).fill('1. e4 e5 2. Nf3 Nc6 *')
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
+}
+
+async function completeFirstAnalysisMove(page) {
+  await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
+  await expect.poll(() => page.evaluate(() => window.analysisWorkers[0]?.messages.filter(c => c.startsWith('go ')).length)).toBe(1)
+  await page.evaluate(() => window.analysisWorkers[0].finish())
+  await expect.poll(() => page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(2)
+  await page.evaluate(() => window.analysisWorkers[0].finish())
+  await expect(page.locator('.analysis-row-button')).toHaveCount(1)
+  await expect.poll(() => page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(3)
+}
+
+test('initial analysis pause preserves results, UCI history and progress through navigation, then resumes after draining stop', async ({ page }) => {
+  const errors = []
+  page.on('pageerror', error => errors.push(error.message))
+  await installControlledAnalysisWorker(page)
+  await completeFirstAnalysisMove(page)
+  const firstRow = await page.locator('.analysis-row-button').first().innerText()
+  await page.getByRole('button', { name: 'Primo', exact: true }).click()
+  await expect(page.locator('.engine-eval-label')).toHaveText('Analisi partita: 25%')
+  await expect(page.getByRole('progressbar', { name: 'Avanzamento analisi partita' })).toHaveAttribute('value', '25')
+  await page.getByRole('button', { name: 'Interrompi analisi', exact: true }).click()
+  await expect(page.getByText('Analisi interrotta.', { exact: false })).toContainText('1/4')
+  await expect(page.locator('.analysis-row-button')).toHaveCount(1)
+  await page.getByRole('button', { name: 'Ultimo', exact: true }).click()
+  expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(3)
+  await page.getByRole('button', { name: 'Riprendi analisi', exact: true }).click()
+  // Resumption queues behind stop; no new position may reach the old search.
+  expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(3)
+  await page.evaluate(() => { window.analysisAutoFinish = true; window.analysisWorkers[0].finish(999) })
+  await expect(page.locator('.analysis-row-button')).toHaveCount(4)
+  await expect(page.locator('.engine-eval-label')).toContainText('1 linea MultiPV disponibile.')
+  await expect(page.locator('.analysis-row-button').first()).toHaveText(firstRow, { useInnerText: true })
+  await expect(page.locator('.engine-eval-label')).not.toContainText('9.99')
+  expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c === 'stop').length)).toBe(1)
+  expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(6)
+  const initialPosition = `position fen ${new Chess().fen()}`
+  expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('position fen ')))).toEqual([
+    initialPosition,
+    `${initialPosition} moves e2e4`,
+    `${initialPosition} moves e2e4 e7e5`,
+    `${initialPosition} moves e2e4 e7e5`,
+    `${initialPosition} moves e2e4 e7e5 g1f3`,
+    `${initialPosition} moves e2e4 e7e5 g1f3 b8c6`,
+  ])
+  await page.getByRole('button', { name: 'Primo', exact: true }).click()
+  await page.getByRole('button', { name: 'Ultimo', exact: true }).click()
+  expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(6)
+  expect(await page.evaluate(() => window.analysisRejections)).toEqual([])
+  expect(errors).toEqual([])
+})
+
+test('importing after initial analysis pause discards the old job and starts the new game after stop', async ({ page }) => {
+  await installControlledAnalysisWorker(page)
+  await completeFirstAnalysisMove(page)
+  await page.getByRole('button', { name: 'Interrompi analisi', exact: true }).click()
+  await page.getByRole('textbox', { name: 'PGN da importare' }).fill('1. d4 d5 *')
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toHaveCount(0)
+  expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(3)
+  await page.evaluate(() => { window.analysisAutoFinish = true; window.analysisWorkers[0].finish(999) })
+  await expect(page.locator('.analysis-row-button')).toHaveCount(2)
+  await expect(page.locator('.analysis-row-button').first()).toContainText('1. d4')
+  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione: 0.20')
+  await expect(page.getByRole('button', { name: 'Riprendi analisi', exact: true })).toHaveCount(0)
+  expect(await page.evaluate(() => window.analysisRejections)).toEqual([])
+})
+
+test('silent initial search failure preserves completed rows and restart ignores the dead worker', async ({ page }) => {
+  const errors = []
+  page.on('pageerror', error => errors.push(error.message))
+  await installControlledAnalysisWorker(page)
+  await page.clock.install()
+  await completeFirstAnalysisMove(page)
+  const firstRow = await page.locator('.analysis-row-button').first().innerText()
+  await page.clock.fastForward(30001)
+  await expect(page.getByRole('button', { name: 'Riavvia motore', exact: true })).toBeVisible()
+  await expect(page.locator('.engine-eval-label')).toContainText('non risponde durante la ricerca')
+  await expect(page.locator('.analysis-row-button')).toHaveCount(1)
+  expect(await page.evaluate(() => window.analysisWorkers[0].terminated)).toBe(true)
+  await page.evaluate(() => { window.analysisAutoFinish = true })
+  await page.getByRole('button', { name: 'Riavvia motore', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toHaveCount(4)
+  await page.evaluate(() => window.analysisWorkers[0].finish(999))
+  await expect(page.locator('.analysis-row-button').first()).toHaveText(firstRow, { useInnerText: true })
+  await expect(page.locator('.engine-eval-label')).not.toContainText('9.99')
+  expect(await page.evaluate(() => window.analysisWorkers.length)).toBe(2)
+  expect(await page.evaluate(() => window.analysisRejections)).toEqual([])
+  expect(errors).toEqual([])
+})
+
+test('initial analysis can be cancelled during engine loading without starting an abandoned worker', async ({ page }) => {
+  await installControlledAnalysisWorker(page)
+  await page.route('**/src/lib/stockfish.js*', async route => {
+    await expect(page.locator('.engine-eval-label')).toHaveText('Preparazione della cache del motore…')
+    await expect(page.locator('.engine-eval-label')).toHaveAttribute('role', 'status')
+    await page.getByRole('button', { name: 'Interrompi analisi', exact: true }).click()
+    await route.continue()
+  }, { times: 1 })
+  await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
+  await expect(page.getByRole('button', { name: 'Riprendi analisi', exact: true })).toBeVisible()
+  expect(await page.evaluate(() => window.analysisWorkers.length)).toBe(0)
+  await page.evaluate(() => { window.analysisAutoFinish = true })
+  await page.getByRole('button', { name: 'Riprendi analisi', exact: true }).click()
+  await expect(page.locator('.analysis-row-button')).toHaveCount(4)
+  expect(await page.evaluate(() => window.analysisWorkers.length)).toBe(1)
+})
+
+for (const { winner, pgn, matingMove, barWidth } of [
+  { winner: 'Black', pgn: '1. f3 e5 2. g4 Qh4# 0-1', matingMove: 'Qh4#', barWidth: '0%' },
+  { winner: 'White', pgn: '1. e4 e5 2. Qh5 Nc6 3. Bc4 Nf6 4. Qxf7# 1-0', matingMove: 'Qxf7#', barWidth: '100%' },
+]) {
+test(`real mating game won by ${winner} shows mate given instead of a missing evaluation`, async ({ page }) => {
+  await page.goto(appUrl)
+  await openTools(page, 'Partita e analisi')
+  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(pgn)
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
-  const finalMove = page.locator('.analysis-row-button').filter({ hasText: 'Qh4#' })
+  const finalMove = page.locator('.analysis-row-button').filter({ hasText: matingMove })
   await expect(finalMove).toContainText('Migliore')
   await expect(finalMove).toContainText('Matto dato')
   await expect(finalMove).not.toContainText('Eval n/d')
-  await expect(page.locator('.engine-eval-label')).toContainText('Scacco matto')
+  await expect(page.locator('.engine-eval-label')).toHaveText('Scacco matto')
+  await expect(page.locator('.engine-bar-fill')).toHaveAttribute('style', `width: ${barWidth};`)
+  if (winner === 'Black') {
+    const error = page.locator('.analysis-row-button').filter({ hasText: 'g4' }).locator('..')
+    await error.getByText('Perché questa classificazione?', { exact: true }).click()
+    await error.getByText('Spiegazione scacchistica', { exact: true }).click()
+    const explanation = error.getByRole('region', { name: 'Spiegazione scacchistica' })
+    await expect(explanation).toContainText('Qh4#')
+    await expect(explanation).toContainText('matto')
+  }
 })
+}
 
 test('missed opportunity renders the verified alternative and previous opponent move', async ({ page }) => {
   const game = new Chess()
@@ -973,7 +1138,7 @@ test('missed opportunity renders the verified alternative and previous opponent 
       postMessage(command) {
         if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
         if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
-        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('position fen ')) this.fen = window.decodePositionCommand(command)
         if (command.startsWith('go nodes')) {
           const score = this.fen === afterF3 ? 600 : 0
           const pv = this.fen.split(' ')[1] === 'b' ? 'b8c6 d2d4' : 'b1c3 g8f6'
@@ -1007,7 +1172,7 @@ test('missed mate labels refresh in saved analysis offline without another engin
       postMessage(command) {
         if (command === 'uci') queueMicrotask(() => this.onmessage?.({ data: 'uciok' }))
         if (command === 'isready') queueMicrotask(() => this.onmessage?.({ data: 'readyok' }))
-        if (command.startsWith('position fen ')) this.fen = command.slice(13)
+        if (command.startsWith('position fen ')) this.fen = window.decodePositionCommand(command)
         if (command.startsWith('go nodes')) queueMicrotask(() => {
           const score = this.fen === before ? 'mate 1' : 'cp -1200'
           const pv = this.fen === before ? 'd8h4' : 'e2e4'

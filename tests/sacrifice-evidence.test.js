@@ -74,6 +74,8 @@ describe('reuse of exact-position sacrifice evidence', () => {
       next => { next.engine.specialLines[1].pv = [...next.engine.specialLines[0].pv] },
       next => { next.engine.specialLines[0].evalCp = 500 },
       next => { next.engine.specialLines[2].bound = true },
+      next => { next.engine.specialLines[2].lowerbound = true },
+      next => { next.engine.specialLines[2].upperbound = true },
       next => { next.engine.specialLines[2].pv.push('a1a8') },
     ]) {
       const [, , entry, next] = example(); mutate(next)
@@ -84,6 +86,8 @@ describe('reuse of exact-position sacrifice evidence', () => {
   it('requires unbounded favorable and legal confirmation, not the actual game result', () => {
     for (const mutate of [
       next => { next.playedEngine.lines[0].bound = true },
+      next => { next.playedEngine.lines[0].lowerbound = true },
+      next => { next.playedEngine.lines[0].upperbound = true },
       next => { next.playedEngine.lines[0].depth = 0 },
       next => { next.playedEngine.lines[0].evalCp = -500 },
       next => { next.playedEngine.lines[0].pv = ['a1a8'] },
@@ -117,6 +121,8 @@ describe('reuse of exact-position sacrifice evidence', () => {
     expect(confirmedCompensation(evidence, 'g4h3', next.fenAfter, acceptance)).toBeNull()
     expect(confirmedCompensation(evidence, 'g4f3', entry.fenAfter, acceptance)).toBeNull()
     expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, { ...acceptance, bound: true })).toBeNull()
+    expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, { ...acceptance, lowerbound: true })).toBeNull()
+    expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, { ...acceptance, upperbound: true })).toBeNull()
   })
 
   it('normalizes both searches correctly for a Black sacrifice', () => {
@@ -127,6 +133,24 @@ describe('reuse of exact-position sacrifice evidence', () => {
     expect(result.classification).toBe('brilliant')
     expect(result.specialAssessment.brilliant.offers[0]).toMatchObject({ san: 'gxf6',
       corroboration: { acceptanceDepth: 12, confirmationDepth: 17 } })
+  })
+
+  it.each(['bound', 'lowerbound', 'upperbound'])('rejects a cached confirmation index when its source line is %s', flag => {
+    const [own, previous, entry, next] = example()
+    const evidence = collectSacrificeEvidence(entry, next), acceptance = evidence.acceptanceLines[2]
+    expect(classifySpecialMove(entry, previous, own, evidence).classification).toBe('brilliant')
+    evidence.confirmations[0].line = { ...evidence.confirmations[0].line, [flag]: true }
+    expect(Number.isFinite(evidence.confirmations[0].index)).toBe(true)
+    expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, acceptance)).toBeNull()
+    expect(classifySpecialMove(entry, previous, own, evidence).classification).not.toBe('brilliant')
+  })
+
+  it.each([undefined, null, NaN, Infinity, 0.9])('rejects an invalid or stale cached confirmation index %s', cached => {
+    const [, , entry, next] = example()
+    const evidence = collectSacrificeEvidence(entry, next), acceptance = evidence.acceptanceLines[2]
+    expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, acceptance)).not.toBeNull()
+    evidence.confirmations[0].index = cached
+    expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, acceptance)).toBeNull()
   })
 
   it('refreshes v5 archives using subsequent evidence without searches or mutation and remains idempotent', () => {

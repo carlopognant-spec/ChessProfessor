@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { GameProvider, useGame } from './context/GameContext.jsx'
 import Board from './components/Board.jsx'
 import OpeningPanel from './components/OpeningPanel.jsx'
@@ -10,6 +10,8 @@ import ChatPanel from './components/ChatPanel.jsx'
 import AnalysisSummary from './components/AnalysisSummary.jsx'
 import PositionEditor from './components/PositionEditor.jsx'
 import GameArchive from './components/GameArchive.jsx'
+import ReviewPracticePanel from './components/ReviewPracticePanel.jsx'
+import { buildPracticeCandidates, prepareLegacyPracticeEntries } from './lib/reviewPractice.js'
 import { archiveAnalysisStatus, describePgn } from './lib/gameArchive.js'
 import { setPieceAtFen } from './lib/positionEditor.js'
 import { getKeyboardNavigationTarget, resolveAnalysisEntryForPosition } from './lib/analysisPresentation.js'
@@ -28,6 +30,35 @@ function AppContent({ active = true }) {
   const [positionDraft, setPositionDraft] = useState(fen)
   const [gameGeneration, setGameGeneration] = useState(0)
   const [savedAnalysis, setSavedAnalysis] = useState(null)
+  const [legacyPracticeEntries, setLegacyPracticeEntries] = useState([])
+  const [practice, setPractice] = useState(null)
+  const [practiceEngine, setPracticeEngine] = useState(null)
+  const [practiceSide, setPracticeSide] = useState('w')
+  const [practiceMessage, setPracticeMessage] = useState('')
+  const [practiceLaunching, setPracticeLaunching] = useState(false)
+  const practiceLaunchRef = useRef(0)
+  const closePractice = useCallback(() => {
+    practiceLaunchRef.current++
+    setPractice(null)
+    setPracticeLaunching(false)
+  }, [])
+  useEffect(() => { closePractice() }, [active, navigationHistorySan, gameGeneration, closePractice])
+  const practiceEntries = analysisEntries.length ? analysisEntries : archiveEntries.length ? archiveEntries : legacyPracticeEntries
+  const startPractice = async ({ ply = null, side = practiceSide } = {}) => {
+    const token = ++practiceLaunchRef.current
+    setPracticeLaunching(true)
+    setPracticeMessage('')
+    try {
+      const candidates = await buildPracticeCandidates({ pgn: exportPgn(), entries: practiceEntries, side, ply })
+      if (token !== practiceLaunchRef.current) return
+      if (!candidates.length) setPracticeMessage('Nessuna posizione candidata per questo colore. Completa prima l’analisi della partita.')
+      else setPractice({ token, candidates })
+    } catch (error) {
+      if (token === practiceLaunchRef.current) setPracticeMessage(`Ripasso non disponibile: ${error.message}`)
+    } finally {
+      if (token === practiceLaunchRef.current) setPracticeLaunching(false)
+    }
+  }
   const [toolsOpen, setToolsOpen] = useState(false)
   const [editorOpen, setEditorOpen] = useState(false)
   const editing = toolsOpen && editorOpen
@@ -37,7 +68,7 @@ function AppContent({ active = true }) {
   }, [fen])
 
   useEffect(() => {
-    if (!active) return
+    if (!active || practice) return
     const handleKeyDown = (event) => {
       const target = event.target
       if (target instanceof HTMLElement && (
@@ -52,7 +83,7 @@ function AppContent({ active = true }) {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [active, loadMoveSequence, moveHistorySan.length, navigationHistorySan])
+  }, [active, practice, loadMoveSequence, moveHistorySan.length, navigationHistorySan])
 
   const handleEditorSquare = (square, piece = editorPiece) => {
     try {
@@ -63,6 +94,7 @@ function AppContent({ active = true }) {
   }
 
   const handleImportPgn = () => {
+    closePractice()
     try {
       const ok = importPgn(pgnInput)
       if (!ok) {
@@ -74,26 +106,32 @@ function AppContent({ active = true }) {
       setArchiveEntries([])
       setEngineData(null)
       setSavedAnalysis(null)
+      setLegacyPracticeEntries([])
     } catch (error) {
       setPgnError(error.message)
     }
   }
 
   const handleResetGame = () => {
+    closePractice()
     resetGame()
     setAnalysisEntries([])
     setArchiveEntries([])
     setEngineData(null)
     setSavedAnalysis(null)
+    setLegacyPracticeEntries([])
   }
 
   const handleOpenArchive = record => {
+    closePractice()
     const document = describePgn(record.pgn)
     if (!importPgn(record.pgn)) throw new Error('PGN salvato non valido.')
     const entries = archiveAnalysisStatus(record) === 'current' ? record.analysisEntries : []
     setSavedAnalysis(entries.length ? { entries, moves: document.moves, baseFen: document.baseFen } : null)
     setAnalysisEntries(entries)
     setArchiveEntries(entries)
+    // Old scores only select candidates; practice still requires fresh engine evidence.
+    setLegacyPracticeEntries(entries.length ? entries : prepareLegacyPracticeEntries(record.analysisEntries ?? []))
     setEngineData(null)
     setPgnInput(record.pgn)
     setPgnError('')
@@ -103,6 +141,7 @@ function AppContent({ active = true }) {
   return (
     <main className="app-shell">
       <div className="panel workspace-panel">
+        <div hidden={Boolean(practice)}>
         <Board
           editorPiece={editing ? editorPiece : null}
           displayFen={editing ? positionDraft : fen}
@@ -110,7 +149,25 @@ function AppContent({ active = true }) {
           analysisEntries={analysisEntries}
           engineData={engineData}
         />
-        <EnginePanel key={gameGeneration} savedAnalysis={savedAnalysis} onEngineData={setEngineData} onAnalysisData={setAnalysisEntries} onAnalysisArchiveData={setArchiveEntries} />
+        </div>
+        <div hidden={Boolean(practice)}>
+          <EnginePanel key={gameGeneration} savedAnalysis={savedAnalysis} onEngineData={setEngineData}
+            onAnalysisData={setAnalysisEntries} onAnalysisArchiveData={setArchiveEntries}
+            practiceActive={Boolean(practice)} onPracticeEngine={setPracticeEngine} />
+        </div>
+        {practice && <ReviewPracticePanel key={practice.token} candidates={practice.candidates}
+          engine={practiceEngine} onClose={closePractice} />}
+        <div hidden={Boolean(practice)}>
+        <div className="controls-row practice-launcher">
+          <label>Il mio colore <select aria-label="Il mio colore" value={practiceSide} onChange={e => setPracticeSide(e.target.value)}>
+            <option value="w">Bianco</option><option value="b">Nero</option>
+          </select></label>
+          <button disabled={practiceLaunching || !practiceEntries.length} onClick={() => startPractice()}>
+            Ripassa i miei errori
+          </button>
+        </div>
+        <p className="notice">Fino a cinque posizioni. Stockfish verifica gli errori prima del ripasso, anche dalle vecchie analisi.</p>
+        {practiceMessage && <p role="status">{practiceMessage}</p>}
         <MoveNavigation />
         <details className="tools-menu" onToggle={event => {
           if (event.target === event.currentTarget) setToolsOpen(event.currentTarget.open)
@@ -140,7 +197,7 @@ function AppContent({ active = true }) {
               <button type="button" onClick={handleImportPgn}>Importa PGN</button>
               {pgnError && <p className="notice" role="status">{pgnError}</p>}
             </div>
-            <AnalysisSummary entries={analysisEntries} />
+            <AnalysisSummary entries={analysisEntries} onPractice={startPractice} />
             <MoveList />
             <div className="controls-row">
               <UndoButton />
@@ -161,6 +218,7 @@ function AppContent({ active = true }) {
             />
           </details>
         </details>
+        </div>
       </div>
     </main>
   )

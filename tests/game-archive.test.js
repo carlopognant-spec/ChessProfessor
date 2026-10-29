@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { IDBFactory, IDBObjectStore } from 'fake-indexeddb'
 import { webcrypto } from 'node:crypto'
 import { Chess } from 'chess.js'
-import { createGameArchive, archiveAnalysisStatus, describePgn } from '../src/lib/gameArchive.js'
+import { createGameArchive, archiveAnalysisStatus, describePgn, validatedAnalysis } from '../src/lib/gameArchive.js'
 import { createAnalysisMetadata } from '../src/lib/analysisMetadata.js'
 
 const pgn = '[White "Carlo"]\n[Black "Nero"]\n[Date "2026.10.07"]\n[Result "*"]\n\n1. e4 {Commento} e5 *'
@@ -83,6 +83,44 @@ describe('local game archive with simulated IndexedDB', () => {
     await expect(archive.save({ pgn, analysisEntries: entries })).rejects.toThrow('non corrisponde')
     await expect(archive.save({ pgn: '1. e5 *' })).rejects.toThrow()
     expect(await archive.list()).toEqual([first.record])
+    await archive.close()
+  })
+
+  it.each(['playedUci', 'uci'])('rejects a mismatching %s despite correct SAN and FEN, preserving the saved archive', async field => {
+    const archive = makeArchive()
+    const { record } = await archive.save({ pgn, analysisEntries: entriesFor(pgn) })
+    const invalid = structuredClone(record)
+    invalid.analysisEntries[0][field] = 'd2d4'
+    const before = structuredClone(invalid)
+    expect(validatedAnalysis(pgn, invalid.analysisEntries)).toEqual([])
+    expect(archiveAnalysisStatus(invalid)).toBe('stale')
+    await expect(archive.save({ pgn, analysisEntries: invalid.analysisEntries })).rejects.toThrow('non corrisponde')
+    expect(invalid).toEqual(before)
+    expect(await archive.get(record.id)).toEqual(record)
+    await archive.close()
+  })
+
+  it('accepts legacy entries without UCI fields and matching underpromotion UCI fields', async () => {
+    const legacy = entriesFor(pgn)
+    expect(legacy.every(entry => !Object.hasOwn(entry, 'playedUci') && !Object.hasOwn(entry, 'uci'))).toBe(true)
+    expect(validatedAnalysis(pgn, legacy)).toBe(legacy)
+    const archive = makeArchive()
+    const { record: legacyRecord } = await archive.save({ pgn, analysisEntries: legacy })
+    expect(archiveAnalysisStatus(legacyRecord)).toBe('current')
+    const game = new Chess('7k/P7/8/8/8/8/8/7K w - - 0 1')
+    game.move({ from: 'a7', to: 'a8', promotion: 'n' })
+    const promotionPgn = game.pgn(), promoted = entriesFor(promotionPgn)
+    promoted[0].playedUci = 'a7a8n'
+    promoted[0].uci = 'a7a8n'
+    expect(validatedAnalysis(promotionPgn, promoted)).toBe(promoted)
+    const { record } = await archive.save({ pgn: promotionPgn, analysisEntries: promoted })
+    expect(archiveAnalysisStatus(record)).toBe('current')
+    expect(record.analysisEntries[0]).toMatchObject({ playedUci: 'a7a8n', uci: 'a7a8n' })
+    for (const field of ['playedUci', 'uci']) {
+      const incorrectPromotion = structuredClone(promoted)
+      incorrectPromotion[0][field] = 'a7a8q'
+      expect(validatedAnalysis(promotionPgn, incorrectPromotion)).toEqual([])
+    }
     await archive.close()
   })
 

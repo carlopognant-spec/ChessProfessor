@@ -1,0 +1,17 @@
+.review-practice { grid-column: 1 / -1; min-width: 0; }
+.review-practice .practice-header { display: flex; align-items: start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.review-practice .practice-header h2 { margin: 0; }
+.review-practice .practice-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; align-items: start; }
+.review-practice .practice-board { width: 100%; min-width: 0; }
+.review-practice .practice-controls { display: grid; gap: .8rem; min-width: 0; }
+.review-practice .practice-controls p { margin: 0; }
+.review-practice .practice-controls form { display: grid; gap: .5rem; }
+.review-practice .practice-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+.review-practice .practice-actions input { flex: 1; min-width: 100px; width: 8rem; }
+.review-practice button, .review-practice input, .review-practice select { min-height: 44px; }
+.review-practice input, .review-practice select { padding: .5rem; font: inherit; border-radius: 6px; }
+.review-practice .practice-hint, .review-practice .practice-explanation { padding: .8rem; border: 1px solid #c9a24b; border-radius: 8px; }
+.review-practice .practice-progress, .review-practice small { font-size: .85rem; line-height: 1.5; }
+.review-practice [role="alert"] { color: #ffb9ad; }
+.review-practice h2:focus { outline: 2px solid #c9a24b; outline-offset: 4px; }
+@media (max-width: 760px) { .review-practice .practice-layout { grid-template-columns: minmax(0, 1fr); } }

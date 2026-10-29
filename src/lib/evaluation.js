@@ -1,3 +1,5 @@
+export const CLASSIFICATION_SCORE_MODEL = Object.freeze({ id: 'cp-logistic-v1', cpScale: 400, calibrated: false })
+
 function normalizeScore(score, side = 'white') {
   if (score == null || Number.isNaN(score)) return null
   return side === 'black' ? -score : score
@@ -23,7 +25,7 @@ export function calculateWinProbability(evalCp, side = 'white') {
   // Classification uses a continuous approximation: do not collapse all
   // advantages beyond ten pawns to the same value. Keep cpToProbability's
   // bounded contract for its existing callers.
-  return 1 / (1 + Math.exp(-value / 400))
+  return 1 / (1 + Math.exp(-value / CLASSIFICATION_SCORE_MODEL.cpScale))
 }
 
 export function moverWinProb({

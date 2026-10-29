@@ -6,12 +6,15 @@ import { ENGINE_CONFIG } from '../lib/engineConfig.js'
 import { resolveEngineForFen } from '../lib/analysisPresentation.js'
 import { engineAssetsCached, prepareEngineCache } from '../lib/engineAssets.js'
 import { analysisMetadataKey } from '../lib/analysisMetadata.js'
-import { displaySpecialMoves } from '../lib/specialClassification.js'
+import { displaySpecialMoves } from '../lib/analysisSpecialClassification.js'
 import { reclassifyReviewedMoves } from '../lib/reviewMoves.js'
 import { buildRefinementPlan, refineGameEntries, selectRefinementView, refinementFor } from '../lib/analysisRefinement.js'
+import { historyFromSan } from '../lib/analysisHistory.js'
+import { createPracticeEngineSession } from '../lib/practiceEngineSession.js'
 
-export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisArchiveData, savedAnalysis = null }) {
-  const { fen, moveHistorySan, navigationHistorySan, baseFen } = useGame()
+export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisArchiveData, savedAnalysis = null,
+  practiceActive = false, onPracticeEngine }) {
+  const { fen, navigationHistorySan, moveHistorySan, baseFen } = useGame()
   const [useSaved, setUseSaved] = useState(true)
   const savedMatches = useSaved && savedAnalysis?.baseFen === baseFen
     && JSON.stringify(savedAnalysis.moves) === JSON.stringify(navigationHistorySan)
@@ -21,6 +24,9 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
   const analysisEntriesRef = useRef([])
   const fenRef = useRef(fen)
   const gameAnalyzingRef = useRef(false)
+  const gameControllerRef = useRef(null)
+  const positionControllerRef = useRef(null)
+  const [analysisPaused, setAnalysisPaused] = useState(false)
   const [evalData, setEvalData] = useState(null)
   const [analyzing, setAnalyzing] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -29,7 +35,17 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
   const [engineGeneration, setEngineGeneration] = useState(0)
   const [analysisEnabled, setAnalysisEnabled] = useState(false)
   const [engineReady, setEngineReady] = useState(false)
+  const practiceActiveRef = useRef(practiceActive)
+  const engineReadyRef = useRef(engineReady)
+  practiceActiveRef.current = practiceActive
+  engineReadyRef.current = engineReady
+  const practiceEngine = useMemo(() => createPracticeEngineSession({
+    getEngine: () => engineRef.current,
+    isActive: () => practiceActiveRef.current,
+    isReady: () => engineReadyRef.current,
+  }), [])
   const [engineLoading, setEngineLoading] = useState(false)
+  const [loadingPhase, setLoadingPhase] = useState('')
   const [assetsCached, setAssetsCached] = useState(false)
   const [cacheNote, setCacheNote] = useState('')
   const onEngineDataRef = useRef(onEngineData)
@@ -78,6 +94,8 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
     showRefinedRef.current = false
     savedSourceRef.current = null
     preserveOnRestartRef.current = false
+    setAnalysisPaused(false)
+    setProgress(0)
     analysisEntriesRef.current = []
     publishAnalysis([])
   }, [navigationHistorySan, baseFen, publishAnalysis])
@@ -96,6 +114,33 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
     setEvalData(normalized)
     onEngineData?.(normalized)
   }, [onEngineData])
+
+  useEffect(() => {
+    if (!practiceActive) return
+    gameControllerRef.current?.abort()
+    gameControllerRef.current = null
+    positionControllerRef.current?.abort()
+    positionControllerRef.current = null
+    refinementControllerRef.current?.abort()
+    refinementControllerRef.current = null
+    setRefinementJob(null)
+    setRefinementWorking(false)
+    gameAnalyzingRef.current = false
+    engineRef.current?.cancel()
+    setAnalyzing(false)
+    setAnalysisPaused(true)
+    setAnalysisEnabled(true)
+    return () => practiceEngine.cancel()
+  }, [practiceActive, practiceEngine])
+
+  const restartPracticeEngine = useCallback(() => setEngineGeneration(value => value + 1), [])
+  useEffect(() => {
+    onPracticeEngine?.({ ...practiceEngine, ready: practiceActive && engineReady && !engineFailed,
+      loading: engineLoading, error: engineFailed ? engineError : '', message: loadingPhase,
+      restart: restartPracticeEngine })
+  }, [practiceEngine, practiceActive, engineReady, engineFailed, engineLoading, engineError, loadingPhase,
+    restartPracticeEngine, onPracticeEngine])
+  useEffect(() => () => { practiceEngine.cancel(); onPracticeEngine?.(null) }, [practiceEngine, onPracticeEngine])
 
   useEffect(() => {
     publishAnalysis(analysisEntriesRef.current)
@@ -124,6 +169,11 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
         setRefinementWorking(false)
         setRefinementNote(`Approfondimento fermato: ${error.message}. L'analisi iniziale e i risultati già completati sono conservati.`)
       }
+      gameControllerRef.current?.abort()
+      gameControllerRef.current = null
+      positionControllerRef.current?.abort()
+      positionControllerRef.current = null
+      gameAnalyzingRef.current = false
       setEngineFailed(true)
       setEngineReady(false)
       setEngineLoading(false)
@@ -134,11 +184,13 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
     }
     setEngineReady(false)
     setEngineLoading(true)
+    setLoadingPhase('Preparazione della cache del motore…')
     setEngineFailed(false)
     setEngineError('')
     Promise.all([import('../lib/stockfish.js'), prepareEngineCache()]).then(async ([{ StockfishEngine }, cache]) => {
       if (disposed) return
       setCacheNote(cache.note)
+      setLoadingPhase('Caricamento e inizializzazione di Stockfish…')
       engine = new StockfishEngine({ onFailure: reportFailure })
       engineRef.current = engine
       await engine.waitUntilReady()
@@ -155,7 +207,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
   }, [analysisEnabled, engineGeneration])
 
   useEffect(() => {
-    if (!refinementJob || (refinementJob.plan.positions.length+refinementJob.plan.extraSearches>0&&(!engineReady||engineFailed))) return
+    if (practiceActive || !refinementJob || (refinementJob.plan.positions.length+refinementJob.plan.extraSearches>0&&(!engineReady||engineFailed))) return
     if (refinementJob.signature !== signatureRef.current) { setRefinementJob(null); return }
     const controller = new AbortController()
     refinementControllerRef.current = controller
@@ -196,13 +248,7 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
         setRefinementWorking(false)
       }
     }
-  }, [refinementJob, engineReady, engineFailed, publishAnalysis, applyEngineData])
-
-  const analyzeCurrentPosition = useCallback((positionFen) => engineRef.current.analyze(
-    positionFen,
-    ENGINE_CONFIG.nodes,
-    ENGINE_CONFIG.multiPv,
-  ), [])
+  }, [practiceActive, refinementJob, engineReady, engineFailed, publishAnalysis, applyEngineData])
 
   useEffect(() => {
     if (!savedMatches) {
@@ -221,14 +267,12 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
   }, [savedMatches, savedEntries, fen, engineReady, publishAnalysis, onEngineData, applyEngineData])
 
   useEffect(() => {
-    if (savedMatches || !engineReady || !engineRef.current || engineRef.current.failure) return
+    if (practiceActive || savedMatches || analysisPaused || !engineReady || !engineRef.current || engineRef.current.failure) return
     if (preserveOnRestartRef.current && analysisEntriesRef.current.length === navigationHistorySan.length) {
       preserveOnRestartRef.current = false
       return
     }
 
-    analysisEntriesRef.current = []
-    publishAnalysis([])
     setEngineError('')
 
     if (navigationHistorySan.length === 0) {
@@ -237,24 +281,30 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
     }
 
     const controller = new AbortController()
-    let cancelled = false
+    const engine = engineRef.current
+    const gameSignature = signatureRef.current
+    const isActive = () => gameControllerRef.current === controller
+      && !controller.signal.aborted && gameSignature === signatureRef.current
+    const analyzePosition = (positionFen, options) => engine.analyze(positionFen, ENGINE_CONFIG.nodes, ENGINE_CONFIG.multiPv, options)
+    gameControllerRef.current = controller
     gameAnalyzingRef.current = true
     setAnalyzing(true)
-    setProgress(0)
+    setProgress(buildAnalysisProgress({ current: analysisEntriesRef.current.length, total: navigationHistorySan.length }))
 
     analyzeGame({
       moves: navigationHistorySan,
       baseFen,
-      analyzePosition: analyzeCurrentPosition,
-      analyzePlayedPosition: analyzeCurrentPosition,
+      analyzePosition,
+      analyzePlayedPosition: analyzePosition,
       session: analysisSessionRef.current,
       analysisKey: analysisMetadataKey(),
+      historyAware: true,
       signal: controller.signal,
       onProgress: ({ current, total }) => {
-        if (!cancelled) setProgress(buildAnalysisProgress({ current, total }))
+        if (isActive()) setProgress(value => Math.max(value, buildAnalysisProgress({ current, total })))
       },
       onEntry: (_entry, results) => {
-        if (cancelled) return
+        if (!isActive() || results.length < analysisEntriesRef.current.length) return
         analysisEntriesRef.current = results
         publishAnalysis(results)
         const cached = resolveEngineForFen(fenRef.current, results)
@@ -262,33 +312,37 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
       },
     })
       .then((entries) => {
-        if (cancelled) return
+        if (!isActive()) return
         analysisEntriesRef.current = entries
         publishAnalysis(entries)
         const cached = resolveEngineForFen(fenRef.current, entries)
         if (cached) applyEngineData(cached, fenRef.current)
       })
       .catch((error) => {
-        if (!cancelled && error?.name !== 'AbortError') {
+        if (isActive() && error?.name !== 'AbortError') {
           setEngineError(error.message)
         }
       })
       .finally(() => {
-        if (!cancelled) {
+        if (isActive()) {
+          gameControllerRef.current = null
           gameAnalyzingRef.current = false
           setAnalyzing(false)
         }
       })
 
     return () => {
-      cancelled = true
-      gameAnalyzingRef.current = false
       controller.abort()
+      if (gameControllerRef.current === controller) {
+        gameControllerRef.current = null
+        gameAnalyzingRef.current = false
+        engine.cancel()
+      }
     }
-  }, [navigationHistorySan, baseFen, savedMatches, applyEngineData, publishAnalysis, engineReady])
+  }, [practiceActive, navigationHistorySan, baseFen, savedMatches, analysisPaused, applyEngineData, publishAnalysis, engineReady])
 
   useEffect(() => {
-    if (savedMatches || !engineReady || !engineRef.current || engineRef.current.failure) return
+    if (practiceActive || savedMatches || !engineReady || !engineRef.current || engineRef.current.failure) return
 
     setEvalData(null)
     onEngineData?.(null)
@@ -303,57 +357,98 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
       if (gameAnalyzingRef.current || refinementControllerRef.current) return
     }
 
-    let cancelled = false
+    if (analysisPaused || refinementControllerRef.current) return
+    const controller = new AbortController()
+    const engine = engineRef.current
+    positionControllerRef.current = controller
+    const isActive = () => positionControllerRef.current === controller && !controller.signal.aborted
     setAnalyzing(true)
 
-    engineRef.current.analyze(fen, ENGINE_CONFIG.nodes, ENGINE_CONFIG.multiPv)
+    engine.analyze(fen, ENGINE_CONFIG.nodes, ENGINE_CONFIG.multiPv, { history: historyFromSan(baseFen, moveHistorySan) })
       .then((data) => {
-        if (!cancelled) applyEngineData(data, fen)
+        if (isActive()) applyEngineData(data, fen)
       })
       .catch((error) => {
-        if (!cancelled && error?.name !== 'AbortError' && error?.message !== 'analysis superseded') {
+        if (isActive() && error?.name !== 'AbortError' && error?.message !== 'analysis superseded') {
           setEngineError(error.message)
         }
       })
       .finally(() => {
-        if (!cancelled && !gameAnalyzingRef.current) setAnalyzing(false)
+        if (isActive()) {
+          positionControllerRef.current = null
+          if (!gameAnalyzingRef.current) setAnalyzing(false)
+        }
       })
 
     return () => {
-      cancelled = true
+      controller.abort()
+      if (positionControllerRef.current === controller) {
+        positionControllerRef.current = null
+        engine.cancel()
+      }
     }
-  }, [fen, navigationHistorySan, savedMatches, applyEngineData, onEngineData, engineReady])
+  }, [practiceActive, fen, baseFen, moveHistorySan, navigationHistorySan, savedMatches, analysisPaused, applyEngineData, onEngineData, engineReady])
+
+  const interruptAnalysis = () => {
+    gameControllerRef.current?.abort()
+    gameControllerRef.current = null
+    positionControllerRef.current?.abort()
+    positionControllerRef.current = null
+    gameAnalyzingRef.current = false
+    engineRef.current?.cancel()
+    setAnalysisPaused(true)
+    setAnalyzing(false)
+    if (engineLoading) {
+      setAnalysisEnabled(false)
+      setEngineLoading(false)
+    }
+  }
 
   const displayedData = evalData?.fen === fen ? evalData : null
-  const refinementPlan = useMemo(() => rawEntries.length === navigationHistorySan.length && rawEntries.length
-    ? buildRefinementPlan(rawEntries) : null, [rawEntries, navigationHistorySan.length])
+  const availableLines = displayedData?.mate === 0 ? 0
+    : new Set((displayedData?.lines ?? []).map(line => line.pv?.[0]).filter(Boolean)).size
+  const gameAnalyzing = analyzing && gameAnalyzingRef.current
+  // Disabled launch controls keep the starting plan while partial results arrive.
+  const planEntries = refinementJob?.entries ?? rawEntries
+  const refinementPlan = useMemo(() => planEntries.length === navigationHistorySan.length && planEntries.length
+    ? buildRefinementPlan(planEntries) : null, [planEntries, navigationHistorySan.length])
   const hasRefinements = rawEntries.some(entry => refinementFor(entry))
   const barPercent = displayedData?.mate != null
-    ? (displayedData.mate > 0 ? 100 : 0)
+    ? (displayedData.mate === 0 ? (fen.split(' ')[1] === 'b' ? 100 : 0) : displayedData.mate > 0 ? 100 : 0)
     : Math.min(100, Math.max(0, 50 + (displayedData?.evalCp ?? 0) / 10))
 
   return (
-    <div>
-      <div className="engine-bar">
+    <div aria-busy={engineLoading || analyzing || refinementWorking}>
+      <div className="engine-bar" aria-hidden="true">
         <div className="engine-bar-fill" style={{ width: `${barPercent}%` }} />
       </div>
-      <p className="engine-eval-label" data-fen={displayedData?.fen}>
-        {!analysisEnabled && (savedMatches ? 'Analisi salvata. ' : 'Analisi non avviata.')}
-        {engineLoading && 'Caricamento di Stockfish…'}
+      <p className="engine-eval-label" data-fen={displayedData?.fen} role="status" aria-atomic="true">
+        {!analysisEnabled && !analysisPaused && (savedMatches
+          ? (savedEntries[0]?.engine?.history ? 'Analisi salvata. ' : 'Analisi salvata senza storia della partita. Ricalcola per includere le ripetizioni. ')
+          : 'Analisi non avviata.')}
+        {engineLoading && loadingPhase}
         {engineError && `Stockfish: ${engineError}`}
         {engineFailed && ' Il motore è fermo. Puoi riavviarlo senza perdere la partita.'}
-        {!engineError && !analyzing && displayedData?.lines?.length > 0 &&
-          `${displayedData.lines.length} linee MultiPV disponibili. `}
-        {analyzing && (moveHistorySan.length > 0
+        {!engineError && !analyzing && availableLines > 0 &&
+          `${availableLines} ${availableLines === 1 ? 'linea MultiPV disponibile' : 'linee MultiPV disponibili'}. `}
+        {analyzing && (gameAnalyzing
           ? `Analisi partita: ${Math.round(progress)}%`
           : 'Stockfish sta analizzando…')}
         {!analyzing && displayedData?.mate != null && (displayedData.mate === 0 ? 'Scacco matto' : `Matto in ${Math.abs(displayedData.mate)}`)}
         {!analyzing && displayedData?.mate == null && displayedData?.evalCp != null &&
           `Valutazione: ${(displayedData.evalCp / 100).toFixed(2)}`}
         {analysisEnabled && !engineLoading && !engineError && !analyzing && displayedData?.mate == null && displayedData?.evalCp == null && 'Nessuna valutazione disponibile.'}
-        {!analyzing && displayedData?.mate != null && displayedData?.mate && <span> ({formatMateLabel(displayedData.mate)})</span>}
+        {!analyzing && displayedData?.mate != null && displayedData.mate !== 0 && <span> ({formatMateLabel(displayedData.mate)})</span>}
       </p>
-      {!analysisEnabled && (
+      {gameAnalyzing && <progress aria-label="Avanzamento analisi partita" max="100" value={progress} />}
+      {analysisPaused && <p role="status">Analisi interrotta. {analysisEntriesRef.current.length}/{navigationHistorySan.length} semimosse completate; i risultati sono conservati.</p>}
+      {(analyzing || engineLoading) && !refinementJob && <button type="button" onClick={interruptAnalysis}>Interrompi analisi</button>}
+      {analysisPaused && !engineFailed && !engineLoading && <button type="button" onClick={() => {
+        if (savedMatches) setUseSaved(false)
+        setAnalysisPaused(false)
+        setAnalysisEnabled(true)
+      }}>Riprendi analisi</button>}
+      {!analysisEnabled && !analysisPaused && (
         <div>
           {!assetsCached && <p className="notice">La prima analisi scarica circa 100 MB. Il motore viene conservato nella cache di questo browser, se disponibile.</p>}
           <button type="button" onClick={() => { setUseSaved(false); setAnalysisEnabled(true) }}>Avvia analisi</button>
@@ -428,11 +523,6 @@ export default function EnginePanel({ onEngineData, onAnalysisData, onAnalysisAr
       {experimentalSpecials && <p className="notice">Criteri locali ancora in verifica. Le etichette possono differire dalla Game Review.</p>}
       {engineFailed && (
         <button type="button" onClick={() => {
-          if (!preserveOnRestartRef.current) {
-            analysisSessionRef.current.clear()
-            analysisEntriesRef.current = []
-            publishAnalysis([])
-          }
           setEngineGeneration(generation => generation + 1)
         }}>
           Riavvia motore

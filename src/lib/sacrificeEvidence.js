@@ -6,7 +6,7 @@ import { sacrificeSearchFor } from './sacrificeSearches.js'
 const uciOf = move => `${move.from}${move.to}${move.promotion ?? ''}`
 const primary = engine => engine?.lines?.find(line => line.multipv === 1) ?? engine
 function index(line) {
-  if (!line || !Number.isInteger(line.depth) || line.depth < 1 || line.bound
+  if (!line || !Number.isInteger(line.depth) || line.depth < 1 || line.bound || line.lowerbound || line.upperbound
     || /\b(?:upperbound|lowerbound)\b/.test(line.raw ?? '')) return null
   if (Number.isInteger(line.mate) && line.mate !== 0) return Number(line.mate > 0)
   return line.mate == null && Number.isFinite(line.evalCp) ? calculateWinProbability(line.evalCp) : null
@@ -93,7 +93,9 @@ export function collectSacrificeEvidence(entry, next, policy = {}) {
 export function confirmedCompensation(evidence, captureUci, acceptedFen, acceptance, { good = 0.45, consistency = 0.10 } = {}) {
   const acceptedIndex = index(acceptance)
   const confirmation = evidence?.confirmations?.find(row => row.captureUci === captureUci && row.fen === acceptedFen)
-  if (acceptedIndex == null || !confirmation || 1 - acceptedIndex < good
+  const confirmationIndex = index(confirmation?.line)
+  if (acceptedIndex == null || confirmationIndex == null || !Number.isFinite(confirmation?.index)
+    || confirmation.index !== confirmationIndex || 1 - acceptedIndex < good
     || confirmation.index < good || Math.abs((1 - acceptedIndex) - confirmation.index) > consistency) return null
   return { kind: 'corroborated-compensation', acceptanceDepth: acceptance.depth,
     confirmationDepth: confirmation.line.depth, acceptanceIndex: 1 - acceptedIndex,

@@ -10,6 +10,12 @@ export default function ChatPanel({ opening, engineData, analysisEntry }) {
   const [sending, setSending] = useState(false)
   const [provider, setProvider] = useState(import.meta.env.VITE_LLM_PROVIDER || 'groq')
 
+  if (import.meta.env.PROD) return <div className="panel chat-panel">
+    <h2>Chiedi al maestro</h2>
+    <p role="status">La chat AI è temporaneamente disabilitata online per proteggere le credenziali.
+      Le spiegazioni scacchistiche deterministiche e «Ripassa i miei errori» restano disponibili senza servizi AI.</p>
+  </div>
+
   async function handleSend(e) {
     e.preventDefault()
     const question = input.trim()

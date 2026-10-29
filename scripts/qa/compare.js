@@ -3,7 +3,7 @@ import { classifyReviewedMove } from '../../src/lib/reviewEvaluation.js'
 import { ENGINE_CONFIG } from '../../src/lib/engineConfig.js'
 import { formatMateComparison } from '../../src/lib/mateComparison.js'
 import { formatMoveOpportunity } from '../../src/lib/moveOpportunities.js'
-import { classifySpecialMove } from '../../src/lib/specialClassification.js'
+import { classifySpecialMove } from '../../src/lib/analysisSpecialClassification.js'
 import { reclassifyReviewedMoves } from '../../src/lib/reviewMoves.js'
 
 export const labels = { best: 'Migliore', excellent: 'Ottima', good: 'Buona', inaccuracy: 'Imprecisione', mistake: 'Errore', blunder: 'Errore grave', book: 'Libro', brilliant: 'Geniale', great: 'Grande', missed: 'Mossa mancata', forced: 'Forzata', unclassified: 'Non valutabile' }

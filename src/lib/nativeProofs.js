@@ -1,7 +1,7 @@
 import {NATIVE_PROOF_POLICY,nativeProofFor,validNativeAttempt} from './nativeEvidence.js'
 import {validGrandeSearch} from './grandeProofs.js'
 import {potentialNativeSearch} from './nativeWinningChoice.js'
-import {pendingNativeAlternatives} from './specialClassification.js'
+import {pendingNativeAlternatives} from './analysisSpecialClassification.js'
 import {restoredMateRoute} from './restoredMateRoute.js'
 function knownEvidence(entries){
  const complete=new Map(),attempted=new Map()
