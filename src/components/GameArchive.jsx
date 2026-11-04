@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { archiveAnalysisStatus, createGameArchive } from '../lib/gameArchive.js'
 
-export default function GameArchive({ getPgn, analysisEntries, onOpen }) {
+export default function GameArchive({ getPgn, analysisEntries, onOpen, revision = 0 }) {
   const archive = useMemo(() => createGameArchive(), [])
   const [records, setRecords] = useState([])
   const [message, setMessage] = useState('')
@@ -12,7 +12,7 @@ export default function GameArchive({ getPgn, analysisEntries, onOpen }) {
     archive.list().then(items => { if (!disposed) setRecords(items) })
       .catch(error => { if (!disposed) setMessage(error.message) })
     return () => { disposed = true; archive.close() }
-  }, [archive])
+  }, [archive, revision])
   const perform = async action => {
     setBusy(true)
     setMessage('')
@@ -35,17 +35,6 @@ export default function GameArchive({ getPgn, analysisEntries, onOpen }) {
       const result = await archive.save({ pgn: getPgn(), analysisEntries })
       setMessage(result.duplicate ? 'Partita già presente: salvata senza duplicati.' : 'Partita salvata.')
     })}>Salva partita e analisi</button>
-    <label className="archive-import">Importa file PGN
-      <input type="file" accept=".pgn,text/plain,application/x-chess-pgn" disabled={busy} onChange={event => {
-        const file = event.target.files?.[0]
-        event.target.value = ''
-        if (file) perform(async () => {
-          const result = await archive.save({ pgn: await file.text() })
-          onOpen(result.record)
-          setMessage(result.duplicate ? 'Partita già presente, aperta.' : 'PGN importato e salvato.')
-        })
-      }} />
-    </label>
     <p role="status">{message}</p>
     <ul className="archive-list">{records.map(record => {
       const status = archiveAnalysisStatus(record)

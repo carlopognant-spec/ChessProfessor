@@ -5,7 +5,7 @@ import {describe,it,expect,vi} from 'vitest'
 import {reclassifyReviewedMoves} from '../src/lib/reviewMoves.js'
 import {buildRefinementPlan,refineGameEntries,selectRefinementView} from '../src/lib/analysisRefinement.js'
 import {nativeProofFor,NATIVE_PROOF_POLICY} from '../src/lib/nativeEvidence.js'
-import {displaySpecialMoves,formatSpecialAssessment} from '../src/lib/specialClassification.js'
+import {displaySpecialMoves,formatSpecialAssessment} from '../src/lib/analysisSpecialClassification.js'
 import {createGameArchive} from '../src/lib/gameArchive.js'
 const json=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url)))
 const {cases}=json('agent-output/special-completion-v1/cohorts.json'),packets=new Map()
@@ -32,7 +32,8 @@ describe('separate decisive-choice certificates',()=>{
   expect(after[2]).toMatchObject({classification:'great',specialAssessment:{version:'counterfactual-v24',grande:{reason:'critical-native-advantage-choice'}}})
   expect(nativeProofFor(completed[2]).alternatives).toHaveLength(4)
   expect(numeric(after)).toEqual(numbers)
-  expect(formatSpecialAssessment(after[2])).toContain('vantaggio relativo')
+  expect(after[2].candidateAssessment.inheritance).toBe('comparative')
+  expect(formatSpecialAssessment(after[2])).toContain('non \u00e8 una nuova conferma')
   const stored=structuredClone(completed)
   stored[2].specialAssessment.version='counterfactual-v23'
   expect(reclassifyReviewedMoves(stored)[2].classification).toBe('best')
@@ -44,7 +45,8 @@ describe('separate decisive-choice certificates',()=>{
   const entries=mini(id,ply),numbers=numeric(entries),analyze=vi.fn(search)
   expect(entries[2].classification).toBe('best')
   const completed=await finish(entries,analyze),after=selectRefinementView(completed,true)
-  expect(after[2]).toMatchObject({classification:'great',specialAssessment:{version:'counterfactual-v24',grande:{reason:'verified-major-piece-tactic',tactic:{kind}}}})
+  expect(after[2]).toMatchObject({classification:'great',specialAssessment:{version:'counterfactual-v24',grande:{reason:'verified-tactical-certificate',tactic:{kind}}}})
+  expect(after[2].candidateAssessment).toMatchObject({verdict:'confirmed',inheritance:null})
   expect(analyze.mock.calls.filter(([fen])=>[entries[2].fenBefore,entries[2].fenAfter].includes(fen))).toHaveLength(2)
   expect(analyze.mock.calls.length).toBeLessThanOrEqual(4)
   expect(nativeProofFor(completed[2]).alternatives).toEqual([])

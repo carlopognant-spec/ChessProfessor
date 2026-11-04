@@ -6,7 +6,7 @@ import { appendHistory, historyKey, normalizeHistory, playUci, uciOf } from './a
 import { calculateWinProbability, CLASSIFICATION_SCORE_MODEL } from './evaluation.js'
 import { classifyMove } from './classification.js'
 import { REVIEW_POLICY_VERSION } from './reviewEvaluation.js'
-import { reclassifyReviewedMoves } from './reviewMoves.js'
+import { reclassifyAnalysisMoves } from './reviewMoves.js'
 
 export const PRACTICE_POLICY_VERSION = 'review-practice-v1'
 export const PRACTICE_MULTI_PV = 2
@@ -23,7 +23,7 @@ async function digest(text) {
 }
 
 export function prepareLegacyPracticeEntries(entries = []) {
-  return reclassifyReviewedMoves(entries).map((entry, index) => ({ ...entry,
+  return reclassifyAnalysisMoves(entries).map((entry, index) => ({ ...entry,
     // Both are candidate hints only; neither can replace fresh practice evidence.
     practiceCandidateClassification: [entry.classification, entries[index].classification].find(label => errors.has(label)) ?? null,
   }))
@@ -175,13 +175,18 @@ export function practiceExplanation(prepared, verdict) {
   return `${reason} In partita hai giocato ${candidate.originalSan}. ${san.length ? `Continuazione illustrativa: ${san.join(' ')}. ` : ''}La linea mostrata non è dichiarata unica; la valutazione è una stima di Stockfish.`
 }
 
-export function practiceExplanationEntry(prepared) {
-  const { candidate, original } = prepared
-  const board = new Chess(candidate.fen)
-  playUci(board, candidate.originalUci)
-  return { fenBefore: candidate.fen, fenAfter: board.fen(), playedUci: candidate.originalUci,
-    playedMove: candidate.originalSan, classification: candidate.classification,
-    bestUci: original.reference.pv[0], bestEval: original.reference.evalCp, bestMate: original.reference.mate,
-    playedEval: original.played.evalCp, playedMate: original.played.mate,
-    engine: original.engine, playedEngine: { fen: board.fen() } }
+export function practiceExplanationEntry(prepared, displayedFen, verdict) {
+  const pv = verdict?.status === 'correct' ? verdict.played?.pv : prepared?.original?.reference?.pv
+  if (!prepared?.candidate || !Array.isArray(pv)) return null
+  try {
+    const board = new Chess(prepared.candidate.fen)
+    for (const uci of pv.slice(0, 2)) {
+      const fenBefore = board.fen(), move = playUci(board, uci)
+      if (board.fen() === displayedFen) {
+        // Root scores belong to the initial position, not to the displayed reply.
+        return { fenBefore, fenAfter: displayedFen, playedUci: uci, playedMove: move.san }
+      }
+    }
+  } catch { /* An unsupported branch must not inherit the original error's explanation. */ }
+  return null
 }

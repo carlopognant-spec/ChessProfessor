@@ -1,6 +1,30 @@
 import * as core from './specialClassification.js'
+import { annotateClassification } from './classificationDecision.js'
 
-export { SPECIAL_POLICY, displaySpecialMoves, formatSpecialAssessment } from './specialClassification.js'
+export { SPECIAL_POLICY } from './specialClassification.js'
+
+export function displaySpecialMoves(entries, enabled = false) {
+  if (enabled) return entries
+  return core.displaySpecialMoves(entries, enabled).map((entry, i) => entry === entries[i] ? entry
+    : annotateClassification({ ...entry,
+      ...(entry.candidateAssessment ? { candidateAssessment: { ...entry.candidateAssessment,
+        classification: entry.classification, verdict: 'not-applicable', reason: 'special-display-disabled' } } : {}),
+      specialAssessment: { ...entry.specialAssessment,
+        grande: { status: 'insufficient', reason: 'special-display-disabled' },
+        brilliant: { status: 'insufficient', reason: 'special-display-disabled' },
+        events: (entry.specialAssessment.events ?? []).filter(event => event.status !== 'supported') } }))
+}
+
+export function formatSpecialAssessment(entry) {
+  const candidate = entry.candidateAssessment
+  if (entry.specialAssessment?.grande?.reason === 'special-display-disabled') return ''
+  if (candidate?.version !== 'grande-evidence-candidate-v3' || candidate.verdict === 'not-applicable') {
+    return core.formatSpecialAssessment(entry)
+  }
+  if (entry.classification !== 'great') return ''
+  if (candidate.inheritance) return 'Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.'
+  return 'Certificato tattico verificato entro il suo orizzonte legale. Non dimostra una vittoria forzata completa.'
+}
 
 // The frozen classifier already rejects bound:true. Normalize newer flag encodings at the analysis boundary.
 export function normalizeAnalysisBounds(value) {

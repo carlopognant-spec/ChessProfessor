@@ -77,7 +77,7 @@ export function buildMoveExplanation(entry = {}) {
       if (uciOf(named) !== playedUci) throw Error('Move mismatch')
     }
   } catch {
-    result.status = 'invalid'; result.why = 'Posizione o mossa non verificabile: non è possibile spiegare questa scelta.'
+    result.status = 'invalid'
     limitations.push('FEN iniziale, mossa e FEN finale devono descrivere la stessa continuazione legale.'); return result
   }
   const side = before.turn(), initialMaterial = material(before, side), recaptures = after.moves({ verbose: true })
@@ -87,8 +87,8 @@ export function buildMoveExplanation(entry = {}) {
   result.facts.material = { afterPlayedDelta: material(after, side) - initialMaterial, playedLineDelta: null, alternativeLineDelta: null }
   const roots = rootEvidence(entry, before.moves().length, limitations)
   const reference = roots.lines[0], played = roots.lines.find(line => line.uci[0] === playedUci)
-  let continuation = played && (played.uci.length >= 2 || played.endsInMate) ? played : null
-  if (!continuation && validOwner(entry.playedEngine, entry.fenAfter)) {
+  let continuation = roots.coherent && played && (played.uci.length >= 2 || played.endsInMate) ? played : null
+  if (!continuation && entry.playedEngine?.fen === entry.fenAfter && validOwner(entry.playedEngine, entry.fenAfter)) {
     const child = validateLine(entry.fenAfter, primary(entry.playedEngine), 'played-child')
     if (child) continuation = { ...child, uci: [playedUci, ...child.uci], san: [move.san, ...child.san],
       events: [{ uci: playedUci, san: move.san, color: side, captured: move.captured ?? null, to: move.to }, ...child.events],
@@ -101,41 +101,47 @@ export function buildMoveExplanation(entry = {}) {
   }
   const better = roots.coherent && reference && played && reference.uci[0] !== playedUci
     && reviewed.evaluationEvidence?.status === 'coherent' && reviewed.evaluationEvidence.source === 'completed-snapshot'
+    && ['inaccuracy', 'mistake', 'blunder', 'missed'].includes(reviewed.numericalClassification)
     && Number.isFinite(reviewed.bestProbability) && Number.isFinite(reviewed.playedProbability)
     && reviewed.bestProbability > reviewed.playedProbability
-  const hasAlternative = reference && reference.uci[0] !== playedUci
-  if (hasAlternative) {
+  if (better) {
     result.lines.alternative = reference; result.facts.material.alternativeLineDelta = reference.materialDelta
-    result.alternative = better ? `Il confronto registrato favorisce ${reference.san[0]} rispetto a ${move.san}.`
-      : `${reference.san[0]} è un’alternativa illustrativa; i dati non dimostrano che sia migliore.`
-  } else result.alternative = reference ? 'La mossa giocata coincide con la continuazione di riferimento.' : 'Non è disponibile un’alternativa verificata.'
+    result.alternative = `Il confronto del motore preferisce ${reference.san[0]} a ${move.san}.`
+    if (reference.endsInMate && reference.winner === side) {
+      result.opportunity = `Nella variante con ${reference.san[0]}, ${reference.san.at(-1)} dà matto.`
+    }
+  }
   if (continuation) {
     result.lines.punishment = continuation; result.facts.material.playedLineDelta = continuation.materialDelta
-    const opponentCapture = continuation.events.slice(1).find(event => event.color !== side && event.captured)
-    if (continuation.endsInMate) result.punishment = `La variante dopo ${move.san} termina con matto a favore dei ${colorName(continuation.winner)}; è un esito della linea mostrata, non una prova contro ogni difesa.`
-    else if (opponentCapture) result.punishment = `Nella variante illustrativa l’avversario gioca ${opponentCapture.san} e cattura ${pieces[opponentCapture.captured]}. Il saldo materiale della linea per i ${colorName(side)} cambia di ${continuation.materialDelta} unità convenzionali.`
-    else result.punishment = `La variante illustrativa continua con ${continuation.san[1] ?? move.san}; la causa tattica non è dimostrabile dai dati disponibili.`
-  } else result.punishment = 'La causa tattica non è dimostrabile dai dati disponibili.'
-  if (hasAlternative && reference.endsInMate) result.opportunity = `Nella variante di riferimento ${reference.san[0]} avvia una continuazione che termina con matto a favore dei ${colorName(reference.winner)}; non dimostra che ogni difesa porti allo stesso esito.`
-  else if (hasAlternative && reference.materialDelta > 0) result.opportunity = `Nella variante di riferimento il saldo materiale dei ${colorName(side)} aumenta di ${reference.materialDelta} unità convenzionali; le riprese oltre la linea non sono escluse.`
-  else result.opportunity = 'Non è dimostrata una specifica occasione tattica oltre al confronto delle varianti disponibili.'
-  if (after.isCheckmate()) { result.why = `${move.san} dà scacco matto nella posizione verificata.`; result.status = 'explained' }
-  else if (before.moves().length === 1) { result.why = `${move.san} era l’unica mossa legale nella posizione.`; result.status = 'explained' }
-  else if (continuation?.endsInMate && continuation.winner !== side) {
-    result.why = `Nella variante dopo ${move.san}, ${continuation.san.at(-1)} conclude con matto a favore dei ${colorName(continuation.winner)}. La variante non dimostra risposte obbligate.`
-    result.status = 'explained'
+    const reply = continuation.events[1]
+    if (continuation.endsInMate && continuation.winner !== side) {
+      result.punishment = `Nella variante dopo ${move.san}, ${continuation.san.at(-1)} dà matto a favore dei ${colorName(continuation.winner)}.`
+    } else if (reply?.captured) {
+      result.punishment = `Nella variante, l’avversario risponde ${reply.san} e cattura ${['r', 'q'].includes(reply.captured) ? 'una' : 'un'} ${pieces[reply.captured]}.`
+    }
   }
-  else if (better && reference.endsInMate && reference.winner === side) {
-    result.why = `Il confronto mostra una variante di matto con ${reference.san[0]}, mentre la linea registrata per ${move.san} non riporta un matto favorevole. Non è una prova contro tutte le difese.`
-    result.status = 'explained'
-  }
+  if (after.isCheckmate()) result.why = `${move.san} dà scacco matto.`
+  else if (before.moves().length === 1) result.why = `${move.san} è l’unica mossa disponibile.`
   else if (move.captured) {
-    result.why = `${move.san} cattura ${pieces[move.captured]}${move.flags.includes('e') ? ' en passant' : ` in ${move.to}`}.`
-    if (recaptures.length) result.why += ` Nella posizione risultante è legale la ripresa ${recaptures[0].san}: la presa iniziale da sola non dimostra un guadagno netto.`
-    result.status = 'explained'
-  } else if (move.promotion) { result.why = `${move.san} promuove il pedone a ${pieces[move.promotion]}.`; result.status = 'explained' }
-  else if (better) { result.why = result.alternative + ' La causa tattica non è dimostrabile dal solo punteggio.'; result.status = 'explained' }
-  else result.why = `${move.san} è legale. La causa tattica non è dimostrabile dai dati disponibili.`
+    result.why = `${move.san} cattura ${['r', 'q'].includes(move.captured) ? 'una' : 'un'} ${pieces[move.captured]}${move.flags.includes('e') ? ' en passant' : ` in ${move.to}`}.`
+    if (recaptures.length) result.why += ` Può seguire la ripresa ${recaptures[0].san}.`
+  }
+  else {
+    const homeRank = side === 'w' ? '1' : '8', bishopRank = side === 'w' ? '2' : '7', pawnRank = side === 'w' ? '3' : '6'
+    const central = ['d4', 'e4', 'd5', 'e5'].filter(square => after.attackers(square, side).includes(move.to)
+      && !before.attackers(square, side).includes(move.from))
+    const pawn = after.get(move.to[0] + pawnRank)
+    if (move.piece === 'b' && ['b', 'g'].includes(move.to[0]) && move.to[1] === bishopRank
+      && pawn?.type === 'p' && pawn.color === side) {
+      result.why = `${move.san} colloca l’alfiere in fianchetto, dietro il pedone ${move.to[0] + pawnRank}.`
+    } else if (['n', 'b'].includes(move.piece) && move.from[1] === homeRank && move.to[1] !== homeRank && central.length) {
+      result.why = `${move.san} porta ${move.piece === 'b' ? 'l’alfiere' : 'il cavallo'} in ${move.to}, da dove controlla ${central.join(' e ')}.`
+    } else if (move.piece === 'p' && ['d4', 'e4', 'd5', 'e5'].includes(move.to) && central.length) {
+      result.why = `${move.san} occupa il centro e controlla ${central.join(' e ')}.`
+    }
+  }
+  if (move.promotion) result.why += `${result.why ? ' ' : ''}${move.san} promuove il pedone a ${pieces[move.promotion]}.`
+  if (result.why || result.opportunity || result.punishment || result.alternative) result.status = 'explained'
   if (reference || continuation) limitations.push('Le varianti sono illustrative: una PV legale non dimostra risposte obbligate né verifica tutte le difese.')
   if (reference?.materialDelta || continuation?.materialDelta || move.captured) limitations.push('Il saldo materiale usa pedone 1, cavallo e alfiere 3, torre 5, donna 9; non misura da solo il vantaggio complessivo.')
   if (!roots.coherent) limitations.push('Manca un confronto completo e verificato fra le mosse nella stessa ricerca.')

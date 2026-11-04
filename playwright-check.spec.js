@@ -1,14 +1,21 @@
 import { test, expect } from '@playwright/test'
+import { allowRefinementWorker, refinementWorkerSource } from './tests/helpers/browser-refinement-worker.js'
+
 import { Chess } from 'chess.js'
 import { ENGINE_CONFIG } from './src/lib/engineConfig.js'
 import { createAnalysisMetadata } from './src/lib/analysisMetadata.js'
-import { readFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { classifyAnalysisEntries, moveEvaluationFields } from './src/lib/classification.js'
 import { createOpeningBook } from './src/lib/openingBook.js'
 import { reclassifyReviewedMoves } from './src/lib/reviewMoves.js'
 import { buildRefinementPlan } from './src/lib/analysisRefinement.js'
 
+test.beforeEach(async ({ page }) => { await page.addInitScript(allowRefinementWorker, refinementWorkerSource) })
+
 const appUrl = 'http://127.0.0.1:4173/ChessProfessor/'
+const classificationKeys = {"Libro": "book", "Forzata": "forced", "Geniale": "brilliant", "Grande": "great", "Migliore": "best", "Ottima": "excellent", "Buona": "good", "Imprecisione": "inaccuracy", "Errore": "mistake", "Errore grave": "blunder", "Mossa mancata": "missed", "Non valutabile": "unclassified"}
 
 function refinementExample() {
   const cache = JSON.parse(readFileSync(new URL('./tests/fixtures/qa/analysis-cache-large-200k/2026-10-07T09-51-26-999Z/personal-01.json', import.meta.url)))
@@ -105,6 +112,11 @@ async function openRefinementExample(page, delay = 5, example = null) {
   return data
 }
 
+async function openDisclosure(page, selector) {
+  const panel = page.locator(selector)
+  if (!await panel.evaluate(element => element.open)) await panel.locator(':scope > summary').click()
+}
+
 async function openTools(page, section) {
   await page.evaluate(async () => {
     if (!window.decodePositionCommand) {
@@ -116,17 +128,23 @@ async function openTools(page, section) {
   if (!await menu.evaluate(element => element.open)) await menu.locator(':scope > summary').click()
   const panel = menu.locator('.tools-section').filter({ has: page.locator('summary').filter({ hasText: new RegExp(`^${section}$`) }) })
   if (!await panel.evaluate(element => element.open)) await panel.locator(':scope > summary').click()
+  if (section === 'Partita e analisi') await openDisclosure(page, '.engine-workspace')
+}
+
+async function openPgnImport(page) {
+  const dialog = page.getByRole('dialog', { name: 'Importa partita', exact: true })
+  if (!await dialog.isVisible()) await page.getByRole('button', { name: 'Importa partita', exact: true }).click()
+  return dialog.getByRole('textbox', { name: 'PGN da importare', exact: true })
 }
 
 for (const width of [360, 1280]) {
-  test(`minimal home at ${width}px preserves chat, PGN and editor drafts without horizontal scrolling`, async ({ page }) => {
+  test(`minimal home at ${width}px preserves chat and modal PGN drafts without horizontal scrolling`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 })
     const errors = []
     page.on('pageerror', error => errors.push(error.message))
     await page.addInitScript(() => { window.Worker = class { constructor() { throw new Error('Unexpected engine download') } } })
     await page.goto(appUrl)
     const menu = page.locator('.tools-menu')
-    const editor = page.locator('.tools-editor')
     const board = page.locator('.board-stage')
     await expect(menu).not.toHaveAttribute('open', '')
     await expect(page.locator('.position-editor')).not.toBeVisible()
@@ -141,8 +159,7 @@ for (const width of [360, 1280]) {
       expect(box.x + box.width).toBeLessThanOrEqual(width)
     }
     await assertFits()
-    await openTools(page, 'Partita e analisi')
-    const pgnInput = page.getByPlaceholder('Incolla un PGN', { exact: false })
+    const pgnInput = await openPgnImport(page)
     await pgnInput.fill('1. e4 e5 *')
     await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
     const game = new Chess(); game.move('e4'); game.move('e5')
@@ -153,20 +170,17 @@ for (const width of [360, 1280]) {
     await page.getByRole('button', { name: 'Invia', exact: true }).click()
     await expect(page.locator('.chat-message.user')).toHaveText('Qual è il piano?')
     await chatInput.fill('Bozza conservata')
-    await openTools(page, 'Aperture')
-    await openTools(page, 'Editor scacchiera')
-    await page.getByTitle('Seleziona Q', { exact: true }).click()
-    await page.locator('[data-square="a3"]').click()
-    const draft = await page.getByRole('textbox', { name: 'FEN', exact: true }).inputValue()
-    expect(draft).not.toBe(game.fen())
+    await page.getByText('Contesto di apertura per la chat', { exact: true }).click()
+    const draft = '1. d4 d5 *'
+    await (await openPgnImport(page)).fill(draft)
     await assertFits()
-    await editor.locator(':scope > summary').click()
+    await page.getByRole('dialog', { name: 'Importa partita', exact: true }).getByRole('button', { name: 'Annulla', exact: true }).click()
     await expect(board).toHaveAttribute('data-fen', game.fen())
-    await openTools(page, 'Editor scacchiera')
-    await expect(page.getByRole('textbox', { name: 'FEN', exact: true })).toHaveValue(draft)
+    await expect(await openPgnImport(page)).toHaveValue(draft)
+    await page.keyboard.press('Escape')
     await menu.locator(':scope > summary').click()
     await expect(board).toHaveAttribute('data-fen', game.fen())
-    // A hidden editor must never intercept normal play, even with a piece selected.
+    // Closing a draft must leave the board available for ordinary play.
     await page.locator('[data-square="g1"]').click()
     await page.locator('[data-square="f3"]').click()
     game.move('Nf3')
@@ -174,16 +188,15 @@ for (const width of [360, 1280]) {
     await openTools(page, 'Chatbot')
     await expect(chatInput).toHaveValue('Bozza conservata')
     await expect(page.locator('.chat-message.user')).toHaveText('Qual è il piano?')
-    await expect(pgnInput).toHaveValue('1. e4 e5 *')
-    await openTools(page, 'Editor scacchiera')
-    // The real move synchronizes the editor draft with the new game position.
-    await expect(page.getByRole('textbox', { name: 'FEN', exact: true })).toHaveValue(game.fen())
+    await expect(await openPgnImport(page)).toHaveValue(draft)
+    await page.keyboard.press('Escape')
+    await expect(page.getByRole('region', { name: 'Editor posizione FEN', exact: true })).not.toBeVisible()
     for (const button of await page.locator('.move-navigation button').all()) {
       const box = await button.boundingBox()
       expect(box.height).toBeGreaterThanOrEqual(44)
       expect(box.width).toBeGreaterThanOrEqual(44)
     }
-    for (const summary of await page.locator('.tools-menu summary').all()) {
+    for (const summary of await page.locator('.tools-menu summary:visible').all()) {
       const box = await summary.boundingBox()
       if (box) expect(box.height).toBeGreaterThanOrEqual(44)
     }
@@ -192,12 +205,33 @@ for (const width of [360, 1280]) {
   })
 }
 
-test('position editor exposes named native groups and preserves keyboard controls on desktop and mobile', async ({ page }) => {
+test('isolated position editor component preserves named groups and keyboard controls while ordinary UI is hidden', async ({ page }) => {
   for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 844 })
     await page.goto(appUrl)
-    await openTools(page, 'Editor scacchiera')
-    const editor = page.getByRole('region', { name: 'Editor posizione FEN', exact: true })
+    await expect(page.getByRole('region', { name: 'Editor posizione FEN', exact: true })).not.toBeVisible()
+    // Exercise the retained implementation independently; this is not an application entry point.
+    await page.evaluate(async () => {
+      const { default: React } = await import('/ChessProfessor/node_modules/.vite/deps/react.js')
+      const { default: ReactDOM } = await import('/ChessProfessor/node_modules/.vite/deps/react-dom_client.js')
+      const { GameProvider, useGame } = await import('/ChessProfessor/src/context/GameContext.jsx')
+      const { default: PositionEditor } = await import('/ChessProfessor/src/components/PositionEditor.jsx')
+      function Fixture() {
+        const { fen } = useGame()
+        const [draft, setDraft] = React.useState(fen), [piece, setPiece] = React.useState(null)
+        return React.createElement(React.Fragment, null,
+          React.createElement(PositionEditor, { draft, onDraftChange: setDraft, selectedPiece: piece, onPieceSelect: setPiece }),
+          React.createElement('output', { 'data-testid': 'editor-applied-fen' }, fen))
+      }
+      document.querySelector('#root').hidden = true
+      const host = document.createElement('div')
+      host.id = 'editor-component-fixture'
+      Object.assign(host.style, { maxWidth: '600px', padding: '8px' })
+      document.body.appendChild(host)
+      ReactDOM.createRoot(host).render(React.createElement(GameProvider, null, React.createElement(Fixture)))
+    })
+    const fixture = page.locator('#editor-component-fixture')
+    const editor = fixture.getByRole('region', { name: 'Editor posizione FEN', exact: true })
     const castling = editor.getByRole('group', { name: 'Arrocchi', exact: true })
     const palette = editor.getByRole('group', { name: 'Palette pezzi', exact: true })
     await expect(castling).toHaveJSProperty('tagName', 'FIELDSET')
@@ -212,7 +246,7 @@ test('position editor exposes named native groups and preserves keyboard control
     await expect(queen).toHaveClass('selected-piece')
     await editor.getByRole('button', { name: 'Applica posizione', exact: true }).click()
     const expected = new Chess().fen().replace(' KQkq ', ' Qkq ')
-    await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', expected)
+    await expect(fixture.getByTestId('editor-applied-fen')).toHaveText(expected)
     for (const group of [castling, palette]) {
       const box = await group.boundingBox()
       expect(box.x).toBeGreaterThanOrEqual(0)
@@ -228,7 +262,7 @@ test('local archive preserves the full PGN across navigation and reload, imports
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
   const pgn = '[White "Carlo"]\n[Black "Amico"]\n[Date "2026.10.07"]\n[Result "*"]\n\n1. e4 {Commento} e5 2. Nf3 Nc6 *'
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(pgn)
+  await (await openPgnImport(page)).fill(pgn)
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await page.getByRole('button', { name: 'Primo', exact: true }).click()
   await page.locator('.game-archive summary').click()
@@ -264,11 +298,15 @@ test('local archive preserves the full PGN across navigation and reload, imports
   page.once('dialog', dialog => dialog.accept())
   await archive.getByRole('button', { name: 'Elimina', exact: true }).click()
   await expect(archive.locator('li')).toHaveCount(0)
-  await archive.locator('input[type=file]').setInputFiles({ name: 'partita.pgn', mimeType: 'application/x-chess-pgn', buffer: Buffer.from(pgn) })
+  await openPgnImport(page)
+  await page.getByRole('dialog', { name: 'Importa partita', exact: true }).locator('input[type=file]').setInputFiles({ name: 'partita.pgn', mimeType: 'application/x-chess-pgn', buffer: Buffer.from(pgn) })
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(archive.locator('li')).toHaveCount(1)
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', exportedGame.fen())
   const custom = new Chess(exportedGame.fen()); custom.move('Bb5')
-  await archive.locator('input[type=file]').setInputFiles({ name: 'fen.pgn', mimeType: 'application/x-chess-pgn', buffer: Buffer.from(custom.pgn()) })
+  await openPgnImport(page)
+  await page.getByRole('dialog', { name: 'Importa partita', exact: true }).locator('input[type=file]').setInputFiles({ name: 'fen.pgn', mimeType: 'application/x-chess-pgn', buffer: Buffer.from(custom.pgn()) })
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(archive.locator('li')).toHaveCount(2)
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', custom.fen())
   await page.getByRole('button', { name: 'Primo', exact: true }).click()
@@ -299,16 +337,17 @@ test('saved analysis opens offline without a worker and obsolete analysis is pre
   })
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 *')
+  await (await openPgnImport(page)).fill('1. e4 e5 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(2)
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
+  await openDisclosure(page, '.game-totals')
   const table = page.getByRole('table', { name: 'Conteggi classificazioni', exact: true })
   await expect(table).toHaveJSProperty('tagName', 'TABLE')
   await expect(table.getByRole('columnheader')).toHaveText(['Categoria', 'Bianco', 'Nero'])
   await expect(table.getByRole('rowheader', { name: 'Errore grave', exact: true })).toBeVisible()
-  await expect(page.getByRole('region', { name: 'Semimosse analizzate', exact: true })).toBeVisible()
+  await expect(page.locator('.notation-table')).toBeVisible()
   const tableBox = await table.boundingBox()
   expect(tableBox.x).toBeGreaterThanOrEqual(0)
   expect(tableBox.x + tableBox.width).toBeLessThanOrEqual(360)
@@ -332,7 +371,7 @@ test('saved analysis opens offline without a worker and obsolete analysis is pre
   await expect(page.locator('.analysis-row-button')).toHaveCount(2)
   await expect(page.locator('.engine-eval-label')).toContainText('Analisi salvata.')
   await expect(precision).toHaveText(savedPrecision)
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await assertLegalArrows(page)
   await page.getByRole('button', { name: 'Primo', exact: true }).click()
   await assertLegalArrows(page)
@@ -396,7 +435,7 @@ test('mobile navigation uses only buttons in imported and freely played games', 
   const game = new Chess()
   await expect(button('Primo')).toBeDisabled()
   await expect(button('Ultimo')).toBeDisabled()
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 2. Nf3 Nc6 *')
+  await (await openPgnImport(page)).fill('1. e4 e5 2. Nf3 Nc6 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   for (const move of ['e4', 'e5', 'Nf3', 'Nc6']) game.move(move)
   await expect(board).toHaveAttribute('data-fen', game.fen())
@@ -440,13 +479,10 @@ test('mobile navigation uses only buttons in imported and freely played games', 
   await expect(board).toHaveAttribute('data-fen', new Chess().fen())
   await button('Ultimo').click()
   await expect(board).toHaveAttribute('data-fen', free.fen())
-  // The free board can start from an edited FEN, not only the initial setup.
-  await openTools(page, 'Editor scacchiera')
-  await page.getByRole('textbox', { name: 'FEN', exact: true }).fill(free.fen())
-  await page.getByRole('button', { name: 'Applica posizione', exact: true }).click()
-  await page.locator('[data-square="d7"]').click()
-  await page.locator('[data-square="d5"]').click()
+  // A PGN can establish a custom starting FEN without exposing the position editor.
   const custom = new Chess(free.fen()); custom.move('d5')
+  await (await openPgnImport(page)).fill(custom.pgn())
+  await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(board).toHaveAttribute('data-fen', custom.fen())
   await button('Primo').click()
   await expect(board).toHaveAttribute('data-fen', free.fen())
@@ -488,11 +524,11 @@ test('navigation preserves chat undo snapshots and restores the original continu
   })
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 2. Nf3 Nc6 *')
+  await (await openPgnImport(page)).fill('1. e4 e5 2. Nf3 Nc6 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   const nav = page.getByRole('navigation', { name: 'Navigazione mosse' })
   const board = page.locator('.board-stage')
-  const undo = page.getByRole('button', { name: 'Torna indietro', exact: false })
+  const undo = page.getByRole('button', { name: 'Annulla mossa chat', exact: true })
   await openTools(page, 'Chatbot')
   await nav.getByRole('button', { name: 'Indietro', exact: true }).click()
   await nav.getByRole('button', { name: 'Indietro', exact: true }).click()
@@ -562,14 +598,14 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
     await openTools(page, 'Partita e analisi')
     expect(await page.evaluate(() => window.testWorkers.length)).toBe(0)
     await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
-    await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+    await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
     expect(await page.evaluate(() => window.testWorkers.length)).toBe(1)
     expect(await page.evaluate(() => window.testWorkers[0].terminated)).toBe(false)
     await expect(page.getByRole('button', { name: 'Riavvia motore', exact: true })).toHaveCount(0)
 
     await page.evaluate(() => { window.holdEngineSearch = true })
     const importPgn = async pgn => {
-      await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(pgn)
+      await (await openPgnImport(page)).fill(pgn)
       await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
     }
     const priorSearches = await page.evaluate(() => window.testWorkers[0].messages.filter(message => message.startsWith('go ')).length)
@@ -592,7 +628,7 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
     expect(await page.evaluate(() => window.testWorkers.length)).toBe(1)
 
     // Navigation must not clear the failure or silently reuse the dead engine.
-    await page.getByPlaceholder('Incolla un PGN', { exact: false }).blur()
+    await page.locator('.board-stage').focus()
     await page.keyboard.press('ArrowLeft')
     await expect(restart).toBeVisible()
     await page.keyboard.press('ArrowRight')
@@ -600,7 +636,7 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
 
     await page.evaluate(() => { window.holdEngineSearch = false })
     await restart.click()
-    await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+    await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
     await expect(restart).toHaveCount(0)
     await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', game.fen())
     await expect(page.locator('.analysis-row-button')).toHaveCount(4)
@@ -617,9 +653,10 @@ for (const failure of ['worker error', 'unacknowledged stop']) {
 async function assertLegalArrows(page) {
   // Read position and arrows in one browser task: navigation can render between awaits.
   const { fen, engineFen, evalFen, moves } = await page.locator('.board-stage').evaluate(board => {
-    return { fen: board.dataset.fen, engineFen: board.querySelector('.engine-arrow-overlay')?.dataset.fen, evalFen: board.parentElement.querySelector('.engine-eval-label')?.dataset.fen, moves: [...board.querySelectorAll('.engine-arrow-overlay .engine-arrow')].map(arrow => arrow.dataset.from + arrow.dataset.to) }
+    return { fen: board.dataset.fen, engineFen: board.querySelector('.engine-arrow-overlay')?.dataset.fen, evalFen: document.querySelector('.engine-eval-label')?.dataset.fen, moves: [...board.querySelectorAll('.engine-arrow-overlay .engine-arrow')].map(arrow => arrow.dataset.from + arrow.dataset.to) }
   })
-  const legal = new Chess(engineFen ?? fen).moves({ verbose: true }).map(move => move.from + move.to)
+  if (moves.length) expect(engineFen).toBe(fen)
+  const legal = new Chess(fen).moves({ verbose: true }).map(move => move.from + move.to)
   expect(moves.length).toBeLessThanOrEqual(1)
   for (const move of moves) expect(legal, JSON.stringify({ fen, engineFen, evalFen, moves })).toContain(move)
 }
@@ -710,8 +747,10 @@ test('completed analysis navigation stays fast without new engine searches', asy
     positions.push(game.fen())
   }
   await page.goto(appUrl)
+  await openTools(page, 'Chatbot')
+  await page.getByText('Contesto di apertura per la chat', { exact: true }).click()
   await openTools(page, 'Partita e analisi')
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(game.pgn())
+  await (await openPgnImport(page)).fill(game.pgn())
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await expect(page.locator('.analysis-row-button').first()).toBeVisible()
@@ -721,11 +760,12 @@ test('completed analysis navigation stays fast without new engine searches', asy
   await page.getByRole('button', { name: 'Primo', exact: true }).click()
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[0])
   await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[0])
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await expect(page.locator('.analysis-row-button')).toHaveCount(168)
   await page.getByRole('button', { name: 'Ultimo', exact: true }).click()
   const searches = await page.evaluate(() => window.engineSearchCount)
   expect(searches).toBe(169)
+  await openDisclosure(page, '.game-totals')
   const summaryBefore = await page.locator('.summary-table').innerText()
   const navigationTimings = []
   for (const [button, ply] of [['Indietro', 167], ['Primo', 0], ['Avanti', 1], ['Ultimo', 168]]) {
@@ -734,7 +774,7 @@ test('completed analysis navigation stays fast without new engine searches', asy
     await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', positions[ply])
     await expect(page.locator('.engine-eval-label')).toHaveAttribute('data-fen', positions[ply])
     await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(ply <= 1 ? 0 : 1)
-    if (ply > 1) await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', positions[ply - 1])
+    if (ply > 1) await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', positions[ply])
     await expect(page.locator('.move-classification-overlay')).toHaveCount(ply === 0 ? 0 : 1)
     if (ply > 0) {
       const move = new Chess(positions[ply - 1]).move(['Nf3', 'Nf6', 'Ng1', 'Ng8'][(ply - 1) % 4])
@@ -818,10 +858,48 @@ test('real Stockfish 19 refreshes a best-move arrow and hides it in book positio
     const NativeWorker = window.Worker
     window.engineSearchCount = 0
     window.engineInstances = []
+    window.activeNavigation = null
+    window.engineActivity = []
+    window.measureNextAnalysis = false
+    const active = new Set()
+    const longtasks = []
+    new PerformanceObserver(list => longtasks.push(...list.getEntries().map(e => ({ start: e.startTime, duration: e.duration })))).observe({ type: 'longtask', buffered: true })
+    const measure = async command => {
+      const result = window.activeNavigation = { start: performance.now(), frames: [], actions: [], commands: [command], done: false }
+      let last = result.start
+      const frame = now => { result.frames.push(now - last); last = now; if (!result.done) requestAnimationFrame(frame) }
+      requestAnimationFrame(frame)
+      for (let i = 0; i < 8; i++) {
+        const name = i % 2 ? 'Avanti' : 'Indietro'
+        const button = document.querySelector(`.move-navigation button[title="${name}"]`)
+          ?? [...document.querySelectorAll('.move-navigation button')].find(b => b.textContent === name)
+        result.actions.push({ name, t: performance.now(), engineActive: active.size > 0, enabled: Boolean(button && !button.disabled) })
+        button?.click()
+        await new Promise(resolve => setTimeout(resolve, 60))
+      }
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+      result.end = performance.now()
+      result.longtasks = longtasks.filter(e => e.start < result.end && e.start + e.duration >= result.start)
+      result.done = true
+    }
     window.Worker = class extends NativeWorker {
-      constructor(...args) { super(...args); window.engineInstances.push(this) }
+      constructor(...args) {
+        super(...args); window.engineInstances.push(this)
+        this.addEventListener('message', event => {
+          if (String(event.data).startsWith('bestmove')) {
+            active.delete(this)
+            window.engineActivity.push({ type: 'bestmove', t: performance.now(), line: event.data })
+          }
+        })
+      }
       postMessage(command) {
-        if (typeof command === 'string' && command.startsWith('go ')) window.engineSearchCount++
+        if (typeof command === 'string' && command.startsWith('go ')) {
+          window.engineSearchCount++
+          active.add(this)
+          window.engineActivity.push({ type: 'go', t: performance.now(), command })
+          if (window.measureNextAnalysis) { window.measureNextAnalysis = false; setTimeout(() => measure(command), 0) }
+          if (window.activeNavigation && !window.activeNavigation.done) window.activeNavigation.commands.push(command)
+        }
         super.postMessage(command)
       }
     }
@@ -837,7 +915,7 @@ test('real Stockfish 19 refreshes a best-move arrow and hides it in book positio
   await expect(page.getByText('La prima analisi scarica circa 100 MB.', { exact: false })).toBeVisible()
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await wasm
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await assertLegalArrows(page)
   // Cache persistence is tested with the real worker, including an offline restart.
@@ -853,52 +931,67 @@ test('real Stockfish 19 refreshes a best-move arrow and hides it in book positio
   expect(await page.evaluate(() => window.engineInstances.length)).toBe(0)
   await expect(page.getByText('La prima analisi scarica circa 100 MB.', { exact: false })).toHaveCount(0)
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await page.context().setOffline(true)
   try {
     await page.evaluate(() => window.engineInstances.at(-1).onerror(new Error('test restart from cache')))
     await page.getByRole('button', { name: 'Riavvia motore', exact: true }).click()
-    await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+    await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
     await assertLegalArrows(page)
   } finally { await page.context().setOffline(false) }
   await page.locator('[data-square="e2"]').click()
   await page.locator('[data-square="e4"]').click()
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await assertLegalArrows(page)
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 *')
+  await page.evaluate(() => { window.measureNextAnalysis = true })
+  await (await openPgnImport(page)).fill('1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await expect(page.locator('.analysis-row-button')).toHaveCount(8)
-  const savedSummary = await page.locator('.analysis-rows').textContent()
+  await page.waitForFunction(() => window.activeNavigation?.done)
+  const navigation = await page.evaluate(() => ({ ...window.activeNavigation, engineActivity: window.engineActivity }))
+  expect(navigation.actions).toHaveLength(8)
+  expect(navigation.actions.every(action => action.enabled)).toBe(true)
+  expect(navigation.actions.filter(action => action.engineActive).length).toBeGreaterThan(0)
+  expect(navigation.commands.length).toBeGreaterThan(0)
+  expect(navigation.commands.every(command => command === 'go nodes 200000')).toBe(true)
+  const measurement = { scenario: '8 navigation actions during real Stockfish 19 initial analysis', runtime: 'Edge headless, Vite development', statisticalBenchmark: false,
+    activeActions: navigation.actions.filter(action => action.engineActive).length, maxRafGapMs: Math.max(0, ...navigation.frames),
+    longtaskCount: navigation.longtasks.length, maxLongtaskMs: Math.max(0, ...navigation.longtasks.map(task => task.duration)), navigation }
+  const output = join(tmpdir(), 'chessprofessor-engine-active-navigation.json')
+  writeFileSync(output, JSON.stringify(measurement, null, 2))
+  console.log(JSON.stringify({ output, activeActions: measurement.activeActions, maxRafGapMs: measurement.maxRafGapMs,
+    longtaskCount: measurement.longtaskCount, maxLongtaskMs: measurement.maxLongtaskMs }))
+  const savedSummary = await page.locator('.notation-table').textContent()
   const searchesBeforeClosing = await page.evaluate(() => window.engineSearchCount)
   await page.locator('.tools-menu > summary').click()
-  await expect(page.locator('.analysis-summary')).not.toBeVisible()
+  await expect(page.locator('.analysis-summary')).toBeVisible()
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await openTools(page, 'Partita e analisi')
-  expect(await page.locator('.analysis-rows').textContent()).toBe(savedSummary)
+  expect(await page.locator('.notation-table').textContent()).toBe(savedSummary)
   expect(await page.evaluate(() => window.engineSearchCount)).toBe(searchesBeforeClosing)
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).blur()
+  await page.locator('.board-stage').focus()
   await page.keyboard.press('ArrowLeft')
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   await page.keyboard.press('ArrowRight')
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await assertLegalArrows(page)
   await page.getByRole('button', { name: 'Reset partita', exact: true }).click()
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
   await assertLegalArrows(page)
   const beforeRapidImport = await page.evaluate(() => window.engineSearchCount)
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. d4 d5 2. c4 e6 3. Nc3 Nf6 *')
+  await (await openPgnImport(page)).fill('1. d4 d5 2. c4 e6 3. Nc3 Nf6 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect.poll(() => page.evaluate(() => window.engineSearchCount)).toBeGreaterThan(beforeRapidImport)
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. c4 *')
+  await (await openPgnImport(page)).fill('1. c4 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0)
   await assertLegalArrows(page)
   expect(errors).toEqual([])
@@ -926,10 +1019,10 @@ test('clears previous arrows while a newly imported position is waiting for anal
   await openTools(page, 'Partita e analisi')
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(1)
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 *')
+  await (await openPgnImport(page)).fill('1. e4 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(page.locator('.engine-arrow-overlay .engine-arrow')).toHaveCount(0, { timeout: 500 })
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await assertLegalArrows(page)
 })
 
@@ -971,9 +1064,9 @@ test('rapid imports and reset stop the old search before another go command', as
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   const importPgn = async pgn => {
-    await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(pgn)
+    await (await openPgnImport(page)).fill(pgn)
     await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   }
   const searchCount = () => page.evaluate(() => window.engineCommands.filter(command => command.startsWith('go ')).length)
@@ -981,14 +1074,14 @@ test('rapid imports and reset stop the old search before another go command', as
   await importPgn('1. e4 e5 2. Nf3 Nc6 *')
   await expect.poll(searchCount).toBeGreaterThan(initialCount)
   await importPgn('1. d4 *')
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   expect(await page.locator('.board-stage').getAttribute('data-fen')).toBe(new Chess('rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1').fen())
   await assertLegalArrows(page)
   const beforeReset = await searchCount()
   await importPgn('1. e4 e5 *')
   await expect.poll(searchCount).toBeGreaterThan(beforeReset)
   await page.getByRole('button', { name: 'Reset partita', exact: true }).click()
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione:')
+  await expect(page.locator('.engine-bar-score')).not.toHaveText('\u2014')
   await assertLegalArrows(page)
   expect(await page.evaluate(() => window.engineCommands.filter(command => command === 'stop').length)).toBeGreaterThanOrEqual(2)
   expect(errors).toEqual([])
@@ -1029,7 +1122,7 @@ async function installControlledAnalysisWorker(page) {
   })
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
-  await page.getByRole('textbox', { name: 'PGN da importare' }).fill('1. e4 e5 2. Nf3 Nc6 *')
+  await (await openPgnImport(page)).fill('1. e4 e5 2. Nf3 Nc6 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
 }
 
@@ -1062,7 +1155,7 @@ test('initial analysis pause preserves results, UCI history and progress through
   expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(3)
   await page.evaluate(() => { window.analysisAutoFinish = true; window.analysisWorkers[0].finish(999) })
   await expect(page.locator('.analysis-row-button')).toHaveCount(4)
-  await expect(page.locator('.engine-eval-label')).toContainText('1 linea MultiPV disponibile.')
+  await expect(page.locator('.engine-eval-label')).not.toContainText('MultiPV')
   await expect(page.locator('.analysis-row-button').first()).toHaveText(firstRow, { useInnerText: true })
   await expect(page.locator('.engine-eval-label')).not.toContainText('9.99')
   expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c === 'stop').length)).toBe(1)
@@ -1087,14 +1180,14 @@ test('importing after initial analysis pause discards the old job and starts the
   await installControlledAnalysisWorker(page)
   await completeFirstAnalysisMove(page)
   await page.getByRole('button', { name: 'Interrompi analisi', exact: true }).click()
-  await page.getByRole('textbox', { name: 'PGN da importare' }).fill('1. d4 d5 *')
+  await (await openPgnImport(page)).fill('1. d4 d5 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(0)
   expect(await page.evaluate(() => window.analysisWorkers[0].messages.filter(c => c.startsWith('go ')).length)).toBe(3)
   await page.evaluate(() => { window.analysisAutoFinish = true; window.analysisWorkers[0].finish(999) })
   await expect(page.locator('.analysis-row-button')).toHaveCount(2)
-  await expect(page.locator('.analysis-row-button').first()).toContainText('1. d4')
-  await expect(page.locator('.engine-eval-label')).toContainText('Valutazione: 0.20')
+  await expect(page.locator('.analysis-row-button').first()).toHaveAttribute('aria-label', '1. d4')
+  await expect(page.locator('.engine-bar-score')).toHaveText('0.2')
   await expect(page.getByRole('button', { name: 'Riprendi analisi', exact: true })).toHaveCount(0)
   expect(await page.evaluate(() => window.analysisRejections)).toEqual([])
 })
@@ -1146,20 +1239,20 @@ for (const { winner, pgn, matingMove, barWidth } of [
 test(`real mating game won by ${winner} shows mate given instead of a missing evaluation`, async ({ page }) => {
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(pgn)
+  await (await openPgnImport(page)).fill(pgn)
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
   const finalMove = page.locator('.analysis-row-button').filter({ hasText: matingMove })
-  await expect(finalMove).toContainText('Migliore')
-  await expect(finalMove).toContainText('Matto dato')
-  await expect(finalMove).not.toContainText('Eval n/d')
-  await expect(page.locator('.engine-eval-label')).toHaveText('Scacco matto')
-  await expect(page.locator('.engine-bar-fill')).toHaveAttribute('style', `width: ${barWidth};`)
+  await expect(finalMove).toHaveAttribute('data-classification', 'best')
+  await finalMove.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Matto dato')
+  await expect(page.locator('.selected-move')).not.toContainText('Eval n/d')
+  await expect(page.locator('.engine-bar-score')).toHaveText(winner === 'Black' ? '-M0' : 'M0')
+  await expect(page.locator('.engine-bar-fill')).toHaveAttribute('style', `height: ${barWidth};`)
   if (winner === 'Black') {
-    const error = page.locator('.analysis-row-button').filter({ hasText: 'g4' }).locator('..')
-    await error.getByText('Perché questa classificazione?', { exact: true }).click()
-    await error.getByText('Spiegazione scacchistica', { exact: true }).click()
-    const explanation = error.getByRole('region', { name: 'Spiegazione scacchistica' })
+    await page.locator('.analysis-row-button').filter({ hasText: 'g4' }).click()
+    const explanation = page.locator('.selected-move').getByRole('region', { name: 'Spiegazione scacchistica' })
     await expect(explanation).toContainText('Qh4#')
     await expect(explanation).toContainText('matto')
   }
@@ -1190,12 +1283,14 @@ test('missed opportunity renders the verified alternative and previous opponent 
   }, { afterF3 })
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 2. a3 a6 3. f3 d6 *')
+  await (await openPgnImport(page)).fill('1. e4 e5 2. a3 a6 3. f3 d6 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
-  const missedMove = page.locator('.analysis-row-button').filter({ hasText: '3... d6' })
-  await expect(missedMove).toContainText('Mossa mancata')
-  await expect(missedMove).toContainText("Dopo f3, l'occasione era Nc6 d4.")
+  const missedMove = page.getByRole('button', { name: '3... d6', exact: true })
+  await expect(missedMove).toHaveAttribute('data-classification', 'missed')
+  await missedMove.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText("Dopo f3, l'occasione era Nc6 d4.")
 })
 
 test('missed mate labels refresh in saved analysis offline without another engine search', async ({ page }) => {
@@ -1222,11 +1317,13 @@ test('missed mate labels refresh in saved analysis offline without another engin
   }, { before })
   await page.goto(appUrl)
   await openTools(page, 'Partita e analisi')
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill(`[SetUp "1"]\n[FEN "${before}"]\n\n2... Nc6 *`)
+  await (await openPgnImport(page)).fill(`[SetUp "1"]\n[FEN "${before}"]\n\n2... Nc6 *`)
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await page.getByRole('button', { name: 'Avvia analisi', exact: true }).click()
-  await expect(page.locator('.analysis-row-button')).toContainText('Mossa mancata')
-  await expect(page.locator('.analysis-row-button')).toContainText('Matto in 1 non mantenuto')
+  await expect(page.locator('.analysis-row-button')).toHaveAttribute('data-classification', 'missed')
+  await page.locator('.analysis-row-button').click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Matto in 1 non mantenuto')
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Salva partita e analisi' }).click()
   await expect(page.locator('.game-archive li')).toContainText('Analisi salvata: 1 mosse.')
@@ -1254,8 +1351,10 @@ test('missed mate labels refresh in saved analysis offline without another engin
   await openTools(page, 'Partita e analisi')
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
-  await expect(page.locator('.analysis-row-button')).toContainText('Mossa mancata')
-  await expect(page.locator('.analysis-row-button')).toContainText('Matto in 1 non mantenuto')
+  await expect(page.locator('.analysis-row-button')).toHaveAttribute('data-classification', 'missed')
+  await page.locator('.analysis-row-button').click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Matto in 1 non mantenuto')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1302,14 +1401,17 @@ for (const category of ['Grande', 'Geniale']) {
     await page.locator('.game-archive summary').click()
     await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
     const row = page.locator('.analysis-row-button')
+    await openDisclosure(page, '.analysis-display-options')
     const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
     await expect(toggle).toBeChecked()
-    await expect(row).toContainText(category)
-    await expect(row).toContainText(sacrifice ? 'Sacrificio compensato' : 'Difesa decisiva')
+    await expect(row).toHaveAttribute('data-classification', classificationKeys[category])
+    await row.click()
+    await openDisclosure(page, '.traceability')
+    await expect(page.locator('.selected-move')).toContainText(sacrifice ? 'Sacrificio compensato' : 'Difesa decisiva')
     await toggle.uncheck()
-    await expect(row).toContainText('Migliore')
+    await expect(row).toHaveAttribute('data-classification', 'best')
     await toggle.check()
-    await expect(row).toContainText(category)
+    await expect(row).toHaveAttribute('data-classification', classificationKeys[category])
     expect(await page.evaluate(() => window.workerCount)).toBe(0)
   })
 }
@@ -1348,15 +1450,18 @@ test(`real archived ${san} is reclassified ${category} by default offline from m
   await openTools(page, 'Partita e analisi')
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
-  const row = page.locator('.analysis-row-button').filter({ hasText: `${Math.ceil(ply / 2)}. ${san}` })
-  await expect(row).toContainText(category)
-  await expect(row).toContainText(category === 'Geniale' ? 'Sacrificio compensato'
+  const row = page.getByRole('button', { name: `${Math.ceil(ply / 2)}. ${san}`, exact: true })
+  await expect(row).toHaveAttribute('data-classification', classificationKeys[category])
+  await row.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText(category === 'Geniale' ? 'Sacrificio compensato'
     : san === 'Bxf7' ? 'Recupera una posizione circa equilibrata' : 'Difesa decisiva')
+  await openDisclosure(page, '.analysis-display-options')
   const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
   await toggle.uncheck()
-  await expect(row).toContainText('Migliore')
+  await expect(row).toHaveAttribute('data-classification', 'best')
   await toggle.check()
-  await expect(row).toContainText(category)
+  await expect(row).toHaveAttribute('data-classification', classificationKeys[category])
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 }
@@ -1381,13 +1486,16 @@ test('ordinary nonchecking recapture migrates a v7 Grande archive offline withou
   await openTools(page, 'Partita e analisi')
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
-  const row = page.locator('.analysis-row-button').filter({ hasText: '13. gxf3' })
-  await expect(row).toContainText('Migliore')
-  await expect(row).toContainText('Ripresa materiale')
-  await expect(row).not.toContainText('Difesa decisiva')
+  const row = page.getByRole('button', { name: '13. gxf3', exact: true })
+  await expect(row).toHaveAttribute('data-classification', 'best')
+  await row.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Ripresa materiale')
+  await expect(page.locator('.selected-move')).not.toContainText('Difesa decisiva')
+  await openDisclosure(page, '.analysis-display-options')
   const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
-  await toggle.uncheck(); await expect(row).toContainText('Migliore')
-  await toggle.check(); await expect(row).toContainText('Migliore')
+  await toggle.uncheck(); await expect(row).toHaveAttribute('data-classification', 'best')
+  await toggle.check(); await expect(row).toHaveAttribute('data-classification', 'best')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1411,15 +1519,17 @@ test('unsupported Bf5 response migrates a v8 Grande archive offline without an e
   await openTools(page, 'Partita e analisi')
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
-  const row = page.locator('.analysis-row-button').filter({ hasText: '15... Bf5' })
-  await expect(row).toContainText('Migliore')
+  const row = page.getByRole('button', { name: '15... Bf5', exact: true })
+  await expect(row).toHaveAttribute('data-classification', 'best')
   // The current policy rejects the missing forcing event before comparing
   // alternatives. The legacy Grande must still migrate to numerical Best.
-  await expect(row).not.toContainText('Grande')
-  await expect(row).not.toContainText('Difesa decisiva')
+  await expect(row).not.toHaveAttribute('data-classification', 'great')
+  await row.click()
+  await expect(page.locator('.selected-move')).not.toContainText('Difesa decisiva')
+  await openDisclosure(page, '.analysis-display-options')
   const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
-  await toggle.uncheck(); await expect(row).toContainText('Migliore')
-  await toggle.check(); await expect(row).toContainText('Migliore')
+  await toggle.uncheck(); await expect(row).toHaveAttribute('data-classification', 'best')
+  await toggle.check(); await expect(row).toHaveAttribute('data-classification', 'best')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1444,13 +1554,16 @@ test('discovered attack realization migrates a v9 refined archive offline withou
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
   await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
-  const row = page.locator('.analysis-row-button').filter({ hasText: '14. Qxf5' })
-  await expect(row).toContainText('Migliore')
-  await expect(row).toContainText('Incasso di un precedente attacco scoperto')
-  await expect(page.locator('.analysis-row-button').filter({ hasText: '13. Ne2' })).toContainText('Grande')
+  const row = page.getByRole('button', { name: '14. Qxf5', exact: true })
+  await expect(row).toHaveAttribute('data-classification', 'best')
+  await row.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Incasso di un precedente attacco scoperto')
+  await expect(page.getByRole('button', { name: '13. Ne2', exact: true })).toHaveAttribute('data-classification', 'great')
+  await openDisclosure(page, '.analysis-display-options')
   const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
-  await toggle.uncheck(); await expect(row).toContainText('Migliore')
-  await toggle.check(); await expect(row).toContainText('Migliore')
+  await toggle.uncheck(); await expect(row).toHaveAttribute('data-classification', 'best')
+  await toggle.check(); await expect(row).toHaveAttribute('data-classification', 'best')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1473,14 +1586,18 @@ test('batch review migrates exact CP ties and preserves the deeper comparison of
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
   const refined = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
   await refined.check()
-  const tie = page.locator('.analysis-row-button').filter({ hasText: '7... c6' })
-  await expect(tie).toContainText('Migliore')
-  await expect(tie).toContainText('Valutazione pari alla prima scelta')
-  const kept = page.locator('.analysis-row-button').filter({ hasText: '10. dxe5' })
-  await expect(kept).toContainText('Buona')
-  await expect(kept).toContainText('Confronto iniziale più profondo conservato')
-  await refined.uncheck(); await expect(kept).toContainText('Buona')
-  await refined.check(); await expect(kept).toContainText('Buona')
+  const tie = page.getByRole('button', { name: '7... c6', exact: true })
+  await expect(tie).toHaveAttribute('data-classification', 'best')
+  await tie.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Valutazione pari alla prima scelta')
+  const kept = page.getByRole('button', { name: '10. dxe5', exact: true })
+  await expect(kept).toHaveAttribute('data-classification', 'good')
+  await kept.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Confronto iniziale più profondo conservato')
+  await refined.uncheck(); await expect(kept).toHaveAttribute('data-classification', 'good')
+  await refined.check(); await expect(kept).toHaveAttribute('data-classification', 'good')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1508,9 +1625,11 @@ test('batch review migrates a legacy equal-mate alternative offline', async ({ p
   await openTools(page, 'Partita e analisi')
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
-  const row = page.locator('.analysis-row-button').filter({ hasText: '25... Qf7' })
-  await expect(row).toContainText('Migliore')
-  await expect(row).toContainText('Valutazione pari alla prima scelta')
+  const row = page.getByRole('button', { name: '25... Qf7', exact: true })
+  await expect(row).toHaveAttribute('data-classification', 'best')
+  await row.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Valutazione pari alla prima scelta')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1540,12 +1659,15 @@ test('corroborated Bxf4 sacrifice refreshes a v5 archive offline without an engi
   await openTools(page, 'Partita e analisi')
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
-  const row = page.locator('.analysis-row-button').filter({ hasText: '8. Bxf4' })
-  await expect(row).toContainText('Geniale')
-  await expect(row).toContainText('Compensazione confermata anche')
+  const row = page.getByRole('button', { name: '8. Bxf4', exact: true })
+  await expect(row).toHaveAttribute('data-classification', 'brilliant')
+  await row.click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Compensazione confermata anche')
+  await openDisclosure(page, '.analysis-display-options')
   const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
-  await toggle.uncheck(); await expect(row).toContainText('Migliore')
-  await toggle.check(); await expect(row).toContainText('Geniale')
+  await toggle.uncheck(); await expect(row).toHaveAttribute('data-classification', 'best')
+  await toggle.check(); await expect(row).toHaveAttribute('data-classification', 'brilliant')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1588,16 +1710,24 @@ for (const mode of ['forced', 'book-snapshot', 'conflicting']) {
     await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
     const row = page.locator('.analysis-row-button')
     if (mode === 'forced') {
-      await expect(row).toContainText('Forzata')
-      await expect(row).toContainText('Unica mossa legale')
+      await expect(row).toHaveAttribute('data-classification', 'forced')
+      await row.click()
+      await openDisclosure(page, '.traceability')
+      await expect(page.locator('.selected-move')).toContainText('Unica mossa legale')
+      await openDisclosure(page, '.analysis-display-options')
       await page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' }).uncheck()
-      await expect(row).toContainText('Forzata')
+      await expect(row).toHaveAttribute('data-classification', 'forced')
     } else if (mode === 'book-snapshot') {
-      await expect(row).toContainText('Libro · Valutazione: Errore')
-      await expect(row).toContainText('Migliore: Eval 1.00')
-      await expect(row).not.toContainText('analisi separate')
+      await row.click()
+      await openDisclosure(page, '.traceability')
+      await expect(page.locator('.selected-move')).toContainText('Libro · Valutazione: Errore')
+      await openDisclosure(page, '.traceability')
+      await expect(page.locator('.selected-move')).toContainText('Migliore: Eval 1.00')
+      await expect(page.locator('.selected-move')).not.toContainText('analisi separate')
     } else {
-      await expect(row).toContainText('Valutazioni discordanti: classificazione provvisoria.')
+      await row.click()
+      await openDisclosure(page, '.traceability')
+      await expect(page.locator('.selected-move')).toContainText('Valutazioni discordanti: classificazione provvisoria.')
     }
     expect(await page.evaluate(() => window.workerCount)).toBe(0)
   })
@@ -1606,6 +1736,7 @@ for (const mode of ['forced', 'book-snapshot', 'conflicting']) {
 test('optional refinement compares and archives a complete game, reopening both profiles offline without searches', async ({ page }) => {
   const data = await openRefinementExample(page)
   const plan = buildRefinementPlan(data.entries)
+  await openDisclosure(page, '.game-totals')
   const initial = await page.locator('.summary-table').innerText()
   await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
   await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
@@ -1614,7 +1745,9 @@ test('optional refinement compares and archives a complete game, reopening both 
   expect(await page.evaluate(() => window.sacrificeSearches)).toBeLessThanOrEqual(plan.extraSearches)
   const toggle = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
   await expect(toggle).toBeChecked()
-  await expect(page.locator('.analysis-row-button').filter({ hasText: 'Iniziale:' }).first()).toBeVisible()
+  await page.locator('.analysis-row-button').nth(plan.selectedPlies[0] - 1).click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Iniziale:')
   const searches = await page.evaluate(() => window.refinementSearches)
   await page.getByRole('button', { name: 'Primo', exact: true }).click()
   await page.getByRole('button', { name: 'Ultimo', exact: true }).click()
@@ -1638,7 +1771,9 @@ test('optional refinement compares and archives a complete game, reopening both 
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(data.entries.length)
   await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
-  await expect(page.locator('.analysis-row-button').filter({ hasText: 'Iniziale:' }).first()).toBeVisible()
+  await page.locator('.analysis-row-button').nth(plan.selectedPlies[0] - 1).click()
+  await openDisclosure(page, '.traceability')
+  await expect(page.locator('.selected-move')).toContainText('Iniziale:')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1651,20 +1786,22 @@ test('explicit Grande verification skips Bc4 already resolved by the policy and 
   await openRefinementExample(page, 5, data)
   const toggle = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
   await toggle.check()
-  const row = page.locator('.analysis-row-button').filter({ hasText: '11. Bc4' })
-  await expect(row).toContainText('Migliore')
+  const row = page.getByRole('button', { name: '11. Bc4', exact: true })
+  await expect(row).toHaveAttribute('data-classification', 'best')
   const ordinary = page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ })
   const ordinaryBefore = await ordinary.innerText()
+  await openDisclosure(page, '.advanced-analysis')
   await page.getByRole('button', { name: 'Verifica le Grandi', exact: true }).click()
   await expect(page.getByText('Nessuna Grande da verificare con i dati attuali.')).toBeVisible()
-  await expect(row).toContainText('Migliore')
-  await expect(page.locator('.analysis-row-button').filter({ hasText: '24... a6' })).toContainText('Ottima')
-  await expect(page.locator('.analysis-row-button').filter({ hasText: '21. Qxe5' })).toContainText('Geniale')
+  await expect(row).toHaveAttribute('data-classification', 'best')
+  await expect(page.getByRole('button', { name: '24... a6', exact: true })).toHaveAttribute('data-classification', 'excellent')
+  await expect(page.getByRole('button', { name: '21. Qxe5', exact: true })).toHaveAttribute('data-classification', 'brilliant')
   expect(await page.evaluate(() => window.refinementSearches)).toBe(0)
   expect(await page.evaluate(() => window.fastSearches)).toBe(0)
   await expect(ordinary).toHaveText(ordinaryBefore)
-  await toggle.uncheck(); await expect(row).toContainText('Migliore')
-  await toggle.check(); await expect(row).toContainText('Migliore')
+  await toggle.uncheck(); await expect(row).toHaveAttribute('data-classification', 'best')
+  await toggle.check(); await expect(row).toHaveAttribute('data-classification', 'best')
+  await openDisclosure(page, '.advanced-analysis')
   await page.getByRole('button', { name: 'Verifica le Grandi', exact: true }).click()
   await expect(page.getByText('Nessuna Grande da verificare con i dati attuali.')).toBeVisible()
   expect(await page.evaluate(() => window.refinementSearches)).toBe(0)
@@ -1674,7 +1811,7 @@ test('explicit Grande verification skips Bc4 already resolved by the policy and 
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
   await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
-  await expect(page.locator('.analysis-row-button').filter({ hasText: '11. Bc4' })).toContainText('Migliore')
+  await expect(page.getByRole('button', { name: '11. Bc4', exact: true })).toHaveAttribute('data-classification', 'best')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1689,9 +1826,9 @@ test('v20 separate recovery verification confirms Nxe4, preserves Qd3 and reopen
   await openRefinementExample(page, 5, data)
   const toggle = page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true })
   await toggle.check()
-  const nxe4 = page.locator('.analysis-row-button').filter({ hasText: '8... Nxe4' })
-  const qd3 = page.locator('.analysis-row-button').filter({ hasText: '9. Qd3' })
-  await expect(nxe4).toContainText('Migliore'); await expect(qd3).toContainText('Errore')
+  const nxe4 = page.getByRole('button', { name: '8... Nxe4', exact: true })
+  const qd3 = page.getByRole('button', { name: '9. Qd3', exact: true })
+  await expect(nxe4).toHaveAttribute('data-classification', 'best'); await expect(qd3).toHaveAttribute('data-classification', 'mistake')
   const ordinary = page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ })
   const ordinaryBefore = await ordinary.innerText()
   const fieldsBefore = await page.evaluate(async () => {
@@ -1700,14 +1837,16 @@ test('v20 separate recovery verification confirms Nxe4, preserves Qd3 and reopen
     const archive = createGameArchive(), record = (await archive.list())[0]; await archive.close()
     return selectRefinementView(record.analysisEntries,true).map(e => [e.bestEval,e.playedEval,e.bestMate,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
   })
+  await openDisclosure(page, '.advanced-analysis')
   await page.getByRole('button', { name: 'Verifica le Grandi', exact: true }).click()
   await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
-  await expect(nxe4).toContainText('Grande'); await expect(qd3).toContainText('Errore')
+  await expect(nxe4).toHaveAttribute('data-classification', 'great'); await expect(qd3).toHaveAttribute('data-classification', 'mistake')
   await expect(ordinary).toHaveText(ordinaryBefore)
   expect(await page.evaluate(() => window.refinementSearches)).toBe(1)
   expect(await page.evaluate(() => window.fastSearches)).toBe(0)
-  await toggle.uncheck(); await expect(nxe4).toContainText('Migliore')
-  await toggle.check(); await expect(nxe4).toContainText('Grande')
+  await toggle.uncheck(); await expect(nxe4).toHaveAttribute('data-classification', 'best')
+  await toggle.check(); await expect(nxe4).toHaveAttribute('data-classification', 'great')
+  await openDisclosure(page, '.advanced-analysis')
   await page.getByRole('button', { name: 'Verifica le Grandi', exact: true }).click()
   await expect(page.getByText('Nessuna Grande da verificare con i dati attuali.')).toBeVisible()
   expect(await page.evaluate(() => window.refinementSearches)).toBe(1)
@@ -1724,8 +1863,8 @@ test('v20 separate recovery verification confirms Nxe4, preserves Qd3 and reopen
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
   await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
-  await expect(page.locator('.analysis-row-button').filter({ hasText: '8... Nxe4' })).toContainText('Grande')
-  await expect(page.locator('.analysis-row-button').filter({ hasText: '9. Qd3' })).toContainText('Errore')
+  await expect(page.getByRole('button', { name: '8... Nxe4', exact: true })).toHaveAttribute('data-classification', 'great')
+  await expect(page.getByRole('button', { name: '9. Qd3', exact: true })).toHaveAttribute('data-classification', 'mistake')
   expect(await page.evaluate(() => window.workerCount)).toBe(0)
 })
 
@@ -1747,7 +1886,7 @@ test('v21 sacrifice proofs confirm Rb3, preserve other specials and reopen offli
   const data={entries,pgn:cache.pgn,packets,proofConfirmationFens:plan.queries.filter(q=>!q.uci).map(q=>q.fen)}
   await openRefinementExample(page,5,data)
   const row=page.locator('.analysis-row-button').nth(52)
-  await expect(row).toContainText('Ottima')
+  await expect(row).toHaveAttribute('data-classification', 'excellent')
   const fieldsBefore=await page.evaluate(async()=>{
     const {createGameArchive}=await import('/ChessProfessor/src/lib/gameArchive.js')
     const {selectRefinementView}=await import('/ChessProfessor/src/lib/analysisRefinement.js')
@@ -1755,15 +1894,17 @@ test('v21 sacrifice proofs confirm Rb3, preserve other specials and reopen offli
     const a=createGameArchive(),r=(await a.list())[0];await a.close()
     return selectRefinementView(reclassifyReviewedMoves(r.analysisEntries),true).map(e=>[e.bestEval,e.playedEval,e.bestMate,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
   })
+  await openDisclosure(page, '.advanced-analysis')
   await page.getByRole('button',{name:'Verifica i sacrifici',exact:true}).click()
   await expect(page.getByText(/Approfondimento completato:/)).toBeVisible({timeout:120000})
-  await expect(row).toContainText('Geniale')
-  for(const ply of [31,43,45])await expect(page.locator('.analysis-row-button').nth(ply-1)).toContainText('Grande')
-  await expect(page.locator('.analysis-row-button').nth(60)).toContainText('Geniale')
+  await expect(row).toHaveAttribute('data-classification', 'brilliant')
+  for(const ply of [31,43,45])await expect(page.locator('.analysis-row-button').nth(ply-1)).toHaveAttribute('data-classification', 'great')
+  await expect(page.locator('.analysis-row-button').nth(60)).toHaveAttribute('data-classification', 'brilliant')
   expect(await page.evaluate(()=>[window.refinementSearches,window.fastSearches,window.sacrificeSearches])).toEqual([0,0,8])
   const toggle=page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true})
-  await toggle.uncheck();await expect(row).toContainText('Ottima')
-  await toggle.check();await expect(row).toContainText('Geniale')
+  await toggle.uncheck();await expect(row).toHaveAttribute('data-classification', 'excellent')
+  await toggle.check();await expect(row).toHaveAttribute('data-classification', 'brilliant')
+  await openDisclosure(page, '.advanced-analysis')
   await page.getByRole('button',{name:'Verifica i sacrifici',exact:true}).click()
   await expect(page.getByText('Nessun sacrificio da verificare con i dati attuali.')).toBeVisible()
   expect(await page.evaluate(()=>window.sacrificeSearches)).toBe(8)
@@ -1780,8 +1921,8 @@ test('v21 sacrifice proofs confirm Rb3, preserve other specials and reopen offli
   await openTools(page,'Partita e analisi');await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button',{name:'Apri',exact:true}).click()
   await page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true}).check()
-  await expect(page.locator('.analysis-row-button').nth(52)).toContainText('Geniale')
-  await expect(page.locator('.analysis-row-button').nth(30)).toContainText('Grande')
+  await expect(page.locator('.analysis-row-button').nth(52)).toHaveAttribute('data-classification', 'brilliant')
+  await expect(page.locator('.analysis-row-button').nth(30)).toHaveAttribute('data-classification', 'great')
   expect(await page.evaluate(()=>window.workerCount)).toBe(0)
 })
 
@@ -1853,25 +1994,26 @@ test('v24 axb4 verifies pair and alternatives, preserves scores, and reopens off
     const archive=createGameArchive(),r=(await archive.list())[0];await archive.close()
     return selectRefinementView(reclassifyReviewedMoves(r.analysisEntries),true).map(e=>[e.bestEval,e.bestMate,e.playedEval,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
   })
-  await expect(row).toContainText('Migliore')
+  await expect(row).toHaveAttribute('data-classification', 'best')
+  await openDisclosure(page, '.advanced-analysis')
   const before=await fields(),button=page.getByRole('button',{name:'Verifica le scelte decisive',exact:true})
   await button.click();await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
-  await expect(row).toContainText('Migliore')
+  await expect(row).toHaveAttribute('data-classification', 'best')
   expect(await page.evaluate(()=>window.refinementSearches)).toBe(2)
-  await button.click();await expect(row).toContainText('Grande',{timeout:90000})
+  await button.click();await expect(row).toHaveAttribute('data-classification', 'great',{timeout:90000})
   expect(await page.evaluate(()=>window.refinementSearches)).toBe(6)
   const toggle=page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true})
-  await toggle.uncheck();await expect(row).toContainText('Migliore')
-  await toggle.check();await expect(row).toContainText('Grande')
+  await toggle.uncheck();await expect(row).toHaveAttribute('data-classification', 'best')
+  await toggle.check();await expect(row).toHaveAttribute('data-classification', 'great')
   await page.locator('.game-archive').getByRole('button',{name:'Salva partita e analisi'}).click()
   expect(await fields()).toEqual(before)
   await page.reload();await page.context().setOffline(true)
   await openTools(page,'Partita e analisi');await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button',{name:'Apri',exact:true}).click()
   const reopened=page.locator('.analysis-row-button').nth(2)
-  await expect(reopened).toContainText('Migliore')
+  await expect(reopened).toHaveAttribute('data-classification', 'best')
   await page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true}).check()
-  await expect(reopened).toContainText('Grande')
+  await expect(reopened).toHaveAttribute('data-classification', 'great')
   expect(await page.evaluate(()=>window.workerCount)).toBe(0)
 })
 
@@ -1898,7 +2040,7 @@ test('v22 decisive verification checks every alternative and reopens Qxc7 offlin
   test.setTimeout(240000)
   await openRefinementExample(page,5,decisiveExample())
   const row=page.locator('.analysis-row-button').nth(44),control=page.locator('.analysis-row-button').nth(48)
-  await expect(row).toContainText('Migliore');await expect(control).toContainText('Migliore')
+  await expect(row).toHaveAttribute('data-classification', 'best');await expect(control).toHaveAttribute('data-classification', 'best')
   const fields=()=>page.evaluate(async()=>{
     const {createGameArchive}=await import('/ChessProfessor/src/lib/gameArchive.js')
     const {reclassifyReviewedMoves}=await import('/ChessProfessor/src/lib/reviewMoves.js')
@@ -1906,14 +2048,15 @@ test('v22 decisive verification checks every alternative and reopens Qxc7 offlin
     const a=createGameArchive(),r=(await a.list())[0];await a.close()
     return selectRefinementView(reclassifyReviewedMoves(r.analysisEntries),true).map(e=>[e.bestEval,e.bestMate,e.playedEval,e.playedMate,e.bestProbability,e.playedProbability,e.dropPct])
   })
+  await openDisclosure(page, '.advanced-analysis')
   const before=await fields(),button=page.getByRole('button',{name:'Verifica le scelte decisive',exact:true})
   await button.click();await expect(page.getByText(/Approfondimento completato:/)).toBeVisible()
-  await expect(row).toContainText('Migliore');expect(await page.evaluate(()=>window.refinementSearches)).toBe(2)
-  await button.click();await expect(row).toContainText('Grande',{timeout:120000})
-  await expect(control).toContainText('Migliore')
+  await expect(row).toHaveAttribute('data-classification', 'best');expect(await page.evaluate(()=>window.refinementSearches)).toBe(2)
+  await button.click();await expect(row).toHaveAttribute('data-classification', 'great',{timeout:120000})
+  await expect(control).toHaveAttribute('data-classification', 'best')
   expect(await page.evaluate(()=>[window.refinementSearches,window.fastSearches,window.sacrificeSearches])).toEqual([6,0,0])
   const toggle=page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true})
-  await toggle.uncheck();await expect(row).toContainText('Migliore');await toggle.check();await expect(row).toContainText('Grande')
+  await toggle.uncheck();await expect(row).toHaveAttribute('data-classification', 'best');await toggle.check();await expect(row).toHaveAttribute('data-classification', 'great')
   await button.click();await expect(page.getByText('Nessuna nuova scelta decisiva da verificare con i dati attuali.')).toBeVisible()
   await page.locator('.game-archive').getByRole('button',{name:'Salva partita e analisi'}).click()
   expect(await fields()).toEqual(before)
@@ -1921,8 +2064,8 @@ test('v22 decisive verification checks every alternative and reopens Qxc7 offlin
   await openTools(page,'Partita e analisi');await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button',{name:'Apri',exact:true}).click()
   await page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true}).check()
-  await expect(page.locator('.analysis-row-button').nth(44)).toContainText('Grande')
-  await expect(page.locator('.analysis-row-button').nth(48)).toContainText('Migliore')
+  await expect(page.locator('.analysis-row-button').nth(44)).toHaveAttribute('data-classification', 'great')
+  await expect(page.locator('.analysis-row-button').nth(48)).toHaveAttribute('data-classification', 'best')
   expect(await page.evaluate(()=>window.workerCount)).toBe(0)
 })
 
@@ -1931,10 +2074,11 @@ test('v22 decisive verification reuses complete attempts offline with zero worke
   await openRefinementExample(page,5,decisiveExample(true))
   await page.getByRole('checkbox',{name:'Mostra analisi approfondita',exact:true}).check()
   const row=page.locator('.analysis-row-button').nth(44)
-  await expect(row).toContainText('Migliore')
+  await expect(row).toHaveAttribute('data-classification', 'best')
   await page.context().setOffline(true)
+  await openDisclosure(page, '.advanced-analysis')
   await page.getByRole('button',{name:'Verifica le scelte decisive',exact:true}).click()
-  await expect(row).toContainText('Grande',{timeout:120000})
+  await expect(row).toHaveAttribute('data-classification', 'great',{timeout:120000})
   expect(await page.evaluate(()=>[window.workerCount,window.refinementSearches,window.fastSearches,window.sacrificeSearches])).toEqual([0,0,0,0])
 })
 
@@ -1988,6 +2132,7 @@ test('v20 forced mating sacrifice migrates the historical stored evidence offlin
 
 test('optional refinement cancellation preserves initial scores and an import cannot publish an old game result', async ({ page }) => {
   await openRefinementExample(page, 1000)
+  await openDisclosure(page, '.game-totals')
   const initial = await page.locator('.summary-table').innerText()
   await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
   await expect.poll(() => page.evaluate(() => window.refinementSearches)).toBe(1)
@@ -1996,16 +2141,17 @@ test('optional refinement cancellation preserves initial scores and an import ca
   await expect(page.locator('.summary-table')).toHaveText(initial, { useInnerText: true })
   await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
   await expect.poll(() => page.evaluate(() => window.refinementSearches)).toBe(2)
-  await page.getByPlaceholder('Incolla un PGN', { exact: false }).fill('1. e4 e5 *')
+  await (await openPgnImport(page)).fill('1. e4 e5 *')
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
   await expect(page.locator('.analysis-row-button')).toHaveCount(2)
   await expect(page.getByText(/Approfondimento completato:/)).toHaveCount(0)
-  await expect(page.locator('.analysis-row-button').filter({ hasText: 'Iniziale:' })).toHaveCount(0)
+  await expect(page.locator('.selected-move')).not.toContainText('Iniziale:')
 })
 
 for (const failure of ['failRefinement', 'failWorkerStartup']) {
 test(`optional refinement ${failure} preserves the baseline and never retries on restart without a click`, async ({ page }) => {
   await openRefinementExample(page)
+  await openDisclosure(page, '.game-totals')
   const initial = await page.locator('.summary-table').innerText()
   await page.evaluate(flag => { window[flag] = true }, failure)
   await page.getByRole('button', { name: /^Approfondisci le mosse dubbie/ }).click()
@@ -2053,21 +2199,22 @@ test(`v20 ${scenario.title} migrates a v11 archive offline without new searches`
   await openTools(page, 'Partita e analisi')
   await page.locator('.game-archive summary').click()
   await page.locator('.game-archive').getByRole('button', { name: 'Apri', exact: true }).click()
-  const row = page.locator('.analysis-row-button').filter({ hasText: scenario.move })
+  const row = page.getByRole('button', { name: scenario.move, exact: true })
   if (scenario.refined) {
-    await expect(row).toContainText('Errore grave')
+    await expect(row).toHaveAttribute('data-classification', 'blunder')
     await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
   }
-  await expect(row).toContainText(scenario.after)
+  await expect(row).toHaveAttribute('data-classification', classificationKeys[scenario.after])
   if (scenario.title === 'restored winning chance') {
-    await expect(page.locator('.analysis-row-button').filter({ hasText: '31... Rxf6' })).toContainText('Mossa mancata')
+    await expect(page.getByRole('button', { name: '31... Rxf6', exact: true })).toHaveAttribute('data-classification', 'missed')
   }
   if (!scenario.refined && scenario.after !== 'Grande') {
-    await expect(row).not.toContainText('Geniale')
-    await expect(row).not.toContainText('Grande')
+    await expect(row).not.toHaveAttribute('data-classification', 'brilliant')
+    await expect(row).not.toHaveAttribute('data-classification', 'great')
+    await openDisclosure(page, '.analysis-display-options')
     const toggle = page.getByRole('checkbox', { name: 'Mostra Grande e Geniale sperimentali' })
-    await toggle.uncheck(); await expect(row).toContainText(scenario.after)
-    await toggle.check(); await expect(row).not.toContainText('Geniale')
+    await toggle.uncheck(); await expect(row).toHaveAttribute('data-classification', classificationKeys[scenario.after])
+    await toggle.check(); await expect(row).not.toHaveAttribute('data-classification', 'brilliant')
   }
   await page.locator('.game-archive').getByRole('button', { name: 'Salva partita e analisi' }).click()
   const reopened = await page.evaluate(async index => {

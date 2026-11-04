@@ -1,0 +1,2758 @@
+{
+  "scope": "Isolated browser contexts; simulated explorer/clipboard only; no Stockfish searches",
+  "observations": [
+    {
+      "control": "Aperture chiuse",
+      "finding": "Explorer request observed while the disclosure remains closed"
+    },
+    {
+      "control": "Chat locale",
+      "finding": "Send is gated by critical-position classification; provider has no accessible label; no AI call was made"
+    },
+    {
+      "control": "Layout",
+      "finding": "Observed dimensions and visible button inventory",
+      "width": 1280,
+      "metrics": {
+        "viewport": 1280,
+        "width": 1280,
+        "height": 2112,
+        "controls": [
+          {
+            "text": "Ruota scacchiera",
+            "disabled": false,
+            "width": 149.90625,
+            "height": 44
+          },
+          {
+            "text": "Avvia analisi",
+            "disabled": false,
+            "width": 115.875,
+            "height": 35
+          },
+          {
+            "text": "Ripassa i miei errori",
+            "disabled": true,
+            "width": 165.8125,
+            "height": 35
+          },
+          {
+            "text": "Primo",
+            "disabled": true,
+            "width": 127.296875,
+            "height": 44
+          },
+          {
+            "text": "Indietro",
+            "disabled": true,
+            "width": 127.3125,
+            "height": 44
+          },
+          {
+            "text": "Avanti",
+            "disabled": true,
+            "width": 127.296875,
+            "height": 44
+          },
+          {
+            "text": "Ultimo",
+            "disabled": true,
+            "width": 127.3125,
+            "height": 44
+          },
+          {
+            "text": "Copia FEN",
+            "disabled": false,
+            "width": 102.65625,
+            "height": 44
+          },
+          {
+            "text": "K",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "Q",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "R",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "B",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "N",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "P",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "k",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "q",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "r",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "b",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "n",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "p",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "Cancella",
+            "disabled": false,
+            "width": 72.796875,
+            "height": 44
+          },
+          {
+            "text": "Applica posizione",
+            "disabled": false,
+            "width": 153,
+            "height": 44
+          },
+          {
+            "text": "Importa PGN",
+            "disabled": false,
+            "width": 526,
+            "height": 44
+          },
+          {
+            "text": "← Torna indietro",
+            "disabled": true,
+            "width": 142.625,
+            "height": 44
+          },
+          {
+            "text": "Reset partita",
+            "disabled": false,
+            "width": 118.046875,
+            "height": 44
+          },
+          {
+            "text": "Invia",
+            "disabled": true,
+            "width": 63.234375,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "control": "Layout",
+      "finding": "Observed dimensions and visible button inventory",
+      "width": 390,
+      "metrics": {
+        "viewport": 390,
+        "width": 390,
+        "height": 1922,
+        "controls": [
+          {
+            "text": "Ruota scacchiera",
+            "disabled": false,
+            "width": 149.90625,
+            "height": 44
+          },
+          {
+            "text": "Avvia analisi",
+            "disabled": false,
+            "width": 115.875,
+            "height": 35
+          },
+          {
+            "text": "Ripassa i miei errori",
+            "disabled": true,
+            "width": 165.8125,
+            "height": 35
+          },
+          {
+            "text": "Primo",
+            "disabled": true,
+            "width": 84.796875,
+            "height": 44
+          },
+          {
+            "text": "Indietro",
+            "disabled": true,
+            "width": 84.8125,
+            "height": 44
+          },
+          {
+            "text": "Avanti",
+            "disabled": true,
+            "width": 84.796875,
+            "height": 44
+          },
+          {
+            "text": "Ultimo",
+            "disabled": true,
+            "width": 84.8125,
+            "height": 44
+          },
+          {
+            "text": "Copia FEN",
+            "disabled": false,
+            "width": 102.65625,
+            "height": 44
+          },
+          {
+            "text": "K",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "Q",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "R",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "B",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "N",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "P",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "k",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "q",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "r",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "b",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "n",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "p",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "Cancella",
+            "disabled": false,
+            "width": 72.796875,
+            "height": 44
+          },
+          {
+            "text": "Applica posizione",
+            "disabled": false,
+            "width": 153,
+            "height": 44
+          },
+          {
+            "text": "Importa PGN",
+            "disabled": false,
+            "width": 356,
+            "height": 44
+          },
+          {
+            "text": "← Torna indietro",
+            "disabled": true,
+            "width": 142.625,
+            "height": 44
+          },
+          {
+            "text": "Reset partita",
+            "disabled": false,
+            "width": 118.046875,
+            "height": 44
+          },
+          {
+            "text": "Salva partita e analisi",
+            "disabled": false,
+            "width": 176.6875,
+            "height": 44
+          },
+          {
+            "text": "Invia",
+            "disabled": true,
+            "width": 63.234375,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "control": "Selezione scacchiera",
+      "finding": "Legal-move dots persist after importing a different position, with the selected source now empty"
+    },
+    {
+      "control": "Promozione",
+      "finding": "Study board offers no underpromotion; click always applies queen despite four legal choices"
+    }
+  ],
+  "date": "2026-11-02",
+  "head": "6004046e4d3b571790270c5dc71da340035959ff",
+  "testRuns": [
+    {
+      "config": "scripts/qa-analysis-ux-audit.config.js",
+      "passed": 4,
+      "failed": 1,
+      "failure": "Harness selector reads square background rather than child overlay; no application failure established by this assertion",
+      "passedCases": [
+        "PGN/navigation/reset",
+        "Editor/palette/copy/clipboard rejection",
+        "Archive actions/export/import",
+        "Hidden opening fetch/chat gating/layout"
+      ]
+    },
+    {
+      "config": "C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-selection-20261102/config.mjs",
+      "passed": 1,
+      "failed": 0,
+      "case": "Selection hints and promotion",
+      "adjustment": "Temporary copy only: read computed backgrounds from square and descendants; original test preserved"
+    },
+    {
+      "script": "C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-layout.mjs",
+      "assertedWidths": [
+        1280,
+        390
+      ],
+      "assertions": [
+        "66 analysis rows",
+        "selected ply 25 matches original fenBefore",
+        "no horizontal overflow",
+        "zero Stockfish workers",
+        "zero page errors"
+      ]
+    }
+  ],
+  "layoutWithArchivedAnalysis": [
+    {
+      "width": 1280,
+      "selectedPly": 25,
+      "rowText": "13. Nfd2\nErrore grave\nEval -1.40 / Migliore: Eval 3.07",
+      "expectedFen": "2kr3r/ppp2ppp/8/3qp3/1bB1N1b1/5N2/PPQ2PPP/R3K2R w KQ - 0 13",
+      "afterRowClick": {
+        "viewport": 1280,
+        "pageWidth": 1280,
+        "pageHeight": 10201,
+        "scrollY": 4268,
+        "board": {
+          "top": 179,
+          "bottom": 705,
+          "width": 526,
+          "height": 526,
+          "visible": false
+        },
+        "navigation": {
+          "top": 1146,
+          "bottom": 1215,
+          "width": 526,
+          "height": 69,
+          "visible": false
+        },
+        "row": {
+          "top": 4696,
+          "bottom": 4740,
+          "width": 407,
+          "height": 44,
+          "visible": true
+        },
+        "explanation": null,
+        "controls": [
+          {
+            "text": "Ruota scacchiera",
+            "height": 44
+          },
+          {
+            "text": "Avvia analisi",
+            "height": 35
+          },
+          {
+            "text": "Ripassa i miei errori",
+            "height": 35
+          },
+          {
+            "text": "Primo",
+            "height": 44
+          },
+          {
+            "text": "Indietro",
+            "height": 44
+          },
+          {
+            "text": "Avanti",
+            "height": 44
+          },
+          {
+            "text": "Ultimo",
+            "height": 44
+          },
+          {
+            "text": "Copia FEN",
+            "height": 44
+          },
+          {
+            "text": "K",
+            "height": 44
+          },
+          {
+            "text": "Q",
+            "height": 44
+          },
+          {
+            "text": "R",
+            "height": 44
+          },
+          {
+            "text": "B",
+            "height": 44
+          },
+          {
+            "text": "N",
+            "height": 44
+          },
+          {
+            "text": "P",
+            "height": 44
+          },
+          {
+            "text": "k",
+            "height": 44
+          },
+          {
+            "text": "q",
+            "height": 44
+          },
+          {
+            "text": "r",
+            "height": 44
+          },
+          {
+            "text": "b",
+            "height": 44
+          },
+          {
+            "text": "n",
+            "height": 44
+          },
+          {
+            "text": "p",
+            "height": 44
+          },
+          {
+            "text": "Cancella",
+            "height": 44
+          },
+          {
+            "text": "Applica posizione",
+            "height": 44
+          },
+          {
+            "text": "Importa PGN",
+            "height": 44
+          },
+          {
+            "text": "1. d4LibroEval 0.18 / Migliore: Eval 0.28Libro · Valutazione: Ottima",
+            "height": 44
+          },
+          {
+            "text": "1... d5LibroEval -0.20 / Migliore: Eval -0.20Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "2. c4LibroEval 0.18 / Migliore: Eval 0.18Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "2... Nf6LibroEval -0.45 / Migliore: Eval -0.22Libro · Valutazione: Ottima",
+            "height": 44
+          },
+          {
+            "text": "3. cxd5LibroEval 0.51 / Migliore: Eval 0.51Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "3... Qxd5BuonaEval -1.07 / Migliore: Eval -0.56Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "4. Nf3OttimaEval 0.72 / Migliore: Eval 1.07",
+            "height": 44
+          },
+          {
+            "text": "4... Bg4ImprecisioneEval -1.58 / Migliore: Eval -0.68Classificazione indicativa: confronto tra analisi separate.",
+            "height": 67
+          },
+          {
+            "text": "5. Nc3MiglioreEval 1.46 / Migliore: Eval 1.46",
+            "height": 44
+          },
+          {
+            "text": "5... Qa5MiglioreEval -1.61 / Migliore: Eval -1.61",
+            "height": 44
+          },
+          {
+            "text": "6. Bd2OttimaEval 1.33 / Migliore: Eval 1.34Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "6... Nc6OttimaEval -1.79 / Migliore: Eval -1.44",
+            "height": 44
+          },
+          {
+            "text": "7. e4MiglioreEval 1.73 / Migliore: Eval 1.73",
+            "height": 44
+          },
+          {
+            "text": "7... e5ErroreEval -5.49 / Migliore: Eval -2.17Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 14",
+            "height": 44
+          },
+          {
+            "text": "8. d5Errore graveEval 0.65 / Migliore: Eval 4.93Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 15",
+            "height": 44
+          },
+          {
+            "text": "8... Nxe4Errore graveEval -5.40 / Migliore: Eval -0.41Difesa mancata nell'analisi: Nd4 Nb5 Bb4 Nbxd4 Nxe4 Nb3 Qb6 Qe2.",
+            "height": 67
+          },
+          {
+            "text": "Riprova posizione 16",
+            "height": 44
+          },
+          {
+            "text": "9. Nxe4ErroreEval 3.64 / Migliore: Eval 6.01",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 17",
+            "height": 44
+          },
+          {
+            "text": "9... Qxd5MiglioreEval -3.32 / Migliore: Eval -3.32",
+            "height": 44
+          },
+          {
+            "text": "10. Qc2ErroreEval 0.53 / Migliore: Eval 3.74Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 19",
+            "height": 44
+          },
+          {
+            "text": "10... O-O-OErroreEval -3.22 / Migliore: Eval -0.75",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 20",
+            "height": 44
+          },
+          {
+            "text": "11. Bc4MiglioreEval 3.16 / Migliore: Eval 3.16",
+            "height": 44
+          },
+          {
+            "text": "11... Nb4OttimaEval -3.31 / Migliore: Eval -3.12",
+            "height": 44
+          },
+          {
+            "text": "12. Bxb4MiglioreEval 2.90 / Migliore: Eval 2.90",
+            "height": 44
+          },
+          {
+            "text": "12... Bxb4+MiglioreEval -3.04 / Migliore: Eval -3.04",
+            "height": 44
+          },
+          {
+            "text": "13. Nfd2Errore graveEval -1.40 / Migliore: Eval 3.07",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 25",
+            "height": 44
+          },
+          {
+            "text": "13... Qa5Errore graveEval -3.66 / Migliore: Eval 1.51Difesa mancata nell'analisi: Bxd2+ Nxd2 Qxg2 Rf1 e4 Qc3 Rhe8 Qe3.",
+            "height": 67
+          },
+          {
+            "text": "Riprova posizione 26",
+            "height": 44
+          },
+          {
+            "text": "14. O-OErrore graveEval -1.70 / Migliore: Eval 3.56Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 27",
+            "height": 44
+          },
+          {
+            "text": "14... Bxd2GrandeEval 1.62 / Migliore: Eval 1.62Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 67
+          },
+          {
+            "text": "15. f3ErroreEval -3.54 / Migliore: Eval -1.28Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 29",
+            "height": 44
+          },
+          {
+            "text": "15... Bf5MiglioreEval 3.47 / Migliore: Eval 3.47",
+            "height": 44
+          },
+          {
+            "text": "16. Rfd1BuonaEval -4.59 / Migliore: Eval -3.74",
+            "height": 44
+          },
+          {
+            "text": "16... b5ErroreEval 1.12 / Migliore: Eval 4.51Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 32",
+            "height": 44
+          },
+          {
+            "text": "17. Nd6+ImprecisioneEval -2.72 / Migliore: Eval -1.25Classificazione indicativa: confronto tra analisi separate.",
+            "height": 67
+          },
+          {
+            "text": "17... Rxd6GrandeEval 2.72 / Migliore: Eval 2.72Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 67
+          },
+          {
+            "text": "18. Qxf5+MiglioreEval -2.53 / Migliore: Eval -2.53",
+            "height": 44
+          },
+          {
+            "text": "18... Kb8MiglioreEval 2.47 / Migliore: Eval 2.47",
+            "height": 44
+          },
+          {
+            "text": "19. Bxf7MiglioreEval -2.74 / Migliore: Eval -2.74",
+            "height": 44
+          },
+          {
+            "text": "19... Qb6+OttimaEval 2.16 / Migliore: Eval 2.58",
+            "height": 44
+          },
+          {
+            "text": "20. Kh1MiglioreEval -2.05 / Migliore: Eval -2.05",
+            "height": 44
+          },
+          {
+            "text": "20... Rf8ImprecisioneEval 0.41 / Migliore: Eval 2.02Classificazione indicativa: confronto tra analisi separate.",
+            "height": 67
+          },
+          {
+            "text": "21. Qxe5MiglioreEval -0.38 / Migliore: Eval -0.38",
+            "height": 44
+          },
+          {
+            "text": "21... Rxf7ErroreEval -2.55 / Migliore: Eval 0.46Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 42",
+            "height": 44
+          },
+          {
+            "text": "22. Qe8+GrandeEval 2.77 / Migliore: Eval 2.77Certificato tattico verificato entro il suo orizzonte legale. Non dimostra una vittoria forzata completa.",
+            "height": 80
+          },
+          {
+            "text": "22... Kb7MiglioreEval -2.67 / Migliore: Eval -2.67",
+            "height": 44
+          },
+          {
+            "text": "23. Qxf7MiglioreEval 2.41 / Migliore: Eval 2.41",
+            "height": 44
+          },
+          {
+            "text": "23... Qd4MiglioreEval -3.05 / Migliore: Eval -3.05",
+            "height": 44
+          },
+          {
+            "text": "24. Qb3OttimaEval 2.65 / Migliore: Eval 2.79",
+            "height": 44
+          },
+          {
+            "text": "24... a6MiglioreEval -1.86 / Migliore: Eval -1.86",
+            "height": 44
+          },
+          {
+            "text": "25. a4MiglioreEval 2.67 / Migliore: Eval 2.67",
+            "height": 44
+          },
+          {
+            "text": "25... c6ErroreEval -4.07 / Migliore: Eval -2.09Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 50",
+            "height": 44
+          },
+          {
+            "text": "26. axb5MiglioreEval 4.16 / Migliore: Eval 4.16",
+            "height": 44
+          },
+          {
+            "text": "26... cxb5MiglioreEval -4.16 / Migliore: Eval -4.16",
+            "height": 44
+          },
+          {
+            "text": "27. Ra4Errore graveEval -6.48 / Migliore: Eval 4.13Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 53",
+            "height": 44
+          },
+          {
+            "text": "27... Qxa4GrandeEval 6.48 / Migliore: Eval 6.48Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 67
+          },
+          {
+            "text": "28. Qf7+MiglioreEval -6.93 / Migliore: Eval -6.93",
+            "height": 44
+          },
+          {
+            "text": "28... Kc6OttimaEval 6.13 / Migliore: Eval 6.73",
+            "height": 44
+          },
+          {
+            "text": "29. Qe8+BuonaEval -6.22 / Migliore: Eval -5.22",
+            "height": 44
+          },
+          {
+            "text": "29... Kc5ImprecisioneEval 4.69 / Migliore: Eval 6.33",
+            "height": 44
+          },
+          {
+            "text": "30. Qc8+MiglioreEval -4.40 / Migliore: Eval -4.40",
+            "height": 44
+          },
+          {
+            "text": "30... Rc6OttimaEval 4.80 / Migliore: Eval 4.87",
+            "height": 44
+          },
+          {
+            "text": "31. Qf5+BuonaEval -6.36 / Migliore: Eval -5.09",
+            "height": 44
+          },
+          {
+            "text": "31... Kb6MiglioreEval 7.25 / Migliore: Eval 7.25",
+            "height": 44
+          },
+          {
+            "text": "32. Rxd2ErroreMatto subito in 2 / Migliore: Eval -6.89Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 63",
+            "height": 44
+          },
+          {
+            "text": "32... Rc1+GrandeMatto vincente in 2 / Migliore: Matto vincente in 2Matto vincente: 2 → 2 mosse (distanza invariata).Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 83
+          },
+          {
+            "text": "33. Rd1ForzataMatto subito in 1 / Migliore: Matto subito in 1Matto subito: 1 → 1 mosse (distanza invariata).Unica mossa legale nella posizione.",
+            "height": 61
+          },
+          {
+            "text": "33... Qxd1#MiglioreMatto dato / Migliore: Matto vincente in 1Matto dato.",
+            "height": 44
+          },
+          {
+            "text": "1. d4",
+            "height": 44
+          },
+          {
+            "text": "1... d5",
+            "height": 44
+          },
+          {
+            "text": "2. c4",
+            "height": 44
+          },
+          {
+            "text": "2... Nf6",
+            "height": 44
+          },
+          {
+            "text": "3. cxd5",
+            "height": 44
+          },
+          {
+            "text": "3... Qxd5",
+            "height": 44
+          },
+          {
+            "text": "4. Nf3",
+            "height": 44
+          },
+          {
+            "text": "4... Bg4",
+            "height": 44
+          },
+          {
+            "text": "5. Nc3",
+            "height": 44
+          },
+          {
+            "text": "5... Qa5",
+            "height": 44
+          },
+          {
+            "text": "6. Bd2",
+            "height": 44
+          },
+          {
+            "text": "6... Nc6",
+            "height": 44
+          },
+          {
+            "text": "7. e4",
+            "height": 44
+          },
+          {
+            "text": "7... e5",
+            "height": 44
+          },
+          {
+            "text": "8. d5",
+            "height": 44
+          },
+          {
+            "text": "8... Nxe4",
+            "height": 44
+          },
+          {
+            "text": "9. Nxe4",
+            "height": 44
+          },
+          {
+            "text": "9... Qxd5",
+            "height": 44
+          },
+          {
+            "text": "10. Qc2",
+            "height": 44
+          },
+          {
+            "text": "10... O-O-O",
+            "height": 44
+          },
+          {
+            "text": "11. Bc4",
+            "height": 44
+          },
+          {
+            "text": "11... Nb4",
+            "height": 44
+          },
+          {
+            "text": "12. Bxb4",
+            "height": 44
+          },
+          {
+            "text": "12... Bxb4+",
+            "height": 44
+          },
+          {
+            "text": "← Torna indietro",
+            "height": 44
+          },
+          {
+            "text": "Reset partita",
+            "height": 44
+          },
+          {
+            "text": "Salva partita e analisi",
+            "height": 44
+          },
+          {
+            "text": "Apri",
+            "height": 44
+          },
+          {
+            "text": "Rinomina",
+            "height": 44
+          },
+          {
+            "text": "Esporta PGN",
+            "height": 44
+          },
+          {
+            "text": "Elimina",
+            "height": 44
+          },
+          {
+            "text": "Invia",
+            "height": 44
+          }
+        ]
+      },
+      "afterExplanation": {
+        "viewport": 1280,
+        "pageWidth": 1280,
+        "pageHeight": 11307,
+        "scrollY": 4821,
+        "board": {
+          "top": 179,
+          "bottom": 705,
+          "width": 526,
+          "height": 526,
+          "visible": false
+        },
+        "navigation": {
+          "top": 1146,
+          "bottom": 1215,
+          "width": 526,
+          "height": 69,
+          "visible": false
+        },
+        "row": {
+          "top": 4696,
+          "bottom": 4740,
+          "width": 407,
+          "height": 44,
+          "visible": false
+        },
+        "explanation": {
+          "top": 5306,
+          "bottom": 5833,
+          "width": 526,
+          "height": 527,
+          "visible": true
+        },
+        "controls": [
+          {
+            "text": "Ruota scacchiera",
+            "height": 44
+          },
+          {
+            "text": "Avvia analisi",
+            "height": 35
+          },
+          {
+            "text": "Ripassa i miei errori",
+            "height": 35
+          },
+          {
+            "text": "Primo",
+            "height": 44
+          },
+          {
+            "text": "Indietro",
+            "height": 44
+          },
+          {
+            "text": "Avanti",
+            "height": 44
+          },
+          {
+            "text": "Ultimo",
+            "height": 44
+          },
+          {
+            "text": "Copia FEN",
+            "height": 44
+          },
+          {
+            "text": "K",
+            "height": 44
+          },
+          {
+            "text": "Q",
+            "height": 44
+          },
+          {
+            "text": "R",
+            "height": 44
+          },
+          {
+            "text": "B",
+            "height": 44
+          },
+          {
+            "text": "N",
+            "height": 44
+          },
+          {
+            "text": "P",
+            "height": 44
+          },
+          {
+            "text": "k",
+            "height": 44
+          },
+          {
+            "text": "q",
+            "height": 44
+          },
+          {
+            "text": "r",
+            "height": 44
+          },
+          {
+            "text": "b",
+            "height": 44
+          },
+          {
+            "text": "n",
+            "height": 44
+          },
+          {
+            "text": "p",
+            "height": 44
+          },
+          {
+            "text": "Cancella",
+            "height": 44
+          },
+          {
+            "text": "Applica posizione",
+            "height": 44
+          },
+          {
+            "text": "Importa PGN",
+            "height": 44
+          },
+          {
+            "text": "1. d4LibroEval 0.18 / Migliore: Eval 0.28Libro · Valutazione: Ottima",
+            "height": 44
+          },
+          {
+            "text": "1... d5LibroEval -0.20 / Migliore: Eval -0.20Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "2. c4LibroEval 0.18 / Migliore: Eval 0.18Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "2... Nf6LibroEval -0.45 / Migliore: Eval -0.22Libro · Valutazione: Ottima",
+            "height": 44
+          },
+          {
+            "text": "3. cxd5LibroEval 0.51 / Migliore: Eval 0.51Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "3... Qxd5BuonaEval -1.07 / Migliore: Eval -0.56Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "4. Nf3OttimaEval 0.72 / Migliore: Eval 1.07",
+            "height": 44
+          },
+          {
+            "text": "4... Bg4ImprecisioneEval -1.58 / Migliore: Eval -0.68Classificazione indicativa: confronto tra analisi separate.",
+            "height": 67
+          },
+          {
+            "text": "5. Nc3MiglioreEval 1.46 / Migliore: Eval 1.46",
+            "height": 44
+          },
+          {
+            "text": "5... Qa5MiglioreEval -1.61 / Migliore: Eval -1.61",
+            "height": 44
+          },
+          {
+            "text": "6. Bd2OttimaEval 1.33 / Migliore: Eval 1.34Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "6... Nc6OttimaEval -1.79 / Migliore: Eval -1.44",
+            "height": 44
+          },
+          {
+            "text": "7. e4MiglioreEval 1.73 / Migliore: Eval 1.73",
+            "height": 44
+          },
+          {
+            "text": "7... e5ErroreEval -5.49 / Migliore: Eval -2.17Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 14",
+            "height": 44
+          },
+          {
+            "text": "8. d5Errore graveEval 0.65 / Migliore: Eval 4.93Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 15",
+            "height": 44
+          },
+          {
+            "text": "8... Nxe4Errore graveEval -5.40 / Migliore: Eval -0.41Difesa mancata nell'analisi: Nd4 Nb5 Bb4 Nbxd4 Nxe4 Nb3 Qb6 Qe2.",
+            "height": 67
+          },
+          {
+            "text": "Riprova posizione 16",
+            "height": 44
+          },
+          {
+            "text": "9. Nxe4ErroreEval 3.64 / Migliore: Eval 6.01",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 17",
+            "height": 44
+          },
+          {
+            "text": "9... Qxd5MiglioreEval -3.32 / Migliore: Eval -3.32",
+            "height": 44
+          },
+          {
+            "text": "10. Qc2ErroreEval 0.53 / Migliore: Eval 3.74Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 19",
+            "height": 44
+          },
+          {
+            "text": "10... O-O-OErroreEval -3.22 / Migliore: Eval -0.75",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 20",
+            "height": 44
+          },
+          {
+            "text": "11. Bc4MiglioreEval 3.16 / Migliore: Eval 3.16",
+            "height": 44
+          },
+          {
+            "text": "11... Nb4OttimaEval -3.31 / Migliore: Eval -3.12",
+            "height": 44
+          },
+          {
+            "text": "12. Bxb4MiglioreEval 2.90 / Migliore: Eval 2.90",
+            "height": 44
+          },
+          {
+            "text": "12... Bxb4+MiglioreEval -3.04 / Migliore: Eval -3.04",
+            "height": 44
+          },
+          {
+            "text": "13. Nfd2Errore graveEval -1.40 / Migliore: Eval 3.07",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 25",
+            "height": 44
+          },
+          {
+            "text": "13... Qa5Errore graveEval -3.66 / Migliore: Eval 1.51Difesa mancata nell'analisi: Bxd2+ Nxd2 Qxg2 Rf1 e4 Qc3 Rhe8 Qe3.",
+            "height": 67
+          },
+          {
+            "text": "Riprova posizione 26",
+            "height": 44
+          },
+          {
+            "text": "14. O-OErrore graveEval -1.70 / Migliore: Eval 3.56Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 27",
+            "height": 44
+          },
+          {
+            "text": "14... Bxd2GrandeEval 1.62 / Migliore: Eval 1.62Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 67
+          },
+          {
+            "text": "15. f3ErroreEval -3.54 / Migliore: Eval -1.28Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 29",
+            "height": 44
+          },
+          {
+            "text": "15... Bf5MiglioreEval 3.47 / Migliore: Eval 3.47",
+            "height": 44
+          },
+          {
+            "text": "16. Rfd1BuonaEval -4.59 / Migliore: Eval -3.74",
+            "height": 44
+          },
+          {
+            "text": "16... b5ErroreEval 1.12 / Migliore: Eval 4.51Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 32",
+            "height": 44
+          },
+          {
+            "text": "17. Nd6+ImprecisioneEval -2.72 / Migliore: Eval -1.25Classificazione indicativa: confronto tra analisi separate.",
+            "height": 67
+          },
+          {
+            "text": "17... Rxd6GrandeEval 2.72 / Migliore: Eval 2.72Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 67
+          },
+          {
+            "text": "18. Qxf5+MiglioreEval -2.53 / Migliore: Eval -2.53",
+            "height": 44
+          },
+          {
+            "text": "18... Kb8MiglioreEval 2.47 / Migliore: Eval 2.47",
+            "height": 44
+          },
+          {
+            "text": "19. Bxf7MiglioreEval -2.74 / Migliore: Eval -2.74",
+            "height": 44
+          },
+          {
+            "text": "19... Qb6+OttimaEval 2.16 / Migliore: Eval 2.58",
+            "height": 44
+          },
+          {
+            "text": "20. Kh1MiglioreEval -2.05 / Migliore: Eval -2.05",
+            "height": 44
+          },
+          {
+            "text": "20... Rf8ImprecisioneEval 0.41 / Migliore: Eval 2.02Classificazione indicativa: confronto tra analisi separate.",
+            "height": 67
+          },
+          {
+            "text": "21. Qxe5MiglioreEval -0.38 / Migliore: Eval -0.38",
+            "height": 44
+          },
+          {
+            "text": "21... Rxf7ErroreEval -2.55 / Migliore: Eval 0.46Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 42",
+            "height": 44
+          },
+          {
+            "text": "22. Qe8+GrandeEval 2.77 / Migliore: Eval 2.77Certificato tattico verificato entro il suo orizzonte legale. Non dimostra una vittoria forzata completa.",
+            "height": 80
+          },
+          {
+            "text": "22... Kb7MiglioreEval -2.67 / Migliore: Eval -2.67",
+            "height": 44
+          },
+          {
+            "text": "23. Qxf7MiglioreEval 2.41 / Migliore: Eval 2.41",
+            "height": 44
+          },
+          {
+            "text": "23... Qd4MiglioreEval -3.05 / Migliore: Eval -3.05",
+            "height": 44
+          },
+          {
+            "text": "24. Qb3OttimaEval 2.65 / Migliore: Eval 2.79",
+            "height": 44
+          },
+          {
+            "text": "24... a6MiglioreEval -1.86 / Migliore: Eval -1.86",
+            "height": 44
+          },
+          {
+            "text": "25. a4MiglioreEval 2.67 / Migliore: Eval 2.67",
+            "height": 44
+          },
+          {
+            "text": "25... c6ErroreEval -4.07 / Migliore: Eval -2.09Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 50",
+            "height": 44
+          },
+          {
+            "text": "26. axb5MiglioreEval 4.16 / Migliore: Eval 4.16",
+            "height": 44
+          },
+          {
+            "text": "26... cxb5MiglioreEval -4.16 / Migliore: Eval -4.16",
+            "height": 44
+          },
+          {
+            "text": "27. Ra4Errore graveEval -6.48 / Migliore: Eval 4.13Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 53",
+            "height": 44
+          },
+          {
+            "text": "27... Qxa4GrandeEval 6.48 / Migliore: Eval 6.48Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 67
+          },
+          {
+            "text": "28. Qf7+MiglioreEval -6.93 / Migliore: Eval -6.93",
+            "height": 44
+          },
+          {
+            "text": "28... Kc6OttimaEval 6.13 / Migliore: Eval 6.73",
+            "height": 44
+          },
+          {
+            "text": "29. Qe8+BuonaEval -6.22 / Migliore: Eval -5.22",
+            "height": 44
+          },
+          {
+            "text": "29... Kc5ImprecisioneEval 4.69 / Migliore: Eval 6.33",
+            "height": 44
+          },
+          {
+            "text": "30. Qc8+MiglioreEval -4.40 / Migliore: Eval -4.40",
+            "height": 44
+          },
+          {
+            "text": "30... Rc6OttimaEval 4.80 / Migliore: Eval 4.87",
+            "height": 44
+          },
+          {
+            "text": "31. Qf5+BuonaEval -6.36 / Migliore: Eval -5.09",
+            "height": 44
+          },
+          {
+            "text": "31... Kb6MiglioreEval 7.25 / Migliore: Eval 7.25",
+            "height": 44
+          },
+          {
+            "text": "32. Rxd2ErroreMatto subito in 2 / Migliore: Eval -6.89Classificazione indicativa: confronto tra analisi separate.",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 63",
+            "height": 44
+          },
+          {
+            "text": "32... Rc1+GrandeMatto vincente in 2 / Migliore: Matto vincente in 2Matto vincente: 2 → 2 mosse (distanza invariata).Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 83
+          },
+          {
+            "text": "33. Rd1ForzataMatto subito in 1 / Migliore: Matto subito in 1Matto subito: 1 → 1 mosse (distanza invariata).Unica mossa legale nella posizione.",
+            "height": 61
+          },
+          {
+            "text": "33... Qxd1#MiglioreMatto dato / Migliore: Matto vincente in 1Matto dato.",
+            "height": 44
+          },
+          {
+            "text": "1. d4",
+            "height": 44
+          },
+          {
+            "text": "1... d5",
+            "height": 44
+          },
+          {
+            "text": "2. c4",
+            "height": 44
+          },
+          {
+            "text": "2... Nf6",
+            "height": 44
+          },
+          {
+            "text": "3. cxd5",
+            "height": 44
+          },
+          {
+            "text": "3... Qxd5",
+            "height": 44
+          },
+          {
+            "text": "4. Nf3",
+            "height": 44
+          },
+          {
+            "text": "4... Bg4",
+            "height": 44
+          },
+          {
+            "text": "5. Nc3",
+            "height": 44
+          },
+          {
+            "text": "5... Qa5",
+            "height": 44
+          },
+          {
+            "text": "6. Bd2",
+            "height": 44
+          },
+          {
+            "text": "6... Nc6",
+            "height": 44
+          },
+          {
+            "text": "7. e4",
+            "height": 44
+          },
+          {
+            "text": "7... e5",
+            "height": 44
+          },
+          {
+            "text": "8. d5",
+            "height": 44
+          },
+          {
+            "text": "8... Nxe4",
+            "height": 44
+          },
+          {
+            "text": "9. Nxe4",
+            "height": 44
+          },
+          {
+            "text": "9... Qxd5",
+            "height": 44
+          },
+          {
+            "text": "10. Qc2",
+            "height": 44
+          },
+          {
+            "text": "10... O-O-O",
+            "height": 44
+          },
+          {
+            "text": "11. Bc4",
+            "height": 44
+          },
+          {
+            "text": "11... Nb4",
+            "height": 44
+          },
+          {
+            "text": "12. Bxb4",
+            "height": 44
+          },
+          {
+            "text": "12... Bxb4+",
+            "height": 44
+          },
+          {
+            "text": "← Torna indietro",
+            "height": 44
+          },
+          {
+            "text": "Reset partita",
+            "height": 44
+          },
+          {
+            "text": "Salva partita e analisi",
+            "height": 44
+          },
+          {
+            "text": "Apri",
+            "height": 44
+          },
+          {
+            "text": "Rinomina",
+            "height": 44
+          },
+          {
+            "text": "Esporta PGN",
+            "height": 44
+          },
+          {
+            "text": "Elimina",
+            "height": 44
+          },
+          {
+            "text": "Invia",
+            "height": 44
+          }
+        ]
+      },
+      "errors": [],
+      "stockfishWorkers": 0
+    },
+    {
+      "width": 390,
+      "selectedPly": 25,
+      "rowText": "13. Nfd2\nErrore grave\nEval -1.40 / Migliore: Eval 3.07",
+      "expectedFen": "2kr3r/ppp2ppp/8/3qp3/1bB1N1b1/5N2/PPQ2PPP/R3K2R w KQ - 0 13",
+      "afterRowClick": {
+        "viewport": 390,
+        "pageWidth": 390,
+        "pageHeight": 11134,
+        "scrollY": 4445,
+        "board": {
+          "top": 159,
+          "bottom": 515,
+          "width": 356,
+          "height": 356,
+          "visible": false
+        },
+        "navigation": {
+          "top": 996,
+          "bottom": 1065,
+          "width": 356,
+          "height": 69,
+          "visible": false
+        },
+        "row": {
+          "top": 4869,
+          "bottom": 4920,
+          "width": 356,
+          "height": 50,
+          "visible": true
+        },
+        "explanation": null,
+        "controls": [
+          {
+            "text": "Ruota scacchiera",
+            "height": 44
+          },
+          {
+            "text": "Avvia analisi",
+            "height": 35
+          },
+          {
+            "text": "Ripassa i miei errori",
+            "height": 35
+          },
+          {
+            "text": "Primo",
+            "height": 44
+          },
+          {
+            "text": "Indietro",
+            "height": 44
+          },
+          {
+            "text": "Avanti",
+            "height": 44
+          },
+          {
+            "text": "Ultimo",
+            "height": 44
+          },
+          {
+            "text": "Copia FEN",
+            "height": 44
+          },
+          {
+            "text": "K",
+            "height": 44
+          },
+          {
+            "text": "Q",
+            "height": 44
+          },
+          {
+            "text": "R",
+            "height": 44
+          },
+          {
+            "text": "B",
+            "height": 44
+          },
+          {
+            "text": "N",
+            "height": 44
+          },
+          {
+            "text": "P",
+            "height": 44
+          },
+          {
+            "text": "k",
+            "height": 44
+          },
+          {
+            "text": "q",
+            "height": 44
+          },
+          {
+            "text": "r",
+            "height": 44
+          },
+          {
+            "text": "b",
+            "height": 44
+          },
+          {
+            "text": "n",
+            "height": 44
+          },
+          {
+            "text": "p",
+            "height": 44
+          },
+          {
+            "text": "Cancella",
+            "height": 44
+          },
+          {
+            "text": "Applica posizione",
+            "height": 44
+          },
+          {
+            "text": "Importa PGN",
+            "height": 44
+          },
+          {
+            "text": "1. d4LibroEval 0.18 / Migliore: Eval 0.28Libro · Valutazione: Ottima",
+            "height": 44
+          },
+          {
+            "text": "1... d5LibroEval -0.20 / Migliore: Eval -0.20Libro · Valutazione: Migliore",
+            "height": 67
+          },
+          {
+            "text": "2. c4LibroEval 0.18 / Migliore: Eval 0.18Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "2... Nf6LibroEval -0.45 / Migliore: Eval -0.22Libro · Valutazione: Ottima",
+            "height": 67
+          },
+          {
+            "text": "3. cxd5LibroEval 0.51 / Migliore: Eval 0.51Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "3... Qxd5BuonaEval -1.07 / Migliore: Eval -0.56Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "4. Nf3OttimaEval 0.72 / Migliore: Eval 1.07",
+            "height": 44
+          },
+          {
+            "text": "4... Bg4ImprecisioneEval -1.58 / Migliore: Eval -0.68Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "5. Nc3MiglioreEval 1.46 / Migliore: Eval 1.46",
+            "height": 50
+          },
+          {
+            "text": "5... Qa5MiglioreEval -1.61 / Migliore: Eval -1.61",
+            "height": 50
+          },
+          {
+            "text": "6. Bd2OttimaEval 1.33 / Migliore: Eval 1.34Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "6... Nc6OttimaEval -1.79 / Migliore: Eval -1.44",
+            "height": 50
+          },
+          {
+            "text": "7. e4MiglioreEval 1.73 / Migliore: Eval 1.73",
+            "height": 44
+          },
+          {
+            "text": "7... e5ErroreEval -5.49 / Migliore: Eval -2.17Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 14",
+            "height": 44
+          },
+          {
+            "text": "8. d5Errore graveEval 0.65 / Migliore: Eval 4.93Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 15",
+            "height": 44
+          },
+          {
+            "text": "8... Nxe4Errore graveEval -5.40 / Migliore: Eval -0.41Difesa mancata nell'analisi: Nd4 Nb5 Bb4 Nbxd4 Nxe4 Nb3 Qb6 Qe2.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 16",
+            "height": 44
+          },
+          {
+            "text": "9. Nxe4ErroreEval 3.64 / Migliore: Eval 6.01",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 17",
+            "height": 44
+          },
+          {
+            "text": "9... Qxd5MiglioreEval -3.32 / Migliore: Eval -3.32",
+            "height": 50
+          },
+          {
+            "text": "10. Qc2ErroreEval 0.53 / Migliore: Eval 3.74Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 19",
+            "height": 44
+          },
+          {
+            "text": "10... O-O-OErroreEval -3.22 / Migliore: Eval -0.75",
+            "height": 50
+          },
+          {
+            "text": "Riprova posizione 20",
+            "height": 44
+          },
+          {
+            "text": "11. Bc4MiglioreEval 3.16 / Migliore: Eval 3.16",
+            "height": 50
+          },
+          {
+            "text": "11... Nb4OttimaEval -3.31 / Migliore: Eval -3.12",
+            "height": 50
+          },
+          {
+            "text": "12. Bxb4MiglioreEval 2.90 / Migliore: Eval 2.90",
+            "height": 50
+          },
+          {
+            "text": "12... Bxb4+MiglioreEval -3.04 / Migliore: Eval -3.04",
+            "height": 50
+          },
+          {
+            "text": "13. Nfd2Errore graveEval -1.40 / Migliore: Eval 3.07",
+            "height": 50
+          },
+          {
+            "text": "Riprova posizione 25",
+            "height": 44
+          },
+          {
+            "text": "13... Qa5Errore graveEval -3.66 / Migliore: Eval 1.51Difesa mancata nell'analisi: Bxd2+ Nxd2 Qxg2 Rf1 e4 Qc3 Rhe8 Qe3.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 26",
+            "height": 44
+          },
+          {
+            "text": "14. O-OErrore graveEval -1.70 / Migliore: Eval 3.56Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 27",
+            "height": 44
+          },
+          {
+            "text": "14... Bxd2GrandeEval 1.62 / Migliore: Eval 1.62Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 80
+          },
+          {
+            "text": "15. f3ErroreEval -3.54 / Migliore: Eval -1.28Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 29",
+            "height": 44
+          },
+          {
+            "text": "15... Bf5MiglioreEval 3.47 / Migliore: Eval 3.47",
+            "height": 50
+          },
+          {
+            "text": "16. Rfd1BuonaEval -4.59 / Migliore: Eval -3.74",
+            "height": 50
+          },
+          {
+            "text": "16... b5ErroreEval 1.12 / Migliore: Eval 4.51Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 32",
+            "height": 44
+          },
+          {
+            "text": "17. Nd6+ImprecisioneEval -2.72 / Migliore: Eval -1.25Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "17... Rxd6GrandeEval 2.72 / Migliore: Eval 2.72Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 80
+          },
+          {
+            "text": "18. Qxf5+MiglioreEval -2.53 / Migliore: Eval -2.53",
+            "height": 50
+          },
+          {
+            "text": "18... Kb8MiglioreEval 2.47 / Migliore: Eval 2.47",
+            "height": 50
+          },
+          {
+            "text": "19. Bxf7MiglioreEval -2.74 / Migliore: Eval -2.74",
+            "height": 50
+          },
+          {
+            "text": "19... Qb6+OttimaEval 2.16 / Migliore: Eval 2.58",
+            "height": 50
+          },
+          {
+            "text": "20. Kh1MiglioreEval -2.05 / Migliore: Eval -2.05",
+            "height": 50
+          },
+          {
+            "text": "20... Rf8ImprecisioneEval 0.41 / Migliore: Eval 2.02Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "21. Qxe5MiglioreEval -0.38 / Migliore: Eval -0.38",
+            "height": 50
+          },
+          {
+            "text": "21... Rxf7ErroreEval -2.55 / Migliore: Eval 0.46Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 42",
+            "height": 44
+          },
+          {
+            "text": "22. Qe8+GrandeEval 2.77 / Migliore: Eval 2.77Certificato tattico verificato entro il suo orizzonte legale. Non dimostra una vittoria forzata completa.",
+            "height": 80
+          },
+          {
+            "text": "22... Kb7MiglioreEval -2.67 / Migliore: Eval -2.67",
+            "height": 50
+          },
+          {
+            "text": "23. Qxf7MiglioreEval 2.41 / Migliore: Eval 2.41",
+            "height": 50
+          },
+          {
+            "text": "23... Qd4MiglioreEval -3.05 / Migliore: Eval -3.05",
+            "height": 50
+          },
+          {
+            "text": "24. Qb3OttimaEval 2.65 / Migliore: Eval 2.79",
+            "height": 44
+          },
+          {
+            "text": "24... a6MiglioreEval -1.86 / Migliore: Eval -1.86",
+            "height": 50
+          },
+          {
+            "text": "25. a4MiglioreEval 2.67 / Migliore: Eval 2.67",
+            "height": 50
+          },
+          {
+            "text": "25... c6ErroreEval -4.07 / Migliore: Eval -2.09Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 50",
+            "height": 44
+          },
+          {
+            "text": "26. axb5MiglioreEval 4.16 / Migliore: Eval 4.16",
+            "height": 50
+          },
+          {
+            "text": "26... cxb5MiglioreEval -4.16 / Migliore: Eval -4.16",
+            "height": 50
+          },
+          {
+            "text": "27. Ra4Errore graveEval -6.48 / Migliore: Eval 4.13Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 53",
+            "height": 44
+          },
+          {
+            "text": "27... Qxa4GrandeEval 6.48 / Migliore: Eval 6.48Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 80
+          },
+          {
+            "text": "28. Qf7+MiglioreEval -6.93 / Migliore: Eval -6.93",
+            "height": 50
+          },
+          {
+            "text": "28... Kc6OttimaEval 6.13 / Migliore: Eval 6.73",
+            "height": 50
+          },
+          {
+            "text": "29. Qe8+BuonaEval -6.22 / Migliore: Eval -5.22",
+            "height": 50
+          },
+          {
+            "text": "29... Kc5ImprecisioneEval 4.69 / Migliore: Eval 6.33",
+            "height": 50
+          },
+          {
+            "text": "30. Qc8+MiglioreEval -4.40 / Migliore: Eval -4.40",
+            "height": 50
+          },
+          {
+            "text": "30... Rc6OttimaEval 4.80 / Migliore: Eval 4.87",
+            "height": 50
+          },
+          {
+            "text": "31. Qf5+BuonaEval -6.36 / Migliore: Eval -5.09",
+            "height": 50
+          },
+          {
+            "text": "31... Kb6MiglioreEval 7.25 / Migliore: Eval 7.25",
+            "height": 50
+          },
+          {
+            "text": "32. Rxd2ErroreMatto subito in 2 / Migliore: Eval -6.89Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 63",
+            "height": 44
+          },
+          {
+            "text": "32... Rc1+GrandeMatto vincente in 2 / Migliore: Matto vincente in 2Matto vincente: 2 → 2 mosse (distanza invariata).Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 111
+          },
+          {
+            "text": "33. Rd1ForzataMatto subito in 1 / Migliore: Matto subito in 1Matto subito: 1 → 1 mosse (distanza invariata).Unica mossa legale nella posizione.",
+            "height": 98
+          },
+          {
+            "text": "33... Qxd1#MiglioreMatto dato / Migliore: Matto vincente in 1Matto dato.",
+            "height": 67
+          },
+          {
+            "text": "1. d4",
+            "height": 44
+          },
+          {
+            "text": "1... d5",
+            "height": 44
+          },
+          {
+            "text": "2. c4",
+            "height": 44
+          },
+          {
+            "text": "2... Nf6",
+            "height": 44
+          },
+          {
+            "text": "3. cxd5",
+            "height": 44
+          },
+          {
+            "text": "3... Qxd5",
+            "height": 44
+          },
+          {
+            "text": "4. Nf3",
+            "height": 44
+          },
+          {
+            "text": "4... Bg4",
+            "height": 44
+          },
+          {
+            "text": "5. Nc3",
+            "height": 44
+          },
+          {
+            "text": "5... Qa5",
+            "height": 44
+          },
+          {
+            "text": "6. Bd2",
+            "height": 44
+          },
+          {
+            "text": "6... Nc6",
+            "height": 44
+          },
+          {
+            "text": "7. e4",
+            "height": 44
+          },
+          {
+            "text": "7... e5",
+            "height": 44
+          },
+          {
+            "text": "8. d5",
+            "height": 44
+          },
+          {
+            "text": "8... Nxe4",
+            "height": 44
+          },
+          {
+            "text": "9. Nxe4",
+            "height": 44
+          },
+          {
+            "text": "9... Qxd5",
+            "height": 44
+          },
+          {
+            "text": "10. Qc2",
+            "height": 44
+          },
+          {
+            "text": "10... O-O-O",
+            "height": 44
+          },
+          {
+            "text": "11. Bc4",
+            "height": 44
+          },
+          {
+            "text": "11... Nb4",
+            "height": 44
+          },
+          {
+            "text": "12. Bxb4",
+            "height": 44
+          },
+          {
+            "text": "12... Bxb4+",
+            "height": 44
+          },
+          {
+            "text": "← Torna indietro",
+            "height": 44
+          },
+          {
+            "text": "Reset partita",
+            "height": 44
+          },
+          {
+            "text": "Salva partita e analisi",
+            "height": 44
+          },
+          {
+            "text": "Apri",
+            "height": 44
+          },
+          {
+            "text": "Rinomina",
+            "height": 44
+          },
+          {
+            "text": "Esporta PGN",
+            "height": 44
+          },
+          {
+            "text": "Elimina",
+            "height": 44
+          },
+          {
+            "text": "Invia",
+            "height": 44
+          }
+        ]
+      },
+      "afterExplanation": {
+        "viewport": 390,
+        "pageWidth": 390,
+        "pageHeight": 12576,
+        "scrollY": 5193,
+        "board": {
+          "top": 159,
+          "bottom": 515,
+          "width": 356,
+          "height": 356,
+          "visible": false
+        },
+        "navigation": {
+          "top": 996,
+          "bottom": 1065,
+          "width": 356,
+          "height": 69,
+          "visible": false
+        },
+        "row": {
+          "top": 4869,
+          "bottom": 4920,
+          "width": 356,
+          "height": 50,
+          "visible": false
+        },
+        "explanation": {
+          "top": 5677,
+          "bottom": 6348,
+          "width": 356,
+          "height": 671,
+          "visible": true
+        },
+        "controls": [
+          {
+            "text": "Ruota scacchiera",
+            "height": 44
+          },
+          {
+            "text": "Avvia analisi",
+            "height": 35
+          },
+          {
+            "text": "Ripassa i miei errori",
+            "height": 35
+          },
+          {
+            "text": "Primo",
+            "height": 44
+          },
+          {
+            "text": "Indietro",
+            "height": 44
+          },
+          {
+            "text": "Avanti",
+            "height": 44
+          },
+          {
+            "text": "Ultimo",
+            "height": 44
+          },
+          {
+            "text": "Copia FEN",
+            "height": 44
+          },
+          {
+            "text": "K",
+            "height": 44
+          },
+          {
+            "text": "Q",
+            "height": 44
+          },
+          {
+            "text": "R",
+            "height": 44
+          },
+          {
+            "text": "B",
+            "height": 44
+          },
+          {
+            "text": "N",
+            "height": 44
+          },
+          {
+            "text": "P",
+            "height": 44
+          },
+          {
+            "text": "k",
+            "height": 44
+          },
+          {
+            "text": "q",
+            "height": 44
+          },
+          {
+            "text": "r",
+            "height": 44
+          },
+          {
+            "text": "b",
+            "height": 44
+          },
+          {
+            "text": "n",
+            "height": 44
+          },
+          {
+            "text": "p",
+            "height": 44
+          },
+          {
+            "text": "Cancella",
+            "height": 44
+          },
+          {
+            "text": "Applica posizione",
+            "height": 44
+          },
+          {
+            "text": "Importa PGN",
+            "height": 44
+          },
+          {
+            "text": "1. d4LibroEval 0.18 / Migliore: Eval 0.28Libro · Valutazione: Ottima",
+            "height": 44
+          },
+          {
+            "text": "1... d5LibroEval -0.20 / Migliore: Eval -0.20Libro · Valutazione: Migliore",
+            "height": 67
+          },
+          {
+            "text": "2. c4LibroEval 0.18 / Migliore: Eval 0.18Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "2... Nf6LibroEval -0.45 / Migliore: Eval -0.22Libro · Valutazione: Ottima",
+            "height": 67
+          },
+          {
+            "text": "3. cxd5LibroEval 0.51 / Migliore: Eval 0.51Libro · Valutazione: Migliore",
+            "height": 44
+          },
+          {
+            "text": "3... Qxd5BuonaEval -1.07 / Migliore: Eval -0.56Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "4. Nf3OttimaEval 0.72 / Migliore: Eval 1.07",
+            "height": 44
+          },
+          {
+            "text": "4... Bg4ImprecisioneEval -1.58 / Migliore: Eval -0.68Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "5. Nc3MiglioreEval 1.46 / Migliore: Eval 1.46",
+            "height": 50
+          },
+          {
+            "text": "5... Qa5MiglioreEval -1.61 / Migliore: Eval -1.61",
+            "height": 50
+          },
+          {
+            "text": "6. Bd2OttimaEval 1.33 / Migliore: Eval 1.34Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "6... Nc6OttimaEval -1.79 / Migliore: Eval -1.44",
+            "height": 50
+          },
+          {
+            "text": "7. e4MiglioreEval 1.73 / Migliore: Eval 1.73",
+            "height": 44
+          },
+          {
+            "text": "7... e5ErroreEval -5.49 / Migliore: Eval -2.17Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 14",
+            "height": 44
+          },
+          {
+            "text": "8. d5Errore graveEval 0.65 / Migliore: Eval 4.93Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 15",
+            "height": 44
+          },
+          {
+            "text": "8... Nxe4Errore graveEval -5.40 / Migliore: Eval -0.41Difesa mancata nell'analisi: Nd4 Nb5 Bb4 Nbxd4 Nxe4 Nb3 Qb6 Qe2.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 16",
+            "height": 44
+          },
+          {
+            "text": "9. Nxe4ErroreEval 3.64 / Migliore: Eval 6.01",
+            "height": 44
+          },
+          {
+            "text": "Riprova posizione 17",
+            "height": 44
+          },
+          {
+            "text": "9... Qxd5MiglioreEval -3.32 / Migliore: Eval -3.32",
+            "height": 50
+          },
+          {
+            "text": "10. Qc2ErroreEval 0.53 / Migliore: Eval 3.74Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 19",
+            "height": 44
+          },
+          {
+            "text": "10... O-O-OErroreEval -3.22 / Migliore: Eval -0.75",
+            "height": 50
+          },
+          {
+            "text": "Riprova posizione 20",
+            "height": 44
+          },
+          {
+            "text": "11. Bc4MiglioreEval 3.16 / Migliore: Eval 3.16",
+            "height": 50
+          },
+          {
+            "text": "11... Nb4OttimaEval -3.31 / Migliore: Eval -3.12",
+            "height": 50
+          },
+          {
+            "text": "12. Bxb4MiglioreEval 2.90 / Migliore: Eval 2.90",
+            "height": 50
+          },
+          {
+            "text": "12... Bxb4+MiglioreEval -3.04 / Migliore: Eval -3.04",
+            "height": 50
+          },
+          {
+            "text": "13. Nfd2Errore graveEval -1.40 / Migliore: Eval 3.07",
+            "height": 50
+          },
+          {
+            "text": "Riprova posizione 25",
+            "height": 44
+          },
+          {
+            "text": "13... Qa5Errore graveEval -3.66 / Migliore: Eval 1.51Difesa mancata nell'analisi: Bxd2+ Nxd2 Qxg2 Rf1 e4 Qc3 Rhe8 Qe3.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 26",
+            "height": 44
+          },
+          {
+            "text": "14. O-OErrore graveEval -1.70 / Migliore: Eval 3.56Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 27",
+            "height": 44
+          },
+          {
+            "text": "14... Bxd2GrandeEval 1.62 / Migliore: Eval 1.62Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 80
+          },
+          {
+            "text": "15. f3ErroreEval -3.54 / Migliore: Eval -1.28Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 29",
+            "height": 44
+          },
+          {
+            "text": "15... Bf5MiglioreEval 3.47 / Migliore: Eval 3.47",
+            "height": 50
+          },
+          {
+            "text": "16. Rfd1BuonaEval -4.59 / Migliore: Eval -3.74",
+            "height": 50
+          },
+          {
+            "text": "16... b5ErroreEval 1.12 / Migliore: Eval 4.51Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 32",
+            "height": 44
+          },
+          {
+            "text": "17. Nd6+ImprecisioneEval -2.72 / Migliore: Eval -1.25Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "17... Rxd6GrandeEval 2.72 / Migliore: Eval 2.72Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 80
+          },
+          {
+            "text": "18. Qxf5+MiglioreEval -2.53 / Migliore: Eval -2.53",
+            "height": 50
+          },
+          {
+            "text": "18... Kb8MiglioreEval 2.47 / Migliore: Eval 2.47",
+            "height": 50
+          },
+          {
+            "text": "19. Bxf7MiglioreEval -2.74 / Migliore: Eval -2.74",
+            "height": 50
+          },
+          {
+            "text": "19... Qb6+OttimaEval 2.16 / Migliore: Eval 2.58",
+            "height": 50
+          },
+          {
+            "text": "20. Kh1MiglioreEval -2.05 / Migliore: Eval -2.05",
+            "height": 50
+          },
+          {
+            "text": "20... Rf8ImprecisioneEval 0.41 / Migliore: Eval 2.02Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "21. Qxe5MiglioreEval -0.38 / Migliore: Eval -0.38",
+            "height": 50
+          },
+          {
+            "text": "21... Rxf7ErroreEval -2.55 / Migliore: Eval 0.46Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 42",
+            "height": 44
+          },
+          {
+            "text": "22. Qe8+GrandeEval 2.77 / Migliore: Eval 2.77Certificato tattico verificato entro il suo orizzonte legale. Non dimostra una vittoria forzata completa.",
+            "height": 80
+          },
+          {
+            "text": "22... Kb7MiglioreEval -2.67 / Migliore: Eval -2.67",
+            "height": 50
+          },
+          {
+            "text": "23. Qxf7MiglioreEval 2.41 / Migliore: Eval 2.41",
+            "height": 50
+          },
+          {
+            "text": "23... Qd4MiglioreEval -3.05 / Migliore: Eval -3.05",
+            "height": 50
+          },
+          {
+            "text": "24. Qb3OttimaEval 2.65 / Migliore: Eval 2.79",
+            "height": 44
+          },
+          {
+            "text": "24... a6MiglioreEval -1.86 / Migliore: Eval -1.86",
+            "height": 50
+          },
+          {
+            "text": "25. a4MiglioreEval 2.67 / Migliore: Eval 2.67",
+            "height": 50
+          },
+          {
+            "text": "25... c6ErroreEval -4.07 / Migliore: Eval -2.09Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 50",
+            "height": 44
+          },
+          {
+            "text": "26. axb5MiglioreEval 4.16 / Migliore: Eval 4.16",
+            "height": 50
+          },
+          {
+            "text": "26... cxb5MiglioreEval -4.16 / Migliore: Eval -4.16",
+            "height": 50
+          },
+          {
+            "text": "27. Ra4Errore graveEval -6.48 / Migliore: Eval 4.13Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 53",
+            "height": 44
+          },
+          {
+            "text": "27... Qxa4GrandeEval 6.48 / Migliore: Eval 6.48Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 80
+          },
+          {
+            "text": "28. Qf7+MiglioreEval -6.93 / Migliore: Eval -6.93",
+            "height": 50
+          },
+          {
+            "text": "28... Kc6OttimaEval 6.13 / Migliore: Eval 6.73",
+            "height": 50
+          },
+          {
+            "text": "29. Qe8+BuonaEval -6.22 / Migliore: Eval -5.22",
+            "height": 50
+          },
+          {
+            "text": "29... Kc5ImprecisioneEval 4.69 / Migliore: Eval 6.33",
+            "height": 50
+          },
+          {
+            "text": "30. Qc8+MiglioreEval -4.40 / Migliore: Eval -4.40",
+            "height": 50
+          },
+          {
+            "text": "30... Rc6OttimaEval 4.80 / Migliore: Eval 4.87",
+            "height": 50
+          },
+          {
+            "text": "31. Qf5+BuonaEval -6.36 / Migliore: Eval -5.09",
+            "height": 50
+          },
+          {
+            "text": "31... Kb6MiglioreEval 7.25 / Migliore: Eval 7.25",
+            "height": 50
+          },
+          {
+            "text": "32. Rxd2ErroreMatto subito in 2 / Migliore: Eval -6.89Classificazione indicativa: confronto tra analisi separate.",
+            "height": 80
+          },
+          {
+            "text": "Riprova posizione 63",
+            "height": 44
+          },
+          {
+            "text": "32... Rc1+GrandeMatto vincente in 2 / Migliore: Matto vincente in 2Matto vincente: 2 → 2 mosse (distanza invariata).Etichetta Grande conservata per compatibilità; non è una nuova conferma tattica.",
+            "height": 111
+          },
+          {
+            "text": "33. Rd1ForzataMatto subito in 1 / Migliore: Matto subito in 1Matto subito: 1 → 1 mosse (distanza invariata).Unica mossa legale nella posizione.",
+            "height": 98
+          },
+          {
+            "text": "33... Qxd1#MiglioreMatto dato / Migliore: Matto vincente in 1Matto dato.",
+            "height": 67
+          },
+          {
+            "text": "1. d4",
+            "height": 44
+          },
+          {
+            "text": "1... d5",
+            "height": 44
+          },
+          {
+            "text": "2. c4",
+            "height": 44
+          },
+          {
+            "text": "2... Nf6",
+            "height": 44
+          },
+          {
+            "text": "3. cxd5",
+            "height": 44
+          },
+          {
+            "text": "3... Qxd5",
+            "height": 44
+          },
+          {
+            "text": "4. Nf3",
+            "height": 44
+          },
+          {
+            "text": "4... Bg4",
+            "height": 44
+          },
+          {
+            "text": "5. Nc3",
+            "height": 44
+          },
+          {
+            "text": "5... Qa5",
+            "height": 44
+          },
+          {
+            "text": "6. Bd2",
+            "height": 44
+          },
+          {
+            "text": "6... Nc6",
+            "height": 44
+          },
+          {
+            "text": "7. e4",
+            "height": 44
+          },
+          {
+            "text": "7... e5",
+            "height": 44
+          },
+          {
+            "text": "8. d5",
+            "height": 44
+          },
+          {
+            "text": "8... Nxe4",
+            "height": 44
+          },
+          {
+            "text": "9. Nxe4",
+            "height": 44
+          },
+          {
+            "text": "9... Qxd5",
+            "height": 44
+          },
+          {
+            "text": "10. Qc2",
+            "height": 44
+          },
+          {
+            "text": "10... O-O-O",
+            "height": 44
+          },
+          {
+            "text": "11. Bc4",
+            "height": 44
+          },
+          {
+            "text": "11... Nb4",
+            "height": 44
+          },
+          {
+            "text": "12. Bxb4",
+            "height": 44
+          },
+          {
+            "text": "12... Bxb4+",
+            "height": 44
+          },
+          {
+            "text": "← Torna indietro",
+            "height": 44
+          },
+          {
+            "text": "Reset partita",
+            "height": 44
+          },
+          {
+            "text": "Salva partita e analisi",
+            "height": 44
+          },
+          {
+            "text": "Apri",
+            "height": 44
+          },
+          {
+            "text": "Rinomina",
+            "height": 44
+          },
+          {
+            "text": "Esporta PGN",
+            "height": 44
+          },
+          {
+            "text": "Elimina",
+            "height": 44
+          },
+          {
+            "text": "Invia",
+            "height": 44
+          }
+        ]
+      },
+      "errors": [],
+      "stockfishWorkers": 0
+    }
+  ],
+  "historicalAnimationProfiles": [
+    {
+      "mode": "plain",
+      "file": "C:/Users/carlo/AppData/Local/Temp/ui-animation-audit-plain.json",
+      "sha256": "aef9f4476ce8339a2b42a1ad7cef0d3b48b91a7eef7e717bbb2f1cc2585f3361"
+    },
+    {
+      "mode": "archived",
+      "file": "C:/Users/carlo/AppData/Local/Temp/ui-animation-audit-archived.json",
+      "sha256": "f1089e75c2bab820de800ba746de28c6321cf1105a2e41d821ff851109d93a3f"
+    },
+    {
+      "mode": "active-replay",
+      "file": "C:/Users/carlo/AppData/Local/Temp/ui-animation-audit-active-replay.json",
+      "sha256": "1c88b14a3fd75436906b53cbabc9a2f502262ef8364301c8a4987fe7cc7108bb"
+    },
+    {
+      "mode": "no-animation-control",
+      "file": "C:/Users/carlo/AppData/Local/Temp/ui-animation-audit-no-animation-control.json",
+      "sha256": "b9718c08e853b24f47c46b487328aeed0e281bc67fa8a7d96cc71c9424f570d8"
+    },
+    {
+      "mode": "summary-off-control",
+      "file": "C:/Users/carlo/AppData/Local/Temp/ui-animation-audit-summary-off-control.json",
+      "sha256": "e92dda9f424099b23d643029ee284a3a5f76db1fa94ae9de1a6efd3b9079667c"
+    }
+  ],
+  "preservedFiles": {
+    "baseline": "C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-baseline-20261102.json",
+    "count": 2377,
+    "changed": 0
+  }
+}

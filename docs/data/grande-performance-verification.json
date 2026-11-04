@@ -1,0 +1,244 @@
+{
+  "date": "2026-11-01",
+  "scope": "UI responsiveness; classifier, budgets and protected inputs unchanged",
+  "realStockfishSearches": 0,
+  "cacheReplayDelayMs": 750,
+  "traces": [
+    {
+      "file": "grande-performance-before-planning.json",
+      "sha256": "d70b57e3925a0cf046076b7b3ff21dd43660e74532c9329c845e85f07425ee38",
+      "summary": {
+        "phase": "before",
+        "mode": "planning",
+        "sourcePath": "agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json",
+        "entries": 66,
+        "clickResolvedMs": 12761,
+        "navigationMs": 325,
+        "cancelMs": 28006,
+        "waitAfterClickMs": 43947,
+        "longtasks": 7,
+        "totalLongtaskMs": 56321,
+        "maxLongtaskMs": 27941,
+        "maxRafGapMs": 27943.40000000001,
+        "maxHeartbeatGapMs": 27963,
+        "go": [
+          {
+            "type": "go",
+            "t": 57455.79999999888,
+            "command": "go nodes 1000000",
+            "overlap": false
+          }
+        ],
+        "bestmoves": [
+          {
+            "type": "bestmove",
+            "t": 85783.90000000037,
+            "line": "bestmove (none)"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "file": "grande-performance-after-planning.json",
+      "sha256": "aa6091809b05e1ffb94001c48d29d2c428326ddf49a1e349038e3df68b1b3305",
+      "summary": {
+        "phase": "after",
+        "mode": "planning",
+        "sourcePath": "agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json",
+        "entries": 66,
+        "cachedResponseDelayMs": null,
+        "clickResolvedMs": 50,
+        "navigationMs": 468,
+        "cancelMs": 84,
+        "waitAfterClickMs": 44480,
+        "longtasks": 6,
+        "totalLongtaskMs": 728,
+        "maxLongtaskMs": 166,
+        "maxRafGapMs": 166.59999999999854,
+        "maxHeartbeatGapMs": 250.40000000037253,
+        "go": [
+          {
+            "type": "go",
+            "t": 48338.20000000112,
+            "command": "go nodes 1000000",
+            "position": "position fen rn2kb1r/ppp1pppp/5n2/3q4/3P2b1/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 5",
+            "overlap": false
+          }
+        ],
+        "bestmoves": [
+          {
+            "type": "bestmove",
+            "t": 48879.70000000112,
+            "line": "bestmove (none)",
+            "source": "synthetic-stop-ack"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "file": "grande-performance-after-cached.json",
+      "sha256": "854d068901f654adee11887e485226b86dc061c0c73b1e72a0e193d95f85aaf2",
+      "summary": {
+        "phase": "after",
+        "mode": "cached",
+        "sourcePath": "agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json",
+        "entries": 66,
+        "cachedResponseDelayMs": 750,
+        "clickResolvedMs": 51,
+        "navigationMs": 317,
+        "cancelMs": 111,
+        "waitAfterClickMs": 101220,
+        "longtasks": 12,
+        "totalLongtaskMs": 2549,
+        "maxLongtaskMs": 1099,
+        "maxRafGapMs": 1094.3999999999942,
+        "maxHeartbeatGapMs": 1221.699999999255,
+        "go": [
+          {
+            "type": "go",
+            "t": 48424.09999999963,
+            "command": "go nodes 1000000",
+            "position": "position fen rn2kb1r/ppp1pppp/5n2/3q4/3P2b1/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 5",
+            "overlap": false
+          },
+          {
+            "type": "go",
+            "t": 49240.199999999255,
+            "command": "go nodes 1000000",
+            "position": "position fen 2kr1b1r/ppp2ppp/2n5/3qp3/4N1b1/5N2/PPQB1PPP/R3KB1R w KQ - 2 11",
+            "overlap": false
+          },
+          {
+            "type": "go",
+            "t": 103913.59999999963,
+            "command": "go nodes 1000000",
+            "position": "position fen rn2kb1r/ppp1pppp/5n2/3qN3/3P2b1/8/PP2PPPP/RNBQKB1R b KQkq - 3 5",
+            "overlap": false
+          }
+        ],
+        "bestmoves": [
+          {
+            "type": "bestmove",
+            "t": 49177.59999999963,
+            "line": "bestmove d5a5 ponder f3e5",
+            "source": "archived-1M-rawLines"
+          },
+          {
+            "type": "bestmove",
+            "t": 49840,
+            "line": "bestmove (none)",
+            "source": "synthetic-stop-ack"
+          },
+          {
+            "type": "bestmove",
+            "t": 104171.5,
+            "line": "bestmove (none)",
+            "source": "synthetic-stop-ack"
+          }
+        ],
+        "errors": [],
+        "longtaskPhases": {
+          "saveClickT": 64928.199999999255,
+          "beforeSave": {
+            "count": 8,
+            "totalMs": 1002,
+            "maxMs": 163
+          },
+          "afterSave": {
+            "count": 4,
+            "totalMs": 1547,
+            "maxMs": 1099
+          }
+        }
+      }
+    },
+    {
+      "file": "grande-performance-after-early-cancel.json",
+      "sha256": "4d21edd3e20c2131628f7a54491744d363a7547caa30e9175d9ac90d688a66d2",
+      "summary": {
+        "rounds": [
+          {
+            "round": 0,
+            "start": 25616.599999999627,
+            "cancel": 25746
+          },
+          {
+            "round": 1,
+            "start": 40262.699999999255,
+            "cancel": 40388.90000000037
+          }
+        ],
+        "errors": []
+      }
+    }
+  ],
+  "source": [
+    {
+      "path": "src/components/EnginePanel.jsx",
+      "sha256": "32927e05c568eb584d5c65cc3b5f67364bf6a9426d68446887bd54cf29cd4667"
+    },
+    {
+      "path": "src/lib/refinementWorker.js",
+      "sha256": "81f7d333482fc2148d46108e803e5f50d6d6e621f8fe4fc0f0a63f7edfd7da03"
+    },
+    {
+      "path": "src/lib/refinementWorkerClient.js",
+      "sha256": "e72082cbf396b0131fad7cd1085c377cf1eef80cada3e6d5012dc0931fad182c"
+    },
+    {
+      "path": "src/lib/grandeCandidateV3.js",
+      "sha256": "6ccc4168dbee8f71001e35213873a69e246bf0101e16b5a733013e5d4893c5bb"
+    }
+  ],
+  "protected": [
+    {
+      "path": "src/data/openingPositions.json",
+      "sha256": "0b96012fd9330e01ff3eb85600cb678f997bf5f2ed7e6054828fa6f97c236b5a"
+    },
+    {
+      "path": "src/data/openingSupplements.json",
+      "sha256": "fa8e375154baec5c1a4eef47110034840a63b6e52eeef6829674e20e44ec4b87"
+    },
+    {
+      "path": "src/lib/openingBook.js",
+      "sha256": "7a0187a755c4c566e8aeb541b81477a2fa98708621256135624bd06b2655513c"
+    },
+    {
+      "path": "src/lib/classification.js",
+      "sha256": "2bdd4f56ad53f36d29d051a98debd66faeab5e396ad6a78b7d7d54a38f41c262"
+    },
+    {
+      "path": "src/lib/engineConfig.js",
+      "sha256": "506890191d0d9a9837c0f0ec6571c6cb4bac055d47265fc329040f08d8af787a"
+    },
+    {
+      "path": "src/lib/specialClassification.js",
+      "sha256": "45ade3128fae0b8459823dca005639164dc26ced0c414af13fcd2185a8dd913a"
+    },
+    {
+      "path": "src/data/openingExpansion.js",
+      "sha256": "4f4364e6f592e9d9755eefa6dfb1d28651b333694ae4cb7706f4b2506385ae01"
+    },
+    {
+      "path": "src/data/openingPracticalCases.js",
+      "sha256": "4847fbe684873cb070f098198f08515d4442a408c11f6688b7db37e2cb81e77f"
+    },
+    {
+      "path": "docs/data/opening-expansion-verification.json",
+      "sha256": "719c67bbf71fab5e0da82759bcadb30a6beca951006837d41d02d8f49f804c4a"
+    },
+    {
+      "path": "docs/data/opening-practical-verification.json",
+      "sha256": "8859def8c2c8ff2f0f0511ad2c82706ff29037a7fa445d2d4dd7a976bc385e46"
+    }
+  ],
+  "checks": {
+    "uniqueVitestPassed": 63,
+    "regressionBrowserPassed": 27,
+    "performanceScenariosPassed": 3,
+    "productionBuild": "PASS",
+    "fullVitestRerun": false
+  }
+}

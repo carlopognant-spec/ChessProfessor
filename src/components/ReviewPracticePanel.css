@@ -1,7 +1,8 @@
 .review-practice { grid-column: 1 / -1; min-width: 0; }
 .review-practice .practice-header { display: flex; align-items: start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-.review-practice .practice-header h2 { margin: 0; }
-.review-practice .practice-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; align-items: start; }
+.review-practice .practice-header h2 { margin: 0; flex: 1; min-width: 0; font-size: clamp(1rem, 2vw, 1.35rem); scroll-margin-top: 76px; }
+.review-practice > p { margin: .5rem 0; font-size: .85rem; }
+.review-practice .practice-layout { display: grid; grid-template-columns: minmax(0, min(60%, calc(100dvh - 320px))) minmax(0, 1fr); gap: 1rem; align-items: start; }
 .review-practice .practice-board { width: 100%; min-width: 0; }
 .review-practice .practice-controls { display: grid; gap: .8rem; min-width: 0; }
 .review-practice .practice-controls p { margin: 0; }
@@ -14,4 +15,15 @@
 .review-practice .practice-progress, .review-practice small { font-size: .85rem; line-height: 1.5; }
 .review-practice [role="alert"] { color: #ffb9ad; }
 .review-practice h2:focus { outline: 2px solid #c9a24b; outline-offset: 4px; }
-@media (max-width: 760px) { .review-practice .practice-layout { grid-template-columns: minmax(0, 1fr); } }
+.review-practice .practice-board:focus-visible { outline: 2px solid #c9a24b; outline-offset: 4px; }
+@media (max-width: 760px) {
+  .review-practice .practice-layout { grid-template-columns: minmax(0, 1fr); }
+  /* Reserve room for orientation, move entry and the primary exercise actions. */
+  .review-practice .practice-board { width: min(100%, max(160px, calc(100dvh - 588px))); justify-self: center; }
+  .review-practice .board-view-controls { font-size: .75rem; }
+  .review-practice .practice-controls { gap: .5rem; font-size: .8rem; }
+  .review-practice .practice-controls small { font-size: .7rem; }
+  .review-practice .practice-controls form { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .review-practice .practice-controls form > :not([for="practice-promotion"]):not(#practice-promotion) { grid-column: 1 / -1; }
+  .review-practice #practice-promotion { max-width: 120px; }
+}

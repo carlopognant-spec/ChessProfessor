@@ -1,22 +1,28 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { buildMoveExplanation } from '../lib/moveExplanation.js'
 import './MoveExplanation.css'
 
 const fields = [
-  ['why', 'Perché questa scelta è problematica'],
-  ['opportunity', 'Minaccia o opportunità'],
-  ['punishment', 'Come può rispondere l’avversario'],
-  ['alternative', 'Perché considerare l’alternativa'],
+  ['why', 'La mossa'],
+  ['opportunity', 'Occasione'],
+  ['punishment', 'Risposta dell’avversario'],
+  ['alternative', 'Alternativa'],
 ]
 
 export default function MoveExplanation({ entry }) {
   const explanation = useMemo(() => buildMoveExplanation(entry), [entry])
-  return <section className="move-explanation" aria-label="Spiegazione scacchistica">
-    <dl>{fields.map(([key, label]) => <div key={key}>
+  const visibleFields = fields.filter(([key]) => explanation[key])
+  if (!visibleFields.length) return null
+  const variants = [
+    explanation.punishment && explanation.lines.punishment,
+    explanation.alternative && explanation.lines.alternative,
+  ].filter(Boolean)
+  return <section className="move-explanation" aria-label="Spiegazione scacchistica" tabIndex={0}>
+    <dl>{visibleFields.map(([key, label]) => <div key={key}>
       <dt><strong>{label}</strong></dt><dd>{explanation[key]}</dd>
     </div>)}</dl>
-    {explanation.lines.punishment && <p>Variante dopo la mossa: {explanation.lines.punishment.san.slice(0, 8).join(' ')}.</p>}
-    {explanation.lines.alternative && <p>Variante alternativa: {explanation.lines.alternative.san.slice(0, 8).join(' ')}.</p>}
-    {explanation.limitations.map((text, index) => <p className="notice" key={index}>{text}</p>)}
+    {variants.length > 0 && <details className="explanation-variants"><summary>Varianti del motore</summary>
+      {variants.map(line => <p key={line.uci.join(' ')}>{line.san.join(' ')}.</p>)}
+    </details>}
   </section>
 }

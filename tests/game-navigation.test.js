@@ -1,10 +1,19 @@
 import { describe, expect, it } from 'vitest'
 import { Chess } from 'chess.js'
-import { captureGameSnapshot, replayGame, restoreGameSnapshot } from '../src/lib/gameNavigation.js'
+import { captureGameSnapshot, replayGame, restoreGameSnapshot, positionTimeline } from '../src/lib/gameNavigation.js'
 import { getButtonNavigationTarget, buildMoveNavigation, resolveAnalysisEntryForPosition } from '../src/lib/analysisPresentation.js'
 
 describe('game navigation and chat snapshots', () => {
   const baseFen = new Chess().fen()
+
+  it('indexes exact FENs once without losing counters, turn, castling or en passant', () => {
+    const moves = ['e4', 'a6', 'e5', 'd5']
+    const indexed = positionTimeline(replayGame(baseFen, moves))
+    expect(indexed.moves).toEqual(moves)
+    expect(indexed.fens).toEqual([baseFen, ...moves.map((_, i) => replayGame(baseFen, moves.slice(0, i + 1)).fen())])
+    expect(indexed.fens.at(-1).split(' ')[3]).toBe('d6')
+    expect(positionTimeline(new Chess()).fens).toEqual([baseFen])
+  })
 
   it('uses the displayed ply for chat and rejects another continuation or the initial position', () => {
     const moves = ['e4', 'e5']

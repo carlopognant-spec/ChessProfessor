@@ -1,0 +1,236 @@
+{
+  "scenario": "8 navigation actions during real Stockfish 19 initial analysis",
+  "runtime": "Edge headless, Vite development",
+  "statisticalBenchmark": false,
+  "activeActions": 8,
+  "maxRafGapMs": 44.5,
+  "longtaskCount": 0,
+  "maxLongtaskMs": 0,
+  "navigation": {
+    "start": 7118.4000000003725,
+    "frames": [
+      8.293999999627886,
+      16.605999999999767,
+      5.599999999999454,
+      11.200000000000728,
+      5.5,
+      5.599999999999454,
+      5.5,
+      5.600000000000364,
+      11,
+      11.199999999999818,
+      5.5,
+      5.600000000000364,
+      5.5,
+      5.599999999999454,
+      5.5,
+      5.600000000000364,
+      5.599999999999454,
+      11.100000000000364,
+      11.100000000000364,
+      5.5,
+      11.199999999999818,
+      5.5,
+      5.599999999999454,
+      5.5,
+      5.600000000000364,
+      5.600000000000364,
+      5.5,
+      11.099999999999454,
+      5.5,
+      5.699999999999818,
+      5.400000000000546,
+      5.599999999999454,
+      5.600000000000364,
+      5.5,
+      5.600000000000364,
+      5.5,
+      11.099999999999454,
+      11.100000000000364,
+      5.599999999999454,
+      27.800000000000182,
+      5.600000000000364,
+      44.30000000000018,
+      33.399999999999636,
+      44.5,
+      33.30000000000018,
+      22.300000000000182,
+      11.099999999999454,
+      11.100000000000364,
+      11.099999999999454,
+      5.5,
+      5.600000000000364,
+      5.600000000000364,
+      5.399999999999636,
+      5.600000000000364
+    ],
+    "actions": [
+      {
+        "name": "Indietro",
+        "t": 7118.4000000003725,
+        "engineActive": true,
+        "enabled": true
+      },
+      {
+        "name": "Avanti",
+        "t": 7180.0999999996275,
+        "engineActive": true,
+        "enabled": true
+      },
+      {
+        "name": "Indietro",
+        "t": 7243,
+        "engineActive": true,
+        "enabled": true
+      },
+      {
+        "name": "Avanti",
+        "t": 7305.4000000003725,
+        "engineActive": true,
+        "enabled": true
+      },
+      {
+        "name": "Indietro",
+        "t": 7370.0999999996275,
+        "engineActive": true,
+        "enabled": true
+      },
+      {
+        "name": "Avanti",
+        "t": 7432.199999999255,
+        "engineActive": true,
+        "enabled": true
+      },
+      {
+        "name": "Indietro",
+        "t": 7512.9000000003725,
+        "engineActive": true,
+        "enabled": true
+      },
+      {
+        "name": "Avanti",
+        "t": 7589.699999999255,
+        "engineActive": true,
+        "enabled": true
+      }
+    ],
+    "commands": [
+      "go nodes 200000"
+    ],
+    "done": true,
+    "end": 7665.800000000745,
+    "longtasks": [],
+    "engineActivity": [
+      {
+        "type": "go",
+        "t": 1696.9000000003725,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 2401.699999999255,
+        "line": "bestmove e2e4 ponder e7e6"
+      },
+      {
+        "type": "go",
+        "t": 3637.0999999996275,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 4395.4000000003725,
+        "line": "bestmove e2e4 ponder e7e6"
+      },
+      {
+        "type": "go",
+        "t": 5025.5,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 5661,
+        "line": "bestmove e2e4 ponder e7e6"
+      },
+      {
+        "type": "go",
+        "t": 5663.300000000745,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 6367.699999999255,
+        "line": "bestmove e7e5 ponder g1f3"
+      },
+      {
+        "type": "go",
+        "t": 7079.199999999255,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 7720.4000000003725,
+        "line": "bestmove g1f3 ponder b8c6"
+      },
+      {
+        "type": "go",
+        "t": 7734.4000000003725,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 8369.900000000373,
+        "line": "bestmove b8c6 ponder f1c4"
+      },
+      {
+        "type": "go",
+        "t": 8389.800000000745,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 9060.199999999255,
+        "line": "bestmove d2d4 ponder e5d4"
+      },
+      {
+        "type": "go",
+        "t": 9075,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 9723.599999999627,
+        "line": "bestmove g8f6 ponder d2d3"
+      },
+      {
+        "type": "go",
+        "t": 9731.599999999627,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 10363.599999999627,
+        "line": "bestmove b5a4 ponder g8f6"
+      },
+      {
+        "type": "go",
+        "t": 10369.599999999627,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 11030.400000000373,
+        "line": "bestmove g8f6 ponder e1g1"
+      },
+      {
+        "type": "go",
+        "t": 11045.900000000373,
+        "command": "go nodes 200000"
+      },
+      {
+        "type": "bestmove",
+        "t": 11703.300000000745,
+        "line": "bestmove e1g1 ponder f8e7"
+      }
+    ]
+  }
+}

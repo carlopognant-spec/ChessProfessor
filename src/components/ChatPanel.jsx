@@ -72,6 +72,7 @@ export default function ChatPanel({ opening, engineData, analysisEntry }) {
       <div className="controls-row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ margin: 0 }}>Chiedi al maestro</h2>
         <select
+          aria-label="Servizio della chat"
           value={provider}
           onChange={(e) => setProvider(e.target.value)}
           disabled={sending}
@@ -89,7 +90,7 @@ export default function ChatPanel({ opening, engineData, analysisEntry }) {
           <option value="gemini">Gemini</option>
         </select>
       </div>
-      <div className="chat-messages">
+      <div className="chat-messages" role="log" aria-live="polite" aria-relevant="additions text">
         {messages.length === 0 && (
           <p className="notice">
             Fai una domanda su questa posizione: es. "Perché è meglio Cf3 di Ac4 qui?"
@@ -102,6 +103,7 @@ export default function ChatPanel({ opening, engineData, analysisEntry }) {
       </div>
       <form className="chat-input-row" onSubmit={handleSend}>
         <input
+          aria-label="Domanda al maestro"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Scrivi una domanda sugli scacchi…"

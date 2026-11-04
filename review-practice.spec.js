@@ -1,18 +1,24 @@
 import { test, expect } from '@playwright/test'
+import { allowRefinementWorker, refinementWorkerSource } from './tests/helpers/browser-refinement-worker.js'
+
 import { Chess } from 'chess.js'
 import { createAnalysisMetadata } from './src/lib/analysisMetadata.js'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
+
+test.beforeEach(async ({ page }) => { await page.addInitScript(allowRefinementWorker, refinementWorkerSource) })
 
 const appUrl = 'http://127.0.0.1:4173/ChessProfessor/'
 const uci = m => m.from + m.to + (m.promotion ?? '')
 
-async function openPractice(page, { pgn = '1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 *', allErrors = false, mode = 'normal', current = false, refined = false, legacyNonError = false } = {}) {
+async function openPractice(page, { pgn = '1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 *', allErrors = false, mode = 'normal', current = false, refined = false, legacyNonError = false, referenceMove = null, referenceReply = null } = {}) {
   const source = new Chess(); source.loadPgn(pgn)
   const game = new Chess(source.getHeaders().FEN), packets = {}, entries = []
   for (const [i, san] of source.history().entries()) {
     const fenBefore = game.fen(), legal = game.moves({ verbose: true }).map(uci)
     const original = uci(game.move(san))
-    const best = legal.includes('a7a8q') ? 'a7a8q' : legal.includes('f1b5') ? 'f1b5' : legal.find(m => m !== original)
-    packets[fenBefore] = { legal, original, best, reply: best === 'f1b5' ? 'a7a6' : null }
+    const best = referenceMove && legal.includes(referenceMove) ? referenceMove
+      : legal.includes('a7a8q') ? 'a7a8q' : legal.includes('f1b5') ? 'f1b5' : legal.find(m => m !== original)
+    packets[fenBefore] = { legal, original, best, reply: best === referenceMove ? referenceReply : best === 'f1b5' ? 'a7a6' : null }
     entries.push({ ply: i + 1, playedMove: san, side: fenBefore.split(' ')[1], fenBefore, fenAfter: game.fen(),
       classification: allErrors || i === 4 ? 'blunder' : 'good',
       engine: { evalCp: 9999 }, playedEngine: { evalCp: -9999 } })
@@ -93,7 +99,12 @@ async function openPractice(page, { pgn = '1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 *', al
   await page.getByRole('button', { name: 'Apri', exact: true }).click()
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', source.fen())
   if (refined) {
+    await page.locator('.engine-workspace > summary').click()
+    await page.locator('.analysis-display-options > summary').click()
     await page.getByRole('checkbox', { name: 'Mostra analisi approfondita', exact: true }).check()
+    await page.locator('.analysis-row-button').nth(4).click()
+    await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', entries[4].fenAfter)
+    await expect(page.locator('.selected-move').getByRole('heading')).toContainText(entries[4].playedMove)
     await page.getByRole('button', { name: 'Riprova posizione 5', exact: true }).click()
   } else await page.getByRole('button', { name: 'Ripassa i miei errori', exact: true }).click()
   const panel = page.locator('.review-practice')
@@ -102,6 +113,80 @@ async function openPractice(page, { pgn = '1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 *', al
 }
 
 async function ready(panel) { await expect(panel).toHaveAttribute('data-practice-status', 'ready') }
+
+for (const viewport of [{ width: 1920, height: 1080 }, { width: 1280, height: 900 }, { width: 390, height: 844 }]) {
+  test(`practice actual 64-square board fits ${viewport.width}x${viewport.height}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    const { panel } = await openPractice(page)
+    await ready(panel)
+    await page.waitForTimeout(250)
+    const measure = () => panel.locator('.practice-board').evaluate(element => {
+      const rect = e => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height, bottom: r.bottom, right: r.right } }
+      const squares = [...element.querySelectorAll('[data-square]')].map(rect)
+      const x = Math.min(...squares.map(r => r.x)), y = Math.min(...squares.map(r => r.y))
+      const right = Math.max(...squares.map(r => r.right)), bottom = Math.max(...squares.map(r => r.bottom))
+      return { viewport: { width: innerWidth, height: innerHeight }, container: rect(element),
+        board: { x, y, width: right - x, height: bottom - y, right, bottom }, squares: squares.length,
+        square: squares[0], cssWidth: getComputedStyle(element).width,
+        controls: [...element.closest('.review-practice').querySelectorAll('.practice-controls button')].map(e => ({ text: e.textContent, ...rect(e) })) }
+    })
+    const measurement = await measure()
+    const path = 'docs/data/practice-board-sizing.json', phase = process.env.PRACTICE_SIZE_PHASE || 'after'
+    const evidence = existsSync(path) ? JSON.parse(readFileSync(path)) : {}
+    evidence[phase] ??= {}; evidence[phase][`${viewport.width}x${viewport.height}`] = measurement
+    writeFileSync(path, JSON.stringify(evidence, null, 2))
+    console.log(JSON.stringify({ phase, ...measurement }))
+    if (phase === 'before') return
+    expect(measurement.squares).toBe(64)
+    expect(measurement.board.width).toBeCloseTo(measurement.board.height, 0)
+    expect(measurement.board.height).toBeLessThanOrEqual(viewport.height - 180)
+    expect(measurement.board.x).toBeGreaterThanOrEqual(0)
+    expect(measurement.board.right).toBeLessThanOrEqual(viewport.width)
+    expect(measurement.board.y).toBeGreaterThanOrEqual(0)
+    expect(measurement.board.bottom).toBeLessThanOrEqual(viewport.height)
+    await expect(panel.getByRole('button', { name: 'Verifica mossa', exact: true })).toBeInViewport({ ratio: 1 })
+    await expect(panel.getByRole('button', { name: 'Suggerimento 1', exact: true })).toBeInViewport({ ratio: 1 })
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    // Selection markers and pieces use the very same measured square grid.
+    await panel.locator('[data-square="d2"]').click()
+    await expect(panel.locator('[data-square="d2"] > div[style*="background"]')).toHaveCount(1)
+    const svg = panel.locator('[data-square="d2"] [data-piece] svg').first()
+    if (await svg.count()) {
+      const piece = await svg.boundingBox()
+      expect(piece.width).toBeLessThanOrEqual(measurement.square.width + 1)
+    }
+    const marker = panel.locator('[data-square="d4"] > div[style*="radial-gradient"]')
+    await expect(marker).toHaveCount(1)
+    expect((await marker.boundingBox()).width).toBeCloseTo(measurement.square.width, 0)
+    if (viewport.width === 1920) await dragPracticePiece(page, panel, 'f1', 'b5')
+    else { await panel.locator('[data-square="f1"]').click(); await panel.locator('[data-square="b5"]').click() }
+    await expect(panel).toHaveAttribute('data-practice-status', 'correct')
+    await page.waitForTimeout(160)
+    expect((await measure()).board.bottom).toBeLessThanOrEqual(viewport.height)
+  })
+}
+
+async function dragPracticePiece(page, panel, from, to) {
+  const source = await panel.locator(`[data-square="${from}"] [data-piece]`).boundingBox()
+  const target = await panel.locator(`[data-square="${to}"]`).boundingBox()
+  await page.mouse.move(source.x + source.width / 2, source.y + source.height / 2)
+  await page.mouse.down()
+  await page.mouse.move(target.x + target.width / 2, target.y + target.height / 2, { steps: 12 })
+  await page.mouse.up()
+}
+
+test('practice constrained board preserves drag underpromotion', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 })
+  const { panel } = await openPractice(page, { allErrors: true,
+    pgn: '[SetUp "1"]\n[FEN "7k/P7/8/8/8/8/8/K7 w - - 0 40"]\n\n40. Ka2 Kh7 *' })
+  await ready(panel)
+  await panel.getByLabel('Promozione per clic e trascinamento', { exact: true }).selectOption('n')
+  const board = new Chess(await panel.locator('.practice-board').getAttribute('data-fen'))
+  board.move({ from: 'a7', to: 'a8', promotion: 'n' })
+  await dragPracticePiece(page, panel, 'a7', 'a8')
+  await expect(panel).toHaveAttribute('data-practice-status', 'correct')
+  await expect(panel.locator('.practice-board')).toHaveAttribute('data-fen', board.fen())
+})
 async function play(panel, san) {
   await panel.getByLabel('Mossa SAN', { exact: true }).fill(san)
   await panel.getByRole('button', { name: 'Verifica mossa', exact: true }).click()
@@ -235,6 +320,8 @@ test('a formerly current archive can be analyzed again after leaving practice', 
   await ready(panel)
   await panel.getByRole('button', { name: 'Chiudi pratica' }).click()
   const previous = await page.evaluate(() => window.practiceCommands.filter(c => c.startsWith('go ')).length)
+  const engine = page.locator('.engine-workspace')
+  if (!await engine.evaluate(element => element.open)) await engine.locator(':scope > summary').click()
   await page.getByRole('button', { name: 'Riprendi analisi', exact: true }).click()
   await expect.poll(() => page.evaluate(() => window.practiceCommands.filter(c => c.startsWith('go ')).length)).toBeGreaterThan(previous)
 })
@@ -310,6 +397,8 @@ test('classification criteria are explained and saved without inventing original
   const { panel } = await openPractice(page, { current: true })
   await ready(panel)
   await panel.getByRole('button', { name: 'Chiudi pratica' }).click()
+  await page.locator('.analysis-row-button').first().click()
+  await page.locator('.traceability > summary').click()
   const details = page.locator('.classification-details').first()
   await details.locator(':scope > summary').click()
   await expect(details).toContainText('indice locale')
@@ -328,18 +417,31 @@ test('classification criteria are explained and saved without inventing original
   expect(saved.classificationOrigin).toMatchObject({ schemaVersion: 0, classification: 'good', policy: null })
 })
 
-test('fresh chess explanations appear only after practice reveals the answer and reuse its searches', async ({ page }) => {
+test('fresh chess explanations never reuse the original error on the displayed solution and reuse its searches', async ({ page }) => {
   const { panel } = await openPractice(page)
   await ready(panel)
   await expect(panel.getByRole('region', { name: 'Spiegazione scacchistica' })).toHaveCount(0)
   const searches = await page.evaluate(() => window.practiceCommands.filter(c => c.startsWith('go ')).length)
   await panel.getByRole('button', { name: 'Mostra soluzione', exact: true }).click()
   const explanation = panel.getByRole('region', { name: 'Spiegazione scacchistica' })
-  await expect(explanation).toBeVisible()
-  await expect(explanation).toContainText('Minaccia o opportunità')
-  await expect(explanation).toContainText('Bb5')
-  await expect(explanation).toContainText('Come può rispondere')
+  await expect(explanation).toHaveCount(0)
+  await expect(panel.locator('.practice-explanation')).toContainText('Continuazione illustrativa: Bb5 a6')
+  await panel.getByRole('button', { name: 'Mostra risposta avversaria', exact: true }).click()
+  await expect(panel.locator('.practice-controls > [role="status"]')).toHaveText('Risposta mostrata: a6.')
+  await expect(panel.locator('.practice-explanation')).not.toContainText('Il confronto del motore preferisce Bb5 a Bc4.')
   expect(await page.evaluate(() => window.practiceCommands.filter(c => c.startsWith('go ')).length)).toBe(searches)
+})
+
+test('REA changing exercise clears the explanation and response from the previous branch', async ({ page }) => {
+  const { panel } = await openPractice(page, { allErrors: true })
+  await ready(panel)
+  await panel.getByRole('button', { name: 'Mostra soluzione', exact: true }).click()
+  await expect(panel.locator('.practice-explanation')).toBeVisible()
+  await panel.getByRole('button', { name: 'Prossima posizione', exact: true }).click()
+  await expect(panel.locator('.practice-explanation')).toHaveCount(0)
+  await ready(panel)
+  await expect(panel.locator('.practice-explanation')).toHaveCount(0)
+  await expect(panel.getByRole('heading')).toContainText('2/')
 })
 
 test('archived analysis exposes limits of missing chess evidence without starting new searches', async ({ page }) => {
@@ -347,11 +449,72 @@ test('archived analysis exposes limits of missing chess evidence without startin
   await ready(panel)
   await panel.getByRole('button', { name: 'Chiudi pratica' }).click()
   const searches = await page.evaluate(() => window.practiceCommands.filter(c => c.startsWith('go ')).length)
-  const details = page.locator('.classification-details').first()
-  await details.locator(':scope > summary').click()
-  await details.getByText('Spiegazione scacchistica', { exact: true }).click()
-  const explanation = details.getByRole('region', { name: 'Spiegazione scacchistica' })
-  await expect(explanation).toContainText('La causa tattica non è dimostrabile dai dati disponibili.')
-  await expect(explanation).toContainText('Perché considerare l’alternativa')
+  await page.locator('.analysis-row-button').first().click()
+  const explanation = page.locator('.selected-move').getByRole('region', { name: 'Spiegazione scacchistica' })
+  await expect(page.locator('.selected-move')).not.toContainText('La causa tattica non è dimostrabile')
+  await expect(page.locator('.selected-move')).not.toContainText('illustrativa ma non dimostrata')
   expect(await page.evaluate(() => window.practiceCommands.filter(c => c.startsWith('go ')).length)).toBe(searches)
+})
+
+test('REA import modal and confirmation preserve practice until replacement succeeds', async ({ page }) => {
+  const { panel } = await openPractice(page)
+  await ready(panel)
+  await play(panel, 'b3')
+  await expect(panel).toHaveAttribute('data-practice-status', 'incorrect')
+  await panel.getByLabel('Mossa SAN', { exact: true }).fill('a3')
+  const before = await panel.locator('.practice-board').getAttribute('data-fen')
+  const progress = await panel.locator('.practice-progress').innerText()
+  const open = page.getByRole('button', { name: 'Importa partita', exact: true })
+  const modal = page.getByRole('dialog', { name: 'Importa partita', exact: true })
+  await open.click()
+  await modal.getByRole('textbox', { name: 'PGN da importare', exact: true }).fill('1. d4 d5 *')
+  await modal.getByRole('button', { name: 'Annulla', exact: true }).click()
+  await expect(panel.getByLabel('Mossa SAN', { exact: true })).toHaveValue('a3')
+  await open.click(); await page.keyboard.press('Escape')
+  await expect(panel.locator('.practice-progress')).toHaveText(progress)
+  await open.click()
+  await modal.getByRole('button', { name: 'Importa PGN', exact: true }).click()
+  const confirm = page.getByRole('dialog', { name: 'Aprire un’altra partita?', exact: true })
+  await expect(confirm).toBeVisible()
+  await confirm.getByRole('button', { name: 'Continua la pratica', exact: true }).click()
+  await modal.getByRole('button', { name: 'Annulla', exact: true }).click()
+  await expect(panel).toHaveAttribute('data-practice-status', 'incorrect')
+  await expect(panel.locator('.practice-board')).toHaveAttribute('data-fen', before)
+  await expect(panel.getByLabel('Mossa SAN', { exact: true })).toHaveValue('a3')
+  await expect(panel.locator('.practice-progress')).toHaveText(progress)
+  await open.click()
+  await modal.getByRole('button', { name: 'Importa PGN', exact: true }).click()
+  await confirm.getByRole('button', { name: 'Conferma importazione', exact: true }).click()
+  await expect(panel).toHaveCount(0)
+  await expect(modal).not.toBeVisible()
+  const expected = new Chess(); expected.loadPgn('1. d4 d5 *')
+  await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', expected.fen())
+})
+
+for (const width of [1497, 390]) test(`REA practice explanation follows Bc4 g6 and deliberate mobile focus ${width}`, async ({ page }) => {
+  await page.setViewportSize({ width, height: width === 390 ? 844 : 871 })
+  const pgn = '1. e4 e5 2. Qh5 Nc6 3. Qxe5+ Nxe5 *'
+  const { panel } = await openPractice(page, { pgn, referenceMove: 'f1c4', referenceReply: 'g7g6' })
+  await ready(panel)
+  await panel.getByRole('button', { name: 'Mostra soluzione', exact: true }).click()
+  await expect(panel.locator('.practice-explanation .move-explanation')).toHaveCount(0)
+  const reply = panel.getByRole('button', { name: 'Mostra risposta avversaria', exact: true })
+  await reply.scrollIntoViewIfNeeded()
+  await reply.click()
+  const expected = new Chess()
+  for (const san of ['e4', 'e5', 'Qh5', 'Nc6', 'Bc4', 'g6']) expected.move(san)
+  const board = panel.locator('.practice-board')
+  await expect(board).toHaveAttribute('data-fen', expected.fen())
+  await expect(panel.locator('.practice-controls > [role="status"]')).toHaveText('Risposta mostrata: g6.')
+  await expect(panel.locator('.practice-explanation')).not.toContainText('Nxe5')
+  if (width === 390) {
+    await expect(board).toBeFocused()
+    await expect(board).toBeInViewport({ ratio: 1 })
+    const bounds = await board.boundingBox()
+    expect(bounds.width).toBeCloseTo(256, 0)
+    expect(bounds.y).toBeGreaterThanOrEqual(58)
+    const scroll = await page.evaluate(() => scrollY)
+    await page.waitForTimeout(300)
+    expect(await page.evaluate(() => scrollY)).toBe(scroll)
+  } else await expect(board).not.toBeFocused()
 })

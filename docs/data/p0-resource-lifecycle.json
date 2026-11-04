@@ -1,0 +1,304 @@
+{
+  "measuredAt": "2026-11-02T14:05:47.666Z",
+  "environment": "Dev4173; headless Edge; native real Worker wrapper; CDP forced GC before every snapshot",
+  "fixture": "Partite/Confermate/Storiche/game-2-saintamant-staunton-1843/partita.pgn",
+  "fixtureKind": "Derived first 87 plies, Result *; authentic incident PGN unavailable",
+  "protocol": {
+    "offCycles": 8,
+    "warmupCycles": 1,
+    "activeEngineCycles": 1,
+    "cancelledCycles": 4,
+    "keydownEventsPerCycle": 24,
+    "idleMsBeforeGC": 300
+  },
+  "snapshots": [
+    {
+      "label": "off-warmup",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 13741756,
+      "totalHeapBytes": 15048704,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "off-1",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 13378680,
+      "totalHeapBytes": 14524416,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "off-2",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 13976500,
+      "totalHeapBytes": 14786560,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "off-3",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 13476340,
+      "totalHeapBytes": 14262272,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "off-4",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 13562464,
+      "totalHeapBytes": 14000128,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "off-5",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 13565548,
+      "totalHeapBytes": 14262272,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "off-6",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 13607540,
+      "totalHeapBytes": 14524416,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "off-7",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 14553752,
+      "totalHeapBytes": 15572992,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "off-8",
+      "documents": 1,
+      "nodes": 1348,
+      "jsEventListeners": 538,
+      "usedHeapBytes": 14225636,
+      "totalHeapBytes": 15572992,
+      "workers": {
+        "created": 0,
+        "terminated": 0,
+        "active": 0
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "real-engine-navigation",
+      "documents": 1,
+      "nodes": 1350,
+      "jsEventListeners": 553,
+      "usedHeapBytes": 16113824,
+      "totalHeapBytes": 18161664,
+      "workers": {
+        "created": 1,
+        "terminated": 0,
+        "active": 1
+      },
+      "fen": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44"
+    },
+    {
+      "label": "cancelled",
+      "documents": 1,
+      "nodes": 1363,
+      "jsEventListeners": 554,
+      "usedHeapBytes": 16627560,
+      "totalHeapBytes": 17637376,
+      "workers": {
+        "created": 1,
+        "terminated": 0,
+        "active": 1
+      },
+      "fen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+    },
+    {
+      "label": "cancelled-1",
+      "documents": 1,
+      "nodes": 1363,
+      "jsEventListeners": 554,
+      "usedHeapBytes": 16161628,
+      "totalHeapBytes": 17375232,
+      "workers": {
+        "created": 1,
+        "terminated": 0,
+        "active": 1
+      },
+      "fen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+    },
+    {
+      "label": "cancelled-2",
+      "documents": 1,
+      "nodes": 1363,
+      "jsEventListeners": 554,
+      "usedHeapBytes": 16209360,
+      "totalHeapBytes": 17113088,
+      "workers": {
+        "created": 1,
+        "terminated": 0,
+        "active": 1
+      },
+      "fen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+    },
+    {
+      "label": "cancelled-3",
+      "documents": 1,
+      "nodes": 1363,
+      "jsEventListeners": 554,
+      "usedHeapBytes": 17076792,
+      "totalHeapBytes": 18161664,
+      "workers": {
+        "created": 1,
+        "terminated": 0,
+        "active": 1
+      },
+      "fen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+    },
+    {
+      "label": "cancelled-4",
+      "documents": 1,
+      "nodes": 1363,
+      "jsEventListeners": 554,
+      "usedHeapBytes": 16620940,
+      "totalHeapBytes": 17637376,
+      "workers": {
+        "created": 1,
+        "terminated": 0,
+        "active": 1
+      },
+      "fen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+    }
+  ],
+  "ranges": {
+    "nodes": {
+      "off": {
+        "min": 1348,
+        "max": 1348,
+        "first": 1348,
+        "last": 1348
+      },
+      "cancelled": {
+        "min": 1363,
+        "max": 1363,
+        "first": 1363,
+        "last": 1363
+      }
+    },
+    "jsEventListeners": {
+      "off": {
+        "min": 538,
+        "max": 538,
+        "first": 538,
+        "last": 538
+      },
+      "cancelled": {
+        "min": 554,
+        "max": 554,
+        "first": 554,
+        "last": 554
+      }
+    },
+    "usedHeapBytes": {
+      "off": {
+        "min": 13378680,
+        "max": 14553752,
+        "first": 13378680,
+        "last": 14225636
+      },
+      "cancelled": {
+        "min": 16161628,
+        "max": 17076792,
+        "first": 16161628,
+        "last": 16620940
+      }
+    }
+  },
+  "workers": [
+    {
+      "id": 0,
+      "url": "/ChessProfessor/stockfish-19.0.0-single.js",
+      "createdAt": 20151.60000000149,
+      "terminatedAt": null
+    }
+  ],
+  "engineCommands": [
+    {
+      "id": 0,
+      "command": "go nodes 200000",
+      "at": 22633.300000000745
+    },
+    {
+      "id": 0,
+      "command": "go nodes 200000",
+      "at": 24426.800000000745
+    },
+    {
+      "id": 0,
+      "command": "stop",
+      "at": 24681.300000000745
+    }
+  ],
+  "cancelledAt": 24681.300000000745,
+  "goAfterCancel": [],
+  "pageErrors": [],
+  "limits": [
+    "Bounded retention smoke check, not a leak proof, engine benchmark, or reproduction of Wait/Close or displaced king.",
+    "Worker active counts mean construction minus explicit terminate calls; worker self-close, process memory, GPU/WASM/native memory and document teardown are not measured.",
+    "CDP DOM/listener counters are aggregate and forced-GC JS heap is only the main target; no claim of per-component listener attribution or all-worker heap coverage.",
+    "Coarse DOM/listener retention guards permit max(1000 nodes, 20 percent) and max(100 listeners, 20 percent) drift from the first measured cycle. Heap is recorded without a noise-sensitive assertion."
+  ]
+}

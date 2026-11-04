@@ -6,7 +6,7 @@ import {reclassifyReviewedMoves} from '../src/lib/reviewMoves.js'
 import {buildRefinementPlan,refineGameEntries,selectRefinementView} from '../src/lib/analysisRefinement.js'
 import {grandeProofFor,GRANDE_PROOF_POLICY} from '../src/lib/grandeProofs.js'
 import {createGameArchive} from '../src/lib/gameArchive.js'
-import {formatSpecialAssessment,displaySpecialMoves} from '../src/lib/specialClassification.js'
+import {formatSpecialAssessment,displaySpecialMoves} from '../src/lib/analysisSpecialClassification.js'
 const json=p=>JSON.parse(readFileSync(new URL(p,import.meta.url)))
 const data=json('../agent-output/special-completion-v1/cohorts.json').cases.find(c=>c.id==='185230271130'&&c.cohort==='refined')
 const records=json('../agent-output/special-completion-evidence-v1/collection.json').records
@@ -26,14 +26,14 @@ describe('separate proof of an equilibrium recovery',()=>{
    expect([fen,nodes,multiPv]).toEqual([child.fen,1000000,5]);return structuredClone(child)
   })
   const result=await refineGameEntries({entries,plan,analyzePosition:search}),after=selectRefinementView(result.entries,true)
-  expect(after[2]).toMatchObject({playedMove:'Nxe4',classification:'great',specialAssessment:{grande:{reason:'equilibrium-recovery',decisionProof:{numericalProfileUnchanged:true}}}})
+  expect(after[2]).toMatchObject({playedMove:'Nxe4',classification:'great',candidateAssessment:{verdict:'inconclusive',inheritance:'context',evidenceKind:'comparative'}})
   expect(after[3]).toMatchObject({playedMove:'Qd3',classification:'mistake'})
   expect(after.flatMap((e,i)=>e.classification!==before[i].classification?[e.ply]:[])).toEqual([3])
   expect(numeric(after)).toEqual(numeric(before))
   expect(result.entries.map(e=>[e.engine,e.playedEngine])).toEqual(entries.map(e=>[e.engine,e.playedEngine]))
   expect(selectRefinementView(result.entries,false)[2].classification).toBe('best')
   expect(displaySpecialMoves(after,false)[2].classification).toBe('best')
-  expect(formatSpecialAssessment(after[2])).toContain('verifica separata')
+  expect(formatSpecialAssessment(after[2])).toContain('non è una nuova conferma')
   expect(buildRefinementPlan(result.entries)).toEqual(ordinary)
   expect(buildRefinementPlan(result.entries,{grandeOnly:true}).selectedPlies).toEqual([])
   expect(search).toHaveBeenCalledTimes(1);expect(JSON.stringify(entries)).toBe(initial)
@@ -90,7 +90,9 @@ describe('separate proof of an equilibrium recovery',()=>{
   await archive.save({pgn,analysisEntries:partial})
   const reopened=await archive.get(record.id)
   expect(grandeProofFor(reopened.analysisEntries[15])).toMatchObject({root:expect.any(Object),child:expect.any(Object)})
-  expect(selectRefinementView(reclassifyReviewedMoves(reopened.analysisEntries),true)[15].classification).toBe('great')
+  // This stored comparison has no matching opponent context or independent tactical certificate.
+  expect(selectRefinementView(reclassifyReviewedMoves(reopened.analysisEntries),true)[15]).toMatchObject({
+   classification:'best',candidateAssessment:{verdict:'inconclusive',inheritance:null,evidenceKind:'comparative'}})
   expect(reopened.analysisEntries.map(e=>e.engine)).toEqual(data.canonical.map(e=>e.engine))
   await archive.close()
  })

@@ -41,6 +41,7 @@ export default function ReviewPracticePanel({ candidates, engine, onClose }) {
   const generation = useRef(0)
   const paused = useRef(false)
   const heading = useRef(null)
+  const practiceBoard = useRef(null)
 
   function stopRequest() {
     generation.current++
@@ -66,6 +67,7 @@ export default function ReviewPracticePanel({ candidates, engine, onClose }) {
       setProgress(saved.progress); setStorageError(saved.error ?? '')
     }
     heading.current?.focus()
+    heading.current?.scrollIntoView({ block: 'start' })
   }, [candidate?.id, store])
 
   useEffect(() => {
@@ -105,7 +107,7 @@ export default function ReviewPracticePanel({ candidates, engine, onClose }) {
 
   const busy = status === 'preparing' || status === 'checking'
   const canMove = !!prepared && engine.ready && !paused.current && !revealed && ['ready', 'incorrect'].includes(status)
-  const showExplanation = !!prepared && (status === 'correct' || revealed)
+  const showExplanation = !!prepared && prepared.candidate.id === candidate?.id && (status === 'correct' || revealed)
 
   function tryMove(moveInput) {
     if (!canMove || request.current) return false
@@ -196,13 +198,23 @@ export default function ReviewPracticePanel({ candidates, engine, onClose }) {
   const arrows = prepared && revealed && !replyShown
     ? [{ startSquare: prepared.referenceUci.slice(0, 2), endSquare: prepared.referenceUci.slice(2, 4), color: '#c9a24b' }] : []
   const continuation = showExplanation ? (status === 'correct' ? verdict?.played?.pv : prepared.original.reference.pv) : []
-  const explanationEntry = useMemo(() => prepared ? practiceExplanationEntry(prepared) : null, [prepared])
+  const explanationEntry = useMemo(() => showExplanation ? practiceExplanationEntry(prepared, fen, verdict) : null,
+    [prepared, fen, verdict, showExplanation])
 
   function showReply() {
     const board = new Chess(candidate.fen)
     try {
       for (const uci of continuation.slice(0, 2)) playUci(board, uci)
       setFen(board.fen()); setReplyShown(true)
+      setMessage(`Risposta mostrata: ${board.history().at(-1)}.`)
+      const token = generation.current
+      requestAnimationFrame(() => {
+        const element = practiceBoard.current
+        if (token !== generation.current || !element || !window.matchMedia('(max-width: 760px)').matches) return
+        const bounds = element.getBoundingClientRect()
+        element.focus({ preventScroll: true })
+        if (bounds.top < 60 || bounds.bottom > innerHeight) element.scrollIntoView({ block: 'center', behavior: 'instant' })
+      })
     } catch { setMessage('La risposta non è disponibile per questa continuazione.') }
   }
 
@@ -229,7 +241,7 @@ export default function ReviewPracticePanel({ candidates, engine, onClose }) {
       engineRef.current.restart()
     }}>Riavvia motore</button></div>}
     <div className="practice-layout">
-      <section className="practice-board" data-fen={fen} data-orientation={practiceOrientation} aria-label="Scacchiera della pratica">
+      <section className="practice-board" ref={practiceBoard} tabIndex={-1} data-fen={fen} data-orientation={practiceOrientation} aria-label="Scacchiera della pratica">
         <Chessboard options={{ id: 'review-practice-board', position: fen,
           boardOrientation: practiceOrientation, allowDragging: canMove,
           onPieceDrop: drop, onSquareClick: click, squareStyles, arrows, allowDrawingArrows: false,
@@ -257,8 +269,8 @@ export default function ReviewPracticePanel({ candidates, engine, onClose }) {
         </div>}
         {prepared && hintLevel > 0 && <p className="practice-hint">{practiceHint(prepared, hintLevel)}</p>}
         {showExplanation && <div className="practice-explanation">
-          <p>{practiceExplanation(prepared, verdict)}</p>
-          <MoveExplanation entry={explanationEntry} />
+          <p aria-label="Confronto dalla posizione iniziale">{practiceExplanation(prepared, verdict)}</p>
+          {explanationEntry && <MoveExplanation entry={explanationEntry} />}
           {continuation?.length >= 2 && <button onClick={showReply} disabled={replyShown}>Mostra risposta avversaria</button>}
         </div>}
         <div className="practice-actions">

@@ -1,0 +1,1161 @@
+{
+  "environment": "Normal dev server 4173; headless Edge; no app files changed; profiling instrumentation adds overhead.",
+  "engineEvidence": "Archived real analyzed game; active-replay uses one authentic historical 1M-node rawLines response after artificial 500ms delay, then holds later searches. No live Stockfish search or CPU contention measured.",
+  "summaries": [
+    {
+      "mode": "plain",
+      "fixture": "agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json",
+      "plies": 66,
+      "durationMs": 3437.4000000003725,
+      "animationDurationMs": 120,
+      "longtasks": 8,
+      "maxLongtaskMs": 116,
+      "totalLongtaskMs": 554,
+      "rafFrames": 463,
+      "maxRafGapMs": 116.69999999999982,
+      "framesOver25Ms": 15,
+      "commits": 52,
+      "boardRenderCommits": 33,
+      "boardUnmounts": 0,
+      "animations": [
+        {
+          "action": {
+            "t": 2459.4000000003725,
+            "name": "Indietro"
+          },
+          "transformedFrames": 17,
+          "distinctMatrices": 16,
+          "firstTransformDelayMs": 101.39999999962765,
+          "lastTransformDelayMs": 206.99999999962756,
+          "maxFrameGapMs": 61.09999999999991
+        },
+        {
+          "action": {
+            "t": 2761.5999999996275,
+            "name": "Avanti"
+          },
+          "transformedFrames": 14,
+          "distinctMatrices": 13,
+          "firstTransformDelayMs": 99.20000000037271,
+          "lastTransformDelayMs": 176.90000000037253,
+          "maxFrameGapMs": 55.59999999999991
+        },
+        {
+          "action": {
+            "t": 3059.2999999988824,
+            "name": "Indietro"
+          },
+          "transformedFrames": 16,
+          "distinctMatrices": 15,
+          "firstTransformDelayMs": 95.9000000011174,
+          "lastTransformDelayMs": 190.3000000011175,
+          "maxFrameGapMs": 50
+        },
+        {
+          "action": {
+            "t": 3346.7999999988824,
+            "name": "Avanti"
+          },
+          "transformedFrames": 18,
+          "distinctMatrices": 17,
+          "firstTransformDelayMs": 47.300000001117496,
+          "lastTransformDelayMs": 141.7000000011176,
+          "maxFrameGapMs": 22.200000000000273
+        },
+        {
+          "action": {
+            "t": 3597,
+            "name": "Indietro"
+          },
+          "transformedFrames": 21,
+          "distinctMatrices": 20,
+          "firstTransformDelayMs": 47,
+          "lastTransformDelayMs": 174.80000000000018,
+          "maxFrameGapMs": 27.800000000000182
+        },
+        {
+          "action": {
+            "t": 3852.5,
+            "name": "Avanti"
+          },
+          "transformedFrames": 14,
+          "distinctMatrices": 13,
+          "firstTransformDelayMs": 97.09999999999991,
+          "lastTransformDelayMs": 169.30000000000018,
+          "maxFrameGapMs": 50
+        },
+        {
+          "action": {
+            "t": 4137.0999999996275,
+            "name": "Indietro"
+          },
+          "transformedFrames": 16,
+          "distinctMatrices": 15,
+          "firstTransformDelayMs": 95.80000000037217,
+          "lastTransformDelayMs": 184.60000000037235,
+          "maxFrameGapMs": 50.100000000000364
+        },
+        {
+          "action": {
+            "t": 4424.799999998882,
+            "name": "Avanti"
+          },
+          "transformedFrames": 19,
+          "distinctMatrices": 18,
+          "firstTransformDelayMs": 41.50000000111777,
+          "lastTransformDelayMs": 141.4000000011174,
+          "maxFrameGapMs": 22.199999999999818
+        }
+      ],
+      "workerGo": 0,
+      "replayedBestmoves": 0,
+      "top": [
+        {
+          "name": "(idle)",
+          "url": "",
+          "line": 0,
+          "ms": 1920.718
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "line": 0,
+          "ms": 454.049
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 34.205
+        },
+        {
+          "name": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "ms": 26.349
+        },
+        {
+          "name": "",
+          "url": "",
+          "line": 26,
+          "ms": 26.013
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 20.349
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 19.294
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 17.873
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 17.067
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 16.92
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 16.146
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 14.139
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 14.034
+        },
+        {
+          "name": "run",
+          "url": "",
+          "line": 0,
+          "ms": 11.779
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 11.447
+        },
+        {
+          "name": "querySelectorAll",
+          "url": "",
+          "line": 0,
+          "ms": 11.42
+        },
+        {
+          "name": "_attacked",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2563,
+          "ms": 11.051
+        },
+        {
+          "name": "frame",
+          "url": "",
+          "line": 16,
+          "ms": 10.304
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 9.986
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 9.797
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "archived",
+      "fixture": "agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json",
+      "plies": 66,
+      "durationMs": 4622.4000000003725,
+      "animationDurationMs": 120,
+      "longtasks": 17,
+      "maxLongtaskMs": 379,
+      "totalLongtaskMs": 2590,
+      "rafFrames": 300,
+      "maxRafGapMs": 344.3999999999978,
+      "framesOver25Ms": 25,
+      "commits": 46,
+      "boardRenderCommits": 33,
+      "boardUnmounts": 0,
+      "animations": [
+        {
+          "action": {
+            "t": 13334,
+            "name": "Indietro"
+          },
+          "transformedFrames": 1,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 404.5,
+          "lastTransformDelayMs": 404.5,
+          "maxFrameGapMs": 222.20000000000073
+        },
+        {
+          "action": {
+            "t": 13792.199999999255,
+            "name": "Avanti"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 235.2000000007447,
+          "lastTransformDelayMs": 246.30000000074506,
+          "maxFrameGapMs": 138.89999999999964
+        },
+        {
+          "action": {
+            "t": 14165.900000000373,
+            "name": "Indietro"
+          },
+          "transformedFrames": 3,
+          "distinctMatrices": 2,
+          "firstTransformDelayMs": 244.7999999996282,
+          "lastTransformDelayMs": 289.2999999996282,
+          "maxFrameGapMs": 127.80000000000109
+        },
+        {
+          "action": {
+            "t": 14515.5,
+            "name": "Avanti"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 216.6999999999989
+        },
+        {
+          "action": {
+            "t": 14960,
+            "name": "Indietro"
+          },
+          "transformedFrames": 6,
+          "distinctMatrices": 5,
+          "firstTransformDelayMs": 206.29999999999927,
+          "lastTransformDelayMs": 239.60000000000036,
+          "maxFrameGapMs": 105.69999999999891
+        },
+        {
+          "action": {
+            "t": 15295.300000000745,
+            "name": "Avanti"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 183.39999999999964
+        },
+        {
+          "action": {
+            "t": 15675.599999999627,
+            "name": "Indietro"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 357.40000000037253,
+          "lastTransformDelayMs": 374.0000000003729,
+          "maxFrameGapMs": 227.8000000000011
+        },
+        {
+          "action": {
+            "t": 16132.900000000373,
+            "name": "Avanti"
+          },
+          "transformedFrames": 4,
+          "distinctMatrices": 3,
+          "firstTransformDelayMs": 205.59999999962747,
+          "lastTransformDelayMs": 222.19999999962783,
+          "maxFrameGapMs": 111.10000000000036
+        }
+      ],
+      "workerGo": 0,
+      "replayedBestmoves": 0,
+      "top": [
+        {
+          "name": "(idle)",
+          "url": "",
+          "line": 0,
+          "ms": 1039.67
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "line": 0,
+          "ms": 830.575
+        },
+        {
+          "name": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "ms": 87.601
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 70.765
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 62.542
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 44.392
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 39.431
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 36.552
+        },
+        {
+          "name": "querySelectorAll",
+          "url": "",
+          "line": 0,
+          "ms": 26.115
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 24.785
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 24.494
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 23.397
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 21.755
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 21.125
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 21.125
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 20.929
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 20.921
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 20.142
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 19.942
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 19.937
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "active-replay",
+      "fixture": "agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json",
+      "plies": 66,
+      "durationMs": 5228.60000000149,
+      "animationDurationMs": 120,
+      "longtasks": 20,
+      "maxLongtaskMs": 265,
+      "totalLongtaskMs": 3266,
+      "rafFrames": 291,
+      "maxRafGapMs": 266.6999999999971,
+      "framesOver25Ms": 26,
+      "commits": 43,
+      "boardRenderCommits": 34,
+      "boardUnmounts": 0,
+      "animations": [
+        {
+          "action": {
+            "t": 64587.29999999888,
+            "name": "Indietro"
+          },
+          "transformedFrames": 1,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 490.0000000011205,
+          "lastTransformDelayMs": 490.0000000011205,
+          "maxFrameGapMs": 249.90000000000146
+        },
+        {
+          "action": {
+            "t": 65081.09999999963,
+            "name": "Avanti"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 211.09999999999854
+        },
+        {
+          "action": {
+            "t": 65518.59999999963,
+            "name": "Indietro"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 314.3000000003667,
+          "lastTransformDelayMs": 336.40000000037253,
+          "maxFrameGapMs": 177.79999999999563
+        },
+        {
+          "action": {
+            "t": 65925.39999999851,
+            "name": "Avanti"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 166.90000000000873
+        },
+        {
+          "action": {
+            "t": 66337.69999999925,
+            "name": "Indietro"
+          },
+          "transformedFrames": 1,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 478.50000000074215,
+          "lastTransformDelayMs": 478.50000000074215,
+          "maxFrameGapMs": 266.6999999999971
+        },
+        {
+          "action": {
+            "t": 66852.79999999888,
+            "name": "Avanti"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 257.7000000011176,
+          "lastTransformDelayMs": 263.2000000011176,
+          "maxFrameGapMs": 149.89999999999418
+        },
+        {
+          "action": {
+            "t": 67225.5,
+            "name": "Indietro"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 363.1000000000058,
+          "lastTransformDelayMs": 407.3000000000029,
+          "maxFrameGapMs": 194.40000000000873
+        },
+        {
+          "action": {
+            "t": 67657.09999999963,
+            "name": "Avanti"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 253.40000000037253,
+          "lastTransformDelayMs": 264.50000000037835,
+          "maxFrameGapMs": 155.60000000000582
+        }
+      ],
+      "workerGo": 2,
+      "replayedBestmoves": 1,
+      "top": [
+        {
+          "name": "(idle)",
+          "url": "",
+          "line": 0,
+          "ms": 1023.811
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "line": 0,
+          "ms": 678.647
+        },
+        {
+          "name": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "ms": 155.445
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 56.753
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 49.158
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 41.194
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 39.067
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 34.676
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 33.761
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 33.614
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 31.521
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 31.223
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 31.1
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 30.369
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 28.014
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 26.838
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 26.721
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 26.23
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 24.561
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 23.914
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "no-animation-control",
+      "fixture": "agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json",
+      "plies": 66,
+      "durationMs": 4475.39999999851,
+      "animationDurationMs": 120,
+      "longtasks": 18,
+      "maxLongtaskMs": 333,
+      "totalLongtaskMs": 2484,
+      "rafFrames": 348,
+      "maxRafGapMs": 333.39999999999964,
+      "framesOver25Ms": 19,
+      "commits": 30,
+      "boardRenderCommits": 24,
+      "boardUnmounts": 0,
+      "animations": [
+        {
+          "action": {
+            "t": 12679.599999999627,
+            "name": "Indietro"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 200
+        },
+        {
+          "action": {
+            "t": 13102.5,
+            "name": "Avanti"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 161
+        },
+        {
+          "action": {
+            "t": 13503.300000000745,
+            "name": "Indietro"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 111.10000000000036
+        },
+        {
+          "action": {
+            "t": 13837.200000001118,
+            "name": "Avanti"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 200
+        },
+        {
+          "action": {
+            "t": 14257.800000000745,
+            "name": "Indietro"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 138.89999999999964
+        },
+        {
+          "action": {
+            "t": 14624.099999999627,
+            "name": "Avanti"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 150
+        },
+        {
+          "action": {
+            "t": 14973.800000000745,
+            "name": "Indietro"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 172.20000000000073
+        },
+        {
+          "action": {
+            "t": 15373,
+            "name": "Avanti"
+          },
+          "transformedFrames": 0,
+          "distinctMatrices": 0,
+          "firstTransformDelayMs": null,
+          "lastTransformDelayMs": null,
+          "maxFrameGapMs": 111
+        }
+      ],
+      "workerGo": 0,
+      "replayedBestmoves": 0,
+      "top": [
+        {
+          "name": "(idle)",
+          "url": "",
+          "line": 0,
+          "ms": 1422.183
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "line": 0,
+          "ms": 642.536
+        },
+        {
+          "name": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "ms": 80.104
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 49.55
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 48.059
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 45.298
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 43.567
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 32.723
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 29.564
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 26.596
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 25.1
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 24.72
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 22.896
+        },
+        {
+          "name": "exports.jsxDEV",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b4406938",
+          "line": 241,
+          "ms": 22.749
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 21.665
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 21.287
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 19.47
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 18.776
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 18.619
+        },
+        {
+          "name": "_undoMove",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2970,
+          "ms": 18.456
+        }
+      ],
+      "errors": []
+    },
+    {
+      "mode": "summary-off-control",
+      "fixture": "agent-output/refinement-quality-priority-v2/priority-game-184316820266-round-2.json",
+      "plies": 66,
+      "durationMs": 4432.800000000745,
+      "animationDurationMs": 120,
+      "longtasks": 20,
+      "maxLongtaskMs": 251,
+      "totalLongtaskMs": 2333,
+      "rafFrames": 341,
+      "maxRafGapMs": 255.5,
+      "framesOver25Ms": 26,
+      "commits": 51,
+      "boardRenderCommits": 34,
+      "boardUnmounts": 0,
+      "animations": [
+        {
+          "action": {
+            "t": 12179.900000000373,
+            "name": "Indietro"
+          },
+          "transformedFrames": 5,
+          "distinctMatrices": 5,
+          "firstTransformDelayMs": 149.59999999962747,
+          "lastTransformDelayMs": 304.89999999962674,
+          "maxFrameGapMs": 150.10000000000036
+        },
+        {
+          "action": {
+            "t": 12550.900000000373,
+            "name": "Avanti"
+          },
+          "transformedFrames": 3,
+          "distinctMatrices": 2,
+          "firstTransformDelayMs": 239.4999999996271,
+          "lastTransformDelayMs": 256.19999999962783,
+          "maxFrameGapMs": 138.89999999999964
+        },
+        {
+          "action": {
+            "t": 12921.5,
+            "name": "Indietro"
+          },
+          "transformedFrames": 6,
+          "distinctMatrices": 5,
+          "firstTransformDelayMs": 218.89999999999964,
+          "lastTransformDelayMs": 268.89999999999964,
+          "maxFrameGapMs": 116.69999999999891
+        },
+        {
+          "action": {
+            "t": 13272.099999999627,
+            "name": "Avanti"
+          },
+          "transformedFrames": 8,
+          "distinctMatrices": 7,
+          "firstTransformDelayMs": 184.90000000037253,
+          "lastTransformDelayMs": 223.80000000037217,
+          "maxFrameGapMs": 105.5
+        },
+        {
+          "action": {
+            "t": 13622.400000000373,
+            "name": "Indietro"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 301.39999999962674,
+          "lastTransformDelayMs": 340.19999999962783,
+          "maxFrameGapMs": 155.39999999999964
+        },
+        {
+          "action": {
+            "t": 13998.699999999255,
+            "name": "Avanti"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 247.30000000074506,
+          "lastTransformDelayMs": 258.4000000007454,
+          "maxFrameGapMs": 133.29999999999927
+        },
+        {
+          "action": {
+            "t": 14360.199999999255,
+            "name": "Indietro"
+          },
+          "transformedFrames": 10,
+          "distinctMatrices": 9,
+          "firstTransformDelayMs": 196.80000000074506,
+          "lastTransformDelayMs": 246.80000000074506,
+          "maxFrameGapMs": 116.69999999999891
+        },
+        {
+          "action": {
+            "t": 14711.900000000373,
+            "name": "Avanti"
+          },
+          "transformedFrames": 2,
+          "distinctMatrices": 1,
+          "firstTransformDelayMs": 256.19999999962783,
+          "lastTransformDelayMs": 267.39999999962674,
+          "maxFrameGapMs": 144.5
+        }
+      ],
+      "workerGo": 0,
+      "replayedBestmoves": 0,
+      "top": [
+        {
+          "name": "(idle)",
+          "url": "",
+          "line": 0,
+          "ms": 1226.371
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "line": 0,
+          "ms": 759.298
+        },
+        {
+          "name": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "ms": 57.723
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 57.114
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 27.858
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 25.436
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 25.042
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 24.693
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 24.069
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 23.376
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 22.492
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 22.033
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 22.019
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 21.688
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 21.02
+        },
+        {
+          "name": "exports.jsxs",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 258,
+          "ms": 20.861
+        },
+        {
+          "name": "_undoMove",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2970,
+          "ms": 20.538
+        },
+        {
+          "name": "_moves",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chess__js.js?v=b4406938",
+          "line": 2719,
+          "ms": 20.238
+        },
+        {
+          "name": "frame",
+          "url": "",
+          "line": 16,
+          "ms": 19.802
+        },
+        {
+          "name": "exports.jsx",
+          "url": "http://127.0.0.1:4173/ChessProfessor/node_modules/.vite/deps/chunk-IJNDY5JC.js?v=b4406938",
+          "line": 241,
+          "ms": 19.522
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

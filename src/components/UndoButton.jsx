@@ -5,7 +5,7 @@ export default function UndoButton() {
 
   return (
     <button onClick={undo} disabled={!canUndo} title="Annulla l'ultima mossa della chat e ripristina la continuazione precedente">
-      ← Torna indietro
+      Annulla mossa chat
     </button>
   )
 }

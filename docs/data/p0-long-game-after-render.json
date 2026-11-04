@@ -1,0 +1,2605 @@
+{
+  "phase": "after-render",
+  "environment": "Dev4173; headless Edge; CDP sampling + React hook overhead; sentinel holds UCI go without real CPU search; optional real mode uses unchanged application budget. Mouse hold is observed native behavior, no invented repeat.",
+  "limitation": "No authentic 87-ply resignation found in local small PGNs; 55-ply genuine resignation and derived 87-ply prefix of local 132-ply historical game used separately.",
+  "summaries": [
+    {
+      "scenario": "resignation55",
+      "mode": "off",
+      "keyboardObserved": [
+        {
+          "t": 2230.300000000745,
+          "key": "ArrowLeft",
+          "repeat": false,
+          "trusted": true
+        },
+        {
+          "t": 2339.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2454.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2560,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2630.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2709.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2772.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2845.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2914.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2977,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3042.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3107.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3170.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3249.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3370,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3505.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3594.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3652.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3715,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3780.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3841.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3905.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3969.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4036.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4098.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4162.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4225.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4339.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4464.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4574.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4654.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4716.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4786,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4860.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4923.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4987.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 5050.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 5113.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 5173.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 5240.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        }
+      ],
+      "goBeforeContinuation": 0,
+      "postContinuation": {
+        "t": 9791.800000000745,
+        "go": 0
+      },
+      "fixture": "Partite/Confermate/personal-04/partita.pgn",
+      "plies": 55,
+      "result": "1-0",
+      "termination": "ProprioI0 won by resignation",
+      "gameOver": false,
+      "keyboardEvents": 40,
+      "keyboardExpectedFen": "rn2k1nr/pp3ppp/2pqp3/5bN1/2pP4/6P1/PP2PPBP/RN1QK2R b KQkq - 1 8",
+      "afterKeyboard": "rn2k1nr/pp3ppp/2pqp3/5bN1/2pP4/6P1/PP2PPBP/RN1QK2R b KQkq - 1 8",
+      "continuation": {
+        "color": "b",
+        "from": "a7",
+        "to": "a6",
+        "piece": "p",
+        "flags": "n",
+        "san": "a6",
+        "lan": "a7a6",
+        "before": "8/p2k1p2/4p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 b - - 2 28",
+        "after": "8/3k1p2/p3p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 w - - 0 29"
+      },
+      "continuedFen": "8/3k1p2/p3p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 w - - 0 29",
+      "continuationFen": "8/3k1p2/p3p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 w - - 0 29",
+      "positions": [
+        {
+          "label": "keyboard",
+          "pieces": 29,
+          "outside": [],
+          "fen": "rn2k1nr/pp3ppp/2pqp3/5bN1/2pP4/6P1/PP2PPBP/RN1QK2R b KQkq - 1 8"
+        },
+        {
+          "label": "mouse",
+          "pieces": 29,
+          "outside": [],
+          "fen": "rn2k2r/pp2npp1/2p1p1bp/4P1N1/1qpP4/6P1/PP1N1PBP/R2Q1RK1 b kq - 2 12"
+        },
+        {
+          "label": "mouse-hold",
+          "pieces": 29,
+          "outside": [],
+          "fen": "rn2k2r/pp2npp1/2p1p1bp/4P1N1/1qpP4/6P1/PP3PBP/RN1Q1RK1 w kq - 1 12"
+        },
+        {
+          "label": "rotated-scrolled",
+          "pieces": 29,
+          "outside": [],
+          "fen": "rn2k2r/pp2npp1/2p1p1bp/4P1N1/1qpP4/6P1/PP3PBP/RN1Q1RK1 w kq - 1 12"
+        },
+        {
+          "label": "legal-continuation",
+          "pieces": 15,
+          "outside": [],
+          "fen": "8/3k1p2/p3p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 w - - 0 29"
+        }
+      ],
+      "durationMs": 7825,
+      "commits": 187,
+      "longTasks": [
+        {
+          "t": 2229.89999999851,
+          "duration": 52
+        },
+        {
+          "t": 2339,
+          "duration": 64
+        },
+        {
+          "t": 2453.699999999255,
+          "duration": 59
+        },
+        {
+          "t": 3248.5,
+          "duration": 67
+        },
+        {
+          "t": 3319.39999999851,
+          "duration": 50
+        },
+        {
+          "t": 3370,
+          "duration": 70
+        },
+        {
+          "t": 3446.10000000149,
+          "duration": 58
+        },
+        {
+          "t": 4225.300000000745,
+          "duration": 62
+        },
+        {
+          "t": 4338.89999999851,
+          "duration": 61
+        },
+        {
+          "t": 4404.89999999851,
+          "duration": 58
+        },
+        {
+          "t": 4463.199999999255,
+          "duration": 57
+        },
+        {
+          "t": 5240.699999999255,
+          "duration": 63
+        },
+        {
+          "t": 5307.39999999851,
+          "duration": 53
+        },
+        {
+          "t": 5423.60000000149,
+          "duration": 52
+        },
+        {
+          "t": 6031.199999999255,
+          "duration": 53
+        },
+        {
+          "t": 6230.5,
+          "duration": 65
+        },
+        {
+          "t": 6308.60000000149,
+          "duration": 62
+        },
+        {
+          "t": 6453.199999999255,
+          "duration": 59
+        },
+        {
+          "t": 6514.800000000745,
+          "duration": 58
+        },
+        {
+          "t": 7332.39999999851,
+          "duration": 52
+        },
+        {
+          "t": 8357.800000000745,
+          "duration": 52
+        },
+        {
+          "t": 8412.60000000149,
+          "duration": 54
+        },
+        {
+          "t": 8705.199999999255,
+          "duration": 86
+        },
+        {
+          "t": 9441.199999999255,
+          "duration": 107
+        },
+        {
+          "t": 9586.5,
+          "duration": 97
+        },
+        {
+          "t": 9688.10000000149,
+          "duration": 50
+        }
+      ],
+      "maxRafGapMs": 122.40000000000009,
+      "workerGo": 0,
+      "top": [
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 10.001,
+          "inclusiveMs": 159.573
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 17.246,
+          "inclusiveMs": 149.113
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 28.616,
+          "inclusiveMs": 138.925
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 6.744,
+          "inclusiveMs": 122.889
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 4.878,
+          "inclusiveMs": 114.499
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 0,
+          "inclusiveMs": 102.844
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 4.106,
+          "inclusiveMs": 89.729
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 70.442
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 0,
+          "inclusiveMs": 70.442
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 0,
+          "inclusiveMs": 69.335
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 1.644,
+          "inclusiveMs": 62.869
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 1.622,
+          "inclusiveMs": 61.225
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 58.837
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 2.032,
+          "inclusiveMs": 58.818
+        },
+        {
+          "name": "Piece2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4673,
+          "selfMs": 8.386,
+          "inclusiveMs": 58.321
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 3.324,
+          "inclusiveMs": 55.668
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 1.388,
+          "inclusiveMs": 54.959
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 1.641,
+          "inclusiveMs": 54.872
+        },
+        {
+          "name": "Board",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4883,
+          "selfMs": 0,
+          "inclusiveMs": 53.64
+        },
+        {
+          "name": "Piece2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4673,
+          "selfMs": 5.011,
+          "inclusiveMs": 51.598
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 3.151,
+          "inclusiveMs": 50.038
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 0,
+          "inclusiveMs": 47.931
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 2.917,
+          "inclusiveMs": 47.677
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 0,
+          "inclusiveMs": 46.887
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 0,
+          "inclusiveMs": 46.173
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 1.657,
+          "inclusiveMs": 45.676
+        },
+        {
+          "name": "Draggable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4651,
+          "selfMs": 2.688,
+          "inclusiveMs": 41.491
+        },
+        {
+          "name": "useDroppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 3263,
+          "selfMs": 6.771,
+          "inclusiveMs": 40.975
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 44,
+          "selfMs": 3.567,
+          "inclusiveMs": 40.18
+        },
+        {
+          "name": "AppContent",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/App.jsx?t=1793625687398",
+          "line": 37,
+          "selfMs": 0,
+          "inclusiveMs": 39.5
+        }
+      ],
+      "errors": [],
+      "rawProfile": "C:\\Users\\carlo\\AppData\\Local\\Temp\\p0-long-game-after-render-resignation55-off.json",
+      "sampledFunctionInclusiveMs": {
+        "handleKeyDown": 8.328,
+        "replayGame": 9.859,
+        "syncGameState": 0,
+        "AppContent": 134.432,
+        "PositionEditor": 43.94,
+        "MoveExplanation": 0,
+        "ClassificationDetails": 0,
+        "EnginePanel": 37.452,
+        "Board": 185.988,
+        "resolveMoveReview": 0,
+        "AnalysisSummary": 7.473
+      },
+      "sampledSourceSelfMs": {
+        "(browser/native/idle)": 4437.284999999999,
+        "react-dom_client.js": 1517.6089999999995,
+        "chunk-ZV5Z535A.js": 1313.001,
+        "react_jsx-dev-runtime.js": 520.001,
+        "react-chessboard.js": 211.18999999999994,
+        "chunk-QQYYDABI.js": 48.36999999999999,
+        "chess__js.js": 29.12399999999999,
+        "components/MoveList.jsx": 12.867,
+        "chunk-EQCVQC35.js": 7.765000000000001,
+        "components/EnginePanel.jsx": 6.752,
+        "components/PositionEditor.jsx": 3.303,
+        "App.jsx": 3.298,
+        "components/Board.jsx": 3.241,
+        "@react-refresh": 1.983,
+        "lib/gameNavigation.js": 1.809,
+        "context/GameContext.jsx": 1.734,
+        "components/GameArchive.jsx": 1.644,
+        "components/BoardOrientationControls.jsx": 0,
+        "components/UndoButton.jsx": 0,
+        "components/ChatPanel.jsx": 0,
+        "components/AnalysisSummary.jsx": 0,
+        "components/MoveNavigation.jsx": 0,
+        "lib/analysisPresentation.js": 0,
+        "chunk-3T4NTNTU.js": 0
+      }
+    },
+    {
+      "scenario": "resignation55",
+      "mode": "sentinel",
+      "keyboardObserved": [
+        {
+          "t": 1995.8999999985099,
+          "key": "ArrowLeft",
+          "repeat": false,
+          "trusted": true
+        },
+        {
+          "t": 2059.2999999970198,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2152.099999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2275,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2358.599999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2421.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2484.099999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2547.599999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2597.099999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2659,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2722.2999999970198,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2786.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2851.2999999970198,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2914.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2981.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3045.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3182,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3303.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3375.599999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3425.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3488.099999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3550.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3614.7999999970198,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3678.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3743.599999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3809.099999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3871.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3934.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3999.2999999970198,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4062.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4177.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4289.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4399,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4464,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4528.099999997765,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4591.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4654.29999999702,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4719.29999999702,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4782.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4846.79999999702,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        }
+      ],
+      "goBeforeContinuation": 1,
+      "postContinuation": {
+        "t": 9409.79999999702,
+        "go": 1
+      },
+      "fixture": "Partite/Confermate/personal-04/partita.pgn",
+      "plies": 55,
+      "result": "1-0",
+      "termination": "ProprioI0 won by resignation",
+      "gameOver": false,
+      "keyboardEvents": 40,
+      "keyboardExpectedFen": "rn2k1nr/pp3ppp/2pqp3/5bN1/2pP4/6P1/PP2PPBP/RN1QK2R b KQkq - 1 8",
+      "afterKeyboard": "rn2k1nr/pp3ppp/2pqp3/5bN1/2pP4/6P1/PP2PPBP/RN1QK2R b KQkq - 1 8",
+      "continuation": {
+        "color": "b",
+        "from": "a7",
+        "to": "a6",
+        "piece": "p",
+        "flags": "n",
+        "san": "a6",
+        "lan": "a7a6",
+        "before": "8/p2k1p2/4p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 b - - 2 28",
+        "after": "8/3k1p2/p3p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 w - - 0 29"
+      },
+      "continuedFen": "8/3k1p2/p3p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 w - - 0 29",
+      "continuationFen": "8/3k1p2/p3p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 w - - 0 29",
+      "positions": [
+        {
+          "label": "keyboard",
+          "pieces": 29,
+          "outside": [],
+          "fen": "rn2k1nr/pp3ppp/2pqp3/5bN1/2pP4/6P1/PP2PPBP/RN1QK2R b KQkq - 1 8"
+        },
+        {
+          "label": "mouse",
+          "pieces": 29,
+          "outside": [],
+          "fen": "rn2k2r/pp2npp1/2p1p1bp/4P1N1/1qpP4/6P1/PP1N1PBP/R2Q1RK1 b kq - 2 12"
+        },
+        {
+          "label": "mouse-hold",
+          "pieces": 29,
+          "outside": [],
+          "fen": "rn2k2r/pp2npp1/2p1p1bp/4P1N1/1qpP4/6P1/PP3PBP/RN1Q1RK1 w kq - 1 12"
+        },
+        {
+          "label": "rotated-scrolled",
+          "pieces": 29,
+          "outside": [],
+          "fen": "rn2k2r/pp2npp1/2p1p1bp/4P1N1/1qpP4/6P1/PP3PBP/RN1Q1RK1 w kq - 1 12"
+        },
+        {
+          "label": "legal-continuation",
+          "pieces": 15,
+          "outside": [],
+          "fen": "8/3k1p2/p3p3/4P1Q1/4B3/P1n2PP1/6KP/2R2R2 w - - 0 29"
+        }
+      ],
+      "durationMs": 7678.79999999702,
+      "commits": 202,
+      "longTasks": [
+        {
+          "t": 2058.699999999255,
+          "duration": 52
+        },
+        {
+          "t": 2151.199999999255,
+          "duration": 52
+        },
+        {
+          "t": 3044.5,
+          "duration": 59
+        },
+        {
+          "t": 3180.89999999851,
+          "duration": 54
+        },
+        {
+          "t": 4062,
+          "duration": 67
+        },
+        {
+          "t": 4177.79999999702,
+          "duration": 63
+        },
+        {
+          "t": 4289.099999997765,
+          "duration": 73
+        },
+        {
+          "t": 5598.699999999255,
+          "duration": 70
+        },
+        {
+          "t": 5842.199999999255,
+          "duration": 65
+        },
+        {
+          "t": 6705.5,
+          "duration": 61
+        },
+        {
+          "t": 6888.099999997765,
+          "duration": 51
+        },
+        {
+          "t": 8003,
+          "duration": 55
+        },
+        {
+          "t": 8353.599999997765,
+          "duration": 79
+        },
+        {
+          "t": 9091.099999997765,
+          "duration": 91
+        },
+        {
+          "t": 9216.5,
+          "duration": 100
+        }
+      ],
+      "maxRafGapMs": 111.10000000000036,
+      "workerGo": 1,
+      "top": [
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 6.61,
+          "inclusiveMs": 147.783
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 1.692,
+          "inclusiveMs": 145.465
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 5.18,
+          "inclusiveMs": 129.004
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 14.108,
+          "inclusiveMs": 128.026
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 10.339,
+          "inclusiveMs": 113.605
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 2.032,
+          "inclusiveMs": 103.692
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 3.139,
+          "inclusiveMs": 87.486
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 1.631,
+          "inclusiveMs": 78.516
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 3.179,
+          "inclusiveMs": 75.042
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 1.631,
+          "inclusiveMs": 66.819
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 0,
+          "inclusiveMs": 63.434
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 3.179,
+          "inclusiveMs": 62.205
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 59.387
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 0,
+          "inclusiveMs": 54.559
+        },
+        {
+          "name": "Board",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4883,
+          "selfMs": 0,
+          "inclusiveMs": 54.079
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 2.69,
+          "inclusiveMs": 48.835
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 0,
+          "inclusiveMs": 48.631
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 0,
+          "inclusiveMs": 48.631
+        },
+        {
+          "name": "Piece2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4673,
+          "selfMs": 1.62,
+          "inclusiveMs": 46.259
+        },
+        {
+          "name": "Draggable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4651,
+          "selfMs": 2.826,
+          "inclusiveMs": 43.829
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 4.693,
+          "inclusiveMs": 42.332
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 0,
+          "inclusiveMs": 42.018
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 0,
+          "inclusiveMs": 37.531
+        },
+        {
+          "name": "Draggable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4651,
+          "selfMs": 4.78,
+          "inclusiveMs": 36.253
+        },
+        {
+          "name": "Board",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4883,
+          "selfMs": 0,
+          "inclusiveMs": 32.875
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 44,
+          "selfMs": 1.661,
+          "inclusiveMs": 32.418
+        },
+        {
+          "name": "useDroppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 3263,
+          "selfMs": 3.382,
+          "inclusiveMs": 32.218
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 1.937,
+          "inclusiveMs": 31.238
+        },
+        {
+          "name": "AppContent",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/App.jsx?t=1793625687398",
+          "line": 37,
+          "selfMs": 2.864,
+          "inclusiveMs": 31.193
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 0,
+          "inclusiveMs": 29.301
+        }
+      ],
+      "errors": [],
+      "rawProfile": "C:\\Users\\carlo\\AppData\\Local\\Temp\\p0-long-game-after-render-resignation55-sentinel.json",
+      "sampledFunctionInclusiveMs": {
+        "handleKeyDown": 4.294,
+        "replayGame": 7.866,
+        "syncGameState": 0,
+        "AppContent": 89.936,
+        "PositionEditor": 24.2,
+        "MoveExplanation": 0,
+        "ClassificationDetails": 0,
+        "EnginePanel": 18.21,
+        "Board": 160.495,
+        "resolveMoveReview": 0,
+        "AnalysisSummary": 4.908
+      },
+      "sampledSourceSelfMs": {
+        "(browser/native/idle)": 4761.106,
+        "react-dom_client.js": 1309.279999999999,
+        "chunk-ZV5Z535A.js": 1289.2779999999996,
+        "react_jsx-dev-runtime.js": 302.6050000000001,
+        "react-chessboard.js": 185.10799999999998,
+        "chunk-QQYYDABI.js": 41.067,
+        "chess__js.js": 16.154,
+        "components/EnginePanel.jsx": 6.5569999999999995,
+        "App.jsx": 4.51,
+        "context/GameContext.jsx": 3.305,
+        "components/MoveList.jsx": 3.292,
+        "components/MoveNavigation.jsx": 2.107,
+        "lib/stockfish.js": 1.984,
+        "components/PositionEditor.jsx": 1.664,
+        "components/Board.jsx": 1.661,
+        "chunk-EQCVQC35.js": 1.656,
+        "chunk-3T4NTNTU.js": 1.63,
+        "lib/boardOrientation.js": 1.278,
+        "components/AnalysisSummary.jsx": 0,
+        "components/GameArchive.jsx": 0,
+        "components/BoardOrientationControls.jsx": 0,
+        "components/ChatPanel.jsx": 0,
+        "@react-refresh": 0,
+        "lib/gameNavigation.js": 0
+      }
+    },
+    {
+      "scenario": "derived87",
+      "mode": "off",
+      "keyboardObserved": [
+        {
+          "t": 1767.3999999985099,
+          "key": "ArrowLeft",
+          "repeat": false,
+          "trusted": true
+        },
+        {
+          "t": 1833.8999999985099,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 1898.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 1958.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2025.6000000014901,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2106.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2238.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2346.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2422.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2496.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2550.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2615.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2675.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2741.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2802.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2870.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2929,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2996,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3065.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3184.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3318.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3394.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3458,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3522.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3587.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3650,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3712,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3777.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3842.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3908,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3973.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4036.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4116,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4262.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4366.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4432.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4497.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4572.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4639.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4700.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        }
+      ],
+      "goBeforeContinuation": 0,
+      "postContinuation": {
+        "t": 9405.800000000745,
+        "go": 0
+      },
+      "fixture": "Partite/Confermate/Storiche/game-2-saintamant-staunton-1843/partita.pgn",
+      "plies": 87,
+      "result": "*",
+      "gameOver": false,
+      "keyboardEvents": 40,
+      "keyboardExpectedFen": "5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 b - - 16 24",
+      "afterKeyboard": "5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 b - - 16 24",
+      "continuation": {
+        "color": "b",
+        "from": "g8",
+        "to": "h8",
+        "piece": "k",
+        "flags": "n",
+        "san": "Kh8",
+        "lan": "g8h8",
+        "before": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44",
+        "after": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+      },
+      "continuedFen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45",
+      "continuationFen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45",
+      "positions": [
+        {
+          "label": "keyboard",
+          "pieces": 28,
+          "outside": [],
+          "fen": "5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 b - - 16 24"
+        },
+        {
+          "label": "mouse",
+          "pieces": 26,
+          "outside": [],
+          "fen": "4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/PQN1B2P/5PP1/2R1R2K b - - 1 28"
+        },
+        {
+          "label": "mouse-hold",
+          "pieces": 26,
+          "outside": [],
+          "fen": "4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/P1N1B2P/2Q2PP1/2R1R2K w - - 0 28"
+        },
+        {
+          "label": "rotated-scrolled",
+          "pieces": 26,
+          "outside": [],
+          "fen": "4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/P1N1B2P/2Q2PP1/2R1R2K w - - 0 28"
+        },
+        {
+          "label": "legal-continuation",
+          "pieces": 18,
+          "outside": [],
+          "fen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+        }
+      ],
+      "durationMs": 7904.199999999255,
+      "commits": 185,
+      "longTasks": [
+        {
+          "t": 2053.199999999255,
+          "duration": 53
+        },
+        {
+          "t": 2106.60000000149,
+          "duration": 65
+        },
+        {
+          "t": 2181.39999999851,
+          "duration": 55
+        },
+        {
+          "t": 2237.199999999255,
+          "duration": 67
+        },
+        {
+          "t": 3065,
+          "duration": 59
+        },
+        {
+          "t": 3127.800000000745,
+          "duration": 56
+        },
+        {
+          "t": 3184.300000000745,
+          "duration": 67
+        },
+        {
+          "t": 3255.699999999255,
+          "duration": 61
+        },
+        {
+          "t": 4057.89999999851,
+          "duration": 57
+        },
+        {
+          "t": 4115.800000000745,
+          "duration": 76
+        },
+        {
+          "t": 4195.699999999255,
+          "duration": 66
+        },
+        {
+          "t": 4261.89999999851,
+          "duration": 66
+        },
+        {
+          "t": 5461.300000000745,
+          "duration": 76
+        },
+        {
+          "t": 5540.89999999851,
+          "duration": 65
+        },
+        {
+          "t": 5742.699999999255,
+          "duration": 53
+        },
+        {
+          "t": 6574.60000000149,
+          "duration": 61
+        },
+        {
+          "t": 6638.39999999851,
+          "duration": 54
+        },
+        {
+          "t": 6694.60000000149,
+          "duration": 54
+        },
+        {
+          "t": 6775.800000000745,
+          "duration": 57
+        },
+        {
+          "t": 7881.60000000149,
+          "duration": 57
+        },
+        {
+          "t": 7940.89999999851,
+          "duration": 53
+        },
+        {
+          "t": 8281.199999999255,
+          "duration": 86
+        },
+        {
+          "t": 9020.800000000745,
+          "duration": 109
+        },
+        {
+          "t": 9177.800000000745,
+          "duration": 104
+        },
+        {
+          "t": 9286.10000000149,
+          "duration": 53
+        }
+      ],
+      "maxRafGapMs": 138.90000000000055,
+      "workerGo": 0,
+      "top": [
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 3.381,
+          "inclusiveMs": 138.816
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 32.929,
+          "inclusiveMs": 134.495
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 13.914,
+          "inclusiveMs": 116.439
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 0,
+          "inclusiveMs": 115.275
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 4.836,
+          "inclusiveMs": 112.163
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 6.43,
+          "inclusiveMs": 101.948
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 93.78
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 3.463,
+          "inclusiveMs": 93.78
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 77.814
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 3.239,
+          "inclusiveMs": 77.483
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 1.488,
+          "inclusiveMs": 76.153
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 70.419
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 69.839
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 0,
+          "inclusiveMs": 68.565
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 9.647,
+          "inclusiveMs": 67.266
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 3.472,
+          "inclusiveMs": 66.967
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 0,
+          "inclusiveMs": 63.129
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 1.444,
+          "inclusiveMs": 60.513
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 0,
+          "inclusiveMs": 60.055
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 0,
+          "inclusiveMs": 56.355
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 0,
+          "inclusiveMs": 53.625
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 0,
+          "inclusiveMs": 47.484
+        },
+        {
+          "name": "Board",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4883,
+          "selfMs": 0,
+          "inclusiveMs": 44.398
+        },
+        {
+          "name": "Draggable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4651,
+          "selfMs": 4.122,
+          "inclusiveMs": 42.287
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 3.214,
+          "inclusiveMs": 41.08
+        },
+        {
+          "name": "Board",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4883,
+          "selfMs": 0,
+          "inclusiveMs": 39.398
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 2.826,
+          "inclusiveMs": 37.664
+        },
+        {
+          "name": "Piece2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4673,
+          "selfMs": 8.16,
+          "inclusiveMs": 37.124
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 1.639,
+          "inclusiveMs": 36.147
+        },
+        {
+          "name": "Board",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4883,
+          "selfMs": 0,
+          "inclusiveMs": 35.513
+        }
+      ],
+      "errors": [],
+      "rawProfile": "C:\\Users\\carlo\\AppData\\Local\\Temp\\p0-long-game-after-render-derived87-off.json",
+      "sampledFunctionInclusiveMs": {
+        "handleKeyDown": 2.112,
+        "replayGame": 11.287,
+        "syncGameState": 0,
+        "AppContent": 115.864,
+        "PositionEditor": 57.454,
+        "MoveExplanation": 0,
+        "ClassificationDetails": 0,
+        "EnginePanel": 47.208,
+        "Board": 176.403,
+        "resolveMoveReview": 0,
+        "AnalysisSummary": 18.028
+      },
+      "sampledSourceSelfMs": {
+        "(browser/native/idle)": 4585.870999999997,
+        "react-dom_client.js": 1517.8719999999973,
+        "chunk-ZV5Z535A.js": 1195.244,
+        "react_jsx-dev-runtime.js": 537.2009999999999,
+        "react-chessboard.js": 199.05600000000004,
+        "chunk-QQYYDABI.js": 42.382000000000005,
+        "chess__js.js": 36.676,
+        "components/MoveList.jsx": 13.469000000000001,
+        "chunk-EQCVQC35.js": 7.904999999999999,
+        "context/GameContext.jsx": 6.598000000000001,
+        "App.jsx": 6.496,
+        "components/EnginePanel.jsx": 5.246,
+        "components/Board.jsx": 1.836,
+        "components/PositionEditor.jsx": 1.716,
+        "lib/gameAnalysis.js": 1.681,
+        "components/MoveNavigation.jsx": 0,
+        "components/ChatPanel.jsx": 0,
+        "components/GameArchive.jsx": 0,
+        "components/BoardOrientationControls.jsx": 0,
+        "components/AnalysisSummary.jsx": 0,
+        "lib/analysisPresentation.js": 0,
+        "@react-refresh": 0,
+        "lib/gameNavigation.js": 0,
+        "chunk-3T4NTNTU.js": 0
+      }
+    },
+    {
+      "scenario": "derived87",
+      "mode": "sentinel",
+      "keyboardObserved": [
+        {
+          "t": 2052.10000000149,
+          "key": "ArrowLeft",
+          "repeat": false,
+          "trusted": true
+        },
+        {
+          "t": 2183.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2286.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2394.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2458.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2523.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2587.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2648.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2711.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2773.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2838.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2905.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 2963.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3026.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3101.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3225.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3367.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3442.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3505.300000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3570.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3633.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3696.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3761.199999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3826.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3894.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 3971.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4035.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4110.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4227.39999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4367.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4435,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4495.10000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4561.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4623.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4699.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4806.699999999255,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4889.60000000149,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 4954.5,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 5018.89999999851,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        },
+        {
+          "t": 5085.800000000745,
+          "key": "ArrowLeft",
+          "repeat": true,
+          "trusted": true
+        }
+      ],
+      "goBeforeContinuation": 1,
+      "postContinuation": {
+        "t": 9689.800000000745,
+        "go": 1
+      },
+      "fixture": "Partite/Confermate/Storiche/game-2-saintamant-staunton-1843/partita.pgn",
+      "plies": 87,
+      "result": "*",
+      "gameOver": false,
+      "keyboardEvents": 40,
+      "keyboardExpectedFen": "5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 b - - 16 24",
+      "afterKeyboard": "5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 b - - 16 24",
+      "continuation": {
+        "color": "b",
+        "from": "g8",
+        "to": "h8",
+        "piece": "k",
+        "flags": "n",
+        "san": "Kh8",
+        "lan": "g8h8",
+        "before": "6k1/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 b - - 2 44",
+        "after": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+      },
+      "continuedFen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45",
+      "continuationFen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45",
+      "positions": [
+        {
+          "label": "keyboard",
+          "pieces": 28,
+          "outside": [],
+          "fen": "5rk1/1br1nppn/pq1b3p/1p1p4/1P1P3N/P1NBB2P/2Q2PP1/2R1R1K1 b - - 16 24"
+        },
+        {
+          "label": "mouse",
+          "pieces": 26,
+          "outside": [],
+          "fen": "4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/PQN1B2P/5PP1/2R1R2K b - - 1 28"
+        },
+        {
+          "label": "mouse-hold",
+          "pieces": 26,
+          "outside": [],
+          "fen": "4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/P1N1B2P/2Q2PP1/2R1R2K w - - 0 28"
+        },
+        {
+          "label": "rotated-scrolled",
+          "pieces": 26,
+          "outside": [],
+          "fen": "4nrk1/1br2pp1/1q1b3p/pp1p1B2/1P1P4/P1N1B2P/2Q2PP1/2R1R2K w - - 0 28"
+        },
+        {
+          "label": "legal-continuation",
+          "pieces": 18,
+          "outside": [],
+          "fen": "7k/4q1p1/3b2rp/1p3p2/1PpP1P2/4B2P/1Q2R1P1/6K1 w - - 3 45"
+        }
+      ],
+      "durationMs": 7908.89999999851,
+      "commits": 198,
+      "longTasks": [
+        {
+          "t": 2051.800000000745,
+          "duration": 58
+        },
+        {
+          "t": 2182.699999999255,
+          "duration": 62
+        },
+        {
+          "t": 2285.300000000745,
+          "duration": 64
+        },
+        {
+          "t": 3100.699999999255,
+          "duration": 78
+        },
+        {
+          "t": 3225,
+          "duration": 61
+        },
+        {
+          "t": 4109.300000000745,
+          "duration": 77
+        },
+        {
+          "t": 4227.199999999255,
+          "duration": 64
+        },
+        {
+          "t": 5085.699999999255,
+          "duration": 64
+        },
+        {
+          "t": 5152.5,
+          "duration": 58
+        },
+        {
+          "t": 5212.89999999851,
+          "duration": 60
+        },
+        {
+          "t": 5283.5,
+          "duration": 81
+        },
+        {
+          "t": 5887.5,
+          "duration": 58
+        },
+        {
+          "t": 6198.5,
+          "duration": 61
+        },
+        {
+          "t": 6381.89999999851,
+          "duration": 58
+        },
+        {
+          "t": 7178.5,
+          "duration": 52
+        },
+        {
+          "t": 8230,
+          "duration": 62
+        },
+        {
+          "t": 8582.39999999851,
+          "duration": 84
+        },
+        {
+          "t": 9336.60000000149,
+          "duration": 98
+        },
+        {
+          "t": 9503.60000000149,
+          "duration": 80
+        }
+      ],
+      "maxRafGapMs": 122.19999999999982,
+      "workerGo": 1,
+      "top": [
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 31.764,
+          "inclusiveMs": 168.586
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 14.708,
+          "inclusiveMs": 163.313
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 1.8,
+          "inclusiveMs": 150.792
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 10.765,
+          "inclusiveMs": 139.081
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 15.382,
+          "inclusiveMs": 114.667
+        },
+        {
+          "name": "Square2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4712,
+          "selfMs": 9.087,
+          "inclusiveMs": 111.134
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 5.276,
+          "inclusiveMs": 96.767
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 93.663
+        },
+        {
+          "name": "Droppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4667,
+          "selfMs": 1.622,
+          "inclusiveMs": 91.438
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 1.723,
+          "inclusiveMs": 90.523
+        },
+        {
+          "name": "MoveList",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 21,
+          "selfMs": 0,
+          "inclusiveMs": 89.392
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 84,
+          "selfMs": 0,
+          "inclusiveMs": 87.604
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 2.803,
+          "inclusiveMs": 85.507
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 0,
+          "inclusiveMs": 66.708
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 1.644,
+          "inclusiveMs": 63.897
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 93,
+          "selfMs": 1.136,
+          "inclusiveMs": 60.927
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 0,
+          "inclusiveMs": 50.154
+        },
+        {
+          "name": "Board",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4883,
+          "selfMs": 0,
+          "inclusiveMs": 50.147
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 0,
+          "inclusiveMs": 50.147
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 0,
+          "inclusiveMs": 50.147
+        },
+        {
+          "name": "Board",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4883,
+          "selfMs": 0,
+          "inclusiveMs": 49.638
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 2.381,
+          "inclusiveMs": 46.452
+        },
+        {
+          "name": "Piece2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4673,
+          "selfMs": 8.297,
+          "inclusiveMs": 46.063
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4885,
+          "selfMs": 3.678,
+          "inclusiveMs": 44.071
+        },
+        {
+          "name": "children",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4887,
+          "selfMs": 0,
+          "inclusiveMs": 43.485
+        },
+        {
+          "name": "Draggable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4651,
+          "selfMs": 10.445,
+          "inclusiveMs": 41.33
+        },
+        {
+          "name": "Piece2",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 4673,
+          "selfMs": 4.789,
+          "inclusiveMs": 38.445
+        },
+        {
+          "name": "AppContent",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/App.jsx?t=1793625687398",
+          "line": 37,
+          "selfMs": 0,
+          "inclusiveMs": 36.833
+        },
+        {
+          "name": "useDroppable",
+          "url": "http://127.0.0.1:4173/ChessProfessor/@fs/C:/Users/carlo/AppData/Local/Temp/chessprofessor-ux-vite-cache-20261102/deps/react-chessboard.js?v=b4406938",
+          "line": 3263,
+          "selfMs": 6.259,
+          "inclusiveMs": 35.308
+        },
+        {
+          "name": "",
+          "url": "http://127.0.0.1:4173/ChessProfessor/src/components/MoveList.jsx?t=1793625608003",
+          "line": 44,
+          "selfMs": 0,
+          "inclusiveMs": 34.727
+        }
+      ],
+      "errors": [],
+      "rawProfile": "C:\\Users\\carlo\\AppData\\Local\\Temp\\p0-long-game-after-render-derived87-sentinel.json",
+      "sampledFunctionInclusiveMs": {
+        "handleKeyDown": 2.873,
+        "replayGame": 11.605,
+        "syncGameState": 0,
+        "AppContent": 114.327,
+        "PositionEditor": 26.505,
+        "MoveExplanation": 0,
+        "ClassificationDetails": 0,
+        "EnginePanel": 32.156,
+        "Board": 198.214,
+        "resolveMoveReview": 0,
+        "AnalysisSummary": 9.409
+      },
+      "sampledSourceSelfMs": {
+        "(browser/native/idle)": 4518.134999999998,
+        "react-dom_client.js": 1454.5770000000016,
+        "chunk-ZV5Z535A.js": 1411.6310000000008,
+        "react_jsx-dev-runtime.js": 429.992,
+        "react-chessboard.js": 226.69899999999998,
+        "chunk-QQYYDABI.js": 40.550000000000004,
+        "chess__js.js": 31.35,
+        "chunk-EQCVQC35.js": 11.168000000000001,
+        "components/EnginePanel.jsx": 9.497,
+        "App.jsx": 3.29,
+        "components/MoveList.jsx": 2.859,
+        "lib/analysisPresentation.js": 1.85,
+        "lib/stockfish.js": 1.451,
+        "components/Board.jsx": 0.356,
+        "context/GameContext.jsx": 0,
+        "components/AnalysisSummary.jsx": 0,
+        "components/BoardOrientationControls.jsx": 0,
+        "components/PositionEditor.jsx": 0,
+        "components/ChatPanel.jsx": 0,
+        "components/GameArchive.jsx": 0,
+        "components/MoveNavigation.jsx": 0,
+        "components/UndoButton.jsx": 0,
+        "lib/gameNavigation.js": 0,
+        "chunk-3T4NTNTU.js": 0
+      }
+    }
+  ],
+  "result": "4 passed (43.9s); prior partial attempts discarded for harness selector errors (encoding, then collapsed details visibility).",
+  "measurementNotes": [
+    "40 trusted keyboard down events;39repeat=true. Actual delivery intervals include browser processing and driver30mspause.",
+    "Go-count contract samples after continuation commit and automatic stop, then verifies no new go for250ms; stopped original-game work before commit excluded.",
+    "Entire profile includes navigation,mousehold,rotation,scroll,legalcontinuation. Devmode/sampling add overhead;not statistical benchmark.",
+    "sampledSourceSelfMs sums leaf sample weights by script URL across all profile nodes, without inclusive double counting. sampledFunctionInclusiveMs sums all call sites of named functions and can overlap with other functions;do not add ancestor/descendant costs.",
+    "Visible SVG bounds measured250ms after transitions. No hang or persistent displaced visible SVG reproduced. No additional real Stockfish run."
+  ]
+}

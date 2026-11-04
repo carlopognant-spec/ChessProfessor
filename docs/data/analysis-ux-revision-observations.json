@@ -1,0 +1,416 @@
+{
+  "scope": "Isolated browser contexts; simulated explorer/clipboard only; no Stockfish searches",
+  "observations": [
+    {
+      "control": "Lista mosse",
+      "finding": "Rewind keeps all notation buttons and the full timeline",
+      "visiblePlies": 4,
+      "totalPlies": 4
+    },
+    {
+      "control": "Reset / Torna indietro",
+      "finding": "Reset explains preservation of PGN draft and archive; chat-only undo is named explicitly"
+    },
+    {
+      "control": "Copia FEN",
+      "finding": "Current/draft copies are explicit and preserve the editor draft"
+    },
+    {
+      "control": "Copia FEN",
+      "finding": "Clipboard rejection is handled and reported",
+      "errors": []
+    },
+    {
+      "control": "Archivio",
+      "finding": "Save/dedup/rename/export/open/delete cancel+confirm/file import verified by persisted records and actual PGN/FEN"
+    },
+    {
+      "control": "Selezione scacchiera",
+      "finding": "Legal-move dots clear when the imported position changes"
+    },
+    {
+      "control": "Promozione",
+      "finding": "Study board supports explicit underpromotion"
+    },
+    {
+      "control": "Contesto chat",
+      "finding": "Opening context loads on chat opening; no unused root disclosure or startup request"
+    },
+    {
+      "control": "Chat locale",
+      "finding": "Send is gated by critical-position classification; provider has an accessible label; no AI call was made"
+    },
+    {
+      "control": "Layout",
+      "finding": "Observed dimensions and visible button inventory",
+      "width": 1280,
+      "metrics": {
+        "viewport": 1280,
+        "width": 1280,
+        "height": 1871,
+        "controls": [
+          {
+            "text": "Importa / apri partita",
+            "disabled": false,
+            "width": 172,
+            "height": 44
+          },
+          {
+            "text": "Ruota",
+            "disabled": false,
+            "width": 70.625,
+            "height": 44
+          },
+          {
+            "text": "Primo",
+            "disabled": true,
+            "width": 129.296875,
+            "height": 44
+          },
+          {
+            "text": "Indietro",
+            "disabled": true,
+            "width": 129.3125,
+            "height": 44
+          },
+          {
+            "text": "Avanti",
+            "disabled": true,
+            "width": 129.296875,
+            "height": 44
+          },
+          {
+            "text": "Ultimo",
+            "disabled": true,
+            "width": 129.3125,
+            "height": 44
+          },
+          {
+            "text": "Ripassa i miei errori",
+            "disabled": true,
+            "width": 165.8125,
+            "height": 44
+          },
+          {
+            "text": "Importa PGN",
+            "disabled": false,
+            "width": 579,
+            "height": 44
+          },
+          {
+            "text": "Annulla mossa chat",
+            "disabled": true,
+            "width": 165.328125,
+            "height": 44
+          },
+          {
+            "text": "Reset partita",
+            "disabled": false,
+            "width": 118.046875,
+            "height": 44
+          },
+          {
+            "text": "Copia FEN corrente",
+            "disabled": false,
+            "width": 164.890625,
+            "height": 44
+          },
+          {
+            "text": "Copia bozza FEN",
+            "disabled": false,
+            "width": 148.140625,
+            "height": 44
+          },
+          {
+            "text": "K",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "Q",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "R",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "B",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "N",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "P",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "k",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "q",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "r",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "b",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "n",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "p",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "Cancella",
+            "disabled": false,
+            "width": 72.796875,
+            "height": 44
+          },
+          {
+            "text": "Applica posizione",
+            "disabled": false,
+            "width": 153,
+            "height": 44
+          },
+          {
+            "text": "Invia",
+            "disabled": true,
+            "width": 63.234375,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "control": "Layout",
+      "finding": "Observed dimensions and visible button inventory",
+      "width": 390,
+      "metrics": {
+        "viewport": 390,
+        "width": 390,
+        "height": 2409,
+        "controls": [
+          {
+            "text": "Importa / apri partita",
+            "disabled": false,
+            "width": 374,
+            "height": 44
+          },
+          {
+            "text": "Vai alla scacchiera",
+            "disabled": false,
+            "width": 175,
+            "height": 44
+          },
+          {
+            "text": "Vai alla spiegazione",
+            "disabled": false,
+            "width": 175,
+            "height": 44
+          },
+          {
+            "text": "Ruota",
+            "disabled": false,
+            "width": 70.625,
+            "height": 44
+          },
+          {
+            "text": "Primo",
+            "disabled": true,
+            "width": 80,
+            "height": 44
+          },
+          {
+            "text": "Indietro",
+            "disabled": true,
+            "width": 80.015625,
+            "height": 44
+          },
+          {
+            "text": "Avanti",
+            "disabled": true,
+            "width": 80,
+            "height": 44
+          },
+          {
+            "text": "Ultimo",
+            "disabled": true,
+            "width": 80.015625,
+            "height": 44
+          },
+          {
+            "text": "Avvia analisi",
+            "disabled": false,
+            "width": 115.875,
+            "height": 44
+          },
+          {
+            "text": "Ripassa i miei errori",
+            "disabled": true,
+            "width": 165.8125,
+            "height": 44
+          },
+          {
+            "text": "Importa PGN",
+            "disabled": false,
+            "width": 316,
+            "height": 44
+          },
+          {
+            "text": "Annulla mossa chat",
+            "disabled": true,
+            "width": 165.328125,
+            "height": 44
+          },
+          {
+            "text": "Reset partita",
+            "disabled": false,
+            "width": 118.046875,
+            "height": 44
+          },
+          {
+            "text": "Salva partita e analisi",
+            "disabled": false,
+            "width": 176.6875,
+            "height": 44
+          },
+          {
+            "text": "Copia FEN corrente",
+            "disabled": false,
+            "width": 164.890625,
+            "height": 44
+          },
+          {
+            "text": "Copia bozza FEN",
+            "disabled": false,
+            "width": 148.140625,
+            "height": 44
+          },
+          {
+            "text": "K",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "Q",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "R",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "B",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "N",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "P",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "k",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "q",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "r",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "b",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "n",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "p",
+            "disabled": false,
+            "width": 32,
+            "height": 44
+          },
+          {
+            "text": "Cancella",
+            "disabled": false,
+            "width": 72.796875,
+            "height": 44
+          },
+          {
+            "text": "Applica posizione",
+            "disabled": false,
+            "width": 153,
+            "height": 44
+          },
+          {
+            "text": "Invia",
+            "disabled": true,
+            "width": 63.234375,
+            "height": 44
+          }
+        ]
+      }
+    }
+  ]
+}

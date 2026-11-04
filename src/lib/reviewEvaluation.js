@@ -101,6 +101,14 @@ export function applyMoveFacts(entry) {
   return entry.moveFacts?.forced ? { ...entry, classification: 'forced' } : entry
 }
 
+// Repertoire membership is retained; it must not hide a measured error in application review.
+export function applyBookQuality(entry) {
+  if (entry.classification !== 'book' || !['mistake', 'blunder'].includes(entry.numericalClassification)) return entry
+  return { ...entry, classification: entry.numericalClassification, baseClassification: entry.numericalClassification,
+    ...(entry.specialAssessment ? { specialAssessment: { ...entry.specialAssessment,
+      numericalClassification: entry.numericalClassification } } : {}) }
+}
+
 export function formatEvaluationEvidence(entry) {
   const status = entry.evaluationEvidence?.status
   if (status === 'conflicting') return 'Valutazioni discordanti: classificazione provvisoria.'

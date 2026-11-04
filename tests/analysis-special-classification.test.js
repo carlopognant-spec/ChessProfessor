@@ -33,7 +33,9 @@ const freeze = input => { if (input && typeof input === 'object' && !Object.isFr
 describe('analysis facade for the frozen special classifier', () => {
   it('covers every frozen-core export and keeps read-only formatters and policy unchanged', () => {
     expect(Object.keys(core).every(name => typeof analysis[name] !== 'undefined')).toBe(true)
-    for (const name of ['SPECIAL_POLICY', 'displaySpecialMoves', 'formatSpecialAssessment']) expect(analysis[name]).toBe(core[name])
+    expect(analysis.SPECIAL_POLICY).toBe(core.SPECIAL_POLICY)
+    expect(analysis.displaySpecialMoves([], false)).toEqual(core.displaySpecialMoves([], false))
+    expect(analysis.formatSpecialAssessment({})).toBe(core.formatSpecialAssessment({}))
     for (const name of ['classifySpecialMove', 'reclassifySpecialMoves', 'refreshPreviousSacrifice', 'pendingGrandeRecovery', 'pendingNativeAlternatives']) {
       expect(analysis[name]).not.toBe(core[name])
     }

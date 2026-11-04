@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test'
+import { allowRefinementWorker, refinementWorkerSource } from './tests/helpers/browser-refinement-worker.js'
+
 import { Chess } from 'chess.js'
 import { createAnalysisMetadata } from './src/lib/analysisMetadata.js'
+
+test.beforeEach(async ({ page }) => { await page.addInitScript(allowRefinementWorker, refinementWorkerSource) })
 
 const appUrl = 'http://127.0.0.1:4173/ChessProfessor/'
 const uci = move => move.from + move.to + (move.promotion ?? '')
@@ -11,7 +15,7 @@ async function tools(page) {
   }
 }
 async function importGame(page, pgn) {
-  await tools(page)
+  await page.getByRole('button', { name: 'Importa partita', exact: true }).click()
   await page.getByRole('textbox', { name: 'PGN da importare', exact: true }).fill(pgn)
   await page.getByRole('button', { name: 'Importa PGN', exact: true }).click()
 }
@@ -26,6 +30,7 @@ test.beforeEach(async ({ page }) => {
 test('orientation uses a unique configured PGN identity, preserves manual choice and never changes the game', async ({ page }) => {
   await page.goto(appUrl)
   await expect(page.locator('.board-stage')).toHaveAttribute('data-orientation', 'white')
+  await page.locator('.board-settings > summary').click()
   await page.getByText('Riconosci il mio colore', { exact: true }).click()
   await page.getByRole('textbox', { name: 'Nome giocatore nei PGN', exact: true }).fill('BUMCestinait0')
   const pgn = '[White "Other"]\n[Black "BUMCestinait0"]\n\n1. Nf3 Nf6 2. Ng1 Ng8 *'
@@ -38,6 +43,7 @@ test('orientation uses a unique configured PGN identity, preserves manual choice
   await expect(board).toHaveAttribute('data-fen', fen)
   await expect(page.locator('.move-list')).toHaveText(notation, { useInnerText: true })
   await page.reload()
+  await page.locator('.board-settings > summary').click()
   await expect(board).toHaveAttribute('data-orientation', 'white')
   await importGame(page, pgn)
   await expect(board).toHaveAttribute('data-orientation', 'white')
@@ -55,6 +61,7 @@ test('rotation remains usable when local storage is denied', async ({ page }) =>
   await page.addInitScript(() => Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('Denied', 'SecurityError') } }))
   await page.goto(appUrl)
   const before = await page.locator('.board-stage').getAttribute('data-fen')
+  await page.locator('.board-settings > summary').click()
   await page.getByRole('button', { name: 'Ruota scacchiera', exact: true }).click()
   await expect(page.locator('.board-stage')).toHaveAttribute('data-orientation', 'black')
   await expect(page.locator('.board-stage')).toHaveAttribute('data-fen', before)
@@ -83,7 +90,7 @@ function archivedExample() {
   return { pgn: game.pgn(), entries }
 }
 
-for (const width of [1280, 390]) test(`best-move confirmation and knight arrows stay position-bound when rotated at ${width}px`, async ({ page }) => {
+for (const width of [1280, 390]) test(`played-move highlights and manual knight arrows stay position-bound when rotated at ${width}px`, async ({ page }) => {
   await page.setViewportSize({ width, height: 900 })
   const errors = []; page.on('pageerror', error => errors.push(error.message))
   await page.goto(appUrl)
@@ -98,24 +105,37 @@ for (const width of [1280, 390]) test(`best-move confirmation and knight arrows 
   await page.getByRole('button', { name: 'Primo', exact: true }).click()
   for (let i = 0; i < 2; i++) {
     await page.getByRole('button', { name: 'Avanti', exact: true }).click()
-    await expect(page.getByText('La mossa giocata era la migliore di Stockfish.', { exact: true })).toBeVisible()
-    await expect(page.locator('.engine-arrow')).toHaveCount(0)
+    await expect(page.locator('.board-column .engine-arrow-status')).toHaveCount(0)
+    await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', await page.locator('.board-stage').getAttribute('data-fen'))
   }
   await page.getByRole('button', { name: 'Avanti', exact: true }).click()
   const board = page.locator('.board-stage'), before = await board.getAttribute('data-fen')
+  await page.locator('.game-totals > summary').click()
   const summary = await page.locator('.summary-table').innerText()
+  const badge = page.locator('.move-classification-overlay')
+  await expect(badge).toHaveAttribute('data-move-square', 'd4')
+  const classification = await badge.getAttribute('data-classification')
+  const nextMove = new Chess(before).moves({ verbose: true })[0]
   const arrow = page.locator('.engine-arrow[data-kind="knight"]')
-  await expect(arrow).toHaveAttribute('data-from', 'b1')
-  await expect(arrow).toHaveAttribute('data-to', 'c3')
+  await expect(arrow).toHaveAttribute('data-from', nextMove.from)
+  await expect(arrow).toHaveAttribute('data-to', nextMove.to)
+  await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', before)
   for (const orientation of ['white', 'black']) {
     await page.getByRole('combobox', { name: 'Orientamento scacchiera', exact: true }).selectOption(orientation)
     await expect(board).toHaveAttribute('data-orientation', orientation)
-    const svg = await page.locator('.engine-arrow-overlay').boundingBox()
-    const target = await board.locator('[data-square="c3"]').boundingBox()
+    const svg = await badge.boundingBox()
+    const target = await board.locator('[data-square="d4"]').boundingBox()
+    const marker = (await badge.locator(':scope > g').getAttribute('transform')).match(/translate\(([\d.]+) ([\d.]+)\)/)
+    expect(svg.x + Number(marker[1]) * svg.width / 100).toBeCloseTo(target.x + target.width / 2 + svg.width * .035, 0)
+    expect(svg.y + Number(marker[2]) * svg.height / 100).toBeCloseTo(target.y + target.height / 2 - svg.height * .035, 0)
+    await expect(badge).toHaveAttribute('data-classification', classification)
+    const arrowSvg = await page.locator('.engine-arrow-overlay').boundingBox()
+    const arrowTarget = await board.locator(`[data-square="${nextMove.to}"]`).boundingBox()
     const tip = (await arrow.locator('path').last().getAttribute('d')).match(/^M([\d.]+),([\d.]+)/)
-    expect(svg.x + Number(tip[1]) * svg.width / 100).toBeCloseTo(target.x + target.width / 2, 0)
-    expect(svg.y + Number(tip[2]) * svg.height / 100).toBeCloseTo(target.y + target.height / 2, 0)
+    expect(arrowSvg.x + Number(tip[1]) * arrowSvg.width / 100).toBeCloseTo(arrowTarget.x + arrowTarget.width / 2, 0)
+    expect(arrowSvg.y + Number(tip[2]) * arrowSvg.height / 100).toBeCloseTo(arrowTarget.y + arrowTarget.height / 2, 0)
     await expect(arrow).toHaveAttribute('fill', '#81B64C')
+    await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', before)
     await expect(board).toHaveAttribute('data-fen', before)
     await expect(page.locator('.summary-table')).toHaveText(summary, { useInnerText: true })
     await board.scrollIntoViewIfNeeded()
@@ -133,8 +153,12 @@ for (const width of [1280, 390]) test(`best-move confirmation and knight arrows 
   }
   await page.screenshot({ path: test.info().outputPath(`knight-ui-${width}.png`), fullPage: true })
   await page.getByRole('button', { name: 'Avanti', exact: true }).click()
-  await expect(page.locator('.engine-arrow[data-kind="knight"]')).toHaveCount(0)
-  await expect(page.locator('.engine-arrow')).toHaveAttribute('data-from', 'e7')
+  const finalFen = await board.getAttribute('data-fen')
+  const finalMove = new Chess(finalFen).moves({ verbose: true })[0]
+  await expect(page.locator('.engine-arrow-overlay')).toHaveAttribute('data-fen', finalFen)
+  await expect(page.locator('.engine-arrow')).toHaveAttribute('data-from', finalMove.from)
+  await expect(page.locator('.engine-arrow')).toHaveAttribute('data-to', finalMove.to)
+  await expect(badge).toHaveAttribute('data-move-square', 'd5')
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   expect(await page.evaluate(() => window.startedWorkers)).toBe(0)
   expect(errors).toEqual([])

@@ -93,7 +93,7 @@ export function resolveMoveReview(fen, moves = [], entries = []) {
     referencePlayed: sameMove,
     equivalentBest,
     better,
-    bestMove: sameMove || equivalentBest || entry.isBookMove || entry.classification === 'book'
+    bestMove: sameMove || equivalentBest || entry.isBookMove && !['mistake', 'blunder'].includes(entry.classification) || entry.classification === 'book'
       ? null : (/^[a-h][1-8][a-h][1-8][qrbn]?$/.test(bestMove ?? '') ? bestMove : null),
   }
 }

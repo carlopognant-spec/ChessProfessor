@@ -40,7 +40,8 @@ it('records the actual opening database identity only when it is known', async (
   const board = new Chess(); board.move('e4')
   const metadata = { source: 'test-repertoire', revision: 'r1' }
   const { entries } = await analyzed({ ...createOpeningBook([board.fen()]), metadata })
-  expect(entries[0]).toMatchObject({ classification: 'book', openingBookMetadata: metadata })
+  expect(entries[0]).toMatchObject({ classification: 'blunder', numericalClassification: 'blunder',
+    isBookMove: true, openingBookMetadata: metadata, classificationDecision: { rule: 'opening-book-error' } })
   expect(entries[0].classificationDecision.openingBookMetadata).toEqual(metadata)
   expect(replayNumericalDecision(entries[0].classificationDecision).status).toBe('reproduced')
   metadata.revision = 'r2'

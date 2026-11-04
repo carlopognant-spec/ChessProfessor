@@ -1,0 +1,221 @@
+{
+  "date": "2026-11-02",
+  "head": "6004046e4d3b571790270c5dc71da340035959ff",
+  "scope": "Production archive navigation only; no classifier benchmark or new Stockfish search",
+  "before": {
+    "url": "http://127.0.0.1:4178/ChessProfessor/",
+    "viewport": "1280x900",
+    "plies": 66,
+    "navigationActions": 8,
+    "engine": "blocked; no real searches",
+    "mode": "production; one bounded observation, not a statistical benchmark",
+    "durationMs": 2274.300000000745,
+    "maxLongTaskMs": 57,
+    "totalLongTaskMs": 212,
+    "maxRafGapMs": 55.600000000000364,
+    "framesOver25Ms": 16,
+    "engineWorkers": 0,
+    "tasks": [
+      {
+        "t": 10271.400000000373,
+        "duration": 50
+      },
+      {
+        "t": 10555.300000000745,
+        "duration": 54
+      },
+      {
+        "t": 11677.400000000373,
+        "duration": 57
+      },
+      {
+        "t": 11974.400000000373,
+        "duration": 51
+      }
+    ],
+    "clickHandlerMs": [
+      13.099999999627471,
+      14,
+      12.5,
+      11.699999999254942,
+      15.200000001117587,
+      16.300000000745058,
+      14.200000001117587,
+      14
+    ],
+    "errors": []
+  },
+  "after": {
+    "url": "http://127.0.0.1:4176/ChessProfessor/",
+    "viewport": "1280x900",
+    "plies": 66,
+    "navigationActions": 8,
+    "engine": "blocked; no real searches",
+    "mode": "production; one bounded observation, not a statistical benchmark",
+    "durationMs": 2227.2999999988824,
+    "maxLongTaskMs": 51,
+    "totalLongTaskMs": 51,
+    "maxRafGapMs": 44.5,
+    "framesOver25Ms": 16,
+    "engineWorkers": 0,
+    "tasks": [
+      {
+        "t": 10074.300000000745,
+        "duration": 51
+      }
+    ],
+    "clickHandlerMs": [
+      13,
+      11.200000001117587,
+      11.5,
+      11.700000001117587,
+      10.900000000372529,
+      12.699999999254942,
+      14.5,
+      11.200000001117587
+    ],
+    "errors": []
+  },
+  "additionalObservations": {
+    "initialBefore": {
+      "url": "http://127.0.0.1:4178/ChessProfessor/",
+      "viewport": "1280x900",
+      "plies": 66,
+      "navigationActions": 8,
+      "engine": "blocked; no real searches",
+      "mode": "production; one bounded observation, not a statistical benchmark",
+      "durationMs": 2288.800000000745,
+      "maxLongTaskMs": 61,
+      "totalLongTaskMs": 272,
+      "maxRafGapMs": 61.19999999999891,
+      "framesOver25Ms": 16,
+      "engineWorkers": 0,
+      "tasks": [
+        {
+          "t": 11444.099999999627,
+          "duration": 61
+        },
+        {
+          "t": 11737.099999999627,
+          "duration": 51
+        },
+        {
+          "t": 12299.699999999255,
+          "duration": 51
+        },
+        {
+          "t": 12583,
+          "duration": 59
+        },
+        {
+          "t": 12879.099999999627,
+          "duration": 50
+        }
+      ],
+      "clickHandlerMs": [
+        11,
+        18.200000001117587,
+        15.599999999627471,
+        11.600000001490116,
+        15.599999999627471,
+        15.800000000745058,
+        15.800000000745058,
+        14.900000000372529
+      ],
+      "errors": []
+    },
+    "intermediateIsolatedAfter": {
+      "url": "http://127.0.0.1:4176/ChessProfessor/",
+      "viewport": "1280x900",
+      "plies": 66,
+      "navigationActions": 8,
+      "engine": "blocked; no real searches",
+      "mode": "production; one bounded observation, not a statistical benchmark",
+      "durationMs": 2249.89999999851,
+      "maxLongTaskMs": 54,
+      "totalLongTaskMs": 107,
+      "maxRafGapMs": 50,
+      "framesOver25Ms": 16,
+      "engineWorkers": 0,
+      "tasks": [
+        {
+          "t": 10261.699999999255,
+          "duration": 53
+        },
+        {
+          "t": 10543.799999998882,
+          "duration": 54
+        }
+      ],
+      "clickHandlerMs": [
+        11.700000001117587,
+        15.799999998882413,
+        12.5,
+        15,
+        15.199999999254942,
+        15.199999999254942,
+        10.900000000372529,
+        12.300000000745058
+      ],
+      "errors": []
+    },
+    "excludedAfter": {
+      "url": "http://127.0.0.1:4176/ChessProfessor/",
+      "viewport": "1280x900",
+      "plies": 66,
+      "navigationActions": 8,
+      "engine": "blocked; no real searches",
+      "mode": "production; one bounded observation, not a statistical benchmark",
+      "durationMs": 2385.7000000011176,
+      "maxLongTaskMs": 96,
+      "totalLongTaskMs": 413,
+      "maxRafGapMs": 94.5,
+      "framesOver25Ms": 16,
+      "engineWorkers": 0,
+      "tasks": [
+        {
+          "t": 13392.299999998882,
+          "duration": 77
+        },
+        {
+          "t": 13708.199999999255,
+          "duration": 66
+        },
+        {
+          "t": 14005.900000000373,
+          "duration": 62
+        },
+        {
+          "t": 14301.400000000373,
+          "duration": 96
+        },
+        {
+          "t": 14629.799999998882,
+          "duration": 51
+        },
+        {
+          "t": 14914.099999999627,
+          "duration": 61
+        }
+      ],
+      "clickHandlerMs": [
+        20,
+        17.09999999962747,
+        21.5,
+        19.199999999254942,
+        15.099999999627471,
+        17.5,
+        14.599999999627471,
+        13.900000000372529
+      ],
+      "errors": [],
+      "reason": "Overlapped other browser/Vitest jobs; excluded from comparison"
+    }
+  },
+  "limitations": [
+    "One bounded observation per version, not statistical inference",
+    "Real Stockfish separately exercised for functional correctness, not CPU contention measurement",
+    "16 rAF intervals over25ms in both selected observations; not a claim of perfect smoothness"
+  ],
+  "preserved": "Five original development profiles and original audit observations unchanged"
+}

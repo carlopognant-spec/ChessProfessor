@@ -1,7 +1,7 @@
 import { Chess } from 'chess.js'
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { createAnalysisMetadata, analysisMetadataKey } from './analysisMetadata.js'
-import { reclassifyReviewedMoves } from './reviewMoves.js'
+import { reclassifyAnalysisMoves } from './reviewMoves.js'
 import { classifyReviewedMove } from './reviewEvaluation.js'
 import {pendingGrandeRecovery} from './analysisSpecialClassification.js'
 import {GRANDE_PROOF_POLICY,grandeProofFor,validGrandeSearch} from './grandeProofs.js'
@@ -71,7 +71,10 @@ export function refinementPriority(entry) {
 }
 // Independently verify the empirical Grande family; no promotion by this selector.
 function specialCoverageReason(entry) {
-  return entry.classification === 'great' && entry.specialAssessment?.grande?.evidenceKind === 'empirical-family'
+  // An inconclusive v3 verdict must not hide the existing opt-in verification request.
+  return (entry.classification === 'great' || entry.candidateAssessment?.publishedClassification === 'great')
+    && (entry.specialAssessment?.grande?.evidenceKind === 'empirical-family'
+      || entry.candidateAssessment?.publishedEvidenceKind === 'empirical-family')
     && entry.bestMate == null ? 'empirical-special' : null
 }
 
@@ -303,7 +306,7 @@ export function selectRefinementView(entries = [], refined = false) {
   if (comparisonChoices.size) projected = projected.map(e => ({ ...e,
     engine: comparisonChoices.get(e.fenBefore)?.engine ?? e.engine,
     playedEngine: comparisonChoices.get(e.fenAfter)?.engine ?? e.playedEngine }))
-  return reclassifyReviewedMoves(projected).map((e, i) => ({ ...e,
+  return reclassifyAnalysisMoves(projected).map((e, i) => ({ ...e,
     refinementComparison: { initialClassification: entries[i].classification, refinedClassification: e.classification,
       initialEval: entries[i].playedEval, refinedEval: e.playedEval,
       initialMate: entries[i].playedMate, refinedMate: e.playedMate,

@@ -27,6 +27,7 @@ function decisionFor(entry, policy) {
     legalMoves: entry.moveFacts?.legalMoves ?? null, equivalentBest: entry.evaluationEvidence?.equivalentBest ?? null })
   const label = entry.classification ?? 'unclassified'
   const rule = label === 'forced' ? 'forced-override' : label === 'book' ? 'opening-book'
+    : entry.isBookMove && ['mistake', 'blunder'].includes(label) && label === entry.numericalClassification ? 'opening-book-error'
     : label === 'unclassified' ? 'insufficient-evidence' : label === 'missed' ? 'missed-opportunity'
       : ['great', 'brilliant'].includes(label) ? `special-${label}` : inputs.playedMate === 0 ? 'delivered-mate'
         : label === 'best' && inputs.equivalentBest ? 'equivalent-best'
@@ -35,7 +36,10 @@ function decisionFor(entry, policy) {
   const rootHistory = entry.engine?.history, playedHistory = entry.playedEngine?.history
   const historyMode = rootHistory && playedHistory ? 'game-history' : !rootHistory && !playedHistory
     && entry.engine && entry.playedEngine ? 'fen-only' : 'unknown'
-  return snapshot({ schemaVersion: 1, policy, classification: label, numericalClassification: entry.numericalClassification ?? null,
+  return snapshot({ schemaVersion: 1,
+    policy: entry.candidateAssessment ? { ...policy, grandeVersion: entry.candidateAssessment.version } : policy,
+    classification: label, numericalClassification: entry.numericalClassification ?? null,
+    ...(entry.candidateAssessment ? { candidateAssessment: entry.candidateAssessment } : {}),
     rule, inputs, evidence: { ...entry.evaluationEvidence, historyMode },
     position: { fenBefore: entry.fenBefore ?? null, fenAfter: entry.fenAfter ?? null, history: entry.engine?.history ?? null },
     engineProfiles: { root: entry.engine?.analysisMetadata ?? null, played: entry.playedEngine?.analysisMetadata ?? null },
@@ -79,7 +83,8 @@ export function replayNumericalDecision(decision) {
       && Number.isSafeInteger(i.bestMate) && i.bestMate !== 0 && i.bestMate === i.playedMate
   if (numerical === 'excellent' && i.isEngineBest === false && equivalent) numerical = 'best'
   const forcedVerified = i.forced === true && i.legalMoves === 1
-  const classification = forcedVerified ? 'forced' : i.isBookMove === true && i.playedMate !== 0 ? 'book' : numerical
+  const bookError = decision.rule === 'opening-book-error' && ['mistake', 'blunder'].includes(numerical)
+  const classification = forcedVerified ? 'forced' : i.isBookMove === true && i.playedMate !== 0 && !bookError ? 'book' : numerical
   const consistent = decision.numericalClassification == null || decision.numericalClassification === numerical
   const factsAgree = i.forced !== true || forcedVerified
   const scoresAgree = [[i.bestProbability, best], [i.playedProbability, played], [i.dropPct, drop]]
@@ -116,6 +121,7 @@ export function explainClassification(entry) {
       : index > 0 ? `oltre ${thresholds?.[bands[index - 1]]} e fino a ${thresholds?.[label]}` : 'non disponibile'
     explanation = `${name}: perdita ${Number.isFinite(i.dropPct) ? i.dropPct.toFixed(2) : 'non disponibile'} punti percentuali dell’indice locale; fascia ${interval} punti percentuali.`
   }
+  if (decision.rule === 'opening-book-error') explanation += ' La presenza nel repertorio non annulla l’errore misurato.'
   const origin = entry.classificationOrigin
   if (origin?.policy === null) explanation += ` L’etichetta originaria ${names[origin.classification] ?? origin.classification ?? 'sconosciuta'} non ha criteri registrati: questa spiegazione riguarda la ricostruzione corrente.`
   return explanation + suffix

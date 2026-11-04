@@ -9,7 +9,7 @@ export default function BoardOrientationControls({ orientation }) {
       <option value="auto">Automatico{boardView.mode === 'auto' ? ` (${current === 'white' ? 'Bianco' : 'Nero'})` : ''}</option>
       <option value="white">Bianco</option><option value="black">Nero</option>
     </select></label>
-    <button type="button" onClick={() => updateBoardView({ mode: current === 'white' ? 'black' : 'white' })}>Ruota scacchiera</button>
+    <button type="button" aria-label="Ruota scacchiera" onClick={() => updateBoardView({ mode: current === 'white' ? 'black' : 'white' })}>Ruota</button>
     <details><summary>Riconosci il mio colore</summary>
       <label>Nome nei PGN <input aria-label="Nome giocatore nei PGN" value={boardView.playerName} maxLength={100}
         onChange={event => updateBoardView({ playerName: event.target.value })} autoComplete="off" /></label>

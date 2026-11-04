@@ -38,19 +38,21 @@ describe('explicit verification of empirical Grandi',()=>{
   const next=buildRefinementPlan(result.entries,{grandeOnly:true})
   expect(next.selectedPlies).toEqual([])
  })
- it('completes the missing child comparison of d5 and stops requesting it',async()=>{
+ it('completes the child comparison of d5 without claiming a tactic or repeating the search',async()=>{
   const entries=reclassifyReviewedMoves(json('../agent-output/new-references-200k-v1/game-185230000668.json').liveEntries)
   const root=packetFor(entries[6].fenBefore),child=packetFor(entries[6].fenAfter)
   entries[6].refinement={version:REFINEMENT_POLICY.version,engine:root.engine,playedEngine:null,selected:true}
   const before=JSON.stringify(entries),ordinary=buildRefinementPlan(entries)
-  expect(selectRefinementView(entries,true)[6].classification).toBe('great')
+  expect(selectRefinementView(entries,true)[6]).toMatchObject({classification:'best',
+   candidateAssessment:{verdict:'inconclusive',publishedClassification:'great',publishedEvidenceKind:'empirical-family'}})
   const plan=buildRefinementPlan(entries,{grandeOnly:true})
   expect(plan).toMatchObject({selectedPlies:[7],positions:[child.fen],extraSearches:0})
   const search=vi.fn(async(fen,nodes,multiPv)=>{
    expect([fen,nodes,multiPv]).toEqual([child.fen,1000000,5]);return structuredClone(child.engine)
   })
   const result=await refineGameEntries({entries,plan,analyzePosition:search})
-  expect(selectRefinementView(result.entries,true)[6].classification).toBe('great')
+  expect(selectRefinementView(result.entries,true)[6]).toMatchObject({classification:'best',
+   candidateAssessment:{verdict:'inconclusive',inheritance:null,evidenceKind:'comparative'}})
   expect(search).toHaveBeenCalledTimes(1)
   expect(buildRefinementPlan(result.entries,{grandeOnly:true}).selectedPlies).toEqual([])
   expect(JSON.stringify(entries)).toBe(before)

@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-02",
+  "worktree": "C:/Users/carlo/AppData/Local/Temp/chessprofessor-grande-candidate-20261030",
+  "branch": "work/grande-candidate-20261030",
+  "head": "6004046e4d3b571790270c5dc71da340035959ff",
+  "overallStatus": "documentary-block-consolidated; not a complete census or interactive audit",
+  "readFirst": ["REPORT.md", "CATALOG.md", "TECHNICAL-ROADMAP.md"],
+  "catalog": {
+    "homepageCardsInIndexedRepresentation": 59,
+    "homepageExactDistinctTitles": 56,
+    "homepageSumOfDeclaredLinesNotUniquePositions": 2590,
+    "userReportedHomepageCount": 63,
+    "unreconciledDifference": 4,
+    "openingsIndexRecords": 28,
+    "openingsIndexWhiteRecords": 16,
+    "openingsIndexBlackRecords": 12,
+    "openingsIndexDeclaredLines": 647,
+    "communitySampleRecords": 8,
+    "totalSurfaceRecordsNotUniqueCourses": 95,
+    "complete": false
+  },
+  "localBaseline": {
+    "catalogRecords": 12377,
+    "families": 37,
+    "baseJourneys": 37,
+    "allJourneys": 286,
+    "journeysWithExpansionOrProvenanceField": 194,
+    "coverageOrQualityCertified": false
+  },
+  "phaseStatus": {
+    "1": "partial: finite indexed catalogue metadata, community not exhausted, 59/63 unresolved",
+    "2": "documentary matrix saved; zero interactive ChessReps behaviors tested",
+    "3": "independent conceptual models and roadmap saved; implementation not started",
+    "4": "local static comparison saved with source references and current worktree counts",
+    "5": "documents and precise restart state saved"
+  },
+  "accessBoundary": {
+    "termsUrl": "https://www.chessreps.com/terms-and-conditions",
+    "section": "6.2",
+    "directAccessStoppedAfterTermsRead": true,
+    "laterResearchMethod": "public search-index results and external primary sources only",
+    "automatedCrawlOrServiceApiOrBundleInspection": false,
+    "reaUsed": false,
+    "browserAutomationOnChessRepsUsed": false,
+    "accountOrPaywallAccessUsed": false,
+    "storedCourseTextOrMoveSequences": false
+  },
+  "coveredSourceIdsInReport": [
+    "S01", "S02", "S03", "S04", "S05", "S06", "S06b", "S07",
+    "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15"
+  ],
+  "doNotRepeat": [
+    "Do not recrawl or enumerate ChessReps endpoints under the current terms.",
+    "Do not mistake 28 index courses for the full catalogue.",
+    "Do not replace the 4 unresolved homepage records with unrelated community hits.",
+    "Do not compare catalogue counts as theoretical or instructional coverage.",
+    "Do not rerun engine benchmarks or regenerate frozen opening evidence.",
+    "Do not implement the proposed models or modify source/data files in this research phase."
+  ],
+  "nextResearchBlock": [
+    "Review the three proposed priorities against current journey/progress interfaces using existing file references.",
+    "Reconcile homepage 59/63 only through a permitted manual observation or operator-provided reusable metadata, recording date/language/session and stable card identifiers.",
+    "With permitted evidence, validate one complete Learn/Practice/review/creator path before calling any behavior runtime-verified.",
+    "Keep scheduler, transposition merge rules, import/export, offline/sync and accessibility unknown until directly evidenced."
+  ],
+  "threeRecommendedNextInterventions": [
+    "Versioned review events and local due queue on existing routes",
+    "Personal repertoire editor with provenance and non-destructive backup",
+    "Personal-game deviations, explicit transpositions and original middlegame checkpoints"
+  ],
+  "implementationOrTestsOrEngineRun": false,
+  "integrity": {
+    "baselineManifest": "%TEMP%/chessprofessor-chessreps-research-baseline.json",
+    "preexistingFilesHashed": 2388,
+    "changedPreexistingFiles": 0,
+    "missingPreexistingFiles": 0,
+    "newFilesOnlyInResearchDirectory": true,
+    "catalogCountSumsAndJsonAndLocalLinksChecked": true
+  },
+  "gitPublicationOperations": false
+}

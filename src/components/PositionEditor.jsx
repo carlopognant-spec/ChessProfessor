@@ -8,6 +8,7 @@ const CASTLING_FLAGS = ['K', 'Q', 'k', 'q']
 export default function PositionEditor({ draft, onDraftChange, selectedPiece, onPieceSelect }) {
   const { fen, loadFen } = useGame()
   const [error, setError] = useState('')
+  const [copyStatus, setCopyStatus] = useState('')
 
   const fields = useMemo(() => draft.trim().split(/\s+/), [draft])
   const castling = fields[2] ?? '-'
@@ -36,18 +37,25 @@ export default function PositionEditor({ draft, onDraftChange, selectedPiece, on
     }
   }
 
-  async function copyFen() {
-    const currentFen = fen
-    onDraftChange(currentFen)
-    if (navigator.clipboard) await navigator.clipboard.writeText(currentFen)
+  async function copyFen(text, label) {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Copia negli appunti non disponibile in questo browser.')
+      await navigator.clipboard.writeText(text)
+      setCopyStatus(`${label} copiata negli appunti.`)
+    } catch (copyError) {
+      setCopyStatus(`Copia non riuscita: ${copyError.message}`)
+    }
   }
 
   return (
     <section className="position-editor" aria-label="Editor posizione FEN">
       <div className="position-editor-heading">
         <h2>Editor posizione</h2>
-        <button type="button" onClick={copyFen} title="Copia la FEN corrente">Copia FEN</button>
+        <button type="button" onClick={() => copyFen(fen, 'FEN corrente')} title="Copia la posizione applicata alla partita">Copia FEN corrente</button>
+        <button type="button" onClick={() => copyFen(draft, 'Bozza FEN')} title="Copia il testo dell’editor senza applicarlo">Copia bozza FEN</button>
       </div>
+      <p className="notice">La bozza mostra un’anteprima. La partita cambia solo con Applica posizione.</p>
+      {copyStatus && <p role="status">{copyStatus}</p>}
       <textarea
         value={draft}
         onChange={(event) => onDraftChange(event.target.value)}

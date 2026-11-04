@@ -1,12 +1,13 @@
 import { ENGINE_CONFIG } from './engineConfig.js'
 import { Chess } from 'chess.js'
 import { MOVE_CLASSIFICATION } from './classification.js'
-import { classifyReviewedMove, applyMoveFacts } from './reviewEvaluation.js'
+import { classifyReviewedMove, applyMoveFacts, applyBookQuality } from './reviewEvaluation.js'
 import { loadAnalysisBook } from './analysisBookMetadata.js'
 import { classifySpecialMove, refreshPreviousSacrifice } from './analysisSpecialClassification.js'
 import { appendHistory, historyKey, uciOf } from './analysisHistory.js'
 import { annotateClassification } from './classificationDecision.js'
 import { createClassificationPolicy } from './classificationPolicy.js'
+import { classifyGrandeCandidateV3 } from './grandeCandidateV3.js'
 
 const CLASSIFICATION_ORDER = [
   MOVE_CLASSIFICATION.brilliant,
@@ -117,6 +118,7 @@ export async function analyzeGame({
   const classificationPolicy = createClassificationPolicy()
   throwIfAborted(signal)
   const results = []
+  const classifiedResults = []
   const history = []
   let explorerStopped = session.isExplorerStopped?.() ?? false
   let bookPathActive = true
@@ -204,10 +206,10 @@ export async function analyzeGame({
       openingBookMetadata: book.metadata ?? null,
     }
     if (entry.playedEngine) {
-      entry = classifyReviewedMove({
+      entry = applyBookQuality(classifyReviewedMove({
         ...entry,
         playedUci: `${move.from}${move.to}${move.promotion ?? ''}`,
-      })
+      }))
       entry = classifySpecialMove(entry, results.at(-1), results.at(-2))
       entry = applyMoveFacts(entry)
     }
@@ -215,12 +217,24 @@ export async function analyzeGame({
     if (entry.classification) entry = annotateClassification(entry, undefined, classificationPolicy)
     results.push(entry)
     const refreshed = refreshPreviousSacrifice(results)
-    if (refreshed !== results) results[results.length - 2] = annotateClassification(refreshed[refreshed.length - 2], undefined, classificationPolicy)
-    onEntry?.(entry, [...results])
+    if (refreshed !== results) {
+      const previousIndex = results.length - 2
+      results[previousIndex] = annotateClassification(refreshed[previousIndex], undefined, classificationPolicy)
+      classifiedResults[previousIndex] = classifyGrandeCandidateV3(results[previousIndex],
+        results[previousIndex - 1], results[previousIndex - 2], null, results[previousIndex])
+      if (!results[previousIndex].classificationOrigin) delete classifiedResults[previousIndex].classificationOrigin
+    }
+    // Retain published context for later moves; emit only the final v3 decision.
+    const classified = entry.classification
+      ? classifyGrandeCandidateV3(entry, results.at(-2), results.at(-3), null, entry) : entry
+    // A fresh internal stage is not an archived historical decision.
+    if (!entry.classificationOrigin) delete classified.classificationOrigin
+    classifiedResults.push(classified)
+    onEntry?.(classified, [...classifiedResults])
     onProgress?.({ current: index + 1, total: moves.length })
   }
 
-  return results
+  return classifiedResults
 }
 
 export function buildAnalysisProgress({ total = 0, current = 0 } = {}) {
