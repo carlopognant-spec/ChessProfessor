@@ -45,8 +45,8 @@ describe('complete written pair commentary',()=>{
       }
     }
     expect(coverage.fullyWrittenCourses).toBe(66)
-    expect(coverage.writtenPairs).toBe(2050)
-    expect(coverage.pairs).toBe(4586)
+    expect(coverage.writtenPairs).toBe(2137)
+    expect(coverage.pairs).toBe(4735)
     const historic=ALL_OPENING_JOURNEYS.filter(row=>!row.roadmapLot)
     expect(historic.filter(row=>row.moves.every((_,index)=>index%2||openingWrittenContext(row,index).debriefOrigin==='written'))).toHaveLength(58)
     const chekhover=coverage.familyRows.find(row=>row.id==='sicilian').rows.find(row=>row.id==='sicilian:chekhover-bd7')

@@ -1,0 +1,12 @@
+{
+  "signature": "f7f1b6724c5b663713457017335a038f1e243b5bdffc087a3f47e01f71fe3854",
+  "jobId": "taimanov-bd3-b5-exchange:authored:15",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPP/R2QK2R b KQkq - 0 8",
+  "roots": [
+    "c7c6"
+  ],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000 searchmoves c7c6"
+}

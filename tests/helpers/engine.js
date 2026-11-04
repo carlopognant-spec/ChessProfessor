@@ -1,4 +1,5 @@
 import { StockfishEngine } from '../../src/lib/stockfish.js'
+import { decodePositionCommand } from '../../src/lib/analysisHistory.js'
 
 export function createStockfishTestWorker({ onAnalyze } = {}) {
   const messages = []
@@ -19,7 +20,9 @@ export function createStockfishTestWorker({ onAnalyze } = {}) {
       }
 
       if (typeof message === 'string' && message.startsWith('position fen ')) {
-        currentFen = message.slice('position fen '.length)
+        currentFen = message.includes(' moves ')
+          ? decodePositionCommand(message)
+          : message.slice('position fen '.length)
       }
 
       if (typeof message === 'string' && message.startsWith('go nodes')) {

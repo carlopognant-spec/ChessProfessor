@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import {pathToFileURL} from 'node:url'
 import {execFileSync} from 'node:child_process'
 import {ROOT,resolve,json,encode,hash,hashes,fileHash,exists,write,frozen,loadLot,validateLot,coverageIndex,runtime} from './openings/common.mjs'
-import {buildArtifacts,summarize,reportMarkdown} from './openings/artifacts.mjs'
+import {buildArtifacts,summarize,reportMarkdown,verifyReusedJob} from './openings/artifacts.mjs'
 import {createOpeningSession,runFrozenOpeningJobs} from './opening-bounded-engine.mjs'
 
 export const PIPELINE_INPUTS=['scripts/openings-lot.mjs',
@@ -25,27 +25,42 @@ export function options(args){
 export async function expectedManifest(ctx){
   const toolingSources=await Promise.all(PIPELINE_INPUTS.slice(0,3).map(async source=>({source,
     snapshot:ctx.plan.plannedFiles.engineDirectory+'/pipeline/'+source.replaceAll('/','__')+'.txt',sha256:await fileHash(source)})))
-  const inputHashes={...await hashes([ctx.config.plan,ctx.config.design,...PIPELINE_INPUTS.slice(3)]),
+  const reusedFiles=[]
+  for(const reference of ctx.plan.reuseEngineJobs??[]){
+    const job=ctx.jobs.find(j=>j.id===reference.jobId);assert(job,'Unknown reused job')
+    const source=await verifyReusedJob(reference,job,ctx.plan.enginePlan)
+    reusedFiles.push(...source.inputFiles)
+  }
+  const inputHashes={...await hashes([ctx.config.plan,ctx.config.design,...PIPELINE_INPUTS.slice(3),...reusedFiles]),
     ...Object.fromEntries(toolingSources.map(r=>[r.snapshot,r.sha256]))}
   return {schema:2,lot:ctx.plan.lot,inputHashes,engineSha256:ctx.plan.enginePlan.sha256,
-    toolingSources,policy:ctx.plan.enginePlan,jobs:ctx.jobs}
+    toolingSources,policy:ctx.plan.enginePlan,jobs:ctx.jobs,
+    ...(ctx.plan.reuseEngineJobs?.length?{reuseEngineJobs:ctx.plan.reuseEngineJobs}:{})}
 }
 async function ledgerStatus(ctx){
   const dir=ctx.plan.plannedFiles.engineDirectory
   if(!await exists(dir+'/manifest.json'))return {prepared:false,requests:0,completedJobs:0,interruptedOrFailedJobs:[]}
-  const manifest=await json(dir+'/manifest.json'),signature=hash(encode(manifest)),completed=[],blocked=[]
+  const manifest=await json(dir+'/manifest.json'),signature=hash(encode(manifest)),completed=[],blocked=[],reused=[]
   await (await import('./openings/common.mjs')).verifyHashes(manifest.inputHashes)
   assert.deepEqual(manifest.jobs,ctx.jobs);assert.deepEqual(manifest.policy,ctx.plan.enginePlan)
+  assert.deepEqual(manifest.reuseEngineJobs??[],ctx.plan.reuseEngineJobs??[])
   const names=await exists(dir+'/attempts')?await fs.readdir(resolve(dir+'/attempts')):[]
   const requests=names.filter(n=>n.endsWith('.request.json'))
   for(let i=0;i<ctx.jobs.length;i++){
     const file=`${dir}/results/${i+1}.json`,job=ctx.jobs[i]
     if(await exists(file)){
       const r=await json(file);assert.equal(r.signature,signature);assert.equal(r.jobId,job.id)
+      const reference=(manifest.reuseEngineJobs??[]).find(row=>row.jobId===job.id)
+      if(reference){
+        assert.deepEqual(r.reusedFrom,reference)
+        const source=await verifyReusedJob(reference,job,ctx.plan.enginePlan)
+        assert.deepEqual(r.result,source.result);assert.deepEqual(r.attemptIds,[]);reused.push(job.id)
+      }else assert(!r.reusedFrom,'Unplanned evidence reuse')
       if(r.status==='complete')completed.push(job.id);else blocked.push(job.id)
     }else for(const name of requests)if((await json(dir+'/attempts/'+name)).jobId===job.id){blocked.push(job.id);break}
   }
-  return {prepared:true,signature,requests:requests.length,completedJobs:completed.length,lockPresent:await exists(dir+'/running.lock'),
+  return {prepared:true,signature,requests:requests.length,completedJobs:completed.length,
+    ...(reused.length?{reusedJobs:reused.length}:{}),lockPresent:await exists(dir+'/running.lock'),
     pendingJobs:ctx.jobs.filter(j=>!completed.includes(j.id)&&!blocked.includes(j.id)).map(j=>j.id),interruptedOrFailedJobs:blocked}
 }
 async function safeOutputs(ctx,outputs,check){
@@ -98,7 +113,16 @@ export async function executeLot(opt){
           catch(e){if(e.code!=='EEXIST')throw e;assert.equal(await fs.readFile(resolve(row.snapshot),'utf8'),text)}
         }
         await frozen(dir+'/manifest.json',manifest)
-        result={status:'prepared-offline',jobs:ctx.jobs.length,signature:hash(encode(manifest)),engineSearchesExecuted:0}
+        const signature=hash(encode(manifest))
+        if(manifest.reuseEngineJobs?.length)await fs.mkdir(resolve(dir+'/results'),{recursive:true})
+        for(const reference of manifest.reuseEngineJobs??[]){
+          const index=ctx.jobs.findIndex(j=>j.id===reference.jobId),job=ctx.jobs[index]
+          const source=await verifyReusedJob(reference,job,ctx.plan.enginePlan)
+          await frozen(`${dir}/results/${index+1}.json`,{signature,jobId:job.id,status:'complete',
+            attemptIds:[],reusedFrom:reference,result:source.result})
+        }
+        result={status:'prepared-offline',jobs:ctx.jobs.length,signature,
+          ...(manifest.reuseEngineJobs?.length?{reusedJobs:manifest.reuseEngineJobs.length}:{}),engineSearchesExecuted:0}
       }else{
         assert(await exists(dir+'/manifest.json'),'Run prepare before collect')
         assert.deepEqual(await json(dir+'/manifest.json'),manifest,'Prepared inputs changed: no automatic replacement')

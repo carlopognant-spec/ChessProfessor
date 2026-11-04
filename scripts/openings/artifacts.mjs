@@ -5,6 +5,64 @@ import assert from 'node:assert/strict'
 import {Chess} from 'chess.js'
 import {parseOpeningSearch} from '../opening-bounded-engine.mjs'
 
+// References preserve the original signatures and raw UCI transcripts. No result is
+// relabelled as a newly executed search, and only one level of provenance is allowed.
+export async function verifyReusedJob(reference,job,policy){
+  const {directory,jobIndex,manifestSha256}=reference
+  assert.equal(reference.jobId,job.id,'Reuse target job differs')
+  assert(Number.isInteger(jobIndex)&&jobIndex>0,'Invalid source job index')
+  const manifestFile=directory+'/manifest.json',manifest=await json(manifestFile)
+  assert.equal(hash(await fs.readFile(resolve(manifestFile))),manifestSha256,'Source manifest changed')
+  const signature=hash(encode(manifest)),sourceJob=manifest.jobs[jobIndex-1]
+  assert(sourceJob,'Missing source job');assert.equal(sourceJob.fen,job.fen,'Reuse FEN differs')
+  assert.deepEqual(sourceJob.roots,job.roots,'Reuse roots differ')
+  const budgetKeys=new Set(['primaryJobs','maximumGoCommands','maximumRequestedNodes','publicationPolicy'])
+  const searchPolicy=p=>Object.fromEntries(Object.entries(p).filter(([key])=>!budgetKeys.has(key)))
+  assert.deepEqual(searchPolicy(manifest.policy),searchPolicy(policy),'Reuse policy differs')
+  assert.equal(manifest.engineSha256,policy.sha256,'Reuse engine differs')
+  assert.equal(hash(await fs.readFile(resolve(policy.executable))),policy.sha256,'Engine binary changed')
+  for(const [file,sha] of Object.entries(manifest.inputHashes))
+    assert.equal(hash(await fs.readFile(resolve(file))),sha,`Source input changed: ${file}`)
+  const resultFile=`${directory}/results/${jobIndex}.json`,saved=await json(resultFile)
+  assert(!saved.reusedFrom,'Nested evidence reuse is not supported')
+  assert.equal(saved.signature,signature);assert.equal(saved.jobId,sourceJob.id);assert.equal(saved.status,'complete')
+  assert(saved.attemptIds.length>=1&&saved.attemptIds.length<=2)
+  const names=(await fs.readdir(resolve(directory+'/attempts'))).filter(n=>n.endsWith('.request.json')).sort()
+  assert(names.length<=manifest.policy.maximumGoCommands,'Source go budget exceeded')
+  assert(names.length*manifest.policy.nodesPerGo<=manifest.policy.maximumRequestedNodes,'Source node budget exceeded')
+  const actualIds=[]
+  for(const name of names){const request=await json(directory+'/attempts/'+name)
+    assert.equal(request.signature,signature)
+    if(request.jobId===sourceJob.id)actualIds.push(name.slice(0,-'.request.json'.length))}
+  assert.deepEqual(actualIds,saved.attemptIds,'Source attempts differ')
+  const inputFiles=[manifestFile,resultFile,...Object.keys(manifest.inputHashes)],attempts=[]
+  for(const number of saved.attemptIds){
+    const base=`${directory}/attempts/${number}`,request=await json(base+'.request.json'),response=await json(base+'.response.json')
+    inputFiles.push(base+'.request.json',base+'.response.json')
+    assert.equal(request.signature,signature);assert.equal(response.signature,signature)
+    assert.equal(request.jobId,sourceJob.id);assert.equal(response.jobId,sourceJob.id);assert.equal(response.status,'complete')
+    assert.equal(request.fen,sourceJob.fen);assert.equal(request.nodesRequested,policy.nodesPerGo)
+    assert.equal(request.command,`go nodes ${request.nodesRequested}${request.roots.length?' searchmoves '+request.roots.join(' '):''}`)
+    assert.equal(response.nodesActual,Math.max(0,...response.lines.map(line=>Number(line.match(/\bnodes (\d+)/)?.[1]??0))))
+    attempts.push({number,request,response})
+  }
+  const first=attempts[0],last=attempts.at(-1)
+  assert.equal(first.request.kind,'primary');assert.deepEqual(first.request.roots,job.roots)
+  const primary=parseOpeningSearch(first.response.lines,job.roots)
+  if(attempts.length===2){
+    assert(primary.needsConfirmation);assert.equal(last.request.kind,'confirmation')
+    assert.deepEqual(last.request.roots,[primary.bestmove])
+  }else assert(!primary.needsConfirmation)
+  const parsed=parseOpeningSearch(last.response.lines,last.request.roots)
+  assert(!parsed.needsConfirmation);assert.deepEqual(saved.result,{...parsed,attempt:last.number})
+  assert(Number.isFinite(parsed.cp)&&parsed.mate===null,'Mate scores require design review')
+  const board=new Chess(job.fen)
+  for(const uci of parsed.pv)board.move({from:uci.slice(0,2),to:uci.slice(2,4),promotion:uci[4]})
+  assert.equal(parsed.pv[0],parsed.bestmove)
+  if(job.expectedAnswer){const b=new Chess(job.fen);assert.equal(b.move({from:parsed.bestmove.slice(0,2),to:parsed.bestmove.slice(2,4),promotion:parsed.bestmove[4]}).san,job.expectedAnswer)}
+  return {result:saved.result,parsed,attempts,inputFiles,sourceSignature:signature,sourceJobId:sourceJob.id}
+}
+
 export async function buildArtifacts(ctx){
 const {plan,config,design}=ctx,planFile=config.plan
 const read=json,directory=plan.plannedFiles.engineDirectory,manifest=await read(directory+'/manifest.json')
@@ -16,7 +74,8 @@ for(const [file,sha] of Object.entries({...original.hashes,...plan.preserveFiles
   assert.equal(hash(await fs.readFile(resolve(file))),sha,file)
 assert.equal(hash(await fs.readFile(resolve(planFile))),design.inputHashes[planFile])
 assert.deepEqual(manifest.jobs,design.engineJobs);assert.equal(manifest.jobs.length,plan.enginePlan.primaryJobs)
-const results=new Map(),attempts=[]
+assert.deepEqual(manifest.reuseEngineJobs??[],plan.reuseEngineJobs??[])
+const results=new Map(),attempts=[],reused=[]
 const requests=(await fs.readdir(resolve(directory+'/attempts'))).filter(name=>name.endsWith('.request.json')).sort()
 assert(requests.length<=plan.enginePlan.maximumGoCommands)
 assert(requests.length*plan.enginePlan.nodesPerGo<=plan.enginePlan.maximumRequestedNodes)
@@ -35,6 +94,18 @@ for(const file of requests){
 for(let index=0;index<manifest.jobs.length;index++){
   const job=manifest.jobs[index],saved=await read(`${directory}/results/${index+1}.json`)
   assert.equal(saved.signature,signature);assert.equal(saved.jobId,job.id);assert.equal(saved.status,'complete')
+  const reference=(manifest.reuseEngineJobs??[]).find(r=>r.jobId===job.id)
+  if(reference){
+    assert.deepEqual(saved.reusedFrom,reference)
+    assert(!attempts.some(row=>row.request.jobId===job.id),'Reused job was also searched')
+    const source=await verifyReusedJob(reference,job,plan.enginePlan)
+    assert.deepEqual(saved.result,source.result);assert.deepEqual(saved.attemptIds,[])
+    reused.push({jobId:job.id,...reference,sourceSignature:source.sourceSignature,sourceJobId:source.sourceJobId,
+      goCommands:source.attempts.length,nodesRequested:source.attempts.length*plan.enginePlan.nodesPerGo,
+      nodesActual:source.attempts.reduce((n,a)=>n+a.response.nodesActual,0)})
+    results.set(job.id,source.parsed);continue
+  }
+  assert(!saved.reusedFrom,'Unplanned evidence reuse')
   const associated=attempts.filter(row=>row.request.jobId===job.id)
   assert(associated.length>=1&&associated.length<=2)
   assert.deepEqual(associated.map(row=>row.number),saved.attemptIds)
@@ -142,6 +213,7 @@ for(const spec of plan.courses){
 assert.equal(courses.length,plan.courses.length);assert.equal(continuationChecks.length,plan.courses.reduce((n,c)=>n+c.authoredMoves.length,0));assert.equal(evidence.length,plan.courses.length)
 const proof={schema:1,lot:plan.lot,policy,engineSignature:signature,goCommands:attempts.length,
   nodesRequested:attempts.length*policy.nodes,nodesActual:attempts.reduce((n,row)=>n+row.response.nodesActual,0),
+  ...(reused.length?{reusedJobs:reused.length,reusedEvidence:reused,nodesReused:reused.reduce((n,r)=>n+r.nodesActual,0)}:{}),
   continuationChecks,evidence,uncovered:[]}
 const outputs={
   [plan.plannedFiles.courseModule]:'// Fixed source sequences with separately checked authored continuations.\nexport default '+JSON.stringify({schema:1,lot:plan.lot,entries:courses},null,2)+'\n',
@@ -188,7 +260,8 @@ export async function summarize(ctx,{projection=false}={}){
     documentedPlies:plan.courses.reduce((n,c)=>n+c.provenance.documentedPlies,0),
     authoredPlies:plan.courses.reduce((n,c)=>n+c.provenance.authoredContinuationPlies,0),
     currentCommentary:commentary,engine:proof?{signature:proof.engineSignature,goCommands:proof.goCommands,
-      nodesRequested:proof.nodesRequested,nodesActual:proof.nodesActual}:null,
+      nodesRequested:proof.nodesRequested,nodesActual:proof.nodesActual,
+      ...(proof.reusedJobs?{reusedJobs:proof.reusedJobs,nodesReused:proof.nodesReused}:{})}:null,
     engineEvidenceStatus:proof?'verified-offline':'not-checked-by-this-report',
     preservedFiles:Object.keys(plan.preserveFiles).length,nextDesign:plan.nextDesign,
     limitations:['Source-position coverage is not complete theory or evidence of learned skill.',

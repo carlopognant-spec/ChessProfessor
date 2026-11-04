@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "status": "tooling-verified",
+  "checkpoint": {
+    "branch": "work/opening-roadmap-checkpoint",
+    "commit": "eaf8bd0",
+    "mainUnchanged": "23834bdc135610bfeae71ac3f1c48f192572573f",
+    "fullQaBeforeCommit": {
+      "testsPassed": 771,
+      "preexistingTodo": 1,
+      "build": "PASS",
+      "browserPassed": 141,
+      "record": ".cache/opening-pipeline/qa/bf28210cca989c2cfa4a36c7370e42d2763677f392ce79a593e5663e4c94bccb/result.json"
+    }
+  },
+  "toolingQa": {
+    "record": ".cache/opening-pipeline/qa/5ed443915b4d4e081cf9ff08307edceb0af7acb83a6d91cfb428cb9fdbc52168/result.json",
+    "fingerprint": "5ed443915b4d4e081cf9ff08307edceb0af7acb83a6d91cfb428cb9fdbc52168",
+    "testsPassed": 27,
+    "steps": {
+      "tests": {
+        "status": "passed",
+        "inputsUnchanged": true,
+        "elapsedMs": 24928
+      },
+      "preflight": {
+        "status": "passed",
+        "inputsUnchanged": true,
+        "elapsedMs": 4921
+      },
+      "legacy-parity": {
+        "status": "passed",
+        "inputsUnchanged": true,
+        "elapsedMs": 2345
+      },
+      "inventories": {
+        "status": "passed",
+        "inputsUnchanged": true,
+        "elapsedMs": 3285
+      },
+      "documents": {
+        "status": "passed",
+        "inputsUnchanged": true,
+        "elapsedMs": 778
+      }
+    }
+  },
+  "skillValidation": "Bundled quick_validate.py PASS; isolated cache environment with PyYAML, no project dependencies changed.",
+  "sizeMeasurement": {
+    "briefCharacters": 1344,
+    "referenceCharacters": 582753,
+    "references": [
+      {
+        "file": "docs/ROADMAP-E-PROMPT-OPERATIVI.md",
+        "characters": 63473
+      },
+      {
+        "file": "docs/OPENING-PIPELINE.md",
+        "characters": 14443
+      },
+      {
+        "file": "docs/OPENING-TAIMANOV-BE2-P022-DESIGN.md",
+        "characters": 13502
+      },
+      {
+        "file": "docs/data/opening-taimanov-be2-p022-plan.json",
+        "characters": 90423
+      },
+      {
+        "file": "docs/data/opening-taimanov-be2-p022-design-verification.json",
+        "characters": 400912
+      }
+    ],
+    "meaning": "Character counts of the entry packet and complete reference files; not measured token savings and not a claim that all references were previously read each time."
+  },
+  "historicalReports": [
+    {
+      "lot": "P02.2-SIC-04",
+      "status": "implemented-offline-verified",
+      "courses": 288,
+      "file": "docs/data/opening-chekhover-a6-p022-result.json",
+      "sha256": "70c1fd156c272131c55a92ae79de52b3d78f84a0ec3cb9e9526aba17717f3cc9",
+      "evidence": "historical-as-recorded; not a current QA certificate"
+    },
+    {
+      "lot": "P02.2-SIC-05",
+      "status": "implemented-offline-verified",
+      "courses": 290,
+      "file": "docs/data/opening-chekhover-early-p022-result.json",
+      "sha256": "3465e5a713a413bee809c3b24553485778e45b895324a495686697abdd44bc9c",
+      "evidence": "historical-as-recorded; not a current QA certificate"
+    },
+    {
+      "lot": "P02.2-SIC-03",
+      "status": "implemented-offline-verified",
+      "courses": 286,
+      "file": "docs/data/opening-chekhover-p022-result.json",
+      "sha256": "691b309baf7aa223b1da99e5ca66540a60a77d29d71bc6433c89d7af566f5674",
+      "evidence": "historical-as-recorded; not a current QA certificate"
+    },
+    {
+      "lot": "P02.2-SIC-06",
+      "status": "implemented-offline-verified",
+      "courses": 293,
+      "file": "docs/data/opening-sicilian-early-p022-result.json",
+      "sha256": "111a7a9ce1f2ca485c5c8dd23c7dead4730becd2db7b1895b948e426c268b690",
+      "evidence": "historical-as-recorded; not a current QA certificate"
+    },
+    {
+      "lot": "P02.2-SIC-01",
+      "status": "implemented-offline-verified",
+      "courses": 282,
+      "file": "docs/data/opening-sicilian-p022-result.json",
+      "sha256": "42d8925d8dd3318a1832135847d6a112e5633ace5e9b26b6dcbc81087c13289b",
+      "evidence": "historical-as-recorded; not a current QA certificate"
+    },
+    {
+      "lot": "P02.2-SIC-02",
+      "status": "implemented-offline-verified",
+      "courses": 283,
+      "file": "docs/data/opening-zaitsev-p022-result.json",
+      "sha256": "a222c548b5600d26668952f11e6221ab5ac86c1bf0f2492e9b92c3e09d3da43a",
+      "evidence": "historical-as-recorded; not a current QA certificate"
+    }
+  ],
+  "currentApplication": {
+    "courses": 293,
+    "exercises": 293,
+    "sic07Installed": false,
+    "engineSearchesExecutedDuringOptimization": 0
+  },
+  "limits": [
+    "New tooling QA does not rerun application build or browser; full results above belong to the pre-optimization checkpoint.",
+    "SIC-07 implementation remains pending.",
+    "Optimization changes remain uncommitted after the requested checkpoint; no push or deploy."
+  ]
+}

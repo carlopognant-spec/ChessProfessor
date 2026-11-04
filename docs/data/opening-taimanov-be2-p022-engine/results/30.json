@@ -1,0 +1,29 @@
+{
+  "signature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+  "jobId": "taimanov-be2-na4-castle:continuation-control:18",
+  "status": "complete",
+  "attemptIds": [
+    "30"
+  ],
+  "result": {
+    "bestmove": "d4c6",
+    "searchmoves": [],
+    "depth": 14,
+    "nodes": 138768,
+    "cp": 65,
+    "mate": null,
+    "pv": [
+      "d4c6",
+      "b7c6",
+      "f2f4",
+      "a8b8",
+      "e4e5",
+      "f6d5",
+      "e3d2",
+      "c6c5",
+      "c2c4",
+      "d5b6"
+    ],
+    "attempt": "30"
+  }
+}

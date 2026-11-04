@@ -5,6 +5,7 @@ import { formatMoveOpportunity } from '../lib/moveOpportunities.js'
 import { formatSpecialAssessment } from '../lib/specialClassification.js'
 import { formatEvaluationEvidence } from '../lib/reviewEvaluation.js'
 import AccuracySummary from './AccuracySummary.jsx'
+import ClassificationDetails from './ClassificationDetails.jsx'
 
 const CATEGORY_LABELS = {
   book: 'Libro',
@@ -21,7 +22,7 @@ const CATEGORY_LABELS = {
   unclassified: 'Non valutabile',
 }
 
-export default function AnalysisSummary({ entries = [] }) {
+export default function AnalysisSummary({ entries = [], onPractice }) {
   const { loadMoveSequence, navigationHistorySan } = useGame()
   if (entries.length === 0) return null
 
@@ -47,6 +48,7 @@ export default function AnalysisSummary({ entries = [] }) {
       </div>
       <div className="analysis-rows" aria-label="Semimosse analizzate">
         {summary.rows.map((row) => (
+          <div key={row.ply}>
           <button
             type="button"
             className="analysis-row-button"
@@ -75,6 +77,12 @@ export default function AnalysisSummary({ entries = [] }) {
               </small>}
             </span>
           </button>
+          <ClassificationDetails entry={row} labels={CATEGORY_LABELS} />
+          {onPractice && ['mistake', 'blunder', 'missed'].includes(row.classification) &&
+            <button type="button" onClick={() => onPractice({ ply: row.ply, side: row.side })}>
+              Riprova posizione {row.ply}
+            </button>}
+          </div>
         ))}
       </div>
     </section>

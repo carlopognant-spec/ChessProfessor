@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "activeLot": "sic-07",
+  "activeLot": "sic-08-r1",
   "lots": {
     "sic-05": {
       "lot": "P02.2-SIC-05",
@@ -99,6 +99,148 @@
           }
         ],
         "review": "Design selection, not executed: 82 new browser cases (18 courses, 9 exercises, 18 directed live forks, 36 two-color checkpoints, 1 uncovered choice) plus 8 existing regressions. Retain 141 historical cases, yielding 223 available. Derive the nine spanning fork pairs from design.navigation.browserPairs; assert selected count 90 before execution. Full fallback for any other runtime edit."
+      }
+    },
+    "sic-07-r1": {
+      "lot": "P02.2-SIC-07-R1",
+      "plan": "docs/data/opening-taimanov-be2-p022-r1-plan.json",
+      "design": "docs/data/opening-taimanov-be2-p022-r1-design-verification.json",
+      "designDocument": "docs/OPENING-TAIMANOV-BE2-P022-R1-DESIGN.md",
+      "historical": false,
+      "implementationModel": "Sol Medium; optional targeted chess review",
+      "qa": {
+        "tests": [
+          "tests/opening-taimanov-be2-roadmap.test.js",
+          "tests/opening-sicilian-early-roadmap.test.js",
+          "tests/opening-chekhover-early-roadmap.test.js",
+          "tests/opening-chekhover-a6-roadmap.test.js",
+          "tests/opening-chekhover-roadmap.test.js",
+          "tests/opening-zaitsev-roadmap.test.js",
+          "tests/opening-sicilian-roadmap.test.js",
+          "tests/opening-scope.test.js",
+          "tests/opening-full-notes.test.js",
+          "tests/opening-move-review.test.js"
+        ],
+        "browserGrep": "roadmap Sicilian (Taimanov Ae2|course.*sicilian:taimanov-be2-|exercise.*sicilian:taimanov-be2-|strict continuation|contained route|Zaitsev checkpoint|a6 live fork 8)",
+        "aggregationEdits": [
+          {
+            "file": "src/lib/openingJourneys.js",
+            "importLines": [
+              "import openingTaimanovBe2 from '../data/openingTaimanovBe2Courses.js'"
+            ],
+            "tokens": [
+              ",...openingTaimanovBe2.entries"
+            ]
+          },
+          {
+            "file": "src/lib/openingPracticalLibrary.js",
+            "importLines": [
+              "import taimanovBe2 from '../data/openingTaimanovBe2PracticalCases.js'"
+            ],
+            "tokens": [
+              ",taimanovBe2.policy",
+              ",...taimanovBe2.entries",
+              ",...taimanovBe2.uncovered"
+            ]
+          }
+        ],
+        "review": "SIC-07 R1: same nine source branches and 82 new browser cases, eight state regressions, 223 roadmap Sicilian cases retained. One revised route/exercise; all eighteen authored comparisons and nine exercises required. Original failed ledger preserved, 34 compatible jobs reused explicitly."
+      }
+    },
+    "sic-08": {
+      "lot": "P02.2-SIC-08",
+      "plan": "docs/data/opening-taimanov-bd3-p022-plan.json",
+      "design": "docs/data/opening-taimanov-bd3-p022-design-verification.json",
+      "designDocument": "docs/OPENING-TAIMANOV-BD3-P022-DESIGN.md",
+      "historical": false,
+      "implementationModel": "Sol Medium; targeted chess design review",
+      "qa": {
+        "tests": [
+          "tests/opening-taimanov-bd3-roadmap.test.js",
+          "tests/opening-taimanov-be2-roadmap.test.js",
+          "tests/opening-sicilian-early-roadmap.test.js",
+          "tests/opening-chekhover-early-roadmap.test.js",
+          "tests/opening-chekhover-a6-roadmap.test.js",
+          "tests/opening-chekhover-roadmap.test.js",
+          "tests/opening-zaitsev-roadmap.test.js",
+          "tests/opening-sicilian-roadmap.test.js",
+          "tests/opening-scope.test.js",
+          "tests/opening-full-notes.test.js",
+          "tests/opening-move-review.test.js",
+          "tests/openings-pipeline.test.js"
+        ],
+        "browserGrep": "roadmap Sicilian (Taimanov Ad3|course.*sicilian:taimanov-bd3-|exercise.*sicilian:taimanov-bd3-|strict continuation|contained route|Zaitsev checkpoint|a6 live fork 8)",
+        "aggregationEdits": [
+          {
+            "file": "src/lib/openingJourneys.js",
+            "importLines": [
+              "import openingTaimanovBd3 from '../data/openingTaimanovBd3Courses.js'"
+            ],
+            "tokens": [
+              ",...openingTaimanovBd3.entries"
+            ]
+          },
+          {
+            "file": "src/lib/openingPracticalLibrary.js",
+            "importLines": [
+              "import taimanovBd3 from '../data/openingTaimanovBd3PracticalCases.js'"
+            ],
+            "tokens": [
+              ",taimanovBd3.policy",
+              ",...taimanovBd3.entries",
+              ",...taimanovBd3.uncovered"
+            ]
+          }
+        ],
+        "review": "Seven complete Bd3 source leaf orders, fourteen source positions. 64 new browser cases (14 courses, 7 exercises,14 live switches,28 checkpoints,1 uncovered source-backed choice) and8 state regressions; preserve223 older Sicilian cases for287 available. Unit checks cover every directed checkpoint and legal immediate reply. Aggregator reversal must restore exact302-course baseline. Browser uses no-env production build, unchanged60s timeout. Existing draft-tool5s timeout recorded separately; common tooling unchanged."
+      }
+    },
+    "sic-08-r1": {
+      "lot": "P02.2-SIC-08-R1",
+      "plan": "docs/data/opening-taimanov-bd3-p022-r1-plan.json",
+      "design": "docs/data/opening-taimanov-bd3-p022-r1-design-verification.json",
+      "designDocument": "docs/OPENING-TAIMANOV-BD3-P022-R1-DESIGN.md",
+      "historical": false,
+      "implementationModel": "Sol Medium; targeted chess design review",
+      "qa": {
+        "tests": [
+          "tests/opening-taimanov-bd3-roadmap.test.js",
+          "tests/opening-taimanov-be2-roadmap.test.js",
+          "tests/opening-sicilian-early-roadmap.test.js",
+          "tests/opening-chekhover-early-roadmap.test.js",
+          "tests/opening-chekhover-a6-roadmap.test.js",
+          "tests/opening-chekhover-roadmap.test.js",
+          "tests/opening-zaitsev-roadmap.test.js",
+          "tests/opening-sicilian-roadmap.test.js",
+          "tests/opening-scope.test.js",
+          "tests/opening-full-notes.test.js",
+          "tests/opening-move-review.test.js",
+          "tests/openings-pipeline.test.js"
+        ],
+        "browserGrep": "roadmap Sicilian (Taimanov Ad3|course.*sicilian:taimanov-bd3-|exercise.*sicilian:taimanov-bd3-|strict continuation|contained route|Zaitsev checkpoint|a6 live fork 8)",
+        "aggregationEdits": [
+          {
+            "file": "src/lib/openingJourneys.js",
+            "importLines": [
+              "import openingTaimanovBd3 from '../data/openingTaimanovBd3Courses.js'"
+            ],
+            "tokens": [
+              ",...openingTaimanovBd3.entries"
+            ]
+          },
+          {
+            "file": "src/lib/openingPracticalLibrary.js",
+            "importLines": [
+              "import taimanovBd3 from '../data/openingTaimanovBd3PracticalCases.js'"
+            ],
+            "tokens": [
+              ",taimanovBd3.policy",
+              ",...taimanovBd3.entries",
+              ",...taimanovBd3.uncovered"
+            ]
+          }
+        ],
+        "review": "Seven complete Bd3 source leaf orders, fourteen source positions. 64 new browser cases (14 courses, 7 exercises,14 live switches,28 checkpoints,1 uncovered source-backed choice) and8 state regressions; preserve223 older Sicilian cases for287 available. Unit checks cover every directed checkpoint and legal immediate reply. Aggregator reversal must restore exact302-course baseline. Browser uses no-env production build, unchanged60s timeout. Existing draft-tool5s timeout recorded separately; common tooling unchanged. R1: one reviewed h5 continuation and exercise changed; all17 authored comparisons and7 exercises required.30 exact-input jobs reused,12 new primaries,max24 new go,58 aggregate including original34."
       }
     }
   }

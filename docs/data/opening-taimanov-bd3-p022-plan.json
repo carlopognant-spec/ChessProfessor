@@ -1,0 +1,2948 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-08",
+  "designedOn": "2026-10-28",
+  "status": "reviewed-design-not-installed",
+  "sourceSubtreePrefixes": [
+    "e4 c5 Nf3 e6 d4 cxd4 Nxd4 Nc6 Nc3 Qc7 Be3 a6 Bd3"
+  ],
+  "candidateRoot": "e4 c5 Nf3 e6 d4 cxd4 Nxd4 Nc6 Nc3 Qc7 Be3",
+  "courses": [
+    {
+      "title": "Taimanov con Ad3: cambio in c6 dopo ...b5",
+      "contrast": "Con Ad3 e b5, il Bianco cambia subito il cavallo d4 per quello c6 prima di arroccare. La ripresa didattica con la donna conserva il pedone d7 e rende visibile una struttura diversa dalla ripresa di pedone.",
+      "whitePlan": "Completa la sicurezza del re e coordina cavallo c3 e alfiere d3 attorno al pedone e4. Considera il tempo e le case disponibili quando la donna avversaria entra in c6.",
+      "blackPlan": "Dopo la ripresa con la donna, completa lo sviluppo del cavallo g8 e dell’alfiere f8. Il pedone b5 offre spazio sul lato di donna, ma il re nero è ancora al centro.",
+      "endpointReason": "Qxc6 completa il cambio dei cavalli e lascia una posizione senza catture del cambio ancora da risolvere. Entrambi i re devono ancora completare la propria sistemazione.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene il pedone e4. Il pedone bianco e4 interrompe ancora la diagonale verso h7: l’alfiere non attacca direttamente quel pedone. Con b5 il Nero guadagna spazio sul lato di donna e controlla c4; il cavallo g8 non è ancora sviluppato.",
+        "14": "Cxc6 cambia il cavallo d4 per quello c6. Dxc6 riprende con la donna: il pedone d7 resta al suo posto, mentre la donna occupa c6. Il Bianco conserva il cavallo c3 a sostegno di e4; entrambi i re sono ancora al centro."
+      },
+      "exercise": {
+        "beforeIndex": 15,
+        "mistake": "Qxh2",
+        "answer": "Rxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "La torre h1 e la donna in h2",
+        "objective": "La donna nera ha preso il pedone h2. Controlla quale pezzo bianco può catturarla lungo la colonna h.",
+        "explanation": "Txh2 cattura la donna. Il Nero può poi riprendere il cavallo c6 con dxc6: anche includendo questa risposta, il saldo rispetto a prima di Dxh2 resta almeno +5 per il Bianco. Il controllo comprende tutte le 23 repliche legali immediate, senza stabilire il risultato dell’intera partita.",
+        "id": "practice:sicilian:taimanov-bd3-b5-exchange",
+        "beforeFen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPP/R2QK2R b KQkq - 0 8",
+        "afterFen": "r1b1kbnr/3p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPq/R2QK2R w KQkq - 0 9",
+        "expectedLegalImmediateReplies": 23,
+        "expectedMinimumImmediateMaterialGain": 5,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1kbnr/3p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qk - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1kbnr/r2p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qk - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb7",
+            "fen": "r3kbnr/1b1p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k1nr/3pbppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd6",
+            "fen": "r1b1k1nr/3p1ppp/p1Nbp3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k1nr/3p1ppp/p1N1p3/1pb5/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k1nr/3p1ppp/p1N1p3/1p6/1b2P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k1nr/3p1ppp/p1N1p3/1p6/4P3/b1NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh6",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p2n/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nf6",
+            "fen": "r1b1kb1r/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ne7",
+            "fen": "r1b1kb1r/3pnppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1kbnr/5ppp/p1Npp3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1kbnr/5ppp/p1N1p3/1p1p4/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "dxc6",
+            "fen": "r1b1kbnr/5ppp/p1p1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 5
+          },
+          {
+            "san": "f6",
+            "fen": "r1b1kbnr/3p2pp/p1N1pp2/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "f5",
+            "fen": "r1b1kbnr/3p2pp/p1N1p3/1p3p2/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1kbnr/3p1p1p/p1N1p1p1/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1kbnr/3p1p1p/p1N1p3/1p4p1/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1kbnr/3p1pp1/p1N1p2p/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1kbnr/3p1pp1/p1N1p3/1p5p/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1kbnr/3p1ppp/2N1p3/pp6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1kbnr/3p1ppp/p1N5/1p2p3/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1kbnr/3p1ppp/p1N1p3/8/1p2P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "b5",
+        "Nxc6",
+        "Qxc6"
+      ],
+      "documentedPlies": 15,
+      "authoredMoves": [
+        {
+          "index": 15,
+          "san": "Qxc6",
+          "uci": "c7c6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 15 semimosse. Il seguito Qxc6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1kbnr/3p1ppp/p1q1p3/1p6/4P3/2NBB3/PPP2PPP/R2QK2R w KQkq - 0 9",
+      "id": "sicilian:taimanov-bd3-b5-exchange",
+      "family": "sicilian",
+      "sourceRecords": [
+        {
+          "id": "eco:f19560ecc05d9bed",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "lichess:b.tsv:15",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "eco:f139fe01db585d78",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "lichess:b.tsv:374",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "eco:475346a487171690",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "lichess:b.tsv:490",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "eco:95075239a54a3abb",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "lichess:b.tsv:579",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "eco:245ce901695097da",
+          "positionId": "position:a98eec05d87d9e1c",
+          "plies": 5
+        },
+        {
+          "id": "eco:ea5f36caf3683007",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "lichess:b.tsv:581",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "eco:c2b7e9dbd1459fcb",
+          "positionId": "position:ca096a80ee4b6b8f",
+          "plies": 7
+        },
+        {
+          "id": "eco:08a1816a03c8003c",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "lichess:b.tsv:608",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "eco:1fe261c771f52e20",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "lichess:b.tsv:617",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "eco:c367e3d88e263011",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "lichess:b.tsv:619",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "eco:a39b96ea212b8b88",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "lichess:b.tsv:621",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "eco:f6f7a752eafca279",
+          "positionId": "position:223a6838d381f647",
+          "plies": 12
+        },
+        {
+          "id": "eco:25af4c9343234843",
+          "positionId": "position:cc54ace1f5627110",
+          "plies": 13
+        },
+        {
+          "id": "eco:c139fc9fcab6dd42",
+          "positionId": "position:67fc0afdd99071ab",
+          "plies": 14
+        },
+        {
+          "id": "eco:2b64132ce4e19584",
+          "positionId": "position:1131f5f98589f0ff",
+          "plies": 15
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 15,
+        "authoredContinuationPlies": 1,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:taimanov-be2-nge7",
+      "sharedPrefixPlies": 12,
+      "relationship": "fork"
+    },
+    {
+      "title": "Taimanov con Ad3: arrocco dopo ...b5",
+      "contrast": "Il Bianco arrocca mantenendo entrambi i cavalli, invece di cambiare subito in c6. Il successivo sviluppo Cf6 raggiunge la stessa disposizione del ramo che antepone Cf6 a b5, attraverso un ordine diverso.",
+      "whitePlan": "Con il re arroccato, mantieni coordinati i difensori di e4 e decidi quando cambiare in c6 o conservare il cavallo centrale. Non dedurre una nuova linea dalla sola uguaglianza della posizione finale.",
+      "blackPlan": "Sviluppa il cavallo in f6 per aumentare la pressione su e4 e prepara lo sviluppo degli alfieri. Il pedone b5 sostiene l’espansione sul lato di donna.",
+      "endpointReason": "Cf6 completa lo sviluppo del cavallo e crea un confronto diretto con l’ordine Cf6, arrocco, b5. La disposizione coincide, ma i percorsi e i relativi progressi restano distinti.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene il pedone e4. Il pedone bianco e4 interrompe ancora la diagonale verso h7: l’alfiere non attacca direttamente quel pedone. Con b5 il Nero guadagna spazio sul lato di donna e controlla c4; il cavallo g8 non è ancora sviluppato.",
+        "14": "Il Bianco arrocca senza cambiare i cavalli. Cf6 sviluppa il cavallo g8 e attacca e4, difeso dal cavallo c3 e dall’alfiere d3. Si raggiunge la stessa disposizione del ramo con Cf6 prima di b5, ma con un ordine di mosse diverso."
+      },
+      "exercise": {
+        "beforeIndex": 15,
+        "mistake": "Qxh2+",
+        "answer": "Kxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "Uno scacco senza sostegno",
+        "objective": "La donna in h2 dà scacco al re g1. Verifica se la casa h2 è difesa prima di decidere come rispondere.",
+        "explanation": "Rxh2 cattura la donna con il re e risponde allo scacco: nessun pezzo nero protegge h2 in questa posizione. Il Nero può poi giocare Cxd4, ma il saldo minimo resta +5 per il Bianco rispetto a prima della deviazione, sulle 32 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-b5-castle",
+        "beforeFen": "r1b1kbnr/2qp1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 1 8",
+        "afterFen": "r1b1kbnr/3p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPq/R2Q1RK1 w kq - 0 9",
+        "expectedLegalImmediateReplies": 32,
+        "expectedMinimumImmediateMaterialGain": 5,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1kbnr/3p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1kbnr/r2p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb7",
+            "fen": "r3kbnr/1b1p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ke7",
+            "fen": "r1b2bnr/3pkppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w - - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Kd8",
+            "fen": "r1bk1bnr/3p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w - - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k1nr/3pbppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd6+",
+            "fen": "r1b1k1nr/3p1ppp/p1nbp3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k1nr/3p1ppp/p1n1p3/1pb5/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k1nr/3p1ppp/p1n1p3/1p6/1b1NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k1nr/3p1ppp/p1n1p3/1p6/3NP3/b1NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh6",
+            "fen": "r1b1kb1r/3p1ppp/p1n1p2n/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nf6",
+            "fen": "r1b1kb1r/3p1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nge7",
+            "fen": "r1b1kb1r/3pnppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1kbnr/5ppp/p1npp3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1kbnr/5ppp/p1n1p3/1p1p4/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "f6",
+            "fen": "r1b1kbnr/3p2pp/p1n1pp2/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "f5",
+            "fen": "r1b1kbnr/3p2pp/p1n1p3/1p3p2/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1kbnr/3p1p1p/p1n1p1p1/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1kbnr/3p1p1p/p1n1p3/1p4p1/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1kbnr/3p1pp1/p1n1p2p/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1kbnr/3p1pp1/p1n1p3/1p5p/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1kbnr/3p1ppp/2n1p3/pp6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Na7",
+            "fen": "r1b1kbnr/n2p1ppp/p3p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nb8",
+            "fen": "rnb1kbnr/3p1ppp/p3p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nd8",
+            "fen": "r1bnkbnr/3p1ppp/p3p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nce7",
+            "fen": "r1b1kbnr/3pnppp/p3p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ne5",
+            "fen": "r1b1kbnr/3p1ppp/p3p3/1p2n3/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nxd4",
+            "fen": "r1b1kbnr/3p1ppp/p3p3/1p6/3nP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 5
+          },
+          {
+            "san": "Nb4",
+            "fen": "r1b1kbnr/3p1ppp/p3p3/1p6/1n1NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Na5",
+            "fen": "r1b1kbnr/3p1ppp/p3p3/np6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1kbnr/3p1ppp/p1n5/1p2p3/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1kbnr/3p1ppp/p1n1p3/8/1p1NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "b5",
+        "O-O",
+        "Nf6"
+      ],
+      "documentedPlies": 15,
+      "authoredMoves": [
+        {
+          "index": 15,
+          "san": "Nf6",
+          "uci": "g8f6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 15 semimosse. Il seguito Nf6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 2 9",
+      "id": "sicilian:taimanov-bd3-b5-castle",
+      "family": "sicilian",
+      "sourceRecords": [
+        {
+          "id": "eco:f19560ecc05d9bed",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "lichess:b.tsv:15",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "eco:f139fe01db585d78",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "lichess:b.tsv:374",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "eco:475346a487171690",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "lichess:b.tsv:490",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "eco:95075239a54a3abb",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "lichess:b.tsv:579",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "eco:245ce901695097da",
+          "positionId": "position:a98eec05d87d9e1c",
+          "plies": 5
+        },
+        {
+          "id": "eco:ea5f36caf3683007",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "lichess:b.tsv:581",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "eco:c2b7e9dbd1459fcb",
+          "positionId": "position:ca096a80ee4b6b8f",
+          "plies": 7
+        },
+        {
+          "id": "eco:08a1816a03c8003c",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "lichess:b.tsv:608",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "eco:1fe261c771f52e20",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "lichess:b.tsv:617",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "eco:c367e3d88e263011",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "lichess:b.tsv:619",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "eco:a39b96ea212b8b88",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "lichess:b.tsv:621",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "eco:f6f7a752eafca279",
+          "positionId": "position:223a6838d381f647",
+          "plies": 12
+        },
+        {
+          "id": "eco:25af4c9343234843",
+          "positionId": "position:cc54ace1f5627110",
+          "plies": 13
+        },
+        {
+          "id": "eco:c139fc9fcab6dd42",
+          "positionId": "position:67fc0afdd99071ab",
+          "plies": 14
+        },
+        {
+          "id": "eco:7665c15b78897e7a",
+          "positionId": "position:dc99e55dcb2ee178",
+          "plies": 15
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 15,
+        "authoredContinuationPlies": 1,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:taimanov-be2-nge7",
+      "sharedPrefixPlies": 12,
+      "relationship": "fork"
+    },
+    {
+      "title": "Taimanov con Ad3: ...Cf6 e ...b5",
+      "contrast": "Il Nero sviluppa prima Cf6 e gioca b5 dopo l’arrocco bianco. Il cambio didattico in c6 mette in evidenza la ripresa del pedone d7, distinta dalla ripresa di donna del ramo con b5 immediata.",
+      "whitePlan": "Dopo il cambio centrale, mantieni il sostegno a e4 e sviluppa le torri. Valuta la struttura di pedoni creata dalla ripresa dxc6 prima di scegliere un’espansione centrale.",
+      "blackPlan": "La ripresa dxc6 mantiene la donna in c7 e porta un pedone in c6 a controllare d5. Completa lo sviluppo e valuta la sicurezza del re, tenendo conto dello spazio già ottenuto con b5.",
+      "endpointReason": "Il cambio dei cavalli è concluso e la struttura con pedone c6 è visibile. Il Bianco è arroccato, mentre il Nero deve ancora completare lo sviluppo.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca e il Nero avanza b5, guadagnando spazio e controllando c4. L’ordine raggiunge la stessa disposizione di b5, arrocco, Cf6; i contatori FEN e la storia del percorso restano distinti.",
+        "16": "Cxc6 elimina il cavallo nero c6. Con dxc6 il pedone d7 riprende in c6 e controlla d5, mentre la donna resta in c7. Il pedone c6 interrompe la colonna davanti alla donna: non c’è un attacco diretto della donna lungo tutta la colonna c."
+      },
+      "exercise": {
+        "beforeIndex": 17,
+        "mistake": "Qxh2+",
+        "answer": "Kxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "La donna dimentica la ripresa in c6",
+        "objective": "Il Nero ha dato scacco con la donna in h2 anziché completare il cambio in c6. Controlla se il re può catturarla.",
+        "explanation": "Rxh2 elimina la donna e para lo scacco. Anche se segue dxc6, che cattura il cavallo avanzato, il saldo minimo relativo a prima di Dxh2+ resta +5 per il Bianco. Sono considerate tutte le 24 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-nf6-b5",
+        "beforeFen": "r1b1kb1r/2qp1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+        "afterFen": "r1b1kb1r/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPq/R2Q1RK1 w kq - 0 10",
+        "expectedLegalImmediateReplies": 24,
+        "expectedMinimumImmediateMaterialGain": 5,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1kb1r/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1kb1r/r2p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb7",
+            "fen": "r3kb1r/1b1p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k2r/3pbppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd6+",
+            "fen": "r1b1k2r/3p1ppp/p1Nbpn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k2r/3p1ppp/p1N1pn2/1pb5/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k2r/3p1ppp/p1N1pn2/1p6/1b2P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k2r/3p1ppp/p1N1pn2/1p6/4P3/b1NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Rg8",
+            "fen": "r1b1kbr1/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w q - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1kb1r/5ppp/p1Nppn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1kb1r/5ppp/p1N1pn2/1p1p4/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "dxc6",
+            "fen": "r1b1kb1r/5ppp/p1p1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 5
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1kb1r/3p1p1p/p1N1pnp1/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1kb1r/3p1p1p/p1N1pn2/1p4p1/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1kb1r/3p1pp1/p1N1pn1p/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1kb1r/3p1pp1/p1N1pn2/1p5p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1kb1r/3p1ppp/2N1pn2/pp6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1kb1r/3p1ppp/p1N2n2/1p2p3/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng8",
+            "fen": "r1b1kbnr/3p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh5",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p3/1p5n/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng4+",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p3/1p6/4P1n1/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nxe4",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p3/1p6/4n3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 7
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p3/1p1n4/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1kb1r/3p1ppp/p1N1pn2/8/1p2P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "b5",
+        "Nxc6",
+        "dxc6"
+      ],
+      "documentedPlies": 16,
+      "authoredMoves": [
+        {
+          "index": 16,
+          "san": "Nxc6",
+          "uci": "d4c6"
+        },
+        {
+          "index": 17,
+          "san": "dxc6",
+          "uci": "d7c6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 16 semimosse. Il seguito Nxc6 dxc6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1kb1r/2q2ppp/p1p1pn2/1p6/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 10",
+      "id": "sicilian:taimanov-bd3-nf6-b5",
+      "family": "sicilian",
+      "sourceRecords": [
+        {
+          "id": "eco:f19560ecc05d9bed",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "lichess:b.tsv:15",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "eco:f139fe01db585d78",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "lichess:b.tsv:374",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "eco:475346a487171690",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "lichess:b.tsv:490",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "eco:95075239a54a3abb",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "lichess:b.tsv:579",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "eco:245ce901695097da",
+          "positionId": "position:a98eec05d87d9e1c",
+          "plies": 5
+        },
+        {
+          "id": "eco:ea5f36caf3683007",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "lichess:b.tsv:581",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "eco:c2b7e9dbd1459fcb",
+          "positionId": "position:ca096a80ee4b6b8f",
+          "plies": 7
+        },
+        {
+          "id": "eco:08a1816a03c8003c",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "lichess:b.tsv:608",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "eco:1fe261c771f52e20",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "lichess:b.tsv:617",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "eco:c367e3d88e263011",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "lichess:b.tsv:619",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "eco:a39b96ea212b8b88",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "lichess:b.tsv:621",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "eco:f6f7a752eafca279",
+          "positionId": "position:223a6838d381f647",
+          "plies": 12
+        },
+        {
+          "id": "eco:25af4c9343234843",
+          "positionId": "position:cc54ace1f5627110",
+          "plies": 13
+        },
+        {
+          "id": "eco:f0361ce2f56650a7",
+          "positionId": "position:449561e2fdd7c864",
+          "plies": 14
+        },
+        {
+          "id": "eco:9c30456f0f4482d2",
+          "positionId": "position:472445059da94227",
+          "plies": 15
+        },
+        {
+          "id": "eco:e0560c7933e156aa",
+          "positionId": "position:8d09aa8729556215",
+          "plies": 16
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 16,
+        "authoredContinuationPlies": 2,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:taimanov-be2-nge7",
+      "sharedPrefixPlies": 12,
+      "relationship": "fork"
+    },
+    {
+      "title": "Taimanov con Ad3: sviluppo ...Ad6",
+      "contrast": "Dopo Cf6 e l’arrocco bianco, l’alfiere nero si sviluppa in d6. La sua diagonale verso h2 è aperta e la sua presenza davanti al pedone d7 distingue questo assetto dai rami con b5 o h5.",
+      "whitePlan": "Controlla la pressione dell’alfiere d6 verso il tuo arrocco e mantieni coordinati i difensori centrali. Dopo il cambio in c6, considera la struttura avversaria prima di avanzare i pedoni del re.",
+      "blackPlan": "Coordina l’alfiere d6 e il cavallo f6 mantenendo attenzione al centro. La ripresa dxc6 libera d7, mentre l’alfiere d6 continua a controllare e5 e la diagonale verso h2.",
+      "endpointReason": "La ripresa in c6 chiude il cambio e mostra insieme il pedone c6 e l’alfiere d6. Non si lascia un pezzo catturato senza la risposta prevista.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca e Ad6 sviluppa l’alfiere f8. La diagonale d6-e5-f4-g3-h2 è aperta: l’alfiere attacca h2, ma questo fatto geometrico non prova che la cattura sia conveniente. L’alfiere in d6 occupa anche la casa davanti al pedone d7.",
+        "16": "Cxc6 cambia il cavallo centrale. dxc6 riprende con il pedone d7, liberando d7 e conservando l’alfiere in d6. Il nuovo pedone c6 controlla d5; l’alfiere continua a controllare e5 e h2."
+      },
+      "exercise": {
+        "beforeIndex": 17,
+        "mistake": "Qa5",
+        "answer": "Nxa5",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "La donna entra nel salto del cavallo",
+        "objective": "La donna è passata da c7 ad a5. Controlla le case raggiungibili dal cavallo bianco in c6.",
+        "explanation": "Cxa5 cattura la donna con il cavallo c6. Fra le risposte immediate il Nero può catturare un pedone con Axh2+ oppure Cxe4; il saldo minimo resta +8 per il Bianco rispetto a prima di Da5. Sono verificate tutte le 31 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-nf6-bd6",
+        "beforeFen": "r1b1k2r/1pqp1ppp/p1Nbpn2/8/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+        "afterFen": "r1b1k2r/1p1p1ppp/p1Nbpn2/q7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 10",
+        "expectedLegalImmediateReplies": 31,
+        "expectedMinimumImmediateMaterialGain": 8,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1k2r/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w k - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1k2r/rp1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w k - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Kf8",
+            "fen": "r1b2k1r/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w - - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ke7",
+            "fen": "r1b4r/1p1pkppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w - - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Kd8",
+            "fen": "r1bk3r/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w - - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rg8",
+            "fen": "r1b1k1r1/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w q - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rf8",
+            "fen": "r1b1kr2/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w q - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "b6",
+            "fen": "r1b1k2r/3p1ppp/pp1bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "b5",
+            "fen": "r1b1k2r/3p1ppp/p2bpn2/Np6/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1k2r/1p1p1p1p/p2bpnp1/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1k2r/1p1p1p1p/p2bpn2/N5p1/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1k2r/1p1p1pp1/p2bpn1p/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1k2r/1p1p1pp1/p2bpn2/N6p/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bc7",
+            "fen": "r1b1k2r/1pbp1ppp/p3pn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bb8",
+            "fen": "rbb1k2r/1p1p1ppp/p3pn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k2r/1p1pbppp/p3pn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bf8",
+            "fen": "r1b1kb1r/1p1p1ppp/p3pn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Be5",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N3b3/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bf4",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4Pb2/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bg3",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4P3/2NBB1b1/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bxh2+",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4P3/2NBB3/PPP2PPb/R2Q1RK1 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N1b5/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/1b2P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4P3/b1NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1k2r/1p1p1ppp/p2b1n2/N3p3/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ng8",
+            "fen": "r1b1k1nr/1p1p1ppp/p2bp3/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nh5",
+            "fen": "r1b1k2r/1p1p1ppp/p2bp3/N6n/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ng4",
+            "fen": "r1b1k2r/1p1p1ppp/p2bp3/N7/4P1n1/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nxe4",
+            "fen": "r1b1k2r/1p1p1ppp/p2bp3/N7/4n3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1k2r/1p1p1ppp/p2bp3/N2n4/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "O-O",
+            "fen": "r1b2rk1/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w - - 1 11",
+            "materialGain": 9
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "Bd6",
+        "Nxc6",
+        "dxc6"
+      ],
+      "documentedPlies": 16,
+      "authoredMoves": [
+        {
+          "index": 16,
+          "san": "Nxc6",
+          "uci": "d4c6"
+        },
+        {
+          "index": 17,
+          "san": "dxc6",
+          "uci": "d7c6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 16 semimosse. Il seguito Nxc6 dxc6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1k2r/1pq2ppp/p1pbpn2/8/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 10",
+      "id": "sicilian:taimanov-bd3-nf6-bd6",
+      "family": "sicilian",
+      "sourceRecords": [
+        {
+          "id": "eco:f19560ecc05d9bed",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "lichess:b.tsv:15",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "eco:f139fe01db585d78",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "lichess:b.tsv:374",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "eco:475346a487171690",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "lichess:b.tsv:490",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "eco:95075239a54a3abb",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "lichess:b.tsv:579",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "eco:245ce901695097da",
+          "positionId": "position:a98eec05d87d9e1c",
+          "plies": 5
+        },
+        {
+          "id": "eco:ea5f36caf3683007",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "lichess:b.tsv:581",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "eco:c2b7e9dbd1459fcb",
+          "positionId": "position:ca096a80ee4b6b8f",
+          "plies": 7
+        },
+        {
+          "id": "eco:08a1816a03c8003c",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "lichess:b.tsv:608",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "eco:1fe261c771f52e20",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "lichess:b.tsv:617",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "eco:c367e3d88e263011",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "lichess:b.tsv:619",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "eco:a39b96ea212b8b88",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "lichess:b.tsv:621",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "eco:f6f7a752eafca279",
+          "positionId": "position:223a6838d381f647",
+          "plies": 12
+        },
+        {
+          "id": "eco:25af4c9343234843",
+          "positionId": "position:cc54ace1f5627110",
+          "plies": 13
+        },
+        {
+          "id": "eco:f0361ce2f56650a7",
+          "positionId": "position:449561e2fdd7c864",
+          "plies": 14
+        },
+        {
+          "id": "eco:9c30456f0f4482d2",
+          "positionId": "position:472445059da94227",
+          "plies": 15
+        },
+        {
+          "id": "eco:55d79e726d51485c",
+          "positionId": "position:7743e5d79d6b5e1f",
+          "plies": 16
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 16,
+        "authoredContinuationPlies": 2,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:taimanov-be2-nge7",
+      "sharedPrefixPlies": 12,
+      "relationship": "fork"
+    },
+    {
+      "title": "Taimanov con Ad3: espansione ...h5",
+      "contrast": "Il Nero avanza il pedone h invece di sviluppare subito l’alfiere f8 o spingere b5. Il pedone h5 controlla g4, mentre il re nero e l’alfiere f8 restano sulle case iniziali.",
+      "whitePlan": "Osserva il controllo nero di g4 senza confonderlo con un attacco già decisivo al re. Il cambio in c6 permette di valutare una struttura centrale definita prima di scegliere ulteriori spinte.",
+      "blackPlan": "Collega l’espansione h5 allo sviluppo e alla sicurezza del re. Dopo dxc6 il pedone c6 controlla d5, ma l’alfiere f8 deve ancora svilupparsi.",
+      "endpointReason": "Il cambio in c6 è completo e rende leggibile il rapporto fra centro e pedone h avanzato. Il corso termina prima di attribuire un attacco forzato alla sola spinta h5.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca e il Nero gioca h5. Il pedone nero controlla g4, non g5. La torre h8 è ancora dietro al proprio pedone h5 e non attacca liberamente lungo tutta la colonna; il re nero resta in e8.",
+        "16": "Cxc6 cambia i cavalli e dxc6 riprende con il pedone d7. Il pedone c6 controlla d5, mentre h5 continua a controllare g4. L’alfiere f8 e il re e8 non hanno ancora completato la loro sistemazione."
+      },
+      "exercise": {
+        "beforeIndex": 17,
+        "mistake": "Qxh2+",
+        "answer": "Kxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "Il pedone h5 non difende la donna h2",
+        "objective": "La donna ha dato scacco in h2. Verifica se il pedone h5 o la torre h8 proteggono davvero quella casa.",
+        "explanation": "Rxh2 cattura la donna: il pedone h5 controlla g4 e blocca la colonna della propria torre, senza proteggere h2. Il Nero può riprendere il cavallo c6 con uno dei pedoni, ma il saldo minimo resta +5 per il Bianco sulle 26 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-nf6-h5",
+        "beforeFen": "r1b1kb1r/1pqp1pp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+        "afterFen": "r1b1kb1r/1p1p1pp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPq/R2Q1RK1 w kq - 0 10",
+        "expectedLegalImmediateReplies": 26,
+        "expectedMinimumImmediateMaterialGain": 5,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1kb1r/1p1p1pp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1kb1r/rp1p1pp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k2r/1p1pbpp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd6+",
+            "fen": "r1b1k2r/1p1p1pp1/p1Nbpn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k2r/1p1p1pp1/p1N1pn2/2b4p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k2r/1p1p1pp1/p1N1pn2/7p/1b2P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k2r/1p1p1pp1/p1N1pn2/7p/4P3/b1NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Rh7",
+            "fen": "r1b1kb2/1p1p1ppr/p1N1pn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w q - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Rh6",
+            "fen": "r1b1kb2/1p1p1pp1/p1N1pn1r/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w q - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Rg8",
+            "fen": "r1b1kbr1/1p1p1pp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w q - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "b6",
+            "fen": "r1b1kb1r/3p1pp1/ppN1pn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "b5",
+            "fen": "r1b1kb1r/3p1pp1/p1N1pn2/1p5p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "bxc6",
+            "fen": "r1b1kb1r/3p1pp1/p1p1pn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 5
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1kb1r/1p3pp1/p1Nppn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1kb1r/1p3pp1/p1N1pn2/3p3p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "dxc6",
+            "fen": "r1b1kb1r/1p3pp1/p1p1pn2/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 5
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1kb1r/1p1p1p2/p1N1pnp1/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1kb1r/1p1p1p2/p1N1pn2/6pp/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1kb1r/1p1p1pp1/2N1pn2/p6p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1kb1r/1p1p1pp1/p1N2n2/4p2p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng8",
+            "fen": "r1b1kbnr/1p1p1pp1/p1N1p3/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh7",
+            "fen": "r1b1kb1r/1p1p1ppn/p1N1p3/7p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng4+",
+            "fen": "r1b1kb1r/1p1p1pp1/p1N1p3/7p/4P1n1/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nxe4",
+            "fen": "r1b1kb1r/1p1p1pp1/p1N1p3/7p/4n3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 7
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1kb1r/1p1p1pp1/p1N1p3/3n3p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "h4",
+            "fen": "r1b1kb1r/1p1p1pp1/p1N1pn2/8/4P2p/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "h5",
+        "Nxc6",
+        "dxc6"
+      ],
+      "documentedPlies": 16,
+      "authoredMoves": [
+        {
+          "index": 16,
+          "san": "Nxc6",
+          "uci": "d4c6"
+        },
+        {
+          "index": 17,
+          "san": "dxc6",
+          "uci": "d7c6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 16 semimosse. Il seguito Nxc6 dxc6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1kb1r/1pq2pp1/p1p1pn2/7p/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 10",
+      "id": "sicilian:taimanov-bd3-nf6-h5",
+      "family": "sicilian",
+      "sourceRecords": [
+        {
+          "id": "eco:f19560ecc05d9bed",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "lichess:b.tsv:15",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "eco:f139fe01db585d78",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "lichess:b.tsv:374",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "eco:475346a487171690",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "lichess:b.tsv:490",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "eco:95075239a54a3abb",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "lichess:b.tsv:579",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "eco:245ce901695097da",
+          "positionId": "position:a98eec05d87d9e1c",
+          "plies": 5
+        },
+        {
+          "id": "eco:ea5f36caf3683007",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "lichess:b.tsv:581",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "eco:c2b7e9dbd1459fcb",
+          "positionId": "position:ca096a80ee4b6b8f",
+          "plies": 7
+        },
+        {
+          "id": "eco:08a1816a03c8003c",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "lichess:b.tsv:608",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "eco:1fe261c771f52e20",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "lichess:b.tsv:617",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "eco:c367e3d88e263011",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "lichess:b.tsv:619",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "eco:a39b96ea212b8b88",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "lichess:b.tsv:621",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "eco:f6f7a752eafca279",
+          "positionId": "position:223a6838d381f647",
+          "plies": 12
+        },
+        {
+          "id": "eco:25af4c9343234843",
+          "positionId": "position:cc54ace1f5627110",
+          "plies": 13
+        },
+        {
+          "id": "eco:f0361ce2f56650a7",
+          "positionId": "position:449561e2fdd7c864",
+          "plies": 14
+        },
+        {
+          "id": "eco:9c30456f0f4482d2",
+          "positionId": "position:472445059da94227",
+          "plies": 15
+        },
+        {
+          "id": "eco:a83eb2a8bf97895d",
+          "positionId": "position:20c03f8338879778",
+          "plies": 16
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 16,
+        "authoredContinuationPlies": 2,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:taimanov-be2-nge7",
+      "sharedPrefixPlies": 12,
+      "relationship": "fork"
+    },
+    {
+      "title": "Taimanov con Ad3: cambio nero in d4",
+      "contrast": "Il Nero cambia per primo in d4. Il seguito didattico riprende con l’alfiere e3 e completa anche il successivo cambio degli alfieri, lasciando la donna nera attiva in c5.",
+      "whitePlan": "Completa le riprese e conserva il sostegno del cavallo c3 e dell’alfiere d3 al centro. Dopo l’ingresso della donna in c5, valuta i suoi attacchi senza trascurare lo sviluppo delle torri.",
+      "blackPlan": "Dopo il cambio in d4, sviluppa l’alfiere con tempo su quello bianco. La ripresa finale di donna porta pressione sulla colonna c, ma il cavallo c3 resta difeso dal pedone b2.",
+      "endpointReason": "Sono conclusi sia il cambio dei cavalli sia quello degli alfieri. La donna nera in c5 e il re nero ancora al centro definiscono la posizione da cui scegliere il piano successivo.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca. Cxd4 parte da c6 e cattura il cavallo bianco centrale: la casa c6 si libera e il Bianco deve completare il cambio, senza scambiare la perdita momentanea per un vantaggio già consolidato del Nero.",
+        "16": "Axd4 riprende con l’alfiere e3. Ac5 sviluppa l’alfiere f8 e attacca quello bianco in d4; i due alfieri si fronteggiano sulla diagonale c5-d4. Il seguito del corso completa anche questo cambio.",
+        "18": "Axc5 cattura l’alfiere e Dxc5 riprende dalla casa c7 passando per c6, ormai libera. La donna in c5 attacca il cavallo c3 lungo la colonna c, ma quel cavallo è difeso dal pedone b2. Il Bianco conserva l’alfiere d3 e il Nero quello c8."
+      },
+      "exercise": {
+        "beforeIndex": 19,
+        "mistake": "Qxh2+",
+        "answer": "Kxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "Lo scacco che perde la donna",
+        "objective": "Invece di riprendere l’alfiere c5, il Nero ha catturato h2 con scacco. Controlla se la donna ha una difesa.",
+        "explanation": "Rxh2 cattura la donna e risponde allo scacco. Il Nero può ancora prendere il pedone e4 con il cavallo, ma il saldo minimo rispetto a prima di Dxh2+ resta +7 per il Bianco. Il controllo comprende tutte le 20 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-nf6-exchange",
+        "beforeFen": "r1b1k2r/1pqp1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 0 10",
+        "afterFen": "r1b1k2r/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPq/R2Q1RK1 w kq - 0 11",
+        "expectedLegalImmediateReplies": 20,
+        "expectedMinimumImmediateMaterialGain": 7,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1k2r/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w k - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1k2r/rp1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w k - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Kd8",
+            "fen": "r1bk3r/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w - - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Rg8",
+            "fen": "r1b1k1r1/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w q - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Rf8",
+            "fen": "r1b1kr2/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w q - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "b6",
+            "fen": "r1b1k2r/3p1ppp/pp2pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "b5",
+            "fen": "r1b1k2r/3p1ppp/p3pn2/1pB5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1k2r/1p3ppp/p2ppn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1k2r/1p3ppp/p3pn2/2Bp4/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1k2r/1p1p1p1p/p3pnp1/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1k2r/1p1p1p1p/p3pn2/2B3p1/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1k2r/1p1p1pp1/p3pn1p/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1k2r/1p1p1pp1/p3pn2/2B4p/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1k2r/1p1p1ppp/4pn2/p1B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1k2r/1p1p1ppp/p4n2/2B1p3/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng8",
+            "fen": "r1b1k1nr/1p1p1ppp/p3p3/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh5",
+            "fen": "r1b1k2r/1p1p1ppp/p3p3/2B4n/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng4+",
+            "fen": "r1b1k2r/1p1p1ppp/p3p3/2B5/4P1n1/2NB4/PPP2PPK/R2Q1R2 w kq - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Nxe4",
+            "fen": "r1b1k2r/1p1p1ppp/p3p3/2B5/4n3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 7
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1k2r/1p1p1ppp/p3p3/2Bn4/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 1 12",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "Nxd4",
+        "Bxd4",
+        "Bc5",
+        "Bxc5",
+        "Qxc5"
+      ],
+      "documentedPlies": 16,
+      "authoredMoves": [
+        {
+          "index": 16,
+          "san": "Bxd4",
+          "uci": "e3d4"
+        },
+        {
+          "index": 17,
+          "san": "Bc5",
+          "uci": "f8c5"
+        },
+        {
+          "index": 18,
+          "san": "Bxc5",
+          "uci": "d4c5"
+        },
+        {
+          "index": 19,
+          "san": "Qxc5",
+          "uci": "c7c5"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 16 semimosse. Il seguito Bxd4 Bc5 Bxc5 Qxc5 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1k2r/1p1p1ppp/p3pn2/2q5/4P3/2NB4/PPP2PPP/R2Q1RK1 w kq - 0 11",
+      "id": "sicilian:taimanov-bd3-nf6-exchange",
+      "family": "sicilian",
+      "sourceRecords": [
+        {
+          "id": "eco:f19560ecc05d9bed",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "lichess:b.tsv:15",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "eco:f139fe01db585d78",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "lichess:b.tsv:374",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "eco:475346a487171690",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "lichess:b.tsv:490",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "eco:95075239a54a3abb",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "lichess:b.tsv:579",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "eco:245ce901695097da",
+          "positionId": "position:a98eec05d87d9e1c",
+          "plies": 5
+        },
+        {
+          "id": "eco:ea5f36caf3683007",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "lichess:b.tsv:581",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "eco:c2b7e9dbd1459fcb",
+          "positionId": "position:ca096a80ee4b6b8f",
+          "plies": 7
+        },
+        {
+          "id": "eco:08a1816a03c8003c",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "lichess:b.tsv:608",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "eco:1fe261c771f52e20",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "lichess:b.tsv:617",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "eco:c367e3d88e263011",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "lichess:b.tsv:619",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "eco:a39b96ea212b8b88",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "lichess:b.tsv:621",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "eco:f6f7a752eafca279",
+          "positionId": "position:223a6838d381f647",
+          "plies": 12
+        },
+        {
+          "id": "eco:25af4c9343234843",
+          "positionId": "position:cc54ace1f5627110",
+          "plies": 13
+        },
+        {
+          "id": "eco:f0361ce2f56650a7",
+          "positionId": "position:449561e2fdd7c864",
+          "plies": 14
+        },
+        {
+          "id": "eco:9c30456f0f4482d2",
+          "positionId": "position:472445059da94227",
+          "plies": 15
+        },
+        {
+          "id": "eco:c6fdbf0a6ea0fc86",
+          "positionId": "position:6d13a709330d3940",
+          "plies": 16
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 16,
+        "authoredContinuationPlies": 4,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:taimanov-be2-nge7",
+      "sharedPrefixPlies": 12,
+      "relationship": "fork"
+    },
+    {
+      "title": "Taimanov con Ad3: ...Ce5, ...Ac5 e Rh1",
+      "contrast": "Il cavallo c6 raggiunge e5 e attacca l’alfiere d3. La fonte prosegue con h3, Ac5 e Rh1: il cavallo d4 resta fra l’alfiere c5 e l’alfiere e3, senza essere inchiodato al re bianco.",
+      "whitePlan": "Valuta la tensione sull’alfiere d3 e sul cavallo d4 prima di muovere il centro. h3 controlla g4 e Rh1 cambia la posizione del re, ma queste mosse non eliminano da sole la pressione dei pezzi neri.",
+      "blackPlan": "Coordina il cavallo e5, l’alfiere c5 e il cavallo f6; completa l’arrocco prima di scegliere un’ulteriore apertura del centro. L’alfiere c5 incontra il cavallo bianco d4 lungo la diagonale verso e3.",
+      "endpointReason": "L’arrocco nero completa la sistemazione di entrambi i re. Restano tensioni centrali da valutare, ma nessuno scacco o cambio iniziato viene lasciato senza la risposta prevista.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca e il cavallo c6 si porta in e5, da dove attacca l’alfiere d3. Il cavallo nero in e5 interrompe la diagonale della donna c7 verso h2: non si deve attribuire alla donna un attacco diretto lungo quella diagonale.",
+        "16": "h3 controlla g4. Ac5 sviluppa l’alfiere f8 e attacca il cavallo d4; quest’ultimo è difeso dall’alfiere e3. La presenza del re bianco in g1 non rende il cavallo d4 inchiodato al re lungo questa diagonale.",
+        "18": "Rh1 sposta il re bianco da g1 a h1. Il Nero arrocca, portando il re in g8 e la torre h8 in f8. Il cavallo e5 continua ad attaccare l’alfiere d3 e l’alfiere c5 incontra ancora il cavallo d4 sulla diagonale verso e3."
+      },
+      "exercise": {
+        "beforeIndex": 18,
+        "mistake": "Qh5",
+        "answer": "Nxh5",
+        "exerciseSide": "b",
+        "capturedType": "q",
+        "title": "Il cavallo f6 controlla h5",
+        "objective": "La donna bianca è arrivata in h5. Verifica quali salti sono disponibili al cavallo nero f6.",
+        "explanation": "Cxh5 cattura la donna con il cavallo f6. Il Bianco può poi catturare un pedone, per esempio con Cxe6 o Axa6, ma il saldo minimo rispetto a prima di Dh5 resta +8 per il Nero. Sono state enumerate tutte le 41 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-ne5-bc5",
+        "beforeFen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1RK1 w kq - 1 10",
+        "afterFen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n2Q/3NP3/2NBB2P/PPP2PP1/R4RK1 b kq - 2 10",
+        "expectedLegalImmediateReplies": 41,
+        "expectedMinimumImmediateMaterialGain": 8,
+        "replyEvidence": [
+          {
+            "san": "Ndb5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/1Nb1n2n/4P3/2NBB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nc6",
+            "fen": "r1b1k2r/1pqp1ppp/p1N1p3/2b1n2n/4P3/2NBB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nxe6",
+            "fen": "r1b1k2r/1pqp1ppp/p3N3/2b1n2n/4P3/2NBB2P/PPP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nf5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1nN1n/4P3/2NBB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nf3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/4P3/2NBBN1P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nde2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/4P3/2NBB2P/PPP1NPP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nb3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/4P3/1NNBB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Na4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/N2NP3/3BB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ncb5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/1Nb1n2n/3NP3/3BB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2bNn2n/3NP3/3BB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nce2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/3BB2P/PPP1NPP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nd1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/3BB2P/PPP2PP1/R2N1RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nb1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/3BB2P/PPP2PP1/RN3RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bc4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/2BNP3/2N1B2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bb5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/1Bb1n2n/3NP3/2N1B2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bxa6",
+            "fen": "r1b1k2r/1pqp1ppp/B3p3/2b1n2n/3NP3/2N1B2P/PPP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Be2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2N1B2P/PPP1BPP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bf4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NPB2/2NB3P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bg5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n1Bn/3NP3/2NB3P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bh6",
+            "fen": "r1b1k2r/1pqp1ppp/p3p2B/2b1n2n/3NP3/2NB3P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bd2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NB3P/PPPB1PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bc1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NB3P/PPP2PP1/R1B2RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "h4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP2P/2NBB3/PPP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "a3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/P1NBB2P/1PP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "a4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/P2NP3/2NBB2P/1PP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "b3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/1PNBB2P/P1P2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/1P1NP3/2NBB2P/P1P2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "f3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBBP1P/PPP3P1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "f4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NPP2/2NBB2P/PPP3P1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "g3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB1PP/PPP2P2/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "g4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP1P1/2NBB2P/PPP2P2/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rab1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/1R3RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rac1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/2R2RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rad1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/3R1RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rae1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/4RRK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rfe1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/R3R1K1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rfd1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/R2R2K1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rfc1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/R1R3K1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rfb1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/RR4K1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Kh2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PPK/R4R2 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Kh1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/R4R1K b kq - 1 11",
+            "materialGain": 9
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "Ne5",
+        "h3",
+        "Bc5",
+        "Kh1",
+        "O-O"
+      ],
+      "documentedPlies": 19,
+      "authoredMoves": [
+        {
+          "index": 19,
+          "san": "O-O",
+          "uci": "e8g8"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 19 semimosse. Il seguito O-O è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b2rk1/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1R1K w - - 3 11",
+      "id": "sicilian:taimanov-bd3-ne5-bc5",
+      "family": "sicilian",
+      "sourceRecords": [
+        {
+          "id": "eco:f19560ecc05d9bed",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "lichess:b.tsv:15",
+          "positionId": "position:1d280bf6dbcdb786",
+          "plies": 1
+        },
+        {
+          "id": "eco:f139fe01db585d78",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "lichess:b.tsv:374",
+          "positionId": "position:80c8b89e094f7b94",
+          "plies": 2
+        },
+        {
+          "id": "eco:475346a487171690",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "lichess:b.tsv:490",
+          "positionId": "position:9c51e3518a95da58",
+          "plies": 3
+        },
+        {
+          "id": "eco:95075239a54a3abb",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "lichess:b.tsv:579",
+          "positionId": "position:784f8eadcfe54b80",
+          "plies": 4
+        },
+        {
+          "id": "eco:245ce901695097da",
+          "positionId": "position:a98eec05d87d9e1c",
+          "plies": 5
+        },
+        {
+          "id": "eco:ea5f36caf3683007",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "lichess:b.tsv:581",
+          "positionId": "position:e716e890480ebf9c",
+          "plies": 6
+        },
+        {
+          "id": "eco:c2b7e9dbd1459fcb",
+          "positionId": "position:ca096a80ee4b6b8f",
+          "plies": 7
+        },
+        {
+          "id": "eco:08a1816a03c8003c",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "lichess:b.tsv:608",
+          "positionId": "position:2fa9b293ae892b62",
+          "plies": 8
+        },
+        {
+          "id": "eco:1fe261c771f52e20",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "lichess:b.tsv:617",
+          "positionId": "position:8606330399dc4846",
+          "plies": 9
+        },
+        {
+          "id": "eco:c367e3d88e263011",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "lichess:b.tsv:619",
+          "positionId": "position:bea6f8408d28ecad",
+          "plies": 10
+        },
+        {
+          "id": "eco:a39b96ea212b8b88",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "lichess:b.tsv:621",
+          "positionId": "position:1343e205a8522649",
+          "plies": 11
+        },
+        {
+          "id": "eco:f6f7a752eafca279",
+          "positionId": "position:223a6838d381f647",
+          "plies": 12
+        },
+        {
+          "id": "eco:25af4c9343234843",
+          "positionId": "position:cc54ace1f5627110",
+          "plies": 13
+        },
+        {
+          "id": "eco:f0361ce2f56650a7",
+          "positionId": "position:449561e2fdd7c864",
+          "plies": 14
+        },
+        {
+          "id": "eco:9c30456f0f4482d2",
+          "positionId": "position:472445059da94227",
+          "plies": 15
+        },
+        {
+          "id": "eco:da6c5caa8ad4e53f",
+          "positionId": "position:23ffab8a859bbd4d",
+          "plies": 16
+        },
+        {
+          "id": "eco:27054fa6d149522e",
+          "positionId": "position:01d1894eed5879af",
+          "plies": 17
+        },
+        {
+          "id": "eco:7d3aaa4ded5c54d8",
+          "positionId": "position:0b4d8037991c9564",
+          "plies": 18
+        },
+        {
+          "id": "eco:857fe67bb2dad59d",
+          "positionId": "position:8587d161c79a676c",
+          "plies": 19
+        }
+      ],
+      "provenance": {
+        "kind": "documented-prefix-with-authored-continuation",
+        "documentedPlies": 19,
+        "authoredContinuationPlies": 1,
+        "generatedPlies": 0
+      },
+      "existingParentCourseId": "sicilian:taimanov-be2-nge7",
+      "sharedPrefixPlies": 12,
+      "relationship": "fork"
+    }
+  ],
+  "baseline": {
+    "courseCount": 302,
+    "courseDigest": "6cf5a20cb418402d230bff863df388d48a3894d67a690015615dad5e98eff9d0",
+    "practicalCount": 302,
+    "practicalDigest": "74c878b57fb88fac913c53a11f2a387568ac9b9fdfb1835b0174bd442db56b0b",
+    "coverage": {
+      "exact": 1980,
+      "transposition-only": 203,
+      "absent": 10139
+    }
+  },
+  "expectedCoverage": {
+    "exact": 1994,
+    "transposition-only": 203,
+    "absent": 10125
+  },
+  "preserveFiles": {
+    "docs/OPENING-TAIMANOV-BE2-P022-R1-RESULTS.md": "d0fe2da16bd818595ef91e5e3534e64d6364ca86efd00c5ddcb4a753847089be",
+    "docs/data/opening-audit-sources/COPYING.txt": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "docs/data/opening-audit-sources/README.md": "c0bedd93a117f318a3bd087a3af640652f4369ca461429d4dfbeee4614dc5eae",
+    "docs/data/opening-audit-sources/a.tsv": "3282e4c9155289a29224f9a85fba0decb46efa35c2fa5e39662d2ac48fb0f793",
+    "docs/data/opening-audit-sources/b.tsv": "1d5ed134ebbd87915ead5683416e37583bb3e5ae3582b4d8cb5cb4aa7ef4f623",
+    "docs/data/opening-audit-sources/c.tsv": "45e843c7b7e79a0d04d5bda879c9bd23f5a10974488bd8615e4f4c5d0749986f",
+    "docs/data/opening-audit-sources/d.tsv": "1cf4057a8aece94f27bb3f278ad410ee2844831a642364eeceaafa091dbcceda",
+    "docs/data/opening-audit-sources/e.tsv": "48c6f6645b031a5937c8386839debab0e2e48837251687ba1afb6369677f8546",
+    "docs/data/opening-audit-sources/eco-roots.json": "8297086487dd6c2afebf5fda9909e722a326e8c28360459e18fef4ac132cd9ea",
+    "docs/data/opening-audit-sources/manifest.json": "5eed2545973ad94e6676c63ff92cb3637d756aefec9eed55275ab44062b8caec",
+    "docs/data/opening-chekhover-a6-p022-design-verification.json": "2e22d6e7bf80ea04fa012a7cb205816d9dfbcaa81dbbaa22bbeec72b714cee16",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/01.request.json": "d18eb5ac7f2f823c8c70361898f486586906bc27c6f14646c3783f9acf945cd4",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/01.response.json": "5f46eee0d86102af987e9e5afc578494df26eb9e0817dcb50bab5b3b7d964bed",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/02.request.json": "095857728c2a704bbd383caadbd98739a77d2e1f2783f4abf5a6fe99861b9602",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/02.response.json": "6d10634498a1e65f74fe4c997b6efc80d031d3798f338c870b192b3d92c3b24c",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/03.request.json": "65f21b32f3c424c72ba459769ead4adcbe2e041a19ed342b4b65f241b4ce94e8",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/03.response.json": "96ecc958179a302c3f230bc8b7f8cd84fb5fba6c0e355e7628144750511768c1",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/04.request.json": "c521dda85d8cc83947dcd1ba1aad7cf4de106581fa8417f1751dcc8605a48421",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/04.response.json": "8176f9c9097cda9eaa4a5a9ce7a9fdd954b098ff38fe8f3ce70884ff8cff9292",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/05.request.json": "566dd7cc7c5641d79f96d4fecd14b497bfa5cad4d4f5963c1aa723694f73103b",
+    "docs/data/opening-chekhover-a6-p022-engine/attempts/05.response.json": "89f0489e606a4d2dbd6116c9df18a12709ce5f589f4aa44fa921f4f1e6aeda96",
+    "docs/data/opening-chekhover-a6-p022-engine/manifest.json": "407c3fd1f1a542931899ee3e387e70c764d352379ee8cc9ff40fb8e969dde27a",
+    "docs/data/opening-chekhover-a6-p022-engine/results/1.json": "4cac8ea818f3c10acc5c38671aeabefbdc03d0a29e72af0ba859b3d0e01c433c",
+    "docs/data/opening-chekhover-a6-p022-engine/results/2.json": "653402ae7e657cf25b2035163719e0bdf36167e9aca0e123f664ef9cd6df1cb3",
+    "docs/data/opening-chekhover-a6-p022-engine/results/3.json": "d39ab613a239142ea1fd1cbf607eff833db9155195ddb7cf7d7249162ea34e47",
+    "docs/data/opening-chekhover-a6-p022-engine/results/4.json": "6e7759292701b4f2250ac310fe4cd5ceef04ff21627c1f52217692136c8f7398",
+    "docs/data/opening-chekhover-a6-p022-engine/results/5.json": "8cedfcaeb7a7ddea211576da7945047b29a8debfbedba9591aafef04817b91b8",
+    "docs/data/opening-chekhover-a6-p022-plan.json": "2b467d0eddf492cc9c1e4a3334142a66db070a89ba8d91621932e628b3eac283",
+    "docs/data/opening-chekhover-a6-p022-practical-verification.json": "04832701e2036485c1175b01b99624922caf83591b3fc585c8bccee47578791e",
+    "docs/data/opening-chekhover-a6-p022-result.json": "70c1fd156c272131c55a92ae79de52b3d78f84a0ec3cb9e9526aba17717f3cc9",
+    "docs/data/opening-chekhover-early-p022-design-verification.json": "2be640cde3780cb302ea8b089611f666ef846d400e02adbdd9109de0322571da",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/01.request.json": "a5c3501d2f5d85cc03ca056947cee1f44951a1367c26d71d17d94fcdb3d442eb",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/01.response.json": "37ffe909648621915d5ee0e392e63787f603050e5c3ca08fed6e2fbabdd37b5e",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/02.request.json": "9fde68d0f2530bd84701ed34c2a1c623c8a4d4899df2943c3a428febb9b620b7",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/02.response.json": "56a0ce493d4953f460073565c3aa259ec369896a2c021477287f54b4ff2d1a46",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/03.request.json": "82bbd791bbd949d8e4b5ece76d8f088798beb7d749dc836bb3f293ab5af16edb",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/03.response.json": "c522c8fde067a0341e8a527f3dab43611c5ded6bf6c286f31ac308196cc60472",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/04.request.json": "a5306c5692636b0969f6d8a1d7525b2963d5d36e32996bd59d38caf44592fad8",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/04.response.json": "5ab55edb71dd61ae9ff59984fee7a0ddb9a0f37eac630f4d074656dccfd46b9a",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/05.request.json": "1882ad9515427009ca37c99798c9bc6093d7f81575633d04e640e541671b8fb0",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/05.response.json": "289f9a78f295806fafcf99068903c53bcad156c99ec8e1fb9800bd3b271ffc4f",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/06.request.json": "3f6a773249f38eb0bb7590903c0e135cc3e1910bd84e61548c6991758481c05f",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/06.response.json": "6020e770e87295e32daa2e16980ef0f9932aa50dd4896b6c825c573c3e102bc0",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/07.request.json": "ae3e8679ef39e8e82b2499248be9f0091ff069457c511c8007259a0cc1fd91d2",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/07.response.json": "5a95c558ec8fb7680b5c982aa8597bba02c5236d989b72f1f117b94271f73bed",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/08.request.json": "cf121e50f8b4ede3584042d99e2dc547f500c2f94b332d8fe9cc7e0d2fbd9c95",
+    "docs/data/opening-chekhover-early-p022-engine/attempts/08.response.json": "1edf4e20443ae28bd8a19f9049e60701bcc3bce18368e60a85a4331b224ecaf0",
+    "docs/data/opening-chekhover-early-p022-engine/manifest.json": "2fa1a90bf0744e51999f636028b42e816eff4c65a9c786ef9ae6e67e85cbe54b",
+    "docs/data/opening-chekhover-early-p022-engine/results/1.json": "37baf489c2d570d5004961c1f23220468dbd3865fcbd3d5273b6464ad4e0bb7c",
+    "docs/data/opening-chekhover-early-p022-engine/results/2.json": "63eab7207a1cfd04193e190b46b2047b319e61e75261a02fe6ab6cd805c169e4",
+    "docs/data/opening-chekhover-early-p022-engine/results/3.json": "0f36e307d84beab7150f64c5acd5425fdd1d6124b993da92c1a3958d65a84206",
+    "docs/data/opening-chekhover-early-p022-engine/results/4.json": "d708ce0ddb016fed871c3377b8e89771ccf924e0c2f27aff49c5e4d1cc2ae548",
+    "docs/data/opening-chekhover-early-p022-engine/results/5.json": "a8371152f643b8a4581fc876cd3eab915c0861531ccb8d6da41b36c4c1c71f88",
+    "docs/data/opening-chekhover-early-p022-engine/results/6.json": "f4a0eb17d4e7855820d336b1559951cb4f5ac2055d7d5cf9ac740ce267fbd149",
+    "docs/data/opening-chekhover-early-p022-engine/results/7.json": "eea297cb918ec399fba5fdf6cb46e8f88629e9b3ced3c853d4b16ce32ca26e95",
+    "docs/data/opening-chekhover-early-p022-engine/results/8.json": "8146f504370b9e45e786b31f5398d7e93f0ea282545ede36d3ff3874d12702b7",
+    "docs/data/opening-chekhover-early-p022-plan.json": "a2f29d22efccbd20420862a82c08d203bd95afd2df357bc44cdd83d3d549fb37",
+    "docs/data/opening-chekhover-early-p022-practical-verification.json": "98fd3fb526d6d97da4b03253b9ab8c23c218a128753f263f9e279fa7361f0e36",
+    "docs/data/opening-chekhover-early-p022-result.json": "3465e5a713a413bee809c3b24553485778e45b895324a495686697abdd44bc9c",
+    "docs/data/opening-chekhover-p022-design-verification.json": "4e095fd2d0ecb6c0f89629a882e66be092e6e94c120d6ee5340d7eb2290e1631",
+    "docs/data/opening-chekhover-p022-engine/attempts/01.request.json": "5a562d128a1c72ec94a38448e66d48473469515e659b61dab2f15df4898ca805",
+    "docs/data/opening-chekhover-p022-engine/attempts/01.response.json": "a91bb18f6801d34004d635eae3d1f83c01bb1855dbcc9cc9fc5b0b626ed4472e",
+    "docs/data/opening-chekhover-p022-engine/attempts/02.request.json": "e3392b0d11c4723160ae660198a87d68535b17c0ed3f7ca7ce5442fd880ce40e",
+    "docs/data/opening-chekhover-p022-engine/attempts/02.response.json": "d41738725af7c763e25fe4403e396c76bba001157b2e7118cf460018fcf4867d",
+    "docs/data/opening-chekhover-p022-engine/attempts/03.request.json": "b4214133827f4dcc97155e8fc0bc978a8c4ebffd7a3278fe215dbbf207f23c44",
+    "docs/data/opening-chekhover-p022-engine/attempts/03.response.json": "080e7c14ee2b41f54b67bdd44dac596117b8650332843156b2659f157dde0189",
+    "docs/data/opening-chekhover-p022-engine/attempts/04.request.json": "ced820cb630fc2039d64a832f4ce003614c648a3abdd89ceece13be9964f2641",
+    "docs/data/opening-chekhover-p022-engine/attempts/04.response.json": "edf023906316ae821f6ccd6dd7d46946e5d754f52a22ddb939c9bc2a080b86b8",
+    "docs/data/opening-chekhover-p022-engine/attempts/05.request.json": "5e9c972a150ba551b815cc301c27e91f5eda0d7870f4512fb26b698cd8ca5dcb",
+    "docs/data/opening-chekhover-p022-engine/attempts/05.response.json": "8d81ffd99b6266a001ca255aab3b1041dca9546b7e24367b289fb084b4bcd568",
+    "docs/data/opening-chekhover-p022-engine/attempts/06.request.json": "348520d5896e551c7eaa2f72e503dc62be0e3fbf986c8e8089bb8135a4b733a2",
+    "docs/data/opening-chekhover-p022-engine/attempts/06.response.json": "8b11b6e94e4d30f38845195027a5e1a716f37a170105bbccbecb8e644796a18a",
+    "docs/data/opening-chekhover-p022-engine/attempts/07.request.json": "9c71048b520ffd23a35646a27ff6d8cdbd70ddc8d01dc6287214302730d87ea7",
+    "docs/data/opening-chekhover-p022-engine/attempts/07.response.json": "ca17365f064950b3141c6f15607e797fe5a8acfb6e5f6b05bf09d178ab931b77",
+    "docs/data/opening-chekhover-p022-engine/attempts/08.request.json": "2b9de2f2377faab32d0d1e73764d9c88bba968b6e88d4978196b5202ab627cb1",
+    "docs/data/opening-chekhover-p022-engine/attempts/08.response.json": "6b699738a3557b2ecd72d0a38472d6846259c1bec90e891515a4108e8df1d23c",
+    "docs/data/opening-chekhover-p022-engine/attempts/09.request.json": "b7d009aa1fc21829e364d44fb7630a562ed00643774b4552cc20c8813df98c94",
+    "docs/data/opening-chekhover-p022-engine/attempts/09.response.json": "4527d176e474bfea34b9229418170d1832bc05fccca9ee0fe68a64d193f43bfb",
+    "docs/data/opening-chekhover-p022-engine/manifest.json": "224a6e3df49b39c738224e68bf0f7e3466117a9f44fea1f337bc7336512e8987",
+    "docs/data/opening-chekhover-p022-engine/results/1.json": "e83425f4e7abd9c460c173a7bf4ea8451ec62454ade726f1bbe73214639cd16b",
+    "docs/data/opening-chekhover-p022-engine/results/2.json": "fe203354f26ac10af4d7ac2eac841a287afacce06a3abb8fdc5e0f3cfe495c56",
+    "docs/data/opening-chekhover-p022-engine/results/3.json": "bfec1fe03755d5ac02de06c76d995b44dcebc0d39720500cd62a2dc56f8175b6",
+    "docs/data/opening-chekhover-p022-engine/results/4.json": "b52c0344c1a1bd27ca654c0e4b094c227be6a10663a2df96e94ea788c4282782",
+    "docs/data/opening-chekhover-p022-engine/results/5.json": "0e0950af09405a005fcb263566a5de133e860c156b77c5e52d100dedd07aa4f4",
+    "docs/data/opening-chekhover-p022-engine/results/6.json": "63b5d8d3efd7fe825493ad683e4a7d284c7b16803ce20cc86e86056e2ffb6a37",
+    "docs/data/opening-chekhover-p022-engine/results/7.json": "581bfb1c3c9da1c3ad0bf0e8457ac8a8f54b25b2e1d22f3fd23c748a07e656ad",
+    "docs/data/opening-chekhover-p022-engine/results/8.json": "1edab8c95489de7517a6e2b1455405454743e035a1faca2f4120c1df696e6f9b",
+    "docs/data/opening-chekhover-p022-engine/results/9.json": "c66b576d7fdc897d73462528c5749e6d413abb842b1abd757c38c0d7e9f569b4",
+    "docs/data/opening-chekhover-p022-plan.json": "243bd68a4df4c52646ed1e142674751d5acd0eedd9845a6ab829e6df59ebc504",
+    "docs/data/opening-chekhover-p022-practical-verification.json": "d04e2992a433b30d1c0b8a8bcd9d9a08cb96e88ac69a08c6967e24e7e6fd69e4",
+    "docs/data/opening-chekhover-p022-result.json": "691b309baf7aa223b1da99e5ca66540a60a77d29d71bc6433c89d7af566f5674",
+    "docs/data/opening-expansion-verification.json": "719c67bbf71fab5e0da82759bcadb30a6beca951006837d41d02d8f49f804c4a",
+    "docs/data/opening-practical-verification.json": "8859def8c2c8ff2f0f0511ad2c82706ff29037a7fa445d2d4dd7a976bc385e46",
+    "docs/data/opening-scope-audit.json": "f7f42a8ae999085516d691a87c4df9fdf084075fce0c177c7e3275fe96d7ba49",
+    "docs/data/opening-scope-verification.json": "dc64f60e982d8c9e1425badcfda6da3e61acefbb7eb23bb0a44c2243dabb926d",
+    "docs/data/opening-sicilian-early-p022-design-verification.json": "2937b6ace3c3f39ffe42ed31b90557d3edd82bf09e103d2da1cbecc56cb6c15d",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/01.request.json": "1738fbed825829d0d3bc02ebf4c5d08e6227d51e68e76041b25b5582eca65ecd",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/01.response.json": "d4aacbd10fc68fd29f08c3d313a3b031a3d6c59228ab905c37ace5ab73af50a2",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/02.request.json": "21890eaffa5aee3ff2ae6597a439a991fa7f9fa4133d36108f375ba5bb5e4132",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/02.response.json": "6b956c696d0331eaff041c85beacad1fc24c53a7ffa540197f330672848abaa4",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/03.request.json": "6c2432dcaabe5a0f9687a8cf12a155a185a0ca153fac124e184ebd880af927ba",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/03.response.json": "7dd477533ca32ff12b30b20e4b3272bf1eade3b3b3b2c5e1ebc0f5a185dba786",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/04.request.json": "46aa0365160964600c3fbc8da3c41c3c8dc6ff4a6df97a62f35683e683fb6df2",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/04.response.json": "cc62ca0e909cd683010f3c27cbae008fc8d0540b1387fd783d685967fcb02ee8",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/05.request.json": "5304f9970fb91f01fb8b7a55a35df4c27891eeffa90a587de02e0ba7444cfabe",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/05.response.json": "6357003a6e1d1cf86561a33f40b42f5cc25261896bfed97bef4ae0403e947d58",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/06.request.json": "7f4378f8ba0fc4176580de766183374a4b16adff65144fab327040c7a78aff12",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/06.response.json": "7b8e98b0c04c3615c3e72bf8c3bf230483c12143ae984c5df75c9514e975067a",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/07.request.json": "0a4297a8057a37dafd6ff80002d0b20b79d5ea221ef4cab7d374826def39fd84",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/07.response.json": "fe2b360bddc3025e91bf7421208d4bd297fbe7d4b1f5e1bde88449e4a949c752",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/08.request.json": "004bfc3f17f9706e329ecdc0274b8834a455d77b6075ab14a1bd0bff0bf97924",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/08.response.json": "06b2fb13ea4a5893055a49a3d707e0c0065adf71b71b75000328e2cc0574dbf2",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/09.request.json": "1cdd431c5ba43c0b281a488d9890d1de8e2cb19f3f48ba2c90a47991d40ec65d",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/09.response.json": "c14f3ec831b3e59878a342f9edb53a0d5bc2e9509aad5fb254f6a5ce29f136cb",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/10.request.json": "3128babfb5caca55e51f7826bb3bbfa8ea82ce886233762fc0495cecb1385097",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/10.response.json": "1406641631f74b3f65c8c5e546fa0f934310b2dd308623b658c4b0e14e9485f7",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/11.request.json": "26e10832952345d4eba43801f7ae53bbed5faf1b38344e1206d659385b4ff25a",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/11.response.json": "6c3277a0773a1fdffe1d533011bfd01e93bed31f29e7ccde8a54af2796be3b7f",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/12.request.json": "ce5c929dd816e1acae4057f930b2b6572b3753dd56ff07e558f385adb72b7d37",
+    "docs/data/opening-sicilian-early-p022-engine/attempts/12.response.json": "c2a82627c075e5de8d445d0b30e951b18e84836ba71b1c4c4908a980cbbe22a2",
+    "docs/data/opening-sicilian-early-p022-engine/manifest.json": "98f6f1c0768b8f78f0a8d1541de38b0102714a6d450a22c07397f5c44b1aa3ab",
+    "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings-lot.mjs.txt": "99fc151b0265186df32acef6ba14d7686d792902e6c27a12981455879607bf93",
+    "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings__artifacts.mjs.txt": "a478dd70c93e2eb67bd17e08a279ca30c96d2d463976690f770e807b94b99d8a",
+    "docs/data/opening-sicilian-early-p022-engine/pipeline/scripts__openings__common.mjs.txt": "99f98ba524ff6cc1cd5c508feb6ac9e5a42af10ec5256bda31ea55c98b4138ab",
+    "docs/data/opening-sicilian-early-p022-engine/results/1.json": "f2dde8a42616d4a9c1faa83d2e3ec320df3480940bf2c78c1adede27e65a3773",
+    "docs/data/opening-sicilian-early-p022-engine/results/10.json": "063afbf0d3605c599778fed68fb454289d3d5b9a1cf0e74ae57a49cc7b669823",
+    "docs/data/opening-sicilian-early-p022-engine/results/11.json": "c1b78d1b8d89df7f945882604c0691f62f9805b5469d977ae7dad46bd1ed19b0",
+    "docs/data/opening-sicilian-early-p022-engine/results/12.json": "406559964a4d7364a0443263a11fe7e77bb0460c16918e5624794b3b74268a9c",
+    "docs/data/opening-sicilian-early-p022-engine/results/2.json": "cf6562491dda5b4887560ca4e792cd57bdc2e061cd10e72bc6fa7b6dac9c1ac5",
+    "docs/data/opening-sicilian-early-p022-engine/results/3.json": "ac25796cf31d1a7e57a3d6849d02500a19ab8338235b80e94c3e22c3026f549f",
+    "docs/data/opening-sicilian-early-p022-engine/results/4.json": "e55b87e55a4d2037bf1998bc9fb9b588fe487aeb1042c61a2f22d0f5f76aa389",
+    "docs/data/opening-sicilian-early-p022-engine/results/5.json": "1941bb89afa3ba33965a3c260c3ccebc0233bccb4cc17673620c70003f827720",
+    "docs/data/opening-sicilian-early-p022-engine/results/6.json": "c6f57988c99d3bcdbebf02d6d1fc6d6b43e9dadd8f1962dfbbbe08547d3435aa",
+    "docs/data/opening-sicilian-early-p022-engine/results/7.json": "f72046e78ea029dea0cb95a9b756723eb43d6c76b2e711f5d41d30f7e24f1f81",
+    "docs/data/opening-sicilian-early-p022-engine/results/8.json": "c948c1119dc5ba5661317cb6a5228a22aee5503af5f55891f72f1782d0547ad0",
+    "docs/data/opening-sicilian-early-p022-engine/results/9.json": "285ff665d1a34bb566e530ef12802c1bd11b06f0685f0ab44070f9205f26e7ed",
+    "docs/data/opening-sicilian-early-p022-plan.json": "053557b56af137eec9310884819032370cdca904c96c73567712f4ba9434c232",
+    "docs/data/opening-sicilian-early-p022-practical-verification.json": "c18f2f76a5c1e7c4d0e7463d9b4f6ff9516ab5b6a9c7a4c1762e5cd17f323e3f",
+    "docs/data/opening-sicilian-early-p022-result.json": "111a7a9ce1f2ca485c5c8dd23c7dead4730becd2db7b1895b948e426c268b690",
+    "docs/data/opening-sicilian-p022-design-verification.json": "9d1c10470635bfca400afb21a94c9bd611eea35177e0d8da4efdc2343c3ac4bb",
+    "docs/data/opening-sicilian-p022-engine/attempts/01.request.json": "39b5c3a8ef70099fccee6b4c3c2ff6493c6854b3f78a579ab4cca2570bfe0145",
+    "docs/data/opening-sicilian-p022-engine/attempts/01.response.json": "ec1c68bbcb99403a808760c6ac1f503e1675c4747380fc520bc405fcab33f0b8",
+    "docs/data/opening-sicilian-p022-engine/attempts/02.request.json": "9c3fd8880f1fff34350d9528d0f75e628548972632410dffda9a77f1270fe321",
+    "docs/data/opening-sicilian-p022-engine/attempts/02.response.json": "d3535ebdfe130d48a85c36ff77ace7d1658b84746f8a231fddec075a4106705f",
+    "docs/data/opening-sicilian-p022-engine/attempts/03.request.json": "64cb1d6b4b89249584ca9aabe6b59d4d92011d4521c0cb7cdb8ed24196fda979",
+    "docs/data/opening-sicilian-p022-engine/attempts/03.response.json": "b82913f5c423e250115787c6d18bbc0e6eb07808eb7170c420f26dedf8ccbbe2",
+    "docs/data/opening-sicilian-p022-engine/attempts/04.request.json": "6144377243b696927f62e7051e072653e8d959ce1bc50a330da1d5409e611384",
+    "docs/data/opening-sicilian-p022-engine/attempts/04.response.json": "a1e7b5dc44592fcf49a0b29ed9ab54c8620e7b77d2683237d1a0f6ff154d176c",
+    "docs/data/opening-sicilian-p022-engine/manifest.json": "b868aede16ebe80892c31fedb69e25c0bbdd3bc5caa5a85dbfb7419cfc1219df",
+    "docs/data/opening-sicilian-p022-engine/results/1.json": "7a510ce36e871aef96a3674459d8c4ce6bec1e64712f9e3e8e11a2e1caa6ef48",
+    "docs/data/opening-sicilian-p022-engine/results/2.json": "52a7eff4c2f2b3f743941c4618c2a5e4d754eed8a08fe6926d887a671a63df94",
+    "docs/data/opening-sicilian-p022-engine/results/3.json": "e35923a76eeb6c85e6e08f2ed1304dd68e05ee46dc2145d2951b4a0734cc84c4",
+    "docs/data/opening-sicilian-p022-engine/results/4.json": "5197d2d374b506d88ed15086c3979117514a40bbf7e666c2fdc25d2b1136184d",
+    "docs/data/opening-sicilian-p022-plan.json": "49ac5ed376c116ff931a63b990891657711dbe03f0ca81742acd5b8030280680",
+    "docs/data/opening-sicilian-p022-practical-verification.json": "0d500f798d47879fcdf1e1d2290cfbc0d84a2ac1735e0fce2dc3efd87938eb13",
+    "docs/data/opening-sicilian-p022-result.json": "42d8925d8dd3318a1832135847d6a112e5633ace5e9b26b6dcbc81087c13289b",
+    "docs/data/opening-taimanov-be2-p022-design-verification.json": "02adfe3fde922dcb8c1e0dfa9ad1ba9cdda82c1256ec9325f699b9da1d28607d",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/01.request.json": "b9f86aa589d0bc331a979c6c8366ef353b9752acd03da2b70c23046176321639",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/01.response.json": "8c64ee8f3099aeb904e7cad2cb1ebf870e2fc2401c47b63e8040cb7698e21304",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/02.request.json": "44ffcb4cce0530101476cfe33d96bbbff22451b01bfb862fc988bca2e830bd90",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/02.response.json": "cd518cbe90640912a3e90cb21d6d937aeb2ebef53ebb385f3c1366c04dc70fae",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/03.request.json": "deecdbada172c2fe4cc57ce8cf1627b908bbf1b57d165fc5c5563107a11f0d28",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/03.response.json": "038aae8b9fd7019031420c9a634697403dec9f08cf1da572c15adccdbd33dd19",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/04.request.json": "ff4395b3054b2c56e385516d7f70e9d197acdd6c309c432602317c853b2f214f",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/04.response.json": "831de2d4f215aecc4050772426e4ddf398ce8206751822c2f6aebab4c84f870b",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/05.request.json": "14745290fe433057480db435aa6bf8462454765b129fca9574ffd8e0bac9678f",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/05.response.json": "82de0aaf5ca343d4f1a5f6d56f01215a871648c50c987b7cffdfe1b287a2f1f3",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/06.request.json": "315756c9abd72f6323bb2984a2ee670cade24632e5f9c2355e0782dece0783c6",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/06.response.json": "a45b627b6ddd82252a8e3c15ce0942c575fb1e7fea6124d148c0ac53314634c3",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/07.request.json": "0f05902e537df7159e2913cdf34b3d6e61963962bb0f9ee227be64e5152ccf2a",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/07.response.json": "61e366bd01dd51dc46ff311332e001c09dde4493182b62cf894891876b3834b7",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/08.request.json": "1f5494d253ad38a3b06ce6a82e0b2e8f0cd9490c7af0386410526c2c01b99385",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/08.response.json": "0c1db9b18eb3007a96b128c2b9566af5d06eed02c81c0ba5bb4c763e9f1e349c",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/09.request.json": "d113b3271035a6415f7c99ef63dc04a106f7bb3ed015391e182dabd7a65563c7",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/09.response.json": "75cc4ae40131f929e246976b2fa22c4360ca77c8a0f11736c33069f9a9546644",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/10.request.json": "2216ce84a7f35374e3b397cf0376df4ba3a4921e2c03bff55b2806dd76c6b11a",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/10.response.json": "8b43918ee82c76ae09ae9b35e6577955a6cb103681d454074830a4244f368f97",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/11.request.json": "00203ba900236b0a72b8dceb65e41672a8367e99acaba199e0ae8d22cda651da",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/11.response.json": "07a79df82464ff4d4744be7ee7dddab7cda25bcf1525b5787a7c3f11a0cc85c9",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/12.request.json": "c83bd5e95425ecc5beff5b9db73061bfc02ebebd0f6d20100038fda7d83cf809",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/12.response.json": "ce95518d6abfb351ec4c6f6a822bc6dc4c1936217948256933d19168d7f5382d",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/13.request.json": "165814fb19d6df2608cbd27771f053a4994e48843ed272c90d3282f280cc5298",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/13.response.json": "7b5d4b62f33034f7adc6a56f40afc76f854f5298baa36ce8f4adf71e6c17eabf",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/14.request.json": "7cae2e2ba304acef1bfbb26d948220a8bff83d0cb516dd5284332cbdeb0e7813",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/14.response.json": "615a8bc4c35fd3680eb397a45a1c63bcbcf3a7b530d8b8cca46d7d93d0582b82",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/15.request.json": "a2a2ff81c5251576f49f0b6e61ccdabfbf1e8fe78938307f3ebc09606e936f3c",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/15.response.json": "2369e795b7e1c410ee1dc7baec59c56bde31a4eeef3bf18e80e33e6adf5c6568",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/16.request.json": "7d67a56050e16b4e7fe07207d46c5788d591f1d99e17099dfc76625fb8f0597f",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/16.response.json": "cfc85b200d04627a835a67ce0e314e4518fd5442de3c32761605c1b1f6a7ecbc",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/17.request.json": "d3b84b7bd744be1aac3f5d01a335c1c685d514afafff31648b128a6b27e9933e",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/17.response.json": "b0c5afefbdaed3628d70dac2dfd89af710a966bc43c62c2b4037ff21410e2e2e",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/18.request.json": "8ea9f7bf1368d3cc55d82eddefb3a8ccfb070ead3c8accd4816c2c68723867ae",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/18.response.json": "3fb2cbb072fdeb387e22fc60770bf0bb70f7e13f2262943cde86747e6ac796d1",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/19.request.json": "63fc9351dce2498e49b28f6654076f73ad4f9d1b4bbf9d5bde82ab2fa752aa5b",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/19.response.json": "e2f115502fb5137bc33aaafddddc973e2b7ab64926a051e8fc598715b490b2de",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/20.request.json": "abf66c1d098dca6f2f48a4d2079bb880cce440eccbc39c62110e058eaf3c1085",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/20.response.json": "087d3eed66c588c069cd26162b98b799840e87a674d88bb7e897b2354676473c",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/21.request.json": "175761978da9e90e4fc6d138604504b43bc2b1ca4bb41b1ac955e3b14974418d",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/21.response.json": "bdeac3cf154d4fd9863c9b3ca1682e93f110e3435ff0d3c57918e1bae79855a1",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/22.request.json": "6d21dd68ceab45293cb937591ee780ee005fbea29ada83983151ff7f6721df1b",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/22.response.json": "e13888a82b9ab36edc7299b14892e488c1868ec23f7591aabf76aa33833a93fa",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/23.request.json": "7f378d90245cf129f2c90f9326b45b56c0980f9ac57f6f51c77b0dcdd58e6834",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/23.response.json": "f75883512c5c9267fc5001daf8613aba5ef4b335de37a70bc702702521a49f63",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/24.request.json": "4f1302cfa53479f9815a178f01cd6ace7d160789eab22f4a51f890d698568c2a",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/24.response.json": "2bdad6857c19c88f0bc6df367bd9c5e786350632fe9fdcb028d9af75197fd86d",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/25.request.json": "77693e7954d0e1f392065b74c6365cf1b8572620defba2ee5b3097bfd21391aa",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/25.response.json": "6c734f16d368a1aae4e7777a3ce0f98e66a41477bdd6ebd84a363458aaf56824",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/26.request.json": "3afec214ecda7db992d8466e0e836690178d452b87df71b42f130289ca09e3d3",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/26.response.json": "13421da88e84037d2b9eb895f0c3fd2f7db13520577950587e81177346103401",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/27.request.json": "0f09db94de716d925a0a8851f39b2c4facbc2060806c60fbe7949b44791899d8",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/27.response.json": "ae9525d29361b039592d78d0435696bb0908c35dbd4e4a6d835bad9430f6aaf2",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/28.request.json": "731392470f8d39f59f8911f5c162beb4b363406e811d38d4aa8bafe4ff952a06",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/28.response.json": "ca2d733ef2bcf5b223074bb366371f95e455277bc195563b22c4dca93ba71460",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/29.request.json": "60711861fdcab4be1c7d1eae0b7033ead5e75245b4ee872c6e22cafe650c31f1",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/29.response.json": "f350efb97f33790cc17fb24af93a2728374355727ba386c67ef82499b96023e9",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/30.request.json": "dde336d0e63a8f98beb49787c04a3862b4b8922220c25c82d4ce38efb946683a",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/30.response.json": "37b0afca3c232a69cb73edbed4ab9ad210cc541e238fee7a16282cbc2320d3e4",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/31.request.json": "ec429e438d15ab39c933c9cbc1c4f70144e08227954988e8ecedc271c1c0fd39",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/31.response.json": "449421ae57d344937ee72e860510554ddb7904adcd1d7ed2c9ff6cdb5a48b46f",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/32.request.json": "cebda8dc009fa0c1896f9fc68241ef203a0a19da2b454f0392791014809fc0c0",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/32.response.json": "1ebfb35d6cb20a2246f4fe15ca8b35ccf7f14ca7afb659b821bbeaca0ed7c7a1",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/33.request.json": "885302f492184f4fff59b4335909069ef44e07a18406cb713455dd646ad1e287",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/33.response.json": "e12d9655a2f7b32778c3295480d48693ca7593eb643eed7208dd689e63012180",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/34.request.json": "cd1d556fb0ef1c0947ef55bae4163a63f8c8ce3d969888027aa8e795a55923b5",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/34.response.json": "fbda4e391b54388f921951f60744cded55709f557b5bff00aa02b7146c779bbd",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/35.request.json": "849c9a9b4275f89a489a282a440769836af6f69f8b81a49502aeb90c40718934",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/35.response.json": "ec281b2176802b01ac6deba2abc1b9d401398a095eeac9a509fcc4083b03026c",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/36.request.json": "3e76263fa4a3cef6a01d4afb99dd4452a1635c1f10302ca0d8782b916fd09604",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/36.response.json": "2c903c5635c103fe80da2bf5d6c96bb345b17391e83472d763963bbb42999c29",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/37.request.json": "f28a2a6cc055573e609c91df6df7833ac8eb712c9caccdcdae2f94888e2315d6",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/37.response.json": "97c589dc2571ddb2913f65167cc1bcdb2ae9d0c40067287c296f5efb7554878f",
+    "docs/data/opening-taimanov-be2-p022-engine/manifest.json": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+    "docs/data/opening-taimanov-be2-p022-engine/pipeline/scripts__openings-lot.mjs.txt": "99fc151b0265186df32acef6ba14d7686d792902e6c27a12981455879607bf93",
+    "docs/data/opening-taimanov-be2-p022-engine/pipeline/scripts__openings__artifacts.mjs.txt": "a478dd70c93e2eb67bd17e08a279ca30c96d2d463976690f770e807b94b99d8a",
+    "docs/data/opening-taimanov-be2-p022-engine/pipeline/scripts__openings__common.mjs.txt": "99f98ba524ff6cc1cd5c508feb6ac9e5a42af10ec5256bda31ea55c98b4138ab",
+    "docs/data/opening-taimanov-be2-p022-engine/results/1.json": "a15ef85be1075da2f12dbf4ee7c6da3a985b49d9c98e8011c03ecfbdb9f0ad04",
+    "docs/data/opening-taimanov-be2-p022-engine/results/10.json": "546e0e4cf123899d8d1ed56f15a8f0177d420487166961e7280d61f55f605c1c",
+    "docs/data/opening-taimanov-be2-p022-engine/results/11.json": "fb39aaa3d0dcefacd9e62fe8c231bbbef7f4cf41eab4c36dffd840bcccd235ea",
+    "docs/data/opening-taimanov-be2-p022-engine/results/12.json": "aa82e19b065f100d61681b396edf506c53c34b1ce6521747e051e8d36c24b253",
+    "docs/data/opening-taimanov-be2-p022-engine/results/13.json": "926c088bafca5d3901c1bc3d3a8d94aa1d59147e08f57c1161061d2a053ee675",
+    "docs/data/opening-taimanov-be2-p022-engine/results/14.json": "070b1ecfb9f9712a7f6c55c54bcc44b798b038a67fd80ed6f6f10e0f4d230bbd",
+    "docs/data/opening-taimanov-be2-p022-engine/results/15.json": "8202139d6e7b39dc946024a1034d34d3e77e09d1b9f4fedf21989894c18785ed",
+    "docs/data/opening-taimanov-be2-p022-engine/results/16.json": "15011c45d868bd46f613a7d87c2f98cc1e65b3131aae675fd5a7389e1479676e",
+    "docs/data/opening-taimanov-be2-p022-engine/results/17.json": "9066920eb1e0b15ee5e638dd5793aec640864e415fd305c393733ab885e517f4",
+    "docs/data/opening-taimanov-be2-p022-engine/results/18.json": "45c7101082609ae54a5097f401f815ba5882a8cba0950ac2d850a185a8d1ba5d",
+    "docs/data/opening-taimanov-be2-p022-engine/results/19.json": "245a58eeeeadba06eddd7dbb2b284d51306dfd2815d18ef5be4bc35ecf34fc64",
+    "docs/data/opening-taimanov-be2-p022-engine/results/2.json": "d2dd07f9f9b47472ea5c27795a5686b196d6e5169e2d060097bf310dd1bf86d0",
+    "docs/data/opening-taimanov-be2-p022-engine/results/20.json": "b8531d06dd286f6fa176443072aa578d6bd17fa41f53f42494c8d732dfaf7eff",
+    "docs/data/opening-taimanov-be2-p022-engine/results/21.json": "bf23779eb43edf3e495deda6ee39eaf7c13ee759862e629475bc1c6544ed6ef1",
+    "docs/data/opening-taimanov-be2-p022-engine/results/22.json": "3441c8f59f02b39bce76792d607aa83fbb75f93891f08b78be5963811e47ef10",
+    "docs/data/opening-taimanov-be2-p022-engine/results/23.json": "df21039935b74cbec9d827466c993ed8baf03b099a3740639783af51714c6742",
+    "docs/data/opening-taimanov-be2-p022-engine/results/24.json": "c2c243384555cbfaeed294a1c698ed530970a95b83bc368765f28e5a31605cce",
+    "docs/data/opening-taimanov-be2-p022-engine/results/25.json": "d9dab87d6f52251fb4345b7a62f6d954e41f3fd55f24ee255fc391e8d4571b37",
+    "docs/data/opening-taimanov-be2-p022-engine/results/26.json": "5d86304b21b111e2a2095edd11c35a1733b88fc1bfc84ca9da458f73d6db9b95",
+    "docs/data/opening-taimanov-be2-p022-engine/results/27.json": "ed393db4624af985b5868b9e3e70a3fc60669eb4ef5c712cb2f203ff9d1df5d8",
+    "docs/data/opening-taimanov-be2-p022-engine/results/28.json": "d91d103f94d2f886d5f1b16abf9461ac77c5adacb0af3034fd39d79baf855f65",
+    "docs/data/opening-taimanov-be2-p022-engine/results/29.json": "95b9aec70a973f0468c8612df7d00579d666cbf202477126dca4ac27f08c7aba",
+    "docs/data/opening-taimanov-be2-p022-engine/results/3.json": "9f4dc4c49a1c3634623e78146d81356c93575ad7d9f7a6d0bb51e0a44cd24d07",
+    "docs/data/opening-taimanov-be2-p022-engine/results/30.json": "c7804d8d1844f8c65c04cafd3b82b4aada0fffc80a55b651ec04c4c8f155c7d6",
+    "docs/data/opening-taimanov-be2-p022-engine/results/31.json": "d740b449a31a37087c1bb405b5f397318678c6ac49d0d0c0c0af3f8e8a91171e",
+    "docs/data/opening-taimanov-be2-p022-engine/results/32.json": "44baf2633a6a7fbf916b2110845f3f67723f07be8bc471441b10c8d6cd29c786",
+    "docs/data/opening-taimanov-be2-p022-engine/results/33.json": "3ee750ab9d6156d1039035b01b6d38b58046f5974458825bb78cf78aa248fc77",
+    "docs/data/opening-taimanov-be2-p022-engine/results/34.json": "24a5e6095747d7dc5926f60066eab6940f71ebd508c2b1cb9752564ca06fbb4c",
+    "docs/data/opening-taimanov-be2-p022-engine/results/35.json": "4a59fe131b8677e4dbb34d5214d8dd42cb0e9589aca26a8eda6eda96a558d385",
+    "docs/data/opening-taimanov-be2-p022-engine/results/36.json": "2e56cb270a4ac9d8006971d9abe9cec5cd193ea3e64cc72f5079909048e60a76",
+    "docs/data/opening-taimanov-be2-p022-engine/results/37.json": "228d496b083f5ffdb98f8405960ce00c60739ee7dcbc8f685ed3a4bc9d95c95d",
+    "docs/data/opening-taimanov-be2-p022-engine/results/4.json": "a047e6dc2e6d0a164bafc1e6242c3372be817e8c167e6ef549396144cf9ac2d8",
+    "docs/data/opening-taimanov-be2-p022-engine/results/5.json": "5f37bd759b8f623dfd1fe7ef32a994d594ac0a174540a6e74478977ddb6b024b",
+    "docs/data/opening-taimanov-be2-p022-engine/results/6.json": "4b3282f1c381abd4bc1debd9d1e412fe122db4bded82b98d73acf7d168b5ea07",
+    "docs/data/opening-taimanov-be2-p022-engine/results/7.json": "4bfda73222de3a8ceb4b3055e48e918944e6d5edf56a9f76e3deaba0c7f12932",
+    "docs/data/opening-taimanov-be2-p022-engine/results/8.json": "cd431b55108560b62232e1e256138a5e82ba7069d516cd24010cfd7ed5e7a867",
+    "docs/data/opening-taimanov-be2-p022-engine/results/9.json": "7a823d620e64be6f5d5cea4ebc31bfb16d786798a696bdb26d917c0c5ef2bef8",
+    "docs/data/opening-taimanov-be2-p022-plan.json": "824c814cb35e5ced39816614350cc6b75d5349fb2b560394658d9d506a27a6f6",
+    "docs/data/opening-taimanov-be2-p022-r1-design-verification.json": "f6a282905c123e9885090fe89a86e967d4a07c3dc974b20b8c8bc76995b43eee",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/01.request.json": "e0eb268f2dd7818618f2151ce0a9560ac4ed880c5569ac9e1a2ed3db44e4d51b",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/01.response.json": "674314f1243e8746316c04630b49b8217e2face47da2a13e2d3521cf57bb972f",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/02.request.json": "bc17f03193e185016635478c48036578387c88ded0a5c0e32ddb1fbe02b6812e",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/02.response.json": "a208cc3bb0e71eea6dc759a2c6dcc3737c5c04e7599dd0dcc98b8cb84a53d4ed",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/03.request.json": "04aeb2b7466dad20a8a9d8bb24e7d411dd2a8e4e57f352f232e416f5a05994ba",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/03.response.json": "8008ec63f577be64d22c4cfaf7d8d3498a956d43e30ced1b3c590fef2af71511",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/04.request.json": "c8efad3b70606fefa0f026ddab1a39a79955ea6a2fdbf33a53068e54fa8a8291",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/04.response.json": "d18375194a953dc3d2db3248992372d5b9ba1cb9c178069c7dd4846ee2a9947e",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/05.request.json": "8619058c60148f8ea9edf2f023512c3ead9615d400ca774b301bd4230d8c5e4d",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/05.response.json": "78215933247aa0df7bf3a557849b55d4cfff7af5c96d1336061af2c595b460d0",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/06.request.json": "df777c40371fc77b5971229749586bea39191c72b90b5792938d4ee71e29424e",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/06.response.json": "7b7ec9d59db7ea85b1cf90f21d5b1787509c5bd63953cc49ca44b0e93c558dc6",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/07.request.json": "334ec072d52f51d7b5a52bf826e273bff61655e69201d901e4e7c6200e8f4deb",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/07.response.json": "65b5f053f225d8123075ef32a287fee84392c4814c98de19c780118e2c51d418",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/08.request.json": "30a68a6c0f15c6005a97edc2b161de718b90da9a11353802dc84985e61677f9a",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/08.response.json": "8f25de8df9a1d853edd923324ff1172eada93936e3836c9e642ec94aca3fa9fc",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/09.request.json": "e9fed3da39045edacac09b5db9e2ccfc58e0489164aa5d08d235b742db4e2dd1",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/09.response.json": "e6b10ca7bad7a0e1896e3414b024c001869eef82abd2632e2aeebbb14792b7f1",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/10.request.json": "1d3c7aa8bff1aa61c4157df8fced345ea7be8cfde98593df47523d4d72ba61f1",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/10.response.json": "5322c35da99c85d5f09d6ae7f8c3cd31b439e806a77804fdc1deb1cd59bcb463",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/11.request.json": "a7eac416d79a9d10f70701f1b2dd098caac8d049a851d799b355bf677f2e9320",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/attempts/11.response.json": "24b8babe5371d751b1db17e8fd713c832498f6e765ecd01e07ac320349883e4c",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/manifest.json": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings-lot.mjs.txt": "ae59671b3a1d034339660ebd28ac1aa14cda480c03e8a4d017b409d7c1999a7a",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings__artifacts.mjs.txt": "e0807ed761fad95a418bfaa607c2dfb8c2975572bbf1ffd9d79d3787c9c920c5",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings__common.mjs.txt": "22f1b6f392c1607fa58a7744177fe4cf97b8d37533d1f2abf4514371f86c6c1f",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/1.json": "865f46540e955b13fac465cb32fb484c9d1dcb035a54e121e6cd70ae985c5226",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/10.json": "4f8293235096fffad5f158063053ed524e6a4a2e01feae48e8a4f33de76f98cf",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/11.json": "c3693520a7101774d2272a1a1dee961f39c8e1bb4bd9f9636761fc43468c6928",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/12.json": "d1b2db51d82a7f54bca30e7a14d6011881151a7e46a5863d681ce96b85652297",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/13.json": "2199a5615ed7d0f10e82a3bcc703cbf977dae60bd815ff1eedf6206fcbd989fe",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/14.json": "82dafa8efa0e50fa73d4e3938119dc4588ba6c256fa2ecea08820333e49d1cbd",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/15.json": "4fe30a289ced5fc8f66a7138f191dc3c2784c9cf5a30f5f67c621bae0452f7d8",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/16.json": "70a04662539ea58358ad6ba85cb2d521496ea56206681a8c04928105a13ee9d7",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/17.json": "b909abfe5f9282be4e9ff986a8fa2c27d3b74372ef3333cda59082f9908cd76f",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/18.json": "485c4162d07dfad1515ce5d833a08f51019ebab0c70dbcacb147c0dc72b1896b",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/19.json": "84d77249174e9a7485e412d433cd1429f9fb3b8854e5e978d84d32628897c1f2",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/2.json": "809af3ed5bdb86ebb0ec61297a46b39b93e93395034075fb6ea48b8dfdfff5dd",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/20.json": "15aaeb4e2c9623e6d241a3551a406004b44551b69893762c65da931a9d43ec9f",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/21.json": "703b9260ff37de3693ac5d5ee419bf00162fce9c22f8b7c05abae71ba2841e4a",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/22.json": "68afb45a6ec9bb432276f2cb5b372d193e6784f460d3f4a2c481b95bfd3b32cb",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/23.json": "2c12f2144e3efa78b9531a9f3d2228c4cfe1f2e6876b95d6c653e9d680a70500",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/24.json": "dfae4e0c0a95284485f73672c80b1fb8f8167abd2b2d76ac9c770cfe69dbe2eb",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/25.json": "8a114bd1db1f9c47cf42fc3c343a7f241891381665acc93a4416d759d4b8a528",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/26.json": "73857176ccbed87a5101f1b2cce93a6b1bf35ca36db055811765ca656c6f9ae8",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/27.json": "96419a2aff9d300a76b2f5c13f64702cad1decfed667a4783deb7426a85b6484",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/28.json": "6aaf079c9e3c2d57b6109b268a1a78161fe905e35ca2e3629da0813a78e1a4b0",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/29.json": "802ef5488eed42db1443e9579ca76fd7d80868167d49f780e7f8efc24437878c",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/3.json": "3aa0fdd879739c9162b56c867c8eb64c010198203cfed8caa7cadcb703439c06",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/30.json": "c60d6d7996dce0df9c30091cf3bc81ddfc21fa0b2c5daa28cbea9a7a07935e21",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/31.json": "11e9e34c678fa73811082404e6be60cf83d76629ee1374a3a0959ccd03902818",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/32.json": "99f9a06062da09ec8ccf652c87e58f56b03df817c0a66c123943476608f98c32",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/33.json": "4a9de8b08f248932a2311f66cff196486b26e986d60ec1b4eda76a8e6577da99",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/34.json": "764ca050919387275298246d1d950974de86dec700173b93e9871e6062b8f5fa",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/35.json": "f7d0710db365e538c9e661fb5b0cae0e34650a8932700e6ccdbb9ccf73c838f6",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/36.json": "c32531e18d3fa71a0a0d726f91602eaa9e2af5ecdb21b800ea11eeb8a3cd7f7e",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/37.json": "555b44f2c6ea6fa83e6762fb827f20c5caac671c2e2206f69a5b1e20b8374d01",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/38.json": "e211e8bbfdffe6fece3103c9b0e2b615cab2f0207f1e2cb385971f80bc9feddc",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/39.json": "6e078710bfb9b3804ea80df1aa3093ec4f20c4ad65964381952d4610f76d650e",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/4.json": "eafe304f025274edb824df0b7caa9abd4fc9df70a3bb835d8e3097dfb5f364b4",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/40.json": "5da1561fe8fda7442a87faaccf86315bb9b495698889cc11e31c6c00110fb1b0",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/41.json": "51f9e075ef76516ca70268f5e28d1c78998de77719cbf8f8f5fafac2ac943ca9",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/42.json": "e7cd948c08b77e2f99b3e51bf76758577990a55ae9ddcde65d25e7f0d57fe492",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/43.json": "47c0526369d7d958e97a4b69d09fc148e76d51df351bed4c07749dddd4edc573",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/44.json": "3afd54d2543eaee0a2452cd5d842a4d194e94b48d4b5134679f621fbab480f09",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/45.json": "ebda17e4822e6bc26f1c5e9912fda8f6c87f8478c5b0472291197fe20dd99e32",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/5.json": "42f0623b8b98e68fc18c4234498992ec895292e52d55766bcaf6efceb20390d1",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/6.json": "f51733ed7ea52a0a08b71db0baf771ffde575bb6bb5f05dbcf067112bca89854",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/7.json": "f889b5a1fa8e4278e53e3e0778a6fa3c9e97feecc64d42b37ee19af3974ca48d",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/8.json": "a5d93b13c1b467f01d4e93ab5028ca09ab1f563aeb5b9f62db7a5c2dd8d8a515",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/results/9.json": "b4cb86b8db0a450c75ef9abdaaebd943cd7ec60f6e039d2d0b51a27cf1b6c4cb",
+    "docs/data/opening-taimanov-be2-p022-r1-plan.json": "4b82b4a98f5366122605e653ca4e9cc65d0bb1691d2f7ee26af55b3caf0d3d72",
+    "docs/data/opening-taimanov-be2-p022-r1-practical-verification.json": "59c95cdf6a6aa2bcf01720b9cd06d88c15fc2f4c456bf6e4c71983ec6bb1a2c9",
+    "docs/data/opening-taimanov-be2-p022-r1-qa.json": "b74de40904b691ed987ab95d99e5741b8e1213e218ddf7d3edf9cea6ef980e59",
+    "docs/data/opening-taimanov-be2-p022-r1-result.json": "ca0867fb8a29adb759ccb570c49349fde07a9c06e310921f8a55fef7cf3f6951",
+    "docs/data/opening-taxonomy-baseline.json": "6609a981f1d2d2502e94f993c7102670cfc360bdf2a12f4019881fff27b0e192",
+    "docs/data/opening-taxonomy.json": "ea7e4822e37e98cb4737268db1a1b4dbbeb337496236aee9a0ab7f9af58d7beb",
+    "docs/data/opening-zaitsev-p022-design-verification.json": "d7f0d9fbbeac224186ed1e40f2ddeb1b0a9e8e2aebe7c79f72f887c4478e35b4",
+    "docs/data/opening-zaitsev-p022-editorial.json": "6171bf753fe36c088af44654630c7121f3b42e23d8a877cdf31e64581aba02e6",
+    "docs/data/opening-zaitsev-p022-engine/attempts/01.request.json": "2ee7f15da2bbe6f0b8c15018e99f7e3d15655c1bd3ca8d615f06a83337e7a712",
+    "docs/data/opening-zaitsev-p022-engine/attempts/01.response.json": "b1f844d798558dd4346c5b879af7b8f997f38b10402d330813f65965056c5913",
+    "docs/data/opening-zaitsev-p022-engine/attempts/02.request.json": "d607bebb9d9d562f0d972a131ba6c2a5d61edea833d736b7a27081e8bc544192",
+    "docs/data/opening-zaitsev-p022-engine/attempts/02.response.json": "9df7389667b49011120cfd113bb0bdb852004676d0d5283a400d31e95f1222ec",
+    "docs/data/opening-zaitsev-p022-engine/attempts/03.request.json": "c405437fe70a776e49405a037edc1c2a688d91837c1487f30056164c927a3f3b",
+    "docs/data/opening-zaitsev-p022-engine/attempts/03.response.json": "28b7dd919c681934d84b79daa0e86799bb909ec1541ca2854986b6198da4b9a3",
+    "docs/data/opening-zaitsev-p022-engine/attempts/04.request.json": "64d017458eb0ffa2448f6c7e56c227857624ca93ce4d1182469cae18201b0d7f",
+    "docs/data/opening-zaitsev-p022-engine/attempts/04.response.json": "cc1afe968197b679c8733388ef53a7640da045ffe8ed4f3e9f198c9023029cb1",
+    "docs/data/opening-zaitsev-p022-engine/attempts/05.request.json": "8483a8ab2d189947e09ade409319a1a200e4bf3ccee441ee4753b9f7a5cde3b3",
+    "docs/data/opening-zaitsev-p022-engine/attempts/05.response.json": "c1129dc53e7b9d823e4eebfaecd922c269d60f8d8eded8cdb50ba319d8fc032e",
+    "docs/data/opening-zaitsev-p022-engine/manifest.json": "a897efc50d515998412c9ca2c6e480bc770d23575fca52b714d04a9d92a6aa13",
+    "docs/data/opening-zaitsev-p022-engine/results/1.json": "dd06a0ba86ec40472032c492398c9a17b2e1e7a95511c4248ce05127c98e063e",
+    "docs/data/opening-zaitsev-p022-engine/results/2.json": "11945bdb5ac611849bd23a8f0d271a5c4832e4fe5ee1bb506921c598f66d4b46",
+    "docs/data/opening-zaitsev-p022-engine/results/3.json": "a7247cf849d7b20be900d64269e682b4873ca7f7f76e7762f93a524a3f4bb866",
+    "docs/data/opening-zaitsev-p022-engine/results/4.json": "f82eeb97379103e323db793fa94a50c83a977722175644dea65a1a18dcce3cdc",
+    "docs/data/opening-zaitsev-p022-engine/results/5.json": "de53b1c2fd45058d2a687ebf38ce621cc9789ee7eddf850a8389e6dd47d271a8",
+    "docs/data/opening-zaitsev-p022-plan.json": "70cbc53fee9d6ce33d2809098b81816c66a74e1d5df8ab83485e9fae1dd9de19",
+    "docs/data/opening-zaitsev-p022-practical-verification.json": "7fdae7f2702bcdea95c030653d7152dded5f1a9d10b582c9447bc303511395ea",
+    "docs/data/opening-zaitsev-p022-result.json": "a222c548b5600d26668952f11e6221ab5ac86c1bf0f2492e9b92c3e09d3da43a",
+    "scripts/build-opening-chekhover-a6-content.mjs": "60c8e76f4171e0edac2675ff3fab0da12c6f4d8655bd63561b22ac341241794f",
+    "scripts/build-opening-chekhover-content.mjs": "1e77bfc684f3218188a4cb11e87ce8b33034071923a125cabb0a891c0547ff9e",
+    "scripts/build-opening-chekhover-early-content.mjs": "c63b20c135dca0f72b6f328596a99c3ebc9ecd9169ba407a89210142b74494ae",
+    "scripts/build-opening-sicilian-content.mjs": "b0eaf65e8c331b52b79fe103d027236ecb18a94ce25768ae415309fbe7f5fc19",
+    "scripts/build-opening-zaitsev-content.mjs": "2798b2854aa5060b34a5a64110a96a069fc16d7be77ea7b561315d789e602626",
+    "scripts/collect-opening-chekhover-a6-evidence.mjs": "495d05ee8b1eb2400c5dcb021b0b103b5d8e2ab5f1872d3659a0151f58e72dec",
+    "scripts/collect-opening-chekhover-early-evidence.mjs": "c2b702172470c61d9f7f5c322e2e51679baf30598e2b1a7a4c6999ab5869693c",
+    "scripts/collect-opening-chekhover-evidence.mjs": "44cca1ec522f893215223f587ae034abab807e92668077756fef58d16cc0a5e2",
+    "scripts/collect-opening-sicilian-evidence.mjs": "63278a9416f5a90fffb716e2906339e72859fd0ac763808098582c84eea0e253",
+    "scripts/collect-opening-zaitsev-evidence.mjs": "90bec00bb5ee522503b678592b6cee1806cb924475ea7e7d05666809dea7a0e5",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8",
+    "scripts/report-opening-chekhover-a6-result.mjs": "eb38ebd5f923e50612ac472aaf1d795a466c8774055e07372e608c11e7346c0a",
+    "scripts/report-opening-chekhover-early-result.mjs": "fd88473dcd25b0175936381b7a461a27251e5d3c74e4f9c5de3bbe7a2b2ce5b4",
+    "scripts/report-opening-chekhover-result.mjs": "98b267eaef38ac1b7c998415c66a932a73b95cacecb058a084b3e8ba915d3189",
+    "scripts/report-opening-sicilian-result.mjs": "7ae876972e84fe6ee342fbe2cb04ab081e88f9094523d33546f3726a65cbfac0",
+    "scripts/report-opening-zaitsev-result.mjs": "b15d2a7e7b94515b30bf6ffc7828f7d0b7bc712617df0a4a43175a38881c5203",
+    "scripts/verify-opening-chekhover-a6-design.mjs": "ff560e9c136da9693ef79651b924ab4704de5250d230419764e05407af5c083c",
+    "scripts/verify-opening-chekhover-design.mjs": "e39ff176be5a61cb0d6b93b45b11b764b076353baca944cdf12d2336bb62397c",
+    "scripts/verify-opening-chekhover-early-design.mjs": "b45529b5555ca5e5996af77765d990ccac66c042c02c08b34a41597764b3cea9",
+    "scripts/verify-opening-sicilian-design.mjs": "d453851c8e64c34874b17aadfef5244032bf9458d513c3237ce0daf34d96ab41",
+    "scripts/verify-opening-sicilian-early-design.mjs": "1cc79b75d9ea521e6e8c236e73fb2fc0c7f36af306250e66b54126c2be652165",
+    "scripts/verify-opening-zaitsev-design.mjs": "17b3145c21d6d6d26633775fad63be801da790d79fbfcd3696ed4e0851ce93ba",
+    "src/data/openingCatalog.json": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+    "src/data/openingChekhoverA6Courses.js": "491de9e2ffb588f49285bec6197000b95681d40f169841c34c1ed6c20c069ebc",
+    "src/data/openingChekhoverA6PracticalCases.js": "cd1c6ffeb8fcbbf2ea50b906ab6d5531328e8b17ec7260e6e20e41969a0aa719",
+    "src/data/openingChekhoverCourses.js": "7fcaff53826b46229e5bf904186c925057527a15c60e115334e009bbf2700222",
+    "src/data/openingChekhoverEarlyCourses.js": "6cdbf0ccafbe23051e62e146551df1daa611bfa8ddbc1077a19bb9b112917dc3",
+    "src/data/openingChekhoverEarlyPracticalCases.js": "dfc2e27214f705f0dcb99d8fe3847c317b0b8e2885be97b4296ac9f86c19f354",
+    "src/data/openingChekhoverPracticalCases.js": "6a584d28c5234d33d1127a7ded6ebd20d97932f19a37ae6d0d20526e186217f7",
+    "src/data/openingExpansion.js": "4f4364e6f592e9d9755eefa6dfb1d28651b333694ae4cb7706f4b2506385ae01",
+    "src/data/openingPracticalCases.js": "4847fbe684873cb070f098198f08515d4442a408c11f6688b7db37e2cb81e77f",
+    "src/data/openingRoadmapCourses.js": "c0331aca9357989242b055b60f44dca3aed7cc0cbc7ead43f5b297164f4900d5",
+    "src/data/openingRoadmapPracticalCases.js": "11f32e6a0e1ee814d69ac4e8848f2083b5bf195a5dcd2bab428d1365d677ab40",
+    "src/data/openingSicilianEarlyCourses.js": "8afbdebb9e5d5dee9bfd7372440acdd817ad1b62f6048a0bd1f189ec5b72bbe9",
+    "src/data/openingSicilianEarlyPracticalCases.js": "ab907e2a850801280fe20743e6893a0d5089c528c0ed8d57a82fa7759cdf63ae",
+    "src/data/openingTaimanovBe2Courses.js": "749ebb91fef2e6bfd2a4704d34a675c9c8cd69eedfb6f05210a19177049db40b",
+    "src/data/openingTaimanovBe2PracticalCases.js": "797941cab0a077a84473782ccb5e12640bf8db2e4e85a9a15494a02f12d197ba",
+    "src/data/openingZaitsevCourses.js": "38de6ca7473c48cc9283facb82f176a4a2d5ae5bff79746d2f1fb3ec6acbcff7",
+    "src/data/openingZaitsevPracticalCases.js": "28185d8ad482385979cb29fe404f466356319ae832f863fc636cd25d20afe761"
+  },
+  "source": {
+    "url": "https://github.com/JeffML/eco.json",
+    "revision": "36cfd9227f553dec1d39ee20fa0775eea8f8e165",
+    "license": "MIT",
+    "catalogSha256": "5b12a41bb34cc75560672c99cae690526e8340d761492f36f1bdfab7ee82cba2",
+    "independentWitnesses": false,
+    "lichess": {
+      "schema": 1,
+      "checkedOn": "2026-10-20",
+      "source": "https://github.com/lichess-org/chess-openings",
+      "revision": "a6189a30dc273ccb21fc2536a9a2fefd5592a67a",
+      "headVerifiedVia": "https://api.github.com/repos/lichess-org/chess-openings/commits/master",
+      "license": "CC0-1.0; COPYING.txt",
+      "files": [
+        {
+          "name": "a.tsv",
+          "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/a6189a30dc273ccb21fc2536a9a2fefd5592a67a/a.tsv",
+          "bytes": 67257,
+          "sha256": "3282e4c9155289a29224f9a85fba0decb46efa35c2fa5e39662d2ac48fb0f793"
+        },
+        {
+          "name": "b.tsv",
+          "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/a6189a30dc273ccb21fc2536a9a2fefd5592a67a/b.tsv",
+          "bytes": 78124,
+          "sha256": "1d5ed134ebbd87915ead5683416e37583bb3e5ae3582b4d8cb5cb4aa7ef4f623"
+        },
+        {
+          "name": "c.tsv",
+          "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/a6189a30dc273ccb21fc2536a9a2fefd5592a67a/c.tsv",
+          "bytes": 132304,
+          "sha256": "45e843c7b7e79a0d04d5bda879c9bd23f5a10974488bd8615e4f4c5d0749986f"
+        },
+        {
+          "name": "d.tsv",
+          "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/a6189a30dc273ccb21fc2536a9a2fefd5592a67a/d.tsv",
+          "bytes": 73318,
+          "sha256": "1cf4057a8aece94f27bb3f278ad410ee2844831a642364eeceaafa091dbcceda"
+        },
+        {
+          "name": "e.tsv",
+          "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/a6189a30dc273ccb21fc2536a9a2fefd5592a67a/e.tsv",
+          "bytes": 44061,
+          "sha256": "48c6f6645b031a5937c8386839debab0e2e48837251687ba1afb6369677f8546"
+        },
+        {
+          "name": "README.md",
+          "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/a6189a30dc273ccb21fc2536a9a2fefd5592a67a/README.md",
+          "bytes": 2661,
+          "sha256": "c0bedd93a117f318a3bd087a3af640652f4369ca461429d4dfbeee4614dc5eae"
+        },
+        {
+          "name": "COPYING.txt",
+          "url": "https://raw.githubusercontent.com/lichess-org/chess-openings/a6189a30dc273ccb21fc2536a9a2fefd5592a67a/COPYING.txt",
+          "bytes": 7048,
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+        }
+      ]
+    },
+    "namingPolicy": "Taimanov/Bastrikov with Be3 and Be2; retain the exact order and all original names. Do not merge the existing 5.Nb5 journey or other move orders by name alone."
+  },
+  "enginePlan": {
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHashBeforeEachGo": true,
+    "nodesPerGo": 200000,
+    "timeoutPerCommandMs": 30000,
+    "primaryJobs": 34,
+    "maximumGoCommands": 68,
+    "maximumRequestedNodes": 13600000,
+    "minimumExerciseSwingCp": 200,
+    "maximumAuthoredMoveLossCp": 100,
+    "confirmationPolicy": "At most one confirmation per job only when bestmove lacks matching full cp/PV evidence. Count failed or interrupted requests. No automatic retry of failed persisted jobs, candidate sweep, budget increase or mate-score auto-acceptance.",
+    "publicationPolicy": "Publish all seven routes and seven exercises together only after every authored comparison and exercise passes. Preserve failed evidence and explicitly review any failure; no candidate sweep, threshold change, retry or budget increase.",
+    "engine": "Stockfish 16",
+    "minimumImmediateMaterial": 2
+  },
+  "plannedFiles": {
+    "courseModule": "src/data/openingTaimanovBd3Courses.js",
+    "practicalModule": "src/data/openingTaimanovBd3PracticalCases.js",
+    "engineDirectory": "docs/data/opening-taimanov-bd3-p022-engine",
+    "practicalVerification": "docs/data/opening-taimanov-bd3-p022-practical-verification.json",
+    "result": "docs/data/opening-taimanov-bd3-p022-result.json",
+    "resultDocument": "docs/OPENING-TAIMANOV-BD3-P022-RESULTS.md"
+  },
+  "navigation": {
+    "existingParentCourseId": "sicilian:taimanov-be2-nge7",
+    "rootIndex": 12,
+    "rootMoves": [
+      "Be2",
+      "Bd3"
+    ],
+    "newRepresentative": "sicilian:taimanov-bd3-b5-exchange",
+    "uncoveredAlternative": {
+      "courseId": "sicilian:taimanov-bd3-b5-exchange",
+      "index": 12,
+      "san": "Qd2",
+      "status": "legal-source-backed-uncovered-not-error"
+    },
+    "preserveContainedRouteGuard": true
+  },
+  "nextDesign": {
+    "status": "remaining corpus A branches retained",
+    "scope": "Taimanov with Be3/a6/a3, f4, Qd2 and early ...Nf6; other Taimanov branches and the previously deferred Sicilian Bc4/Bd3/f3 orders remain in scope."
+  }
+}

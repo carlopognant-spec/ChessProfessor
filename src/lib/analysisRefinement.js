@@ -9,6 +9,7 @@ import {SACRIFICE_PROOF_SCOPE,buildSacrificeProofPlan,refineSacrificeProofs} fro
 import {NATIVE_PROOF_POLICY,nativeProofFor} from './nativeEvidence.js'
 import {buildNativeProofPlan,refineNativeProofs} from './nativeProofs.js'
 import { SACRIFICE_SEARCH_POLICY, pendingSacrificeTargets, sacrificeSearchFor, validSacrificeSearch, preferredSacrificeConfirmation,mergeSacrificeAttempts } from './sacrificeSearches.js'
+import { historyAwareSearch, positionHistories, refinementHistoryMatches } from './analysisHistory.js'
 
 export const REFINEMENT_POLICY = Object.freeze({ version: 'optional-refinement-v1', nodes: 1000000,
   selectionVersion: 'evidence-priority-v2', maxMoves: 12, boundaryMargin: 1, reserve: 5000 })
@@ -22,7 +23,7 @@ function profileMatches(engine, fen) {
 }
 export function refinementFor(entry) {
   const data = entry.refinement
-  if (data?.version !== REFINEMENT_POLICY.version) return null
+  if (data?.version !== REFINEMENT_POLICY.version || !refinementHistoryMatches(entry, data)) return null
   const engine = profileMatches(data.engine, entry.fenBefore) ? data.engine : null
   const playedEngine = profileMatches(data.playedEngine, entry.fenAfter) ? data.playedEngine : null
   const proof = grandeProofFor(entry), native=nativeProofFor(entry), {grandeProof: _proof,nativeProof:_nativeProof, ...rest} = data
@@ -204,6 +205,9 @@ export async function refineGameEntries({ entries, plan = buildRefinementPlan(en
     sacrificeOnly:plan.scope===SACRIFICE_PROOF_SCOPE,criticalOnly:plan.scope===NATIVE_PROOF_POLICY.scope })
   if (JSON.stringify(plan) !== JSON.stringify(expected)) throw Error('Piano di approfondimento non valido')
   if (typeof analyzePosition !== 'function') throw TypeError('Motore di approfondimento mancante')
+  if (entries.some(e => !refinementHistoryMatches(e))) throw Error('Approfondimento con storico incompatibile')
+  const histories = positionHistories(entries, plan)
+  analyzePosition = historyAwareSearch(analyzePosition, histories)
   abort(signal)
   if (plan.scope===NATIVE_PROOF_POLICY.scope) return refineNativeProofs({entries,plan,analyzePosition,signal,onProgress,onEntries})
   if (plan.scope === SACRIFICE_PROOF_SCOPE) return refineSacrificeProofs({entries,plan,analyzePosition,signal,onProgress,onEntries})
@@ -216,7 +220,8 @@ export async function refineGameEntries({ entries, plan = buildRefinementPlan(en
     const position = new Chess(fen)
     const result = position.moves().length ? await analyzePosition(fen, plan.nodes, ENGINE_CONFIG.multiPv)
       : { fen, evalCp: position.isStalemate() ? 0 : null, mate: position.isCheckmate() ? 0 : null,
-        lines: [], actualNodes: 0, analysisMetadata: createAnalysisMetadata({ nodes: plan.nodes }), terminal: true }
+        lines: [], actualNodes: 0, analysisMetadata: createAnalysisMetadata({ nodes: plan.nodes }), terminal: true,
+        ...(histories.has(fen) ? { history: histories.get(fen) } : {}) }
     abort(signal)
     validateResult(result, fen)
     actualNodes += result.actualNodes

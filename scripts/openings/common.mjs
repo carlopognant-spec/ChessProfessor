@@ -137,7 +137,10 @@ export async function validateLot(ctx){
   }
   const jobs=engineJobs(plan,exercises)
   assert.deepEqual(jobs,design.engineJobs);assert.equal(jobs.length,plan.enginePlan.primaryJobs)
-  assert.equal(plan.enginePlan.maximumGoCommands,jobs.length*2)
+  const reused=plan.reuseEngineJobs??[]
+  assert.equal(new Set(reused.map(r=>r.jobId)).size,reused.length,'Repeated reuse mapping')
+  assert(reused.every(r=>jobs.some(j=>j.id===r.jobId)),'Unknown reused job')
+  assert.equal(plan.enginePlan.maximumGoCommands,(jobs.length-reused.length)*2)
   assert.equal(plan.enginePlan.maximumRequestedNodes,plan.enginePlan.maximumGoCommands*plan.enginePlan.nodesPerGo)
   return {...ctx,exercises,jobs,scope,catalog,baselineRows:rows}
 }

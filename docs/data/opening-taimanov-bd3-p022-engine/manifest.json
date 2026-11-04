@@ -1,0 +1,436 @@
+{
+  "schema": 2,
+  "lot": "P02.2-SIC-08",
+  "inputHashes": {
+    "docs/data/opening-taimanov-bd3-p022-design-verification.json": "940f7678eb3671465a7865b0691ca3b9fd9c65cdfa0b8dd06003c583574feeea",
+    "docs/data/opening-taimanov-bd3-p022-plan.json": "fb7423bf09e544645755b53101660a480fa2bf652aa64f88c67604b0d9a66667",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8",
+    "docs/data/opening-taimanov-bd3-p022-engine/pipeline/scripts__openings-lot.mjs.txt": "ae59671b3a1d034339660ebd28ac1aa14cda480c03e8a4d017b409d7c1999a7a",
+    "docs/data/opening-taimanov-bd3-p022-engine/pipeline/scripts__openings__common.mjs.txt": "22f1b6f392c1607fa58a7744177fe4cf97b8d37533d1f2abf4514371f86c6c1f",
+    "docs/data/opening-taimanov-bd3-p022-engine/pipeline/scripts__openings__artifacts.mjs.txt": "e0807ed761fad95a418bfaa607c2dfb8c2975572bbf1ffd9d79d3787c9c920c5"
+  },
+  "engineSha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+  "toolingSources": [
+    {
+      "source": "scripts/openings-lot.mjs",
+      "snapshot": "docs/data/opening-taimanov-bd3-p022-engine/pipeline/scripts__openings-lot.mjs.txt",
+      "sha256": "ae59671b3a1d034339660ebd28ac1aa14cda480c03e8a4d017b409d7c1999a7a"
+    },
+    {
+      "source": "scripts/openings/common.mjs",
+      "snapshot": "docs/data/opening-taimanov-bd3-p022-engine/pipeline/scripts__openings__common.mjs.txt",
+      "sha256": "22f1b6f392c1607fa58a7744177fe4cf97b8d37533d1f2abf4514371f86c6c1f"
+    },
+    {
+      "source": "scripts/openings/artifacts.mjs",
+      "snapshot": "docs/data/opening-taimanov-bd3-p022-engine/pipeline/scripts__openings__artifacts.mjs.txt",
+      "sha256": "e0807ed761fad95a418bfaa607c2dfb8c2975572bbf1ffd9d79d3787c9c920c5"
+    }
+  ],
+  "policy": {
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHashBeforeEachGo": true,
+    "nodesPerGo": 200000,
+    "timeoutPerCommandMs": 30000,
+    "primaryJobs": 34,
+    "maximumGoCommands": 68,
+    "maximumRequestedNodes": 13600000,
+    "minimumExerciseSwingCp": 200,
+    "maximumAuthoredMoveLossCp": 100,
+    "confirmationPolicy": "At most one confirmation per job only when bestmove lacks matching full cp/PV evidence. Count failed or interrupted requests. No automatic retry of failed persisted jobs, candidate sweep, budget increase or mate-score auto-acceptance.",
+    "publicationPolicy": "Publish all seven routes and seven exercises together only after every authored comparison and exercise passes. Preserve failed evidence and explicitly review any failure; no candidate sweep, threshold change, retry or budget increase.",
+    "engine": "Stockfish 16",
+    "minimumImmediateMaterial": 2
+  },
+  "jobs": [
+    {
+      "id": "taimanov-bd3-b5-exchange:continuation-control:15",
+      "courseId": "sicilian:taimanov-bd3-b5-exchange",
+      "authoredIndex": 15,
+      "fen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPP/R2QK2R b KQkq - 0 8",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-b5-exchange:authored:15",
+      "courseId": "sicilian:taimanov-bd3-b5-exchange",
+      "authoredIndex": 15,
+      "fen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPP/R2QK2R b KQkq - 0 8",
+      "roots": [
+        "c7c6"
+      ],
+      "expectedAnswer": "Qxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-b5-exchange:deviation",
+      "courseId": "sicilian:taimanov-bd3-b5-exchange",
+      "fen": "r1b1kbnr/3p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPq/R2QK2R w KQkq - 0 9",
+      "roots": [],
+      "expectedAnswer": "Rxh2",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-b5-castle:continuation-control:15",
+      "courseId": "sicilian:taimanov-bd3-b5-castle",
+      "authoredIndex": 15,
+      "fen": "r1b1kbnr/2qp1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 1 8",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-b5-castle:authored:15",
+      "courseId": "sicilian:taimanov-bd3-b5-castle",
+      "authoredIndex": 15,
+      "fen": "r1b1kbnr/2qp1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 1 8",
+      "roots": [
+        "g8f6"
+      ],
+      "expectedAnswer": "Nf6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-b5-castle:deviation",
+      "courseId": "sicilian:taimanov-bd3-b5-castle",
+      "fen": "r1b1kbnr/3p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPq/R2Q1RK1 w kq - 0 9",
+      "roots": [],
+      "expectedAnswer": "Kxh2",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-b5:continuation-control:16",
+      "courseId": "sicilian:taimanov-bd3-nf6-b5",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-b5:authored:16",
+      "courseId": "sicilian:taimanov-bd3-nf6-b5",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9",
+      "roots": [
+        "d4c6"
+      ],
+      "expectedAnswer": "Nxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-b5:continuation-control:17",
+      "courseId": "sicilian:taimanov-bd3-nf6-b5",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/2qp1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-b5:authored:17",
+      "courseId": "sicilian:taimanov-bd3-nf6-b5",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/2qp1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+      "roots": [
+        "d7c6"
+      ],
+      "expectedAnswer": "dxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-b5:deviation",
+      "courseId": "sicilian:taimanov-bd3-nf6-b5",
+      "fen": "r1b1kb1r/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPq/R2Q1RK1 w kq - 0 10",
+      "roots": [],
+      "expectedAnswer": "Kxh2",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-bd6:continuation-control:16",
+      "courseId": "sicilian:taimanov-bd3-nf6-bd6",
+      "authoredIndex": 16,
+      "fen": "r1b1k2r/1pqp1ppp/p1nbpn2/8/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 4 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-bd6:authored:16",
+      "courseId": "sicilian:taimanov-bd3-nf6-bd6",
+      "authoredIndex": 16,
+      "fen": "r1b1k2r/1pqp1ppp/p1nbpn2/8/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 4 9",
+      "roots": [
+        "d4c6"
+      ],
+      "expectedAnswer": "Nxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-bd6:continuation-control:17",
+      "courseId": "sicilian:taimanov-bd3-nf6-bd6",
+      "authoredIndex": 17,
+      "fen": "r1b1k2r/1pqp1ppp/p1Nbpn2/8/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-bd6:authored:17",
+      "courseId": "sicilian:taimanov-bd3-nf6-bd6",
+      "authoredIndex": 17,
+      "fen": "r1b1k2r/1pqp1ppp/p1Nbpn2/8/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+      "roots": [
+        "d7c6"
+      ],
+      "expectedAnswer": "dxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-bd6:deviation",
+      "courseId": "sicilian:taimanov-bd3-nf6-bd6",
+      "fen": "r1b1k2r/1p1p1ppp/p1Nbpn2/q7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 10",
+      "roots": [],
+      "expectedAnswer": "Nxa5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-h5:continuation-control:16",
+      "courseId": "sicilian:taimanov-bd3-nf6-h5",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/1pqp1pp1/p1n1pn2/7p/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-h5:authored:16",
+      "courseId": "sicilian:taimanov-bd3-nf6-h5",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/1pqp1pp1/p1n1pn2/7p/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9",
+      "roots": [
+        "d4c6"
+      ],
+      "expectedAnswer": "Nxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-h5:continuation-control:17",
+      "courseId": "sicilian:taimanov-bd3-nf6-h5",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/1pqp1pp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-h5:authored:17",
+      "courseId": "sicilian:taimanov-bd3-nf6-h5",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/1pqp1pp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+      "roots": [
+        "d7c6"
+      ],
+      "expectedAnswer": "dxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-h5:deviation",
+      "courseId": "sicilian:taimanov-bd3-nf6-h5",
+      "fen": "r1b1kb1r/1p1p1pp1/p1N1pn2/7p/4P3/2NBB3/PPP2PPq/R2Q1RK1 w kq - 0 10",
+      "roots": [],
+      "expectedAnswer": "Kxh2",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:continuation-control:16",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/1pqp1ppp/p3pn2/8/3nP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:authored:16",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/1pqp1ppp/p3pn2/8/3nP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9",
+      "roots": [
+        "e3d4"
+      ],
+      "expectedAnswer": "Bxd4",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:continuation-control:17",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/1pqp1ppp/p3pn2/8/3BP3/2NB4/PPP2PPP/R2Q1RK1 b kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:authored:17",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/1pqp1ppp/p3pn2/8/3BP3/2NB4/PPP2PPP/R2Q1RK1 b kq - 0 9",
+      "roots": [
+        "f8c5"
+      ],
+      "expectedAnswer": "Bc5",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:continuation-control:18",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "authoredIndex": 18,
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b5/3BP3/2NB4/PPP2PPP/R2Q1RK1 w kq - 1 10",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:authored:18",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "authoredIndex": 18,
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b5/3BP3/2NB4/PPP2PPP/R2Q1RK1 w kq - 1 10",
+      "roots": [
+        "d4c5"
+      ],
+      "expectedAnswer": "Bxc5",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:continuation-control:19",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "authoredIndex": 19,
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 0 10",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:authored:19",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "authoredIndex": 19,
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 0 10",
+      "roots": [
+        "c7c5"
+      ],
+      "expectedAnswer": "Qxc5",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-nf6-exchange:deviation",
+      "courseId": "sicilian:taimanov-bd3-nf6-exchange",
+      "fen": "r1b1k2r/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPq/R2Q1RK1 w kq - 0 11",
+      "roots": [],
+      "expectedAnswer": "Kxh2",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-ne5-bc5:continuation-control:19",
+      "courseId": "sicilian:taimanov-bd3-ne5-bc5",
+      "authoredIndex": 19,
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1R1K b kq - 2 10",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-ne5-bc5:authored:19",
+      "courseId": "sicilian:taimanov-bd3-ne5-bc5",
+      "authoredIndex": 19,
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1R1K b kq - 2 10",
+      "roots": [
+        "e8g8"
+      ],
+      "expectedAnswer": "O-O",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-ne5-bc5:exercise-baseline",
+      "courseId": "sicilian:taimanov-bd3-ne5-bc5",
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1RK1 w kq - 1 10",
+      "roots": [],
+      "uses": [
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-bd3-ne5-bc5:deviation",
+      "courseId": "sicilian:taimanov-bd3-ne5-bc5",
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n2Q/3NP3/2NBB2P/PPP2PP1/R4RK1 b kq - 2 10",
+      "roots": [],
+      "expectedAnswer": "Nxh5",
+      "uses": [
+        "exercise-answer"
+      ]
+    }
+  ]
+}

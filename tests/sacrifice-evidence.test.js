@@ -74,6 +74,8 @@ describe('reuse of exact-position sacrifice evidence', () => {
       next => { next.engine.specialLines[1].pv = [...next.engine.specialLines[0].pv] },
       next => { next.engine.specialLines[0].evalCp = 500 },
       next => { next.engine.specialLines[2].bound = true },
+      next => { next.engine.specialLines[2].lowerbound = true },
+      next => { next.engine.specialLines[2].upperbound = true },
       next => { next.engine.specialLines[2].pv.push('a1a8') },
     ]) {
       const [, , entry, next] = example(); mutate(next)
@@ -84,6 +86,8 @@ describe('reuse of exact-position sacrifice evidence', () => {
   it('requires unbounded favorable and legal confirmation, not the actual game result', () => {
     for (const mutate of [
       next => { next.playedEngine.lines[0].bound = true },
+      next => { next.playedEngine.lines[0].lowerbound = true },
+      next => { next.playedEngine.lines[0].upperbound = true },
       next => { next.playedEngine.lines[0].depth = 0 },
       next => { next.playedEngine.lines[0].evalCp = -500 },
       next => { next.playedEngine.lines[0].pv = ['a1a8'] },
@@ -117,6 +121,8 @@ describe('reuse of exact-position sacrifice evidence', () => {
     expect(confirmedCompensation(evidence, 'g4h3', next.fenAfter, acceptance)).toBeNull()
     expect(confirmedCompensation(evidence, 'g4f3', entry.fenAfter, acceptance)).toBeNull()
     expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, { ...acceptance, bound: true })).toBeNull()
+    expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, { ...acceptance, lowerbound: true })).toBeNull()
+    expect(confirmedCompensation(evidence, 'g4f3', next.fenAfter, { ...acceptance, upperbound: true })).toBeNull()
   })
 
   it('normalizes both searches correctly for a Black sacrifice', () => {

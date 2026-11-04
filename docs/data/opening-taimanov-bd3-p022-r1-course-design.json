@@ -1,0 +1,1785 @@
+{
+  "schema": 1,
+  "status": "reviewed-revision-candidates-not-engine-verified",
+  "sourcePrefix": "e4 c5 Nf3 e6 d4 cxd4 Nxd4 Nc6 Nc3 Qc7 Be3 a6 Bd3",
+  "sourceRecordsInspected": 14,
+  "courses": [
+    {
+      "suffix": "b5-exchange",
+      "title": "Taimanov con Ad3: cambio in c6 dopo ...b5",
+      "contrast": "Con Ad3 e b5, il Bianco cambia subito il cavallo d4 per quello c6 prima di arroccare. La ripresa didattica con la donna conserva il pedone d7 e rende visibile una struttura diversa dalla ripresa di pedone.",
+      "whitePlan": "Completa la sicurezza del re e coordina cavallo c3 e alfiere d3 attorno al pedone e4. Considera il tempo e le case disponibili quando la donna avversaria entra in c6.",
+      "blackPlan": "Dopo la ripresa con la donna, completa lo sviluppo del cavallo g8 e dell’alfiere f8. Il pedone b5 offre spazio sul lato di donna, ma il re nero è ancora al centro.",
+      "endpointReason": "Qxc6 completa il cambio dei cavalli e lascia una posizione senza catture del cambio ancora da risolvere. Entrambi i re devono ancora completare la propria sistemazione.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene il pedone e4. Il pedone bianco e4 interrompe ancora la diagonale verso h7: l’alfiere non attacca direttamente quel pedone. Con b5 il Nero guadagna spazio sul lato di donna e controlla c4; il cavallo g8 non è ancora sviluppato.",
+        "14": "Cxc6 cambia il cavallo d4 per quello c6. Dxc6 riprende con la donna: il pedone d7 resta al suo posto, mentre la donna occupa c6. Il Bianco conserva il cavallo c3 a sostegno di e4; entrambi i re sono ancora al centro."
+      },
+      "exercise": {
+        "beforeIndex": 15,
+        "mistake": "Qxh2",
+        "answer": "Rxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "La torre h1 e la donna in h2",
+        "objective": "La donna nera ha preso il pedone h2. Controlla quale pezzo bianco può catturarla lungo la colonna h.",
+        "explanation": "Txh2 cattura la donna. Il Nero può poi riprendere il cavallo c6 con dxc6: anche includendo questa risposta, il saldo rispetto a prima di Dxh2 resta almeno +5 per il Bianco. Il controllo comprende tutte le 23 repliche legali immediate, senza stabilire il risultato dell’intera partita.",
+        "id": "practice:sicilian:taimanov-bd3-b5-exchange",
+        "beforeFen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPP/R2QK2R b KQkq - 0 8",
+        "afterFen": "r1b1kbnr/3p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPq/R2QK2R w KQkq - 0 9",
+        "expectedLegalImmediateReplies": 23,
+        "expectedMinimumImmediateMaterialGain": 5,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1kbnr/3p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qk - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1kbnr/r2p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qk - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb7",
+            "fen": "r3kbnr/1b1p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k1nr/3pbppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd6",
+            "fen": "r1b1k1nr/3p1ppp/p1Nbp3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k1nr/3p1ppp/p1N1p3/1pb5/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k1nr/3p1ppp/p1N1p3/1p6/1b2P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k1nr/3p1ppp/p1N1p3/1p6/4P3/b1NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh6",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p2n/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nf6",
+            "fen": "r1b1kb1r/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ne7",
+            "fen": "r1b1kb1r/3pnppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1kbnr/5ppp/p1Npp3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1kbnr/5ppp/p1N1p3/1p1p4/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "dxc6",
+            "fen": "r1b1kbnr/5ppp/p1p1p3/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 5
+          },
+          {
+            "san": "f6",
+            "fen": "r1b1kbnr/3p2pp/p1N1pp2/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "f5",
+            "fen": "r1b1kbnr/3p2pp/p1N1p3/1p3p2/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1kbnr/3p1p1p/p1N1p1p1/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1kbnr/3p1p1p/p1N1p3/1p4p1/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1kbnr/3p1pp1/p1N1p2p/1p6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1kbnr/3p1pp1/p1N1p3/1p5p/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1kbnr/3p1ppp/2N1p3/pp6/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1kbnr/3p1ppp/p1N5/1p2p3/4P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1kbnr/3p1ppp/p1N1p3/8/1p2P3/2NBB3/PPP2PPR/R2QK3 w Qkq - 0 10",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "b5",
+        "Nxc6",
+        "Qxc6"
+      ],
+      "documentedPlies": 15,
+      "authoredMoves": [
+        {
+          "index": 15,
+          "san": "Qxc6",
+          "uci": "c7c6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 15 semimosse. Il seguito Qxc6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1kbnr/3p1ppp/p1q1p3/1p6/4P3/2NBB3/PPP2PPP/R2QK2R w KQkq - 0 9"
+    },
+    {
+      "suffix": "b5-castle",
+      "title": "Taimanov con Ad3: arrocco dopo ...b5",
+      "contrast": "Il Bianco arrocca mantenendo entrambi i cavalli, invece di cambiare subito in c6. Il successivo sviluppo Cf6 raggiunge la stessa disposizione del ramo che antepone Cf6 a b5, attraverso un ordine diverso.",
+      "whitePlan": "Con il re arroccato, mantieni coordinati i difensori di e4 e decidi quando cambiare in c6 o conservare il cavallo centrale. Non dedurre una nuova linea dalla sola uguaglianza della posizione finale.",
+      "blackPlan": "Sviluppa il cavallo in f6 per aumentare la pressione su e4 e prepara lo sviluppo degli alfieri. Il pedone b5 sostiene l’espansione sul lato di donna.",
+      "endpointReason": "Cf6 completa lo sviluppo del cavallo e crea un confronto diretto con l’ordine Cf6, arrocco, b5. La disposizione coincide, ma i percorsi e i relativi progressi restano distinti.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene il pedone e4. Il pedone bianco e4 interrompe ancora la diagonale verso h7: l’alfiere non attacca direttamente quel pedone. Con b5 il Nero guadagna spazio sul lato di donna e controlla c4; il cavallo g8 non è ancora sviluppato.",
+        "14": "Il Bianco arrocca senza cambiare i cavalli. Cf6 sviluppa il cavallo g8 e attacca e4, difeso dal cavallo c3 e dall’alfiere d3. Si raggiunge la stessa disposizione del ramo con Cf6 prima di b5, ma con un ordine di mosse diverso."
+      },
+      "exercise": {
+        "beforeIndex": 15,
+        "mistake": "Qxh2+",
+        "answer": "Kxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "Uno scacco senza sostegno",
+        "objective": "La donna in h2 dà scacco al re g1. Verifica se la casa h2 è difesa prima di decidere come rispondere.",
+        "explanation": "Rxh2 cattura la donna con il re e risponde allo scacco: nessun pezzo nero protegge h2 in questa posizione. Il Nero può poi giocare Cxd4, ma il saldo minimo resta +5 per il Bianco rispetto a prima della deviazione, sulle 32 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-b5-castle",
+        "beforeFen": "r1b1kbnr/2qp1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 1 8",
+        "afterFen": "r1b1kbnr/3p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPq/R2Q1RK1 w kq - 0 9",
+        "expectedLegalImmediateReplies": 32,
+        "expectedMinimumImmediateMaterialGain": 5,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1kbnr/3p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1kbnr/r2p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb7",
+            "fen": "r3kbnr/1b1p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ke7",
+            "fen": "r1b2bnr/3pkppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w - - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Kd8",
+            "fen": "r1bk1bnr/3p1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w - - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k1nr/3pbppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd6+",
+            "fen": "r1b1k1nr/3p1ppp/p1nbp3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k1nr/3p1ppp/p1n1p3/1pb5/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k1nr/3p1ppp/p1n1p3/1p6/1b1NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k1nr/3p1ppp/p1n1p3/1p6/3NP3/b1NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh6",
+            "fen": "r1b1kb1r/3p1ppp/p1n1p2n/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nf6",
+            "fen": "r1b1kb1r/3p1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nge7",
+            "fen": "r1b1kb1r/3pnppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1kbnr/5ppp/p1npp3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1kbnr/5ppp/p1n1p3/1p1p4/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "f6",
+            "fen": "r1b1kbnr/3p2pp/p1n1pp2/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "f5",
+            "fen": "r1b1kbnr/3p2pp/p1n1p3/1p3p2/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1kbnr/3p1p1p/p1n1p1p1/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1kbnr/3p1p1p/p1n1p3/1p4p1/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1kbnr/3p1pp1/p1n1p2p/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1kbnr/3p1pp1/p1n1p3/1p5p/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1kbnr/3p1ppp/2n1p3/pp6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Na7",
+            "fen": "r1b1kbnr/n2p1ppp/p3p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nb8",
+            "fen": "rnb1kbnr/3p1ppp/p3p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nd8",
+            "fen": "r1bnkbnr/3p1ppp/p3p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nce7",
+            "fen": "r1b1kbnr/3pnppp/p3p3/1p6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Ne5",
+            "fen": "r1b1kbnr/3p1ppp/p3p3/1p2n3/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Nxd4",
+            "fen": "r1b1kbnr/3p1ppp/p3p3/1p6/3nP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 5
+          },
+          {
+            "san": "Nb4",
+            "fen": "r1b1kbnr/3p1ppp/p3p3/1p6/1n1NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "Na5",
+            "fen": "r1b1kbnr/3p1ppp/p3p3/np6/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 10",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1kbnr/3p1ppp/p1n5/1p2p3/3NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1kbnr/3p1ppp/p1n1p3/8/1p1NP3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 10",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "b5",
+        "O-O",
+        "Nf6"
+      ],
+      "documentedPlies": 15,
+      "authoredMoves": [
+        {
+          "index": 15,
+          "san": "Nf6",
+          "uci": "g8f6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 15 semimosse. Il seguito Nf6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 2 9"
+    },
+    {
+      "suffix": "nf6-b5",
+      "title": "Taimanov con Ad3: ...Cf6 e ...b5",
+      "contrast": "Il Nero sviluppa prima Cf6 e gioca b5 dopo l’arrocco bianco. Il cambio didattico in c6 mette in evidenza la ripresa del pedone d7, distinta dalla ripresa di donna del ramo con b5 immediata.",
+      "whitePlan": "Dopo il cambio centrale, mantieni il sostegno a e4 e sviluppa le torri. Valuta la struttura di pedoni creata dalla ripresa dxc6 prima di scegliere un’espansione centrale.",
+      "blackPlan": "La ripresa dxc6 mantiene la donna in c7 e porta un pedone in c6 a controllare d5. Completa lo sviluppo e valuta la sicurezza del re, tenendo conto dello spazio già ottenuto con b5.",
+      "endpointReason": "Il cambio dei cavalli è concluso e la struttura con pedone c6 è visibile. Il Bianco è arroccato, mentre il Nero deve ancora completare lo sviluppo.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca e il Nero avanza b5, guadagnando spazio e controllando c4. L’ordine raggiunge la stessa disposizione di b5, arrocco, Cf6; i contatori FEN e la storia del percorso restano distinti.",
+        "16": "Cxc6 elimina il cavallo nero c6. Con dxc6 il pedone d7 riprende in c6 e controlla d5, mentre la donna resta in c7. Il pedone c6 interrompe la colonna davanti alla donna: non c’è un attacco diretto della donna lungo tutta la colonna c."
+      },
+      "exercise": {
+        "beforeIndex": 17,
+        "mistake": "Qxh2+",
+        "answer": "Kxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "La donna dimentica la ripresa in c6",
+        "objective": "Il Nero ha dato scacco con la donna in h2 anziché completare il cambio in c6. Controlla se il re può catturarla.",
+        "explanation": "Rxh2 elimina la donna e para lo scacco. Anche se segue dxc6, che cattura il cavallo avanzato, il saldo minimo relativo a prima di Dxh2+ resta +5 per il Bianco. Sono considerate tutte le 24 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-nf6-b5",
+        "beforeFen": "r1b1kb1r/2qp1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+        "afterFen": "r1b1kb1r/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPq/R2Q1RK1 w kq - 0 10",
+        "expectedLegalImmediateReplies": 24,
+        "expectedMinimumImmediateMaterialGain": 5,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1kb1r/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1kb1r/r2p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w k - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb7",
+            "fen": "r3kb1r/1b1p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k2r/3pbppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bd6+",
+            "fen": "r1b1k2r/3p1ppp/p1Nbpn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k2r/3p1ppp/p1N1pn2/1pb5/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k2r/3p1ppp/p1N1pn2/1p6/1b2P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k2r/3p1ppp/p1N1pn2/1p6/4P3/b1NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Rg8",
+            "fen": "r1b1kbr1/3p1ppp/p1N1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w q - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1kb1r/5ppp/p1Nppn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1kb1r/5ppp/p1N1pn2/1p1p4/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "dxc6",
+            "fen": "r1b1kb1r/5ppp/p1p1pn2/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 5
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1kb1r/3p1p1p/p1N1pnp1/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1kb1r/3p1p1p/p1N1pn2/1p4p1/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1kb1r/3p1pp1/p1N1pn1p/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1kb1r/3p1pp1/p1N1pn2/1p5p/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1kb1r/3p1ppp/2N1pn2/pp6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1kb1r/3p1ppp/p1N2n2/1p2p3/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng8",
+            "fen": "r1b1kbnr/3p1ppp/p1N1p3/1p6/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh5",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p3/1p5n/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng4+",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p3/1p6/4P1n1/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nxe4",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p3/1p6/4n3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 7
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1kb1r/3p1ppp/p1N1p3/1p1n4/4P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 1 11",
+            "materialGain": 8
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1kb1r/3p1ppp/p1N1pn2/8/1p2P3/2NBB3/PPP2PPK/R2Q1R2 w kq - 0 11",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "b5",
+        "Nxc6",
+        "dxc6"
+      ],
+      "documentedPlies": 16,
+      "authoredMoves": [
+        {
+          "index": 16,
+          "san": "Nxc6",
+          "uci": "d4c6"
+        },
+        {
+          "index": 17,
+          "san": "dxc6",
+          "uci": "d7c6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 16 semimosse. Il seguito Nxc6 dxc6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1kb1r/2q2ppp/p1p1pn2/1p6/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 10"
+    },
+    {
+      "suffix": "nf6-bd6",
+      "title": "Taimanov con Ad3: sviluppo ...Ad6",
+      "contrast": "Dopo Cf6 e l’arrocco bianco, l’alfiere nero si sviluppa in d6. La sua diagonale verso h2 è aperta e la sua presenza davanti al pedone d7 distingue questo assetto dai rami con b5 o h5.",
+      "whitePlan": "Controlla la pressione dell’alfiere d6 verso il tuo arrocco e mantieni coordinati i difensori centrali. Dopo il cambio in c6, considera la struttura avversaria prima di avanzare i pedoni del re.",
+      "blackPlan": "Coordina l’alfiere d6 e il cavallo f6 mantenendo attenzione al centro. La ripresa dxc6 libera d7, mentre l’alfiere d6 continua a controllare e5 e la diagonale verso h2.",
+      "endpointReason": "La ripresa in c6 chiude il cambio e mostra insieme il pedone c6 e l’alfiere d6. Non si lascia un pezzo catturato senza la risposta prevista.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca e Ad6 sviluppa l’alfiere f8. La diagonale d6-e5-f4-g3-h2 è aperta: l’alfiere attacca h2, ma questo fatto geometrico non prova che la cattura sia conveniente. L’alfiere in d6 occupa anche la casa davanti al pedone d7.",
+        "16": "Cxc6 cambia il cavallo centrale. dxc6 riprende con il pedone d7, liberando d7 e conservando l’alfiere in d6. Il nuovo pedone c6 controlla d5; l’alfiere continua a controllare e5 e h2."
+      },
+      "exercise": {
+        "beforeIndex": 17,
+        "mistake": "Qa5",
+        "answer": "Nxa5",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "La donna entra nel salto del cavallo",
+        "objective": "La donna è passata da c7 ad a5. Controlla le case raggiungibili dal cavallo bianco in c6.",
+        "explanation": "Cxa5 cattura la donna con il cavallo c6. Fra le risposte immediate il Nero può catturare un pedone con Axh2+ oppure Cxe4; il saldo minimo resta +8 per il Bianco rispetto a prima di Da5. Sono verificate tutte le 31 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-nf6-bd6",
+        "beforeFen": "r1b1k2r/1pqp1ppp/p1Nbpn2/8/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 9",
+        "afterFen": "r1b1k2r/1p1p1ppp/p1Nbpn2/q7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 10",
+        "expectedLegalImmediateReplies": 31,
+        "expectedMinimumImmediateMaterialGain": 8,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1k2r/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w k - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1k2r/rp1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w k - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Kf8",
+            "fen": "r1b2k1r/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w - - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ke7",
+            "fen": "r1b4r/1p1pkppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w - - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Kd8",
+            "fen": "r1bk3r/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w - - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rg8",
+            "fen": "r1b1k1r1/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w q - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rf8",
+            "fen": "r1b1kr2/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w q - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "b6",
+            "fen": "r1b1k2r/3p1ppp/pp1bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "b5",
+            "fen": "r1b1k2r/3p1ppp/p2bpn2/Np6/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1k2r/1p1p1p1p/p2bpnp1/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1k2r/1p1p1p1p/p2bpn2/N5p1/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1k2r/1p1p1pp1/p2bpn1p/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1k2r/1p1p1pp1/p2bpn2/N6p/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bc7",
+            "fen": "r1b1k2r/1pbp1ppp/p3pn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bb8",
+            "fen": "rbb1k2r/1p1p1ppp/p3pn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Be7",
+            "fen": "r1b1k2r/1p1pbppp/p3pn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bf8",
+            "fen": "r1b1kb1r/1p1p1ppp/p3pn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Be5",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N3b3/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bf4",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4Pb2/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bg3",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4P3/2NBB1b1/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bxh2+",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4P3/2NBB3/PPP2PPb/R2Q1RK1 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N1b5/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bb4",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/1b2P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ba3",
+            "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4P3/b1NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1k2r/1p1p1ppp/p2b1n2/N3p3/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ng8",
+            "fen": "r1b1k1nr/1p1p1ppp/p2bp3/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nh5",
+            "fen": "r1b1k2r/1p1p1ppp/p2bp3/N6n/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ng4",
+            "fen": "r1b1k2r/1p1p1ppp/p2bp3/N7/4P1n1/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nxe4",
+            "fen": "r1b1k2r/1p1p1ppp/p2bp3/N7/4n3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1k2r/1p1p1ppp/p2bp3/N2n4/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "O-O",
+            "fen": "r1b2rk1/1p1p1ppp/p2bpn2/N7/4P3/2NBB3/PPP2PPP/R2Q1RK1 w - - 1 11",
+            "materialGain": 9
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "Bd6",
+        "Nxc6",
+        "dxc6"
+      ],
+      "documentedPlies": 16,
+      "authoredMoves": [
+        {
+          "index": 16,
+          "san": "Nxc6",
+          "uci": "d4c6"
+        },
+        {
+          "index": 17,
+          "san": "dxc6",
+          "uci": "d7c6"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 16 semimosse. Il seguito Nxc6 dxc6 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1k2r/1pq2ppp/p1pbpn2/8/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 10"
+    },
+    {
+      "suffix": "nf6-h5",
+      "title": "Taimanov con Ad3: espansione ...h5",
+      "contrast": "Il Nero avanza h5 per controllare g4 prima di completare lo sviluppo. La risposta didattica h3 contrasta le entrate su quella casa; i successivi cambi in d4 e c5 chiariscono il centro conservando entrambi i pedoni h avanzati.",
+      "whitePlan": "Con h3 aggiungi il controllo del pedone sulla casa g4. Completa le riprese in d4 e c5, poi valuta la pressione della donna nera in c5 e lo sviluppo delle torri; il cavallo c3 conserva il sostegno del pedone b2.",
+      "blackPlan": "Collega il controllo di g4 offerto da h5 allo sviluppo dei pezzi. Il cambio in d4 permette di sviluppare l’alfiere con attacco su quello bianco; dopo i cambi la donna entra in c5, mentre il re nero resta da sistemare.",
+      "endpointReason": "Il seguito completa sia il cambio dei cavalli in d4 sia quello degli alfieri in c5. La donna nera in c5, i pedoni h3 e h5 e il re nero ancora al centro definiscono una posizione concreta da cui scegliere il piano successivo.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca e il Nero gioca h5. Il pedone nero controlla g4, non g5. La torre h8 è ancora dietro al proprio pedone h5 e non attacca liberamente lungo tutta la colonna; il re nero resta in e8.",
+        "16": "h3 aggiunge il controllo del pedone bianco su g4, casa controllata anche dal pedone nero h5. Il Nero sceglie Cxd4 con il cavallo c6, cattura il cavallo centrale e libera c6. Il cambio deve essere completato: il guadagno materiale immediato non è ancora un vantaggio consolidato.",
+        "18": "Axd4 riprende con l’alfiere e3. Ac5 sviluppa l’alfiere f8 e attacca quello bianco in d4: i due alfieri si fronteggiano sulla diagonale c5-d4. I pedoni h3 e h5 continuano entrambi a controllare g4.",
+        "20": "Axc5 elimina l’alfiere nero e Dxc5 completa la ripresa passando per c6, ormai libera. La donna c5 attacca il cavallo c3 lungo la colonna, ma il pedone b2 lo difende. Il Bianco conserva l’alfiere d3, il Nero quello c8; il re nero è ancora in e8."
+      },
+      "exercise": {
+        "id": "practice:sicilian:taimanov-bd3-nf6-h5",
+        "beforeIndex": 16,
+        "mistake": "Nf5",
+        "answer": "exf5",
+        "exerciseSide": "b",
+        "capturedType": "n",
+        "title": "Il pedone e6 controlla f5",
+        "objective": "Il cavallo bianco d4 è saltato in f5. Controlla quale pedone nero può catturarlo.",
+        "explanation": "exf5 cattura il cavallo con il pedone e6. Il Bianco può riprendere quel pedone oppure catturarne un altro, ma il saldo minimo rispetto a prima di Cf5 resta +2 per il Nero sulle 42 repliche legali immediate. Il giudizio sulla deviazione richiede anche il confronto motore: il solo saldo materiale non dimostra il risultato della partita.",
+        "beforeFen": "r1b1kb1r/1pqp1pp1/p1n1pn2/7p/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9",
+        "afterFen": "r1b1kb1r/1pqp1pp1/p1n1pn2/5N1p/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 1 9",
+        "replyEvidence": [
+          {
+            "san": "e5",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/4Pp1p/8/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "exf5",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5P1p/8/2NBB3/PPP2PPP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 2
+          },
+          {
+            "san": "Na4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/N3P3/3BB3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Nb5",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/1N3p1p/4P3/3BB3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/3N1p1p/4P3/3BB3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Ne2",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/3BB3/PPP1NPPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Nb1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/3BB3/PPP2PPP/RN1Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bc4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/2B1P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bb5",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/1B3p1p/4P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bxa6",
+            "fen": "r1b1kb1r/1pqp1pp1/B1n2n2/5p1p/4P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 2
+          },
+          {
+            "san": "Be2",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bd4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/3BP3/2NB4/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bc5",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/2B2p1p/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bb6",
+            "fen": "r1b1kb1r/1pqp1pp1/pBn2n2/5p1p/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Ba7",
+            "fen": "r1b1kb1r/Bpqp1pp1/p1n2n2/5p1p/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bf4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4PB2/2NB4/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bg5",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5pBp/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bh6",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n1B/5p1p/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bd2",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NB4/PPPB1PPP/R2Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Bc1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NB4/PPP2PPP/R1BQ1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "a3",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/P1NBB3/1PP2PPP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "a4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/P3P3/2NBB3/1PP2PPP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "b3",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/1PNBB3/P1P2PPP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/1P2P3/2NBB3/P1P2PPP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "f3",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBBP2/PPP3PP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "f4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4PP2/2NBB3/PPP3PP/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "g3",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB1P1/PPP2P1P/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "g4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P1P1/2NBB3/PPP2P1P/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "h3",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB2P/PPP2PP1/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "h4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P2P/2NBB3/PPP2PP1/R2Q1RK1 b kq - 0 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Rb1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPP2PPP/1R1Q1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Rc1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPP2PPP/2RQ1RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Qd2",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPPQ1PPP/R4RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Qe2",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPP1QPPP/R4RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Qf3",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBBQ2/PPP2PPP/R4RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Qg4",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P1Q1/2NBB3/PPP2PPP/R4RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Qxh5",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1Q/4P3/2NBB3/PPP2PPP/R4RK1 b kq - 0 10",
+            "materialGain": 2
+          },
+          {
+            "san": "Qe1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPP2PPP/R3QRK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Qc1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPP2PPP/R1Q2RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Qb1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPP2PPP/RQ3RK1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Re1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPP2PPP/R2QR1K1 b kq - 1 10",
+            "materialGain": 3
+          },
+          {
+            "san": "Kh1",
+            "fen": "r1b1kb1r/1pqp1pp1/p1n2n2/5p1p/4P3/2NBB3/PPP2PPP/R2Q1R1K b kq - 1 10",
+            "materialGain": 3
+          }
+        ],
+        "expectedLegalImmediateReplies": 42,
+        "expectedMinimumImmediateMaterialGain": 2
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "h5",
+        "h3",
+        "Nxd4",
+        "Bxd4",
+        "Bc5",
+        "Bxc5",
+        "Qxc5"
+      ],
+      "documentedPlies": 16,
+      "authoredMoves": [
+        {
+          "index": 16,
+          "san": "h3",
+          "uci": "h2h3"
+        },
+        {
+          "index": 17,
+          "san": "Nxd4",
+          "uci": "c6d4"
+        },
+        {
+          "index": 18,
+          "san": "Bxd4",
+          "uci": "e3d4"
+        },
+        {
+          "index": 19,
+          "san": "Bc5",
+          "uci": "f8c5"
+        },
+        {
+          "index": 20,
+          "san": "Bxc5",
+          "uci": "d4c5"
+        },
+        {
+          "index": 21,
+          "san": "Qxc5",
+          "uci": "c7c5"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 16 semimosse. Il seguito h3 Nxd4 Bxd4 Bc5 Bxc5 Qxc5 è una continuazione didattica scelta nella revisione R1 sulla base della linea principale del controllo motore già conservato. Non è attribuito alla fonte: ogni mossa aggiunta deve superare il confronto previsto dal nuovo piano.",
+      "endpointFen": "r1b1k2r/1p1p1pp1/p3pn2/2q4p/4P3/2NB3P/PPP2PP1/R2Q1RK1 w kq - 0 12"
+    },
+    {
+      "suffix": "nf6-exchange",
+      "title": "Taimanov con Ad3: cambio nero in d4",
+      "contrast": "Il Nero cambia per primo in d4. Il seguito didattico riprende con l’alfiere e3 e completa anche il successivo cambio degli alfieri, lasciando la donna nera attiva in c5.",
+      "whitePlan": "Completa le riprese e conserva il sostegno del cavallo c3 e dell’alfiere d3 al centro. Dopo l’ingresso della donna in c5, valuta i suoi attacchi senza trascurare lo sviluppo delle torri.",
+      "blackPlan": "Dopo il cambio in d4, sviluppa l’alfiere con tempo su quello bianco. La ripresa finale di donna porta pressione sulla colonna c, ma il cavallo c3 resta difeso dal pedone b2.",
+      "endpointReason": "Sono conclusi sia il cambio dei cavalli sia quello degli alfieri. La donna nera in c5 e il re nero ancora al centro definiscono la posizione da cui scegliere il piano successivo.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca. Cxd4 parte da c6 e cattura il cavallo bianco centrale: la casa c6 si libera e il Bianco deve completare il cambio, senza scambiare la perdita momentanea per un vantaggio già consolidato del Nero.",
+        "16": "Axd4 riprende con l’alfiere e3. Ac5 sviluppa l’alfiere f8 e attacca quello bianco in d4; i due alfieri si fronteggiano sulla diagonale c5-d4. Il seguito del corso completa anche questo cambio.",
+        "18": "Axc5 cattura l’alfiere e Dxc5 riprende dalla casa c7 passando per c6, ormai libera. La donna in c5 attacca il cavallo c3 lungo la colonna c, ma quel cavallo è difeso dal pedone b2. Il Bianco conserva l’alfiere d3 e il Nero quello c8."
+      },
+      "exercise": {
+        "beforeIndex": 19,
+        "mistake": "Qxh2+",
+        "answer": "Kxh2",
+        "exerciseSide": "w",
+        "capturedType": "q",
+        "title": "Lo scacco che perde la donna",
+        "objective": "Invece di riprendere l’alfiere c5, il Nero ha catturato h2 con scacco. Controlla se la donna ha una difesa.",
+        "explanation": "Rxh2 cattura la donna e risponde allo scacco. Il Nero può ancora prendere il pedone e4 con il cavallo, ma il saldo minimo rispetto a prima di Dxh2+ resta +7 per il Bianco. Il controllo comprende tutte le 20 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-nf6-exchange",
+        "beforeFen": "r1b1k2r/1pqp1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPP/R2Q1RK1 b kq - 0 10",
+        "afterFen": "r1b1k2r/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPq/R2Q1RK1 w kq - 0 11",
+        "expectedLegalImmediateReplies": 20,
+        "expectedMinimumImmediateMaterialGain": 7,
+        "replyEvidence": [
+          {
+            "san": "Rb8",
+            "fen": "1rb1k2r/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w k - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Ra7",
+            "fen": "2b1k2r/rp1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w k - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Kd8",
+            "fen": "r1bk3r/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w - - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Rg8",
+            "fen": "r1b1k1r1/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w q - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Rf8",
+            "fen": "r1b1kr2/1p1p1ppp/p3pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w q - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "b6",
+            "fen": "r1b1k2r/3p1ppp/pp2pn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "b5",
+            "fen": "r1b1k2r/3p1ppp/p3pn2/1pB5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "d6",
+            "fen": "r1b1k2r/1p3ppp/p2ppn2/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "d5",
+            "fen": "r1b1k2r/1p3ppp/p3pn2/2Bp4/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "g6",
+            "fen": "r1b1k2r/1p1p1p1p/p3pnp1/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "g5",
+            "fen": "r1b1k2r/1p1p1p1p/p3pn2/2B3p1/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "h6",
+            "fen": "r1b1k2r/1p1p1pp1/p3pn1p/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "h5",
+            "fen": "r1b1k2r/1p1p1pp1/p3pn2/2B4p/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "a5",
+            "fen": "r1b1k2r/1p1p1ppp/4pn2/p1B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "e5",
+            "fen": "r1b1k2r/1p1p1ppp/p4n2/2B1p3/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng8",
+            "fen": "r1b1k1nr/1p1p1ppp/p3p3/2B5/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Nh5",
+            "fen": "r1b1k2r/1p1p1ppp/p3p3/2B4n/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Ng4+",
+            "fen": "r1b1k2r/1p1p1ppp/p3p3/2B5/4P1n1/2NB4/PPP2PPK/R2Q1R2 w kq - 1 12",
+            "materialGain": 8
+          },
+          {
+            "san": "Nxe4",
+            "fen": "r1b1k2r/1p1p1ppp/p3p3/2B5/4n3/2NB4/PPP2PPK/R2Q1R2 w kq - 0 12",
+            "materialGain": 7
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1k2r/1p1p1ppp/p3p3/2Bn4/4P3/2NB4/PPP2PPK/R2Q1R2 w kq - 1 12",
+            "materialGain": 8
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "Nxd4",
+        "Bxd4",
+        "Bc5",
+        "Bxc5",
+        "Qxc5"
+      ],
+      "documentedPlies": 16,
+      "authoredMoves": [
+        {
+          "index": 16,
+          "san": "Bxd4",
+          "uci": "e3d4"
+        },
+        {
+          "index": 17,
+          "san": "Bc5",
+          "uci": "f8c5"
+        },
+        {
+          "index": 18,
+          "san": "Bxc5",
+          "uci": "d4c5"
+        },
+        {
+          "index": 19,
+          "san": "Qxc5",
+          "uci": "c7c5"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 16 semimosse. Il seguito Bxd4 Bc5 Bxc5 Qxc5 è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b1k2r/1p1p1ppp/p3pn2/2q5/4P3/2NB4/PPP2PPP/R2Q1RK1 w kq - 0 11"
+    },
+    {
+      "suffix": "ne5-bc5",
+      "title": "Taimanov con Ad3: ...Ce5, ...Ac5 e Rh1",
+      "contrast": "Il cavallo c6 raggiunge e5 e attacca l’alfiere d3. La fonte prosegue con h3, Ac5 e Rh1: il cavallo d4 resta fra l’alfiere c5 e l’alfiere e3, senza essere inchiodato al re bianco.",
+      "whitePlan": "Valuta la tensione sull’alfiere d3 e sul cavallo d4 prima di muovere il centro. h3 controlla g4 e Rh1 cambia la posizione del re, ma queste mosse non eliminano da sole la pressione dei pezzi neri.",
+      "blackPlan": "Coordina il cavallo e5, l’alfiere c5 e il cavallo f6; completa l’arrocco prima di scegliere un’ulteriore apertura del centro. L’alfiere c5 incontra il cavallo bianco d4 lungo la diagonale verso e3.",
+      "endpointReason": "L’arrocco nero completa la sistemazione di entrambi i re. Restano tensioni centrali da valutare, ma nessuno scacco o cambio iniziato viene lasciato senza la risposta prevista.",
+      "editorialNotes": {
+        "12": "Ad3 sviluppa l’alfiere f1 e sostiene e4. Il Nero sviluppa il cavallo g8 in f6, da dove attacca e4: il pedone bianco è sostenuto sia dal cavallo c3 sia dall’alfiere d3. L’alfiere d3 non attacca direttamente h7, perché il pedone e4 interrompe quella diagonale.",
+        "14": "Il Bianco arrocca e il cavallo c6 si porta in e5, da dove attacca l’alfiere d3. Il cavallo nero in e5 interrompe la diagonale della donna c7 verso h2: non si deve attribuire alla donna un attacco diretto lungo quella diagonale.",
+        "16": "h3 controlla g4. Ac5 sviluppa l’alfiere f8 e attacca il cavallo d4; quest’ultimo è difeso dall’alfiere e3. La presenza del re bianco in g1 non rende il cavallo d4 inchiodato al re lungo questa diagonale.",
+        "18": "Rh1 sposta il re bianco da g1 a h1. Il Nero arrocca, portando il re in g8 e la torre h8 in f8. Il cavallo e5 continua ad attaccare l’alfiere d3 e l’alfiere c5 incontra ancora il cavallo d4 sulla diagonale verso e3."
+      },
+      "exercise": {
+        "beforeIndex": 18,
+        "mistake": "Qh5",
+        "answer": "Nxh5",
+        "exerciseSide": "b",
+        "capturedType": "q",
+        "title": "Il cavallo f6 controlla h5",
+        "objective": "La donna bianca è arrivata in h5. Verifica quali salti sono disponibili al cavallo nero f6.",
+        "explanation": "Cxh5 cattura la donna con il cavallo f6. Il Bianco può poi catturare un pedone, per esempio con Cxe6 o Axa6, ma il saldo minimo rispetto a prima di Dh5 resta +8 per il Nero. Sono state enumerate tutte le 41 repliche legali immediate.",
+        "id": "practice:sicilian:taimanov-bd3-ne5-bc5",
+        "beforeFen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1RK1 w kq - 1 10",
+        "afterFen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n2Q/3NP3/2NBB2P/PPP2PP1/R4RK1 b kq - 2 10",
+        "expectedLegalImmediateReplies": 41,
+        "expectedMinimumImmediateMaterialGain": 8,
+        "replyEvidence": [
+          {
+            "san": "Ndb5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/1Nb1n2n/4P3/2NBB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nc6",
+            "fen": "r1b1k2r/1pqp1ppp/p1N1p3/2b1n2n/4P3/2NBB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nxe6",
+            "fen": "r1b1k2r/1pqp1ppp/p3N3/2b1n2n/4P3/2NBB2P/PPP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Nf5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1nN1n/4P3/2NBB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nf3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/4P3/2NBBN1P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nde2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/4P3/2NBB2P/PPP1NPP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nb3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/4P3/1NNBB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Na4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/N2NP3/3BB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Ncb5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/1Nb1n2n/3NP3/3BB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nd5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2bNn2n/3NP3/3BB2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nce2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/3BB2P/PPP1NPP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nd1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/3BB2P/PPP2PP1/R2N1RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Nb1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/3BB2P/PPP2PP1/RN3RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bc4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/2BNP3/2N1B2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bb5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/1Bb1n2n/3NP3/2N1B2P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bxa6",
+            "fen": "r1b1k2r/1pqp1ppp/B3p3/2b1n2n/3NP3/2N1B2P/PPP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 8
+          },
+          {
+            "san": "Be2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2N1B2P/PPP1BPP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bf4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NPB2/2NB3P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bg5",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n1Bn/3NP3/2NB3P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bh6",
+            "fen": "r1b1k2r/1pqp1ppp/p3p2B/2b1n2n/3NP3/2NB3P/PPP2PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bd2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NB3P/PPPB1PP1/R4RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Bc1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NB3P/PPP2PP1/R1B2RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "h4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP2P/2NBB3/PPP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "a3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/P1NBB2P/1PP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "a4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/P2NP3/2NBB2P/1PP2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "b3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/1PNBB2P/P1P2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "b4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/1P1NP3/2NBB2P/P1P2PP1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "f3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBBP1P/PPP3P1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "f4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NPP2/2NBB2P/PPP3P1/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "g3",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB1PP/PPP2P2/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "g4",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP1P1/2NBB2P/PPP2P2/R4RK1 b kq - 0 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rab1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/1R3RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rac1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/2R2RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rad1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/3R1RK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rae1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/4RRK1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rfe1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/R3R1K1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rfd1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/R2R2K1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rfc1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/R1R3K1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Rfb1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/RR4K1 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Kh2",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PPK/R4R2 b kq - 1 11",
+            "materialGain": 9
+          },
+          {
+            "san": "Kh1",
+            "fen": "r1b1k2r/1pqp1ppp/p3p3/2b1n2n/3NP3/2NBB2P/PPP2PP1/R4R1K b kq - 1 11",
+            "materialGain": 9
+          }
+        ]
+      },
+      "moves": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7",
+        "Be3",
+        "a6",
+        "Bd3",
+        "Nf6",
+        "O-O",
+        "Ne5",
+        "h3",
+        "Bc5",
+        "Kh1",
+        "O-O"
+      ],
+      "documentedPlies": 19,
+      "authoredMoves": [
+        {
+          "index": 19,
+          "san": "O-O",
+          "uci": "e8g8"
+        }
+      ],
+      "sourceDisclosure": "La fonte congelata documenta le prime 19 semimosse. Il seguito O-O è una scelta didattica proposta e richiede i confronti motore del nuovo piano; non è attribuito alla fonte e non è ancora verificato dal motore.",
+      "endpointFen": "r1b2rk1/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1R1K w - - 3 11"
+    }
+  ],
+  "geometryFacts": [
+    {
+      "suffix": "b5-exchange",
+      "index": 13,
+      "label": "Bd3 supports e4, own e4 pawn blocks attack on h7",
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/2NBB3/PPP2PPP/R2QK2R b KQkq - 1 7"
+    },
+    {
+      "suffix": "b5-exchange",
+      "index": 14,
+      "label": "b5 controls c4, Ng8 undeveloped",
+      "fen": "r1b1kbnr/2qp1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPP/R2QK2R w KQkq - 0 8"
+    },
+    {
+      "suffix": "b5-castle",
+      "index": 13,
+      "label": "Bd3 supports e4, own e4 pawn blocks attack on h7",
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/2NBB3/PPP2PPP/R2QK2R b KQkq - 1 7"
+    },
+    {
+      "suffix": "b5-castle",
+      "index": 14,
+      "label": "b5 controls c4, Ng8 undeveloped",
+      "fen": "r1b1kbnr/2qp1ppp/p1n1p3/1p6/3NP3/2NBB3/PPP2PPP/R2QK2R w KQkq - 0 8"
+    },
+    {
+      "suffix": "nf6-b5",
+      "index": 13,
+      "label": "Bd3 supports e4, own e4 pawn blocks attack on h7",
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/2NBB3/PPP2PPP/R2QK2R b KQkq - 1 7"
+    },
+    {
+      "suffix": "nf6-b5",
+      "index": 14,
+      "label": "Nf6 attacks e4, Nc3 and Bd3 defend e4",
+      "fen": "r1b1kb1r/1pqp1ppp/p1n1pn2/8/3NP3/2NBB3/PPP2PPP/R2QK2R w KQkq - 2 8"
+    },
+    {
+      "suffix": "nf6-bd6",
+      "index": 13,
+      "label": "Bd3 supports e4, own e4 pawn blocks attack on h7",
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/2NBB3/PPP2PPP/R2QK2R b KQkq - 1 7"
+    },
+    {
+      "suffix": "nf6-bd6",
+      "index": 14,
+      "label": "Nf6 attacks e4, Nc3 and Bd3 defend e4",
+      "fen": "r1b1kb1r/1pqp1ppp/p1n1pn2/8/3NP3/2NBB3/PPP2PPP/R2QK2R w KQkq - 2 8"
+    },
+    {
+      "suffix": "nf6-h5",
+      "index": 13,
+      "label": "Bd3 supports e4, own e4 pawn blocks attack on h7",
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/2NBB3/PPP2PPP/R2QK2R b KQkq - 1 7"
+    },
+    {
+      "suffix": "nf6-h5",
+      "index": 14,
+      "label": "Nf6 attacks e4, Nc3 and Bd3 defend e4",
+      "fen": "r1b1kb1r/1pqp1ppp/p1n1pn2/8/3NP3/2NBB3/PPP2PPP/R2QK2R w KQkq - 2 8"
+    },
+    {
+      "suffix": "nf6-exchange",
+      "index": 13,
+      "label": "Bd3 supports e4, own e4 pawn blocks attack on h7",
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/2NBB3/PPP2PPP/R2QK2R b KQkq - 1 7"
+    },
+    {
+      "suffix": "nf6-exchange",
+      "index": 14,
+      "label": "Nf6 attacks e4, Nc3 and Bd3 defend e4",
+      "fen": "r1b1kb1r/1pqp1ppp/p1n1pn2/8/3NP3/2NBB3/PPP2PPP/R2QK2R w KQkq - 2 8"
+    },
+    {
+      "suffix": "ne5-bc5",
+      "index": 13,
+      "label": "Bd3 supports e4, own e4 pawn blocks attack on h7",
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/2NBB3/PPP2PPP/R2QK2R b KQkq - 1 7"
+    },
+    {
+      "suffix": "ne5-bc5",
+      "index": 14,
+      "label": "Nf6 attacks e4, Nc3 and Bd3 defend e4",
+      "fen": "r1b1kb1r/1pqp1ppp/p1n1pn2/8/3NP3/2NBB3/PPP2PPP/R2QK2R w KQkq - 2 8"
+    },
+    {
+      "suffix": "b5-exchange",
+      "index": 16,
+      "label": "Qxc6 leaves queen c6, d7 pawn, kings e1/e8",
+      "fen": "r1b1kbnr/3p1ppp/p1q1p3/1p6/4P3/2NBB3/PPP2PPP/R2QK2R w KQkq - 0 9"
+    },
+    {
+      "suffix": "b5-castle",
+      "index": 16,
+      "label": "White castled, Nf6 attacks e4, b5 controls c4",
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 2 9"
+    },
+    {
+      "suffix": "nf6-b5",
+      "index": 18,
+      "label": "d-pawn recaptured c6, controls d5 and blocks Qc7 down c-file",
+      "fen": "r1b1kb1r/2q2ppp/p1p1pn2/1p6/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 10"
+    },
+    {
+      "suffix": "nf6-bd6",
+      "index": 18,
+      "label": "d-pawn recaptured c6, controls d5 and blocks Qc7 down c-file",
+      "fen": "r1b1k2r/1pq2ppp/p1pbpn2/8/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 10"
+    },
+    {
+      "suffix": "nf6-bd6",
+      "index": 16,
+      "label": "Bd6 attacks e5/h2 and occupies d7 pawn advance square",
+      "fen": "r1b1k2r/1pqp1ppp/p1nbpn2/8/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 4 9"
+    },
+    {
+      "suffix": "nf6-bd6",
+      "index": 18,
+      "label": "Bd6 still attacks h2 after central recapture",
+      "fen": "r1b1k2r/1pq2ppp/p1pbpn2/8/4P3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 10"
+    },
+    {
+      "suffix": "nf6-h5",
+      "index": 16,
+      "label": "h5 controls g4 not g5; blocks rook h8 line to h2",
+      "fen": "r1b1kb1r/1pqp1pp1/p1n1pn2/7p/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9"
+    },
+    {
+      "suffix": "nf6-exchange",
+      "index": 16,
+      "label": "Nc6 captured Nd4, vacating c6",
+      "fen": "r1b1kb1r/1pqp1ppp/p3pn2/8/3nP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9"
+    },
+    {
+      "suffix": "nf6-exchange",
+      "index": 18,
+      "label": "Bc5 and Bd4 attack each other",
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b5/3BP3/2NB4/PPP2PPP/R2Q1RK1 w kq - 1 10"
+    },
+    {
+      "suffix": "nf6-exchange",
+      "index": 20,
+      "label": "Qc5 attacks Nc3 defended by b2; surviving bishops d3/c8",
+      "fen": "r1b1k2r/1p1p1ppp/p3pn2/2q5/4P3/2NB4/PPP2PPP/R2Q1RK1 w kq - 0 11"
+    },
+    {
+      "suffix": "ne5-bc5",
+      "index": 16,
+      "label": "Ne5 attacks Bd3 and blocks Qc7 diagonal to h2",
+      "fen": "r1b1kb1r/1pqp1ppp/p3pn2/4n3/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 4 9"
+    },
+    {
+      "suffix": "ne5-bc5",
+      "index": 18,
+      "label": "h3 controls g4; Bc5 attacks Nd4 defended by Be3; Nd4 can move",
+      "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1RK1 w kq - 1 10"
+    },
+    {
+      "suffix": "ne5-bc5",
+      "index": 20,
+      "label": "Kings h1/g8 and rook f8, Ne5 still attacks Bd3",
+      "fen": "r1b2rk1/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1R1K w - - 3 11"
+    },
+    {
+      "suffix": "nf6-h5",
+      "index": 17,
+      "label": "h3 and h5 both control g4, Nf6 can legally move to g4",
+      "fen": "r1b1kb1r/1pqp1pp1/p1n1pn2/7p/3NP3/2NBB2P/PPP2PP1/R2Q1RK1 b kq - 0 9"
+    },
+    {
+      "suffix": "nf6-h5",
+      "index": 18,
+      "label": "Nc6 captured Nd4 and vacated c6; Be3 can recapture",
+      "fen": "r1b1kb1r/1pqp1pp1/p3pn2/7p/3nP3/2NBB2P/PPP2PP1/R2Q1RK1 w kq - 0 10"
+    },
+    {
+      "suffix": "nf6-h5",
+      "index": 20,
+      "label": "Bc5 and Bd4 attack each other, h3 and h5 retained",
+      "fen": "r1b1k2r/1pqp1pp1/p3pn2/2b4p/3BP3/2NB3P/PPP2PP1/R2Q1RK1 w kq - 1 11"
+    },
+    {
+      "suffix": "nf6-h5",
+      "index": 22,
+      "label": "Qc5 attacks Nc3 defended by b2, surviving bishops d3/c8, king e8",
+      "fen": "r1b1k2r/1p1p1pp1/p3pn2/2q4p/4P3/2NB3P/PPP2PP1/R2Q1RK1 w kq - 0 12"
+    }
+  ],
+  "convergence": {
+    "courses": [
+      "b5-castle",
+      "nf6-b5"
+    ],
+    "indices": [
+      16,
+      16
+    ],
+    "fens": [
+      "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 2 9",
+      "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 0 9"
+    ],
+    "samePositionFirstFourFields": true,
+    "sameFullFen": false
+  },
+  "summary": {
+    "courses": 7,
+    "documentedPlies": 113,
+    "authoredPlies": 17,
+    "editorialPairs": 23,
+    "exerciseReplies": 213,
+    "geometryFacts": 31,
+    "engineSearchesExecuted": 0
+  },
+  "reviewNotes": [
+    "Every continuation is a primary authored candidate, not an engine verdict. All added moves need the frozen acceptance gate.",
+    "The dxc6 replies and Bc5/Bxc5 exchange are legal and positionally interpretable; their relative value remains unverified.",
+    "Four exercises use queen captures on h2 in distinct full FEN positions. They illustrate a recurring tactical theme, not four distinct themes.",
+    "The ...Bd6 exercise uses Qa5/Nxa5 because Bd6 itself protects h2; Qxh2+/Kxh2 would be illegal there.",
+    "For the ...Ne5 course Qh5/Nxh5 is used; Ne5 blocks Qc7-h2, and an immediate knight giveaway in c4 would allow Bxd4, invalidating a claimed +2 immediate balance.",
+    "All seven exercise starting FENs are distinct. Immediate material is checked over all legal single replies, not a game result.",
+    "The revised h5 course uses h3, so the former Qxh2 exercise after Nxc6 is incompatible. Nf5/exf5 is proposed at the unchanged documented endpoint and needs a new engine answer search.",
+    "Qxh5/Nxh5 was rejected offline as a replacement exercise: Rxh5 is also legal, so the queen capture is not unique. No engine candidate sweep was performed."
+  ],
+  "revision": {
+    "id": "R1",
+    "supersedes": "docs/data/opening-taimanov-bd3-p022-course-design.json",
+    "changedCourse": "nf6-h5",
+    "reason": "Original Nxc6 and dxc6 exceeded the frozen authored-move loss gate. The former exercise depended on Nxc6 and is replaced at the documented endpoint.",
+    "continuationEvidence": "Saved primary control PV at the documented 16-ply endpoint; each new root comparison remains required.",
+    "newPrimaryJobsPlanned": 12,
+    "logicalJobsPlanned": 42,
+    "reusableJobsPlanned": 30,
+    "newMaximumGoCommands": 24,
+    "priorGoCommands": 34,
+    "aggregateMaximumGoCommands": 58
+  }
+}

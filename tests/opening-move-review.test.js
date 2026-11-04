@@ -100,8 +100,8 @@ describe('concrete single-move effects',()=>{
     expect(promotion.facts).toContainEqual(expect.objectContaining({kind:'promotion',piece:'n',to:'b8'}))
   })
 
-  it('binds every explanation and highlighted target to the played board throughout all 293 courses',()=>{
-    expect(ALL_OPENING_JOURNEYS).toHaveLength(293)
+  it('binds every explanation and highlighted target to the played board throughout all 309 courses',()=>{
+    expect(ALL_OPENING_JOURNEYS).toHaveLength(309)
     expect(new Set(ALL_OPENING_JOURNEYS.map(row=>row.family))).toHaveLength(37)
     for(const course of ALL_OPENING_JOURNEYS){
       const board=new Chess()

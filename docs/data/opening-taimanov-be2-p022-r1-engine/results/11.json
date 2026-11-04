@@ -1,0 +1,39 @@
+{
+  "signature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+  "jobId": "taimanov-be2-nge7:continuation-control:19",
+  "status": "complete",
+  "attemptIds": [
+    "09"
+  ],
+  "result": {
+    "bestmove": "a5b6",
+    "searchmoves": [],
+    "depth": 19,
+    "nodes": 200014,
+    "cp": -218,
+    "mate": null,
+    "pv": [
+      "a5b6",
+      "b5d6",
+      "e8d8",
+      "d6f7",
+      "d8e8",
+      "f7d6",
+      "e8d8",
+      "d2e3",
+      "b6c7",
+      "d6b5",
+      "c7a5",
+      "c2c3",
+      "e7g6",
+      "e1g1",
+      "d8e8",
+      "b2b4",
+      "a5d8",
+      "f2f4",
+      "d7d6",
+      "a2a4"
+    ],
+    "attempt": "09"
+  }
+}

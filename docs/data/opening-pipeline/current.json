@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "status": "current-state-verified; application QA not executed by brief",
+  "sourceHash": "5a7120dbb615432ad89f04da53d9906e501dcb3710a726df1dabe558b6fe31aa",
+  "activeLot": "sic-08-r1",
+  "lot": "P02.2-SIC-08-R1",
+  "installed": true,
+  "current": {
+    "courses": 309,
+    "exercises": 309,
+    "sourcePositions": 12322,
+    "coverage": {
+      "exact": 1994,
+      "transposition-only": 203,
+      "absent": 10125
+    }
+  },
+  "planned": {
+    "courses": 7,
+    "projectedCourses": 309,
+    "coverage": {
+      "exact": 1994,
+      "transposition-only": 203,
+      "absent": 10125
+    },
+    "authoredMoves": 17
+  },
+  "engine": {
+    "prepared": true,
+    "requests": 12,
+    "completedJobs": 42,
+    "plannedJobs": 42,
+    "maximumGoCommands": 24,
+    "lockPresent": false,
+    "interruptedOrFailedJobs": []
+  },
+  "next": "validate-implementation-and-QA",
+  "implementationModel": "Sol Medium; targeted chess design review",
+  "modelPolicy": "AGENTS.md and .codex/config.toml override historical lot model recommendations",
+  "preservedFiles": 523,
+  "references": {
+    "plan": "docs/data/opening-taimanov-bd3-p022-r1-plan.json",
+    "design": "docs/data/opening-taimanov-bd3-p022-r1-design-verification.json",
+    "guide": "docs/OPENING-TAIMANOV-BD3-P022-R1-DESIGN.md",
+    "historyCommand": "node scripts/openings-workflow.mjs history"
+  },
+  "limits": "Projection is not installed content. Historical QA is not current QA. Collect requires an explicit authorized command."
+}

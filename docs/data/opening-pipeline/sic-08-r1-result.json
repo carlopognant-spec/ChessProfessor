@@ -1,0 +1,109 @@
+{
+  "schema": 2,
+  "lot": "P02.2-SIC-08-R1",
+  "status": "implemented-offline-verified",
+  "baselineCourses": 302,
+  "currentCourses": 309,
+  "currentExercises": 309,
+  "plannedCourses": 7,
+  "projectedCourses": 309,
+  "installed": true,
+  "sourcePositions": 12322,
+  "coverage": {
+    "exact": 1994,
+    "transposition-only": 203,
+    "absent": 10125
+  },
+  "projectedCoverage": {
+    "exact": 1994,
+    "transposition-only": 203,
+    "absent": 10125
+  },
+  "newlyReached": [
+    {
+      "id": "position:cc54ace1f5627110",
+      "state": "exact"
+    },
+    {
+      "id": "position:67fc0afdd99071ab",
+      "state": "exact"
+    },
+    {
+      "id": "position:449561e2fdd7c864",
+      "state": "exact"
+    },
+    {
+      "id": "position:1131f5f98589f0ff",
+      "state": "exact"
+    },
+    {
+      "id": "position:dc99e55dcb2ee178",
+      "state": "exact"
+    },
+    {
+      "id": "position:472445059da94227",
+      "state": "exact"
+    },
+    {
+      "id": "position:8d09aa8729556215",
+      "state": "exact"
+    },
+    {
+      "id": "position:7743e5d79d6b5e1f",
+      "state": "exact"
+    },
+    {
+      "id": "position:20c03f8338879778",
+      "state": "exact"
+    },
+    {
+      "id": "position:23ffab8a859bbd4d",
+      "state": "exact"
+    },
+    {
+      "id": "position:6d13a709330d3940",
+      "state": "exact"
+    },
+    {
+      "id": "position:01d1894eed5879af",
+      "state": "exact"
+    },
+    {
+      "id": "position:0b4d8037991c9564",
+      "state": "exact"
+    },
+    {
+      "id": "position:8587d161c79a676c",
+      "state": "exact"
+    }
+  ],
+  "newExactPositions": 14,
+  "newTransposedPositions": 0,
+  "documentedPlies": 113,
+  "authoredPlies": 17,
+  "currentCommentary": {
+    "explainedHalfMoves": 9416,
+    "pairs": 4735,
+    "writtenPairs": 2137,
+    "fullyWrittenCourses": 66
+  },
+  "engine": {
+    "signature": "36c4827f1301c26afcd4ee2133ac8063f2aad7e6374226a081b8f9ab58534798",
+    "goCommands": 12,
+    "nodesRequested": 2400000,
+    "nodesActual": 2401887,
+    "reusedJobs": 30,
+    "nodesReused": 6004387
+  },
+  "engineEvidenceStatus": "verified-offline",
+  "preservedFiles": 523,
+  "nextDesign": {
+    "status": "remaining corpus A branches retained",
+    "scope": "Taimanov with Be3/a6/a3, f4, Qd2 and early ...Nf6; other Taimanov branches and the previously deferred Sicilian Bc4/Bd3/f3 orders remain in scope."
+  },
+  "limitations": [
+    "Source-position coverage is not complete theory or evidence of learned skill.",
+    "Projection is never counted as installed content. Engine requests require explicit collect.",
+    "Test and browser outcomes belong to the QA record, not inferred from generated files."
+  ]
+}

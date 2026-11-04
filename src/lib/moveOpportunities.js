@@ -4,7 +4,7 @@ import { classifyCoherentWinningOpportunity } from './opportunityEvidence.js'
 import { classifyStoredMatingContinuation } from './opportunityProofs.js'
 
 const primaryLine = engine => engine?.lines?.find(line => line.multipv === 1) ?? engine
-const isBound = line => Boolean(line?.bound || /\b(?:upperbound|lowerbound)\b/.test(line?.raw ?? ''))
+const isBound = line => Boolean(line?.bound || line?.lowerbound || line?.upperbound || /\b(?:upperbound|lowerbound)\b/.test(line?.raw ?? ''))
 
 // The original winning-opportunity policy remains intact for frozen research.
 // A lost mating line is a separate local rule, even when a material win remains.

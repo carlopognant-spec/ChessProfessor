@@ -1,0 +1,27 @@
+{
+  "signature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+  "jobId": "taimanov-be2-castle-be7:continuation-control:16",
+  "status": "complete",
+  "nodesActual": 200210,
+  "lines": [
+    "info string NNUE evaluation using nn-5af11540bbfe.nnue enabled",
+    "info depth 1 seldepth 1 multipv 1 score cp 32 nodes 63 nps 63000 hashfull 0 tbhits 0 time 1 pv d4c6 d7c6",
+    "info depth 2 seldepth 2 multipv 1 score cp 32 nodes 109 nps 109000 hashfull 0 tbhits 0 time 1 pv d4c6 d7c6",
+    "info depth 3 seldepth 3 multipv 1 score cp 43 nodes 170 nps 170000 hashfull 0 tbhits 0 time 1 pv h2h3",
+    "info depth 4 seldepth 2 multipv 1 score cp 53 nodes 232 nps 116000 hashfull 0 tbhits 0 time 2 pv f2f4",
+    "info depth 5 seldepth 3 multipv 1 score cp 67 nodes 289 nps 144500 hashfull 0 tbhits 0 time 2 pv f2f4",
+    "info depth 6 seldepth 4 multipv 1 score cp 67 nodes 480 nps 240000 hashfull 0 tbhits 0 time 2 pv f2f4 c6d4 d1d4",
+    "info depth 7 seldepth 7 multipv 1 score cp 45 nodes 3640 nps 404444 hashfull 0 tbhits 0 time 9 pv f2f4 d7d6 d4c6",
+    "info depth 8 seldepth 7 multipv 1 score cp 42 nodes 4754 nps 396166 hashfull 0 tbhits 0 time 12 pv f2f4 d7d6 d1e1 c8d7 e1g3 e8g8",
+    "info depth 9 seldepth 7 multipv 1 score cp 42 nodes 6291 nps 393187 hashfull 1 tbhits 0 time 16 pv f2f4 d7d6 d1e1 c8d7 a1d1 e8g8 e1g3",
+    "info depth 10 seldepth 10 multipv 1 score cp 17 nodes 27323 nps 447918 hashfull 6 tbhits 0 time 61 pv h2h3 e8g8 f2f4 d7d6 g2g4 c6d4",
+    "info depth 11 seldepth 10 multipv 1 score cp 37 nodes 39179 nps 440213 hashfull 9 tbhits 0 time 89 pv f2f4 d7d6 a2a4 c8d7 g1h1 c6d4 e3d4",
+    "info depth 12 seldepth 11 multipv 1 score cp 49 nodes 46562 nps 427174 hashfull 10 tbhits 0 time 109 pv f2f4 d7d6 a2a4 h7h6 g1h1 e8g8 d1d2",
+    "info depth 13 seldepth 15 multipv 1 score cp 36 nodes 87336 nps 411962 hashfull 22 tbhits 0 time 212 pv f2f4 d7d6 a2a4 e8g8 g1h1 f8e8 d1d2 a8b8 d4c6 b7c6",
+    "info depth 14 seldepth 18 multipv 1 score cp 36 nodes 128073 nps 407875 hashfull 31 tbhits 0 time 314 pv f2f4 d7d6 a2a4 e8g8 g1h1 f8e8 d1d2 h7h6 d4b3 b7b6 f1f3 e7f8 f3h3 c8b7 a1g1 c6e7 e2d3 f6g4",
+    "info depth 15 seldepth 19 multipv 1 score cp 35 nodes 157293 nps 411761 hashfull 38 tbhits 0 time 382 pv f2f4 d7d6 a2a4 e8g8 g1h1 c8d7 d4b3 b7b6 e3g1 f8d8 d1d3 d7c8 d3g3 c8b7 b3d2 d6d5",
+    "info depth 16 seldepth 20 multipv 1 score cp 39 nodes 199509 nps 422688 hashfull 48 tbhits 0 time 472 pv f2f4 d7d5 e4e5 c6d4 e3d4 f6e4 d1d3 e4c3 b2c3 c8d7 d3e3 a8c8 e2d3 g7g6",
+    "info depth 17 seldepth 20 multipv 1 score cp 39 nodes 200210 nps 423276 hashfull 48 tbhits 0 time 473 pv f2f4 d7d5 e4e5 c6d4 e3d4 f6e4 d1d3 e4c3 b2c3 c8d7 d3e3 a8c8 e2d3 g7g6",
+    "bestmove f2f4 ponder d7d5"
+  ]
+}

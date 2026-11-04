@@ -1,0 +1,37 @@
+{
+  "signature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+  "jobId": "taimanov-be2-na4-castle:authored:19",
+  "status": "complete",
+  "attemptIds": [],
+  "reusedFrom": {
+    "jobId": "taimanov-be2-na4-castle:authored:19",
+    "directory": "docs/data/opening-taimanov-be2-p022-engine",
+    "jobIndex": 33,
+    "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+  },
+  "result": {
+    "bestmove": "b7c6",
+    "searchmoves": [
+      "b7c6"
+    ],
+    "depth": 15,
+    "nodes": 99599,
+    "cp": -46,
+    "mate": null,
+    "pv": [
+      "b7c6",
+      "a4b6",
+      "a8b8",
+      "b6c8",
+      "c7c8",
+      "e3a7",
+      "b8a8",
+      "a7d4",
+      "c8b8",
+      "d4f6",
+      "g7f6",
+      "g2g3"
+    ],
+    "attempt": "33"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "signature": "f7f1b6724c5b663713457017335a038f1e243b5bdffc087a3f47e01f71fe3854",
+  "jobId": "taimanov-bd3-b5-exchange:continuation-control:15",
+  "status": "complete",
+  "nodesActual": 200180,
+  "lines": [
+    "info string NNUE evaluation using nn-5af11540bbfe.nnue enabled",
+    "info depth 1 seldepth 1 multipv 1 score cp -78 nodes 35 nps 35000 hashfull 0 tbhits 0 time 1 pv d7c6",
+    "info depth 2 seldepth 2 multipv 1 score cp -78 nodes 70 nps 70000 hashfull 0 tbhits 0 time 1 pv d7c6",
+    "info depth 3 seldepth 2 multipv 1 score cp -78 nodes 105 nps 105000 hashfull 0 tbhits 0 time 1 pv d7c6",
+    "info depth 4 seldepth 2 multipv 1 score cp -46 nodes 145 nps 145000 hashfull 0 tbhits 0 time 1 pv d7c6",
+    "info depth 5 seldepth 3 multipv 1 score cp -76 nodes 251 nps 125500 hashfull 0 tbhits 0 time 2 pv d7c6 a2a4 b5b4",
+    "info depth 6 seldepth 4 multipv 1 score cp -82 nodes 438 nps 219000 hashfull 0 tbhits 0 time 2 pv d7c6 d1d2",
+    "info depth 7 seldepth 5 multipv 1 score cp -53 nodes 790 nps 263333 hashfull 0 tbhits 0 time 3 pv c7c6 a2a4 b5b4",
+    "info depth 8 seldepth 7 multipv 1 score cp -44 nodes 2735 nps 390714 hashfull 0 tbhits 0 time 7 pv c7c6 e4e5 c8b7 c3e4 c6d5",
+    "info depth 9 seldepth 7 multipv 1 score cp -44 nodes 3007 nps 375875 hashfull 0 tbhits 0 time 8 pv c7c6 e4e5 c8b7 c3e4 c6d5 e4d6 f8d6",
+    "info depth 10 seldepth 10 multipv 1 score cp -48 nodes 14051 nps 413264 hashfull 2 tbhits 0 time 34 pv c7c6 f2f3 g8f6 d1d2 b5b4 c3e2 d7d5",
+    "info depth 11 seldepth 14 multipv 1 score cp -31 nodes 24873 nps 407754 hashfull 3 tbhits 0 time 61 pv c7c6 e4e5 f7f5 d1h5 g7g6",
+    "info depth 12 seldepth 17 multipv 1 score cp -36 nodes 37023 nps 373969 hashfull 6 tbhits 0 time 99 pv c7c6 f2f3 c8b7 d1d2 g8f6 e1c1 b5b4 c3e2 d7d5 e4d5 f6d5 d3e4 c6c7 e3d4 f8c5 e4d5 b7d5",
+    "info depth 13 seldepth 19 multipv 1 score cp -59 nodes 88725 nps 428623 hashfull 18 tbhits 0 time 207 pv c7c6 f2f3 f8a3 b2a3 c6c3 e3d2 c3c7 a3a4 g8e7 e1g1 e8g8",
+    "info depth 14 seldepth 15 multipv 1 score cp -53 nodes 111989 nps 439172 hashfull 24 tbhits 0 time 255 pv c7c6 d1d2 b5b4 c3e2 g8f6 f2f3 f8c5 e1c1 d7d5 h2h4 e8g8 e3c5",
+    "info depth 15 seldepth 19 multipv 1 score cp -56 nodes 169235 nps 444186 hashfull 38 tbhits 0 time 381 pv c7c6 d1d2 b5b4 c3e2 c8b7 e1c1 g8f6 f2f3 d7d5 e4e5 f6d7 e3d4",
+    "info depth 16 seldepth 18 multipv 1 score cp -60 upperbound nodes 200180 nps 452895 hashfull 42 tbhits 0 time 442 pv c7c6 d1d2",
+    "bestmove c7c6 ponder d1d2"
+  ]
+}

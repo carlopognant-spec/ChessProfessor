@@ -1,0 +1,879 @@
+{
+  "schema": 2,
+  "lot": "P02.2-SIC-07-R1",
+  "inputHashes": {
+    "docs/data/opening-taimanov-be2-p022-design-verification.json": "02adfe3fde922dcb8c1e0dfa9ad1ba9cdda82c1256ec9325f699b9da1d28607d",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/01.request.json": "b9f86aa589d0bc331a979c6c8366ef353b9752acd03da2b70c23046176321639",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/01.response.json": "8c64ee8f3099aeb904e7cad2cb1ebf870e2fc2401c47b63e8040cb7698e21304",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/05.request.json": "14745290fe433057480db435aa6bf8462454765b129fca9574ffd8e0bac9678f",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/05.response.json": "82de0aaf5ca343d4f1a5f6d56f01215a871648c50c987b7cffdfe1b287a2f1f3",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/06.request.json": "315756c9abd72f6323bb2984a2ee670cade24632e5f9c2355e0782dece0783c6",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/06.response.json": "a45b627b6ddd82252a8e3c15ce0942c575fb1e7fea6124d148c0ac53314634c3",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/07.request.json": "0f05902e537df7159e2913cdf34b3d6e61963962bb0f9ee227be64e5152ccf2a",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/07.response.json": "61e366bd01dd51dc46ff311332e001c09dde4493182b62cf894891876b3834b7",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/08.request.json": "1f5494d253ad38a3b06ce6a82e0b2e8f0cd9490c7af0386410526c2c01b99385",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/08.response.json": "0c1db9b18eb3007a96b128c2b9566af5d06eed02c81c0ba5bb4c763e9f1e349c",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/09.request.json": "d113b3271035a6415f7c99ef63dc04a106f7bb3ed015391e182dabd7a65563c7",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/09.response.json": "75cc4ae40131f929e246976b2fa22c4360ca77c8a0f11736c33069f9a9546644",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/10.request.json": "2216ce84a7f35374e3b397cf0376df4ba3a4921e2c03bff55b2806dd76c6b11a",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/10.response.json": "8b43918ee82c76ae09ae9b35e6577955a6cb103681d454074830a4244f368f97",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/11.request.json": "00203ba900236b0a72b8dceb65e41672a8367e99acaba199e0ae8d22cda651da",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/11.response.json": "07a79df82464ff4d4744be7ee7dddab7cda25bcf1525b5787a7c3f11a0cc85c9",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/12.request.json": "c83bd5e95425ecc5beff5b9db73061bfc02ebebd0f6d20100038fda7d83cf809",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/12.response.json": "ce95518d6abfb351ec4c6f6a822bc6dc4c1936217948256933d19168d7f5382d",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/13.request.json": "165814fb19d6df2608cbd27771f053a4994e48843ed272c90d3282f280cc5298",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/13.response.json": "7b5d4b62f33034f7adc6a56f40afc76f854f5298baa36ce8f4adf71e6c17eabf",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/14.request.json": "7cae2e2ba304acef1bfbb26d948220a8bff83d0cb516dd5284332cbdeb0e7813",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/14.response.json": "615a8bc4c35fd3680eb397a45a1c63bcbcf3a7b530d8b8cca46d7d93d0582b82",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/15.request.json": "a2a2ff81c5251576f49f0b6e61ccdabfbf1e8fe78938307f3ebc09606e936f3c",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/15.response.json": "2369e795b7e1c410ee1dc7baec59c56bde31a4eeef3bf18e80e33e6adf5c6568",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/16.request.json": "7d67a56050e16b4e7fe07207d46c5788d591f1d99e17099dfc76625fb8f0597f",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/16.response.json": "cfc85b200d04627a835a67ce0e314e4518fd5442de3c32761605c1b1f6a7ecbc",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/17.request.json": "d3b84b7bd744be1aac3f5d01a335c1c685d514afafff31648b128a6b27e9933e",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/17.response.json": "b0c5afefbdaed3628d70dac2dfd89af710a966bc43c62c2b4037ff21410e2e2e",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/18.request.json": "8ea9f7bf1368d3cc55d82eddefb3a8ccfb070ead3c8accd4816c2c68723867ae",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/18.response.json": "3fb2cbb072fdeb387e22fc60770bf0bb70f7e13f2262943cde86747e6ac796d1",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/19.request.json": "63fc9351dce2498e49b28f6654076f73ad4f9d1b4bbf9d5bde82ab2fa752aa5b",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/19.response.json": "e2f115502fb5137bc33aaafddddc973e2b7ab64926a051e8fc598715b490b2de",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/20.request.json": "abf66c1d098dca6f2f48a4d2079bb880cce440eccbc39c62110e058eaf3c1085",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/20.response.json": "087d3eed66c588c069cd26162b98b799840e87a674d88bb7e897b2354676473c",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/21.request.json": "175761978da9e90e4fc6d138604504b43bc2b1ca4bb41b1ac955e3b14974418d",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/21.response.json": "bdeac3cf154d4fd9863c9b3ca1682e93f110e3435ff0d3c57918e1bae79855a1",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/22.request.json": "6d21dd68ceab45293cb937591ee780ee005fbea29ada83983151ff7f6721df1b",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/22.response.json": "e13888a82b9ab36edc7299b14892e488c1868ec23f7591aabf76aa33833a93fa",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/23.request.json": "7f378d90245cf129f2c90f9326b45b56c0980f9ac57f6f51c77b0dcdd58e6834",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/23.response.json": "f75883512c5c9267fc5001daf8613aba5ef4b335de37a70bc702702521a49f63",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/24.request.json": "4f1302cfa53479f9815a178f01cd6ace7d160789eab22f4a51f890d698568c2a",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/24.response.json": "2bdad6857c19c88f0bc6df367bd9c5e786350632fe9fdcb028d9af75197fd86d",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/25.request.json": "77693e7954d0e1f392065b74c6365cf1b8572620defba2ee5b3097bfd21391aa",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/25.response.json": "6c734f16d368a1aae4e7777a3ce0f98e66a41477bdd6ebd84a363458aaf56824",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/26.request.json": "3afec214ecda7db992d8466e0e836690178d452b87df71b42f130289ca09e3d3",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/26.response.json": "13421da88e84037d2b9eb895f0c3fd2f7db13520577950587e81177346103401",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/27.request.json": "0f09db94de716d925a0a8851f39b2c4facbc2060806c60fbe7949b44791899d8",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/27.response.json": "ae9525d29361b039592d78d0435696bb0908c35dbd4e4a6d835bad9430f6aaf2",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/28.request.json": "731392470f8d39f59f8911f5c162beb4b363406e811d38d4aa8bafe4ff952a06",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/28.response.json": "ca2d733ef2bcf5b223074bb366371f95e455277bc195563b22c4dca93ba71460",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/29.request.json": "60711861fdcab4be1c7d1eae0b7033ead5e75245b4ee872c6e22cafe650c31f1",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/29.response.json": "f350efb97f33790cc17fb24af93a2728374355727ba386c67ef82499b96023e9",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/30.request.json": "dde336d0e63a8f98beb49787c04a3862b4b8922220c25c82d4ce38efb946683a",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/30.response.json": "37b0afca3c232a69cb73edbed4ab9ad210cc541e238fee7a16282cbc2320d3e4",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/31.request.json": "ec429e438d15ab39c933c9cbc1c4f70144e08227954988e8ecedc271c1c0fd39",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/31.response.json": "449421ae57d344937ee72e860510554ddb7904adcd1d7ed2c9ff6cdb5a48b46f",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/32.request.json": "cebda8dc009fa0c1896f9fc68241ef203a0a19da2b454f0392791014809fc0c0",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/32.response.json": "1ebfb35d6cb20a2246f4fe15ca8b35ccf7f14ca7afb659b821bbeaca0ed7c7a1",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/33.request.json": "885302f492184f4fff59b4335909069ef44e07a18406cb713455dd646ad1e287",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/33.response.json": "e12d9655a2f7b32778c3295480d48693ca7593eb643eed7208dd689e63012180",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/34.request.json": "cd1d556fb0ef1c0947ef55bae4163a63f8c8ce3d969888027aa8e795a55923b5",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/34.response.json": "fbda4e391b54388f921951f60744cded55709f557b5bff00aa02b7146c779bbd",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/35.request.json": "849c9a9b4275f89a489a282a440769836af6f69f8b81a49502aeb90c40718934",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/35.response.json": "ec281b2176802b01ac6deba2abc1b9d401398a095eeac9a509fcc4083b03026c",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/36.request.json": "3e76263fa4a3cef6a01d4afb99dd4452a1635c1f10302ca0d8782b916fd09604",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/36.response.json": "2c903c5635c103fe80da2bf5d6c96bb345b17391e83472d763963bbb42999c29",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/37.request.json": "f28a2a6cc055573e609c91df6df7833ac8eb712c9caccdcdae2f94888e2315d6",
+    "docs/data/opening-taimanov-be2-p022-engine/attempts/37.response.json": "97c589dc2571ddb2913f65167cc1bcdb2ae9d0c40067287c296f5efb7554878f",
+    "docs/data/opening-taimanov-be2-p022-engine/manifest.json": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+    "docs/data/opening-taimanov-be2-p022-engine/pipeline/scripts__openings-lot.mjs.txt": "99fc151b0265186df32acef6ba14d7686d792902e6c27a12981455879607bf93",
+    "docs/data/opening-taimanov-be2-p022-engine/pipeline/scripts__openings__artifacts.mjs.txt": "a478dd70c93e2eb67bd17e08a279ca30c96d2d463976690f770e807b94b99d8a",
+    "docs/data/opening-taimanov-be2-p022-engine/pipeline/scripts__openings__common.mjs.txt": "99f98ba524ff6cc1cd5c508feb6ac9e5a42af10ec5256bda31ea55c98b4138ab",
+    "docs/data/opening-taimanov-be2-p022-engine/results/1.json": "a15ef85be1075da2f12dbf4ee7c6da3a985b49d9c98e8011c03ecfbdb9f0ad04",
+    "docs/data/opening-taimanov-be2-p022-engine/results/10.json": "546e0e4cf123899d8d1ed56f15a8f0177d420487166961e7280d61f55f605c1c",
+    "docs/data/opening-taimanov-be2-p022-engine/results/11.json": "fb39aaa3d0dcefacd9e62fe8c231bbbef7f4cf41eab4c36dffd840bcccd235ea",
+    "docs/data/opening-taimanov-be2-p022-engine/results/12.json": "aa82e19b065f100d61681b396edf506c53c34b1ce6521747e051e8d36c24b253",
+    "docs/data/opening-taimanov-be2-p022-engine/results/13.json": "926c088bafca5d3901c1bc3d3a8d94aa1d59147e08f57c1161061d2a053ee675",
+    "docs/data/opening-taimanov-be2-p022-engine/results/14.json": "070b1ecfb9f9712a7f6c55c54bcc44b798b038a67fd80ed6f6f10e0f4d230bbd",
+    "docs/data/opening-taimanov-be2-p022-engine/results/15.json": "8202139d6e7b39dc946024a1034d34d3e77e09d1b9f4fedf21989894c18785ed",
+    "docs/data/opening-taimanov-be2-p022-engine/results/16.json": "15011c45d868bd46f613a7d87c2f98cc1e65b3131aae675fd5a7389e1479676e",
+    "docs/data/opening-taimanov-be2-p022-engine/results/17.json": "9066920eb1e0b15ee5e638dd5793aec640864e415fd305c393733ab885e517f4",
+    "docs/data/opening-taimanov-be2-p022-engine/results/18.json": "45c7101082609ae54a5097f401f815ba5882a8cba0950ac2d850a185a8d1ba5d",
+    "docs/data/opening-taimanov-be2-p022-engine/results/19.json": "245a58eeeeadba06eddd7dbb2b284d51306dfd2815d18ef5be4bc35ecf34fc64",
+    "docs/data/opening-taimanov-be2-p022-engine/results/20.json": "b8531d06dd286f6fa176443072aa578d6bd17fa41f53f42494c8d732dfaf7eff",
+    "docs/data/opening-taimanov-be2-p022-engine/results/21.json": "bf23779eb43edf3e495deda6ee39eaf7c13ee759862e629475bc1c6544ed6ef1",
+    "docs/data/opening-taimanov-be2-p022-engine/results/22.json": "3441c8f59f02b39bce76792d607aa83fbb75f93891f08b78be5963811e47ef10",
+    "docs/data/opening-taimanov-be2-p022-engine/results/23.json": "df21039935b74cbec9d827466c993ed8baf03b099a3740639783af51714c6742",
+    "docs/data/opening-taimanov-be2-p022-engine/results/24.json": "c2c243384555cbfaeed294a1c698ed530970a95b83bc368765f28e5a31605cce",
+    "docs/data/opening-taimanov-be2-p022-engine/results/25.json": "d9dab87d6f52251fb4345b7a62f6d954e41f3fd55f24ee255fc391e8d4571b37",
+    "docs/data/opening-taimanov-be2-p022-engine/results/26.json": "5d86304b21b111e2a2095edd11c35a1733b88fc1bfc84ca9da458f73d6db9b95",
+    "docs/data/opening-taimanov-be2-p022-engine/results/27.json": "ed393db4624af985b5868b9e3e70a3fc60669eb4ef5c712cb2f203ff9d1df5d8",
+    "docs/data/opening-taimanov-be2-p022-engine/results/28.json": "d91d103f94d2f886d5f1b16abf9461ac77c5adacb0af3034fd39d79baf855f65",
+    "docs/data/opening-taimanov-be2-p022-engine/results/29.json": "95b9aec70a973f0468c8612df7d00579d666cbf202477126dca4ac27f08c7aba",
+    "docs/data/opening-taimanov-be2-p022-engine/results/30.json": "c7804d8d1844f8c65c04cafd3b82b4aada0fffc80a55b651ec04c4c8f155c7d6",
+    "docs/data/opening-taimanov-be2-p022-engine/results/31.json": "d740b449a31a37087c1bb405b5f397318678c6ac49d0d0c0c0af3f8e8a91171e",
+    "docs/data/opening-taimanov-be2-p022-engine/results/32.json": "44baf2633a6a7fbf916b2110845f3f67723f07be8bc471441b10c8d6cd29c786",
+    "docs/data/opening-taimanov-be2-p022-engine/results/33.json": "3ee750ab9d6156d1039035b01b6d38b58046f5974458825bb78cf78aa248fc77",
+    "docs/data/opening-taimanov-be2-p022-engine/results/34.json": "24a5e6095747d7dc5926f60066eab6940f71ebd508c2b1cb9752564ca06fbb4c",
+    "docs/data/opening-taimanov-be2-p022-engine/results/35.json": "4a59fe131b8677e4dbb34d5214d8dd42cb0e9589aca26a8eda6eda96a558d385",
+    "docs/data/opening-taimanov-be2-p022-engine/results/36.json": "2e56cb270a4ac9d8006971d9abe9cec5cd193ea3e64cc72f5079909048e60a76",
+    "docs/data/opening-taimanov-be2-p022-engine/results/37.json": "228d496b083f5ffdb98f8405960ce00c60739ee7dcbc8f685ed3a4bc9d95c95d",
+    "docs/data/opening-taimanov-be2-p022-engine/results/5.json": "5f37bd759b8f623dfd1fe7ef32a994d594ac0a174540a6e74478977ddb6b024b",
+    "docs/data/opening-taimanov-be2-p022-engine/results/6.json": "4b3282f1c381abd4bc1debd9d1e412fe122db4bded82b98d73acf7d168b5ea07",
+    "docs/data/opening-taimanov-be2-p022-engine/results/7.json": "4bfda73222de3a8ceb4b3055e48e918944e6d5edf56a9f76e3deaba0c7f12932",
+    "docs/data/opening-taimanov-be2-p022-engine/results/8.json": "cd431b55108560b62232e1e256138a5e82ba7069d516cd24010cfd7ed5e7a867",
+    "docs/data/opening-taimanov-be2-p022-engine/results/9.json": "7a823d620e64be6f5d5cea4ebc31bfb16d786798a696bdb26d917c0c5ef2bef8",
+    "docs/data/opening-taimanov-be2-p022-plan.json": "824c814cb35e5ced39816614350cc6b75d5349fb2b560394658d9d506a27a6f6",
+    "docs/data/opening-taimanov-be2-p022-r1-design-verification.json": "f6a282905c123e9885090fe89a86e967d4a07c3dc974b20b8c8bc76995b43eee",
+    "docs/data/opening-taimanov-be2-p022-r1-plan.json": "4b82b4a98f5366122605e653ca4e9cc65d0bb1691d2f7ee26af55b3caf0d3d72",
+    "scripts/opening-bounded-engine.mjs": "af9dd25e14eb0c51754736443387c5f6d22429ee99acf3d6780c3f64c71e49ab",
+    "scripts/opening-expansion-engine.mjs": "8deaa2e2749d95b98eef5def0133f84d7c1e028b4c8e47aab13a59da3b0754e8",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings-lot.mjs.txt": "ae59671b3a1d034339660ebd28ac1aa14cda480c03e8a4d017b409d7c1999a7a",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings__common.mjs.txt": "22f1b6f392c1607fa58a7744177fe4cf97b8d37533d1f2abf4514371f86c6c1f",
+    "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings__artifacts.mjs.txt": "e0807ed761fad95a418bfaa607c2dfb8c2975572bbf1ffd9d79d3787c9c920c5"
+  },
+  "engineSha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+  "toolingSources": [
+    {
+      "source": "scripts/openings-lot.mjs",
+      "snapshot": "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings-lot.mjs.txt",
+      "sha256": "ae59671b3a1d034339660ebd28ac1aa14cda480c03e8a4d017b409d7c1999a7a"
+    },
+    {
+      "source": "scripts/openings/common.mjs",
+      "snapshot": "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings__common.mjs.txt",
+      "sha256": "22f1b6f392c1607fa58a7744177fe4cf97b8d37533d1f2abf4514371f86c6c1f"
+    },
+    {
+      "source": "scripts/openings/artifacts.mjs",
+      "snapshot": "docs/data/opening-taimanov-be2-p022-r1-engine/pipeline/scripts__openings__artifacts.mjs.txt",
+      "sha256": "e0807ed761fad95a418bfaa607c2dfb8c2975572bbf1ffd9d79d3787c9c920c5"
+    }
+  ],
+  "policy": {
+    "executable": "tools/stockfish-16/stockfish/stockfish-windows-x86-64.exe",
+    "sha256": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "threads": 1,
+    "hashMb": 32,
+    "multiPV": 1,
+    "clearHashBeforeEachGo": true,
+    "nodesPerGo": 200000,
+    "timeoutPerCommandMs": 30000,
+    "primaryJobs": 45,
+    "maximumGoCommands": 22,
+    "maximumRequestedNodes": 4400000,
+    "minimumExerciseSwingCp": 200,
+    "maximumAuthoredMoveLossCp": 100,
+    "confirmationPolicy": "At most one confirmation per job only when bestmove lacks matching full cp/PV evidence. Count failed or interrupted requests. No automatic retry of failed persisted jobs, candidate sweep, budget increase or mate-score auto-acceptance.",
+    "publicationPolicy": "Publish the nine routes and exercises together only after all fourteen authored-move comparisons and nine exercises pass. A failure preserves the ledger and returns to design review. No candidate sweep, threshold change, automatic retry or budget increase.",
+    "engine": "Stockfish 16",
+    "minimumImmediateMaterial": 2
+  },
+  "jobs": [
+    {
+      "id": "taimanov-be2-nge7:continuation-control:14",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 14,
+      "fen": "r1b1kb1r/1pqpnppp/p1n1p3/8/3NP3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 2 8",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:authored:14",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 14,
+      "fen": "r1b1kb1r/1pqpnppp/p1n1p3/8/3NP3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 2 8",
+      "roots": [
+        "d4b5"
+      ],
+      "expectedAnswer": "Ndb5",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:continuation-control:15",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 15,
+      "fen": "r1b1kb1r/1pqpnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 3 8",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:authored:15",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 15,
+      "fen": "r1b1kb1r/1pqpnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 3 8",
+      "roots": [
+        "a6b5"
+      ],
+      "expectedAnswer": "axb5",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:continuation-control:16",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/1pqpnppp/2n1p3/1p6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:authored:16",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/1pqpnppp/2n1p3/1p6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 9",
+      "roots": [
+        "c3b5"
+      ],
+      "expectedAnswer": "Nxb5",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:continuation-control:17",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/1pqpnppp/2n1p3/1N6/4P3/4B3/PPP1BPPP/R2QK2R b KQkq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:authored:17",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/1pqpnppp/2n1p3/1N6/4P3/4B3/PPP1BPPP/R2QK2R b KQkq - 0 9",
+      "roots": [
+        "c7a5"
+      ],
+      "expectedAnswer": "Qa5+",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:continuation-control:18",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 18,
+      "fen": "r1b1kb1r/1p1pnppp/2n1p3/qN6/4P3/4B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:authored:18",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 18,
+      "fen": "r1b1kb1r/1p1pnppp/2n1p3/qN6/4P3/4B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+      "roots": [
+        "e3d2"
+      ],
+      "expectedAnswer": "Bd2",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:continuation-control:19",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 19,
+      "fen": "r1b1kb1r/1p1pnppp/2n1p3/qN6/4P3/8/PPPBBPPP/R2QK2R b KQkq - 2 10",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:authored:19",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 19,
+      "fen": "r1b1kb1r/1p1pnppp/2n1p3/qN6/4P3/8/PPPBBPPP/R2QK2R b KQkq - 2 10",
+      "roots": [
+        "a5b6"
+      ],
+      "expectedAnswer": "Qb6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-nge7:deviation",
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "fen": "r1b1kb1r/1p1pnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPq/R2QK2R w KQkq - 0 9",
+      "roots": [],
+      "expectedAnswer": "Rxh2",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-be2-b5-exchange:continuation-control:15",
+      "courseId": "sicilian:taimanov-be2-b5-exchange",
+      "authoredIndex": 15,
+      "fen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 0 8",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-b5-exchange:authored:15",
+      "courseId": "sicilian:taimanov-be2-b5-exchange",
+      "authoredIndex": 15,
+      "fen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 0 8",
+      "roots": [
+        "c7c6"
+      ],
+      "expectedAnswer": "Qxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-b5-exchange:deviation",
+      "courseId": "sicilian:taimanov-be2-b5-exchange",
+      "fen": "r1b1kbnr/3p1ppp/p1N1p3/qp6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 9",
+      "roots": [],
+      "expectedAnswer": "Nxa5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-be2-a3-b5:continuation-control:16",
+      "courseId": "sicilian:taimanov-be2-a3-b5",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2QK2R w KQkq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-a3-b5:authored:16",
+      "courseId": "sicilian:taimanov-be2-a3-b5",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2QK2R w KQkq - 0 9",
+      "roots": [
+        "e1g1"
+      ],
+      "expectedAnswer": "O-O",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-a3-b5:continuation-control:17",
+      "courseId": "sicilian:taimanov-be2-a3-b5",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 1 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-a3-b5:authored:17",
+      "courseId": "sicilian:taimanov-be2-a3-b5",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 1 9",
+      "roots": [
+        "c8b7"
+      ],
+      "expectedAnswer": "Bb7",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-a3-b5:deviation",
+      "courseId": "sicilian:taimanov-be2-a3-b5",
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p3N2/4P3/P1N1B3/1PP1BPPP/R2QK2R b KQkq - 1 9",
+      "roots": [],
+      "expectedAnswer": "exf5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-b5:continuation-control:16",
+      "courseId": "sicilian:taimanov-be2-castle-b5",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-b5:authored:16",
+      "courseId": "sicilian:taimanov-be2-castle-b5",
+      "authoredIndex": 16,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 9",
+      "roots": [
+        "a2a3"
+      ],
+      "expectedAnswer": "a3",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-b5:continuation-control:17",
+      "courseId": "sicilian:taimanov-be2-castle-b5",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-b5:authored:17",
+      "courseId": "sicilian:taimanov-be2-castle-b5",
+      "authoredIndex": 17,
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 0 9",
+      "roots": [
+        "c8b7"
+      ],
+      "expectedAnswer": "Bb7",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-b5:deviation",
+      "courseId": "sicilian:taimanov-be2-castle-b5",
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p3N2/4P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 1 9",
+      "roots": [],
+      "expectedAnswer": "exf5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-be7:continuation-control:16",
+      "courseId": "sicilian:taimanov-be2-castle-be7",
+      "authoredIndex": 16,
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 4 9",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-be7:authored:16",
+      "courseId": "sicilian:taimanov-be2-castle-be7",
+      "authoredIndex": 16,
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 4 9",
+      "roots": [
+        "f2f4"
+      ],
+      "expectedAnswer": "f4",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-be7:continuation-control:17",
+      "courseId": "sicilian:taimanov-be2-castle-be7",
+      "authoredIndex": 17,
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NPP2/2N1B3/PPP1B1PP/R2Q1RK1 b kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-be7:authored:17",
+      "courseId": "sicilian:taimanov-be2-castle-be7",
+      "authoredIndex": 17,
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NPP2/2N1B3/PPP1B1PP/R2Q1RK1 b kq - 0 9",
+      "roots": [
+        "d7d6"
+      ],
+      "expectedAnswer": "d6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-castle-be7:deviation",
+      "courseId": "sicilian:taimanov-be2-castle-be7",
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/5N2/4P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 5 9",
+      "roots": [],
+      "expectedAnswer": "exf5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-be2-a3-be7:continuation-control:17",
+      "courseId": "sicilian:taimanov-be2-a3-be7",
+      "authoredIndex": 17,
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 2 9",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-a3-be7:authored:17",
+      "courseId": "sicilian:taimanov-be2-a3-be7",
+      "authoredIndex": 17,
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 2 9",
+      "roots": [
+        "e8g8"
+      ],
+      "expectedAnswer": "O-O",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-a3-be7:deviation",
+      "courseId": "sicilian:taimanov-be2-a3-be7",
+      "fen": "r1b1k2r/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPq/R2Q1RK1 w kq - 0 10",
+      "roots": [],
+      "expectedAnswer": "Kxh2",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-be2-bb4-exchange:continuation-control:17",
+      "courseId": "sicilian:taimanov-be2-bb4-exchange",
+      "authoredIndex": 17,
+      "fen": "r1b1k2r/1pqp1ppp/p1N1pn2/8/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 9",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-bb4-exchange:authored:17",
+      "courseId": "sicilian:taimanov-be2-bb4-exchange",
+      "authoredIndex": 17,
+      "fen": "r1b1k2r/1pqp1ppp/p1N1pn2/8/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 9",
+      "roots": [
+        "b7c6"
+      ],
+      "expectedAnswer": "bxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-bb4-exchange:deviation",
+      "courseId": "sicilian:taimanov-be2-bb4-exchange",
+      "fen": "r1b1k2r/1p1p1ppp/p1N1pn2/q7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 10",
+      "roots": [],
+      "expectedAnswer": "Nxa5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-be2-na4-castle:continuation-control:18",
+      "courseId": "sicilian:taimanov-be2-na4-castle",
+      "authoredIndex": 18,
+      "fen": "r1b2rk1/1pqp1ppp/p1n1pn2/8/Nb1NP3/4B3/PPP1BPPP/R2Q1RK1 w - - 6 10",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-na4-castle:authored:18",
+      "courseId": "sicilian:taimanov-be2-na4-castle",
+      "authoredIndex": 18,
+      "fen": "r1b2rk1/1pqp1ppp/p1n1pn2/8/Nb1NP3/4B3/PPP1BPPP/R2Q1RK1 w - - 6 10",
+      "roots": [
+        "d4c6"
+      ],
+      "expectedAnswer": "Nxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-na4-castle:continuation-control:19",
+      "courseId": "sicilian:taimanov-be2-na4-castle",
+      "authoredIndex": 19,
+      "fen": "r1b2rk1/1pqp1ppp/p1N1pn2/8/Nb2P3/4B3/PPP1BPPP/R2Q1RK1 b - - 0 10",
+      "roots": [],
+      "uses": [
+        "continuation-control"
+      ]
+    },
+    {
+      "id": "taimanov-be2-na4-castle:authored:19",
+      "courseId": "sicilian:taimanov-be2-na4-castle",
+      "authoredIndex": 19,
+      "fen": "r1b2rk1/1pqp1ppp/p1N1pn2/8/Nb2P3/4B3/PPP1BPPP/R2Q1RK1 b - - 0 10",
+      "roots": [
+        "b7c6"
+      ],
+      "expectedAnswer": "bxc6",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-na4-castle:deviation",
+      "courseId": "sicilian:taimanov-be2-na4-castle",
+      "fen": "r1b2rk1/1pqp1ppp/p1n1pn2/5N2/Nb2P3/4B3/PPP1BPPP/R2Q1RK1 b - - 7 10",
+      "roots": [],
+      "expectedAnswer": "exf5",
+      "uses": [
+        "exercise-answer"
+      ]
+    },
+    {
+      "id": "taimanov-be2-na4-be7-nb6:continuation-control:21",
+      "courseId": "sicilian:taimanov-be2-na4-be7-nb6",
+      "authoredIndex": 21,
+      "fen": "r1b1k2r/2qpbppp/pNp1pn2/8/4P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 11",
+      "roots": [],
+      "uses": [
+        "continuation-control",
+        "exercise-baseline"
+      ]
+    },
+    {
+      "id": "taimanov-be2-na4-be7-nb6:authored:21",
+      "courseId": "sicilian:taimanov-be2-na4-be7-nb6",
+      "authoredIndex": 21,
+      "fen": "r1b1k2r/2qpbppp/pNp1pn2/8/4P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 11",
+      "roots": [
+        "a8b8"
+      ],
+      "expectedAnswer": "Rb8",
+      "uses": [
+        "authored-comparison"
+      ]
+    },
+    {
+      "id": "taimanov-be2-na4-be7-nb6:deviation",
+      "courseId": "sicilian:taimanov-be2-na4-be7-nb6",
+      "fen": "r1b1k2r/3pbppp/pqp1pn2/8/4P3/4B3/PPP1BPPP/R2Q1RK1 w kq - 0 12",
+      "roots": [],
+      "expectedAnswer": "Bxb6",
+      "uses": [
+        "exercise-answer"
+      ]
+    }
+  ],
+  "reuseEngineJobs": [
+    {
+      "jobId": "taimanov-be2-nge7:continuation-control:14",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 1,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-nge7:continuation-control:15",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 5,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-b5-exchange:continuation-control:15",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 6,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-b5-exchange:authored:15",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 7,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-b5-exchange:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 8,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:continuation-control:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 9,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:authored:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 10,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 11,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 12,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 13,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:continuation-control:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 14,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:authored:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 15,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 16,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 17,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 18,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:continuation-control:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 19,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:authored:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 20,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 21,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 22,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 23,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-a3-be7:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 24,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-a3-be7:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 25,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-a3-be7:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 26,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-bb4-exchange:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 27,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-bb4-exchange:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 28,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-bb4-exchange:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 29,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:continuation-control:18",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 30,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:authored:18",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 31,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:continuation-control:19",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 32,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:authored:19",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 33,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 34,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-na4-be7-nb6:continuation-control:21",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 35,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-na4-be7-nb6:authored:21",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 36,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    },
+    {
+      "jobId": "taimanov-be2-na4-be7-nb6:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 37,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7"
+    }
+  ]
+}

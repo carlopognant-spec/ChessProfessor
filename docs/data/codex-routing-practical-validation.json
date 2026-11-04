@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-10-27T20:11:36.079720+00:00",
+  "status": "completed-with-runtime-metadata-limits",
+  "resumedTask": "Reusable multi-agent configuration from the last unfinished user request; SIC-07 remains pending",
+  "delegations": [
+    {
+      "task": "/root/routing_audit",
+      "selection": {
+        "agent_type": "luna",
+        "configuredModel": "gpt-6-luna",
+        "configuredReasoning": "high"
+      },
+      "status": "completed",
+      "result": "Identified missing Sol role, project-only scope and runtime proof limits",
+      "editedFiles": false
+    },
+    {
+      "task": "/root/routing_review",
+      "selection": {
+        "agent_type": "default",
+        "explicitModel": "gpt-6.1-sol",
+        "explicitReasoning": "medium",
+        "fork_turns": "none"
+      },
+      "status": "completed",
+      "result": "Verified all previous personal settings unchanged; found global feature audit cwd issue, corrected by primary",
+      "editedFiles": false
+    }
+  ],
+  "personalConfiguration": {
+    "backupDirectory": "C:\\Users\\carlo\\.codex\\tmp\\routing-backup-20261027-211007",
+    "preservedTopLevelKeys": [
+      "features",
+      "memories",
+      "model",
+      "model_reasoning_effort",
+      "projects",
+      "service_tier",
+      "windows"
+    ],
+    "previousSettingsEqual": true,
+    "addedTopLevelKeys": [
+      "agents"
+    ],
+    "previousGlobalInstructionsBytes": 0
+  },
+  "limits": [
+    "Native tools confirm task selection and completion, not independent backend model attestation.",
+    "Sol role added on disk is not available as a named role in this already-open conversation; explicit native model and reasoning were used.",
+    "Astra and Astra High were checked through account catalog and role configuration; no inference was performed merely for demonstration.",
+    "No API fallback, application code changes, engine searches, commit, push or deploy."
+  ]
+}

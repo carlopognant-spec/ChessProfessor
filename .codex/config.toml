@@ -1,0 +1,25 @@
+# Project defaults. User/host authentication and permissions remain inherited.
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2
+default_subagent_model = "gpt-6-luna"
+default_subagent_reasoning_effort = "high"
+
+[agents.luna]
+description = "Optional bounded file search, repetitive analysis or clearly specified task. Use only when delegation saves work; return concise evidence."
+config_file = "agents/luna.toml"
+
+[agents.astra]
+description = "Optional architectural reasoning, ambiguous technical decisions or complex debugging with material uncertainty. Duration alone is not a reason."
+config_file = "agents/astra.toml"
+
+[agents.astra_high]
+description = "Exceptional escalation for a specific unresolved hard problem after concrete evidence or inconclusive lower-cost investigation. Not a routine review."
+config_file = "agents/astra-high.toml"
+
+[agents.sol]
+description = "Optional bounded implementation or independent review with explicit file ownership. Delegate only when parallel work saves effort."
+config_file = "agents/sol.toml"

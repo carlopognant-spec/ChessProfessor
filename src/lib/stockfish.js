@@ -2,6 +2,7 @@ import { ENGINE_CONFIG } from './engineConfig.js'
 import { createAnalysisMetadata } from './analysisMetadata.js'
 import { Chess } from 'chess.js'
 import { createMultiPvEvidence } from './multiPvEvidence.js'
+import { normalizeHistory } from './analysisHistory.js'
 
 function createWorker() {
   return new Worker(`${import.meta.env.BASE_URL}${ENGINE_CONFIG.engine.workerFile}`)
@@ -21,7 +22,9 @@ export class StockfishEngine {
     this._currentRequest = null
     this._pendingRequest = null
     this._stopTimeout = null
+    this._searchTimeout = null
     this._stopTimeoutMs = options.stopTimeoutMs ?? 15000
+    this._searchIdleTimeoutMs = options.searchIdleTimeoutMs ?? 30000
     this._readyTimeoutMs = options.loadTimeoutMs ?? ENGINE_CONFIG.loadTimeoutMs
     this.engineId = null
     this._onLine = null
@@ -100,6 +103,10 @@ export class StockfishEngine {
   analyze(fen, nodes = ENGINE_CONFIG.nodes, multiPv = ENGINE_CONFIG.multiPv, options = {}) {
     if (!Number.isSafeInteger(nodes) || nodes <= 0) return Promise.reject(new TypeError('Budget nodi non valido'))
     if (!Number.isSafeInteger(multiPv) || multiPv <= 0) return Promise.reject(new TypeError('MultiPV non valido'))
+    let history
+    try {
+      if (options.history !== undefined) history = normalizeHistory(options.history, fen)
+    } catch (error) { return Promise.reject(error) }
     let searchMoves
     if (options.searchMoves !== undefined) {
       try {
@@ -112,9 +119,10 @@ export class StockfishEngine {
     return new Promise((resolve, reject) => {
       if (this._workerError) { reject(this._workerError); return }
       this._pendingRequest?.reject(new Error('analysis superseded'))
-      this._pendingRequest = { fen, nodes, multiPv, searchMoves, resolve, reject, cancelled: false }
+      this._pendingRequest = { fen, nodes, multiPv, searchMoves, history, resolve, reject, cancelled: false }
       const previousRequest = this._currentRequest
       if (previousRequest && !previousRequest.cancelled) {
+        clearTimeout(this._searchTimeout)
         previousRequest.cancelled = true
         previousRequest.reject(new Error('analysis superseded'))
         this._stopTimeout = setTimeout(() => {
@@ -133,6 +141,7 @@ export class StockfishEngine {
     this._pendingRequest = null
     const request = this._currentRequest
     if (!request || request.cancelled) return
+    clearTimeout(this._searchTimeout)
     request.cancelled = true
     request.reject(error)
     this._stopTimeout = setTimeout(() => this._fail(new Error('Stockfish non ha completato la ricerca interrotta')), this._stopTimeoutMs)
@@ -143,7 +152,7 @@ export class StockfishEngine {
     if (!this.ready || this._workerError || this._currentRequest || !this._pendingRequest) return
     const request = this._pendingRequest
     this._pendingRequest = null
-    const { fen, nodes, multiPv, searchMoves, resolve } = request
+    const { fen, nodes, multiPv, searchMoves, history, resolve } = request
     let evidenceCount = Math.max(1, multiPv)
     try { evidenceCount = Math.min(evidenceCount, new Chess(fen).moves().length || 1) } catch { /* Test workers may use synthetic position IDs. */ }
     if (searchMoves) evidenceCount = Math.min(evidenceCount, searchMoves.length)
@@ -154,6 +163,7 @@ export class StockfishEngine {
     this._currentRequest = request
     this._onLine = (line) => {
       if (request.cancelled && !line.startsWith('bestmove')) return
+      if (/^info \S/.test(line)) this._armSearchTimeout(request)
       evidence.accept(line)
       if (line.startsWith('info ')) actualNodes = Math.max(actualNodes, Number(line.match(/\bnodes (\d+)/)?.[1] ?? 0))
 
@@ -179,13 +189,14 @@ export class StockfishEngine {
       }
 
       if (line.startsWith('bestmove')) {
+        clearTimeout(this._searchTimeout)
         if (this._stopTimeout) clearTimeout(this._stopTimeout)
         this._stopTimeout = null
         this._onLine = null
         this._currentRequest = null
         const orderedLines = [...lines.values()].sort((left, right) => left.multipv - right.multipv)
         const primary = orderedLines[0] ?? { evalCp: null, mate: null, pv: [] }
-        if (!request.cancelled) resolve({ ...primary, fen, bestmove: line.split(/\s+/)[1], lines: orderedLines, actualNodes,
+        if (!request.cancelled) resolve({ ...primary, fen, ...(history ? { history } : {}), bestmove: line.split(/\s+/)[1], lines: orderedLines, actualNodes,
           specialLines: evidence.finish(line.split(/\s+/)[1]),
           analysisMetadata: { ...createAnalysisMetadata({ nodes, multiPv, actualEngineId: this.engineId }),
             ...(searchMoves ? { searchMoves } : {}) } })
@@ -196,8 +207,21 @@ export class StockfishEngine {
     this.worker.postMessage('ucinewgame')
     this.worker.postMessage('setoption name Clear Hash')
     this.worker.postMessage(`setoption name MultiPV value ${Math.max(1, multiPv)}`)
-    this.worker.postMessage(`position fen ${fen}`)
+    this.worker.postMessage(history
+      ? `position fen ${history.initialFen}${history.moves.length ? ` moves ${history.moves.join(' ')}` : ''}`
+      : `position fen ${fen}`)
+    this._armSearchTimeout(request)
     this.worker.postMessage(`go nodes ${nodes}${searchMoves ? ` searchmoves ${searchMoves.join(' ')}` : ''}`)
+  }
+
+  _armSearchTimeout(request) {
+    clearTimeout(this._searchTimeout)
+    // This detects silence, not slow searches that keep reporting UCI info.
+    this._searchTimeout = setTimeout(() => {
+      if (this._currentRequest === request && !request.cancelled) {
+        this._fail(new Error('Stockfish non risponde durante la ricerca. Puoi riavviare il motore.'))
+      }
+    }, this._searchIdleTimeoutMs)
   }
 
   _fail(error) {
@@ -205,12 +229,14 @@ export class StockfishEngine {
     this._workerError = error
     clearTimeout(this._readyTimeout)
     clearTimeout(this._stopTimeout)
+    clearTimeout(this._searchTimeout)
     this._rejectReady(error)
     this._currentRequest?.reject(error)
     this._pendingRequest?.reject(error)
     this._currentRequest = null
     this._pendingRequest = null
     this._onLine = null
+    this.worker.terminate()
     // Terminal failures also need to reach the UI when no request is awaiting a result.
     if (error.name !== 'AbortError') this._onFailure?.(error)
   }
@@ -223,6 +249,5 @@ export class StockfishEngine {
     const error = new Error('Stockfish engine destroyed')
     error.name = 'AbortError'
     this._fail(error)
-    this.worker.terminate()
   }
 }

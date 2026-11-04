@@ -12,7 +12,231 @@ function controlledWorker() {
   }
 }
 
+const historyInitialFen = '6nk/8/8/8/8/8/Q7/KN6 w - - 0 1'
+const repetitionHistory = () => ({
+  initialFen: historyInitialFen,
+  moves: ['b1c3', 'g8f6', 'c3b1', 'f6g8', 'b1c3', 'g8f6', 'c3b1', 'f6g8'],
+})
+const historyTargetFen = '6nk/8/8/8/8/8/Q7/KN6 w - - 8 5'
+
+describe('Stockfish history transport', () => {
+  it('sends the full repetition history together with restricted root moves', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      worker.emit('readyok')
+      const history = repetitionHistory()
+      const pending = engine.analyze(historyTargetFen, 200000, 1, { history, searchMoves: ['b1c3'] })
+      await vi.waitFor(() => expect(worker.messages).toContain('go nodes 200000 searchmoves b1c3'))
+      expect(worker.messages).toContain(`position fen ${historyInitialFen} moves ${history.moves.join(' ')}`)
+      expect(worker.messages).not.toContain(`position fen ${historyTargetFen}`)
+      worker.emit('info depth 10 nodes 200000 score cp 0 pv b1c3')
+      worker.emit('bestmove b1c3')
+      const result = await pending
+      expect(result).toMatchObject({ fen: historyTargetFen, history, evalCp: 0, analysisMetadata: { searchMoves: ['b1c3'] } })
+      expect(result.analysisMetadata).not.toHaveProperty('history')
+    } finally { engine.destroy() }
+  })
+
+  it('snapshots history before initialization so caller mutations cannot change the command or result', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      const history = repetitionHistory(), expected = repetitionHistory()
+      const pending = engine.analyze(historyTargetFen, 200000, 1, { history })
+      history.initialFen = 'invalid'
+      history.moves[0] = 'a2a8'
+      history.moves.push('a2a8')
+      worker.emit('readyok')
+      await vi.waitFor(() => expect(worker.messages).toContain(`position fen ${expected.initialFen} moves ${expected.moves.join(' ')}`))
+      worker.emit('bestmove b1c3')
+      expect((await pending).history).toEqual(expected)
+    } finally { engine.destroy() }
+  })
+
+  it('omits the moves keyword for empty history and preserves legacy FEN-only results', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      worker.emit('readyok')
+      const pending = engine.analyze(historyInitialFen, 200000, 1, { history: { initialFen: historyInitialFen, moves: [] } })
+      await vi.waitFor(() => expect(worker.messages).toContain(`position fen ${historyInitialFen}`))
+      expect(worker.messages.some(line => line.includes(' moves'))).toBe(false)
+      worker.emit('bestmove b1c3')
+      expect((await pending).history).toEqual({ initialFen: historyInitialFen, moves: [] })
+      const legacy = engine.analyze(historyTargetFen, 200000, 1)
+      await vi.waitFor(() => expect(worker.messages).toContain(`position fen ${historyTargetFen}`))
+      worker.emit('bestmove b1c3')
+      expect(await legacy).not.toHaveProperty('history')
+    } finally { engine.destroy() }
+  })
+
+  it('rejects invalid histories without stopping an active valid request', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      worker.emit('readyok')
+      const active = engine.analyze(historyTargetFen, 200000, 1, { history: repetitionHistory() })
+      await vi.waitFor(() => expect(worker.messages).toContain('go nodes 200000'))
+      const messages = [...worker.messages]
+      for (const history of [
+        null,
+        { initialFen: 'invalid', moves: [] },
+        { initialFen: historyInitialFen, moves: 'b1c3' },
+        { initialFen: historyInitialFen, moves: [null] },
+        { initialFen: historyInitialFen, moves: ['b1c3\ngo nodes 1'] },
+        { initialFen: historyInitialFen, moves: ['b1c3q'] },
+        { initialFen: historyInitialFen, moves: ['b1b4'] },
+        { initialFen: historyInitialFen, moves: [] },
+      ]) {
+        await expect(engine.analyze(historyTargetFen, 200000, 1, { history })).rejects.toThrow()
+      }
+      expect(worker.messages).toEqual(messages)
+      worker.emit('bestmove b1c3')
+      expect(await active).toMatchObject({ fen: historyTargetFen, history: repetitionHistory() })
+    } finally { engine.destroy() }
+  })
+
+  it('rejects a mismatched history before replacing work queued during initialization', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      const queued = engine.analyze(historyTargetFen, 200000, 1, { history: repetitionHistory() })
+      await expect(engine.analyze(historyInitialFen, 200000, 1, { history: repetitionHistory() })).rejects.toThrow()
+      worker.emit('readyok')
+      await vi.waitFor(() => expect(worker.messages).toContain('go nodes 200000'))
+      worker.emit('bestmove b1c3')
+      expect(await queued).toMatchObject({ fen: historyTargetFen, history: repetitionHistory() })
+    } finally { engine.destroy() }
+  })
+
+  it('drains cancelled history searches before starting the next history', async () => {
+    const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
+    try {
+      worker.emit('readyok')
+      const first = engine.analyze(historyTargetFen, 200000, 1, { history: repetitionHistory() })
+      const rejected = expect(first).rejects.toMatchObject({ name: 'AbortError' })
+      await vi.waitFor(() => expect(worker.messages).toContain('go nodes 200000'))
+      engine.cancel()
+      await rejected
+      const history = { initialFen: historyInitialFen, moves: ['b1c3'] }
+      const nextFen = '6nk/8/8/8/8/2N5/Q7/K7 b - - 1 1'
+      const next = engine.analyze(nextFen, 1000000, 1, { history })
+      expect(worker.messages.filter(line => line.startsWith('go '))).toEqual(['go nodes 200000'])
+      worker.emit('info depth 99 score cp 999 pv b1c3')
+      worker.emit('bestmove b1c3')
+      expect(worker.messages).toContain(`position fen ${historyInitialFen} moves b1c3`)
+      expect(worker.messages).toContain('go nodes 1000000')
+      worker.emit('info depth 10 score cp 0 pv g8f6')
+      worker.emit('bestmove g8f6')
+      expect(await next).toMatchObject({ fen: nextFen, history, evalCp: 0 })
+      expect(worker.messages.filter(line => line === 'stop')).toHaveLength(1)
+    } finally { engine.destroy() }
+  })
+})
+
 describe('Stockfish MultiPV', () => {
+  it('fails a silent search after 30 seconds, terminates it once and isolates a fresh engine', async () => {
+    vi.useFakeTimers()
+    const worker = controlledWorker(), onFailure = vi.fn()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure })
+    const freshWorker = controlledWorker()
+    const fresh = new StockfishEngine({ workerFactory: () => freshWorker })
+    try {
+      worker.emit('readyok')
+      const search = engine.analyze('silent-fen')
+      const rejected = expect(search).rejects.toThrow('non risponde durante la ricerca')
+      await vi.advanceTimersByTimeAsync(0)
+      await vi.advanceTimersByTimeAsync(20000)
+      worker.emit('unrelated output')
+      worker.emit({ unexpected: 'message' })
+      await vi.advanceTimersByTimeAsync(9999)
+      expect(onFailure).not.toHaveBeenCalled()
+      await vi.advanceTimersByTimeAsync(1)
+      await rejected
+      expect(onFailure.mock.calls).toEqual([[engine.failure]])
+      expect(worker.terminate).toHaveBeenCalledTimes(1)
+      await expect(engine.analyze('future-fen')).rejects.toBe(engine.failure)
+
+      freshWorker.emit('readyok')
+      const next = fresh.analyze('new-fen')
+      await vi.advanceTimersByTimeAsync(0)
+      worker.emit('uciok')
+      worker.emit('info depth 99 score cp 999 pv a2a4')
+      worker.emit('bestmove a2a4')
+      freshWorker.emit('info depth 12 score cp 20 pv e2e4')
+      freshWorker.emit('bestmove e2e4')
+      expect(await next).toMatchObject({ fen: 'new-fen', evalCp: 20 })
+      engine.destroy()
+      expect(worker.terminate).toHaveBeenCalledTimes(1)
+      expect(onFailure).toHaveBeenCalledTimes(1)
+      expect(vi.getTimerCount()).toBe(0)
+    } finally { engine.destroy(); fresh.destroy(); vi.useRealTimers() }
+  })
+
+  it('allows a slow search while UCI info keeps arriving and clears its watchdog on completion', async () => {
+    vi.useFakeTimers()
+    const worker = controlledWorker(), onFailure = vi.fn()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure, searchIdleTimeoutMs: 100 })
+    try {
+      worker.emit('readyok')
+      const search = engine.analyze('active-fen')
+      await vi.advanceTimersByTimeAsync(0)
+      for (let depth = 1; depth <= 4; depth++) {
+        await vi.advanceTimersByTimeAsync(99)
+        worker.emit(`info depth ${depth} nodes ${depth * 100}`)
+      }
+      await vi.advanceTimersByTimeAsync(99)
+      expect(onFailure).not.toHaveBeenCalled()
+      worker.emit('info depth 5 score cp 15 pv e2e4')
+      worker.emit('bestmove e2e4')
+      expect(await search).toMatchObject({ evalCp: 15 })
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(onFailure).not.toHaveBeenCalled()
+      expect(vi.getTimerCount()).toBe(0)
+    } finally { engine.destroy(); vi.useRealTimers() }
+  })
+
+  it('cancels the idle watchdog while draining a stopped search and arms a new independent one', async () => {
+    vi.useFakeTimers()
+    const worker = controlledWorker(), onFailure = vi.fn()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure, searchIdleTimeoutMs: 100 })
+    try {
+      worker.emit('readyok')
+      const first = engine.analyze('first-fen')
+      const rejected = expect(first).rejects.toMatchObject({ name: 'AbortError' })
+      await vi.advanceTimersByTimeAsync(0)
+      engine.cancel()
+      await rejected
+      const next = engine.analyze('next-fen')
+      await vi.advanceTimersByTimeAsync(200)
+      expect(worker.messages.filter(line => line.startsWith('go '))).toHaveLength(1)
+      expect(onFailure).not.toHaveBeenCalled()
+      worker.emit('info depth 99 score cp 999 pv a2a4')
+      worker.emit('bestmove a2a4')
+      expect(worker.messages).toContain('position fen next-fen')
+      await vi.advanceTimersByTimeAsync(99)
+      expect(onFailure).not.toHaveBeenCalled()
+      worker.emit('info depth 12 score cp 20 pv e7e5')
+      worker.emit('bestmove e7e5')
+      expect(await next).toMatchObject({ fen: 'next-fen', evalCp: 20 })
+      expect(vi.getTimerCount()).toBe(0)
+    } finally { engine.destroy(); vi.useRealTimers() }
+  })
+
+  it('clears the idle watchdog on teardown without reporting a terminal failure', async () => {
+    vi.useFakeTimers()
+    const worker = controlledWorker(), onFailure = vi.fn()
+    const engine = new StockfishEngine({ workerFactory: () => worker, onFailure, searchIdleTimeoutMs: 100 })
+    try {
+      worker.emit('readyok')
+      const search = engine.analyze('active-fen')
+      const rejected = expect(search).rejects.toMatchObject({ name: 'AbortError' })
+      await vi.advanceTimersByTimeAsync(0)
+      engine.destroy()
+      await rejected
+      expect(vi.getTimerCount()).toBe(0)
+      await vi.advanceTimersByTimeAsync(1000)
+      expect(onFailure).not.toHaveBeenCalled()
+      expect(worker.terminate).toHaveBeenCalledTimes(1)
+    } finally { engine.destroy(); vi.useRealTimers() }
+  })
+
   it('keeps restricted root searches separate from ordinary position profiles', async () => {
     const worker = controlledWorker(), engine = new StockfishEngine({ workerFactory: () => worker })
     try {

@@ -1,0 +1,10 @@
+{
+  "signature": "f7f1b6724c5b663713457017335a038f1e243b5bdffc087a3f47e01f71fe3854",
+  "jobId": "taimanov-bd3-ne5-bc5:exercise-baseline",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "r1b1k2r/1pqp1ppp/p3pn2/2b1n3/3NP3/2NBB2P/PPP2PP1/R2Q1RK1 w kq - 1 10",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

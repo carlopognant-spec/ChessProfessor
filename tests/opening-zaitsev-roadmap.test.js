@@ -29,8 +29,8 @@ describe('Zaitsev source boundary, practice and frozen evidence',()=>{
     expect(exercises).toHaveLength(282)
     expect(hash(JSON.stringify(exercises))).toBe(plan.baseline.practicalDigest)
     for(const [file,sha]of Object.entries(plan.preserveFiles))expect(hash(fs.readFileSync(file)),file).toBe(sha)
-    expect(ALL_OPENING_JOURNEYS).toHaveLength(293)
-    expect(practical.entries).toHaveLength(293)
+    expect(ALL_OPENING_JOURNEYS).toHaveLength(309)
+    expect(practical.entries).toHaveLength(309)
   })
   it('separates the documented prefix from the authored pair and binds notes to the full sequence',()=>{
     const course=zaitsev.entries[0],source=catalog.entries.find(row=>row.id===plan.source.catalogId)

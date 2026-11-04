@@ -120,10 +120,11 @@ describe('shared opening pipeline',()=>{
     expect(a).not.toBe(qaIdentity({...p,steps:[]},{'src/a.js':'one'}))
   })
   it('allows focused data QA only when reversing imports restores the exact baseline',async()=>{
-    const files=await verifyAggregationEdits(current.config)
+    const active=await loadLot()
+    const files=await verifyAggregationEdits(active.config)
     expect(files.sort()).toEqual(['src/lib/openingJourneys.js','src/lib/openingPracticalLibrary.js'].sort())
-    expect(selectChecks(files,{lot:current.config,verifiedAggregations:files}).mode).toBe('content')
-    expect(selectChecks(files,{lot:current.config}).mode).toBe('full')
+    expect(selectChecks(files,{lot:active.config,verifiedAggregations:files}).mode).toBe('content')
+    expect(selectChecks(files,{lot:active.config}).mode).toBe('full')
   })
   it('checks UTF-8, JSON syntax and real local links',async()=>{
     await write(scratch+'/target.json',encode({ok:true}))

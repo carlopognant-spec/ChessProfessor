@@ -1,0 +1,10 @@
+{
+  "signature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+  "jobId": "taimanov-be2-b5-exchange:continuation-control:15",
+  "kind": "primary",
+  "engine": "Stockfish 16",
+  "fen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 0 8",
+  "roots": [],
+  "nodesRequested": 200000,
+  "command": "go nodes 200000"
+}

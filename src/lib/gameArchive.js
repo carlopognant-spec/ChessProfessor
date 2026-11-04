@@ -4,6 +4,7 @@ import { refinementFor } from './analysisRefinement.js'
 import {mergeGrandeProof} from './grandeProofs.js'
 import {mergeNativeProof} from './nativeEvidence.js'
 import { sacrificeSearchFor, preferredSacrificeConfirmation, mergeRecoveryProofs,mergeSacrificeAttempts } from './sacrificeSearches.js'
+import { appendHistory, historyKey, refinementHistoryMatches, uciOf } from './analysisHistory.js'
 
 export const ARCHIVE_SCHEMA_VERSION = 1
 export const ANALYSIS_SCHEMA_VERSION = 1
@@ -20,12 +21,22 @@ export function describePgn(pgn) {
 export function validatedAnalysis(pgn, entries = []) {
   const { baseFen, moves } = describePgn(pgn)
   const game = new Chess(baseFen)
+  let history = { initialFen: game.fen(), moves: [] }
   if (!Array.isArray(entries) || entries.length > moves.length) return []
   for (const [index, entry] of entries.entries()) {
     const before = game.fen()
-    game.move(moves[index])
+    const rootHistory = history
+    const playedUci = uciOf(game.move(moves[index]))
+    history = appendHistory(history, playedUci)
     if (entry?.ply !== index + 1 || entry.playedMove !== moves[index]
       || entry.fenBefore !== before || entry.fenAfter !== game.fen()) return []
+    if (Object.hasOwn(entry, 'playedUci') && entry.playedUci !== playedUci
+      || Object.hasOwn(entry, 'uci') && entry.uci !== playedUci) return []
+    if (entry.engine?.history || entry.playedEngine?.history) {
+      if (historyKey(entry.engine?.history) !== historyKey(rootHistory)
+        || historyKey(entry.playedEngine?.history) !== historyKey(history)) return []
+    }
+    if (!refinementHistoryMatches(entry)) return []
   }
   return entries
 }
@@ -120,7 +131,14 @@ export function createGameArchive(options = {}) {
               && entries.length < previous.analysisEntries.length && entries.every(isAnalysisCurrent))) {
               record.analysisEntries = structuredClone(entries.map((entry, index) => {
                 const old = previous?.analysisEntries?.[index]
-                const prior = old?.fenBefore === entry.fenBefore && old.fenAfter === entry.fenAfter ? refinementFor(old) : null
+                if (!entry.classificationOrigin && (entry.classificationDecision || old?.classificationDecision || old?.classificationOrigin)
+                  && old?.fenBefore === entry.fenBefore && old.fenAfter === entry.fenAfter) {
+                  entry = { ...entry, classificationOrigin: old.classificationOrigin ?? old.classificationDecision
+                    ?? { schemaVersion: 0, classification: old.classification ?? null, policy: null } }
+                }
+                const prior = old?.fenBefore === entry.fenBefore && old.fenAfter === entry.fenAfter
+                  && historyKey(old.engine?.history) === historyKey(entry.engine?.history)
+                  && historyKey(old.playedEngine?.history) === historyKey(entry.playedEngine?.history) ? refinementFor(old) : null
                 if (!prior) return entry
                 const current = refinementFor(entry)
                 const grandeProof = mergeGrandeProof(entry,old.refinement?.grandeProof,entry.refinement?.grandeProof)

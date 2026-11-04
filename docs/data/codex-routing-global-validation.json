@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "checkedAt": "2026-10-27T20:11:37.903Z",
+  "binaryVersion": "codex-cli 0.164.0-alpha.11.1",
+  "server": "codex_vscode/0.164.0-alpha.11.1 (Windows 10.0.26200; x86_64) dumb (chessprofessor-routing-audit; 1.0.0)",
+  "account": {
+    "type": "chatgpt",
+    "plan": "plus"
+  },
+  "primary": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium"
+  },
+  "roles": {
+    "luna": {
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "registered": true,
+      "file": "C:\\Users\\carlo\\.codex\\agents\\luna.toml"
+    },
+    "sol": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "medium",
+      "registered": true,
+      "file": "C:\\Users\\carlo\\.codex\\agents\\sol.toml"
+    },
+    "astra": {
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "registered": true,
+      "file": "C:\\Users\\carlo\\.codex\\agents\\astra.toml"
+    },
+    "astra_high": {
+      "model": "gpt-6-astra",
+      "reasoning": "high",
+      "registered": true,
+      "file": "C:\\Users\\carlo\\.codex\\agents\\astra-high.toml"
+    }
+  },
+  "scope": "personal",
+  "projectConfigLoaded": false,
+  "maximumConcurrentSubagents": 2,
+  "features": {
+    "multiAgent": "multi_agent                              stable             true",
+    "stepModelSwitching": "step_model_switching                     under development  false"
+  },
+  "permissions": "Inherited; routing configuration does not change existing permission/authentication/provider settings",
+  "validation": "Strict app-server config/read, account/read, paginated model/list, role TOML values and account-supported efforts. No model-generation request.",
+  "inputHashes": {
+    ".codex/config.toml": "137394803231d466da14f454d430e1344606205cb39d9003967a03aa4df5ef2a",
+    ".codex/agents/luna.toml": "7de34f59bafa948d3fab15be7fa8a9c394180468221a22485dc06e15f5e6faea",
+    ".codex/agents/sol.toml": "4f343fa30526b0af14af3a1e6db18c8067ea446a11771be4645e1ebb862d1d59",
+    ".codex/agents/astra.toml": "feb39157855c665daa9e06c87a51ae873414c78e8bddcdf98f9ea4c956e872a2",
+    ".codex/agents/astra-high.toml": "aa8322cc65ae54969a71894288b667a67875b5e0203740ef922beb4bd0e7c32f",
+    ".codex/AGENTS.md": "f13087442820fa94547b18adbb33f07a4827c6980f48045e2f1910561f3c9846"
+  },
+  "limits": [
+    "Existing conversation/UI overrides can take precedence; reload VS Code and start a new Codex conversation to use project defaults.",
+    "Routing is discretionary delegation by the primary, not an automatic in-place switch of the primary model.",
+    "Account catalog availability is verified; this audit does not perform inference smoke tests for every role.",
+    "No project-only enforcement of login method: authentication remains owned by the installed client. No API fallback was configured.",
+    "No guaranteed Plus quota savings; additional agents also consume quota."
+  ]
+}

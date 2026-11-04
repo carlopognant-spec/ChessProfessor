@@ -19,8 +19,10 @@ const chekhoverPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-c
 const chekhoverA6PracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-chekhover-a6-p022-practical-verification.json','utf8'))
 const chekhoverEarlyPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-chekhover-early-p022-practical-verification.json','utf8'))
 const sicilianEarlyPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-sicilian-early-p022-practical-verification.json','utf8'))
-const practicalEvidence={evidence:[...historicalPracticalEvidence.evidence,...roadmapPracticalEvidence.evidence,...zaitsevPracticalEvidence.evidence,...chekhoverPracticalEvidence.evidence,...chekhoverA6PracticalEvidence.evidence,...chekhoverEarlyPracticalEvidence.evidence,...sicilianEarlyPracticalEvidence.evidence],
-  uncovered:[...historicalPracticalEvidence.uncovered,...roadmapPracticalEvidence.uncovered,...zaitsevPracticalEvidence.uncovered,...chekhoverPracticalEvidence.uncovered,...chekhoverA6PracticalEvidence.uncovered,...chekhoverEarlyPracticalEvidence.uncovered,...sicilianEarlyPracticalEvidence.uncovered]}
+const taimanovPracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-taimanov-be2-p022-r1-practical-verification.json','utf8'))
+const taimanovBd3PracticalEvidence=JSON.parse(fs.readFileSync('docs/data/opening-taimanov-bd3-p022-r1-practical-verification.json','utf8'))
+const practicalEvidence={evidence:[...historicalPracticalEvidence.evidence,...roadmapPracticalEvidence.evidence,...zaitsevPracticalEvidence.evidence,...chekhoverPracticalEvidence.evidence,...chekhoverA6PracticalEvidence.evidence,...chekhoverEarlyPracticalEvidence.evidence,...sicilianEarlyPracticalEvidence.evidence,...taimanovPracticalEvidence.evidence,...taimanovBd3PracticalEvidence.evidence],
+  uncovered:[...historicalPracticalEvidence.uncovered,...roadmapPracticalEvidence.uncovered,...zaitsevPracticalEvidence.uncovered,...chekhoverPracticalEvidence.uncovered,...chekhoverA6PracticalEvidence.uncovered,...chekhoverEarlyPracticalEvidence.uncovered,...sicilianEarlyPracticalEvidence.uncovered,...taimanovPracticalEvidence.uncovered,...taimanovBd3PracticalEvidence.uncovered]}
 const key=board=>board.fen().split(' ').slice(0,4).join(' ')
 const uci=move=>move.from+move.to+(move.promotion??'')
 const replay=moves=>{const board=new Chess();moves.forEach(san=>board.move(san));return board}

@@ -35,7 +35,7 @@ function play(game, uci) {
   return game.move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] })
 }
 function score(line) {
-  if (!line || !Number.isInteger(line.depth) || line.depth < 1 || line.bound
+  if (!line || !Number.isInteger(line.depth) || line.depth < 1 || line.bound || line.lowerbound || line.upperbound
     || /\b(?:upperbound|lowerbound)\b/.test(line.raw ?? '')) return null
   if (Number.isInteger(line.mate) && line.mate !== 0) return Number(line.mate > 0)
   return line.mate == null && Number.isFinite(line.evalCp) ? calculateWinProbability(line.evalCp) : null

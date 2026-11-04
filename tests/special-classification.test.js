@@ -6,6 +6,7 @@ import { analyzeGame } from '../src/lib/gameAnalysis.js'
 import { createOpeningBook } from '../src/lib/openingBook.js'
 import { compare } from '../scripts/qa/compare.js'
 import { createMultiPvEvidence } from '../src/lib/multiPvEvidence.js'
+import { reclassifyReviewedMoves } from '../src/lib/reviewMoves.js'
 
 const fen = 'rnbq1rk1/ppp2ppp/3bpn2/3p4/3P4/2NBPN2/PPP2PPP/R1BQ1RK1 w - - 0 1'
 const line = (multipv, evalCp, pv) => ({ multipv, evalCp, mate: null, depth: 15, pv })
@@ -71,6 +72,28 @@ describe('counterfactual special categories', () => {
     const result = classifySpecialMove(sample({ best: 600, alternative: 0, child: 400 }))
     expect(result.classification).toBe('best')
     expect(result.specialAssessment.grande.reason).toBe('missing-or-conflicting-played-score')
+  })
+
+  it.each(['lowerbound', 'upperbound'])('rejects boolean %s scores in special decisions and archive reconstruction', flag => {
+    const entry = sample({ best: 0, alternative: -400, child: 0 })
+    expect(classifySpecialMove(entry).classification).toBe('great')
+    const original = structuredClone(entry)
+    entry.engine.lines[1][flag] = true
+    expect(classifySpecialMove(entry).classification).toBe('best')
+    expect(reclassifyReviewedMoves([entry])[0].classification).toBe('best')
+    expect(entry.engine.lines[1][flag]).toBe(true)
+    expect(classifySpecialMove(original).classification).toBe('great')
+    const archived = classifySpecialMove(original)
+    archived.engine.lines[1][flag] = true
+    const [reconstructed] = reclassifyReviewedMoves([archived])
+    expect(reconstructed.classification).toBe('best')
+    expect(reconstructed.classificationOrigin.classification).toBe('great')
+    expect(archived.classification).toBe('great')
+
+    const sacrifice = sample({ sacrifice: true })
+    expect(classifySpecialMove(sacrifice).classification).toBe('brilliant')
+    sacrifice.playedEngine.lines[0][flag] = true
+    expect(classifySpecialMove(sacrifice).classification).not.toBe('brilliant')
   })
 
   it('recognizes a compensated piece offer with a resolved legal continuation', () => {

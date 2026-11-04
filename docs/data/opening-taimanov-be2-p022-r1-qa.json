@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-07-R1",
+  "status": "content-verified-with-separate-tooling-timeout",
+  "application": {
+    "courses": 302,
+    "exercises": 302,
+    "sicilianCourses": 41,
+    "addedCourses": 9,
+    "addedExercises": 9,
+    "coverage": {
+      "exact": 1980,
+      "transposition-only": 203,
+      "absent": 10139
+    }
+  },
+  "engine": {
+    "authoredComparisonsPassed": 18,
+    "exercisesPassed": 9,
+    "newSearches": 11,
+    "reusedJobs": 34,
+    "newNodesActual": 2201458,
+    "thresholdsChanged": false,
+    "failedOriginalLedgerPreserved": true
+  },
+  "buildAndBrowser": {
+    "status": "PASS",
+    "record": ".cache/opening-pipeline/qa/493074d38b98a772e0b5f0e5485d3b48d0e876efe163a4fb7fc05e0e2dc67e86/result.json",
+    "fingerprint": "493074d38b98a772e0b5f0e5485d3b48d0e876efe163a4fb7fc05e0e2dc67e86",
+    "browserCasesPassed": 90,
+    "browserCasesAvailableForRoadmapSicilian": 223,
+    "scope": "Reviewed 82 new cases and eight existing state regressions, production no-env build, same browser and timeouts as development config.",
+    "inputsUnchanged": true
+  },
+  "unitTests": {
+    "distinctCases": 795,
+    "passedAcrossRecordedRuns": 793,
+    "todo": 1,
+    "remainingTimeouts": 1,
+    "newLotCasesPassed": 7,
+    "initialFullRun": {
+      "passed": 786,
+      "failed": 8,
+      "todo": 1
+    },
+    "fiveFileRetry": {
+      "passed": 82,
+      "failed": 1
+    },
+    "remainingCase": "opening workflow with bounded context > pages presentation without restricting the underlying draft or assessment",
+    "deadlineMs": 5000,
+    "isolatedElapsedMs": 9055,
+    "functionalCheck": {
+      "status": "PASS",
+      "elapsedMs": 8527,
+      "evidence": ".cache/opening-pipeline/workflow/draft-e5bdfcc8515cb198190911b554fa43964872b79c6f3a3232e720cde7cc5046b6.json",
+      "scope": "Same draft completeness, pagination and runtime digest assertions outside Vitest; timeout unchanged."
+    }
+  },
+  "preservedFiles": 218,
+  "logHashes": {
+    ".cache/opening-pipeline/qa/493074d38b98a772e0b5f0e5485d3b48d0e876efe163a4fb7fc05e0e2dc67e86/browser.log": "fbfec754506458e6e7060f0c9e6ce8661d5dbe13fc4cf3dd9a3ff176912e96f6",
+    ".cache/opening-pipeline/qa/493074d38b98a772e0b5f0e5485d3b48d0e876efe163a4fb7fc05e0e2dc67e86/build.log": "bfef000950ac547b0732e2e66056695990852b5f6ab94a924cd76cbf73343934",
+    ".cache/opening-pipeline/qa/493074d38b98a772e0b5f0e5485d3b48d0e876efe163a4fb7fc05e0e2dc67e86/result.json": "8f8bbdd5c744fc255c711a6106b97857db1085443afbbbc9d08d45984cf79efa",
+    ".cache/sic07-r1-tests-retry.log": "410dd3b2dcd38a085d536d8a1fe0fb0457a3141dd83643265cd2165b079cb139",
+    ".cache/sic07-r1-tests-workflow-case.log": "f5cbb90a15b6c5d3db9c6dc9a54a7fb1de20ed18add2e275e563d05317274358",
+    ".cache/sic07-r1-tests.log": "462dc66a7c49e7b55be25e488d89d7ea6fdedee1350341783f0f8b5867c5e76f"
+  },
+  "limits": [
+    "The inherited frozen engine publicationPolicy text still says fourteen comparisons; actual R1 authoredMoves and enforced gates contain eighteen, all replayed successfully.",
+    "Initial development browser navigation timed out before the board loaded. Production build matrix passed 90/90; no timeout raised.",
+    "Unit suite is not claimed fully green: one draft-tool timeout and one pre-existing TODO remain."
+  ],
+  "next": "Continue P02 with the remaining Taimanov Qc7/Be3 branches; do not repeat collected SIC-07 or R1 engine jobs. No commit, push or deploy performed."
+}

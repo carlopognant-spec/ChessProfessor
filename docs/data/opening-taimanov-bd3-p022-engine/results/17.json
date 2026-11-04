@@ -1,0 +1,32 @@
+{
+  "signature": "f7f1b6724c5b663713457017335a038f1e243b5bdffc087a3f47e01f71fe3854",
+  "jobId": "taimanov-bd3-nf6-h5:continuation-control:16",
+  "status": "complete",
+  "attemptIds": [
+    "17"
+  ],
+  "result": {
+    "bestmove": "h2h3",
+    "searchmoves": [],
+    "depth": 18,
+    "nodes": 200232,
+    "cp": 67,
+    "mate": null,
+    "pv": [
+      "h2h3",
+      "c6d4",
+      "e3d4",
+      "f8c5",
+      "d4c5",
+      "c7c5",
+      "f1e1",
+      "d7d6",
+      "d1d2",
+      "c8d7",
+      "a1d1",
+      "d7c6",
+      "d3f1"
+    ],
+    "attempt": "17"
+  }
+}

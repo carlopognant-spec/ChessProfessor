@@ -1,0 +1,3887 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-07-R1",
+  "policy": {
+    "engine": "Stockfish 16",
+    "engineHash": "5568b400df3425718d310050b5b77fcc81d30b82fdf231a90f40b520c74de3bf",
+    "nodes": 200000,
+    "threads": 1,
+    "hashMb": 32,
+    "minimumCpChange": 200,
+    "minimumImmediateMaterial": 2,
+    "kind": "constructed-deviation-v1"
+  },
+  "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+  "goCommands": 11,
+  "nodesRequested": 2200000,
+  "nodesActual": 2201458,
+  "reusedJobs": 34,
+  "reusedEvidence": [
+    {
+      "jobId": "taimanov-be2-nge7:continuation-control:14",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 1,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-nge7:continuation-control:14",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200079
+    },
+    {
+      "jobId": "taimanov-be2-nge7:continuation-control:15",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 5,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-nge7:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200066
+    },
+    {
+      "jobId": "taimanov-be2-b5-exchange:continuation-control:15",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 6,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-b5-exchange:continuation-control:15",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200063
+    },
+    {
+      "jobId": "taimanov-be2-b5-exchange:authored:15",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 7,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-b5-exchange:authored:15",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200091
+    },
+    {
+      "jobId": "taimanov-be2-b5-exchange:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 8,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-b5-exchange:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200266
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:continuation-control:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 9,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-a3-b5:continuation-control:16",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200041
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:authored:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 10,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-a3-b5:authored:16",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200090
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 11,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-a3-b5:continuation-control:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200260
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 12,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-a3-b5:authored:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200104
+    },
+    {
+      "jobId": "taimanov-be2-a3-b5:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 13,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-a3-b5:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200000
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:continuation-control:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 14,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-b5:continuation-control:16",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200198
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:authored:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 15,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-b5:authored:16",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200255
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 16,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-b5:continuation-control:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200170
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 17,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-b5:authored:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200224
+    },
+    {
+      "jobId": "taimanov-be2-castle-b5:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 18,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-b5:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200079
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:continuation-control:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 19,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-be7:continuation-control:16",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200210
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:authored:16",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 20,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-be7:authored:16",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200163
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 21,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-be7:continuation-control:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200196
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 22,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-be7:authored:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200159
+    },
+    {
+      "jobId": "taimanov-be2-castle-be7:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 23,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-castle-be7:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200140
+    },
+    {
+      "jobId": "taimanov-be2-a3-be7:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 24,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-a3-be7:continuation-control:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200059
+    },
+    {
+      "jobId": "taimanov-be2-a3-be7:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 25,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-a3-be7:authored:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200202
+    },
+    {
+      "jobId": "taimanov-be2-a3-be7:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 26,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-a3-be7:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200248
+    },
+    {
+      "jobId": "taimanov-be2-bb4-exchange:continuation-control:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 27,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-bb4-exchange:continuation-control:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200127
+    },
+    {
+      "jobId": "taimanov-be2-bb4-exchange:authored:17",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 28,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-bb4-exchange:authored:17",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200074
+    },
+    {
+      "jobId": "taimanov-be2-bb4-exchange:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 29,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-bb4-exchange:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200056
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:continuation-control:18",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 30,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-na4-castle:continuation-control:18",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200307
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:authored:18",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 31,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-na4-castle:authored:18",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200075
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:continuation-control:19",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 32,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-na4-castle:continuation-control:19",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200116
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:authored:19",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 33,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-na4-castle:authored:19",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200094
+    },
+    {
+      "jobId": "taimanov-be2-na4-castle:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 34,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-na4-castle:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200182
+    },
+    {
+      "jobId": "taimanov-be2-na4-be7-nb6:continuation-control:21",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 35,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-na4-be7-nb6:continuation-control:21",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200132
+    },
+    {
+      "jobId": "taimanov-be2-na4-be7-nb6:authored:21",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 36,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-na4-be7-nb6:authored:21",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200192
+    },
+    {
+      "jobId": "taimanov-be2-na4-be7-nb6:deviation",
+      "directory": "docs/data/opening-taimanov-be2-p022-engine",
+      "jobIndex": 37,
+      "manifestSha256": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceSignature": "08fb28008787cfb04cd3ff3d8dd724b160164cf6b71f2021766b09e8935cb3c7",
+      "sourceJobId": "taimanov-be2-na4-be7-nb6:deviation",
+      "goCommands": 1,
+      "nodesRequested": 200000,
+      "nodesActual": 200238
+    }
+  ],
+  "nodesReused": 6804956,
+  "continuationChecks": [
+    {
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 14,
+      "san": "Ndb5",
+      "controlId": "taimanov-be2-nge7:continuation-control:14",
+      "selectedId": "taimanov-be2-nge7:authored:14",
+      "fen": "r1b1kb1r/1pqpnppp/p1n1p3/8/3NP3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 2 8",
+      "control": {
+        "bestmove": "d4b5",
+        "searchmoves": [],
+        "depth": 22,
+        "nodes": 200079,
+        "cp": 242,
+        "mate": null,
+        "pv": [
+          "d4b5",
+          "a6b5",
+          "c3b5",
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "e7g6",
+          "b2b4",
+          "c6b4",
+          "c3b4",
+          "a5b4",
+          "e1f1",
+          "b4e4"
+        ]
+      },
+      "selected": {
+        "bestmove": "d4b5",
+        "searchmoves": [
+          "d4b5"
+        ],
+        "depth": 21,
+        "nodes": 200329,
+        "cp": 228,
+        "mate": null,
+        "pv": [
+          "d4b5",
+          "a6b5",
+          "c3b5",
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6b2",
+          "e1g1",
+          "e7d5",
+          "d6f7",
+          "d8e8",
+          "e4d5",
+          "e8f7",
+          "a1b1",
+          "b2f6",
+          "d5c6",
+          "b7c6",
+          "b1b3",
+          "d7d5",
+          "e3d4"
+        ]
+      },
+      "signedCpDifference": 14,
+      "acceptanceLoss": 14
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 15,
+      "san": "axb5",
+      "controlId": "taimanov-be2-nge7:continuation-control:15",
+      "selectedId": "taimanov-be2-nge7:authored:15",
+      "fen": "r1b1kb1r/1pqpnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 3 8",
+      "control": {
+        "bestmove": "a6b5",
+        "searchmoves": [],
+        "depth": 19,
+        "nodes": 200066,
+        "cp": -219,
+        "mate": null,
+        "pv": [
+          "a6b5",
+          "c3b5",
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "e7g6",
+          "b2b4",
+          "c6b4",
+          "c3b4",
+          "f8b4",
+          "e1f1",
+          "d7d5",
+          "e4d5",
+          "d8e8"
+        ]
+      },
+      "selected": {
+        "bestmove": "a6b5",
+        "searchmoves": [
+          "a6b5"
+        ],
+        "depth": 20,
+        "nodes": 200133,
+        "cp": -230,
+        "mate": null,
+        "pv": [
+          "a6b5",
+          "c3b5",
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "e7g6",
+          "f2f4",
+          "f8e7",
+          "e1g1",
+          "d8e8",
+          "f4f5",
+          "g6e5",
+          "b2b4",
+          "a5d8",
+          "d1b3",
+          "h8f8",
+          "a2a4",
+          "e6f5"
+        ]
+      },
+      "signedCpDifference": 11,
+      "acceptanceLoss": 11
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 16,
+      "san": "Nxb5",
+      "controlId": "taimanov-be2-nge7:continuation-control:16",
+      "selectedId": "taimanov-be2-nge7:authored:16",
+      "fen": "r1b1kb1r/1pqpnppp/2n1p3/1p6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 9",
+      "control": {
+        "bestmove": "c3b5",
+        "searchmoves": [],
+        "depth": 20,
+        "nodes": 200020,
+        "cp": 244,
+        "mate": null,
+        "pv": [
+          "c3b5",
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "e1g1",
+          "e7g6",
+          "d6b5",
+          "c7a5",
+          "a2a4",
+          "d8e8",
+          "f2f4",
+          "f8e7",
+          "e2h5",
+          "c6a7",
+          "e3a7",
+          "a8a7",
+          "d1d4",
+          "a7a6",
+          "d4g7"
+        ]
+      },
+      "selected": {
+        "bestmove": "c3b5",
+        "searchmoves": [
+          "c3b5"
+        ],
+        "depth": 20,
+        "nodes": 200015,
+        "cp": 195,
+        "mate": null,
+        "pv": [
+          "c3b5",
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "e1g1",
+          "e7g6",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "d8e8",
+          "f2f4",
+          "f8e7",
+          "e2c4",
+          "a5d8",
+          "f4f5",
+          "c6e5",
+          "f5g6",
+          "e5c4",
+          "d1h5"
+        ]
+      },
+      "signedCpDifference": 49,
+      "acceptanceLoss": 49
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 17,
+      "san": "Qa5+",
+      "controlId": "taimanov-be2-nge7:continuation-control:17",
+      "selectedId": "taimanov-be2-nge7:authored:17",
+      "fen": "r1b1kb1r/1pqpnppp/2n1p3/1N6/4P3/4B3/PPP1BPPP/R2QK2R b KQkq - 0 9",
+      "control": {
+        "bestmove": "c7a5",
+        "searchmoves": [],
+        "depth": 18,
+        "nodes": 200078,
+        "cp": -230,
+        "mate": null,
+        "pv": [
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "e1g1",
+          "e7g6",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "d8e8",
+          "f2f4",
+          "a5d8",
+          "b2b4",
+          "f8e7",
+          "f4f5",
+          "g6e5",
+          "a2a4",
+          "b7b6",
+          "b5d6",
+          "e7d6",
+          "d1d6",
+          "d8e7",
+          "d6d1",
+          "b6b5"
+        ]
+      },
+      "selected": {
+        "bestmove": "c7a5",
+        "searchmoves": [
+          "c7a5"
+        ],
+        "depth": 19,
+        "nodes": 200126,
+        "cp": -239,
+        "mate": null,
+        "pv": [
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "e7g6",
+          "e1g1",
+          "d8e8",
+          "f2f4",
+          "f8e7",
+          "f4f5",
+          "g6e5",
+          "a2a4",
+          "a5d8",
+          "b2b4",
+          "b7b6",
+          "b5d6",
+          "e7d6",
+          "d1d6"
+        ]
+      },
+      "signedCpDifference": 9,
+      "acceptanceLoss": 9
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 18,
+      "san": "Bd2",
+      "controlId": "taimanov-be2-nge7:continuation-control:18",
+      "selectedId": "taimanov-be2-nge7:authored:18",
+      "fen": "r1b1kb1r/1p1pnppp/2n1p3/qN6/4P3/4B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+      "control": {
+        "bestmove": "e3d2",
+        "searchmoves": [],
+        "depth": 18,
+        "nodes": 133418,
+        "cp": 231,
+        "mate": null,
+        "pv": [
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "e7g6",
+          "b2b4",
+          "c6b4",
+          "c3b4",
+          "f8b4",
+          "e1f1",
+          "d8e8",
+          "h2h4"
+        ]
+      },
+      "selected": {
+        "bestmove": "e3d2",
+        "searchmoves": [
+          "e3d2"
+        ],
+        "depth": 20,
+        "nodes": 119148,
+        "cp": 237,
+        "mate": null,
+        "pv": [
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "e1g1",
+          "e7g6",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "d8e8",
+          "b2b4",
+          "a5d8",
+          "f2f4",
+          "f8e7",
+          "a2a4",
+          "b7b6",
+          "f4f5",
+          "g6e5",
+          "d1b3",
+          "h8f8",
+          "a1d1",
+          "g7g6",
+          "f5e6",
+          "f8f1",
+          "d1f1"
+        ]
+      },
+      "signedCpDifference": -6,
+      "acceptanceLoss": 0
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-nge7",
+      "authoredIndex": 19,
+      "san": "Qb6",
+      "controlId": "taimanov-be2-nge7:continuation-control:19",
+      "selectedId": "taimanov-be2-nge7:authored:19",
+      "fen": "r1b1kb1r/1p1pnppp/2n1p3/qN6/4P3/8/PPPBBPPP/R2QK2R b KQkq - 2 10",
+      "control": {
+        "bestmove": "a5b6",
+        "searchmoves": [],
+        "depth": 19,
+        "nodes": 200014,
+        "cp": -218,
+        "mate": null,
+        "pv": [
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "e7g6",
+          "e1g1",
+          "d8e8",
+          "b2b4",
+          "a5d8",
+          "f2f4",
+          "d7d6",
+          "a2a4"
+        ]
+      },
+      "selected": {
+        "bestmove": "a5b6",
+        "searchmoves": [
+          "a5b6"
+        ],
+        "depth": 19,
+        "nodes": 200026,
+        "cp": -267,
+        "mate": null,
+        "pv": [
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "e1g1",
+          "e7g8",
+          "d6f7",
+          "d8e8",
+          "e2h5",
+          "g7g6",
+          "f7h8",
+          "c6e5",
+          "f2f4",
+          "e5c4"
+        ]
+      },
+      "signedCpDifference": 49,
+      "acceptanceLoss": 49
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-b5-exchange",
+      "authoredIndex": 15,
+      "san": "Qxc6",
+      "controlId": "taimanov-be2-b5-exchange:continuation-control:15",
+      "selectedId": "taimanov-be2-b5-exchange:authored:15",
+      "fen": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 0 8",
+      "control": {
+        "bestmove": "c7c6",
+        "searchmoves": [],
+        "depth": 16,
+        "nodes": 155010,
+        "cp": -27,
+        "mate": null,
+        "pv": [
+          "c7c6",
+          "a2a4",
+          "b5b4",
+          "c3a2",
+          "f8c5",
+          "e2f3",
+          "a8b8",
+          "e1g1",
+          "c6b6",
+          "e3c5",
+          "b6c5",
+          "a2c1",
+          "a6a5",
+          "d1d2",
+          "g8f6"
+        ]
+      },
+      "selected": {
+        "bestmove": "c7c6",
+        "searchmoves": [
+          "c7c6"
+        ],
+        "depth": 16,
+        "nodes": 91521,
+        "cp": -22,
+        "mate": null,
+        "pv": [
+          "c7c6",
+          "e2f3",
+          "c8b7",
+          "e4e5",
+          "c6c7",
+          "f3b7",
+          "c7b7",
+          "d1d3",
+          "f7f5",
+          "e1c1",
+          "g8e7",
+          "d1d2",
+          "b5b4",
+          "c3a4",
+          "e7d5",
+          "h1d1",
+          "f8e7"
+        ]
+      },
+      "signedCpDifference": -5,
+      "acceptanceLoss": 0
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-a3-b5",
+      "authoredIndex": 16,
+      "san": "O-O",
+      "controlId": "taimanov-be2-a3-b5:continuation-control:16",
+      "selectedId": "taimanov-be2-a3-b5:authored:16",
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2QK2R w KQkq - 0 9",
+      "control": {
+        "bestmove": "d4c6",
+        "searchmoves": [],
+        "depth": 18,
+        "nodes": 166644,
+        "cp": 45,
+        "mate": null,
+        "pv": [
+          "d4c6",
+          "d7c6",
+          "f2f4",
+          "c8b7",
+          "e2f3",
+          "f8e7",
+          "e4e5",
+          "f6d5",
+          "c3d5",
+          "c6d5",
+          "c2c3",
+          "a6a5",
+          "e1g1",
+          "e8g8",
+          "d1d2"
+        ]
+      },
+      "selected": {
+        "bestmove": "e1g1",
+        "searchmoves": [
+          "e1g1"
+        ],
+        "depth": 17,
+        "nodes": 200090,
+        "cp": -3,
+        "mate": null,
+        "pv": [
+          "e1g1",
+          "c8b7",
+          "d4c6",
+          "b7c6",
+          "d1d3",
+          "f8e7",
+          "a1d1",
+          "a8c8",
+          "e3d4",
+          "e8g8",
+          "e4e5",
+          "f6d5",
+          "c3d5",
+          "c6d5",
+          "c2c3",
+          "d5c4",
+          "d3e4"
+        ]
+      },
+      "signedCpDifference": 48,
+      "acceptanceLoss": 48
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-a3-b5",
+      "authoredIndex": 17,
+      "san": "Bb7",
+      "controlId": "taimanov-be2-a3-b5:continuation-control:17",
+      "selectedId": "taimanov-be2-a3-b5:authored:17",
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 1 9",
+      "control": {
+        "bestmove": "c8b7",
+        "searchmoves": [],
+        "depth": 18,
+        "nodes": 200260,
+        "cp": 0,
+        "mate": null,
+        "pv": [
+          "c8b7",
+          "d4c6",
+          "b7c6",
+          "d1d3",
+          "f8e7",
+          "f2f4",
+          "e8g8",
+          "e3d4",
+          "c7b7",
+          "e4e5",
+          "f6e4",
+          "c3e4",
+          "c6e4",
+          "e2f3",
+          "e4d3",
+          "f3b7",
+          "d3f1",
+          "b7a8",
+          "f8a8",
+          "g1f1"
+        ]
+      },
+      "selected": {
+        "bestmove": "c8b7",
+        "searchmoves": [
+          "c8b7"
+        ],
+        "depth": 18,
+        "nodes": 200104,
+        "cp": 9,
+        "mate": null,
+        "pv": [
+          "c8b7",
+          "d4c6",
+          "b7c6",
+          "d1d3",
+          "f8e7",
+          "f2f4",
+          "e8g8",
+          "e3d4",
+          "c7b7",
+          "e4e5",
+          "f6e4",
+          "e2f3",
+          "e4c3",
+          "d3c3",
+          "c6f3",
+          "f1f3"
+        ]
+      },
+      "signedCpDifference": -9,
+      "acceptanceLoss": 0
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-castle-b5",
+      "authoredIndex": 16,
+      "san": "a3",
+      "controlId": "taimanov-be2-castle-b5:continuation-control:16",
+      "selectedId": "taimanov-be2-castle-b5:authored:16",
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 9",
+      "control": {
+        "bestmove": "d4c6",
+        "searchmoves": [],
+        "depth": 19,
+        "nodes": 200198,
+        "cp": 54,
+        "mate": null,
+        "pv": [
+          "d4c6",
+          "d7c6",
+          "f2f4",
+          "f8e7",
+          "e4e5",
+          "f6d5",
+          "c3d5",
+          "c6d5",
+          "e3d4",
+          "e7c5",
+          "c2c3",
+          "e8g8",
+          "h2h4",
+          "c8d7",
+          "h4h5",
+          "f7f6",
+          "e5f6",
+          "f8f6"
+        ]
+      },
+      "selected": {
+        "bestmove": "a2a3",
+        "searchmoves": [
+          "a2a3"
+        ],
+        "depth": 16,
+        "nodes": 166438,
+        "cp": -2,
+        "mate": null,
+        "pv": [
+          "a2a3",
+          "c8b7",
+          "d4c6",
+          "b7c6",
+          "e2d3",
+          "b5b4",
+          "a3b4",
+          "f8b4",
+          "d1e2",
+          "e8g8",
+          "e3d2",
+          "a6a5",
+          "e4e5",
+          "f6d5",
+          "c3d5"
+        ]
+      },
+      "signedCpDifference": 56,
+      "acceptanceLoss": 56
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-castle-b5",
+      "authoredIndex": 17,
+      "san": "Bb7",
+      "controlId": "taimanov-be2-castle-b5:continuation-control:17",
+      "selectedId": "taimanov-be2-castle-b5:authored:17",
+      "fen": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 0 9",
+      "control": {
+        "bestmove": "c8b7",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 183502,
+        "cp": 0,
+        "mate": null,
+        "pv": [
+          "c8b7",
+          "d4c6",
+          "b7c6",
+          "d1d3",
+          "c7b7",
+          "e4e5",
+          "f6d5",
+          "c3d5",
+          "c6d5",
+          "f2f3",
+          "d5c4",
+          "d3d2",
+          "c4e2",
+          "d2e2",
+          "f8e7"
+        ]
+      },
+      "selected": {
+        "bestmove": "c8b7",
+        "searchmoves": [
+          "c8b7"
+        ],
+        "depth": 17,
+        "nodes": 176936,
+        "cp": 6,
+        "mate": null,
+        "pv": [
+          "c8b7",
+          "d4c6",
+          "b7c6",
+          "d1d3",
+          "c7b7",
+          "e2f3",
+          "d7d6",
+          "e3d4",
+          "f8e7",
+          "d4f6",
+          "e7f6",
+          "d3d6",
+          "a8d8",
+          "d6g3",
+          "f6d4"
+        ]
+      },
+      "signedCpDifference": -6,
+      "acceptanceLoss": 0
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-castle-be7",
+      "authoredIndex": 16,
+      "san": "f4",
+      "controlId": "taimanov-be2-castle-be7:continuation-control:16",
+      "selectedId": "taimanov-be2-castle-be7:authored:16",
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 4 9",
+      "control": {
+        "bestmove": "f2f4",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 200210,
+        "cp": 39,
+        "mate": null,
+        "pv": [
+          "f2f4",
+          "d7d5",
+          "e4e5",
+          "c6d4",
+          "e3d4",
+          "f6e4",
+          "d1d3",
+          "e4c3",
+          "b2c3",
+          "c8d7",
+          "d3e3",
+          "a8c8",
+          "e2d3",
+          "g7g6"
+        ]
+      },
+      "selected": {
+        "bestmove": "f2f4",
+        "searchmoves": [
+          "f2f4"
+        ],
+        "depth": 16,
+        "nodes": 167779,
+        "cp": 43,
+        "mate": null,
+        "pv": [
+          "f2f4",
+          "d7d6",
+          "d4c6",
+          "b7c6",
+          "d1e1",
+          "e8g8",
+          "e1g3",
+          "d6d5",
+          "e3d4",
+          "g7g6",
+          "a1d1",
+          "a6a5",
+          "g1h1",
+          "d5e4",
+          "d4e5",
+          "c7a7"
+        ]
+      },
+      "signedCpDifference": -4,
+      "acceptanceLoss": 0
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-castle-be7",
+      "authoredIndex": 17,
+      "san": "d6",
+      "controlId": "taimanov-be2-castle-be7:continuation-control:17",
+      "selectedId": "taimanov-be2-castle-be7:authored:17",
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NPP2/2N1B3/PPP1B1PP/R2Q1RK1 b kq - 0 9",
+      "control": {
+        "bestmove": "d7d6",
+        "searchmoves": [],
+        "depth": 16,
+        "nodes": 162254,
+        "cp": -46,
+        "mate": null,
+        "pv": [
+          "d7d6",
+          "d1e1",
+          "c6d4",
+          "e3d4",
+          "e8g8",
+          "a2a4",
+          "c8d7",
+          "a4a5",
+          "d7c6",
+          "e1g3",
+          "a8c8",
+          "e2d3"
+        ]
+      },
+      "selected": {
+        "bestmove": "d7d6",
+        "searchmoves": [
+          "d7d6"
+        ],
+        "depth": 16,
+        "nodes": 112572,
+        "cp": -38,
+        "mate": null,
+        "pv": [
+          "d7d6",
+          "d1e1",
+          "e8g8",
+          "a2a4",
+          "c8d7",
+          "e1g3",
+          "g8h8",
+          "g1h1",
+          "d6d5",
+          "e4e5",
+          "f6g8",
+          "e2d3",
+          "f7f5",
+          "g3h3",
+          "c6d4"
+        ]
+      },
+      "signedCpDifference": -8,
+      "acceptanceLoss": 0
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-a3-be7",
+      "authoredIndex": 17,
+      "san": "O-O",
+      "controlId": "taimanov-be2-a3-be7:continuation-control:17",
+      "selectedId": "taimanov-be2-a3-be7:authored:17",
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 2 9",
+      "control": {
+        "bestmove": "e8g8",
+        "searchmoves": [],
+        "depth": 16,
+        "nodes": 155447,
+        "cp": -20,
+        "mate": null,
+        "pv": [
+          "e8g8",
+          "f2f4",
+          "d7d6",
+          "a3a4",
+          "d6d5",
+          "e4e5",
+          "f6d7",
+          "d1e1",
+          "e7c5",
+          "e1f2",
+          "c6d4",
+          "e3d4"
+        ]
+      },
+      "selected": {
+        "bestmove": "e8g8",
+        "searchmoves": [
+          "e8g8"
+        ],
+        "depth": 17,
+        "nodes": 200202,
+        "cp": -25,
+        "mate": null,
+        "pv": [
+          "e8g8",
+          "f2f4",
+          "d7d6",
+          "g1h1",
+          "c6d4",
+          "e3d4",
+          "e6e5",
+          "d4e3",
+          "b7b5",
+          "c3d5",
+          "f6d5",
+          "e4d5",
+          "e7f6",
+          "c2c3",
+          "e5e4"
+        ]
+      },
+      "signedCpDifference": 5,
+      "acceptanceLoss": 5
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-bb4-exchange",
+      "authoredIndex": 17,
+      "san": "bxc6",
+      "controlId": "taimanov-be2-bb4-exchange:continuation-control:17",
+      "selectedId": "taimanov-be2-bb4-exchange:authored:17",
+      "fen": "r1b1k2r/1pqp1ppp/p1N1pn2/8/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 9",
+      "control": {
+        "bestmove": "d7c6",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 200127,
+        "cp": -44,
+        "mate": null,
+        "pv": [
+          "d7c6",
+          "f2f4",
+          "c6c5",
+          "e2f3",
+          "b4c3",
+          "b2c3",
+          "e8g8",
+          "d1e1",
+          "b7b6",
+          "e3f2",
+          "f6d7",
+          "f2h4",
+          "c8b7",
+          "e4e5",
+          "b6b5"
+        ]
+      },
+      "selected": {
+        "bestmove": "b7c6",
+        "searchmoves": [
+          "b7c6"
+        ],
+        "depth": 15,
+        "nodes": 144747,
+        "cp": -50,
+        "mate": null,
+        "pv": [
+          "b7c6",
+          "f2f4",
+          "b4c3",
+          "b2c3",
+          "c6c5",
+          "e4e5",
+          "f6d5",
+          "d1d2",
+          "d5e3",
+          "d2e3",
+          "c8b7",
+          "c3c4",
+          "e8g8",
+          "a1d1",
+          "f7f6",
+          "d1d6",
+          "f8f7"
+        ]
+      },
+      "signedCpDifference": 6,
+      "acceptanceLoss": 6
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-na4-castle",
+      "authoredIndex": 18,
+      "san": "Nxc6",
+      "controlId": "taimanov-be2-na4-castle:continuation-control:18",
+      "selectedId": "taimanov-be2-na4-castle:authored:18",
+      "fen": "r1b2rk1/1pqp1ppp/p1n1pn2/8/Nb1NP3/4B3/PPP1BPPP/R2Q1RK1 w - - 6 10",
+      "control": {
+        "bestmove": "d4c6",
+        "searchmoves": [],
+        "depth": 14,
+        "nodes": 138768,
+        "cp": 65,
+        "mate": null,
+        "pv": [
+          "d4c6",
+          "b7c6",
+          "f2f4",
+          "a8b8",
+          "e4e5",
+          "f6d5",
+          "e3d2",
+          "c6c5",
+          "c2c4",
+          "d5b6"
+        ]
+      },
+      "selected": {
+        "bestmove": "d4c6",
+        "searchmoves": [
+          "d4c6"
+        ],
+        "depth": 15,
+        "nodes": 200075,
+        "cp": 63,
+        "mate": null,
+        "pv": [
+          "d4c6",
+          "b7c6",
+          "f2f4",
+          "a8b8",
+          "e2f3",
+          "d7d5",
+          "e4e5"
+        ]
+      },
+      "signedCpDifference": 2,
+      "acceptanceLoss": 2
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-na4-castle",
+      "authoredIndex": 19,
+      "san": "bxc6",
+      "controlId": "taimanov-be2-na4-castle:continuation-control:19",
+      "selectedId": "taimanov-be2-na4-castle:authored:19",
+      "fen": "r1b2rk1/1pqp1ppp/p1N1pn2/8/Nb2P3/4B3/PPP1BPPP/R2Q1RK1 b - - 0 10",
+      "control": {
+        "bestmove": "b7c6",
+        "searchmoves": [],
+        "depth": 14,
+        "nodes": 132363,
+        "cp": -43,
+        "mate": null,
+        "pv": [
+          "b7c6",
+          "c2c4",
+          "b4d6",
+          "g2g3",
+          "f6e4",
+          "c4c5",
+          "d6e7",
+          "e2f3",
+          "e4f6",
+          "a4b6",
+          "a8b8"
+        ]
+      },
+      "selected": {
+        "bestmove": "b7c6",
+        "searchmoves": [
+          "b7c6"
+        ],
+        "depth": 15,
+        "nodes": 99599,
+        "cp": -46,
+        "mate": null,
+        "pv": [
+          "b7c6",
+          "a4b6",
+          "a8b8",
+          "b6c8",
+          "c7c8",
+          "e3a7",
+          "b8a8",
+          "a7d4",
+          "c8b8",
+          "d4f6",
+          "g7f6",
+          "g2g3"
+        ]
+      },
+      "signedCpDifference": 3,
+      "acceptanceLoss": 3
+    },
+    {
+      "courseId": "sicilian:taimanov-be2-na4-be7-nb6",
+      "authoredIndex": 21,
+      "san": "Rb8",
+      "controlId": "taimanov-be2-na4-be7-nb6:continuation-control:21",
+      "selectedId": "taimanov-be2-na4-be7-nb6:authored:21",
+      "fen": "r1b1k2r/2qpbppp/pNp1pn2/8/4P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 11",
+      "control": {
+        "bestmove": "a8b8",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 200132,
+        "cp": -53,
+        "mate": null,
+        "pv": [
+          "a8b8",
+          "b6c8",
+          "c7c8",
+          "e3d4",
+          "e8g8",
+          "e4e5",
+          "f6d5",
+          "c2c4",
+          "d5f4",
+          "e2f3",
+          "f4g6",
+          "g2g3",
+          "c6c5",
+          "d4c3",
+          "c8c7",
+          "d1e2",
+          "f7f6",
+          "e5f6",
+          "e7f6",
+          "c3f6",
+          "f8f6",
+          "a1d1",
+          "g6e5",
+          "f3g2"
+        ]
+      },
+      "selected": {
+        "bestmove": "a8b8",
+        "searchmoves": [
+          "a8b8"
+        ],
+        "depth": 18,
+        "nodes": 200192,
+        "cp": -50,
+        "mate": null,
+        "pv": [
+          "a8b8",
+          "b6c8",
+          "c7c8",
+          "e3d4",
+          "e8g8",
+          "e4e5",
+          "f6d5",
+          "c2c4",
+          "d5f4",
+          "e2f3",
+          "f4g6",
+          "f1e1",
+          "a6a5",
+          "g2g3",
+          "f7f6",
+          "e5f6",
+          "e7f6"
+        ]
+      },
+      "signedCpDifference": -3,
+      "acceptanceLoss": 0
+    }
+  ],
+  "evidence": [
+    {
+      "id": "practice:sicilian:taimanov-be2-nge7",
+      "signature": "078e885935255fbf0f2e7c0d23f8741b7dbd3a1e3ccfda1d86f4cbb84511f1cb",
+      "before": "r1b1kb1r/1pqpnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 3 8",
+      "mistake": "Qxh2",
+      "after": "r1b1kb1r/1p1pnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPq/R2QK2R w KQkq - 0 9",
+      "answer": "Rxh2",
+      "answerFen": "r1b1kb1r/1p1pnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 b Qkq - 0 9",
+      "capturedType": "q",
+      "baselineJobId": "taimanov-be2-nge7:continuation-control:15",
+      "searchJobId": "taimanov-be2-nge7:deviation",
+      "baseline": {
+        "bestmove": "a6b5",
+        "searchmoves": [],
+        "depth": 19,
+        "nodes": 200066,
+        "cp": -219,
+        "mate": null,
+        "pv": [
+          "a6b5",
+          "c3b5",
+          "c7a5",
+          "e3d2",
+          "a5b6",
+          "b5d6",
+          "e8d8",
+          "d6f7",
+          "d8e8",
+          "f7d6",
+          "e8d8",
+          "d2e3",
+          "b6c7",
+          "d6b5",
+          "c7a5",
+          "c2c3",
+          "e7g6",
+          "b2b4",
+          "c6b4",
+          "c3b4",
+          "f8b4",
+          "e1f1",
+          "d7d5",
+          "e4d5",
+          "d8e8"
+        ]
+      },
+      "search": {
+        "bestmove": "h1h2",
+        "searchmoves": [],
+        "depth": 18,
+        "nodes": 200130,
+        "cp": 929,
+        "mate": null,
+        "pv": [
+          "h1h2",
+          "a6b5",
+          "c3b5",
+          "e7f5",
+          "b5c7",
+          "e8d8",
+          "e3b6",
+          "f8b4",
+          "c2c3",
+          "b4a5",
+          "c7a8",
+          "a5b6",
+          "a8b6",
+          "d7d5",
+          "e4f5",
+          "c8d7",
+          "f5e6",
+          "f7e6",
+          "b6a8"
+        ]
+      },
+      "cpChange": 710,
+      "minimumImmediateMaterialGain": 5,
+      "legalImmediateReplies": 27,
+      "replies": [
+        {
+          "san": "Rb8",
+          "fen": "1rb1kb1r/1p1pnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qk - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Ra7",
+          "fen": "2b1kb1r/rp1pnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qk - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Kd8",
+          "fen": "r1bk1b1r/1p1pnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Q - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Rg8",
+          "fen": "r1b1kbr1/1p1pnppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "b6",
+          "fen": "r1b1kb1r/3pnppp/ppn1p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "d6",
+          "fen": "r1b1kb1r/1p2nppp/p1npp3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "d5",
+          "fen": "r1b1kb1r/1p2nppp/p1n1p3/1N1p4/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Ng8",
+          "fen": "r1b1kbnr/1p1p1ppp/p1n1p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Ng6",
+          "fen": "r1b1kb1r/1p1p1ppp/p1n1p1n1/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Nf5",
+          "fen": "r1b1kb1r/1p1p1ppp/p1n1p3/1N3n2/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Nd5",
+          "fen": "r1b1kb1r/1p1p1ppp/p1n1p3/1N1n4/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "f6",
+          "fen": "r1b1kb1r/1p1pn1pp/p1n1pp2/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "f5",
+          "fen": "r1b1kb1r/1p1pn1pp/p1n1p3/1N3p2/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "g6",
+          "fen": "r1b1kb1r/1p1pnp1p/p1n1p1p1/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "g5",
+          "fen": "r1b1kb1r/1p1pnp1p/p1n1p3/1N4p1/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "h6",
+          "fen": "r1b1kb1r/1p1pnpp1/p1n1p2p/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "h5",
+          "fen": "r1b1kb1r/1p1pnpp1/p1n1p3/1N5p/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "a5",
+          "fen": "r1b1kb1r/1p1pnppp/2n1p3/pN6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        },
+        {
+          "san": "axb5",
+          "fen": "r1b1kb1r/1p1pnppp/2n1p3/1p6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 5
+        },
+        {
+          "san": "Na7",
+          "fen": "r1b1kb1r/np1pnppp/p3p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Nb8",
+          "fen": "rnb1kb1r/1p1pnppp/p3p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Nd8",
+          "fen": "r1bnkb1r/1p1pnppp/p3p3/1N6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Ne5",
+          "fen": "r1b1kb1r/1p1pnppp/p3p3/1N2n3/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Nd4",
+          "fen": "r1b1kb1r/1p1pnppp/p3p3/1N6/3nP3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Nb4",
+          "fen": "r1b1kb1r/1p1pnppp/p3p3/1N6/1n2P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "Na5",
+          "fen": "r1b1kb1r/1p1pnppp/p3p3/nN6/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 1 10",
+          "materialGain": 8
+        },
+        {
+          "san": "e5",
+          "fen": "r1b1kb1r/1p1pnppp/p1n5/1N2p3/4P3/2N1B3/PPP1BPPR/R2QK3 w Qkq - 0 10",
+          "materialGain": 8
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    },
+    {
+      "id": "practice:sicilian:taimanov-be2-b5-exchange",
+      "signature": "b22dbf888d172896a00e4891a37a44c47728c64348cf602597f4061cc0e5f9e8",
+      "before": "r1b1kbnr/2qp1ppp/p1N1p3/1p6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 0 8",
+      "mistake": "Qa5",
+      "after": "r1b1kbnr/3p1ppp/p1N1p3/qp6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 9",
+      "answer": "Nxa5",
+      "answerFen": "r1b1kbnr/3p1ppp/p3p3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 0 9",
+      "capturedType": "q",
+      "baselineJobId": "taimanov-be2-b5-exchange:continuation-control:15",
+      "searchJobId": "taimanov-be2-b5-exchange:deviation",
+      "baseline": {
+        "bestmove": "c7c6",
+        "searchmoves": [],
+        "depth": 16,
+        "nodes": 155010,
+        "cp": -27,
+        "mate": null,
+        "pv": [
+          "c7c6",
+          "a2a4",
+          "b5b4",
+          "c3a2",
+          "f8c5",
+          "e2f3",
+          "a8b8",
+          "e1g1",
+          "c6b6",
+          "e3c5",
+          "b6c5",
+          "a2c1",
+          "a6a5",
+          "d1d2",
+          "g8f6"
+        ]
+      },
+      "search": {
+        "bestmove": "c6a5",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 200266,
+        "cp": 1019,
+        "mate": null,
+        "pv": [
+          "c6a5",
+          "f8b4",
+          "d1d4",
+          "b4a5",
+          "d4g7",
+          "c8b7",
+          "e1g1",
+          "e8c8",
+          "g7h8",
+          "a5c3",
+          "h8c3",
+          "c8b8"
+        ]
+      },
+      "cpChange": 992,
+      "minimumImmediateMaterialGain": 9,
+      "legalImmediateReplies": 23,
+      "replies": [
+        {
+          "san": "Rb8",
+          "fen": "1rb1kbnr/3p1ppp/p3p3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQk - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Ra7",
+          "fen": "2b1kbnr/r2p1ppp/p3p3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQk - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Bb7",
+          "fen": "r3kbnr/1b1p1ppp/p3p3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Ke7",
+          "fen": "r1b2bnr/3pkppp/p3p3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQ - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Kd8",
+          "fen": "r1bk1bnr/3p1ppp/p3p3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQ - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Be7",
+          "fen": "r1b1k1nr/3pbppp/p3p3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Bd6",
+          "fen": "r1b1k1nr/3p1ppp/p2bp3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Bc5",
+          "fen": "r1b1k1nr/3p1ppp/p3p3/Npb5/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Bb4",
+          "fen": "r1b1k1nr/3p1ppp/p3p3/Np6/1b2P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Ba3",
+          "fen": "r1b1k1nr/3p1ppp/p3p3/Np6/4P3/b1N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Nh6",
+          "fen": "r1b1kb1r/3p1ppp/p3p2n/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Nf6",
+          "fen": "r1b1kb1r/3p1ppp/p3pn2/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "Ne7",
+          "fen": "r1b1kb1r/3pnppp/p3p3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 1 10",
+          "materialGain": 9
+        },
+        {
+          "san": "d6",
+          "fen": "r1b1kbnr/5ppp/p2pp3/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "d5",
+          "fen": "r1b1kbnr/5ppp/p3p3/Np1p4/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "f6",
+          "fen": "r1b1kbnr/3p2pp/p3pp2/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "f5",
+          "fen": "r1b1kbnr/3p2pp/p3p3/Np3p2/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "g6",
+          "fen": "r1b1kbnr/3p1p1p/p3p1p1/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "g5",
+          "fen": "r1b1kbnr/3p1p1p/p3p3/Np4p1/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "h6",
+          "fen": "r1b1kbnr/3p1pp1/p3p2p/Np6/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "h5",
+          "fen": "r1b1kbnr/3p1pp1/p3p3/Np5p/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "e5",
+          "fen": "r1b1kbnr/3p1ppp/p7/Np2p3/4P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        },
+        {
+          "san": "b4",
+          "fen": "r1b1kbnr/3p1ppp/p3p3/N7/1p2P3/2N1B3/PPP1BPPP/R2QK2R w KQkq - 0 10",
+          "materialGain": 9
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    },
+    {
+      "id": "practice:sicilian:taimanov-be2-a3-b5",
+      "signature": "19029dc8ceb73c0a3cae67df21e9caf3841252b56afe074e24615aa6b146e3b6",
+      "before": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPP/R2QK2R w KQkq - 0 9",
+      "mistake": "Nf5",
+      "after": "r1b1kb1r/2qp1ppp/p1n1pn2/1p3N2/4P3/P1N1B3/1PP1BPPP/R2QK2R b KQkq - 1 9",
+      "answer": "exf5",
+      "answerFen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R2QK2R w KQkq - 0 10",
+      "capturedType": "n",
+      "baselineJobId": "taimanov-be2-a3-b5:continuation-control:16",
+      "searchJobId": "taimanov-be2-a3-b5:deviation",
+      "baseline": {
+        "bestmove": "d4c6",
+        "searchmoves": [],
+        "depth": 18,
+        "nodes": 166644,
+        "cp": 45,
+        "mate": null,
+        "pv": [
+          "d4c6",
+          "d7c6",
+          "f2f4",
+          "c8b7",
+          "e2f3",
+          "f8e7",
+          "e4e5",
+          "f6d5",
+          "c3d5",
+          "c6d5",
+          "c2c3",
+          "a6a5",
+          "e1g1",
+          "e8g8",
+          "d1d2"
+        ]
+      },
+      "search": {
+        "bestmove": "e6f5",
+        "searchmoves": [],
+        "depth": 18,
+        "nodes": 200000,
+        "cp": 328,
+        "mate": null,
+        "pv": [
+          "e6f5",
+          "e4f5",
+          "c8b7",
+          "e2f3",
+          "f8e7",
+          "c3d5",
+          "f6d5",
+          "f3d5",
+          "e8g8",
+          "e1g1",
+          "e7f6",
+          "f1e1",
+          "c6e5"
+        ]
+      },
+      "cpChange": 373,
+      "minimumImmediateMaterialGain": 2,
+      "legalImmediateReplies": 48,
+      "replies": [
+        {
+          "san": "e5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p2Pp2/8/P1N1B3/1PP1BPPP/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "exf5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3P2/8/P1N1B3/1PP1BPPP/R2QK2R b KQkq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "a4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/P3P3/2N1B3/1PP1BPPP/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Na4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/N3P3/P3B3/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Nxb5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1N3p2/4P3/P3B3/1PP1BPPP/R2QK2R b KQkq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Nd5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p1N1p2/4P3/P3B3/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Nb1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P3B3/1PP1BPPP/RN1QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Na2",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P3B3/NPP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/3BP3/P1N5/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1pB2p2/4P3/P1N5/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bb6",
+          "fen": "r1b1kb1r/2qp1ppp/pBn2n2/1p3p2/4P3/P1N5/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Ba7",
+          "fen": "r1b1kb1r/B1qp1ppp/p1n2n2/1p3p2/4P3/P1N5/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bf4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4PB2/P1N5/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bg5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3pB1/4P3/P1N5/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bh6",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n1B/1p3p2/4P3/P1N5/1PP1BPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd2",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N5/1PPBBPPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N5/1PP1BPPP/R1BQK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "b3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/PPN1B3/2P1BPPP/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "b4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/1P2P3/P1N1B3/2P1BPPP/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1NBB3/1PP2PPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/2B1P3/P1N1B3/1PP2PPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bxb5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1B3p2/4P3/P1N1B3/1PP2PPP/R2QK2R b KQkq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Bf3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1BB2/1PP2PPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bg4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P1B1/P1N1B3/1PP2PPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bh5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p1B/4P3/P1N1B3/1PP2PPP/R2QK2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bf1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP2PPP/R2QKB1R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "f3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1BP2/1PP1B1PP/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "f4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4PP2/P1N1B3/1PP1B1PP/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "g3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B1P1/1PP1BP1P/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "g4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P1P1/P1N1B3/1PP1BP1P/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "h3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B2P/1PP1BPP1/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "h4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P2P/P1N1B3/1PP1BPP1/R2QK2R b KQkq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Ra2",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/RPP1BPPP/3QK2R b Kkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Rb1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/1R1QK2R b Kkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Rc1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/2RQK2R b Kkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd2",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PPQBPPP/R3K2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1NQB3/1PP1BPPP/R3K2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/3QP3/P1N1B3/1PP1BPPP/R3K2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p1Q1p2/4P3/P1N1B3/1PP1BPPP/R3K2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd6",
+          "fen": "r1b1kb1r/2qp1ppp/p1nQ1n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R3K2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qxd7+",
+          "fen": "r1b1kb1r/2qQ1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R3K2R b KQkq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Qc1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R1Q1K2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qb1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/RQ2K2R b KQkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Kd2",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PPKBPPP/R2Q3R b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Kf1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R2Q1K1R b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Rg1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R2QK1R1 b Qkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Rf1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R2QKR2 b Qkq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "O-O",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    },
+    {
+      "id": "practice:sicilian:taimanov-be2-castle-b5",
+      "signature": "df3c9d09d4e27a454b819aa0150867b4841428f9d7eeeb8d45392bf17365d292",
+      "before": "r1b1kb1r/2qp1ppp/p1n1pn2/1p6/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 9",
+      "mistake": "Nf5",
+      "after": "r1b1kb1r/2qp1ppp/p1n1pn2/1p3N2/4P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 1 9",
+      "answer": "exf5",
+      "answerFen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 10",
+      "capturedType": "n",
+      "baselineJobId": "taimanov-be2-castle-b5:continuation-control:16",
+      "searchJobId": "taimanov-be2-castle-b5:deviation",
+      "baseline": {
+        "bestmove": "d4c6",
+        "searchmoves": [],
+        "depth": 19,
+        "nodes": 200198,
+        "cp": 54,
+        "mate": null,
+        "pv": [
+          "d4c6",
+          "d7c6",
+          "f2f4",
+          "f8e7",
+          "e4e5",
+          "f6d5",
+          "c3d5",
+          "c6d5",
+          "e3d4",
+          "e7c5",
+          "c2c3",
+          "e8g8",
+          "h2h4",
+          "c8d7",
+          "h4h5",
+          "f7f6",
+          "e5f6",
+          "f8f6"
+        ]
+      },
+      "search": {
+        "bestmove": "e6f5",
+        "searchmoves": [],
+        "depth": 20,
+        "nodes": 200079,
+        "cp": 248,
+        "mate": null,
+        "pv": [
+          "e6f5",
+          "c3d5",
+          "f6d5",
+          "e4d5",
+          "c6e5",
+          "d1d4",
+          "f5f4",
+          "e3f4",
+          "f8d6",
+          "a2a4",
+          "b5b4",
+          "f4e3",
+          "f7f6",
+          "e2h5",
+          "e5g6",
+          "d4e4",
+          "e8f7",
+          "f2f4",
+          "h8e8",
+          "e4f3"
+        ]
+      },
+      "cpChange": 302,
+      "minimumImmediateMaterialGain": 2,
+      "legalImmediateReplies": 44,
+      "replies": [
+        {
+          "san": "e5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p2Pp2/8/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "exf5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3P2/8/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Na4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/N3P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Nxb5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1N3p2/4P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Nd5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p1N1p2/4P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Nb1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/4B3/PPP1BPPP/RN1Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/3BP3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1pB2p2/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bb6",
+          "fen": "r1b1kb1r/2qp1ppp/pBn2n2/1p3p2/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Ba7",
+          "fen": "r1b1kb1r/B1qp1ppp/p1n2n2/1p3p2/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bf4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4PB2/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bg5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3pB1/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bh6",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n1B/1p3p2/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd2",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N5/PPPBBPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N5/PPP1BPPP/R1BQ1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "a3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "a4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/P3P3/2N1B3/1PP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "b3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/1PN1B3/P1P1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "b4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/1P2P3/2N1B3/P1P1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/2B1P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bxb5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1B3p2/4P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Bf3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1BB2/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bg4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P1B1/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bh5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p1B/4P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "f3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1BP2/PPP1B1PP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "f4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4PP2/2N1B3/PPP1B1PP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "g3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B1P1/PPP1BP1P/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "g4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P1P1/2N1B3/PPP1BP1P/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "h3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B2P/PPP1BPP1/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "h4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P2P/2N1B3/PPP1BPP1/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Rb1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/1R1Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Rc1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/2RQ1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd2",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPPQBPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd3",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2NQB3/PPP1BPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd4",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/3QP3/2N1B3/PPP1BPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd5",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p1Q1p2/4P3/2N1B3/PPP1BPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd6",
+          "fen": "r1b1kb1r/2qp1ppp/p1nQ1n2/1p3p2/4P3/2N1B3/PPP1BPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qxd7+",
+          "fen": "r1b1kb1r/2qQ1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/R4RK1 b kq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Qe1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/R3QRK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qc1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/R1Q2RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qb1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/RQ3RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Re1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/R2QR1K1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Kh1",
+          "fen": "r1b1kb1r/2qp1ppp/p1n2n2/1p3p2/4P3/2N1B3/PPP1BPPP/R2Q1R1K b kq - 1 10",
+          "materialGain": 3
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    },
+    {
+      "id": "practice:sicilian:taimanov-be2-castle-be7",
+      "signature": "bea4ff78e5c16d5dc1ae597ba2f23bafc7b4dc3e83ca82d7e5c4bf3057c0f846",
+      "before": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 4 9",
+      "mistake": "Nf5",
+      "after": "r1b1k2r/1pqpbppp/p1n1pn2/5N2/4P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 5 9",
+      "answer": "exf5",
+      "answerFen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 10",
+      "capturedType": "n",
+      "baselineJobId": "taimanov-be2-castle-be7:continuation-control:16",
+      "searchJobId": "taimanov-be2-castle-be7:deviation",
+      "baseline": {
+        "bestmove": "f2f4",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 200210,
+        "cp": 39,
+        "mate": null,
+        "pv": [
+          "f2f4",
+          "d7d5",
+          "e4e5",
+          "c6d4",
+          "e3d4",
+          "f6e4",
+          "d1d3",
+          "e4c3",
+          "b2c3",
+          "c8d7",
+          "d3e3",
+          "a8c8",
+          "e2d3",
+          "g7g6"
+        ]
+      },
+      "search": {
+        "bestmove": "e6f5",
+        "searchmoves": [],
+        "depth": 20,
+        "nodes": 200140,
+        "cp": 335,
+        "mate": null,
+        "pv": [
+          "e6f5",
+          "e4f5",
+          "d7d5",
+          "c3d5",
+          "f6d5",
+          "d1d5",
+          "c7d7",
+          "d5d7",
+          "c8d7",
+          "e2d3",
+          "g7g6",
+          "f5g6",
+          "h7g6",
+          "e3b6",
+          "a8c8",
+          "d3e4"
+        ]
+      },
+      "cpChange": 374,
+      "minimumImmediateMaterialGain": 2,
+      "legalImmediateReplies": 45,
+      "replies": [
+        {
+          "san": "e5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/4Pp2/8/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "exf5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5P2/8/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Na4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/N3P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Nb5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/1N3p2/4P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Nd5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/3N1p2/4P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Nb1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/4B3/PPP1BPPP/RN1Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/3BP3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/2B2p2/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bb6",
+          "fen": "r1b1k2r/1pqpbppp/pBn2n2/5p2/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Ba7",
+          "fen": "r1b1k2r/Bpqpbppp/p1n2n2/5p2/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bf4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4PB2/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bg5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5pB1/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bh6",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n1B/5p2/4P3/2N5/PPP1BPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd2",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N5/PPPBBPPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N5/PPP1BPPP/R1BQ1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "a3",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "a4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/P3P3/2N1B3/1PP1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "b3",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/1PN1B3/P1P1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "b4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/1P2P3/2N1B3/P1P1BPPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd3",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2NBB3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/2B1P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bb5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/1B3p2/4P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bxa6",
+          "fen": "r1b1k2r/1pqpbppp/B1n2n2/5p2/4P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Bf3",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1BB2/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bg4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P1B1/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Bh5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p1B/4P3/2N1B3/PPP2PPP/R2Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "f3",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1BP2/PPP1B1PP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "f4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4PP2/2N1B3/PPP1B1PP/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "g3",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B1P1/PPP1BP1P/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "g4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P1P1/2N1B3/PPP1BP1P/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "h3",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B2P/PPP1BPP1/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "h4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P2P/2N1B3/PPP1BPP1/R2Q1RK1 b kq - 0 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Rb1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/1R1Q1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Rc1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/2RQ1RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd2",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPPQBPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd3",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2NQB3/PPP1BPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd4",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/3QP3/2N1B3/PPP1BPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd5",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/3Q1p2/4P3/2N1B3/PPP1BPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd6",
+          "fen": "r1b1k2r/1pqpbppp/p1nQ1n2/5p2/4P3/2N1B3/PPP1BPPP/R4RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qxd7+",
+          "fen": "r1b1k2r/1pqQbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/R4RK1 b kq - 0 10",
+          "materialGain": 2
+        },
+        {
+          "san": "Qe1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/R3QRK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qc1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/R1Q2RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Qb1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/RQ3RK1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Re1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/R2QR1K1 b kq - 1 10",
+          "materialGain": 3
+        },
+        {
+          "san": "Kh1",
+          "fen": "r1b1k2r/1pqpbppp/p1n2n2/5p2/4P3/2N1B3/PPP1BPPP/R2Q1R1K b kq - 1 10",
+          "materialGain": 3
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    },
+    {
+      "id": "practice:sicilian:taimanov-be2-a3-be7",
+      "signature": "4592761bd9320493f1cf5b8cd4a624c9f2a2a4f835db82cdbf6978221411359c",
+      "before": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPP/R2Q1RK1 b kq - 2 9",
+      "mistake": "Qxh2+",
+      "after": "r1b1k2r/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPq/R2Q1RK1 w kq - 0 10",
+      "answer": "Kxh2",
+      "answerFen": "r1b1k2r/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 b kq - 0 10",
+      "capturedType": "q",
+      "baselineJobId": "taimanov-be2-a3-be7:continuation-control:17",
+      "searchJobId": "taimanov-be2-a3-be7:deviation",
+      "baseline": {
+        "bestmove": "e8g8",
+        "searchmoves": [],
+        "depth": 16,
+        "nodes": 155447,
+        "cp": -20,
+        "mate": null,
+        "pv": [
+          "e8g8",
+          "f2f4",
+          "d7d6",
+          "a3a4",
+          "d6d5",
+          "e4e5",
+          "f6d7",
+          "d1e1",
+          "e7c5",
+          "e1f2",
+          "c6d4",
+          "e3d4"
+        ]
+      },
+      "search": {
+        "bestmove": "g1h2",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 200248,
+        "cp": 692,
+        "mate": null,
+        "pv": [
+          "g1h2",
+          "e8g8",
+          "h2g1",
+          "f8d8",
+          "f2f4",
+          "c6d4",
+          "e3d4"
+        ]
+      },
+      "cpChange": 672,
+      "minimumImmediateMaterialGain": 5,
+      "legalImmediateReplies": 35,
+      "replies": [
+        {
+          "san": "Rb8",
+          "fen": "1rb1k2r/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w k - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Ra7",
+          "fen": "2b1k2r/rp1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w k - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Kf8",
+          "fen": "r1b2k1r/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w - - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Kd8",
+          "fen": "r1bk3r/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w - - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Rg8",
+          "fen": "r1b1k1r1/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w q - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Rf8",
+          "fen": "r1b1kr2/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w q - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "b6",
+          "fen": "r1b1k2r/3pbppp/ppn1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "b5",
+          "fen": "r1b1k2r/3pbppp/p1n1pn2/1p6/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "d6",
+          "fen": "r1b1k2r/1p2bppp/p1nppn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "d5",
+          "fen": "r1b1k2r/1p2bppp/p1n1pn2/3p4/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Bd8",
+          "fen": "r1bbk2r/1p1p1ppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Bf8",
+          "fen": "r1b1kb1r/1p1p1ppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Bd6+",
+          "fen": "r1b1k2r/1p1p1ppp/p1nbpn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Bc5",
+          "fen": "r1b1k2r/1p1p1ppp/p1n1pn2/2b5/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Bb4",
+          "fen": "r1b1k2r/1p1p1ppp/p1n1pn2/8/1b1NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Bxa3",
+          "fen": "r1b1k2r/1p1p1ppp/p1n1pn2/8/3NP3/b1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 7
+        },
+        {
+          "san": "g6",
+          "fen": "r1b1k2r/1p1pbp1p/p1n1pnp1/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "g5",
+          "fen": "r1b1k2r/1p1pbp1p/p1n1pn2/6p1/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "h6",
+          "fen": "r1b1k2r/1p1pbpp1/p1n1pn1p/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "h5",
+          "fen": "r1b1k2r/1p1pbpp1/p1n1pn2/7p/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "a5",
+          "fen": "r1b1k2r/1p1pbppp/2n1pn2/p7/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Na7",
+          "fen": "r1b1k2r/np1pbppp/p3pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Nb8",
+          "fen": "rnb1k2r/1p1pbppp/p3pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Nd8",
+          "fen": "r1bnk2r/1p1pbppp/p3pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Ne5",
+          "fen": "r1b1k2r/1p1pbppp/p3pn2/4n3/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Nxd4",
+          "fen": "r1b1k2r/1p1pbppp/p3pn2/8/3nP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 5
+        },
+        {
+          "san": "Nb4",
+          "fen": "r1b1k2r/1p1pbppp/p3pn2/8/1n1NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Na5",
+          "fen": "r1b1k2r/1p1pbppp/p3pn2/n7/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "e5",
+          "fen": "r1b1k2r/1p1pbppp/p1n2n2/4p3/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Ng8",
+          "fen": "r1b1k1nr/1p1pbppp/p1n1p3/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Nh5",
+          "fen": "r1b1k2r/1p1pbppp/p1n1p3/7n/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Ng4+",
+          "fen": "r1b1k2r/1p1pbppp/p1n1p3/8/3NP1n1/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Nxe4",
+          "fen": "r1b1k2r/1p1pbppp/p1n1p3/8/3Nn3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 0 11",
+          "materialGain": 7
+        },
+        {
+          "san": "Nd5",
+          "fen": "r1b1k2r/1p1pbppp/p1n1p3/3n4/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w kq - 1 11",
+          "materialGain": 8
+        },
+        {
+          "san": "O-O",
+          "fen": "r1b2rk1/1p1pbppp/p1n1pn2/8/3NP3/P1N1B3/1PP1BPPK/R2Q1R2 w - - 1 11",
+          "materialGain": 8
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    },
+    {
+      "id": "practice:sicilian:taimanov-be2-bb4-exchange",
+      "signature": "0fe9ae1e8e2446b26ddda71512575527badd3b376f0f223ad2d61de3be13c490",
+      "before": "r1b1k2r/1pqp1ppp/p1N1pn2/8/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 9",
+      "mistake": "Qa5",
+      "after": "r1b1k2r/1p1p1ppp/p1N1pn2/q7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 10",
+      "answer": "Nxa5",
+      "answerFen": "r1b1k2r/1p1p1ppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 b kq - 0 10",
+      "capturedType": "q",
+      "baselineJobId": "taimanov-be2-bb4-exchange:continuation-control:17",
+      "searchJobId": "taimanov-be2-bb4-exchange:deviation",
+      "baseline": {
+        "bestmove": "d7c6",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 200127,
+        "cp": -44,
+        "mate": null,
+        "pv": [
+          "d7c6",
+          "f2f4",
+          "c6c5",
+          "e2f3",
+          "b4c3",
+          "b2c3",
+          "e8g8",
+          "d1e1",
+          "b7b6",
+          "e3f2",
+          "f6d7",
+          "f2h4",
+          "c8b7",
+          "e4e5",
+          "b6b5"
+        ]
+      },
+      "search": {
+        "bestmove": "c6a5",
+        "searchmoves": [],
+        "depth": 19,
+        "nodes": 200056,
+        "cp": 847,
+        "mate": null,
+        "pv": [
+          "c6a5",
+          "b4a5",
+          "d1d6",
+          "a5d8",
+          "e4e5",
+          "d8e7",
+          "d6d1",
+          "f6d5",
+          "c3d5",
+          "e6d5",
+          "d1d5",
+          "a8b8",
+          "f1d1",
+          "e8g8",
+          "a2a4",
+          "g8h8",
+          "e2d3"
+        ]
+      },
+      "cpChange": 803,
+      "minimumImmediateMaterialGain": 6,
+      "legalImmediateReplies": 29,
+      "replies": [
+        {
+          "san": "Rb8",
+          "fen": "1rb1k2r/1p1p1ppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w k - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Ra7",
+          "fen": "2b1k2r/rp1p1ppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w k - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Kf8",
+          "fen": "r1b2k1r/1p1p1ppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w - - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Ke7",
+          "fen": "r1b4r/1p1pkppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w - - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Kd8",
+          "fen": "r1bk3r/1p1p1ppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w - - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Rg8",
+          "fen": "r1b1k1r1/1p1p1ppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w q - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Rf8",
+          "fen": "r1b1kr2/1p1p1ppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w q - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "b6",
+          "fen": "r1b1k2r/3p1ppp/pp2pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "b5",
+          "fen": "r1b1k2r/3p1ppp/p3pn2/Np6/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "d6",
+          "fen": "r1b1k2r/1p3ppp/p2ppn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "d5",
+          "fen": "r1b1k2r/1p3ppp/p3pn2/N2p4/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "g6",
+          "fen": "r1b1k2r/1p1p1p1p/p3pnp1/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "g5",
+          "fen": "r1b1k2r/1p1p1p1p/p3pn2/N5p1/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "h6",
+          "fen": "r1b1k2r/1p1p1pp1/p3pn1p/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "h5",
+          "fen": "r1b1k2r/1p1p1pp1/p3pn2/N6p/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "e5",
+          "fen": "r1b1k2r/1p1p1ppp/p4n2/N3p3/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Ng8",
+          "fen": "r1b1k1nr/1p1p1ppp/p3p3/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Nh5",
+          "fen": "r1b1k2r/1p1p1ppp/p3p3/N6n/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Ng4",
+          "fen": "r1b1k2r/1p1p1ppp/p3p3/N7/1b2P1n1/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Nxe4",
+          "fen": "r1b1k2r/1p1p1ppp/p3p3/N7/1b2n3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 8
+        },
+        {
+          "san": "Nd5",
+          "fen": "r1b1k2r/1p1p1ppp/p3p3/N2n4/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Bxa5",
+          "fen": "r1b1k2r/1p1p1ppp/p3pn2/b7/4P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 6
+        },
+        {
+          "san": "Bc5",
+          "fen": "r1b1k2r/1p1p1ppp/p3pn2/N1b5/4P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Bd6",
+          "fen": "r1b1k2r/1p1p1ppp/p2bpn2/N7/4P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Be7",
+          "fen": "r1b1k2r/1p1pbppp/p3pn2/N7/4P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Bf8",
+          "fen": "r1b1kb1r/1p1p1ppp/p3pn2/N7/4P3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "Bxc3",
+          "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4P3/2b1B3/PPP1BPPP/R2Q1RK1 w kq - 0 11",
+          "materialGain": 6
+        },
+        {
+          "san": "Ba3",
+          "fen": "r1b1k2r/1p1p1ppp/p3pn2/N7/4P3/b1N1B3/PPP1BPPP/R2Q1RK1 w kq - 1 11",
+          "materialGain": 9
+        },
+        {
+          "san": "O-O",
+          "fen": "r1b2rk1/1p1p1ppp/p3pn2/N7/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 w - - 1 11",
+          "materialGain": 9
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    },
+    {
+      "id": "practice:sicilian:taimanov-be2-na4-castle",
+      "signature": "2a9549bc0bee1c598b8670bc38f6241084479da36469323d62f21c3c61f407f5",
+      "before": "r1b2rk1/1pqp1ppp/p1n1pn2/8/Nb1NP3/4B3/PPP1BPPP/R2Q1RK1 w - - 6 10",
+      "mistake": "Nf5",
+      "after": "r1b2rk1/1pqp1ppp/p1n1pn2/5N2/Nb2P3/4B3/PPP1BPPP/R2Q1RK1 b - - 7 10",
+      "answer": "exf5",
+      "answerFen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/R2Q1RK1 w - - 0 11",
+      "capturedType": "n",
+      "baselineJobId": "taimanov-be2-na4-castle:continuation-control:18",
+      "searchJobId": "taimanov-be2-na4-castle:deviation",
+      "baseline": {
+        "bestmove": "d4c6",
+        "searchmoves": [],
+        "depth": 14,
+        "nodes": 138768,
+        "cp": 65,
+        "mate": null,
+        "pv": [
+          "d4c6",
+          "b7c6",
+          "f2f4",
+          "a8b8",
+          "e4e5",
+          "f6d5",
+          "e3d2",
+          "c6c5",
+          "c2c4",
+          "d5b6"
+        ]
+      },
+      "search": {
+        "bestmove": "e6f5",
+        "searchmoves": [],
+        "depth": 19,
+        "nodes": 200182,
+        "cp": 357,
+        "mate": null,
+        "pv": [
+          "e6f5",
+          "e4f5",
+          "d7d5",
+          "a4b6",
+          "a8b8",
+          "b6d5",
+          "f6d5",
+          "d1d5",
+          "b4d6",
+          "a1d1",
+          "d6h2",
+          "g1h1",
+          "h2e5",
+          "f2f4",
+          "e5f6",
+          "e3c5"
+        ]
+      },
+      "cpChange": 422,
+      "minimumImmediateMaterialGain": 2,
+      "legalImmediateReplies": 44,
+      "replies": [
+        {
+          "san": "Nb6",
+          "fen": "r1b2rk1/1pqp1ppp/pNn2n2/5p2/1b2P3/4B3/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Nc5",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/2N2p2/1b2P3/4B3/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Nc3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/1b2P3/2N1B3/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "e5",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/4Pp2/Nb6/4B3/PPP1BPPP/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "exf5",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5P2/Nb6/4B3/PPP1BPPP/R2Q1RK1 b - - 0 11",
+          "materialGain": 2
+        },
+        {
+          "san": "Bd4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb1BP3/8/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc5",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/2B2p2/Nb2P3/8/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bb6",
+          "fen": "r1b2rk1/1pqp1ppp/pBn2n2/5p2/Nb2P3/8/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Ba7",
+          "fen": "r1b2rk1/Bpqp1ppp/p1n2n2/5p2/Nb2P3/8/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bf4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2PB2/8/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bg5",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5pB1/Nb2P3/8/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bh6",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n1B/5p2/Nb2P3/8/PPP1BPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd2",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/8/PPPBBPPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc1",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/8/PPP1BPPP/R1BQ1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "a3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/P3B3/1PP1BPPP/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "b3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/1P2B3/P1P1BPPP/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "c3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/2P1B3/PP2BPPP/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "c4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/NbP1P3/4B3/PP2BPPP/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bd3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/3BB3/PPP2PPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bc4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/NbB1P3/4B3/PPP2PPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bb5",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/1B3p2/Nb2P3/4B3/PPP2PPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bxa6",
+          "fen": "r1b2rk1/1pqp1ppp/B1n2n2/5p2/Nb2P3/4B3/PPP2PPP/R2Q1RK1 b - - 0 11",
+          "materialGain": 2
+        },
+        {
+          "san": "Bf3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4BB2/PPP2PPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bg4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P1B1/4B3/PPP2PPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Bh5",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p1B/Nb2P3/4B3/PPP2PPP/R2Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "f3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4BP2/PPP1B1PP/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "f4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2PP2/4B3/PPP1B1PP/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "g3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B1P1/PPP1BP1P/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "g4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P1P1/4B3/PPP1BP1P/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "h3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B2P/PPP1BPP1/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "h4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P2P/4B3/PPP1BPP1/R2Q1RK1 b - - 0 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Rb1",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/1R1Q1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Rc1",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/2RQ1RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd2",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPPQBPPP/R4RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd3",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/3QB3/PPP1BPPP/R4RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd4",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb1QP3/4B3/PPP1BPPP/R4RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd5",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/3Q1p2/Nb2P3/4B3/PPP1BPPP/R4RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Qd6",
+          "fen": "r1b2rk1/1pqp1ppp/p1nQ1n2/5p2/Nb2P3/4B3/PPP1BPPP/R4RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Qxd7",
+          "fen": "r1b2rk1/1pqQ1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/R4RK1 b - - 0 11",
+          "materialGain": 2
+        },
+        {
+          "san": "Qe1",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/R3QRK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Qc1",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/R1Q2RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Qb1",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/RQ3RK1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Re1",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/R2QR1K1 b - - 1 11",
+          "materialGain": 3
+        },
+        {
+          "san": "Kh1",
+          "fen": "r1b2rk1/1pqp1ppp/p1n2n2/5p2/Nb2P3/4B3/PPP1BPPP/R2Q1R1K b - - 1 11",
+          "materialGain": 3
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    },
+    {
+      "id": "practice:sicilian:taimanov-be2-na4-be7-nb6",
+      "signature": "09001baad1e5ee336192ea871ea40548b3c9afd16f29109bd907e63358bb7aa2",
+      "before": "r1b1k2r/2qpbppp/pNp1pn2/8/4P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 1 11",
+      "mistake": "Qxb6",
+      "after": "r1b1k2r/3pbppp/pqp1pn2/8/4P3/4B3/PPP1BPPP/R2Q1RK1 w kq - 0 12",
+      "answer": "Bxb6",
+      "answerFen": "r1b1k2r/3pbppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 b kq - 0 12",
+      "capturedType": "q",
+      "baselineJobId": "taimanov-be2-na4-be7-nb6:continuation-control:21",
+      "searchJobId": "taimanov-be2-na4-be7-nb6:deviation",
+      "baseline": {
+        "bestmove": "a8b8",
+        "searchmoves": [],
+        "depth": 17,
+        "nodes": 200132,
+        "cp": -53,
+        "mate": null,
+        "pv": [
+          "a8b8",
+          "b6c8",
+          "c7c8",
+          "e3d4",
+          "e8g8",
+          "e4e5",
+          "f6d5",
+          "c2c4",
+          "d5f4",
+          "e2f3",
+          "f4g6",
+          "g2g3",
+          "c6c5",
+          "d4c3",
+          "c8c7",
+          "d1e2",
+          "f7f6",
+          "e5f6",
+          "e7f6",
+          "c3f6",
+          "f8f6",
+          "a1d1",
+          "g6e5",
+          "f3g2"
+        ]
+      },
+      "search": {
+        "bestmove": "e3b6",
+        "searchmoves": [],
+        "depth": 19,
+        "nodes": 200238,
+        "cp": 604,
+        "mate": null,
+        "pv": [
+          "e3b6",
+          "f6e4",
+          "f1e1",
+          "c6c5",
+          "e2d3",
+          "e4f2",
+          "g1f2",
+          "c8b7",
+          "d1h5",
+          "g7g6",
+          "h5h6",
+          "e7f6"
+        ]
+      },
+      "cpChange": 551,
+      "minimumImmediateMaterialGain": 5,
+      "legalImmediateReplies": 27,
+      "replies": [
+        {
+          "san": "Rb8",
+          "fen": "1rb1k2r/3pbppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w k - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Ra7",
+          "fen": "2b1k2r/r2pbppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w k - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Bb7",
+          "fen": "r3k2r/1b1pbppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Kf8",
+          "fen": "r1b2k1r/3pbppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w - - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Rg8",
+          "fen": "r1b1k1r1/3pbppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w q - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Rf8",
+          "fen": "r1b1kr2/3pbppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w q - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "d6",
+          "fen": "r1b1k2r/4bppp/pBpppn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "d5",
+          "fen": "r1b1k2r/4bppp/pBp1pn2/3p4/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Bd8",
+          "fen": "r1bbk2r/3p1ppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Bf8",
+          "fen": "r1b1kb1r/3p1ppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Bd6",
+          "fen": "r1b1k2r/3p1ppp/pBpbpn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Bc5",
+          "fen": "r1b1k2r/3p1ppp/pBp1pn2/2b5/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Bb4",
+          "fen": "r1b1k2r/3p1ppp/pBp1pn2/8/1b2P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Ba3",
+          "fen": "r1b1k2r/3p1ppp/pBp1pn2/8/4P3/b7/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "g6",
+          "fen": "r1b1k2r/3pbp1p/pBp1pnp1/8/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "g5",
+          "fen": "r1b1k2r/3pbp1p/pBp1pn2/6p1/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "h6",
+          "fen": "r1b1k2r/3pbpp1/pBp1pn1p/8/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "h5",
+          "fen": "r1b1k2r/3pbpp1/pBp1pn2/7p/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "a5",
+          "fen": "r1b1k2r/3pbppp/1Bp1pn2/p7/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "c5",
+          "fen": "r1b1k2r/3pbppp/pB2pn2/2p5/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "e5",
+          "fen": "r1b1k2r/3pbppp/pBp2n2/4p3/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Ng8",
+          "fen": "r1b1k1nr/3pbppp/pBp1p3/8/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Nh5",
+          "fen": "r1b1k2r/3pbppp/pBp1p3/7n/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Ng4",
+          "fen": "r1b1k2r/3pbppp/pBp1p3/8/4P1n1/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "Nxe4",
+          "fen": "r1b1k2r/3pbppp/pBp1p3/8/4n3/8/PPP1BPPP/R2Q1RK1 w kq - 0 13",
+          "materialGain": 5
+        },
+        {
+          "san": "Nd5",
+          "fen": "r1b1k2r/3pbppp/pBp1p3/3n4/4P3/8/PPP1BPPP/R2Q1RK1 w kq - 1 13",
+          "materialGain": 6
+        },
+        {
+          "san": "O-O",
+          "fen": "r1b2rk1/3pbppp/pBp1pn2/8/4P3/8/PPP1BPPP/R2Q1RK1 w - - 1 13",
+          "materialGain": 6
+        }
+      ],
+      "engineSignature": "8bc8023097f5403046056941a1469bed3258752adf203e374de8f60350d12761",
+      "objective": "Immediate capture of the declared target type; no unique-winning-move or full-game claim"
+    }
+  ],
+  "uncovered": []
+}

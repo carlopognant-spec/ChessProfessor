@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { classifyMoveOpportunity, formatMoveOpportunity, reclassifyMoveOpportunities } from '../src/lib/moveOpportunities.js'
 import { analyzeGame, createGameAnalysisSession } from '../src/lib/gameAnalysis.js'
 import { createOpeningBook } from '../src/lib/openingBook.js'
+import { reclassifyReviewedMoves } from '../src/lib/reviewMoves.js'
 
 function candidate() {
   const game = new Chess()
@@ -50,6 +51,24 @@ describe('missed mating opportunity', () => {
       { playedEngine: null }, { playedProbability: null },
       { playedUci: 'e2e4' }, { fenAfter: new Chess().fen() },
     ]) expect(classifyMoveOpportunity({ ...entry, ...change }).classification).toBe('excellent')
+  })
+
+  it.each(['lowerbound', 'upperbound'])('rejects boolean %s in both searches supporting a missed mate', flag => {
+    for (const field of ['engine', 'playedEngine']) {
+      const entry = candidate()
+      entry[field][flag] = true
+      expect(classifyMoveOpportunity(entry).classification).toBe('excellent')
+    }
+    const entry = candidate()
+    const primary = { ...entry.engine, depth: 12, multipv: 1 }
+    entry.engine = { ...primary, lines: [primary,
+      { depth: 12, multipv: 2, evalCp: 1200, mate: null, pv: [entry.playedUci] }] }
+    const [exact] = reclassifyReviewedMoves([entry])
+    expect(exact.classification).toBe('missed')
+    entry.playedEngine[flag] = true
+    const [reviewed] = reclassifyReviewedMoves([entry])
+    expect(reviewed.classification).toBe('good')
+    expect(reviewed.numericalClassification).toBe('good')
   })
 
   it('recalculates archived labels idempotently without changing the stored entries', () => {

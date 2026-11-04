@@ -1,0 +1,35 @@
+{
+  "signature": "36c4827f1301c26afcd4ee2133ac8063f2aad7e6374226a081b8f9ab58534798",
+  "jobId": "taimanov-bd3-nf6-exchange:authored:17",
+  "status": "complete",
+  "attemptIds": [],
+  "reusedFrom": {
+    "jobId": "taimanov-bd3-nf6-exchange:authored:17",
+    "directory": "docs/data/opening-taimanov-bd3-p022-engine",
+    "jobIndex": 25,
+    "manifestSha256": "f7f1b6724c5b663713457017335a038f1e243b5bdffc087a3f47e01f71fe3854"
+  },
+  "result": {
+    "bestmove": "f8c5",
+    "searchmoves": [
+      "f8c5"
+    ],
+    "depth": 16,
+    "nodes": 121816,
+    "cp": -27,
+    "mate": null,
+    "pv": [
+      "f8c5",
+      "d3e2",
+      "d7d6",
+      "d1d2",
+      "c5d4",
+      "d2d4",
+      "e6e5",
+      "d4d2",
+      "c8e6",
+      "f1d1"
+    ],
+    "attempt": "25"
+  }
+}

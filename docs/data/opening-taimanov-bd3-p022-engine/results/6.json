@@ -1,0 +1,31 @@
+{
+  "signature": "f7f1b6724c5b663713457017335a038f1e243b5bdffc087a3f47e01f71fe3854",
+  "jobId": "taimanov-bd3-b5-castle:deviation",
+  "status": "complete",
+  "attemptIds": [
+    "06"
+  ],
+  "result": {
+    "bestmove": "g1h2",
+    "searchmoves": [],
+    "depth": 17,
+    "nodes": 200147,
+    "cp": 706,
+    "mate": null,
+    "pv": [
+      "g1h2",
+      "c6d4",
+      "e3d4",
+      "c8b7",
+      "h2g1",
+      "h7h5",
+      "d1f3",
+      "g8f6",
+      "a2a4",
+      "b5a4",
+      "a1a4",
+      "h5h4"
+    ],
+    "attempt": "06"
+  }
+}

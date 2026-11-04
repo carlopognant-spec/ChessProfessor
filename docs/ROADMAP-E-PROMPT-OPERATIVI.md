@@ -2,9 +2,49 @@
 
 Data di riferimento: 20 ottobre 2026.
 
+**Pausa operativa richiesta da Carlo il 29 ottobre 2026.** Lo sviluppo delle
+aperture è sospeso per contenere tempi e consumo di token. Questa disposizione
+prevale sui successivi inviti a proseguire P02: nessun nuovo corso, commento,
+esercizio, raccolta Stockfish o QA estesa fino a richiesta esplicita di ripresa.
+Restano valide le decisioni didattiche, il perimetro A, i progetti e le prove.
+
+- **Completato registrato:** SIC-07 R1 e SIC-08 R1 sono integrati; conteggio dei
+  moduli verificato oggi senza motore: 309 corsi/esercizi, 48 percorsi siciliani.
+  Ultima copertura documentata: 1.994 esatta, 203 solo trasposta e 10.125 assente.
+  Risultati e QA sono collegati qui sotto;
+  sono evidenze pregresse, non test rieseguiti alla sospensione.
+- **Manca:** completare gli ingressi Ae3/Dc7 a3, f4, Dd2 e ...Cf6 anticipato,
+  poi gli altri rami del perimetro A; copertura e commenti non sono completi.
+- **Blocco di ripresa verificato:** `node scripts/openings-workflow.mjs brief`
+  fallisce sul controllo congelato di `src/lib/openingBook.js`: atteso
+  `7a0187…5513c`, attuale `4aa57e…58b72`, dopo l'aggiunta dei metadati del
+  repertorio. Non ripristinare il file né aggiornare automaticamente gli hash.
+  `OPENING-NOW.md` e `data/opening-pipeline/current.json` restano l'ultimo stato
+  riuscito, non riconvalidato oggi. Il ledger indica ancora SIC-08 R1 attivo,
+  mentre il suo registro QA documenta il completamento.
+- **Problemi conservati:** i fallimenti originali SIC-07/SIC-08 e relative
+  revisioni R1 restano nei rapporti; soglie 100 cp di perdita / 200 cp di swing
+  invariate. Il registro SIC-07 mantiene un timeout dello strumento bozze e un
+  TODO preesistente; non sono nuovi fallimenti osservati oggi.
+- **Ripresa, solo su richiesta:** leggere questo blocco e i risultati R1;
+  verificare e risolvere la discrepanza d'hash secondo la pipeline, preservando
+  modifiche Git e prove congelate. Poi rilanciare `brief` e usare soltanto
+  `inspect`/`sources`/`history` pertinenti. Riutilizzare le ricerche compatibili;
+  pianificare nuove prove e QA solo per il nuovo lotto autorizzato.
+
+**Ripresa rapida:** usare [OPENING-NOW.md](OPENING-NOW.md) e `node scripts/openings-workflow.mjs brief` per lo stato verificato. Consultare questa roadmap per decisioni di fase; per i singoli dati usare `inspect`, `sources` e `history` della [pipeline](OPENING-PIPELINE.md). I report storici completi restano conservati.
+
+**Aggiornamento P02 del 28 ottobre 2026 — SIC-08 R1:** aggiunti sette percorsi Taimanov con Ad3 e sette esercizi, portando l'app a **309 corsi/esercizi e 48 percorsi siciliani**. Sono coperte esattamente tutte le 14 posizioni sorgente del sottoramo scelto: copertura attuale 1.994 esatte, 203 trasposte, 10.125 assenti. Il [progetto R1](OPENING-TAIMANOV-BD3-P022-R1-DESIGN.md) revisiona il solo seguito ...h5 dopo il fallimento iniziale e preserva le prove; il [risultato](OPENING-TAIMANOV-BD3-P022-R1-RESULTS.md) riporta i 17 confronti didattici e sette esercizi accettati, 30 risultati riusati e 12 nuove ricerche. I prossimi ingressi da completare nel gruppo Ae3/Dc7 sono a3, f4, Dd2 e ...Cf6 anticipato; gli altri rami Taimanov e gli ingressi Ac4/Ad3/f3 già rinviati restano nel perimetro A. P02 continua; i risultati precedenti qui sotto restano storici.
+
+**Aggiornamento P02 del 27 ottobre 2026 — SIC-07 R1:** integrati nove percorsi Taimanov con Ae3/Ae2 e nove esercizi: **302 corsi/esercizi, 41 siciliani**. Copertura attuale 1.980 posizioni esatte, 203 solo trasposte e 10.139 assenti. Il [risultato R1](OPENING-TAIMANOV-BE2-P022-R1-RESULTS.md) conserva il superamento dei 18 confronti didattici e nove esercizi: 34 risultati riusati con provenienza e 11 nuove ricerche. Il primo seguito e il relativo esercizio sono stati revisionati dopo il fallimento originale, conservato senza modifiche. Il [progetto R1](OPENING-TAIMANOV-BE2-P022-R1-DESIGN.md) descrive la revisione e il budget. P02 resta aperta: i successivi rami Taimanov Qc7/Ae3, le 98 posizioni residue del candidato e gli ingressi Ac4/Ad3/f3 restano nel perimetro A. I paragrafi SIC-07 originali più sotto sono storia della progettazione, non lo stato operativo corrente.
+
 Questo documento raccoglie le decisioni di prodotto espresse da Carlo e le traduce in incarichi eseguibili. La sua creazione non avvia le implementazioni. Quando Carlo chiede di riprendere questa roadmap, usare il protocollo seguente per scegliere il prossimo incarico, senza chiedergli di riscriverne i requisiti.
 
 ## Direzione concordata
+
+Collaudo dell'ampliamento SIC-08 R1 del 28 ottobre: **144 test mirati, build no-env e 72/72 casi browser PASS**. [Registro e perimetro QA](data/opening-taimanov-bd3-p022-r1-qa.json). Sette nuovi corsi e sette esercizi utilizzabili, 523 file protetti preservati; proseguire con gli ingressi Taimanov a3/f4/Dd2/...Cf6 senza rilanciare i ledger completati.
+
+Collaudo dell'ampliamento SIC-07 R1: **build no-env e 90/90 casi browser PASS**. Il [registro QA](data/opening-taimanov-be2-p022-r1-qa.json) distingue le verifiche dei contenuti dal timeout residuo del solo strumento di preparazione bozze. I nove percorsi e nove esercizi sono utilizzabili nell'app; il prossimo lotto P02 resta quello degli altri rami Taimanov Qc7/Ae3.
 
 ChessProfessor deve aiutare a comprendere il gioco e migliorare attraverso aperture, spiegazioni, basi, esercizi e, successivamente, allenamento derivato dalle proprie partite.
 
@@ -62,19 +102,19 @@ Leggere questo protocollo insieme al prompt selezionato: costituiscono un unico 
 9. Non fare commit, push, deploy o operazioni su account esterni senza una richiesta che li autorizzi. Non introdurre servizi a pagamento o nuove infrastrutture come conseguenza implicita di questa roadmap.
 10. Chiudere il lotto con risultato, file, controlli realmente eseguiti, limiti e prossimo passo esatto. Aggiornare il registro finale di questo documento solo con risultati effettivi. Rispettare qualsiasi limite esplicito di Carlo, compreso «un punto, poi STOP».
 
-Ottimizzazione concordata il 27 ottobre: usare la [pipeline comune](OPENING-PIPELINE.md), evitando nuovi collector/builder/reporter copiati. Selezionare gruppi più ampi e coerenti con il backlog, con guadagno di copertura e dipendenze espliciti. Controllare tutti i nuovi contenuti; usare il selettore QA per distinguere dati, strumenti e modifiche runtime. Gli aggregatori rientrano nei soli dati esclusivamente quando l'annullamento degli import/inserimenti dichiarati ripristina esattamente gli hash precedenti. File sconosciuti, modifiche runtime, traguardi di famiglia e consegne richiedono la verifica completa. Conservare la matrice browser storica anche quando si esegue una selezione motivata. Riusare esiti soltanto con firme compatibili; le ricerche motore restano esplicite e limitate. Raggruppare la progettazione prima del cambio di modello, mantenendo la pausa manuale di Carlo quando serve.
+Ottimizzazione concordata il 27 ottobre: usare la [pipeline comune](OPENING-PIPELINE.md), evitando nuovi collector/builder/reporter copiati. Selezionare gruppi più ampi e coerenti con il backlog, con guadagno di copertura e dipendenze espliciti. Controllare tutti i nuovi contenuti; usare il selettore QA per distinguere dati, strumenti e modifiche runtime. Gli aggregatori rientrano nei soli dati esclusivamente quando l'annullamento degli import/inserimenti dichiarati ripristina esattamente gli hash precedenti. File sconosciuti, modifiche runtime, traguardi di famiglia e consegne richiedono la verifica completa. Conservare la matrice browser storica anche quando si esegue una selezione motivata. Riusare esiti soltanto con firme compatibili; le ricerche motore restano esplicite e limitate. Raggruppare la progettazione e applicare il routing autonomo in AGENTS.md quando serve una delega.
 
 La richiesta di eseguire una fase autorizza i suoi lotti ordinari, non tutte le fasi successive. Con «riprendi la roadmap» scegliere la prima fase incompleta con prerequisiti soddisfatti e applicare prima il protocollo di scelta del modello seguente. Non saltare avanti perché un'altra fase sembra più interessante.
 
 ## Scelta del modello e del ragionamento: regola concordata con Carlo
 
-Carlo sceglie manualmente modello e impegno di ragionamento nell'interfaccia. Per tutta la roadmap, prima di ogni fase indicare il modello consigliato, il livello di ragionamento e il motivo in relazione al lavoro concreto. Non pretendere di aver cambiato le impostazioni al suo posto.
+Aggiornamento del 27 ottobre 2026: Carlo ha richiesto il routing autonomo definito in [AGENTS.md](../AGENTS.md) e nella [configurazione Codex](../.codex/config.toml). Sol Medium resta responsabile del lavoro; Luna High, Astra Medium e Astra High sono deleghe opzionali, selezionate per beneficio concreto, incertezza, rischio, dipendenze, complessità e verifiche. Il tempo richiesto da un'attività non basta per coinvolgere Astra.
 
-Se serve un cambio rispetto alla configurazione confermata, fermarsi prima del lavoro interessato e attendere che Carlo cambi le impostazioni e dica di continuare. La stessa regola vale all'interno di una fase se una sua parte richiede una configurazione diversa. Lasciare un punto di ripresa preciso con risultati già prodotti, lavoro pendente e configurazione richiesta. Non proseguire quel lavoro su un modello diverso tramite un agente secondario.
+Questa richiesta sostituisce le pause manuali e le assegnazioni per fase della procedura precedente. Usare soltanto modelli e deleghe realmente esposti dal client; la configurazione non cambia retroattivamente il modello di una conversazione aperta. Se la capacità necessaria manca, dichiarare il limite senza simulare il cambio.
 
-Alla fine di ogni fase indicare configurazione consigliata per la successiva e attendere l'avvio da parte di Carlo. Se la configurazione resta adeguata, non introdurre interruzioni aggiuntive fra i lotti ordinari della stessa fase, salvo suoi limiti espliciti. Non abbassare il ragionamento soltanto perché alcune operazioni sono meccaniche: valutare il lotto nel suo insieme.
+Restano invariati il perimetro autorizzato, i prerequisiti delle fasi e i controlli scacchistici. Le decisioni di modello non autorizzano nuove fasi, ricerche motore o operazioni Git. I progetti e le prove congelate conservano le loro raccomandazioni storiche.
 
-Configurazioni inizialmente consigliate, da rivalutare al momento dell'esecuzione con le indicazioni ufficiali correnti e le opzioni disponibili:
+La tabella seguente conserva le raccomandazioni storiche, superate dal routing autonomo; non impone chiamate Astra o cambi manuali:
 
 | Fase | Modello consigliato | Ragionamento | Motivo |
 | --- | --- | --- | --- |
@@ -88,9 +128,9 @@ Configurazioni inizialmente consigliate, da rivalutare al momento dell'esecuzion
 | P08 | GPT-6 Astra per criteri ed evidenze; GPT-6.1 Sol per l'implementazione | High | Distinguere difficoltà dimostrate, selezione dei puzzle e funzioni utente |
 | P09 | GPT-6 Astra | High | Progettare misure e interpretare risultati senza conclusioni causali infondate |
 
-Questa tabella è una raccomandazione operativa, non un confronto misurato dei modelli su ChessProfessor. Medium può essere proposto per lotti semplici e ben delimitati; Extra High o livelli superiori soltanto con un motivo concreto. Ogni cambio richiede comunque la pausa descritta sopra.
+La tabella non è un confronto misurato dei modelli su ChessProfessor. Il routing corrente usa i quattro livelli richiesti da Carlo e mantiene Astra High come eccezione.
 
-Punto di ripresa al 27 ottobre 2026: **SIC-07 progettato e verificato offline**, pronto per l'implementazione con **GPT-6.1 Sol / High** dopo il cambio manuale e il «continua» di Carlo. [Progetto e istruzioni](OPENING-TAIMANOV-BE2-P022-DESIGN.md), [piano](data/opening-taimanov-be2-p022-plan.json), [prova](data/opening-taimanov-be2-p022-design-verification.json), [registro attivo](data/opening-pipeline/lots.json). Nove percorsi Taimanov con Ae3/Ae2 e nove esercizi, 150 semimosse documentate e 14 didattiche, 216 file preservati, 341 repliche immediate e 90 transizioni verificate per entrambi i colori. Proiezione: 302 corsi/esercizi, 24 nuove posizioni esatte e una trasposta; 1.980 esatte, 203 solo trasposte, 10.139 assenti. Motore ancora da eseguire: 37 job, tetto 74 go/14.800.000 nodi richiesti. Browser pianificato: 82 nuovi casi e otto regressioni, conservando i 141 storici. L'applicazione resta a **293 corsi/esercizi**, 32 siciliani, 1.956 posizioni esatte, 202 solo trasposte e **10.164 assenti**: gli esiti applicativi precedenti sono quelli di [SIC-06](OPENING-PIPELINE-RESULTS.md), non validazione del nuovo lotto. Le 98 posizioni residue del candidato Taimanov e gli ingressi Ac4/Ad3/f3 restano nel perimetro A. P02 rimane in corso.
+Punto di ripresa al 27 ottobre 2026: **SIC-07 progettato e verificato offline**, pronto per l'implementazione con **Sol Medium e deleghe opzionali**, secondo il routing corrente in AGENTS.md. [Progetto e istruzioni](OPENING-TAIMANOV-BE2-P022-DESIGN.md), [piano](data/opening-taimanov-be2-p022-plan.json), [prova](data/opening-taimanov-be2-p022-design-verification.json), [registro attivo](data/opening-pipeline/lots.json). Nove percorsi Taimanov con Ae3/Ae2 e nove esercizi, 150 semimosse documentate e 14 didattiche, 216 file preservati, 341 repliche immediate e 90 transizioni verificate per entrambi i colori. Proiezione: 302 corsi/esercizi, 24 nuove posizioni esatte e una trasposta; 1.980 esatte, 203 solo trasposte, 10.139 assenti. Motore ancora da eseguire: 37 job, tetto 74 go/14.800.000 nodi richiesti. Browser pianificato: 82 nuovi casi e otto regressioni, conservando i 141 storici. L'applicazione resta a **293 corsi/esercizi**, 32 siciliani, 1.956 posizioni esatte, 202 solo trasposte e **10.164 assenti**: gli esiti applicativi precedenti sono quelli di [SIC-06](OPENING-PIPELINE-RESULTS.md), non validazione del nuovo lotto. Le 98 posizioni residue del candidato Taimanov e gli ingressi Ac4/Ad3/f3 restano nel perimetro A. P02 rimane in corso.
 
 ## P01 — Verificare la copertura reale delle varianti
 
@@ -396,4 +436,4 @@ Per ogni lotto aggiungere qui un breve aggiornamento con data, fase, ambito, fil
 
 Formula di ripresa utilizzabile da Carlo:
 
-> Riprendi `docs/ROADMAP-E-PROMPT-OPERATIVI.md`: verifica lo stato attuale, scegli il primo lotto eseguibile della prima fase incompleta e applica il relativo prompt con il protocollo comune. Non avviare fasi successive prima dei loro prerequisiti.
+> Riprendi con `node scripts/openings-workflow.mjs brief` e la skill `opening-workflow`: usa il lotto e la prossima azione verificati. Leggi soltanto progetto, corso o errore pertinente; consulta questa roadmap per decisioni di fase. Mantieni i gate, i file congelati e il cambio manuale di modello concordato. Non avviare fasi successive prima dei loro prerequisiti.

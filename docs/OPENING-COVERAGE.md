@@ -1,8 +1,8 @@
 # Inventario e avanzamento delle aperture
 
-Perimetro completo A approvato: le 12.322 posizioni delle fonti fissate in P01, ancora in corso di copertura. L'elenco sotto comprende i 197 rami storici e 13 nuovi percorsi della roadmap; alcuni rami storici corrispondono a corsi già presenti. Alias, posizioni e corsi sono conteggi distinti.
+Perimetro completo A approvato: le 12.322 posizioni delle fonti fissate in P01, ancora in corso di copertura. L'elenco sotto comprende i 197 rami storici e 29 nuovi percorsi della roadmap; alcuni rami storici corrispondono a corsi già presenti. Alias, posizioni e corsi sono conteggi distinti.
 
-Percorsi giocabili: **293**, di cui **188 dell'espansione storica**, **5 nuove linee integralmente documentate** e **8 con prefisso documentato e seguito didattico scritto**. Rami di questo elenco ancora da inserire: **0**; questo numero non misura le posizioni mancanti nel perimetro A. La [verifica attuale Chekhover con 4...Cf6 e 4...Ad7](OPENING-CHEKHOVER-EARLY-P022-RESULTS.md) riporta copertura e residui effettivi.
+Percorsi giocabili: **309**, di cui **188 dell'espansione storica**, **5 nuove linee integralmente documentate** e **24 con prefisso documentato e seguito didattico scritto**. Rami di questo elenco ancora da inserire: **0**; questo numero non misura le posizioni mancanti nel perimetro A. La [verifica attuale Chekhover con 4...Cf6 e 4...Ad7](OPENING-CHEKHOVER-EARLY-P022-RESULTS.md) riporta copertura e residui effettivi.
 
 ## Metodo e limiti
 
@@ -10,9 +10,9 @@ Ogni nuova linea ha una posizione caratteristica collegata a un record del catal
 
 Nell’espansione storica si preferiscono continuazioni già documentate fino a 24 semimosse; il seguito fino alla mossa 16 è un modello didattico costruito offline con Stockfish 16 nativo, un thread, 32 MiB di hash, 200.000 nodi per mossa e hash azzerata. Non è una nuova fonte di teoria, una partita storica o una prova di unicità. Le prime due linee P02.2 hanno 22 e 20 semimosse interamente documentate. La Zaitsev ha dieci semimosse documentate e due didattiche scritte. Il lotto Chekhover successivo aggiunge 56 semimosse documentate e due didattiche scritte in tre percorsi. Il lotto con 4...a6 aggiunge due moduli brevi, di dieci e dodici semimosse: 21 documentate e una didattica, sommate con i prefissi ripetuti. I seguiti scritti sono verificati con confronti alla stessa radice e budget fissato. Il lotto precoce con 4...Cf6 e 4...Ad7 aggiunge due moduli di dieci semimosse, 17 documentate e tre didattiche, con ordini distinti che convergono alla stessa posizione. Nessuna mossa dei percorsi della roadmap è generata dal motore. Il browser non avvia il motore. Stockfish 16 nativo non è lo Stockfish 19 del browser.
 
-Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. I 188 percorsi dell'espansione storica hanno almeno due note strategiche individualmente scritte: 388 note, di cui 36 nella Caro-Kann. I 13 percorsi della roadmap aggiungono 36 note minime specifiche, conteggiate separatamente. Le note compaiono dopo aver giocato e sono legate alle sequenze complete revisionate. La revisione integrale dei commenti resta P03.
+Ogni ramo ha piani specifici per entrambi i colori e una spiegazione della scelta caratteristica. I 188 percorsi dell'espansione storica hanno almeno due note strategiche individualmente scritte: 388 note, di cui 36 nella Caro-Kann. I 29 percorsi della roadmap aggiungono 107 note minime specifiche, conteggiate separatamente. Le note compaiono dopo aver giocato e sono legate alle sequenze complete revisionate. La revisione integrale dei commenti resta P03.
 
-Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 293 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
+Le spiegazioni degli altri passaggi descrivono i fatti della scacchiera e riusano il corpus scritto solo nelle stesse posizioni e sequenze. Non vengono dichiarati commenti individualmente scritti per ogni mossa delle 309 linee. La revisione dei passaggi chiave non equivale alla revisione editoriale integrale di tutte le lezioni.
 
 Il riepilogo del turno distingue la propria mossa dalla risposta realmente giocata dall’avversario. Ogni semimossa dispone di una spiegazione posizionale; le note strategiche individuali restano un conteggio distinto. La [copertura dei commenti](OPENING-COMMENTARY-COVERAGE.md) mostra i passaggi ancora da scrivere per ogni famiglia.
 
@@ -20,7 +20,7 @@ Il corpus aggiuntivo di 230 note completa i passaggi scoperti nelle famiglie Sis
 
 Le verifiche automatiche certificano legalità, provenienza della posizione, continuità, assenza di duplicati nella famiglia e corrispondenza delle mosse del seguito ai risultati registrati. Non certificano da sole la correttezza di ogni spiegazione strategica o la completezza della teoria di ogni apertura.
 
-Esercizi sulle deviazioni: **293**. Percorsi senza un esercizio costruito validato: **0**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.
+Esercizi sulle deviazioni: **309**. Percorsi senza un esercizio costruito validato: **0**. Ogni esercizio parte da una posizione del percorso, aggiunge una deviazione legale e richiede una risorsa concreta. Il confronto con Stockfish 16 usa 200.000 nodi; il guadagno materiale minimo viene inoltre controllato contro tutte le repliche legali immediate. Sono controlli a orizzonte limitato, non dimostrazioni sull’intera partita. Non viene attribuita una frequenza a questi errori, né vengono presentati come partite storiche. Le sei trappole precedenti restano una raccolta distinta.
 
 ## Perché i conteggi sono diversi
 
@@ -34,7 +34,7 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Partita Italiana | 3 | 8 | 11 | 11 | 16 | 0 | 0 |
 | Partita Spagnola | 3 | 11 | 14 | 14 | 22 | 0 | 0 |
-| Difesa Siciliana | 4 | 28 | 32 | 32 | 30 | 0 | 0 |
+| Difesa Siciliana | 4 | 44 | 48 | 48 | 30 | 0 | 0 |
 | Difesa Francese | 4 | 10 | 14 | 14 | 20 | 0 | 0 |
 | Difesa Caro-Kann | 4 | 12 | 16 | 16 | 36 | 0 | 0 |
 | Difesa Scandinava | 2 | 4 | 6 | 6 | 8 | 0 | 0 |
@@ -127,6 +127,22 @@ La [revisione delle lacune](OPENING-EXPANSION-AUDIT.md) documenta i 37 rami aggi
 - [x] Siciliana: 4...g6 e sviluppo con Ac4 — fonte fc2ae42fb689cbe2; 14 semimosse documentate, 0 semimosse del seguito controllate; esercizio disponibile
 - [x] Siciliana: 4...a6 prima di Cf6 — fonte 8d1d21aff6e14300; 8 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
 - [x] Siciliana: 4...e5 e ritirata Cb3 — fonte 5b821d81f6456cf4; 8 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: sviluppo ...Cge7 — fonte fd1e82db76b2dc03; 14 semimosse documentate, 6 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: ...b5 e cambio in c6 — fonte 15aa6dde9e802186; 15 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: a3 e ...b5 — fonte f7de91179f7efae7; 16 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: arrocco e ...b5 — fonte 633f13804968ad2c; 16 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: arrocco e ...Ae7 — fonte e96413a5bf813898; 16 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: a3, ...Ae7 e arrocchi — fonte b7ac9e5a8db9da8c; 17 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: ...Ab4 e Cxc6 — fonte f5294d51565d3e3a; 17 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: ...Ab4, Ca4 e arrocco — fonte 47ac35eef6ae7836; 18 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ae2: Ca4, ...Ae7 e Cb6 — fonte bdd5d822009a1952; 21 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ad3: cambio in c6 dopo ...b5 — fonte 2b64132ce4e19584; 15 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ad3: arrocco dopo ...b5 — fonte 7665c15b78897e7a; 15 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ad3: ...Cf6 e ...b5 — fonte e0560c7933e156aa; 16 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ad3: sviluppo ...Ad6 — fonte 55d79e726d51485c; 16 semimosse documentate, 2 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ad3: espansione ...h5 — fonte a83eb2a8bf97895d; 16 semimosse documentate, 6 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ad3: cambio nero in d4 — fonte c6fdbf0a6ea0fc86; 16 semimosse documentate, 4 semimosse del seguito controllate; esercizio disponibile
+- [x] Taimanov con Ad3: ...Ce5, ...Ac5 e Rh1 — fonte 857fe67bb2dad59d; 19 semimosse documentate, 1 semimosse del seguito controllate; esercizio disponibile
 
 ### Difesa Francese
 

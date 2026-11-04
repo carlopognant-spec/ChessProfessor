@@ -6,7 +6,7 @@ import { sacrificeSearchFor } from './sacrificeSearches.js'
 const uciOf = move => `${move.from}${move.to}${move.promotion ?? ''}`
 const primary = engine => engine?.lines?.find(line => line.multipv === 1) ?? engine
 function index(line) {
-  if (!line || !Number.isInteger(line.depth) || line.depth < 1 || line.bound
+  if (!line || !Number.isInteger(line.depth) || line.depth < 1 || line.bound || line.lowerbound || line.upperbound
     || /\b(?:upperbound|lowerbound)\b/.test(line.raw ?? '')) return null
   if (Number.isInteger(line.mate) && line.mate !== 0) return Number(line.mate > 0)
   return line.mate == null && Number.isFinite(line.evalCp) ? calculateWinProbability(line.evalCp) : null

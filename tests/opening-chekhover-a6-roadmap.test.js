@@ -25,8 +25,8 @@ describe('Chekhover a6 source subtree and player-controlled branches',()=>{
     expect(old).toHaveLength(286);expect(hash(JSON.stringify(old))).toBe(plan.baseline.practicalDigest)
     expect(Object.keys(plan.preserveFiles)).toHaveLength(108)
     for(const [file,sha] of Object.entries(plan.preserveFiles))expect(hash(fs.readFileSync(file)),file).toBe(sha)
-    expect(ALL_OPENING_JOURNEYS).toHaveLength(293);expect(practical.entries).toHaveLength(293)
-    expect(siblings).toHaveLength(32)
+    expect(ALL_OPENING_JOURNEYS).toHaveLength(309);expect(practical.entries).toHaveLength(309)
+    expect(siblings).toHaveLength(48)
   })
   it('counts the shared source node once and separates the one authored reply',()=>{
     expect(new Set(plan.courses.flatMap(c=>c.sourceRecords.map(r=>r.positionId))).size).toBe(5)

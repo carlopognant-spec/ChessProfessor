@@ -1,0 +1,41 @@
+{
+  "signature": "36c4827f1301c26afcd4ee2133ac8063f2aad7e6374226a081b8f9ab58534798",
+  "jobId": "taimanov-bd3-b5-castle:authored:15",
+  "status": "complete",
+  "attemptIds": [],
+  "reusedFrom": {
+    "jobId": "taimanov-bd3-b5-castle:authored:15",
+    "directory": "docs/data/opening-taimanov-bd3-p022-engine",
+    "jobIndex": 5,
+    "manifestSha256": "f7f1b6724c5b663713457017335a038f1e243b5bdffc087a3f47e01f71fe3854"
+  },
+  "result": {
+    "bestmove": "g8f6",
+    "searchmoves": [
+      "g8f6"
+    ],
+    "depth": 15,
+    "nodes": 97831,
+    "cp": -17,
+    "mate": null,
+    "pv": [
+      "g8f6",
+      "d4b3",
+      "c8b7",
+      "f2f4",
+      "d7d6",
+      "d1e2",
+      "f8e7",
+      "a2a3",
+      "e8g8",
+      "g1h1",
+      "c6b8",
+      "f1f3",
+      "b8d7",
+      "f3h3",
+      "e6e5",
+      "a1f1"
+    ],
+    "attempt": "05"
+  }
+}

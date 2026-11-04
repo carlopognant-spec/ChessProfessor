@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "courseDigest": "75c3a6397aa3d862102b08d62ba99c1d1fa1594a8977028252d73f20f2c28f92",
-  "courses": 293,
+  "courseDigest": "97b553a224e3bc5b6a32e63494d00aa40ce3081179fbcb0e535660fe2163cc73",
+  "courses": 309,
   "families": 37,
-  "explainedHalfMoves": 9118,
-  "pairs": 4586,
-  "writtenPairs": 2050,
+  "explainedHalfMoves": 9416,
+  "pairs": 4735,
+  "writtenPairs": 2137,
   "fullyWrittenCourses": 66,
   "additionalPairNotes": 230,
   "fullyWrittenFamilies": [
@@ -502,10 +502,10 @@
     {
       "id": "sicilian",
       "title": "Difesa Siciliana",
-      "courses": 32,
-      "halfMoves": 794,
-      "pairs": 398,
-      "writtenPairs": 168,
+      "courses": 48,
+      "halfMoves": 1092,
+      "pairs": 547,
+      "writtenPairs": 255,
       "fullyWrittenCourses": 9,
       "rows": [
         {
@@ -1016,6 +1016,212 @@
           "writtenPairs": 5,
           "positionOnly": [],
           "fullyWritten": true
+        },
+        {
+          "id": "sicilian:taimanov-be2-nge7",
+          "halfMoves": 20,
+          "pairs": 10,
+          "writtenPairs": 7,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-be2-b5-exchange",
+          "halfMoves": 16,
+          "pairs": 8,
+          "writtenPairs": 5,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-be2-a3-b5",
+          "halfMoves": 18,
+          "pairs": 9,
+          "writtenPairs": 6,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-be2-castle-b5",
+          "halfMoves": 18,
+          "pairs": 9,
+          "writtenPairs": 6,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-be2-castle-be7",
+          "halfMoves": 18,
+          "pairs": 9,
+          "writtenPairs": 6,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-be2-a3-be7",
+          "halfMoves": 18,
+          "pairs": 9,
+          "writtenPairs": 6,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-be2-bb4-exchange",
+          "halfMoves": 18,
+          "pairs": 9,
+          "writtenPairs": 6,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-be2-na4-castle",
+          "halfMoves": 20,
+          "pairs": 10,
+          "writtenPairs": 7,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-be2-na4-be7-nb6",
+          "halfMoves": 22,
+          "pairs": 11,
+          "writtenPairs": 8,
+          "positionOnly": [
+            2,
+            4,
+            6
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-bd3-b5-exchange",
+          "halfMoves": 16,
+          "pairs": 8,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-bd3-b5-castle",
+          "halfMoves": 16,
+          "pairs": 8,
+          "writtenPairs": 3,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-bd3-nf6-b5",
+          "halfMoves": 18,
+          "pairs": 9,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-bd3-nf6-bd6",
+          "halfMoves": 18,
+          "pairs": 9,
+          "writtenPairs": 4,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-bd3-nf6-h5",
+          "halfMoves": 22,
+          "pairs": 11,
+          "writtenPairs": 6,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-bd3-nf6-exchange",
+          "halfMoves": 20,
+          "pairs": 10,
+          "writtenPairs": 5,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "fullyWritten": false
+        },
+        {
+          "id": "sicilian:taimanov-bd3-ne5-bc5",
+          "halfMoves": 20,
+          "pairs": 10,
+          "writtenPairs": 5,
+          "positionOnly": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "fullyWritten": false
         }
       ]
     },

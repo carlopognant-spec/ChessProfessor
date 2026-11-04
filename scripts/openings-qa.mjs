@@ -6,14 +6,15 @@ import {pathToFileURL} from 'node:url'
 import {ROOT,resolve,encode,hash,hashes,exists,json,write} from './openings/common.mjs'
 
 const test=(files=[])=>({id:'tests',command:'npm',args:['test','--','--config','scripts/qa-no-env-test.config.js','--cache','false',...files]})
+const toolingTests=['tests/openings-pipeline.test.js','tests/openings-workflow.test.js']
 const full=()=>[test(),{id:'build',command:'npm',args:['run','build','--','--config','scripts/qa-no-env-build.config.js']},
   {id:'browser',command:'npx',args:['playwright','test','--config','scripts/qa-opening-browser.config.js','--grep','roadmap Sicilian']}]
 
 export function selectChecks(changed,{forceFull=false,lot=null,verifiedAggregations=[]}={}){
   assert(changed.every(f=>typeof f==='string'&&f.length))
-  const tooling=f=>/^scripts\/(openings(?:-|\/))/.test(f)||f==='tests/openings-pipeline.test.js'||
+  const tooling=f=>/^scripts\/(openings(?:-|\/))/.test(f)||toolingTests.includes(f)||
     ['scripts/report-opening-coverage.mjs','scripts/report-opening-commentary.mjs'].includes(f)
-  const docs=f=>/^docs\//.test(f)&&/\.(?:md|json)$/.test(f)
+  const docs=f=>(/^docs\//.test(f)&&/\.(?:md|json)$/.test(f))||f==='AGENTS.md'||/^\.agents\/skills\/[^/]+\/SKILL\.md$/.test(f)
   const data=f=>/^src\/data\/opening\w+(?:Courses|PracticalCases)\.js$/.test(f)||verifiedAggregations.includes(f)||
     /^tests\/opening-.*\.test\.js$/.test(f)&&lot?.qa?.tests?.includes(f)
   let mode,reason,steps
@@ -23,7 +24,7 @@ export function selectChecks(changed,{forceFull=false,lot=null,verifiedAggregati
     // Data-only additions still exercise every route and the real UI. No quadratic new case matrix.
     mode='content';reason='Opening data changed; require lot-specific tests and browser selection'
     if(!lot?.qa?.tests?.length||!lot?.qa?.browserGrep){mode='full';reason='No reviewed lot QA selection: conservative full fallback';steps=full()}
-    else steps=[test(['tests/openings-pipeline.test.js','tests/opening-variants.test.js','tests/opening-expansion.test.js',...lot.qa.tests]),
+    else steps=[test([...toolingTests,'tests/opening-variants.test.js','tests/opening-expansion.test.js',...lot.qa.tests]),
       {id:'build',command:'npm',args:['run','build','--','--config','scripts/qa-no-env-build.config.js']},
       {id:'browser',command:'npx',args:['playwright','test','--config','scripts/qa-opening-browser.config.js','--grep',lot.qa.browserGrep]}]
   }else if(changed.every(docs)){
@@ -32,10 +33,11 @@ export function selectChecks(changed,{forceFull=false,lot=null,verifiedAggregati
       {id:'documents',command:'node',args:['scripts/openings-docs.mjs',...changed]}]
   }else{
     mode='tooling';reason='Only pipeline tooling/specifications changed'
-    steps=[test(['tests/openings-pipeline.test.js']),{id:'preflight',command:'node',args:['scripts/openings-lot.mjs','verify']},
+    steps=[test(toolingTests),{id:'preflight',command:'node',args:['scripts/openings-lot.mjs','verify']},
       {id:'legacy-parity',command:'node',args:['scripts/openings-lot.mjs','build','--lot','sic-05','--check']},
       {id:'inventories',command:'node',args:['scripts/openings-lot.mjs','inventories','--check']},
-      {id:'documents',command:'node',args:['scripts/openings-docs.mjs']}]
+      {id:'documents',command:'node',args:['scripts/openings-docs.mjs',
+        ...new Set(['docs/OPENING-PIPELINE.md','docs/ROADMAP-E-PROMPT-OPERATIVI.md','docs/data/opening-pipeline/lots.json',...changed.filter(docs)])]}]
   }
   return {schema:1,mode,reason,changed:[...changed].sort(),steps,
     fullMilestonePolicy:'Run --full for runtime/navigation changes, unknown files, family completion, and before delivery commit or publication.'}
@@ -61,6 +63,8 @@ export async function verifyAggregationEdits(config){
 }
 export async function fingerprintFiles({documents=false}={}){
   const files=['package.json','package-lock.json','vitest.config.js','playwright.config.js']
+  for(const file of ['.codex/config.toml','.codex/agents/luna.toml','.codex/agents/astra.toml','.codex/agents/astra-high.toml'])
+    if(await exists(file))files.push(file)
   async function visit(dir){for(const e of await fs.readdir(resolve(dir),{withFileTypes:true})){
     if(e.name.startsWith('.')||e.name==='node_modules'||e.isSymbolicLink())continue
     const file=dir+'/'+e.name
@@ -83,6 +87,8 @@ export async function fingerprintFiles({documents=false}={}){
       if(e.isDirectory())await markdown(file);else if(e.name.endsWith('.md'))files.push(file)
     }}
     await markdown('docs')
+    if(await exists('AGENTS.md'))files.push('AGENTS.md')
+    if(await exists('.agents/skills'))await markdown('.agents/skills')
   }
   const found=[];for(const f of files)if(await exists(f))found.push(f)
   return [...new Set(found)].sort()

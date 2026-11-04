@@ -24,7 +24,7 @@ describe('early open Sicilian source orders',()=>{
     expect(old).toHaveLength(290);expect(hash(JSON.stringify(old))).toBe(plan.baseline.practicalDigest)
     expect(Object.keys(plan.preserveFiles)).toHaveLength(169)
     for(const [f,sha] of Object.entries(plan.preserveFiles))expect(hash(fs.readFileSync(f)),f).toBe(sha)
-    expect(ALL_OPENING_JOURNEYS).toHaveLength(293);expect(practical.entries).toHaveLength(293);expect(siblings).toHaveLength(32)
+    expect(ALL_OPENING_JOURNEYS).toHaveLength(309);expect(practical.entries).toHaveLength(309);expect(siblings).toHaveLength(48)
   })
   it('separates documented and authored moves and counts the extra transposition honestly',()=>{
     expect(additions.entries.map(c=>[c.provenance.documentedPlies,c.provenance.authoredContinuationPlies])).toEqual([[14,0],[8,2],[8,2]])

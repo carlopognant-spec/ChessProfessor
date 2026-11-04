@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "lot": "P02.2-SIC-08-R1",
+  "checkedOn": "2026-10-28",
+  "status": "content-verified",
+  "application": {
+    "courses": 309,
+    "exercises": 309,
+    "sicilianCourses": 48,
+    "addedCourses": 7,
+    "addedExercises": 7,
+    "coverage": {
+      "exact": 1994,
+      "transposition-only": 203,
+      "absent": 10125
+    },
+    "newExactSourcePositions": 14
+  },
+  "engine": {
+    "authoredComparisonsPassed": 17,
+    "exercisesPassed": 7,
+    "legalImmediateReplies": 213,
+    "reusedJobs": 30,
+    "newSearches": 12,
+    "newNodesRequested": 2400000,
+    "newNodesActual": 2401887,
+    "originalSearches": 34,
+    "totalPhysicalSearches": 46,
+    "totalPhysicalNodesActual": 9206773,
+    "combinedMaximumGoCommands": 58,
+    "originalMaximumGoCommands": 68,
+    "thresholdsChanged": false,
+    "originalFailedPlanAndLedgerPreserved": true
+  },
+  "unitTests": {
+    "status": "PASS",
+    "files": 14,
+    "passed": 144,
+    "newLotTests": 8,
+    "scope": "Content selection, historical opening assertions and pipeline aggregation contract. Full application suite not rerun.",
+    "log": ".cache/sic08-r1-tests.log",
+    "logEncoding": "utf16le"
+  },
+  "buildAndBrowser": {
+    "status": "PASS",
+    "record": ".cache/opening-pipeline/qa/08e27a477a23dc9d813f1a6ff3f637cf4ee53ce85c36d5bde99e1fa45bf5bb04/result.json",
+    "fingerprint": "08e27a477a23dc9d813f1a6ff3f637cf4ee53ce85c36d5bde99e1fa45bf5bb04",
+    "browserCasesPassed": 72,
+    "newBrowserCases": 64,
+    "existingStateRegressions": 8,
+    "availableRoadmapSicilianCases": 287,
+    "scope": "No-env production build, original browser and timeouts. All287 available browser cases were not executed.",
+    "inputsUnchanged": true
+  },
+  "additionalChecks": [
+    "build --check",
+    "report --check",
+    "inventories --check",
+    "brief --check",
+    "UTF-8/JSON/local links",
+    "git diff --check"
+  ],
+  "preservedFiles": 523,
+  "logHashes": {
+    ".cache/opening-pipeline/qa/08e27a477a23dc9d813f1a6ff3f637cf4ee53ce85c36d5bde99e1fa45bf5bb04/browser.log": "37b20c86a4a26d3dfbdd537ae23e6a7b564e19c69cd1d2176b3c0485fa7d4af6",
+    ".cache/opening-pipeline/qa/08e27a477a23dc9d813f1a6ff3f637cf4ee53ce85c36d5bde99e1fa45bf5bb04/build.log": "2f18266654a509c0584088fb85683ef494d6ba459ca023984e603898e06dc91b",
+    ".cache/opening-pipeline/qa/08e27a477a23dc9d813f1a6ff3f637cf4ee53ce85c36d5bde99e1fa45bf5bb04/result.json": "a50c3bee2ff33ec498ec156ed04b20d98f0a3a2a8913bb3c2b6b7847f1c79fdb",
+    ".cache/sic08-r1-tests.log": "06b021070ae76010153631de9731f986c2ddc010b5b4bee7444a8c0e6382b0c7"
+  },
+  "knownSeparateIssue": {
+    "reference": "docs/data/opening-taimanov-be2-p022-r1-qa.json",
+    "description": "Previously recorded five-second draft-tool timeout and TODO remain separate. Shared workflow tooling unchanged; no claim that it is fully green."
+  },
+  "next": "Complete remaining Taimanov Be3/Qc7 entrances a3,f4,Qd2 and early ...Nf6. Preserve remaining corpus A and do not repeat collected engine jobs.",
+  "git": "No commit, push or deploy."
+}
